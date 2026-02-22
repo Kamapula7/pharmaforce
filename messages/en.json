@@ -1,0 +1,173 @@
+{
+  "nav": {
+    "products": "Products",
+    "blog": "Blog",
+    "about": "About",
+    "cart": "Cart",
+    "account": "Account",
+    "admin": "Admin"
+  },
+  "home": {
+    "hero": {
+      "badge": "PharmaForce — Pharmaceutical Grade",
+      "title": "Fuel Your",
+      "titleAccent": "Performance",
+      "description": "Professional-grade supplements, vitamins, and sports pharmacology. Trusted by athletes across Europe.",
+      "cta": "Shop Now",
+      "ctaSecondary": "Learn More"
+    },
+    "features": {
+      "title": "Why Choose Us",
+      "quality": {
+        "title": "Certified Quality",
+        "desc": "All products are lab-tested and certified for purity and potency."
+      },
+      "delivery": {
+        "title": "Fast EU Delivery",
+        "desc": "Shipping to 30+ European countries in 3-7 business days."
+      },
+      "support": {
+        "title": "Expert Support",
+        "desc": "Our sports nutrition experts are available to help you choose the right products."
+      },
+      "payment": {
+        "title": "Secure Payment",
+        "desc": "Pay via bank transfer with full security and order tracking."
+      }
+    },
+    "bestsellers": {
+      "title": "Best Sellers",
+      "subtitle": "Most popular products among our customers",
+      "viewAll": "View All Products"
+    }
+  },
+  "products": {
+    "title": "All Products",
+    "filters": {
+      "category": "Category",
+      "price": "Price",
+      "brand": "Brand",
+      "all": "All"
+    },
+    "sort": {
+      "label": "Sort by",
+      "popular": "Most Popular",
+      "priceAsc": "Price: Low to High",
+      "priceDesc": "Price: High to Low",
+      "newest": "Newest"
+    },
+    "addToCart": "Add to Cart",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "perServing": "per serving"
+  },
+  "product": {
+    "description": "Description",
+    "composition": "Composition",
+    "howToUse": "How to Use",
+    "reviews": "Reviews",
+    "relatedProducts": "You May Also Like",
+    "quantity": "Quantity",
+    "addToCart": "Add to Cart",
+    "inStock": "In stock",
+    "outOfStock": "Out of stock",
+    "sku": "SKU"
+  },
+  "cart": {
+    "title": "Your Cart",
+    "empty": "Your cart is empty",
+    "emptyDesc": "Add some products to get started.",
+    "continueShopping": "Continue Shopping",
+    "subtotal": "Subtotal",
+    "shipping": "Shipping",
+    "total": "Total",
+    "checkout": "Proceed to Checkout",
+    "remove": "Remove",
+    "calculated": "Calculated at checkout"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "contact": "Contact Information",
+    "shipping": "Shipping Address",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "country": "Country",
+    "city": "City",
+    "address": "Address",
+    "zip": "ZIP / Postal Code",
+    "notes": "Order Notes (optional)",
+    "payment": "Payment Method",
+    "bankTransfer": "Bank Transfer",
+    "bankDesc": "After placing your order, you will receive our bank details. Your order will be processed once payment is confirmed.",
+    "placeOrder": "Place Order",
+    "orderSummary": "Order Summary"
+  },
+  "order": {
+    "confirmed": "Order Confirmed!",
+    "confirmedDesc": "Thank you for your order. Please transfer the payment using the details below.",
+    "orderNumber": "Order Number",
+    "bankDetails": "Bank Transfer Details",
+    "bankName": "Bank",
+    "iban": "IBAN",
+    "bic": "BIC/SWIFT",
+    "reference": "Payment Reference",
+    "amount": "Amount",
+    "instructions": "Please include your order number as the payment reference. Your order will be shipped within 1-2 business days after payment confirmation.",
+    "emailSent": "A confirmation email has been sent to your email address."
+  },
+  "account": {
+    "title": "My Account",
+    "orders": "My Orders",
+    "profile": "Profile",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register",
+    "email": "Email",
+    "password": "Password",
+    "noOrders": "No orders yet"
+  },
+  "footer": {
+    "tagline": "Pharmaceutical-grade performance for serious athletes.",
+    "shop": "Shop",
+    "company": "Company",
+    "about": "About Us",
+    "contact": "Contact",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "allRights": "All rights reserved."
+  },
+  "payment": {
+    "awaitingTitle": "Awaiting Your Payment",
+    "awaitingBody": "We are waiting for your bank transfer. As soon as the bank confirms receipt of funds, your order will automatically be marked as paid and we will begin processing it immediately.",
+    "awaitingNote": "Bank transfers typically take 1–2 business days to process. You will receive an email notification once your payment is confirmed.",
+    "close": "Got it"
+  },
+  "subcategories": {
+    "injections": "Injections",
+    "tablets": "Tablets / Capsules",
+    "secretagogues": "Growth Hormone Stimulants",
+    "hormones": "Hormones & Growth Factors",
+    "sarms": "SARMs",
+    "aromatase-inhibitors": "Aromatase Inhibitors",
+    "serms": "SERMs / PCT",
+    "metabolic": "Metabolic Modulators"
+  },
+  "categories": {
+    "all": "All Products",
+    "protein": "Protein",
+    "creatine": "Creatine",
+    "amino-acids": "Amino Acids",
+    "aas": "Anabolic Androgenic Steroids",
+    "peptides": "Peptides & Growth Hormones",
+    "modulators": "Hormone & Metabolic Modulators",
+    "aminoacids": "Amino Acids",
+    "vitamins": "Vitamins & Minerals",
+    "fatBurners": "Fat Burners",
+    "preworkout": "Pre-Workout",
+    "joints": "Joints & Recovery",
+    "testosterone": "Testosterone Support",
+    "sleep": "Sleep & Recovery"
+  }
+}
