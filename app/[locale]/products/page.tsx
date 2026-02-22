@@ -160,7 +160,7 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
               {CATEGORIES_NAV.map(({ key }) => {
                 const active = (!category && key === 'all') || category === key;
                 const count = catCount(key);
-                if (count === 0 && key !== 'all') return null;
+                if (count === 0 && key !== 'all' && key !== 'womens-health') return null;
                 return (
                   <div key={key}>
                     <Link
