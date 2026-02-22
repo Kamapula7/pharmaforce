@@ -33,7 +33,9 @@ const MODULATORS_SUBS = [
   { key: 'metabolic',              label: 'Metabolic Modulators' },
 ];
 
-const WOMENS_SUBS: { key: string; label: string }[] = [];
+const WOMENS_SUBS = [
+  { key: 'weight-loss', label: 'Weight Loss' },
+];
 
 
 export default async function ProductsPage({ params, searchParams }: ProductsPageProps) {
