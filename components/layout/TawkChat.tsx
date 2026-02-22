@@ -2,29 +2,17 @@
 
 import { useEffect } from 'react';
 
-declare global {
-  interface Window {
-    Tawk_API?: Partial<{
-      toggle: () => void;
-      maximize: () => void;
-      minimize: () => void;
-      hideWidget: () => void;
-      onLoad: () => void;
-    }>;
-    Tawk_LoadStart?: Date;
-  }
-}
-
 export default function TawkChat() {
   useEffect(() => {
     if (document.getElementById('tawk-script')) return;
 
-    window.Tawk_API = window.Tawk_API || {};
-    window.Tawk_LoadStart = new Date();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const w = window as any;
+    w.Tawk_API = w.Tawk_API || {};
+    w.Tawk_LoadStart = new Date();
 
-    // Hide the default Tawk bubble — we use our custom button
-    window.Tawk_API.onLoad = () => {
-      window.Tawk_API?.hideWidget?.();
+    w.Tawk_API.onLoad = () => {
+      w.Tawk_API?.hideWidget?.();
     };
 
     const s = document.createElement('script');

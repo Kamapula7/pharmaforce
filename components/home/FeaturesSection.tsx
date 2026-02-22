@@ -10,11 +10,10 @@ export default function FeaturesSection() {
   const t = useTranslations('home.features');
 
   const handleSupportClick = () => {
-    if (window.Tawk_API?.maximize) {
-      window.Tawk_API.maximize();
-    } else if (window.Tawk_API?.toggle) {
-      window.Tawk_API.toggle();
-    }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const api = (window as any).Tawk_API;
+    if (api?.maximize) api.maximize();
+    else if (api?.toggle) api.toggle();
   };
 
   return (
