@@ -19,7 +19,7 @@ export default function TawkChat() {
   useEffect(() => {
     if (document.getElementById('tawk-script')) return;
 
-    window.Tawk_API = window.Tawk_API || {};
+    window.Tawk_API = window.Tawk_API || ({} as NonNullable<Window['Tawk_API']>);
     window.Tawk_LoadStart = new Date();
 
     // Hide the default Tawk bubble — we use our custom button
