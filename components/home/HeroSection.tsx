@@ -93,18 +93,18 @@ export default function HeroSection({ locale }: HeroSectionProps) {
           </div>
 
           {/* ── RIGHT: athletes photo — full body, no cropping ── */}
-          <div className="hidden lg:flex items-end justify-center h-full relative">
-            {/* Soft glow behind athletes */}
-            <div className="absolute inset-0 bg-gradient-to-l from-brand/5 to-transparent rounded-full blur-3xl" />
+          <div className="hidden lg:block h-full relative min-h-[720px]">
             <Image
-              src="/hero-athletes.png"
-              alt="Muscular man and fit woman with dumbbells"
-              width={600}
-              height={720}
-              className="object-contain object-bottom w-full max-h-[720px] drop-shadow-2xl"
-              quality={100}
+              src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=900&q=95"
+              alt="Muscular athlete in the gym"
+              fill
+              className="object-cover object-center"
+              quality={95}
               priority
+              sizes="50vw"
             />
+            <div className="absolute inset-0 bg-gradient-to-r from-dark via-dark/30 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent" />
           </div>
 
         </div>
