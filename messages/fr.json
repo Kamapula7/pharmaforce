@@ -156,7 +156,12 @@
                           "sarms":  "SARMs",
                           "aromatase-inhibitors":  "Inhibiteurs d\u0027Aromatase",
                           "serms":  "SERMs / PCT",
-                          "metabolic":  "Modulateurs MГ©taboliques"
+                          "metabolic":  "Modulateurs MГ©taboliques",
+                          "weight-loss":  "Medicaments amaigrissants",
+                          "hormone-therapy":  "Therapie hormonale",
+                          "hair-removal":  "Epilation",
+                          "skin-health":  "Sante de la peau \u0026 Anti-acne",
+                          "hair-growth":  "Croissance des cheveux"
                       },
     "categories":  {
                        "all":  "Tous les produits",
@@ -172,6 +177,7 @@
                        "preworkout":  "PrГ©-entraГ®nement",
                        "joints":  "Articulations et rГ©cupГ©ration",
                        "testosterone":  "Support testostГ©rone",
-                       "sleep":  "Sommeil et rГ©cupГ©ration"
+                       "sleep":  "Sommeil et rГ©cupГ©ration",
+                       "womens-health":  "Sante Feminine"
                    }
 }

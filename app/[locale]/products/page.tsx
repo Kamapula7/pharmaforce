@@ -33,6 +33,14 @@ const MODULATORS_SUBS = [
   { key: 'metabolic',              label: 'Metabolic Modulators' },
 ];
 
+const WOMENS_SUBS = [
+  { key: 'weight-loss',     label: 'Weight Loss Medications' },
+  { key: 'hormone-therapy', label: 'Hormone Therapy' },
+  { key: 'hair-growth',     label: 'Hair Growth & Anti-Hair Loss' },
+  { key: 'hair-removal',    label: 'Hair Removal Medications' },
+  { key: 'skin-health',     label: 'Skin Health & Anti-Acne' },
+];
+
 
 export default async function ProductsPage({ params, searchParams }: ProductsPageProps) {
   const { locale } = await params;
@@ -43,6 +51,7 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
   const isAAS        = category === 'aas';
   const isPeptides   = category === 'peptides';
   const isModulators = category === 'modulators';
+  const isWomens     = category === 'womens-health';
 
   /* filter */
   const filtered = PRODUCTS.filter((p) => {
@@ -208,6 +217,26 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
                       </div>
                     )}
 
+                    {/* Women's Health subcategories */}
+                    {key === 'womens-health' && isWomens && (
+                      <div className="ml-3 mt-1 mb-1 space-y-0.5">
+                        {WOMENS_SUBS.map(({ key: sk }) => {
+                          const subActive = sub === sk;
+                          const href = subActive
+                            ? `/${locale}/products?category=womens-health`
+                            : `/${locale}/products?category=womens-health&sub=${sk}`;
+                          return (
+                            <Link key={sk} href={href}
+                              className={`flex items-center justify-between px-3 py-1.5 rounded-lg text-xs transition-colors ${subActive ? 'bg-brand/20 text-brand font-semibold' : 'text-muted hover:text-white hover:bg-surface-2'}`}
+                            >
+                              <span>{tSub(sk as Parameters<typeof tSub>[0])}</span>
+                              <span className={`text-[10px] ${subActive ? 'text-brand' : 'text-muted/50'}`}>{subCount(sk, "women's health")}</span>
+                            </Link>
+                          );
+                        })}
+                      </div>
+                    )}
+
                     {/* Peptides subcategories */}
                     {key === 'peptides' && isPeptides && (
                       <div className="ml-3 mt-1 mb-1 space-y-0.5">
@@ -275,6 +304,20 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
               </div>
             </div>
           </div>
+
+          {/* Women's Health subcategory pills */}
+          {isWomens && (
+            <div className="flex gap-2 mb-5 flex-wrap">
+              <Link href={`/${locale}/products?category=womens-health`}
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${!sub ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
+              >{tCat('womens-health')}</Link>
+              {WOMENS_SUBS.map(({ key: sk }) => (
+                <Link key={sk} href={sub === sk ? `/${locale}/products?category=womens-health` : `/${locale}/products?category=womens-health&sub=${sk}`}
+                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${sub === sk ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
+                >{tSub(sk as Parameters<typeof tSub>[0])}</Link>
+              ))}
+            </div>
+          )}
 
           {/* AAS subcategory pills */}
           {isAAS && (

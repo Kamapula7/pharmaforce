@@ -156,7 +156,12 @@
                           "sarms":  "SARMs",
                           "aromatase-inhibitors":  "Inibitori dell\u0027Aromatasi",
                           "serms":  "SERMs / PCT",
-                          "metabolic":  "Modulatori Metabolici"
+                          "metabolic":  "Modulatori Metabolici",
+                          "weight-loss":  "Farmaci dimagranti",
+                          "hormone-therapy":  "Terapia ormonale",
+                          "hair-removal":  "Depilazione",
+                          "skin-health":  "Salute della pelle \u0026 anti-acne",
+                          "hair-growth":  "Crescita capelli \u0026 anti-caduta"
                       },
     "categories":  {
                        "all":  "Tutti i prodotti",
@@ -172,6 +177,7 @@
                        "preworkout":  "Pre-allenamento",
                        "joints":  "Articolazioni e recupero",
                        "testosterone":  "Supporto testosterone",
-                       "sleep":  "Sonno e recupero"
+                       "sleep":  "Sonno e recupero",
+                       "womens-health":  "Salute Femminile"
                    }
 }
