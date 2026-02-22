@@ -318,9 +318,6 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
             </div>
           )}
 
-            </div>
-          )}
-
           {/* Grid */}
           <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3">
             {sorted.map((product) => (
@@ -416,7 +413,6 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
 
         </div>
       </div>
-    </div>
     </div>
   );
 }
