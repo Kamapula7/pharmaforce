@@ -1,173 +1,177 @@
-{
-  "nav": {
-    "products": "Prodotti",
-    "blog": "Blog",
-    "about": "Chi siamo",
-    "cart": "Carrello",
-    "account": "Account",
-    "admin": "Admin"
-  },
-  "home": {
-    "hero": {
-      "badge": "PharmaForce — Qualità Farmaceutica",
-      "title": "Potenzia le tue",
-      "titleAccent": "Prestazioni",
-      "description": "Integratori professionali, vitamine e farmacologia sportiva. Scelti dagli atleti di tutta Europa.",
-      "cta": "Acquista ora",
-      "ctaSecondary": "Scopri di più"
-    },
-    "features": {
-      "title": "Perché sceglierci",
-      "quality": {
-        "title": "Qualità certificata",
-        "desc": "Tutti i prodotti sono testati in laboratorio e certificati per purezza e potenza."
-      },
-      "delivery": {
-        "title": "Consegna rapida in UE",
-        "desc": "Spedizione in 30+ paesi europei in 3-7 giorni lavorativi."
-      },
-      "support": {
-        "title": "Supporto esperto",
-        "desc": "I nostri esperti di nutrizione sportiva sono disponibili per aiutarti a scegliere i prodotti giusti."
-      },
-      "payment": {
-        "title": "Pagamento sicuro",
-        "desc": "Paga tramite bonifico bancario con piena sicurezza e tracciamento dell'ordine."
-      }
-    },
-    "bestsellers": {
-      "title": "Più venduti",
-      "subtitle": "I prodotti più popolari tra i nostri clienti",
-      "viewAll": "Vedi tutti i prodotti"
-    }
-  },
-  "products": {
-    "title": "Tutti i prodotti",
-    "filters": {
-      "category": "Categoria",
-      "price": "Prezzo",
-      "brand": "Marca",
-      "all": "Tutti"
-    },
-    "sort": {
-      "label": "Ordina per",
-      "popular": "Più popolari",
-      "priceAsc": "Prezzo: crescente",
-      "priceDesc": "Prezzo: decrescente",
-      "newest": "Più recenti"
-    },
-    "addToCart": "Aggiungi al carrello",
-    "inStock": "Disponibile",
-    "outOfStock": "Esaurito",
-    "perServing": "per porzione"
-  },
-  "product": {
-    "description": "Descrizione",
-    "composition": "Composizione",
-    "howToUse": "Come usare",
-    "reviews": "Recensioni",
-    "relatedProducts": "Potrebbe piacerti anche",
-    "quantity": "Quantità",
-    "addToCart": "Aggiungi al carrello",
-    "inStock": "Disponibile",
-    "outOfStock": "Esaurito",
-    "sku": "Codice"
-  },
-  "cart": {
-    "title": "Il tuo carrello",
-    "empty": "Il carrello è vuoto",
-    "emptyDesc": "Aggiungi dei prodotti per iniziare.",
-    "continueShopping": "Continua gli acquisti",
-    "subtotal": "Subtotale",
-    "shipping": "Spedizione",
-    "total": "Totale",
-    "checkout": "Procedi al pagamento",
-    "remove": "Rimuovi",
-    "calculated": "Calcolato al checkout"
-  },
-  "checkout": {
-    "title": "Checkout",
-    "contact": "Informazioni di contatto",
-    "shipping": "Indirizzo di spedizione",
-    "firstName": "Nome",
-    "lastName": "Cognome",
-    "email": "Email",
-    "phone": "Telefono",
-    "country": "Paese",
-    "city": "Città",
-    "address": "Indirizzo",
-    "zip": "CAP / Codice postale",
-    "notes": "Note sull'ordine (opzionale)",
-    "payment": "Metodo di pagamento",
-    "bankTransfer": "Bonifico bancario",
-    "bankDesc": "Dopo aver effettuato l'ordine, riceverai i nostri dati bancari. L'ordine sarà elaborato dopo la conferma del pagamento.",
-    "placeOrder": "Effettua l'ordine",
-    "orderSummary": "Riepilogo ordine"
-  },
-  "order": {
-    "confirmed": "Ordine confermato!",
-    "confirmedDesc": "Grazie per il tuo ordine. Effettua il pagamento utilizzando i dati qui sotto.",
-    "orderNumber": "Numero ordine",
-    "bankDetails": "Dati bancari",
-    "bankName": "Banca",
-    "iban": "IBAN",
-    "bic": "BIC/SWIFT",
-    "reference": "Riferimento pagamento",
-    "amount": "Importo",
-    "instructions": "Includi il numero dell'ordine come riferimento del pagamento. L'ordine verrà spedito entro 1-2 giorni lavorativi dopo la conferma del pagamento.",
-    "emailSent": "Una email di conferma è stata inviata al tuo indirizzo email."
-  },
-  "account": {
-    "title": "Il mio account",
-    "orders": "I miei ordini",
-    "profile": "Profilo",
-    "logout": "Esci",
-    "login": "Accedi",
-    "register": "Registrati",
-    "email": "Email",
-    "password": "Password",
-    "noOrders": "Nessun ordine"
-  },
-  "footer": {
-    "tagline": "Prestazioni farmaceutiche per atleti seri.",
-    "shop": "Negozio",
-    "company": "Azienda",
-    "about": "Chi siamo",
-    "contact": "Contatti",
-    "privacy": "Privacy Policy",
-    "terms": "Termini di servizio",
-    "allRights": "Tutti i diritti riservati."
-  },
-  "payment": {
-    "awaitingTitle": "In attesa del tuo pagamento",
-    "awaitingBody": "Stiamo aspettando il tuo bonifico bancario. Non appena la banca conferma la ricezione dei fondi, il tuo ordine verrà automaticamente contrassegnato come pagato e inizieremo immediatamente l'elaborazione.",
-    "awaitingNote": "I bonifici bancari richiedono generalmente 1–2 giorni lavorativi. Riceverai una notifica via e-mail una volta confermato il pagamento.",
-    "close": "Ho capito"
-  },
-  "subcategories": {
-    "injections": "Iniezioni",
-    "tablets": "Compresse / Capsule",
-    "secretagogues": "Stimolatori dell'Ormone della Crescita",
-    "hormones": "Ormoni e Fattori di Crescita",
-    "sarms": "SARMs",
-    "aromatase-inhibitors": "Inibitori dell'Aromatasi",
-    "serms": "SERMs / PCT",
-    "metabolic": "Modulatori Metabolici"
-  },
-  "categories": {
-    "all": "Tutti i prodotti",
-    "protein": "Proteine",
-    "creatine": "Creatina",
-    "amino-acids": "Aminoacidi",
-    "aas": "Steroidi Anabolizzanti Androgeni",
-    "peptides": "Peptidi & Ormoni della Crescita",
-    "modulators": "Modulatori Ormonali & Metabolici",
-    "aminoacids": "Aminoacidi",
-    "vitamins": "Vitamine e minerali",
-    "fatBurners": "Bruciagrassi",
-    "preworkout": "Pre-allenamento",
-    "joints": "Articolazioni e recupero",
-    "testosterone": "Supporto testosterone",
-    "sleep": "Sonno e recupero"
-  }
+﻿{
+    "nav":  {
+                "products":  "Prodotti",
+                "blog":  "Blog",
+                "about":  "Chi siamo",
+                "cart":  "Carrello",
+                "account":  "Account",
+                "admin":  "Admin"
+            },
+    "home":  {
+                 "hero":  {
+                              "badge":  "PharmaForce вЂ” QualitГ  Farmaceutica",
+                              "title":  "Potenzia le tue",
+                              "titleAccent":  "Prestazioni",
+                              "description":  "Integratori professionali, vitamine e farmacologia sportiva. Scelti dagli atleti di tutta Europa.",
+                              "cta":  "Acquista ora",
+                              "ctaSecondary":  "Scopri di piГ№",
+                              "deliveryLabel":  "Consegna in tutta Europa",
+                              "deliverySub":  "30+ paesi UE",
+                              "happyLabel":  "0 clienti insoddisfatti",
+                              "happySub":  "QualitГ  garantita"
+                          },
+                 "features":  {
+                                  "title":  "PerchГ© sceglierci",
+                                  "quality":  {
+                                                  "title":  "QualitГ  certificata",
+                                                  "desc":  "Tutti i prodotti sono testati in laboratorio e certificati per purezza e potenza."
+                                              },
+                                  "delivery":  {
+                                                   "title":  "Consegna rapida in UE",
+                                                   "desc":  "Spedizione in 30+ paesi europei in 3-7 giorni lavorativi."
+                                               },
+                                  "support":  {
+                                                  "title":  "Supporto esperto",
+                                                  "desc":  "I nostri esperti di nutrizione sportiva sono disponibili per aiutarti a scegliere i prodotti giusti."
+                                              },
+                                  "payment":  {
+                                                  "title":  "Pagamento sicuro",
+                                                  "desc":  "Paga tramite bonifico bancario con piena sicurezza e tracciamento dell\u0027ordine."
+                                              }
+                              },
+                 "bestsellers":  {
+                                     "title":  "PiГ№ venduti",
+                                     "subtitle":  "I prodotti piГ№ popolari tra i nostri clienti",
+                                     "viewAll":  "Vedi tutti i prodotti"
+                                 }
+             },
+    "products":  {
+                     "title":  "Tutti i prodotti",
+                     "filters":  {
+                                     "category":  "Categoria",
+                                     "price":  "Prezzo",
+                                     "brand":  "Marca",
+                                     "all":  "Tutti"
+                                 },
+                     "sort":  {
+                                  "label":  "Ordina per",
+                                  "popular":  "PiГ№ popolari",
+                                  "priceAsc":  "Prezzo: crescente",
+                                  "priceDesc":  "Prezzo: decrescente",
+                                  "newest":  "PiГ№ recenti"
+                              },
+                     "addToCart":  "Aggiungi al carrello",
+                     "inStock":  "Disponibile",
+                     "outOfStock":  "Esaurito",
+                     "perServing":  "per porzione"
+                 },
+    "product":  {
+                    "description":  "Descrizione",
+                    "composition":  "Composizione",
+                    "howToUse":  "Come usare",
+                    "reviews":  "Recensioni",
+                    "relatedProducts":  "Potrebbe piacerti anche",
+                    "quantity":  "QuantitГ ",
+                    "addToCart":  "Aggiungi al carrello",
+                    "inStock":  "Disponibile",
+                    "outOfStock":  "Esaurito",
+                    "sku":  "Codice"
+                },
+    "cart":  {
+                 "title":  "Il tuo carrello",
+                 "empty":  "Il carrello ГЁ vuoto",
+                 "emptyDesc":  "Aggiungi dei prodotti per iniziare.",
+                 "continueShopping":  "Continua gli acquisti",
+                 "subtotal":  "Subtotale",
+                 "shipping":  "Spedizione",
+                 "total":  "Totale",
+                 "checkout":  "Procedi al pagamento",
+                 "remove":  "Rimuovi",
+                 "calculated":  "Calcolato al checkout"
+             },
+    "checkout":  {
+                     "title":  "Checkout",
+                     "contact":  "Informazioni di contatto",
+                     "shipping":  "Indirizzo di spedizione",
+                     "firstName":  "Nome",
+                     "lastName":  "Cognome",
+                     "email":  "Email",
+                     "phone":  "Telefono",
+                     "country":  "Paese",
+                     "city":  "CittГ ",
+                     "address":  "Indirizzo",
+                     "zip":  "CAP / Codice postale",
+                     "notes":  "Note sull\u0027ordine (opzionale)",
+                     "payment":  "Metodo di pagamento",
+                     "bankTransfer":  "Bonifico bancario",
+                     "bankDesc":  "Dopo aver effettuato l\u0027ordine, riceverai i nostri dati bancari. L\u0027ordine sarГ  elaborato dopo la conferma del pagamento.",
+                     "placeOrder":  "Effettua l\u0027ordine",
+                     "orderSummary":  "Riepilogo ordine"
+                 },
+    "order":  {
+                  "confirmed":  "Ordine confermato!",
+                  "confirmedDesc":  "Grazie per il tuo ordine. Effettua il pagamento utilizzando i dati qui sotto.",
+                  "orderNumber":  "Numero ordine",
+                  "bankDetails":  "Dati bancari",
+                  "bankName":  "Banca",
+                  "iban":  "IBAN",
+                  "bic":  "BIC/SWIFT",
+                  "reference":  "Riferimento pagamento",
+                  "amount":  "Importo",
+                  "instructions":  "Includi il numero dell\u0027ordine come riferimento del pagamento. L\u0027ordine verrГ  spedito entro 1-2 giorni lavorativi dopo la conferma del pagamento.",
+                  "emailSent":  "Una email di conferma ГЁ stata inviata al tuo indirizzo email."
+              },
+    "account":  {
+                    "title":  "Il mio account",
+                    "orders":  "I miei ordini",
+                    "profile":  "Profilo",
+                    "logout":  "Esci",
+                    "login":  "Accedi",
+                    "register":  "Registrati",
+                    "email":  "Email",
+                    "password":  "Password",
+                    "noOrders":  "Nessun ordine"
+                },
+    "footer":  {
+                   "tagline":  "Prestazioni farmaceutiche per atleti seri.",
+                   "shop":  "Negozio",
+                   "company":  "Azienda",
+                   "about":  "Chi siamo",
+                   "contact":  "Contatti",
+                   "privacy":  "Privacy Policy",
+                   "terms":  "Termini di servizio",
+                   "allRights":  "Tutti i diritti riservati."
+               },
+    "payment":  {
+                    "awaitingTitle":  "In attesa del tuo pagamento",
+                    "awaitingBody":  "Stiamo aspettando il tuo bonifico bancario. Non appena la banca conferma la ricezione dei fondi, il tuo ordine verrГ  automaticamente contrassegnato come pagato e inizieremo immediatamente l\u0027elaborazione.",
+                    "awaitingNote":  "I bonifici bancari richiedono generalmente 1вЂ“2 giorni lavorativi. Riceverai una notifica via e-mail una volta confermato il pagamento.",
+                    "close":  "Ho capito"
+                },
+    "subcategories":  {
+                          "injections":  "Iniezioni",
+                          "tablets":  "Compresse / Capsule",
+                          "secretagogues":  "Stimolatori dell\u0027Ormone della Crescita",
+                          "hormones":  "Ormoni e Fattori di Crescita",
+                          "sarms":  "SARMs",
+                          "aromatase-inhibitors":  "Inibitori dell\u0027Aromatasi",
+                          "serms":  "SERMs / PCT",
+                          "metabolic":  "Modulatori Metabolici"
+                      },
+    "categories":  {
+                       "all":  "Tutti i prodotti",
+                       "protein":  "Proteine",
+                       "creatine":  "Creatina",
+                       "amino-acids":  "Aminoacidi",
+                       "aas":  "Steroidi Anabolizzanti Androgeni",
+                       "peptides":  "Peptidi \u0026 Ormoni della Crescita",
+                       "modulators":  "Modulatori Ormonali \u0026 Metabolici",
+                       "aminoacids":  "Aminoacidi",
+                       "vitamins":  "Vitamine e minerali",
+                       "fatBurners":  "Bruciagrassi",
+                       "preworkout":  "Pre-allenamento",
+                       "joints":  "Articolazioni e recupero",
+                       "testosterone":  "Supporto testosterone",
+                       "sleep":  "Sonno e recupero"
+                   }
 }

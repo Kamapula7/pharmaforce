@@ -1,173 +1,177 @@
-{
-  "nav": {
-    "products": "Produits",
-    "blog": "Blog",
-    "about": "À propos",
-    "cart": "Panier",
-    "account": "Compte",
-    "admin": "Admin"
-  },
-  "home": {
-    "hero": {
-      "badge": "PharmaForce — Qualité Pharmaceutique",
-      "title": "Boostez vos",
-      "titleAccent": "Performances",
-      "description": "Suppléments professionnels, vitamines et pharmacologie sportive. Approuvé par les athlètes à travers l'Europe.",
-      "cta": "Acheter maintenant",
-      "ctaSecondary": "En savoir plus"
-    },
-    "features": {
-      "title": "Pourquoi nous choisir?",
-      "quality": {
-        "title": "Qualité certifiée",
-        "desc": "Tous les produits sont testés en laboratoire et certifiés pour leur pureté et leur efficacité."
-      },
-      "delivery": {
-        "title": "Livraison UE rapide",
-        "desc": "Expédition vers 30+ pays européens en 3-7 jours ouvrables."
-      },
-      "support": {
-        "title": "Support expert",
-        "desc": "Nos experts en nutrition sportive sont disponibles pour vous aider à choisir les bons produits."
-      },
-      "payment": {
-        "title": "Paiement sécurisé",
-        "desc": "Paiement par virement bancaire avec sécurité totale et suivi de commande."
-      }
-    },
-    "bestsellers": {
-      "title": "Meilleures ventes",
-      "subtitle": "Produits les plus populaires parmi nos clients",
-      "viewAll": "Voir tous les produits"
-    }
-  },
-  "products": {
-    "title": "Tous les produits",
-    "filters": {
-      "category": "Catégorie",
-      "price": "Prix",
-      "brand": "Marque",
-      "all": "Tous"
-    },
-    "sort": {
-      "label": "Trier par",
-      "popular": "Plus populaires",
-      "priceAsc": "Prix: croissant",
-      "priceDesc": "Prix: décroissant",
-      "newest": "Plus récents"
-    },
-    "addToCart": "Ajouter au panier",
-    "inStock": "En stock",
-    "outOfStock": "Rupture de stock",
-    "perServing": "par portion"
-  },
-  "product": {
-    "description": "Description",
-    "composition": "Composition",
-    "howToUse": "Mode d'emploi",
-    "reviews": "Avis",
-    "relatedProducts": "Vous pourriez aimer",
-    "quantity": "Quantité",
-    "addToCart": "Ajouter au panier",
-    "inStock": "En stock",
-    "outOfStock": "Rupture de stock",
-    "sku": "Référence"
-  },
-  "cart": {
-    "title": "Votre panier",
-    "empty": "Votre panier est vide",
-    "emptyDesc": "Ajoutez des produits pour commencer.",
-    "continueShopping": "Continuer vos achats",
-    "subtotal": "Sous-total",
-    "shipping": "Livraison",
-    "total": "Total",
-    "checkout": "Passer à la caisse",
-    "remove": "Supprimer",
-    "calculated": "Calculé à la caisse"
-  },
-  "checkout": {
-    "title": "Caisse",
-    "contact": "Informations de contact",
-    "shipping": "Adresse de livraison",
-    "firstName": "Prénom",
-    "lastName": "Nom",
-    "email": "E-mail",
-    "phone": "Téléphone",
-    "country": "Pays",
-    "city": "Ville",
-    "address": "Adresse",
-    "zip": "Code postal",
-    "notes": "Notes de commande (facultatif)",
-    "payment": "Mode de paiement",
-    "bankTransfer": "Virement bancaire",
-    "bankDesc": "Après la commande, vous recevrez nos coordonnées bancaires. Votre commande sera traitée dès confirmation du paiement.",
-    "placeOrder": "Passer la commande",
-    "orderSummary": "Récapitulatif de commande"
-  },
-  "order": {
-    "confirmed": "Commande confirmée!",
-    "confirmedDesc": "Merci pour votre commande. Veuillez effectuer le virement en utilisant les coordonnées ci-dessous.",
-    "orderNumber": "Numéro de commande",
-    "bankDetails": "Coordonnées bancaires",
-    "bankName": "Banque",
-    "iban": "IBAN",
-    "bic": "BIC/SWIFT",
-    "reference": "Référence de paiement",
-    "amount": "Montant",
-    "instructions": "Veuillez inclure votre numéro de commande comme référence de paiement. Votre commande sera expédiée dans 1-2 jours ouvrables après confirmation du paiement.",
-    "emailSent": "Un e-mail de confirmation a été envoyé à votre adresse e-mail."
-  },
-  "account": {
-    "title": "Mon compte",
-    "orders": "Mes commandes",
-    "profile": "Profil",
-    "logout": "Déconnexion",
-    "login": "Connexion",
-    "register": "S'inscrire",
-    "email": "E-mail",
-    "password": "Mot de passe",
-    "noOrders": "Aucune commande"
-  },
-  "footer": {
-    "tagline": "Performance pharmaceutique pour athlètes sérieux.",
-    "shop": "Boutique",
-    "company": "Entreprise",
-    "about": "À propos",
-    "contact": "Contact",
-    "privacy": "Politique de confidentialité",
-    "terms": "Conditions générales",
-    "allRights": "Tous droits réservés."
-  },
-  "payment": {
-    "awaitingTitle": "En attente de votre paiement",
-    "awaitingBody": "Nous attendons votre virement bancaire. Dès que la banque confirme la réception des fonds, votre commande sera automatiquement marquée comme payée et nous commencerons immédiatement le traitement.",
-    "awaitingNote": "Les virements bancaires prennent généralement 1 à 2 jours ouvrables. Vous recevrez une notification par e-mail dès confirmation de votre paiement.",
-    "close": "Compris"
-  },
-  "subcategories": {
-    "injections": "Injections",
-    "tablets": "Comprimés / Gélules",
-    "secretagogues": "Stimulateurs d'Hormone de Croissance",
-    "hormones": "Hormones et Facteurs de Croissance",
-    "sarms": "SARMs",
-    "aromatase-inhibitors": "Inhibiteurs d'Aromatase",
-    "serms": "SERMs / PCT",
-    "metabolic": "Modulateurs Métaboliques"
-  },
-  "categories": {
-    "all": "Tous les produits",
-    "protein": "Protéines",
-    "creatine": "Créatine",
-    "amino-acids": "Acides aminés",
-    "aas": "Stéroïdes Anabolisants Androgènes",
-    "peptides": "Peptides & Hormones de croissance",
-    "modulators": "Modulateurs Hormonaux & Métaboliques",
-    "aminoacids": "Acides aminés",
-    "vitamins": "Vitamines et minéraux",
-    "fatBurners": "Brûleurs de graisses",
-    "preworkout": "Pré-entraînement",
-    "joints": "Articulations et récupération",
-    "testosterone": "Support testostérone",
-    "sleep": "Sommeil et récupération"
-  }
+﻿{
+    "nav":  {
+                "products":  "Produits",
+                "blog":  "Blog",
+                "about":  "ГЂ propos",
+                "cart":  "Panier",
+                "account":  "Compte",
+                "admin":  "Admin"
+            },
+    "home":  {
+                 "hero":  {
+                              "badge":  "PharmaForce вЂ” QualitГ© Pharmaceutique",
+                              "title":  "Boostez vos",
+                              "titleAccent":  "Performances",
+                              "description":  "SupplГ©ments professionnels, vitamines et pharmacologie sportive. ApprouvГ© par les athlГЁtes Г  travers l\u0027Europe.",
+                              "cta":  "Acheter maintenant",
+                              "ctaSecondary":  "En savoir plus",
+                              "deliveryLabel":  "Livraison dans toute l\u0027Europe",
+                              "deliverySub":  "30+ pays de l\u0027UE",
+                              "happyLabel":  "0 clients insatisfaits",
+                              "happySub":  "QualitГ© garantie"
+                          },
+                 "features":  {
+                                  "title":  "Pourquoi nous choisir?",
+                                  "quality":  {
+                                                  "title":  "QualitГ© certifiГ©e",
+                                                  "desc":  "Tous les produits sont testГ©s en laboratoire et certifiГ©s pour leur puretГ© et leur efficacitГ©."
+                                              },
+                                  "delivery":  {
+                                                   "title":  "Livraison UE rapide",
+                                                   "desc":  "ExpГ©dition vers 30+ pays europГ©ens en 3-7 jours ouvrables."
+                                               },
+                                  "support":  {
+                                                  "title":  "Support expert",
+                                                  "desc":  "Nos experts en nutrition sportive sont disponibles pour vous aider Г  choisir les bons produits."
+                                              },
+                                  "payment":  {
+                                                  "title":  "Paiement sГ©curisГ©",
+                                                  "desc":  "Paiement par virement bancaire avec sГ©curitГ© totale et suivi de commande."
+                                              }
+                              },
+                 "bestsellers":  {
+                                     "title":  "Meilleures ventes",
+                                     "subtitle":  "Produits les plus populaires parmi nos clients",
+                                     "viewAll":  "Voir tous les produits"
+                                 }
+             },
+    "products":  {
+                     "title":  "Tous les produits",
+                     "filters":  {
+                                     "category":  "CatГ©gorie",
+                                     "price":  "Prix",
+                                     "brand":  "Marque",
+                                     "all":  "Tous"
+                                 },
+                     "sort":  {
+                                  "label":  "Trier par",
+                                  "popular":  "Plus populaires",
+                                  "priceAsc":  "Prix: croissant",
+                                  "priceDesc":  "Prix: dГ©croissant",
+                                  "newest":  "Plus rГ©cents"
+                              },
+                     "addToCart":  "Ajouter au panier",
+                     "inStock":  "En stock",
+                     "outOfStock":  "Rupture de stock",
+                     "perServing":  "par portion"
+                 },
+    "product":  {
+                    "description":  "Description",
+                    "composition":  "Composition",
+                    "howToUse":  "Mode d\u0027emploi",
+                    "reviews":  "Avis",
+                    "relatedProducts":  "Vous pourriez aimer",
+                    "quantity":  "QuantitГ©",
+                    "addToCart":  "Ajouter au panier",
+                    "inStock":  "En stock",
+                    "outOfStock":  "Rupture de stock",
+                    "sku":  "RГ©fГ©rence"
+                },
+    "cart":  {
+                 "title":  "Votre panier",
+                 "empty":  "Votre panier est vide",
+                 "emptyDesc":  "Ajoutez des produits pour commencer.",
+                 "continueShopping":  "Continuer vos achats",
+                 "subtotal":  "Sous-total",
+                 "shipping":  "Livraison",
+                 "total":  "Total",
+                 "checkout":  "Passer Г  la caisse",
+                 "remove":  "Supprimer",
+                 "calculated":  "CalculГ© Г  la caisse"
+             },
+    "checkout":  {
+                     "title":  "Caisse",
+                     "contact":  "Informations de contact",
+                     "shipping":  "Adresse de livraison",
+                     "firstName":  "PrГ©nom",
+                     "lastName":  "Nom",
+                     "email":  "E-mail",
+                     "phone":  "TГ©lГ©phone",
+                     "country":  "Pays",
+                     "city":  "Ville",
+                     "address":  "Adresse",
+                     "zip":  "Code postal",
+                     "notes":  "Notes de commande (facultatif)",
+                     "payment":  "Mode de paiement",
+                     "bankTransfer":  "Virement bancaire",
+                     "bankDesc":  "AprГЁs la commande, vous recevrez nos coordonnГ©es bancaires. Votre commande sera traitГ©e dГЁs confirmation du paiement.",
+                     "placeOrder":  "Passer la commande",
+                     "orderSummary":  "RГ©capitulatif de commande"
+                 },
+    "order":  {
+                  "confirmed":  "Commande confirmГ©e!",
+                  "confirmedDesc":  "Merci pour votre commande. Veuillez effectuer le virement en utilisant les coordonnГ©es ci-dessous.",
+                  "orderNumber":  "NumГ©ro de commande",
+                  "bankDetails":  "CoordonnГ©es bancaires",
+                  "bankName":  "Banque",
+                  "iban":  "IBAN",
+                  "bic":  "BIC/SWIFT",
+                  "reference":  "RГ©fГ©rence de paiement",
+                  "amount":  "Montant",
+                  "instructions":  "Veuillez inclure votre numГ©ro de commande comme rГ©fГ©rence de paiement. Votre commande sera expГ©diГ©e dans 1-2 jours ouvrables aprГЁs confirmation du paiement.",
+                  "emailSent":  "Un e-mail de confirmation a Г©tГ© envoyГ© Г  votre adresse e-mail."
+              },
+    "account":  {
+                    "title":  "Mon compte",
+                    "orders":  "Mes commandes",
+                    "profile":  "Profil",
+                    "logout":  "DГ©connexion",
+                    "login":  "Connexion",
+                    "register":  "S\u0027inscrire",
+                    "email":  "E-mail",
+                    "password":  "Mot de passe",
+                    "noOrders":  "Aucune commande"
+                },
+    "footer":  {
+                   "tagline":  "Performance pharmaceutique pour athlГЁtes sГ©rieux.",
+                   "shop":  "Boutique",
+                   "company":  "Entreprise",
+                   "about":  "ГЂ propos",
+                   "contact":  "Contact",
+                   "privacy":  "Politique de confidentialitГ©",
+                   "terms":  "Conditions gГ©nГ©rales",
+                   "allRights":  "Tous droits rГ©servГ©s."
+               },
+    "payment":  {
+                    "awaitingTitle":  "En attente de votre paiement",
+                    "awaitingBody":  "Nous attendons votre virement bancaire. DГЁs que la banque confirme la rГ©ception des fonds, votre commande sera automatiquement marquГ©e comme payГ©e et nous commencerons immГ©diatement le traitement.",
+                    "awaitingNote":  "Les virements bancaires prennent gГ©nГ©ralement 1 Г  2 jours ouvrables. Vous recevrez une notification par e-mail dГЁs confirmation de votre paiement.",
+                    "close":  "Compris"
+                },
+    "subcategories":  {
+                          "injections":  "Injections",
+                          "tablets":  "ComprimГ©s / GГ©lules",
+                          "secretagogues":  "Stimulateurs d\u0027Hormone de Croissance",
+                          "hormones":  "Hormones et Facteurs de Croissance",
+                          "sarms":  "SARMs",
+                          "aromatase-inhibitors":  "Inhibiteurs d\u0027Aromatase",
+                          "serms":  "SERMs / PCT",
+                          "metabolic":  "Modulateurs MГ©taboliques"
+                      },
+    "categories":  {
+                       "all":  "Tous les produits",
+                       "protein":  "ProtГ©ines",
+                       "creatine":  "CrГ©atine",
+                       "amino-acids":  "Acides aminГ©s",
+                       "aas":  "StГ©roГЇdes Anabolisants AndrogГЁnes",
+                       "peptides":  "Peptides \u0026 Hormones de croissance",
+                       "modulators":  "Modulateurs Hormonaux \u0026 MГ©taboliques",
+                       "aminoacids":  "Acides aminГ©s",
+                       "vitamins":  "Vitamines et minГ©raux",
+                       "fatBurners":  "BrГ»leurs de graisses",
+                       "preworkout":  "PrГ©-entraГ®nement",
+                       "joints":  "Articulations et rГ©cupГ©ration",
+                       "testosterone":  "Support testostГ©rone",
+                       "sleep":  "Sommeil et rГ©cupГ©ration"
+                   }
 }

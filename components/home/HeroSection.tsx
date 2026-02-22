@@ -92,15 +92,15 @@ export default function HeroSection({ locale }: HeroSectionProps) {
               <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5">
                 <span className="text-lg">🚚</span>
                 <div>
-                  <p className="text-white text-xs font-bold">Delivery across Europe</p>
-                  <p className="text-white/50 text-[11px]">30+ EU countries</p>
+                  <p className="text-white text-xs font-bold">{t('deliveryLabel')}</p>
+                  <p className="text-white/50 text-[11px]">{t('deliverySub')}</p>
                 </div>
               </div>
               <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5">
                 <span className="text-lg">😊</span>
                 <div>
-                  <p className="text-white text-xs font-bold">0 unhappy clients</p>
-                  <p className="text-white/50 text-[11px]">Quality guaranteed</p>
+                  <p className="text-white text-xs font-bold">{t('happyLabel')}</p>
+                  <p className="text-white/50 text-[11px]">{t('happySub')}</p>
                 </div>
               </div>
             </div>

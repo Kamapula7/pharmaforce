@@ -1,173 +1,177 @@
-{
-  "nav": {
-    "products": "Produkty",
-    "blog": "Blog",
-    "about": "O nas",
-    "cart": "Koszyk",
-    "account": "Konto",
-    "admin": "Admin"
-  },
-  "home": {
-    "hero": {
-      "badge": "PharmaForce — Jakość Farmaceutyczna",
-      "title": "Zwiększ swoją",
-      "titleAccent": "Wydajność",
-      "description": "Profesjonalne suplementy, witaminy i farmakologia sportowa. Zaufany przez sportowców w całej Europie.",
-      "cta": "Kup teraz",
-      "ctaSecondary": "Dowiedz się więcej"
-    },
-    "features": {
-      "title": "Dlaczego my?",
-      "quality": {
-        "title": "Certyfikowana Jakość",
-        "desc": "Wszystkie produkty są testowane laboratoryjnie i certyfikowane pod kątem czystości i skuteczności."
-      },
-      "delivery": {
-        "title": "Szybka dostawa UE",
-        "desc": "Wysyłka do 30+ krajów europejskich w ciągu 3-7 dni roboczych."
-      },
-      "support": {
-        "title": "Wsparcie ekspertów",
-        "desc": "Nasi eksperci ds. żywienia sportowego pomogą Ci wybrać odpowiednie produkty."
-      },
-      "payment": {
-        "title": "Bezpieczna płatność",
-        "desc": "Płatność przelewem bankowym z pełnym bezpieczeństwem i śledzeniem zamówienia."
-      }
-    },
-    "bestsellers": {
-      "title": "Bestsellery",
-      "subtitle": "Najpopularniejsze produkty wśród naszych klientów",
-      "viewAll": "Zobacz wszystkie produkty"
-    }
-  },
-  "products": {
-    "title": "Wszystkie produkty",
-    "filters": {
-      "category": "Kategoria",
-      "price": "Cena",
-      "brand": "Marka",
-      "all": "Wszystkie"
-    },
-    "sort": {
-      "label": "Sortuj według",
-      "popular": "Najpopularniejsze",
-      "priceAsc": "Cena: rosnąco",
-      "priceDesc": "Cena: malejąco",
-      "newest": "Najnowsze"
-    },
-    "addToCart": "Dodaj do koszyka",
-    "inStock": "W magazynie",
-    "outOfStock": "Brak w magazynie",
-    "perServing": "za porcję"
-  },
-  "product": {
-    "description": "Opis",
-    "composition": "Skład",
-    "howToUse": "Sposób użycia",
-    "reviews": "Opinie",
-    "relatedProducts": "Może Ci się spodobać",
-    "quantity": "Ilość",
-    "addToCart": "Dodaj do koszyka",
-    "inStock": "W magazynie",
-    "outOfStock": "Brak w magazynie",
-    "sku": "SKU"
-  },
-  "cart": {
-    "title": "Twój koszyk",
-    "empty": "Twój koszyk jest pusty",
-    "emptyDesc": "Dodaj produkty, aby zacząć.",
-    "continueShopping": "Kontynuuj zakupy",
-    "subtotal": "Suma częściowa",
-    "shipping": "Wysyłka",
-    "total": "Łącznie",
-    "checkout": "Przejdź do kasy",
-    "remove": "Usuń",
-    "calculated": "Obliczone przy kasie"
-  },
-  "checkout": {
-    "title": "Kasa",
-    "contact": "Dane kontaktowe",
-    "shipping": "Adres dostawy",
-    "firstName": "Imię",
-    "lastName": "Nazwisko",
-    "email": "E-mail",
-    "phone": "Telefon",
-    "country": "Kraj",
-    "city": "Miasto",
-    "address": "Adres",
-    "zip": "Kod pocztowy",
-    "notes": "Uwagi do zamówienia (opcjonalne)",
-    "payment": "Metoda płatności",
-    "bankTransfer": "Przelew bankowy",
-    "bankDesc": "Po złożeniu zamówienia otrzymasz nasze dane bankowe. Zamówienie zostanie zrealizowane po potwierdzeniu płatności.",
-    "placeOrder": "Złóż zamówienie",
-    "orderSummary": "Podsumowanie zamówienia"
-  },
-  "order": {
-    "confirmed": "Zamówienie potwierdzone!",
-    "confirmedDesc": "Dziękujemy za zamówienie. Proszę dokonać przelewu korzystając z poniższych danych.",
-    "orderNumber": "Numer zamówienia",
-    "bankDetails": "Dane do przelewu",
-    "bankName": "Bank",
-    "iban": "IBAN",
-    "bic": "BIC/SWIFT",
-    "reference": "Tytuł przelewu",
-    "amount": "Kwota",
-    "instructions": "Proszę podać numer zamówienia jako tytuł przelewu. Zamówienie zostanie wysłane w ciągu 1-2 dni roboczych po potwierdzeniu płatności.",
-    "emailSent": "E-mail z potwierdzeniem został wysłany na Twój adres e-mail."
-  },
-  "account": {
-    "title": "Moje konto",
-    "orders": "Moje zamówienia",
-    "profile": "Profil",
-    "logout": "Wyloguj",
-    "login": "Zaloguj",
-    "register": "Zarejestruj się",
-    "email": "E-mail",
-    "password": "Hasło",
-    "noOrders": "Brak zamówień"
-  },
-  "footer": {
-    "tagline": "Farmaceutyczna wydajność dla poważnych sportowców.",
-    "shop": "Sklep",
-    "company": "Firma",
-    "about": "O nas",
-    "contact": "Kontakt",
-    "privacy": "Polityka prywatności",
-    "terms": "Regulamin",
-    "allRights": "Wszelkie prawa zastrzeżone."
-  },
-  "payment": {
-    "awaitingTitle": "Oczekujemy na Twoją płatność",
-    "awaitingBody": "Czekamy na Twój przelew bankowy. Gdy bank potwierdzi otrzymanie środków, Twoje zamówienie zostanie automatycznie oznaczone jako opłacone i natychmiast przystąpimy do jego realizacji.",
-    "awaitingNote": "Przelewy bankowe zazwyczaj trwają 1–2 dni robocze. Otrzymasz powiadomienie e-mail po potwierdzeniu płatności.",
-    "close": "Rozumiem"
-  },
-  "subcategories": {
-    "injections": "Iniekcje",
-    "tablets": "Tabletki / Kapsułki",
-    "secretagogues": "Stymulanty Hormonu Wzrostu",
-    "hormones": "Hormony i Czynniki Wzrostu",
-    "sarms": "SARMs",
-    "aromatase-inhibitors": "Inhibitory Aromatazy",
-    "serms": "SERMs / PCT",
-    "metabolic": "Modulatory Metaboliczne"
-  },
-  "categories": {
-    "all": "Wszystkie produkty",
-    "protein": "Białko",
-    "creatine": "Kreatyna",
-    "amino-acids": "Aminokwasy",
-    "aas": "Anaboliczne Steroidy Androgenne",
-    "peptides": "Peptydy i Hormony Wzrostu",
-    "modulators": "Modulatory Hormonalne i Metaboliczne",
-    "aminoacids": "Aminokwasy",
-    "vitamins": "Witaminy i minerały",
-    "fatBurners": "Spalacze tłuszczu",
-    "preworkout": "Pre-workout",
-    "joints": "Stawy i regeneracja",
-    "testosterone": "Wsparcie testosteronu",
-    "sleep": "Sen i regeneracja"
-  }
+﻿{
+    "nav":  {
+                "products":  "Produkty",
+                "blog":  "Blog",
+                "about":  "O nas",
+                "cart":  "Koszyk",
+                "account":  "Konto",
+                "admin":  "Admin"
+            },
+    "home":  {
+                 "hero":  {
+                              "badge":  "PharmaForce вЂ” JakoЕ›Д‡ Farmaceutyczna",
+                              "title":  "ZwiД™ksz swojД…",
+                              "titleAccent":  "WydajnoЕ›Д‡",
+                              "description":  "Profesjonalne suplementy, witaminy i farmakologia sportowa. Zaufany przez sportowcГіw w caЕ‚ej Europie.",
+                              "cta":  "Kup teraz",
+                              "ctaSecondary":  "Dowiedz siД™ wiД™cej",
+                              "deliveryLabel":  "Dostawa w caЕ‚ej Europie",
+                              "deliverySub":  "30+ krajГіw UE",
+                              "happyLabel":  "0 niezadowolonych klientГіw",
+                              "happySub":  "JakoЕ›Д‡ gwarantowana"
+                          },
+                 "features":  {
+                                  "title":  "Dlaczego my?",
+                                  "quality":  {
+                                                  "title":  "Certyfikowana JakoЕ›Д‡",
+                                                  "desc":  "Wszystkie produkty sД… testowane laboratoryjnie i certyfikowane pod kД…tem czystoЕ›ci i skutecznoЕ›ci."
+                                              },
+                                  "delivery":  {
+                                                   "title":  "Szybka dostawa UE",
+                                                   "desc":  "WysyЕ‚ka do 30+ krajГіw europejskich w ciД…gu 3-7 dni roboczych."
+                                               },
+                                  "support":  {
+                                                  "title":  "Wsparcie ekspertГіw",
+                                                  "desc":  "Nasi eksperci ds. Ејywienia sportowego pomogД… Ci wybraД‡ odpowiednie produkty."
+                                              },
+                                  "payment":  {
+                                                  "title":  "Bezpieczna pЕ‚atnoЕ›Д‡",
+                                                  "desc":  "PЕ‚atnoЕ›Д‡ przelewem bankowym z peЕ‚nym bezpieczeЕ„stwem i Е›ledzeniem zamГіwienia."
+                                              }
+                              },
+                 "bestsellers":  {
+                                     "title":  "Bestsellery",
+                                     "subtitle":  "Najpopularniejsze produkty wЕ›rГіd naszych klientГіw",
+                                     "viewAll":  "Zobacz wszystkie produkty"
+                                 }
+             },
+    "products":  {
+                     "title":  "Wszystkie produkty",
+                     "filters":  {
+                                     "category":  "Kategoria",
+                                     "price":  "Cena",
+                                     "brand":  "Marka",
+                                     "all":  "Wszystkie"
+                                 },
+                     "sort":  {
+                                  "label":  "Sortuj wedЕ‚ug",
+                                  "popular":  "Najpopularniejsze",
+                                  "priceAsc":  "Cena: rosnД…co",
+                                  "priceDesc":  "Cena: malejД…co",
+                                  "newest":  "Najnowsze"
+                              },
+                     "addToCart":  "Dodaj do koszyka",
+                     "inStock":  "W magazynie",
+                     "outOfStock":  "Brak w magazynie",
+                     "perServing":  "za porcjД™"
+                 },
+    "product":  {
+                    "description":  "Opis",
+                    "composition":  "SkЕ‚ad",
+                    "howToUse":  "SposГіb uЕјycia",
+                    "reviews":  "Opinie",
+                    "relatedProducts":  "MoЕјe Ci siД™ spodobaД‡",
+                    "quantity":  "IloЕ›Д‡",
+                    "addToCart":  "Dodaj do koszyka",
+                    "inStock":  "W magazynie",
+                    "outOfStock":  "Brak w magazynie",
+                    "sku":  "SKU"
+                },
+    "cart":  {
+                 "title":  "TwГіj koszyk",
+                 "empty":  "TwГіj koszyk jest pusty",
+                 "emptyDesc":  "Dodaj produkty, aby zaczД…Д‡.",
+                 "continueShopping":  "Kontynuuj zakupy",
+                 "subtotal":  "Suma czД™Е›ciowa",
+                 "shipping":  "WysyЕ‚ka",
+                 "total":  "ЕЃД…cznie",
+                 "checkout":  "PrzejdЕє do kasy",
+                 "remove":  "UsuЕ„",
+                 "calculated":  "Obliczone przy kasie"
+             },
+    "checkout":  {
+                     "title":  "Kasa",
+                     "contact":  "Dane kontaktowe",
+                     "shipping":  "Adres dostawy",
+                     "firstName":  "ImiД™",
+                     "lastName":  "Nazwisko",
+                     "email":  "E-mail",
+                     "phone":  "Telefon",
+                     "country":  "Kraj",
+                     "city":  "Miasto",
+                     "address":  "Adres",
+                     "zip":  "Kod pocztowy",
+                     "notes":  "Uwagi do zamГіwienia (opcjonalne)",
+                     "payment":  "Metoda pЕ‚atnoЕ›ci",
+                     "bankTransfer":  "Przelew bankowy",
+                     "bankDesc":  "Po zЕ‚oЕјeniu zamГіwienia otrzymasz nasze dane bankowe. ZamГіwienie zostanie zrealizowane po potwierdzeniu pЕ‚atnoЕ›ci.",
+                     "placeOrder":  "ZЕ‚ГіЕј zamГіwienie",
+                     "orderSummary":  "Podsumowanie zamГіwienia"
+                 },
+    "order":  {
+                  "confirmed":  "ZamГіwienie potwierdzone!",
+                  "confirmedDesc":  "DziД™kujemy za zamГіwienie. ProszД™ dokonaД‡ przelewu korzystajД…c z poniЕјszych danych.",
+                  "orderNumber":  "Numer zamГіwienia",
+                  "bankDetails":  "Dane do przelewu",
+                  "bankName":  "Bank",
+                  "iban":  "IBAN",
+                  "bic":  "BIC/SWIFT",
+                  "reference":  "TytuЕ‚ przelewu",
+                  "amount":  "Kwota",
+                  "instructions":  "ProszД™ podaД‡ numer zamГіwienia jako tytuЕ‚ przelewu. ZamГіwienie zostanie wysЕ‚ane w ciД…gu 1-2 dni roboczych po potwierdzeniu pЕ‚atnoЕ›ci.",
+                  "emailSent":  "E-mail z potwierdzeniem zostaЕ‚ wysЕ‚any na TwГіj adres e-mail."
+              },
+    "account":  {
+                    "title":  "Moje konto",
+                    "orders":  "Moje zamГіwienia",
+                    "profile":  "Profil",
+                    "logout":  "Wyloguj",
+                    "login":  "Zaloguj",
+                    "register":  "Zarejestruj siД™",
+                    "email":  "E-mail",
+                    "password":  "HasЕ‚o",
+                    "noOrders":  "Brak zamГіwieЕ„"
+                },
+    "footer":  {
+                   "tagline":  "Farmaceutyczna wydajnoЕ›Д‡ dla powaЕјnych sportowcГіw.",
+                   "shop":  "Sklep",
+                   "company":  "Firma",
+                   "about":  "O nas",
+                   "contact":  "Kontakt",
+                   "privacy":  "Polityka prywatnoЕ›ci",
+                   "terms":  "Regulamin",
+                   "allRights":  "Wszelkie prawa zastrzeЕјone."
+               },
+    "payment":  {
+                    "awaitingTitle":  "Oczekujemy na TwojД… pЕ‚atnoЕ›Д‡",
+                    "awaitingBody":  "Czekamy na TwГіj przelew bankowy. Gdy bank potwierdzi otrzymanie Е›rodkГіw, Twoje zamГіwienie zostanie automatycznie oznaczone jako opЕ‚acone i natychmiast przystД…pimy do jego realizacji.",
+                    "awaitingNote":  "Przelewy bankowe zazwyczaj trwajД… 1вЂ“2 dni robocze. Otrzymasz powiadomienie e-mail po potwierdzeniu pЕ‚atnoЕ›ci.",
+                    "close":  "Rozumiem"
+                },
+    "subcategories":  {
+                          "injections":  "Iniekcje",
+                          "tablets":  "Tabletki / KapsuЕ‚ki",
+                          "secretagogues":  "Stymulanty Hormonu Wzrostu",
+                          "hormones":  "Hormony i Czynniki Wzrostu",
+                          "sarms":  "SARMs",
+                          "aromatase-inhibitors":  "Inhibitory Aromatazy",
+                          "serms":  "SERMs / PCT",
+                          "metabolic":  "Modulatory Metaboliczne"
+                      },
+    "categories":  {
+                       "all":  "Wszystkie produkty",
+                       "protein":  "BiaЕ‚ko",
+                       "creatine":  "Kreatyna",
+                       "amino-acids":  "Aminokwasy",
+                       "aas":  "Anaboliczne Steroidy Androgenne",
+                       "peptides":  "Peptydy i Hormony Wzrostu",
+                       "modulators":  "Modulatory Hormonalne i Metaboliczne",
+                       "aminoacids":  "Aminokwasy",
+                       "vitamins":  "Witaminy i mineraЕ‚y",
+                       "fatBurners":  "Spalacze tЕ‚uszczu",
+                       "preworkout":  "Pre-workout",
+                       "joints":  "Stawy i regeneracja",
+                       "testosterone":  "Wsparcie testosteronu",
+                       "sleep":  "Sen i regeneracja"
+                   }
 }
