@@ -157,10 +157,11 @@
                           "aromatase-inhibitors":  "Inhibiteurs d\u0027Aromatase",
                           "serms":  "SERMs / PCT",
                           "metabolic":  "Modulateurs MГ©taboliques",
-                          "weight-loss":  "Medicaments amaigrissants",
-                          "hormone-therapy":  "Therapie hormonale",
                           "hair-removal":  "Epilation",
-                          "skin-health":  "Sante de la peau \u0026 Anti-acne",
+                          "weight-loss":  "Perte de poids",
+                          "hormone-therapy":  "Therapie hormonale",
+                          "anti-hirsutism":  "Anti-hirsutisme",
+                          "skin-health":  "Sante de la peau",
                           "hair-growth":  "Croissance des cheveux"
                       },
     "categories":  {

@@ -34,11 +34,11 @@ const MODULATORS_SUBS = [
 ];
 
 const WOMENS_SUBS = [
-  { key: 'weight-loss',     label: 'Weight Loss Medications' },
-  { key: 'hormone-therapy', label: 'Hormone Therapy' },
-  { key: 'hair-growth',     label: 'Hair Growth & Anti-Hair Loss' },
-  { key: 'hair-removal',    label: 'Hair Removal Medications' },
-  { key: 'skin-health',     label: 'Skin Health & Anti-Acne' },
+  { key: 'weight-loss',      label: 'Weight Loss' },
+  { key: 'hair-growth',      label: 'Hair Growth' },
+  { key: 'anti-hirsutism',   label: 'Anti-Hirsutism' },
+  { key: 'skin-health',      label: 'Skin Health' },
+  { key: 'hormone-therapy',  label: 'Hormone Therapy' },
 ];
 
 
