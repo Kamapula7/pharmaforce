@@ -33,13 +33,7 @@ const MODULATORS_SUBS = [
   { key: 'metabolic',              label: 'Metabolic Modulators' },
 ];
 
-const WOMENS_SUBS = [
-  { key: 'weight-loss',      label: 'Weight Loss' },
-  { key: 'hair-growth',      label: 'Hair Growth' },
-  { key: 'anti-hirsutism',   label: 'Anti-Hirsutism' },
-  { key: 'skin-health',      label: 'Skin Health' },
-  { key: 'hormone-therapy',  label: 'Hormone Therapy' },
-];
+const WOMENS_SUBS: { key: string; label: string }[] = [];
 
 
 export default async function ProductsPage({ params, searchParams }: ProductsPageProps) {
