@@ -226,7 +226,7 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
                               className={`flex items-center justify-between px-3 py-1.5 rounded-lg text-xs transition-colors ${subActive ? 'bg-brand/20 text-brand font-semibold' : 'text-muted hover:text-white hover:bg-surface-2'}`}
                             >
                               <span>{tSub(sk as Parameters<typeof tSub>[0])}</span>
-                              <span className={`text-[10px] ${subActive ? 'text-brand' : 'text-muted/50'}`}>{subCount(sk, "women's health")}</span>
+                              <span className={`text-[10px] ${subActive ? 'text-brand' : 'text-muted/50'}`}>{subCount(sk, 'womens health')}</span>
                             </Link>
                           );
                         })}
