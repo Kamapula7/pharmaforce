@@ -155,6 +155,7 @@ export const PRODUCTS: Product[] = [
   { id: 'mod12', slug: 'cardarine-gw501516-10mg-60caps',  name: 'Cardarine (GW-501516) 10mg — 60 Capsules',      brand: 'Biowell Labs',         category: 'Modulators', subcategory: 'metabolic', price: 41.99, weight: '60 caps', rating: 4.7, reviews: 143, inStock: true, image: '/products/cardarine-gw501516-main.png', gallery: ['/products/cardarine-gw501516-main.png'], description: 'Cardarine (GW-501516) is a PPARδ agonist that dramatically improves endurance and fat oxidation. Often called "exercise in a pill". Promotes fatty acid burning without muscle catabolism. Dose: 10–20 mg/day for up to 8 weeks.' },
   { id: 'mod13', slug: 'sr9009-stenabolic-10mg-60caps',   name: 'SR-9009 (Stenabolic) 10mg — 60 Capsules',       brand: 'Biowell Labs',         category: 'Modulators', subcategory: 'metabolic', price: 44.99, weight: '60 caps', rating: 4.6, reviews: 91,  inStock: true, image: '/products/sr9009-stenabolic-main.png', gallery: ['/products/sr9009-stenabolic-main.png'], description: 'SR-9009 (Stenabolic) is a Rev-Erbα agonist that regulates circadian rhythm, metabolism, and mitochondrial biogenesis. Enhances endurance, reduces fat storage, and improves recovery. Dose: 20–30 mg/day in divided doses.' },
 
+
 ];
 
 export const CATEGORIES_NAV = [

@@ -33,6 +33,7 @@ const MODULATORS_SUBS = [
   { key: 'metabolic',              label: 'Metabolic Modulators' },
 ];
 
+
 export default async function ProductsPage({ params, searchParams }: ProductsPageProps) {
   const { locale } = await params;
   const { category, sub, brand, sort } = await searchParams;
@@ -226,6 +227,7 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
                         })}
                       </div>
                     )}
+
                   </div>
                 );
               })}
@@ -313,6 +315,9 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
                   className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${sub === sk ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
                 >{tSub(sk as Parameters<typeof tSub>[0])}</Link>
               ))}
+            </div>
+          )}
+
             </div>
           )}
 
