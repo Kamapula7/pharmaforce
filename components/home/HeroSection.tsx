@@ -82,13 +82,28 @@ export default function HeroSection({ locale }: HeroSectionProps) {
               <div className="flex items-center gap-5 text-sm text-white/60">
                 <span className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-success" />
-                  30+ EU countries
-                </span>
-                <span className="flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-success" />
                   Lab certified
                 </span>
               </div>
+            </div>
+
+            {/* Stats strip */}
+            <div className="flex flex-wrap gap-3 mt-6">
+              <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5">
+                <span className="text-lg">🚚</span>
+                <div>
+                  <p className="text-white text-xs font-bold">Доставка по всей Европе</p>
+                  <p className="text-white/50 text-[11px]">30+ стран ЕС</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5">
+                <span className="text-lg">😊</span>
+                <div>
+                  <p className="text-white text-xs font-bold">0 недовольных клиентов</p>
+                  <p className="text-white/50 text-[11px]">Гарантия качества</p>
+                </div>
+              </div>
+            </div>
             </div>
           </div>
 
