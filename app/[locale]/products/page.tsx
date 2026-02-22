@@ -414,5 +414,6 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
         </div>
       </div>
     </div>
+    </div>
   );
 }
