@@ -49,8 +49,10 @@ export default function CheckoutClient({ locale }: { locale: string }) {
   const [err1, setErr1] = useState<Record<string,string>>({});
   const [err2, setErr2] = useState<Record<string,string>>({});
 
-  const shipping  = totalPrice() >= 80 ? 0 : 9.99;
-  const total     = totalPrice() + shipping;
+  const bulkDiscount = totalPrice() >= 200 ? totalPrice() * 0.15 : 0;
+  const afterDiscount = totalPrice() - bulkDiscount;
+  const shipping  = afterDiscount >= 150 ? 0 : 34.99;
+  const total     = afterDiscount + shipping;
   const orderRef  = `PF-${Date.now().toString().slice(-8)}`;
 
   const copy = (text: string, key: string) => {
@@ -391,6 +393,12 @@ export default function CheckoutClient({ locale }: { locale: string }) {
                 <span className="text-muted">Subtotal</span>
                 <span className="text-white">{formatPrice(totalPrice())}</span>
               </div>
+              {bulkDiscount > 0 && (
+                <div className="flex justify-between text-sm">
+                  <span className="text-brand">🎉 15% bulk discount</span>
+                  <span className="text-brand font-semibold">−{formatPrice(bulkDiscount)}</span>
+                </div>
+              )}
               <div className="flex justify-between text-sm">
                 <span className="text-muted">Shipping</span>
                 <span className={shipping === 0 ? 'text-success font-medium' : 'text-white'}>
@@ -403,9 +411,14 @@ export default function CheckoutClient({ locale }: { locale: string }) {
               </div>
             </div>
 
+            {shipping === 0 && (
+              <p className="text-xs text-success bg-success/10 border border-success/20 rounded-lg p-2 text-center">
+                ✓ Free shipping on your order!
+              </p>
+            )}
             {shipping > 0 && (
               <p className="text-xs text-muted bg-surface-2 rounded-lg p-2 mt-3 text-center">
-                Add {formatPrice(80 - totalPrice())} more for free shipping
+                Add {formatPrice(150 - totalPrice())} more for free shipping
               </p>
             )}
           </div>

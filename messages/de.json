@@ -1,184 +1,221 @@
 {
-    "nav":  {
-                "products":  "Produkte",
-                "blog":  "Blog",
-                "about":  "Гњber uns",
-                "cart":  "Warenkorb",
-                "account":  "Konto",
-                "admin":  "Admin"
+    "nav": {
+        "products": "Produkte",
+        "blog": "Blog",
+        "about": "Über uns",
+        "cart": "Warenkorb",
+        "account": "Konto",
+        "admin": "Admin"
+    },
+    "home": {
+        "hero": {
+            "badge": "PharmaForce — Pharmazeutische Qualität",
+            "title": "Steigere deine",
+            "titleAccent": "Leistung",
+            "description": "Professionelle Nahrungsergänzungsmittel, Vitamine und Sport-Pharmakologie. Von Athleten in ganz Europa vertraut.",
+            "cta": "Jetzt kaufen",
+            "ctaSecondary": "Mehr erfahren",
+            "deliveryLabel": "Lieferung in ganz Europa",
+            "deliverySub": "30+ EU-Länder",
+            "happyLabel": "0 unzufriedene Kunden",
+            "happySub": "Qualität garantiert"
+        },
+        "features": {
+            "title": "Warum wir?",
+            "quality": {
+                "title": "Zertifizierte Qualität",
+                "desc": "Alle Produkte sind laborgetetest und auf Reinheit und Wirksamkeit zertifiziert."
             },
-    "home":  {
-                 "hero":  {
-                              "badge":  "PharmaForce вЂ” Pharmazeutische QualitГ¤t",
-                              "title":  "Steigere deine",
-                              "titleAccent":  "Leistung",
-                              "description":  "Professionelle NahrungsergГ¤nzungsmittel, Vitamine und Sport-Pharmakologie. Von Athleten in ganz Europa vertraut.",
-                              "cta":  "Jetzt kaufen",
-                              "ctaSecondary":  "Mehr erfahren",
-                              "deliveryLabel":  "Lieferung in ganz Europa",
-                              "deliverySub":  "30+ EU-LГ¤nder",
-                              "happyLabel":  "0 unzufriedene Kunden",
-                              "happySub":  "QualitГ¤t garantiert"
-                          },
-                 "features":  {
-                                  "title":  "Warum wir?",
-                                  "quality":  {
-                                                  "title":  "Zertifizierte QualitГ¤t",
-                                                  "desc":  "Alle Produkte sind laborgeprГјft und auf Reinheit und Wirksamkeit zertifiziert."
-                                              },
-                                  "delivery":  {
-                                                   "title":  "Schnelle EU-Lieferung",
-                                                   "desc":  "Versand in 30+ europГ¤ische LГ¤nder in 3-7 Werktagen."
-                                               },
-                                  "support":  {
-                                                  "title":  "Expertenberatung",
-                                                  "desc":  "Unsere Sportnahrungsexperten helfen Ihnen, die richtigen Produkte zu wГ¤hlen."
-                                              },
-                                  "payment":  {
-                                                  "title":  "Sichere Zahlung",
-                                                  "desc":  "Zahlung per BankГјberweisung mit vollstГ¤ndiger Sicherheit und Auftragsverfolgung."
-                                              }
-                              },
-                 "bestsellers":  {
-                                     "title":  "Bestseller",
-                                     "subtitle":  "Beliebteste Produkte unserer Kunden",
-                                     "viewAll":  "Alle Produkte anzeigen"
-                                 }
-             },
-    "products":  {
-                     "title":  "Alle Produkte",
-                     "filters":  {
-                                     "category":  "Kategorie",
-                                     "price":  "Preis",
-                                     "brand":  "Marke",
-                                     "all":  "Alle"
-                                 },
-                     "sort":  {
-                                  "label":  "Sortieren nach",
-                                  "popular":  "Beliebteste",
-                                  "priceAsc":  "Preis: Aufsteigend",
-                                  "priceDesc":  "Preis: Absteigend",
-                                  "newest":  "Neueste"
-                              },
-                     "addToCart":  "In den Warenkorb",
-                     "inStock":  "Auf Lager",
-                     "outOfStock":  "Nicht vorrГ¤tig",
-                     "perServing":  "pro Portion"
-                 },
-    "product":  {
-                    "description":  "Beschreibung",
-                    "composition":  "Zusammensetzung",
-                    "howToUse":  "Anwendung",
-                    "reviews":  "Bewertungen",
-                    "relatedProducts":  "Das kГ¶nnte Ihnen gefallen",
-                    "quantity":  "Menge",
-                    "addToCart":  "In den Warenkorb",
-                    "inStock":  "Auf Lager",
-                    "outOfStock":  "Nicht vorrГ¤tig",
-                    "sku":  "Artikelnummer"
-                },
-    "cart":  {
-                 "title":  "Ihr Warenkorb",
-                 "empty":  "Ihr Warenkorb ist leer",
-                 "emptyDesc":  "FГјgen Sie Produkte hinzu, um zu beginnen.",
-                 "continueShopping":  "Weiter einkaufen",
-                 "subtotal":  "Zwischensumme",
-                 "shipping":  "Versand",
-                 "total":  "Gesamt",
-                 "checkout":  "Zur Kasse",
-                 "remove":  "Entfernen",
-                 "calculated":  "Wird beim Checkout berechnet"
-             },
-    "checkout":  {
-                     "title":  "Kasse",
-                     "contact":  "Kontaktinformationen",
-                     "shipping":  "Lieferadresse",
-                     "firstName":  "Vorname",
-                     "lastName":  "Nachname",
-                     "email":  "E-Mail",
-                     "phone":  "Telefon",
-                     "country":  "Land",
-                     "city":  "Stadt",
-                     "address":  "Adresse",
-                     "zip":  "PLZ",
-                     "notes":  "Bestellnotizen (optional)",
-                     "payment":  "Zahlungsmethode",
-                     "bankTransfer":  "BankГјberweisung",
-                     "bankDesc":  "Nach der Bestellung erhalten Sie unsere Bankdaten. Ihre Bestellung wird bearbeitet, sobald die Zahlung bestГ¤tigt ist.",
-                     "placeOrder":  "Bestellung aufgeben",
-                     "orderSummary":  "BestellГјbersicht"
-                 },
-    "order":  {
-                  "confirmed":  "Bestellung bestГ¤tigt!",
-                  "confirmedDesc":  "Vielen Dank fГјr Ihre Bestellung. Bitte Гјberweisen Sie den Betrag mit den folgenden Daten.",
-                  "orderNumber":  "Bestellnummer",
-                  "bankDetails":  "Bankverbindung",
-                  "bankName":  "Bank",
-                  "iban":  "IBAN",
-                  "bic":  "BIC/SWIFT",
-                  "reference":  "Verwendungszweck",
-                  "amount":  "Betrag",
-                  "instructions":  "Bitte geben Sie Ihre Bestellnummer als Verwendungszweck an. Ihre Bestellung wird innerhalb von 1-2 Werktagen nach Zahlungseingang versandt.",
-                  "emailSent":  "Eine BestГ¤tigungs-E-Mail wurde an Ihre E-Mail-Adresse gesendet."
-              },
-    "account":  {
-                    "title":  "Mein Konto",
-                    "orders":  "Meine Bestellungen",
-                    "profile":  "Profil",
-                    "logout":  "Abmelden",
-                    "login":  "Anmelden",
-                    "register":  "Registrieren",
-                    "email":  "E-Mail",
-                    "password":  "Passwort",
-                    "noOrders":  "Noch keine Bestellungen"
-                },
-    "footer":  {
-                   "tagline":  "Pharmazeutische Leistung fГјr ernsthafte Athleten.",
-                   "shop":  "Shop",
-                   "company":  "Unternehmen",
-                   "about":  "Гњber uns",
-                   "contact":  "Kontakt",
-                   "privacy":  "Datenschutz",
-                   "terms":  "AGB",
-                   "allRights":  "Alle Rechte vorbehalten."
-               },
-    "payment":  {
-                    "awaitingTitle":  "Wir warten auf Ihre Zahlung",
-                    "awaitingBody":  "Wir warten auf Ihre BankГјberweisung. Sobald die Bank den Eingang der Zahlung bestГ¤tigt, wird Ihre Bestellung automatisch als bezahlt markiert und wir beginnen sofort mit der Bearbeitung.",
-                    "awaitingNote":  "BankГјberweisungen dauern in der Regel 1вЂ“2 Werktage. Sie erhalten eine E-Mail-Benachrichtigung, sobald Ihre Zahlung bestГ¤tigt wurde.",
-                    "close":  "Verstanden"
-                },
-    "subcategories":  {
-                          "injections":  "Injektionen",
-                          "tablets":  "Tabletten / Kapseln",
-                          "secretagogues":  "Wachstumshormon-Stimulanzien",
-                          "hormones":  "Hormone \u0026 Wachstumsfaktoren",
-                          "sarms":  "SARMs",
-                          "aromatase-inhibitors":  "Aromatase-Hemmer",
-                          "serms":  "SERMs / PCT",
-                          "metabolic":  "Stoffwechselmodulatoren",
-                          "hair-removal":  "Haarentfernung",
-                          "weight-loss":  "Gewichtsabnahme",
-                          "hormone-therapy":  "Hormontherapie",
-                          "anti-hirsutism":  "Anti-Hirsutismus",
-                          "skin-health":  "Hautgesundheit",
-                          "hair-growth":  "Haarwuchs"
-                      },
-    "categories":  {
-                       "all":  "Alle Produkte",
-                       "protein":  "Protein",
-                       "creatine":  "Kreatin",
-                       "amino-acids":  "AminosГ¤uren",
-                       "aas":  "Anabole Androgene Steroide",
-                       "peptides":  "Peptide \u0026 Wachstumshormone",
-                       "modulators":  "Hormon- \u0026 Stoffwechselmodulatoren",
-                       "aminoacids":  "AminosГ¤uren",
-                       "vitamins":  "Vitamine \u0026 Mineralien",
-                       "fatBurners":  "Fettverbrenner",
-                       "preworkout":  "Pre-Workout",
-                       "joints":  "Gelenke \u0026 Erholung",
-                       "testosterone":  "Testosteron-Support",
-                       "sleep":  "Schlaf \u0026 Erholung",
-                       "womens-health":  "Frauengesundheit"
-                   }
+            "delivery": {
+                "title": "Schnelle EU-Lieferung",
+                "desc": "Versand in 30+ europäische Länder in 3–7 Werktagen."
+            },
+            "support": {
+                "title": "Expertenberatung",
+                "desc": "Unsere Sportnahrungsexperten helfen Ihnen, die richtigen Produkte zu wählen."
+            },
+            "payment": {
+                "title": "Sichere Zahlung",
+                "desc": "Zahlung per Banküberweisung mit vollständiger Sicherheit und Auftragsverfolgung."
+            }
+        },
+        "bestsellers": {
+            "title": "Bestseller",
+            "subtitle": "Beliebteste Produkte unserer Kunden",
+            "viewAll": "Alle Produkte anzeigen"
+        }
+    },
+    "products": {
+        "title": "Alle Produkte",
+        "filters": {
+            "category": "Kategorie",
+            "price": "Preis",
+            "brand": "Marke",
+            "all": "Alle"
+        },
+        "sort": {
+            "label": "Sortieren nach",
+            "popular": "Beliebteste",
+            "priceAsc": "Preis: Niedrig bis Hoch",
+            "priceDesc": "Preis: Hoch bis Niedrig",
+            "newest": "Neueste"
+        },
+        "addToCart": "In den Warenkorb",
+        "inStock": "Auf Lager",
+        "outOfStock": "Nicht verfügbar",
+        "perServing": "pro Portion"
+    },
+    "product": {
+        "description": "Beschreibung",
+        "composition": "Zusammensetzung",
+        "howToUse": "Anwendung",
+        "reviews": "Bewertungen",
+        "relatedProducts": "Das könnte Ihnen gefallen",
+        "quantity": "Menge",
+        "addToCart": "In den Warenkorb",
+        "inStock": "Auf Lager",
+        "outOfStock": "Nicht vorrätig",
+        "sku": "Artikelnummer",
+        "backToProducts": "Zurück zu Produkten",
+        "inStockReady": "Auf Lager — versandbereit",
+        "labCertified": "Lab-zertifiziert",
+        "euDelivery": "EU-Lieferung 3–7 Tage",
+        "securePackaging": "Sichere Verpackung",
+        "productInfo": "Produktinfo",
+        "brand": "Marke",
+        "category": "Kategorie",
+        "subcategory": "Unterkategorie",
+        "volume": "Menge",
+        "servings": "Portionen",
+        "perServing": "Pro Portion",
+        "paymentTitle": "Zahlung",
+        "paymentDesc": "Banküberweisung (IBAN). Bestellung aufgeben → Bankdaten erhalten → Versand nach Zahlungseingang.",
+        "customersAlsoBought": "Kunden kauften auch",
+        "perServingShort": "/ Portion",
+        "alreadyInCart": "Bereits im Warenkorb:",
+        "pack": "Packung",
+        "packs": "Packungen",
+        "total": "gesamt",
+        "addedToCart": "In den Warenkorb gelegt!",
+        "viewCart": "Warenkorb ansehen",
+        "promoBuy2": "2 kaufen — 3. gratis!",
+        "promoAdd1": "Noch 1 hinzufügen — nächste Packung gratis!",
+        "promoFree": "Packungen GRATIS! Sie sparen"
+    },
+    "cart": {
+        "title": "Ihr Warenkorb",
+        "empty": "Ihr Warenkorb ist leer",
+        "emptyDesc": "Fügen Sie Produkte hinzu, um zu beginnen.",
+        "continueShopping": "Weiter einkaufen",
+        "subtotal": "Zwischensumme",
+        "shipping": "Versand",
+        "total": "Gesamt",
+        "checkout": "Zur Kasse",
+        "remove": "Entfernen",
+        "calculated": "Wird an der Kasse berechnet"
+    },
+    "checkout": {
+        "title": "Kasse",
+        "contact": "Kontaktinformationen",
+        "shipping": "Lieferadresse",
+        "firstName": "Vorname",
+        "lastName": "Nachname",
+        "email": "E-Mail",
+        "phone": "Telefon",
+        "country": "Land",
+        "city": "Stadt",
+        "address": "Adresse",
+        "zip": "PLZ",
+        "notes": "Bestellnotizen (optional)",
+        "payment": "Zahlungsmethode",
+        "bankTransfer": "Banküberweisung",
+        "bankDesc": "Nach der Bestellung erhalten Sie unsere Bankdaten. Ihre Bestellung wird bearbeitet, sobald die Zahlung bestätigt wurde.",
+        "placeOrder": "Bestellung aufgeben",
+        "orderSummary": "Bestellungsübersicht"
+    },
+    "order": {
+        "confirmed": "Bestellung bestätigt!",
+        "confirmedDesc": "Vielen Dank für Ihre Bestellung. Bitte überweisen Sie den Betrag mit den folgenden Daten.",
+        "orderNumber": "Bestellnummer",
+        "bankDetails": "Bankverbindung",
+        "bankName": "Bank",
+        "iban": "IBAN",
+        "bic": "BIC/SWIFT",
+        "reference": "Verwendungszweck",
+        "amount": "Betrag",
+        "instructions": "Bitte geben Sie Ihre Bestellnummer als Verwendungszweck an. Ihre Bestellung wird innerhalb von 1-2 Werktagen nach Zahlungseingang versandt.",
+        "emailSent": "Eine Bestätigungs-E-Mail wurde an Ihre E-Mail-Adresse gesendet."
+    },
+    "account": {
+        "title": "Mein Konto",
+        "orders": "Meine Bestellungen",
+        "profile": "Profil",
+        "logout": "Abmelden",
+        "login": "Anmelden",
+        "register": "Registrieren",
+        "email": "E-Mail",
+        "password": "Passwort",
+        "noOrders": "Noch keine Bestellungen"
+    },
+    "footer": {
+        "tagline": "Pharmazeutische Leistung für ernsthafte Athleten.",
+        "shop": "Shop",
+        "company": "Unternehmen",
+        "about": "Über uns",
+        "contact": "Kontakt",
+        "privacy": "Datenschutz",
+        "terms": "AGB",
+        "allRights": "Alle Rechte vorbehalten.",
+        "legal": "Rechtliches",
+        "gdpr": "🇪🇺 DSGVO-konform",
+        "secureTransfer": "🔒 Sichere Banküberweisung",
+        "euShipping": "✈️ EU-weiter Versand"
+    },
+    "payment": {
+        "awaitingTitle": "Wir warten auf Ihre Zahlung",
+        "awaitingBody": "Wir warten auf Ihre Banküberweisung. Sobald die Bank den Eingang der Zahlung bestätigt, wird Ihre Bestellung automatisch als bezahlt markiert und wir beginnen sofort mit der Bearbeitung.",
+        "awaitingNote": "Banküberweisungen dauern in der Regel 1–2 Werktage. Sie erhalten eine E-Mail-Benachrichtigung, sobald Ihre Zahlung bestätigt wurde.",
+        "close": "Verstanden"
+    },
+    "subcategories": {
+        "injections": "Injektionen",
+        "tablets": "Tabletten / Kapseln",
+        "secretagogues": "Wachstumshormon-Stimulanzien",
+        "hormones": "Hormone & Wachstumsfaktoren",
+        "sarms": "SARMs",
+        "aromatase-inhibitors": "Aromatase-Hemmer",
+        "serms": "SERMs / PCT",
+        "metabolic": "Stoffwechselmodulatoren",
+        "hair-removal": "Haarentfernung",
+        "weight-loss": "Gewichtsabnahme",
+        "hormone-therapy": "Hormontherapie",
+        "anti-hirsutism": "Anti-Hirsutismus",
+        "skin-health": "Hautgesundheit",
+        "hair-growth": "Hair Growth",
+        "ed-medications": "ED Medications",
+        "hormonal-support": "Hormonal Support",
+        "sh-peptides": "Peptides",
+        "skin": "Hautpflege",
+        "longevity": "Langlebigkeit",
+        "aa-peptides": "Anti-Aging Peptide"
+    },
+    "categories": {
+        "all": "Alle Produkte",
+        "protein": "Protein",
+        "creatine": "Kreatin",
+        "amino-acids": "Aminosäuren",
+        "aas": "Anabole Androgene Steroide",
+        "peptides": "Peptide & Wachstumshormone",
+        "modulators": "Hormon- & Stoffwechselmodulatoren",
+        "aminoacids": "Aminosäuren",
+        "vitamins": "Vitamine & Mineralien",
+        "fatBurners": "Fettverbrenner",
+        "preworkout": "Pre-Workout",
+        "joints": "Gelenke & Erholung",
+        "testosterone": "Testosteron-Support",
+        "sleep": "Schlaf & Erholung",
+        "womens-health": "Women's Health",
+        "sexual-health": "Sexual Health",
+        "anti-aging": "Anti-Aging"
+    }
 }

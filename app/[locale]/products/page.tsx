@@ -1,14 +1,55 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Star, ChevronDown, SlidersHorizontal } from 'lucide-react';
+import { Star } from 'lucide-react';
 import { formatPrice } from '@/lib/utils';
 import AddToCartButton from '@/components/product/AddToCartButton';
-import { PRODUCTS, CATEGORIES_NAV, BRANDS_NAV } from '@/lib/products';
+import { PRODUCTS, CATEGORIES_NAV } from '@/lib/products';
 import { getTranslations } from 'next-intl/server';
+import SidebarCategories from '@/components/products/SidebarCategories';
+import ProductsToolbar from '@/components/products/ProductsToolbar';
 
 interface ProductsPageProps {
   params: Promise<{ locale: string }>;
-  searchParams: Promise<{ category?: string; sub?: string; brand?: string; sort?: string }>;
+  searchParams: Promise<{ category?: string; sub?: string; brand?: string; sort?: string; search?: string; promo?: string; price?: string }>;
+}
+
+export async function generateMetadata({ params, searchParams }: ProductsPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  const { category } = await searchParams;
+
+  const CAT_META: Record<string, { title: string; description: string }> = {
+    aas: {
+      title: 'Buy Anabolic Steroids Online Europe — AAS Shop | PharmaForce',
+      description: 'Pharmaceutical-grade injectable and oral anabolic steroids. Testosterone, Trenbolone, Dianabol, Anavar, Deca-Durabolin. Discreet EU delivery. Verified quality.',
+    },
+    peptides: {
+      title: 'Buy Peptides & HGH Online Europe — Somatropin, IGF-1, GHRPs | PharmaForce',
+      description: 'Pharmaceutical-grade growth hormone, peptides and secretagogues. Somatropin HGH, Ipamorelin, CJC-1295, GHRP-6, Ibutamoren MK-677. Fast EU shipping.',
+    },
+    modulators: {
+      title: 'Buy SARMs, PCT & AI Online Europe — Ostarine, Nolvadex, Arimidex | PharmaForce',
+      description: 'SARMs, aromatase inhibitors and PCT medications. Ostarine, RAD-140, Ligandrol, Anastrozole, Tamoxifen, Clomid. Pharmaceutical grade, EU delivery.',
+    },
+    'womens-health': {
+      title: 'Buy Women\'s Health Medications Online — GLP-1, Hair Growth, HRT | PharmaForce',
+      description: 'Wegovy, Mounjaro, Saxenda weight loss injections. Hair growth (Rogaine, Propecia). Hormone therapy (Premarin, Climara). Discreet EU delivery.',
+    },
+    protein: {
+      title: 'Buy Protein Supplements Europe — Whey, Isolate, Casein | PharmaForce',
+      description: 'Premium whey protein, isolate and casein from Optimum Nutrition, BSN, Balkan. Best prices with fast delivery across Europe.',
+    },
+  };
+
+  const meta = category ? (CAT_META[category] ?? null) : null;
+
+  return {
+    title: meta?.title ?? 'Buy Sports Supplements & Pharmaceuticals Online Europe | PharmaForce',
+    description: meta?.description ?? 'Browse 100+ pharmaceutical-grade products: steroids, peptides, SARMs, GLP-1 weight loss injections, women\'s health. Fast discreet EU delivery.',
+    alternates: {
+      canonical: `/${locale}/products${category ? `?category=${category}` : ''}`,
+    },
+  };
 }
 
 const BADGE_COLORS: Record<string, string> = {
@@ -34,36 +75,90 @@ const MODULATORS_SUBS = [
 ];
 
 const WOMENS_SUBS = [
-  { key: 'weight-loss', label: 'Weight Loss' },
+  { key: 'weight-loss',    label: 'Weight Loss' },
+  { key: 'hair-growth',   label: 'Hair Growth' },
+  { key: 'anti-hirsutism', label: 'Anti-Hirsutism' },
+  { key: 'skin-health',     label: 'Skin Health' },
+  { key: 'hormone-therapy', label: 'Hormone Therapy' },
+];
+
+const SEXUAL_HEALTH_SUBS = [
+  { key: 'ed-medications',   label: 'ED Medications' },
+  { key: 'hormonal-support', label: 'Hormonal Support' },
+  { key: 'sh-peptides',      label: 'Peptides' },
+];
+
+const ANTI_AGING_SUBS = [
+  { key: 'skin',        label: 'Skin Rejuvenation' },
+  { key: 'longevity',   label: 'Longevity' },
+  { key: 'aa-peptides', label: 'Anti-Aging Peptides' },
 ];
 
 
 export default async function ProductsPage({ params, searchParams }: ProductsPageProps) {
   const { locale } = await params;
-  const { category, sub, brand, sort } = await searchParams;
+  const { category, sub, brand, sort, search, promo, price } = await searchParams;
   const tCat = await getTranslations({ locale, namespace: 'categories' });
   const tSub = await getTranslations({ locale, namespace: 'subcategories' });
 
-  const isAAS        = category === 'aas';
-  const isPeptides   = category === 'peptides';
-  const isModulators = category === 'modulators';
-  const isWomens     = category === 'womens-health';
+  const isAAS          = category === 'aas';
+  const isPeptides     = category === 'peptides';
+  const isModulators   = category === 'modulators';
+  const isWomens       = category === 'womens-health';
+  const isSexualHealth = category === 'sexual-health';
+  const isAntiAging    = category === 'anti-aging';
+  const isPromo        = promo === 'true';
+
+  const PRICE_RANGES: Record<string, [number, number]> = {
+    '0-20':  [0,  20],
+    '20-40': [20, 40],
+    '40-60': [40, 60],
+    '60+':   [60, Infinity],
+  };
 
   /* filter */
   const filtered = PRODUCTS.filter((p) => {
+    if (isPromo) return p.badge === 'BUY 2 GET 3rd FREE';
     const catMatch = !category || category === 'all'
       || p.category.toLowerCase().replace(/\s+/g, '-') === category;
     const subMatch = !sub || p.subcategory.toLowerCase() === sub;
     const brandMatch = !brand
       || p.brand.toLowerCase().replace(/\s+/g, '-') === brand;
-    return catMatch && subMatch && brandMatch;
+    const searchMatch = !search
+      || p.name.toLowerCase().includes(search.toLowerCase())
+      || p.brand.toLowerCase().includes(search.toLowerCase());
+    const priceRange = price ? PRICE_RANGES[price] : null;
+    const priceMatch = !priceRange || (p.price >= priceRange[0] && p.price < priceRange[1]);
+    return catMatch && subMatch && brandMatch && searchMatch && priceMatch;
   });
 
   /* sort */
+  const getPromoOrder = (p: typeof filtered[0]) => {
+    const cat = p.category.toLowerCase();
+    const sub = p.subcategory.toLowerCase();
+    if (cat === 'protein' || cat === 'creatine' || cat === 'amino acids') return 0;
+    if (cat === 'aas' && sub === 'tablets') return 1;
+    if (cat === 'aas' && sub === 'injections') return 2;
+    return 3;
+  };
+
+  const getAllOrder = (p: typeof filtered[0]) => {
+    const cat = p.category.toLowerCase();
+    if (cat === 'protein')      return 0;
+    if (cat === 'creatine')     return 1;
+    if (cat === 'amino acids')  return 2;
+    return 3;
+  };
+
   const sorted = [...filtered].sort((a, b) => {
+    if (isPromo) return getPromoOrder(a) - getPromoOrder(b);
     if (sort === 'price-asc')  return a.price - b.price;
     if (sort === 'price-desc') return b.price - a.price;
     if (sort === 'rating')     return b.rating - a.rating;
+    if (!category || category === 'all') {
+      const order = getAllOrder(a) - getAllOrder(b);
+      if (order !== 0) return order;
+    }
     return b.reviews - a.reviews;
   });
 
@@ -81,8 +176,19 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
   return (
     <div>
 
+      {/* ─── Promo Page Banner ─── */}
+      {isPromo && (
+        <div className="relative bg-gradient-to-r from-brand/20 via-brand/10 to-brand/20 border-b border-brand/30 overflow-hidden py-10 px-6 text-center">
+          <div className="text-5xl mb-3">🎁</div>
+          <h1 className="text-3xl font-bold text-white mb-2">Buy 2 — Get 3rd FREE</h1>
+          <p className="text-muted text-sm max-w-md mx-auto">
+            {filtered.length} products are part of this promotion. Add any 3 — pay for 2. Discount applied automatically at checkout.
+          </p>
+        </div>
+      )}
+
       {/* ─── Page Banner ─── */}
-      <div className="relative bg-gradient-to-r from-dark via-surface to-dark border-b border-border overflow-hidden min-h-[180px]">
+      {!isPromo && <div className="relative bg-gradient-to-r from-dark via-surface to-dark border-b border-border overflow-hidden min-h-[180px]">
         {/* Background fitness images */}
         <div className="absolute inset-0 flex">
           <div className="absolute right-0 top-0 h-full w-[55%] flex">
@@ -117,7 +223,7 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
             <p className="text-brand text-xs font-bold uppercase tracking-widest mb-1">PharmaForce Store</p>
             <h1 className="text-3xl sm:text-4xl font-extrabold text-white mb-2">All Products</h1>
             <p className="text-muted text-sm max-w-lg">
-              Pharmaceutical-grade supplements, AAS, peptides and performance modulators — shipped discreetly across Europe.
+              Pharmaceutical-grade supplements, AAS, peptides and performance modulators — discreet delivery straight to your door across Europe.
             </p>
             <p className="mt-3 inline-flex items-center gap-2 text-xs text-brand/80 bg-brand/10 border border-brand/20 rounded-full px-3 py-1">
               <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse inline-block" />
@@ -126,7 +232,7 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
           </div>
           <div className="flex gap-6 shrink-0 relative z-10">
             {[
-              { value: `${PRODUCTS.length}+`, label: 'Products' },
+              { value: '120+', label: 'Products' },
               { value: '30+', label: 'EU Countries' },
               { value: '100%', label: 'Lab Tested' },
             ].map(({ value, label }) => (
@@ -137,7 +243,7 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
             ))}
           </div>
         </div>
-      </div>
+      </div>}
 
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
@@ -147,117 +253,30 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
         <aside className="hidden lg:block w-56 shrink-0 space-y-4">
 
           {/* Categories */}
-          <div className="bg-surface border border-border rounded-xl overflow-hidden">
-            <div className="px-4 py-3 border-b border-border flex items-center gap-2">
-              <SlidersHorizontal className="w-4 h-4 text-brand" />
-              <span className="text-white font-semibold text-sm">Category</span>
-            </div>
-            <div className="p-2">
-              {CATEGORIES_NAV.map(({ key }) => {
-                const active = (!category && key === 'all') || category === key;
-                const count = catCount(key);
-                if (count === 0 && key !== 'all' && key !== 'womens-health') return null;
-                return (
-                  <div key={key}>
-                    <Link
-                      href={key === 'all' ? `/${locale}/products` : `/${locale}/products?category=${key}`}
-                      className={`flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-colors ${
-                        active
-                          ? 'bg-brand/15 text-brand font-semibold'
-                          : 'text-muted hover:text-white hover:bg-surface-2'
-                      }`}
-                    >
-                      <span>{tCat(key as Parameters<typeof tCat>[0])}</span>
-                      <span className={`text-xs ${active ? 'text-brand' : 'text-muted/50'}`}>
-                        {count}
-                      </span>
-                    </Link>
-
-                    {/* AAS subcategories */}
-                    {key === 'aas' && isAAS && (
-                      <div className="ml-3 mt-1 mb-1 space-y-0.5">
-                        {AAS_SUBS.map(({ key: sk }) => {
-                          const subActive = sub === sk;
-                          const href = subActive
-                            ? `/${locale}/products?category=aas`
-                            : `/${locale}/products?category=aas&sub=${sk}`;
-                          return (
-                            <Link key={sk} href={href}
-                              className={`flex items-center justify-between px-3 py-1.5 rounded-lg text-xs transition-colors ${subActive ? 'bg-brand/20 text-brand font-semibold' : 'text-muted hover:text-white hover:bg-surface-2'}`}
-                            >
-                              <span>{tSub(sk as Parameters<typeof tSub>[0])}</span>
-                              <span className={`text-[10px] ${subActive ? 'text-brand' : 'text-muted/50'}`}>{subCount(sk, 'aas')}</span>
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    )}
-
-                    {/* Modulators subcategories */}
-                    {key === 'modulators' && isModulators && (
-                      <div className="ml-3 mt-1 mb-1 space-y-0.5">
-                        {MODULATORS_SUBS.map(({ key: sk }) => {
-                          const subActive = sub === sk;
-                          const href = subActive
-                            ? `/${locale}/products?category=modulators`
-                            : `/${locale}/products?category=modulators&sub=${sk}`;
-                          return (
-                            <Link key={sk} href={href}
-                              className={`flex items-center justify-between px-3 py-1.5 rounded-lg text-xs transition-colors ${subActive ? 'bg-brand/20 text-brand font-semibold' : 'text-muted hover:text-white hover:bg-surface-2'}`}
-                            >
-                              <span>{tSub(sk as Parameters<typeof tSub>[0])}</span>
-                              <span className={`text-[10px] ${subActive ? 'text-brand' : 'text-muted/50'}`}>{subCount(sk, 'modulators')}</span>
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    )}
-
-                    {/* Women's Health subcategories */}
-                    {key === 'womens-health' && isWomens && (
-                      <div className="ml-3 mt-1 mb-1 space-y-0.5">
-                        {WOMENS_SUBS.map(({ key: sk }) => {
-                          const subActive = sub === sk;
-                          const href = subActive
-                            ? `/${locale}/products?category=womens-health`
-                            : `/${locale}/products?category=womens-health&sub=${sk}`;
-                          return (
-                            <Link key={sk} href={href}
-                              className={`flex items-center justify-between px-3 py-1.5 rounded-lg text-xs transition-colors ${subActive ? 'bg-brand/20 text-brand font-semibold' : 'text-muted hover:text-white hover:bg-surface-2'}`}
-                            >
-                              <span>{tSub(sk as Parameters<typeof tSub>[0])}</span>
-                              <span className={`text-[10px] ${subActive ? 'text-brand' : 'text-muted/50'}`}>{subCount(sk, 'womens health')}</span>
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    )}
-
-                    {/* Peptides subcategories */}
-                    {key === 'peptides' && isPeptides && (
-                      <div className="ml-3 mt-1 mb-1 space-y-0.5">
-                        {PEPTIDES_SUBS.map(({ key: sk }) => {
-                          const subActive = sub === sk;
-                          const href = subActive
-                            ? `/${locale}/products?category=peptides`
-                            : `/${locale}/products?category=peptides&sub=${sk}`;
-                          return (
-                            <Link key={sk} href={href}
-                              className={`flex items-center justify-between px-3 py-1.5 rounded-lg text-xs transition-colors ${subActive ? 'bg-brand/20 text-brand font-semibold' : 'text-muted hover:text-white hover:bg-surface-2'}`}
-                            >
-                              <span>{tSub(sk as Parameters<typeof tSub>[0])}</span>
-                              <span className={`text-[10px] ${subActive ? 'text-brand' : 'text-muted/50'}`}>{subCount(sk, 'peptides')}</span>
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    )}
-
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+          <SidebarCategories
+            categories={CATEGORIES_NAV}
+            counts={Object.fromEntries(CATEGORIES_NAV.map(({ key }) => [key, catCount(key)]))}
+            subCounts={Object.fromEntries(
+              ['aas', 'peptides', 'modulators', 'womens-health', 'sexual-health', 'anti-aging'].flatMap(cat =>
+                ['injections','tablets','secretagogues','hormones','sarms','aromatase-inhibitors','serms','metabolic','weight-loss','hair-growth','anti-hirsutism','skin-health','hormone-therapy','ed-medications','hormonal-support','sh-peptides','skin','longevity','aa-peptides'].map(sk => [
+                  `${cat}:${sk}`, subCount(sk, cat)
+                ])
+              )
+            )}
+            translations={Object.fromEntries(CATEGORIES_NAV.map(({ key }) => [key, tCat(key as Parameters<typeof tCat>[0])]))}
+            subTranslations={{
+              injections: tSub('injections'), tablets: tSub('tablets'),
+              secretagogues: tSub('secretagogues'), hormones: tSub('hormones'),
+              sarms: tSub('sarms'), 'aromatase-inhibitors': tSub('aromatase-inhibitors'),
+              serms: tSub('serms'), metabolic: tSub('metabolic'),
+              'weight-loss': tSub('weight-loss'), 'hair-growth': tSub('hair-growth'),
+              'anti-hirsutism': tSub('anti-hirsutism'), 'skin-health': tSub('skin-health'),
+              'hormone-therapy': tSub('hormone-therapy'),
+              'ed-medications': tSub('ed-medications'), 'hormonal-support': tSub('hormonal-support'),
+              'sh-peptides': tSub('sh-peptides'),
+              skin: tSub('skin'), longevity: tSub('longevity'), 'aa-peptides': tSub('aa-peptides'),
+            }}
+          />
 
 
           {/* Price */}
@@ -265,13 +284,31 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
             <div className="px-4 py-3 border-b border-border">
               <span className="text-white font-semibold text-sm">Price, €</span>
             </div>
-            <div className="p-3 space-y-2.5">
-              {['Up to €20', '€20 – €40', '€40 – €60', 'Over €60'].map((r) => (
-                <label key={r} className="flex items-center gap-2 cursor-pointer group">
-                  <div className="w-4 h-4 rounded border border-border group-hover:border-brand/60 transition-colors shrink-0" />
-                  <span className="text-xs text-muted group-hover:text-white transition-colors">{r}</span>
-                </label>
-              ))}
+            <div className="p-2 space-y-0.5">
+              {([
+                { key: '0-20',  label: 'Up to €20' },
+                { key: '20-40', label: '€20 – €40' },
+                { key: '40-60', label: '€40 – €60' },
+                { key: '60+',   label: 'Over €60'  },
+              ] as { key: string; label: string }[]).map(({ key, label }) => {
+                const active = price === key;
+                const params = new URLSearchParams();
+                if (category) params.set('category', category);
+                if (sub) params.set('sub', sub);
+                if (sort) params.set('sort', sort);
+                if (!active) params.set('price', key);
+                const href = `/${locale}/products${params.toString() ? `?${params}` : ''}`;
+                return (
+                  <Link key={key} href={href}
+                    className={`flex items-center justify-between px-3 py-2 rounded-lg text-xs transition-colors ${
+                      active ? 'bg-brand/15 text-brand font-semibold' : 'text-muted hover:text-white hover:bg-surface-2'
+                    }`}
+                  >
+                    <span>{label}</span>
+                    {active && <span className="text-brand text-[10px]">✕</span>}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </aside>
@@ -280,26 +317,32 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
         <div className="flex-1 min-w-0">
 
           {/* Toolbar */}
-          <div className="flex items-center justify-between mb-5 gap-3 flex-wrap">
-            <p className="text-muted text-sm">
-              Found: <span className="text-white font-semibold">{sorted.length}</span> products
-            </p>
-            <div className="flex items-center gap-2">
-              <span className="text-muted text-sm hidden sm:inline">Sort:</span>
-              <div className="relative">
-                <select
-                  className="appearance-none bg-surface border border-border text-white text-sm rounded-lg pl-3 pr-8 py-2 focus:outline-none focus:border-brand cursor-pointer"
-                  defaultValue={sort || 'popular'}
-                >
-                  <option value="popular">Popular</option>
-                  <option value="rating">Top Rated</option>
-                  <option value="price-asc">Price: Low → High</option>
-                  <option value="price-desc">Price: High → Low</option>
-                </select>
-                <ChevronDown className="absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-muted pointer-events-none" />
-              </div>
-            </div>
-          </div>
+          <ProductsToolbar
+            count={sorted.length}
+            currentSort={sort || 'popular'}
+            categories={CATEGORIES_NAV}
+            counts={Object.fromEntries(CATEGORIES_NAV.map(({ key }) => [key, catCount(key)]))}
+            subCounts={Object.fromEntries(
+              ['aas', 'peptides', 'modulators', 'womens-health', 'sexual-health', 'anti-aging'].flatMap(cat =>
+                ['injections','tablets','secretagogues','hormones','sarms','aromatase-inhibitors','serms','metabolic','weight-loss','hair-growth','anti-hirsutism','skin-health','hormone-therapy','ed-medications','hormonal-support','sh-peptides','skin','longevity','aa-peptides'].map(sk => [
+                  `${cat}:${sk}`, subCount(sk, cat)
+                ])
+              )
+            )}
+            translations={Object.fromEntries(CATEGORIES_NAV.map(({ key }) => [key, tCat(key as Parameters<typeof tCat>[0])]))}
+            subTranslations={{
+              injections: tSub('injections'), tablets: tSub('tablets'),
+              secretagogues: tSub('secretagogues'), hormones: tSub('hormones'),
+              sarms: tSub('sarms'), 'aromatase-inhibitors': tSub('aromatase-inhibitors'),
+              serms: tSub('serms'), metabolic: tSub('metabolic'),
+              'weight-loss': tSub('weight-loss'), 'hair-growth': tSub('hair-growth'),
+              'anti-hirsutism': tSub('anti-hirsutism'), 'skin-health': tSub('skin-health'),
+              'hormone-therapy': tSub('hormone-therapy'),
+              'ed-medications': tSub('ed-medications'), 'hormonal-support': tSub('hormonal-support'),
+              'sh-peptides': tSub('sh-peptides'),
+              skin: tSub('skin'), longevity: tSub('longevity'), 'aa-peptides': tSub('aa-peptides'),
+            }}
+          />
 
           {/* Women's Health subcategory pills */}
           {isWomens && (
@@ -353,6 +396,34 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
                 <Link key={sk} href={sub === sk ? `/${locale}/products?category=peptides` : `/${locale}/products?category=peptides&sub=${sk}`}
                   className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${sub === sk ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
                 >{tSub(sk as Parameters<typeof tSub>[0])}</Link>
+              ))}
+            </div>
+          )}
+
+          {/* Sexual Health subcategory pills */}
+          {isSexualHealth && (
+            <div className="flex gap-2 mb-5 flex-wrap">
+              <Link href={`/${locale}/products?category=sexual-health`}
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${!sub ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
+              >Sexual Health</Link>
+              {SEXUAL_HEALTH_SUBS.map(({ key: sk, label }) => (
+                <Link key={sk} href={sub === sk ? `/${locale}/products?category=sexual-health` : `/${locale}/products?category=sexual-health&sub=${sk}`}
+                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${sub === sk ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
+                >{label}</Link>
+              ))}
+            </div>
+          )}
+
+          {/* Anti-Aging subcategory pills */}
+          {isAntiAging && (
+            <div className="flex gap-2 mb-5 flex-wrap">
+              <Link href={`/${locale}/products?category=anti-aging`}
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${!sub ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
+              >Anti-Aging</Link>
+              {ANTI_AGING_SUBS.map(({ key: sk, label }) => (
+                <Link key={sk} href={sub === sk ? `/${locale}/products?category=anti-aging` : `/${locale}/products?category=anti-aging&sub=${sk}`}
+                  className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${sub === sk ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
+                >{label}</Link>
               ))}
             </div>
           )}

@@ -7,7 +7,7 @@ import { useCartStore } from '@/store/cartStore';
 import { useOrdersStore } from '@/store/ordersStore';
 import { formatPrice } from '@/lib/utils';
 import Link from 'next/link';
-import { Minus, Plus, Trash2, ShoppingBag, ArrowLeft, ArrowRight, ClipboardList, Clock, Package, Truck, CheckCircle, X, Banknote } from 'lucide-react';
+import { Minus, Plus, Trash2, ShoppingBag, ArrowLeft, ArrowRight, ClipboardList, Clock, Package, Truck, CheckCircle, X, Banknote, Gift } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
@@ -25,8 +25,22 @@ export default function CartPageClient({ locale }: { locale: string }) {
   const [paymentModal, setPaymentModal] = useState(false);
   const tP = useTranslations('payment');
 
-  const shipping = totalPrice() >= 80 ? 0 : 9.99;
-  const total = totalPrice() + shipping;
+  const getPromoDiscount = (item: typeof items[0]) => {
+    if (item.badge !== 'BUY 2 GET 3rd FREE') return 0;
+    return Math.floor(item.quantity / 3) * item.price;
+  };
+
+  const SHIPPING_COST = 34.99;
+  const FREE_SHIPPING_THRESHOLD = 150;
+  const BULK_DISCOUNT_THRESHOLD = 200;
+  const BULK_DISCOUNT_RATE = 0.15;
+
+  const totalDiscount = items.reduce((sum, item) => sum + getPromoDiscount(item), 0);
+  const afterPromo = totalPrice() - totalDiscount;
+  const bulkDiscount = afterPromo >= BULK_DISCOUNT_THRESHOLD ? afterPromo * BULK_DISCOUNT_RATE : 0;
+  const discountedTotal = afterPromo - bulkDiscount;
+  const shipping = discountedTotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST;
+  const total = discountedTotal + shipping;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -197,6 +211,25 @@ export default function CartPageClient({ locale }: { locale: string }) {
                   </button>
                 </div>
 
+                {/* Promo hint */}
+                {item.badge === 'BUY 2 GET 3rd FREE' && (() => {
+                  const free = Math.floor(item.quantity / 3);
+                  const needed = 3 - (item.quantity % 3);
+                  if (free > 0) return (
+                    <div className="flex items-center gap-1.5 mt-2 text-xs text-green-400 font-medium">
+                      <Gift className="w-3.5 h-3.5 shrink-0" />
+                      {free} pack{free > 1 ? 's' : ''} FREE — you save {formatPrice(free * item.price)}
+                    </div>
+                  );
+                  if (item.quantity % 3 !== 0) return (
+                    <div className="flex items-center gap-1.5 mt-2 text-xs text-brand font-medium">
+                      <Gift className="w-3.5 h-3.5 shrink-0" />
+                      Add {needed} more — get {needed === 1 ? 'next' : 'a'} pack FREE
+                    </div>
+                  );
+                  return null;
+                })()}
+
                 <div className="flex items-center justify-between mt-3">
                   {/* Qty control */}
                   <div className="flex items-center gap-1.5 bg-surface-2 border border-border rounded-lg p-0.5">
@@ -215,7 +248,12 @@ export default function CartPageClient({ locale }: { locale: string }) {
                     </button>
                   </div>
 
-                  <span className="text-white font-bold">{formatPrice(item.price * item.quantity)}</span>
+                  <div className="text-right">
+                    {getPromoDiscount(item) > 0 && (
+                      <span className="text-muted line-through text-xs mr-1">{formatPrice(item.price * item.quantity)}</span>
+                    )}
+                    <span className="text-white font-bold">{formatPrice(item.price * item.quantity - getPromoDiscount(item))}</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -235,11 +273,48 @@ export default function CartPageClient({ locale }: { locale: string }) {
           <div className="bg-surface border border-border rounded-2xl p-6 sticky top-24">
             <h2 className="text-white font-bold text-lg mb-6">Order Summary</h2>
 
+            {/* Bulk discount progress */}
+            {bulkDiscount === 0 && (
+              <div className="bg-brand/5 border border-brand/20 rounded-xl p-3 mb-4">
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-xs font-semibold text-brand">🎉 15% off from €200</span>
+                  <span className="text-xs text-muted">{formatPrice(afterPromo)} / €200</span>
+                </div>
+                <div className="w-full bg-border rounded-full h-1.5">
+                  <div
+                    className="bg-brand h-1.5 rounded-full transition-all duration-500"
+                    style={{ width: `${Math.min((afterPromo / BULK_DISCOUNT_THRESHOLD) * 100, 100)}%` }}
+                  />
+                </div>
+                <p className="text-xs text-muted mt-1.5">
+                  Add <span className="text-white font-semibold">{formatPrice(BULK_DISCOUNT_THRESHOLD - afterPromo)}</span> more — get <span className="text-brand font-semibold">15% off everything</span>
+                </p>
+              </div>
+            )}
+            {bulkDiscount > 0 && (
+              <div className="bg-brand/10 border border-brand/30 rounded-xl p-3 mb-4 text-center">
+                <p className="text-brand font-bold text-sm">🎉 15% discount applied!</p>
+                <p className="text-muted text-xs mt-0.5">You save {formatPrice(bulkDiscount)} on this order</p>
+              </div>
+            )}
+
             <div className="space-y-3 mb-6">
               <div className="flex justify-between text-sm">
                 <span className="text-muted">Subtotal ({totalItems()} items)</span>
                 <span className="text-white">{formatPrice(totalPrice())}</span>
               </div>
+              {totalDiscount > 0 && (
+                <div className="flex justify-between text-sm">
+                  <span className="text-green-400 flex items-center gap-1"><Gift className="w-3.5 h-3.5" /> Promo discount</span>
+                  <span className="text-green-400 font-semibold">−{formatPrice(totalDiscount)}</span>
+                </div>
+              )}
+              {bulkDiscount > 0 && (
+                <div className="flex justify-between text-sm">
+                  <span className="text-brand flex items-center gap-1">🎉 15% bulk discount</span>
+                  <span className="text-brand font-semibold">−{formatPrice(bulkDiscount)}</span>
+                </div>
+              )}
               <div className="flex justify-between text-sm">
                 <span className="text-muted">Shipping</span>
                 <span className={shipping === 0 ? 'text-success font-medium' : 'text-white'}>
@@ -247,13 +322,32 @@ export default function CartPageClient({ locale }: { locale: string }) {
                 </span>
               </div>
               {shipping > 0 && (
-                <p className="text-xs text-muted bg-surface-2 rounded-lg p-2">
-                  Add {formatPrice(80 - totalPrice())} more for free shipping
+                <div className="bg-surface-2 border border-border rounded-lg p-2.5">
+                  <p className="text-xs text-muted mb-1.5">
+                    Add <span className="text-white font-semibold">{formatPrice(FREE_SHIPPING_THRESHOLD - discountedTotal)}</span> more for free shipping
+                  </p>
+                  <div className="w-full bg-border rounded-full h-1.5">
+                    <div
+                      className="bg-brand h-1.5 rounded-full transition-all duration-500"
+                      style={{ width: `${Math.min((discountedTotal / FREE_SHIPPING_THRESHOLD) * 100, 100)}%` }}
+                    />
+                  </div>
+                  <p className="text-xs text-muted mt-1 text-right">{formatPrice(discountedTotal)} / {formatPrice(FREE_SHIPPING_THRESHOLD)}</p>
+                </div>
+              )}
+              {shipping === 0 && (
+                <p className="text-xs text-success bg-success/10 border border-success/20 rounded-lg p-2 text-center">
+                  ✓ Free shipping on your order!
                 </p>
               )}
               <div className="border-t border-border pt-3 flex justify-between">
                 <span className="text-white font-bold">Total</span>
-                <span className="text-white font-bold text-xl">{formatPrice(total)}</span>
+                <div className="text-right">
+                  {bulkDiscount > 0 && (
+                    <p className="text-muted text-xs line-through">{formatPrice(afterPromo + shipping)}</p>
+                  )}
+                  <span className="text-white font-bold text-xl">{formatPrice(total)}</span>
+                </div>
               </div>
             </div>
 

@@ -8,14 +8,81 @@ const geist = Geist({
 });
 
 export const metadata: Metadata = {
-  title: 'PharmaForce — Premium Sports Pharmacology & Supplements',
-  description:
-    'Professional-grade supplements, vitamins, and sports pharmacology. Trusted by athletes across Europe. Fast EU delivery.',
+  title: {
+    default: 'PharmaForce — Be Better Than Yesterday',
+    template: '%s | PharmaForce',
+  },
+  description: 'Pharmaceutical-grade supplements, AAS, peptides and performance modulators — discreet delivery straight to your door across Europe.',
+  keywords: [
+    'buy steroids europe', 'buy semaglutide europe', 'wegovy buy online', 'mounjaro online EU',
+    'buy peptides europe', 'sarms for sale', 'pharmaceutical grade supplements',
+    'buy hgh europe', 'testosterone enanthate buy', 'anavar buy online europe',
+    'saxenda buy online', 'GLP-1 injections europe', 'weight loss injections EU',
+    'sports pharmacology', 'buy finasteride online', 'buy minoxidil europe',
+  ],
+  authors: [{ name: 'PharmaForce' }],
+  creator: 'PharmaForce',
+  metadataBase: new URL('https://pharmaforce-store.com'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en': '/en',
+      'de': '/de',
+      'pl': '/pl',
+      'fr': '/fr',
+      'it': '/it',
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://pharmaforce-store.com',
+    siteName: 'PharmaForce',
+    title: 'PharmaForce — Be Better Than Yesterday',
+    description: 'Pharmaceutical-grade supplements, AAS, peptides and performance modulators — discreet delivery straight to your door across Europe.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'PharmaForce — Premium Sports Pharmacology',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PharmaForce — Be Better Than Yesterday',
+    description: 'Pharmaceutical-grade supplements, AAS, peptides and performance modulators — discreet EU delivery.',
+    images: ['/og-image.png'],
+  },
+  verification: {
+    google: '9TNZ3yiyaWbFBwaAntPC2PDclFhr_PvwMXBEcgZ1ydU',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html suppressHydrationWarning>
+      <head>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTZK8NZQ95" />
+        <script dangerouslySetInnerHTML={{ __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-BTZK8NZQ95');
+        `}} />
+      </head>
       <body className={`${geist.variable} antialiased`}>{children}</body>
     </html>
   );

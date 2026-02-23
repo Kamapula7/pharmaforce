@@ -90,7 +90,7 @@ export default function Footer({ locale }: FooterProps) {
 
           {/* Legal */}
           <div>
-            <h3 className="text-white font-semibold mb-4">Legal</h3>
+            <h3 className="text-white font-semibold mb-4">{t('legal')}</h3>
             <ul className="space-y-2">
               <li>
                 <Link href={`/${locale}/privacy`} className="text-muted hover:text-white transition-colors text-sm">
@@ -106,9 +106,9 @@ export default function Footer({ locale }: FooterProps) {
 
             {/* EU badges */}
             <div className="mt-6 space-y-1">
-              <p className="text-xs text-muted">🇪🇺 GDPR Compliant</p>
-              <p className="text-xs text-muted">🔒 Secure Bank Transfer</p>
-              <p className="text-xs text-muted">✈️ EU-wide Shipping</p>
+              <p className="text-xs text-muted">{t('gdpr')}</p>
+              <p className="text-xs text-muted">{t('secureTransfer')}</p>
+              <p className="text-xs text-muted">{t('euShipping')}</p>
             </div>
           </div>
         </div>

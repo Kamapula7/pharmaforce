@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
@@ -6,6 +7,28 @@ import { BLOG_POSTS } from '@/lib/blog-content';
 
 interface BlogPostPageProps {
   params: Promise<{ locale: string; slug: string }>;
+}
+
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const post = BLOG_POSTS.find((p) => p.slug === slug);
+  if (!post) return {};
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    authors: [{ name: post.author }],
+    alternates: { canonical: `/${locale}/blog/${slug}` },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: 'article',
+      publishedTime: post.date,
+      authors: [post.author],
+      url: `https://pharmaforce-store.com/${locale}/blog/${slug}`,
+      images: [{ url: post.photo, alt: post.title }],
+    },
+  };
 }
 
 const TAG_COLOR: Record<string, string> = {
