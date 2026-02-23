@@ -98,7 +98,7 @@ export default function SidebarCategories({ categories, counts, subCounts, trans
                   {hasSubs && (
                     <button
                       onClick={(e) => toggle(key, e)}
-                      className="p-0.5 rounded hover:bg-white/10 transition-colors"
+                      className="p-0.5 rounded hover:bg-white/10 transition-colors cursor-pointer"
                     >
                       <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${isOpen ? 'rotate-180 text-brand' : 'text-muted/40'}`} />
                     </button>
