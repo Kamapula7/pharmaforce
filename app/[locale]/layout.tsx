@@ -6,6 +6,7 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import TawkChat from '@/components/layout/TawkChat';
 import FloatingChatButton from '@/components/layout/FloatingChatButton';
+import PageTracker from '@/components/layout/PageTracker';
 
 interface LocaleLayoutProps {
   children: React.ReactNode;
@@ -34,6 +35,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
             <main className="flex-1">{children}</main>
             <Footer locale={locale} />
           </div>
+          <PageTracker />
           <TawkChat />
           <FloatingChatButton />
         </NextIntlClientProvider>

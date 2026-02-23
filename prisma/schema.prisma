@@ -133,6 +133,18 @@ model Review {
   @@map("reviews")
 }
 
+model PageView {
+  id        String   @id @default(cuid())
+  path      String
+  country   String?
+  userAgent String?
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([path])
+  @@map("page_views")
+}
+
 model BlogPost {
   id          String   @id @default(cuid())
   slug        String   @unique

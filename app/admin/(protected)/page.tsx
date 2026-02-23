@@ -1,6 +1,5 @@
 import { PRODUCTS } from '@/lib/products';
 import { formatPrice } from '@/lib/utils';
-import { getAnalyticsStats } from '@/lib/analytics';
 
 const STATUS_COLORS: Record<string, string> = {
   PENDING:          'bg-yellow-500/15 text-yellow-400',
@@ -14,13 +13,25 @@ const STATUS_COLORS: Record<string, string> = {
 async function getStats() {
   try {
     const { prisma } = await import('@/lib/prisma');
-    const [orders, usersCount] = await Promise.all([
-      prisma.order.findMany({
-        include: { items: true },
-        orderBy: { createdAt: 'desc' },
-        take: 50,
-      }),
+    const now = new Date();
+    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    const week = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+    const month = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
+
+    const [orders, usersCount, viewsToday, viewsWeek, viewsMonth, viewsTotal, topPages] = await Promise.all([
+      prisma.order.findMany({ include: { items: true }, orderBy: { createdAt: 'desc' }, take: 50 }),
       prisma.user.count(),
+      prisma.pageView.count({ where: { createdAt: { gte: today } } }),
+      prisma.pageView.count({ where: { createdAt: { gte: week } } }),
+      prisma.pageView.count({ where: { createdAt: { gte: month } } }),
+      prisma.pageView.count(),
+      prisma.pageView.groupBy({
+        by: ['path'],
+        _count: { path: true },
+        orderBy: { _count: { path: 'desc' } },
+        take: 5,
+        where: { createdAt: { gte: week } },
+      }),
     ]);
 
     const totalRevenue = orders
@@ -32,16 +43,23 @@ async function getStats() {
       return acc;
     }, {});
 
-    return { orders, totalRevenue, byStatus, usersCount, error: null };
+    return {
+      orders, totalRevenue, byStatus, usersCount, error: null,
+      views: { today: viewsToday, week: viewsWeek, month: viewsMonth, total: viewsTotal },
+      topPages: topPages.map(p => ({ path: p.path, views: p._count.path })),
+    };
   } catch {
-    return { orders: [], totalRevenue: 0, byStatus: {} as Record<string, number>, usersCount: 0, error: 'DB not connected' };
+    return {
+      orders: [], totalRevenue: 0, byStatus: {} as Record<string, number>, usersCount: 0, error: 'DB not connected',
+      views: { today: 0, week: 0, month: 0, total: 0 },
+      topPages: [],
+    };
   }
 }
 
 export default async function AdminDashboard() {
-  const [{ orders, totalRevenue, byStatus, usersCount, error }, analytics] = await Promise.all([
+  const [{ orders, totalRevenue, byStatus, usersCount, error, views, topPages }] = await Promise.all([
     getStats(),
-    getAnalyticsStats(),
   ]);
 
   const stats = [
@@ -77,56 +95,37 @@ export default async function AdminDashboard() {
         ))}
       </div>
 
-      {/* Analytics */}
+      {/* Visits */}
       <div className="bg-[#111118] border border-white/8 rounded-xl p-4">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
-            <span className="text-lg">📈</span>
-            <h2 className="text-white font-semibold text-sm">Website Traffic</h2>
-            {analytics.connected
-              ? <span className="text-[10px] bg-green-500/15 text-green-400 px-2 py-0.5 rounded-full">Live</span>
-              : <span className="text-[10px] bg-yellow-500/15 text-yellow-400 px-2 py-0.5 rounded-full">Not connected</span>
-            }
-          </div>
-          <a href="https://analytics.google.com" target="_blank"
-            className="text-xs text-brand hover:underline">
-            Open Analytics ↗
-          </a>
+        <div className="flex items-center gap-2 mb-4">
+          <span className="text-lg">📈</span>
+          <h2 className="text-white font-semibold text-sm">Website Traffic</h2>
+          <span className="text-[10px] bg-green-500/15 text-green-400 px-2 py-0.5 rounded-full">Live</span>
         </div>
-
-        {analytics.connected ? (
-          <div className="space-y-4">
-            <div className="grid grid-cols-4 gap-3">
-              {[
-                { label: 'Online now',   value: analytics.activeUsers, color: 'text-green-400' },
-                { label: 'Today',        value: analytics.today,       color: 'text-brand' },
-                { label: 'Last 7 days',  value: analytics.week,        color: 'text-blue-400' },
-                { label: 'Last 30 days', value: analytics.month,       color: 'text-purple-400' },
-              ].map(({ label, value, color }) => (
-                <div key={label} className="bg-white/3 rounded-lg p-3 text-center">
-                  <p className={`text-2xl font-bold ${color}`}>{value}</p>
-                  <p className="text-muted text-[11px] mt-1">{label}</p>
+        <div className="grid grid-cols-4 gap-3 mb-4">
+          {[
+            { label: 'Today',        value: views.today, color: 'text-brand' },
+            { label: 'Last 7 days',  value: views.week,  color: 'text-blue-400' },
+            { label: 'Last 30 days', value: views.month, color: 'text-purple-400' },
+            { label: 'All time',     value: views.total, color: 'text-green-400' },
+          ].map(({ label, value, color }) => (
+            <div key={label} className="bg-white/3 rounded-lg p-3 text-center">
+              <p className={`text-2xl font-bold ${color}`}>{value}</p>
+              <p className="text-muted text-[11px] mt-1">{label}</p>
+            </div>
+          ))}
+        </div>
+        {topPages.length > 0 && (
+          <div>
+            <p className="text-muted text-xs mb-2">Top pages (7 days)</p>
+            <div className="space-y-1">
+              {topPages.map(({ path, views: v }) => (
+                <div key={path} className="flex items-center justify-between text-xs py-1 border-b border-white/4">
+                  <span className="text-muted font-mono truncate max-w-[70%]">{path}</span>
+                  <span className="text-white font-semibold">{v} views</span>
                 </div>
               ))}
             </div>
-            {analytics.topPages.length > 0 && (
-              <div>
-                <p className="text-muted text-xs mb-2">Top pages (7 days)</p>
-                <div className="space-y-1">
-                  {analytics.topPages.map(({ path, views }) => (
-                    <div key={path} className="flex items-center justify-between text-xs py-1 border-b border-white/4">
-                      <span className="text-muted font-mono truncate max-w-[70%]">{path}</span>
-                      <span className="text-white font-semibold">{views} views</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-        ) : (
-          <div className="text-center py-6">
-            <p className="text-muted text-sm mb-3">Connect Google Analytics to see visitor stats</p>
-            <p className="text-muted/60 text-xs">Add <code className="bg-white/8 px-1.5 py-0.5 rounded text-brand">GA_SERVICE_ACCOUNT_JSON</code> to environment variables</p>
           </div>
         )}
       </div>
