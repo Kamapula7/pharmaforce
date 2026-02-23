@@ -1,10 +1,15 @@
-async function getUsers() {
+type UserWithCount = {
+  id: string; email: string; name: string | null; role: string;
+  createdAt: Date; _count: { orders: number };
+};
+
+async function getUsers(): Promise<UserWithCount[]> {
   try {
     const { prisma } = await import('@/lib/prisma');
     return await prisma.user.findMany({
       include: { _count: { select: { orders: true } } },
       orderBy: { createdAt: 'desc' },
-    });
+    }) as UserWithCount[];
   } catch {
     return [];
   }

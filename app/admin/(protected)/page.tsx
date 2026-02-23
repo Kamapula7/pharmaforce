@@ -1,5 +1,8 @@
 import { PRODUCTS } from '@/lib/products';
 import { formatPrice } from '@/lib/utils';
+import type { Order, OrderItem } from '@/app/generated/prisma/client';
+
+type OrderWithItems = Order & { items: OrderItem[] };
 
 const STATUS_COLORS: Record<string, string> = {
   PENDING:          'bg-yellow-500/15 text-yellow-400',
@@ -18,7 +21,7 @@ async function getStats() {
     const week = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
     const month = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
 
-    const [orders, usersCount, viewsToday, viewsWeek, viewsMonth, viewsTotal, topPages] = await Promise.all([
+    const [ordersRaw, usersCount, viewsToday, viewsWeek, viewsMonth, viewsTotal, topPages] = await Promise.all([
       prisma.order.findMany({ include: { items: true }, orderBy: { createdAt: 'desc' }, take: 50 }),
       prisma.user.count(),
       prisma.pageView.count({ where: { createdAt: { gte: today } } }),
@@ -34,6 +37,7 @@ async function getStats() {
       }),
     ]);
 
+    const orders = ordersRaw as OrderWithItems[];
     const totalRevenue = orders
       .filter(o => ['PAID', 'SHIPPED', 'DELIVERED'].includes(o.status))
       .reduce((sum, o) => sum + o.total, 0);
@@ -46,7 +50,7 @@ async function getStats() {
     return {
       orders, totalRevenue, byStatus, usersCount, error: null,
       views: { today: viewsToday, week: viewsWeek, month: viewsMonth, total: viewsTotal },
-      topPages: topPages.map(p => ({ path: p.path, views: p._count.path })),
+      topPages: (topPages as Array<{ path: string; _count: { path: number } }>).map(p => ({ path: p.path, views: p._count.path })),
     };
   } catch {
     return {

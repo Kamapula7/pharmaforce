@@ -1,4 +1,7 @@
 import { formatPrice } from '@/lib/utils';
+import type { Order, OrderItem } from '@/app/generated/prisma/client';
+
+type OrderWithItems = Order & { items: OrderItem[] };
 
 const STATUS_COLORS: Record<string, string> = {
   PENDING:          'bg-yellow-500/15 text-yellow-400',
@@ -9,13 +12,13 @@ const STATUS_COLORS: Record<string, string> = {
   CANCELLED:        'bg-red-500/15 text-red-400',
 };
 
-async function getOrders() {
+async function getOrders(): Promise<OrderWithItems[]> {
   try {
     const { prisma } = await import('@/lib/prisma');
     return await prisma.order.findMany({
       include: { items: true },
       orderBy: { createdAt: 'desc' },
-    });
+    }) as OrderWithItems[];
   } catch {
     return [];
   }
