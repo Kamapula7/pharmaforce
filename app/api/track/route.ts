@@ -3,13 +3,12 @@ import { prisma } from '@/lib/prisma';
 
 export async function POST(req: NextRequest) {
   try {
-    const { path } = await req.json();
-    const country = req.headers.get('x-vercel-ip-country') ?? undefined;
-    const userAgent = req.headers.get('user-agent') ?? undefined;
+    const body = await req.json();
+    const path: string = body?.path ?? '/';
+    const country = req.headers.get('x-vercel-ip-country') ?? null;
+    const userAgent = req.headers.get('user-agent') ?? null;
 
-    // Skip bots and admin pages
     if (
-      !path ||
       path.startsWith('/admin') ||
       path.startsWith('/api') ||
       /bot|crawl|spider|slurp|facebookexternalhit/i.test(userAgent ?? '')
@@ -17,9 +16,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ ok: true });
     }
 
-    await prisma.pageView.create({ data: { path, country: country ?? null, userAgent: userAgent ?? null } });
+    await prisma.pageView.create({ data: { path, country, userAgent } });
     return NextResponse.json({ ok: true });
-  } catch {
-    return NextResponse.json({ ok: true });
+  } catch (e) {
+    console.error('[track]', e instanceof Error ? e.message : String(e));
+    return NextResponse.json({ ok: false }, { status: 500 });
   }
 }
