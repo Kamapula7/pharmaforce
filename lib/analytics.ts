@@ -8,7 +8,9 @@ function getClient() {
 
   try {
     const cleaned = creds.trim();
-    const credentials = JSON.parse(cleaned);
+    // Env vars can contain literal newlines inside the PEM key — escape them all first
+    const fixed = cleaned.replace(/\n/g, '\\n').replace(/\r/g, '');
+    const credentials = JSON.parse(fixed);
     if (credentials.private_key) {
       credentials.private_key = credentials.private_key.replace(/\\n/g, '\n');
     }

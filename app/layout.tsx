@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 
 const geist = Geist({
@@ -74,16 +75,19 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html suppressHydrationWarning>
-      <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BTZK8NZQ95" />
-        <script dangerouslySetInnerHTML={{ __html: `
+      <body className={`${geist.variable} antialiased`}>
+        {children}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-BTZK8NZQ95"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', 'G-BTZK8NZQ95');
-        `}} />
-      </head>
-      <body className={`${geist.variable} antialiased`}>{children}</body>
+        `}</Script>
+      </body>
     </html>
   );
 }
