@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { useParams, useSearchParams } from 'next/navigation';
+import { useState } from 'react';
 import { SlidersHorizontal, ChevronDown } from 'lucide-react';
 
 const SUBS: Record<string, { key: string; label: string }[]> = {
@@ -53,6 +54,15 @@ export default function SidebarCategories({ categories, counts, subCounts, trans
   const category = searchParams.get('category') ?? undefined;
   const sub = searchParams.get('sub') ?? undefined;
 
+  // Track which categories are expanded (independent from active)
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+
+  const toggle = (key: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setExpanded(prev => ({ ...prev, [key]: !prev[key] }));
+  };
+
   return (
     <div className="bg-surface border border-border rounded-xl overflow-hidden">
       <div className="px-4 py-3 border-b border-border flex items-center gap-2">
@@ -66,6 +76,8 @@ export default function SidebarCategories({ categories, counts, subCounts, trans
           const hasSubs = !!SUBS[key];
           if (count === 0 && key !== 'all' && key !== 'womens-health') return null;
 
+          const isOpen = expanded[key] ?? active;
+
           const href = active && key !== 'all'
             ? `/${locale}/products`
             : key === 'all'
@@ -74,25 +86,30 @@ export default function SidebarCategories({ categories, counts, subCounts, trans
 
           return (
             <div key={key}>
-              <Link
-                href={href}
-                className={`flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-colors ${
-                  active ? 'bg-brand/15 text-brand font-semibold' : 'text-muted hover:text-white hover:bg-surface-2'
-                }`}
-              >
-                <span>{translations[key] ?? key}</span>
-                <div className="flex items-center gap-1.5">
+              <div className={`flex items-center justify-between px-3 py-2 rounded-lg text-sm transition-colors ${
+                active ? 'bg-brand/15 text-brand font-semibold' : 'text-muted hover:text-white hover:bg-surface-2'
+              }`}>
+                {/* Category name — navigates */}
+                <Link href={href} className="flex-1 truncate">
+                  {translations[key] ?? key}
+                </Link>
+                <div className="flex items-center gap-1.5 shrink-0">
                   <span className={`text-xs ${active ? 'text-brand' : 'text-muted/50'}`}>{count}</span>
                   {hasSubs && (
-                    <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${active ? 'rotate-180 text-brand' : 'text-muted/40'}`} />
+                    <button
+                      onClick={(e) => toggle(key, e)}
+                      className="p-0.5 rounded hover:bg-white/10 transition-colors"
+                    >
+                      <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${isOpen ? 'rotate-180 text-brand' : 'text-muted/40'}`} />
+                    </button>
                   )}
                 </div>
-              </Link>
+              </div>
 
-              {/* Subcategories with smooth animation */}
+              {/* Subcategories */}
               <div
                 className="overflow-hidden transition-all duration-300 ease-in-out"
-                style={{ maxHeight: active && hasSubs ? `${(SUBS[key]?.length ?? 0) * 44}px` : '0px' }}
+                style={{ maxHeight: isOpen && hasSubs ? `${(SUBS[key]?.length ?? 0) * 44}px` : '0px' }}
               >
                 <div className="ml-3 mt-1 mb-1 space-y-0.5">
                   {(SUBS[key] ?? []).map(({ key: sk, label }) => {
