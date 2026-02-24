@@ -5,6 +5,7 @@ import { PRODUCTS } from '@/lib/products';
 import { formatPrice } from '@/lib/utils';
 import AddToCartButton from '@/components/product/AddToCartButton';
 import SearchInput from '@/components/search/SearchInput';
+import { getTranslations } from 'next-intl/server';
 
 interface SearchPageProps {
   params: Promise<{ locale: string }>;
@@ -14,6 +15,7 @@ interface SearchPageProps {
 export default async function SearchPage({ params, searchParams }: SearchPageProps) {
   const { locale } = await params;
   const { q } = await searchParams;
+  const t = await getTranslations({ locale, namespace: 'search' });
 
   const query = q?.trim() ?? '';
 
@@ -34,7 +36,7 @@ export default async function SearchPage({ params, searchParams }: SearchPagePro
 
       {/* Search bar */}
       <div className="mb-10">
-        <h1 className="text-3xl font-black text-white mb-6">Search Products</h1>
+        <h1 className="text-3xl font-black text-white mb-6">{t('title')}</h1>
         <SearchInput locale={locale} initialQuery={query} />
       </div>
 
@@ -43,8 +45,8 @@ export default async function SearchPage({ params, searchParams }: SearchPagePro
         <>
           <p className="text-muted text-sm mb-6">
             {results.length > 0
-              ? <><span className="text-white font-semibold">{results.length}</span> results for &ldquo;<span className="text-brand">{query}</span>&rdquo;</>
-              : <>No results for &ldquo;<span className="text-brand">{query}</span>&rdquo;</>
+              ? <><span className="text-white font-semibold">{results.length}</span> {t('resultsFor')} &ldquo;<span className="text-brand">{query}</span>&rdquo;</>
+              : <>{t('noResultsFor')} &ldquo;<span className="text-brand">{query}</span>&rdquo;</>
             }
           </p>
 
@@ -70,7 +72,7 @@ export default async function SearchPage({ params, searchParams }: SearchPagePro
                     )}
                     {!product.inStock && (
                       <div className="absolute inset-0 bg-black/55 flex items-center justify-center">
-                        <span className="bg-black/80 text-white text-xs font-bold px-3 py-1 rounded-full">Out of Stock</span>
+                        <span className="bg-black/80 text-white text-xs font-bold px-3 py-1 rounded-full">{t('outOfStock')}</span>
                       </div>
                     )}
                   </Link>
@@ -117,17 +119,17 @@ export default async function SearchPage({ params, searchParams }: SearchPagePro
               <div className="w-16 h-16 bg-surface border border-border rounded-2xl flex items-center justify-center mx-auto mb-4">
                 <Search className="w-8 h-8 text-muted" />
               </div>
-              <p className="text-white font-semibold mb-2">No products found</p>
-              <p className="text-muted text-sm mb-6">Try a different search term or browse all products.</p>
+              <p className="text-white font-semibold mb-2">{t('noProductsFound')}</p>
+              <p className="text-muted text-sm mb-6">{t('tryDifferent')}</p>
               <Link href={`/${locale}/products`} className="inline-flex items-center gap-2 bg-brand text-dark font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-brand/90 transition-colors">
-                Browse All Products
+                {t('browseAll')}
               </Link>
             </div>
           )}
         </>
       ) : (
         <div className="text-center py-16">
-          <p className="text-muted text-sm">Start typing to search products by name, brand or category.</p>
+          <p className="text-muted text-sm">{t('startTyping')}</p>
         </div>
       )}
     </div>

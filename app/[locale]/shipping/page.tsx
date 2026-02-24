@@ -4,107 +4,228 @@ interface ShippingPageProps {
   params: Promise<{ locale: string }>;
 }
 
-const DELIVERY_ZONES = [
-  {
-    zone: 'Zone 1 — Core EU',
-    countries: 'Germany, Austria, Netherlands, Belgium, Luxembourg',
-    time: '3–5 business days',
-    cost: '€9.90',
-    freeFrom: '€150',
-  },
-  {
-    zone: 'Zone 2 — EU West',
-    countries: 'France, Spain, Portugal, Italy',
-    time: '4–7 business days',
-    cost: '€12.90',
-    freeFrom: '€150',
-  },
-  {
-    zone: 'Zone 3 — EU North',
-    countries: 'Sweden, Denmark, Finland, Norway',
-    time: '5–8 business days',
-    cost: '€14.90',
-    freeFrom: '€150',
-  },
-  {
-    zone: 'Zone 4 — EU East & South',
-    countries: 'Poland, Czech Republic, Hungary, Romania, Bulgaria, Croatia, Slovakia, Slovenia, Greece',
-    time: '5–10 business days',
-    cost: '€14.90',
-    freeFrom: '€150',
-  },
-  {
-    zone: 'Zone 5 — Baltics & Rest of EU',
-    countries: 'Estonia, Latvia, Lithuania, Ireland, Malta, Cyprus',
-    time: '6–12 business days',
-    cost: '€16.90',
-    freeFrom: '€150',
-  },
-];
+type ShippingContent = {
+  badge: string;
+  title: string;
+  subtitle: string;
+  highlights: { label: string; sub: string }[];
+  howItWorksTitle: string;
+  steps: { step: string; title: string; desc: string }[];
+  zonesTitle: string;
+  zoneHeader: [string, string, string];
+  zones: { zone: string; countries: string; time: string; cost: string; freeFrom: string }[];
+  vatNote: string;
+  trackingTitle: string;
+  trackingDesc: string;
+  customsTitle: string;
+  customsDesc: string;
+  questionsText: string;
+  questionsAfter: string;
+};
 
-const STEPS = [
-  {
-    step: '1',
-    title: 'Place your order',
-    desc: 'Fill out the checkout form with your shipping address and receive bank transfer details by email.',
+const CONTENT: Record<string, ShippingContent> = {
+  en: {
+    badge: 'Shipping & Delivery',
+    title: 'Shipping Information',
+    subtitle: 'We ship across 30+ European countries. All orders are packed discreetly with no product names on the outside.',
+    highlights: [
+      { label: 'Free from €150', sub: 'Free EU shipping' },
+      { label: 'Discreet packing', sub: 'No product labels outside' },
+      { label: '30+ countries', sub: 'Pan-European delivery' },
+      { label: '3–12 business days', sub: 'Depending on country' },
+    ],
+    howItWorksTitle: 'How it works',
+    steps: [
+      { step: '1', title: 'Place your order', desc: 'Fill out the checkout form with your shipping address and receive bank transfer details by email.' },
+      { step: '2', title: 'Make payment', desc: 'Transfer the payment to our bank account (IBAN). Use your order number as reference.' },
+      { step: '3', title: 'Order processing', desc: 'After payment confirmation (1–2 business days), we pack and ship your order discreetly.' },
+      { step: '4', title: 'Delivery', desc: 'You receive your tracking number by email. Packages are delivered to your door.' },
+    ],
+    zonesTitle: 'Delivery zones & prices',
+    zoneHeader: ['Zone / Countries', 'Delivery time', 'Cost'],
+    zones: [
+      { zone: 'Zone 1 — Core EU', countries: 'Germany, Austria, Netherlands, Belgium, Luxembourg', time: '3–5 business days', cost: '€9.90', freeFrom: '€150' },
+      { zone: 'Zone 2 — EU West', countries: 'France, Spain, Portugal, Italy', time: '4–7 business days', cost: '€12.90', freeFrom: '€150' },
+      { zone: 'Zone 3 — EU North', countries: 'Sweden, Denmark, Finland, Norway', time: '5–8 business days', cost: '€14.90', freeFrom: '€150' },
+      { zone: 'Zone 4 — EU East & South', countries: 'Poland, Czech Republic, Hungary, Romania, Bulgaria, Croatia, Slovakia, Slovenia, Greece', time: '5–10 business days', cost: '€14.90', freeFrom: '€150' },
+      { zone: 'Zone 5 — Baltics & Rest of EU', countries: 'Estonia, Latvia, Lithuania, Ireland, Malta, Cyprus', time: '6–12 business days', cost: '€16.90', freeFrom: '€150' },
+    ],
+    vatNote: '* All prices include VAT. Free shipping applies to orders over €150.',
+    trackingTitle: 'Order tracking',
+    trackingDesc: 'Once your order is shipped, you will receive a tracking number by email. You can track your parcel directly on the carrier\'s website. Most parcels are shipped via standard EU postal services.',
+    customsTitle: 'Customs & packaging',
+    customsDesc: 'All shipments are sent from within the EU — no customs fees for EU residents. Packages are plain, discreet boxes with no product names or brand logos on the outside.',
+    questionsText: 'Have more questions?',
+    questionsAfter: '— we typically respond within 2–6 hours on business days.',
   },
-  {
-    step: '2',
-    title: 'Make payment',
-    desc: 'Transfer the payment to our bank account (IBAN). Use your order number as reference.',
+  de: {
+    badge: 'Versand & Lieferung',
+    title: 'Versandinformationen',
+    subtitle: 'Wir versenden in 30+ europäische Länder. Alle Bestellungen werden diskret verpackt, ohne Produktnamen auf der Außenseite.',
+    highlights: [
+      { label: 'Kostenlos ab €150', sub: 'Kostenloser EU-Versand' },
+      { label: 'Diskrete Verpackung', sub: 'Keine Produktetiketten außen' },
+      { label: '30+ Länder', sub: 'Europaweite Lieferung' },
+      { label: '3–12 Werktage', sub: 'Je nach Land' },
+    ],
+    howItWorksTitle: 'So funktioniert es',
+    steps: [
+      { step: '1', title: 'Bestellung aufgeben', desc: 'Füllen Sie das Checkout-Formular mit Ihrer Lieferadresse aus und erhalten Sie Banküberweisung-Details per E-Mail.' },
+      { step: '2', title: 'Zahlung leisten', desc: 'Überweisen Sie den Betrag auf unser Bankkonto (IBAN). Verwenden Sie Ihre Bestellnummer als Referenz.' },
+      { step: '3', title: 'Bearbeitung', desc: 'Nach Zahlungsbestätigung (1–2 Werktage) verpacken und versenden wir Ihre Bestellung diskret.' },
+      { step: '4', title: 'Lieferung', desc: 'Sie erhalten Ihre Sendungsnummer per E-Mail. Pakete werden an Ihre Tür geliefert.' },
+    ],
+    zonesTitle: 'Lieferzonen & Preise',
+    zoneHeader: ['Zone / Länder', 'Lieferzeit', 'Kosten'],
+    zones: [
+      { zone: 'Zone 1 — Kern-EU', countries: 'Deutschland, Österreich, Niederlande, Belgien, Luxemburg', time: '3–5 Werktage', cost: '€9,90', freeFrom: '€150' },
+      { zone: 'Zone 2 — EU West', countries: 'Frankreich, Spanien, Portugal, Italien', time: '4–7 Werktage', cost: '€12,90', freeFrom: '€150' },
+      { zone: 'Zone 3 — EU Nord', countries: 'Schweden, Dänemark, Finnland, Norwegen', time: '5–8 Werktage', cost: '€14,90', freeFrom: '€150' },
+      { zone: 'Zone 4 — EU Ost & Süd', countries: 'Polen, Tschechien, Ungarn, Rumänien, Bulgarien, Kroatien, Slowakei, Slowenien, Griechenland', time: '5–10 Werktage', cost: '€14,90', freeFrom: '€150' },
+      { zone: 'Zone 5 — Baltikum & Rest-EU', countries: 'Estland, Lettland, Litauen, Irland, Malta, Zypern', time: '6–12 Werktage', cost: '€16,90', freeFrom: '€150' },
+    ],
+    vatNote: '* Alle Preise inkl. MwSt. Kostenloser Versand ab €150 Bestellwert.',
+    trackingTitle: 'Sendungsverfolgung',
+    trackingDesc: 'Sobald Ihre Bestellung versandt wird, erhalten Sie eine Sendungsnummer per E-Mail. Sie können Ihr Paket direkt auf der Website des Transporteurs verfolgen.',
+    customsTitle: 'Zoll & Verpackung',
+    customsDesc: 'Alle Sendungen werden aus der EU versendet — keine Zollgebühren für EU-Einwohner. Pakete sind schlichte, diskrete Kartons ohne Produktnamen oder Markenlogos außen.',
+    questionsText: 'Haben Sie weitere Fragen?',
+    questionsAfter: '— wir antworten in der Regel innerhalb von 2–6 Stunden an Werktagen.',
   },
-  {
-    step: '3',
-    title: 'Order processing',
-    desc: 'After payment confirmation (1–2 business days), we pack and ship your order discreetly.',
+  fr: {
+    badge: 'Expédition & Livraison',
+    title: 'Informations de livraison',
+    subtitle: 'Nous expédions dans 30+ pays européens. Toutes les commandes sont emballées discrètement sans noms de produits à l\'extérieur.',
+    highlights: [
+      { label: 'Gratuit dès €150', sub: 'Livraison EU gratuite' },
+      { label: 'Emballage discret', sub: 'Aucune étiquette produit' },
+      { label: '30+ pays', sub: 'Livraison pan-européenne' },
+      { label: '3–12 jours ouvrables', sub: 'Selon le pays' },
+    ],
+    howItWorksTitle: 'Comment ça marche',
+    steps: [
+      { step: '1', title: 'Passer commande', desc: 'Remplissez le formulaire de commande avec votre adresse de livraison et recevez les coordonnées bancaires par e-mail.' },
+      { step: '2', title: 'Effectuer le paiement', desc: 'Transférez le paiement sur notre compte bancaire (IBAN). Utilisez votre numéro de commande comme référence.' },
+      { step: '3', title: 'Traitement', desc: 'Après confirmation du paiement (1–2 jours ouvrables), nous emballons et expédions votre commande discrètement.' },
+      { step: '4', title: 'Livraison', desc: 'Vous recevez votre numéro de suivi par e-mail. Les colis sont livrés à votre porte.' },
+    ],
+    zonesTitle: 'Zones de livraison & tarifs',
+    zoneHeader: ['Zone / Pays', 'Délai de livraison', 'Coût'],
+    zones: [
+      { zone: 'Zone 1 — EU principale', countries: 'Allemagne, Autriche, Pays-Bas, Belgique, Luxembourg', time: '3–5 jours ouvrables', cost: '€9,90', freeFrom: '€150' },
+      { zone: 'Zone 2 — EU Ouest', countries: 'France, Espagne, Portugal, Italie', time: '4–7 jours ouvrables', cost: '€12,90', freeFrom: '€150' },
+      { zone: 'Zone 3 — EU Nord', countries: 'Suède, Danemark, Finlande, Norvège', time: '5–8 jours ouvrables', cost: '€14,90', freeFrom: '€150' },
+      { zone: 'Zone 4 — EU Est & Sud', countries: 'Pologne, République tchèque, Hongrie, Roumanie, Bulgarie, Croatie, Slovaquie, Slovénie, Grèce', time: '5–10 jours ouvrables', cost: '€14,90', freeFrom: '€150' },
+      { zone: 'Zone 5 — Pays Baltes & reste EU', countries: 'Estonie, Lettonie, Lituanie, Irlande, Malte, Chypre', time: '6–12 jours ouvrables', cost: '€16,90', freeFrom: '€150' },
+    ],
+    vatNote: '* Tous les prix incluent la TVA. Livraison gratuite pour les commandes de plus de €150.',
+    trackingTitle: 'Suivi de commande',
+    trackingDesc: 'Une fois votre commande expédiée, vous recevrez un numéro de suivi par e-mail. Vous pouvez suivre votre colis directement sur le site du transporteur.',
+    customsTitle: 'Douane & emballage',
+    customsDesc: 'Tous les envois sont expédiés depuis l\'UE — pas de frais de douane pour les résidents UE. Les colis sont des boîtes neutres et discrètes sans noms de produits ni logos de marque à l\'extérieur.',
+    questionsText: 'D\'autres questions ?',
+    questionsAfter: '— nous répondons généralement dans les 2–6 heures les jours ouvrables.',
   },
-  {
-    step: '4',
-    title: 'Delivery',
-    desc: 'You receive your tracking number by email. Packages are delivered to your door.',
+  pl: {
+    badge: 'Wysyłka i Dostawa',
+    title: 'Informacje o dostawie',
+    subtitle: 'Wysyłamy do 30+ krajów europejskich. Wszystkie zamówienia są dyskretnie zapakowane bez nazw produktów na zewnątrz.',
+    highlights: [
+      { label: 'Gratis od €150', sub: 'Darmowa wysyłka EU' },
+      { label: 'Dyskretne pakowanie', sub: 'Brak etykiet na zewnątrz' },
+      { label: '30+ krajów', sub: 'Dostawa ogólnoeuropejska' },
+      { label: '3–12 dni roboczych', sub: 'W zależności od kraju' },
+    ],
+    howItWorksTitle: 'Jak to działa',
+    steps: [
+      { step: '1', title: 'Złóż zamówienie', desc: 'Wypełnij formularz zamówienia z adresem dostawy i otrzymaj dane do przelewu bankowego na e-mail.' },
+      { step: '2', title: 'Dokonaj płatności', desc: 'Przelej płatność na nasze konto bankowe (IBAN). Użyj numeru zamówienia jako tytułu przelewu.' },
+      { step: '3', title: 'Realizacja zamówienia', desc: 'Po potwierdzeniu płatności (1–2 dni robocze) pakujemy i wysyłamy Twoje zamówienie dyskretnie.' },
+      { step: '4', title: 'Dostawa', desc: 'Otrzymujesz numer śledzenia na e-mail. Paczki są dostarczane pod Twoje drzwi.' },
+    ],
+    zonesTitle: 'Strefy dostawy i ceny',
+    zoneHeader: ['Strefa / Kraje', 'Czas dostawy', 'Koszt'],
+    zones: [
+      { zone: 'Strefa 1 — Główna EU', countries: 'Niemcy, Austria, Holandia, Belgia, Luksemburg', time: '3–5 dni roboczych', cost: '€9,90', freeFrom: '€150' },
+      { zone: 'Strefa 2 — EU Zachód', countries: 'Francja, Hiszpania, Portugalia, Włochy', time: '4–7 dni roboczych', cost: '€12,90', freeFrom: '€150' },
+      { zone: 'Strefa 3 — EU Północ', countries: 'Szwecja, Dania, Finlandia, Norwegia', time: '5–8 dni roboczych', cost: '€14,90', freeFrom: '€150' },
+      { zone: 'Strefa 4 — EU Wschód i Południe', countries: 'Polska, Czechy, Węgry, Rumunia, Bułgaria, Chorwacja, Słowacja, Słowenia, Grecja', time: '5–10 dni roboczych', cost: '€14,90', freeFrom: '€150' },
+      { zone: 'Strefa 5 — Kraje Bałtyckie i pozostałe EU', countries: 'Estonia, Łotwa, Litwa, Irlandia, Malta, Cypr', time: '6–12 dni roboczych', cost: '€16,90', freeFrom: '€150' },
+    ],
+    vatNote: '* Wszystkie ceny zawierają VAT. Darmowa wysyłka przy zamówieniach powyżej €150.',
+    trackingTitle: 'Śledzenie zamówienia',
+    trackingDesc: 'Po wysłaniu zamówienia otrzymasz numer śledzenia na e-mail. Możesz śledzić swoją paczkę bezpośrednio na stronie przewoźnika.',
+    customsTitle: 'Cło i pakowanie',
+    customsDesc: 'Wszystkie przesyłki są wysyłane z EU — brak opłat celnych dla mieszkańców EU. Paczki to zwykłe, dyskretne pudełka bez nazw produktów ani logo marki na zewnątrz.',
+    questionsText: 'Masz więcej pytań?',
+    questionsAfter: '— zazwyczaj odpowiadamy w ciągu 2–6 godzin w dni robocze.',
   },
-];
+  it: {
+    badge: 'Spedizione e Consegna',
+    title: 'Informazioni sulla spedizione',
+    subtitle: 'Spediamo in 30+ paesi europei. Tutti gli ordini sono confezionati in modo discreto senza nomi di prodotti all\'esterno.',
+    highlights: [
+      { label: 'Gratis da €150', sub: 'Spedizione EU gratuita' },
+      { label: 'Imballaggio discreto', sub: 'Nessuna etichetta prodotto' },
+      { label: '30+ paesi', sub: 'Consegna pan-europea' },
+      { label: '3–12 giorni lavorativi', sub: 'A seconda del paese' },
+    ],
+    howItWorksTitle: 'Come funziona',
+    steps: [
+      { step: '1', title: 'Effettua l\'ordine', desc: 'Compila il modulo di checkout con il tuo indirizzo di spedizione e ricevi i dati per il bonifico bancario via e-mail.' },
+      { step: '2', title: 'Effettua il pagamento', desc: 'Trasferisci il pagamento sul nostro conto bancario (IBAN). Usa il numero d\'ordine come riferimento.' },
+      { step: '3', title: 'Elaborazione ordine', desc: 'Dopo la conferma del pagamento (1–2 giorni lavorativi), imballiamo e spediamo il tuo ordine discretamente.' },
+      { step: '4', title: 'Consegna', desc: 'Ricevi il numero di tracciamento via e-mail. I pacchi vengono consegnati alla tua porta.' },
+    ],
+    zonesTitle: 'Zone di consegna e prezzi',
+    zoneHeader: ['Zona / Paesi', 'Tempi di consegna', 'Costo'],
+    zones: [
+      { zone: 'Zona 1 — EU principale', countries: 'Germania, Austria, Paesi Bassi, Belgio, Lussemburgo', time: '3–5 giorni lavorativi', cost: '€9,90', freeFrom: '€150' },
+      { zone: 'Zona 2 — EU Ovest', countries: 'Francia, Spagna, Portogallo, Italia', time: '4–7 giorni lavorativi', cost: '€12,90', freeFrom: '€150' },
+      { zone: 'Zona 3 — EU Nord', countries: 'Svezia, Danimarca, Finlandia, Norvegia', time: '5–8 giorni lavorativi', cost: '€14,90', freeFrom: '€150' },
+      { zone: 'Zona 4 — EU Est e Sud', countries: 'Polonia, Repubblica Ceca, Ungheria, Romania, Bulgaria, Croazia, Slovacchia, Slovenia, Grecia', time: '5–10 giorni lavorativi', cost: '€14,90', freeFrom: '€150' },
+      { zone: 'Zona 5 — Paesi Baltici e resto EU', countries: 'Estonia, Lettonia, Lituania, Irlanda, Malta, Cipro', time: '6–12 giorni lavorativi', cost: '€16,90', freeFrom: '€150' },
+    ],
+    vatNote: '* Tutti i prezzi includono l\'IVA. Spedizione gratuita per ordini superiori a €150.',
+    trackingTitle: 'Tracciamento ordine',
+    trackingDesc: 'Una volta spedito il tuo ordine, riceverai un numero di tracciamento via e-mail. Puoi tracciare il tuo pacco direttamente sul sito del corriere.',
+    customsTitle: 'Dogana e imballaggio',
+    customsDesc: 'Tutte le spedizioni vengono inviate dall\'interno dell\'UE — nessuna tassa doganale per i residenti UE. I pacchi sono scatole semplici e discrete senza nomi di prodotti o loghi di marchi all\'esterno.',
+    questionsText: 'Hai altre domande?',
+    questionsAfter: '— rispondiamo generalmente entro 2–6 ore nei giorni lavorativi.',
+  },
+};
 
 export default async function ShippingPage({ params }: ShippingPageProps) {
-  await params;
+  const { locale } = await params;
+  const c = CONTENT[locale] ?? CONTENT.en;
 
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-
-      {/* Header */}
       <div className="mb-12">
-        <p className="text-brand text-xs font-bold uppercase tracking-widest mb-3">Shipping & Delivery</p>
-        <h1 className="text-4xl font-black text-white mb-3">Shipping Information</h1>
-        <p className="text-muted text-base leading-relaxed max-w-2xl">
-          We ship across 30+ European countries. All orders are packed discreetly with no product names on the outside.
-        </p>
+        <p className="text-brand text-xs font-bold uppercase tracking-widest mb-3">{c.badge}</p>
+        <h1 className="text-4xl font-black text-white mb-3">{c.title}</h1>
+        <p className="text-muted text-base leading-relaxed max-w-2xl">{c.subtitle}</p>
       </div>
 
-      {/* Highlights */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
-        {[
-          { icon: Truck, label: 'Free from €150', sub: 'Free EU shipping' },
-          { icon: Package, label: 'Discreet packing', sub: 'No product labels outside' },
-          { icon: Globe, label: '30+ countries', sub: 'Pan-European delivery' },
-          { icon: Clock, label: '3–12 business days', sub: 'Depending on country' },
-        ].map(({ icon: Icon, label, sub }) => (
-          <div key={label} className="bg-surface border border-border rounded-xl p-4 text-center">
+        {[Truck, Package, Globe, Clock].map((Icon, i) => (
+          <div key={i} className="bg-surface border border-border rounded-xl p-4 text-center">
             <div className="w-10 h-10 bg-brand/10 rounded-xl flex items-center justify-center mx-auto mb-2">
               <Icon className="w-5 h-5 text-brand" />
             </div>
-            <p className="text-white font-semibold text-sm">{label}</p>
-            <p className="text-muted text-xs mt-0.5">{sub}</p>
+            <p className="text-white font-semibold text-sm">{c.highlights[i].label}</p>
+            <p className="text-muted text-xs mt-0.5">{c.highlights[i].sub}</p>
           </div>
         ))}
       </div>
 
-      {/* How it works */}
       <div className="mb-12">
-        <h2 className="text-xl font-bold text-white mb-6">How it works</h2>
+        <h2 className="text-xl font-bold text-white mb-6">{c.howItWorksTitle}</h2>
         <div className="relative">
           <div className="absolute left-5 top-0 bottom-0 w-px bg-border hidden sm:block" />
           <div className="space-y-6">
-            {STEPS.map((s) => (
+            {c.steps.map((s) => (
               <div key={s.step} className="flex gap-4">
                 <div className="w-10 h-10 bg-brand rounded-full flex items-center justify-center text-dark font-black text-sm shrink-0 relative z-10">
                   {s.step}
@@ -119,20 +240,16 @@ export default async function ShippingPage({ params }: ShippingPageProps) {
         </div>
       </div>
 
-      {/* Delivery zones table */}
       <div className="mb-12">
-        <h2 className="text-xl font-bold text-white mb-6">Delivery zones & prices</h2>
+        <h2 className="text-xl font-bold text-white mb-6">{c.zonesTitle}</h2>
         <div className="bg-surface border border-border rounded-xl overflow-hidden">
           <div className="grid grid-cols-4 px-4 py-3 border-b border-border text-xs text-muted font-semibold uppercase tracking-wider">
-            <span className="col-span-2">Zone / Countries</span>
-            <span>Delivery time</span>
-            <span>Cost</span>
+            <span className="col-span-2">{c.zoneHeader[0]}</span>
+            <span>{c.zoneHeader[1]}</span>
+            <span>{c.zoneHeader[2]}</span>
           </div>
-          {DELIVERY_ZONES.map((zone, i) => (
-            <div
-              key={zone.zone}
-              className={`grid grid-cols-4 px-4 py-4 gap-2 ${i < DELIVERY_ZONES.length - 1 ? 'border-b border-border' : ''}`}
-            >
+          {c.zones.map((zone, i) => (
+            <div key={zone.zone} className={`grid grid-cols-4 px-4 py-4 gap-2 ${i < c.zones.length - 1 ? 'border-b border-border' : ''}`}>
               <div className="col-span-2">
                 <p className="text-white text-sm font-medium">{zone.zone}</p>
                 <p className="text-muted text-xs mt-0.5">{zone.countries}</p>
@@ -147,39 +264,33 @@ export default async function ShippingPage({ params }: ShippingPageProps) {
             </div>
           ))}
         </div>
-        <p className="text-muted text-xs mt-3">* All prices include VAT. Free shipping applies to orders over €150.</p>
+        <p className="text-muted text-xs mt-3">{c.vatNote}</p>
       </div>
 
-      {/* Customs & tracking */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
         <div className="bg-surface border border-border rounded-xl p-6">
           <h3 className="text-white font-bold mb-3 flex items-center gap-2">
             <CheckCircle className="w-5 h-5 text-success" />
-            Order tracking
+            {c.trackingTitle}
           </h3>
-          <p className="text-muted text-sm leading-relaxed">
-            Once your order is shipped, you will receive a tracking number by email. You can track your parcel directly on the carrier&apos;s website. Most parcels are shipped via standard EU postal services.
-          </p>
+          <p className="text-muted text-sm leading-relaxed">{c.trackingDesc}</p>
         </div>
         <div className="bg-surface border border-border rounded-xl p-6">
           <h3 className="text-white font-bold mb-3 flex items-center gap-2">
             <AlertCircle className="w-5 h-5 text-brand" />
-            Customs & packaging
+            {c.customsTitle}
           </h3>
-          <p className="text-muted text-sm leading-relaxed">
-            All shipments are sent from within the EU — no customs fees for EU residents. Packages are plain, discreet boxes with no product names or brand logos on the outside.
-          </p>
+          <p className="text-muted text-sm leading-relaxed">{c.customsDesc}</p>
         </div>
       </div>
 
-      {/* FAQ link */}
       <div className="bg-brand/5 border border-brand/20 rounded-xl p-6">
         <p className="text-white/80 text-sm leading-relaxed">
-          Have more questions?{' '}
+          {c.questionsText}{' '}
           <a href="mailto:pharmaforce@inbox.eu" className="text-brand font-semibold hover:underline">
             pharmaforce@inbox.eu
           </a>
-          {' '}— we typically respond within 2–6 hours on business days.
+          {' '}{c.questionsAfter}
         </p>
       </div>
     </div>

@@ -199,6 +199,16 @@
         "longevity": "Longevity",
         "aa-peptides": "Anti-Aging Peptides"
     },
+    "search": {
+        "title": "Search Products",
+        "resultsFor": "results for",
+        "noResultsFor": "No results for",
+        "outOfStock": "Out of Stock",
+        "noProductsFound": "No products found",
+        "tryDifferent": "Try a different search term or browse all products.",
+        "browseAll": "Browse All Products",
+        "startTyping": "Start typing to search products by name, brand or category."
+    },
     "categories": {
         "all": "All Products",
         "protein": "Protein",
