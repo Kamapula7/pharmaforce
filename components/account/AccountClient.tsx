@@ -3,8 +3,10 @@
 import { useState, useEffect } from 'react';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { useSearchParams } from 'next/navigation';
-import { User, Package, LogIn, Eye, EyeOff, CheckCircle, Loader2 } from 'lucide-react';
+import { User, Package, LogIn, Eye, EyeOff, CheckCircle, Loader2, ExternalLink } from 'lucide-react';
 import { formatPrice } from '@/lib/utils';
+import { PRODUCTS } from '@/lib/products';
+import Image from 'next/image';
 import Link from 'next/link';
 
 type Tab = 'login' | 'register';
@@ -32,7 +34,7 @@ interface Order {
   createdAt: string;
   status: string;
   total: number;
-  items: { nameEn: string; quantity: number }[];
+  items: { nameEn: string; quantity: number; price: number }[];
 }
 
 export default function AccountClient({ locale }: { locale: string }) {
@@ -200,13 +202,35 @@ export default function AccountClient({ locale }: { locale: string }) {
                     {isOpen && (
                       <div className="border-t border-border p-4 bg-surface-2 space-y-3">
                         <p className="text-muted text-xs font-medium uppercase tracking-wide">Order Items</p>
-                        <div className="space-y-2">
-                          {order.items.map((item, i) => (
-                            <div key={i} className="flex items-center justify-between">
-                              <span className="text-white text-sm">{item.nameEn}</span>
-                              <span className="text-muted text-sm">× {item.quantity}</span>
-                            </div>
-                          ))}
+                        <div className="space-y-3">
+                          {order.items.map((item, i) => {
+                            const product = PRODUCTS.find(p => p.name === item.nameEn);
+                            return (
+                              <div key={i} className="flex items-center gap-3 bg-surface border border-border rounded-xl p-3">
+                                <div className="w-16 h-16 bg-[#f5f5f5] rounded-lg overflow-hidden shrink-0 relative">
+                                  {product?.image ? (
+                                    <Image src={product.image} alt={item.nameEn} fill className="object-contain p-1" sizes="64px" />
+                                  ) : (
+                                    <div className="w-full h-full flex items-center justify-center text-2xl">💊</div>
+                                  )}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <p className="text-white text-sm font-medium leading-tight">{item.nameEn}</p>
+                                  {product?.brand && <p className="text-muted text-xs mt-0.5">{product.brand}</p>}
+                                  <p className="text-brand text-xs mt-1 font-semibold">{formatPrice(item.price)} × {item.quantity}</p>
+                                </div>
+                                {product?.slug && (
+                                  <Link
+                                    href={`/${locale}/products/${product.slug}`}
+                                    className="shrink-0 p-2 text-muted hover:text-brand transition-colors rounded-lg hover:bg-surface"
+                                    title="View product"
+                                  >
+                                    <ExternalLink className="w-4 h-4" />
+                                  </Link>
+                                )}
+                              </div>
+                            );
+                          })}
                         </div>
                         <div className="border-t border-border pt-3 flex justify-between">
                           <span className="text-muted text-sm">Total</span>
@@ -224,7 +248,7 @@ export default function AccountClient({ locale }: { locale: string }) {
                         )}
                         {order.status === 'SHIPPED' && (
                           <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-3 text-xs text-blue-300">
-                            Your order is on its way!
+                            Your order is on its way! 🚚
                           </div>
                         )}
                       </div>

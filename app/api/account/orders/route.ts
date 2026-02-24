@@ -16,7 +16,7 @@ export async function GET() {
         { email: session.user.email },
       ],
     },
-    include: { items: { select: { nameEn: true, quantity: true } } },
+    include: { items: { select: { nameEn: true, quantity: true, price: true } } },
     orderBy: { createdAt: 'desc' },
   });
 
