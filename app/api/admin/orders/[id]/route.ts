@@ -1,0 +1,28 @@
+import { NextRequest, NextResponse } from 'next/server';
+import { prisma } from '@/lib/prisma';
+
+const VALID_STATUSES = ['PENDING', 'AWAITING_PAYMENT', 'PAID', 'SHIPPED', 'DELIVERED', 'CANCELLED'];
+
+export async function PATCH(
+  req: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  try {
+    const { id } = await params;
+    const { status } = await req.json();
+
+    if (!VALID_STATUSES.includes(status)) {
+      return NextResponse.json({ error: 'Invalid status' }, { status: 400 });
+    }
+
+    const order = await prisma.order.update({
+      where: { id },
+      data: { status },
+    });
+
+    return NextResponse.json({ ok: true, status: order.status });
+  } catch (e) {
+    console.error('[admin/orders]', e instanceof Error ? e.message : String(e));
+    return NextResponse.json({ ok: false }, { status: 500 });
+  }
+}
