@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { ArrowLeft, Clock, User, Tag } from 'lucide-react';
 import { BLOG_POSTS } from '@/lib/blog-content';
 import { getBlogPostForLocale } from '@/lib/blog-translations';
+import { getTranslations } from 'next-intl/server';
 
 interface BlogPostPageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -46,6 +47,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const rawPost = BLOG_POSTS.find(p => p.slug === slug);
   if (!rawPost) notFound();
   const post = getBlogPostForLocale(rawPost, locale);
+  const t = await getTranslations({ locale, namespace: 'blog' });
 
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -91,7 +93,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         className="inline-flex items-center gap-2 text-sm text-muted hover:text-white transition-colors mb-8"
       >
         <ArrowLeft className="w-4 h-4" />
-        Back to Blog
+        {t('backToBlog')}
       </Link>
 
       {/* Hero image */}
@@ -127,7 +129,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </span>
         <span className="flex items-center gap-1.5">
           <Clock className="w-3.5 h-3.5" />
-          {post.readTime} read
+          {post.readTime} {t('minRead')}
         </span>
         <span className="flex items-center gap-1.5">
           <Tag className="w-3.5 h-3.5" />
@@ -153,7 +155,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       {/* Footer */}
       <div className="mt-14 pt-8 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <p className="text-xs text-muted mb-1">Written by</p>
+          <p className="text-xs text-muted mb-1">{t('writtenBy')}</p>
           <p className="text-white font-semibold">{post.author}</p>
           {post.authorRole && <p className="text-xs text-muted">{post.authorRole}</p>}
         </div>
@@ -162,7 +164,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           className="inline-flex items-center gap-2 text-sm text-brand hover:text-white transition-colors font-semibold"
         >
           <ArrowLeft className="w-4 h-4" />
-          All Articles
+          {t('allArticles')}
         </Link>
       </div>
 

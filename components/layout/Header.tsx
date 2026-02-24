@@ -16,6 +16,7 @@ interface HeaderProps {
 
 export default function Header({ locale }: HeaderProps) {
   const t = useTranslations('nav');
+  const tAcc = useTranslations('account');
   const tPromo = useTranslations('promo');
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
@@ -103,7 +104,7 @@ export default function Header({ locale }: HeaderProps) {
                 <div className="w-full relative">
                   <SearchInput
                     locale={locale}
-                    placeholder="Search products..."
+                    placeholder={t('searchPlaceholder')}
                     autoFocus
                     onClose={() => setSearchOpen(false)}
                   />
@@ -130,7 +131,7 @@ export default function Header({ locale }: HeaderProps) {
                 <User className="w-5 h-5" />
                 {session && (
                   <span className="hidden sm:block text-xs font-medium max-w-[80px] truncate">
-                    {session.user?.name?.split(' ')[0] || 'Account'}
+                    {session.user?.name?.split(' ')[0] || tAcc('title')}
                   </span>
                 )}
               </button>
@@ -149,20 +150,20 @@ export default function Header({ locale }: HeaderProps) {
                           className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-muted hover:text-white hover:bg-white/5 transition-colors"
                           onClick={() => setAccountOpen(false)}
                         >
-                          <User className="w-4 h-4" /> My Account
+                          <User className="w-4 h-4" /> {tAcc('title')}
                         </Link>
                         <Link
                           href={`/${locale}/account`}
                           className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-muted hover:text-white hover:bg-white/5 transition-colors"
                           onClick={() => setAccountOpen(false)}
                         >
-                          <Package className="w-4 h-4" /> My Orders
+                          <Package className="w-4 h-4" /> {tAcc('orders')}
                         </Link>
                         <button
                           onClick={() => { signOut({ callbackUrl: `/${locale}/account` }); setAccountOpen(false); }}
                           className="w-full flex items-center gap-2.5 px-4 py-2.5 text-sm text-red-400 hover:bg-white/5 transition-colors border-t border-white/8"
                         >
-                          <LogOut className="w-4 h-4" /> Log out
+                          <LogOut className="w-4 h-4" /> {tAcc('logout')}
                         </button>
                       </>
                     ) : (
@@ -172,14 +173,14 @@ export default function Header({ locale }: HeaderProps) {
                           className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-muted hover:text-white hover:bg-white/5 transition-colors"
                           onClick={() => setAccountOpen(false)}
                         >
-                          <LogIn className="w-4 h-4" /> Login
+                          <LogIn className="w-4 h-4" /> {tAcc('login')}
                         </Link>
                         <Link
                           href={`/${locale}/account?tab=register`}
                           className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-brand hover:bg-white/5 transition-colors"
                           onClick={() => setAccountOpen(false)}
                         >
-                          <UserPlus className="w-4 h-4" /> Register
+                          <UserPlus className="w-4 h-4" /> {tAcc('register')}
                         </Link>
                       </>
                     )}

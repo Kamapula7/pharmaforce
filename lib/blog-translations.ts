@@ -256,6 +256,62 @@ export const BLOG_TRANSLATIONS: Record<string, LangMap> = {
       ],
     },
 
+    'creatine-vs-beta-alanine': {
+      title: 'Créatine vs. Bêta-Alanine : Que choisir pour vos objectifs ?',
+      excerpt: 'La créatine booste la force explosive ; la bêta-alanine combat la fatigue musculaire. Mais les combiner pourrait être le véritable accélérateur de performance — voici la science.',
+      sections: [
+        { heading: 'Comment fonctionne la créatine', body: 'Le phosphocréatine est le principal carburant pour la regénération d’ATP lors d’efforts maximaux de 1 à 10 secondes. En saturant les muscles en créatine (phase de charge : 20 g/jour pendant 5 jours, puis 3–5 g/jour d’entretien), vous prolongez la fenêtre phosphocréatine d’environ 10–15 %. Résultat pratique : 1 à 2 répétitions supplémentaires aux exercices polyarticulaires lourds et une récupération plus rapide entre les séries.' },
+        { heading: 'Comment fonctionne la bêta-alanine', body: 'La bêta-alanine est le précurseur limitant de la carnosine — un dipeptide qui tampon les ions hydrogène (H+) dans le tissu musculaire. Lors de séries à haute répétition ou d’intervalles d’endurance, l’accumulation de H+ provoque la brûlure qui vous force à arrêter. Plus de carnosine = capacité tampon accrue = plus de répétitions avant l’échec. Dose efficace : 3,2–6,4 g/jour.' },
+        { heading: 'Quand utiliser l’un ou l’autre', body: 'La créatine domine dans les sports de force : powerlifting, sprint, halterophilie. La bêta-alanine brille dans la plage 1–4 minutes : 400–800 m, CrossFit, musculation à haute répétition. Si votre sport mêle efforts explosifs courts et intervalles intenses prolongés — football, rugby, MMA — un stack des deux suppléments est clairement justifié.' },
+        { heading: 'Le stack : pourquoi la combinaison fonctionne', body: 'La créatine et la bêta-alanine ciblent des mécanismes de fatigue totalement distincts, ce qui les rend complémentaires. Une étude randomisée de 10 semaines a montré que le groupe créatine + bêta-alanine gagnait nettement plus de masse musculaire et perdait plus de graisse que chaque supplément pris seul.' },
+      ],
+    },
+
+    'vitamin-d3-athletes-guide': {
+      title: 'Pourquoi chaque athlète a besoin de Vitamine D3',
+      excerpt: 'Plus de 60 % des Européens souffrent de carence en vitamine D. Un taux de D3 bas réduit directement la testostérone, la vitesse de récupération et les défenses immunitaires. Voici comment le doser correctement.',
+      sections: [
+        { heading: 'La carence en vitamine D chez les athlètes européens', body: 'Une étude publiée dans le British Journal of Sports Medicine a révélé que 57 % des athlètes professionnels en Europe du Nord et centrale avaient des taux sériques de 25(OH)D inférieurs à 30 ng/ml. En hiver (octobre–mars), le rayonnement UVB au-delà du 50e parallèle est insuffisant pour la synthèse cutanée de vitamine D.' },
+        { heading: 'Comment la D3 impacte la performance', body: 'Les récepteurs de vitamine D (VDR) se trouvent dans le tissu musculaire, les os et les testicules. Une carence en dessous de 20 ng/ml est associée à : une synthèse protéique musculaire réduite, une baisse de 10–15 % de la production de testostérone, une absorption calcique altérée et une réponse immunitaire ralentie.' },
+        { heading: 'Protocole de dosage correct', body: 'Si vous ne supplementez pas encore : commencez par 4 000–5 000 UI/jour pendant 8 semaines, puis 2 000–3 000 UI/jour en entretien. Idéalement, testez votre taux sérique avant et après 12 semaines. Objectif : 40–60 ng/ml. Combinez avec la vitamine K2 (MK-7, 100–200 mcg/jour).' },
+      ],
+    },
+
+    'pre-workout-timing-guide': {
+      title: 'Timing du pré-entraînement : quand et combien prendre',
+      excerpt: 'Prendre votre pré-entraînement 20 minutes trop tôt (ou trop tard) peut en diviser l’efficacité par deux. Nous expliquons la fenêtre caféine optimale, la charge en bêta-alanine et comment éviter le crash.',
+      sections: [
+        { heading: 'La fenêtre pharmacocinétique de la caféine', body: 'La caféine atteint sa concentration plasmatique maximale 30 à 60 minutes après ingestion. Prise optimale : 30–45 minutes avant l’entraînement. Dose : 3–6 mg/kg de poids corporel. Pour un athlète de 80 kg : 240–480 mg. La plupart des pré-entraînements commerciaux contiennent 150–300 mg.' },
+        { heading: 'Boosters d’oxyde nitrique : citrulline et arginine', body: 'La L-citrulline (pas l’arginine) est le précurseur NO supérieur — elle contourne le métabolisme hépatique de premier passage et augmente les niveaux d’arginine plus efficacement. Dose : 6–8 g de citrulline-malate, 45–60 minutes avant l’entraînement.' },
+        { heading: 'Comment éviter le crash post-entraînement', body: 'Le crash post-caféine survient lorsque l’adénosine accumulée rebondit. Stratégies : utiliser la théanine (200 mg avec la caféine) pour adoucir le pic et le creux ; manger un repas complet 60–90 minutes après ; éviter une deuxième dose de caféine après 14h.' },
+        { heading: 'Protocole optimal recommandé', body: 'T-45 min : L-citrulline 6–8 g. T-35 min : pré-entraînement complet (caféine + bêta-alanine + créatine si inclus). T-0 min : commencer l’entraînement. Pendant : eau + électrolytes. Post : repas de récupération dans les 90 minutes.' },
+      ],
+    },
+
+    'omega3-recovery-science': {
+      title: 'Oméga-3 et récupération musculaire : le stack sous-estimé',
+      excerpt: 'L’huile de poisson est bien plus qu’un supplément cardiaque. Des études montrent que 3 g/jour d’EPA+DHA réduisent les courbatures jusqu’à 35 % et diminuent l’inflammation systémique — un essentiel de la récupération.',
+      sections: [
+        { heading: 'EPA et DHA : les acides gras clés', body: 'L’EPA (acide eicosapentanoïque) et le DHA (acide docosahexénoïque) sont les formes actives des oméga-3 marins. L’ALA des sources végétales (lin, chia) se convertit en EPA+DHA à moins de 5 %. La supplémentation directe est obligatoire pour atteindre des niveaux thérapeutiques.' },
+        { heading: 'Le mécanisme anti-inflammatoire', body: 'L’EPA et le DHA inhibent la cyclooxégénase (COX) et la lipoxégénase (LOX) — les mêmes enzymes cibles des AINS. Ils constituent également des précurseurs des résolvines et protéctines, des molécules résolvant activement l’inflammation. Résultat : réduction de l’inflammation induite par l’exercice, courbatures diminuées et récupération accélérée.' },
+        { heading: 'Dosage et timing', body: 'Dose efficace : 2–3 g d’EPA+DHA combinés par jour. Pas seulement la quantité d’huile de poisson — vérifiez les valeurs EPA+DHA sur l’étiquette. Prendre avec les repas pour une absorption maximale. Les effets sur la récupération deviennent perceptibles après 3–4 semaines de supplémentation régulière.' },
+        { heading: 'Oméga-3 et synthèse protéique', body: 'La recherche récente révèle que les oméga-3 amplifient la réponse anabolique à l’insuline et aux acides aminés. Une étude de 2012 a montré qu’une supplémentation en EPA+DHA augmentait la synthèse protéique musculaire de 50 % lors d’une perfusion d’insuline et d’acides aminés. Le stack oméga-3 + protéine de lactosérum est particulièrement synergique.' },
+      ],
+    },
+
+    'magnesium-sleep-gains': {
+      title: 'Magnésium glycinate : le supplément qui améliore votre sommeil',
+      excerpt: 'Plus de 70 % de l’hormone de croissance est libérée pendant le sommeil profond. Le magnésium glycinate améliore la qualité du sommeil, réduit le cortisol et coûte moins de 0,30 €/jour.',
+      sections: [
+        { heading: 'Pourquoi le magnésium est essentiel pour les sportifs', body: 'Le magnésium est un cofacteur de plus de 300 réactions enzymatiques, notamment la synthèse d’ATP, la production de protéines et la fonction musculaire. Les athlètes perdent 10–15 % de magnésium supplémentaire par la sueur et les urines lors des séances intenses. La majorité des européens ne consomment pas les 400–420 mg/jour recommandés.' },
+        { heading: 'Formes de magnésium et biodisponibilité', body: 'L’oxyde de magnésium (le moins cher) a une biodisponibilité de seulement 4 %. Le glycinate est lié à la glycine — un acide aminé favorisant le sommeil — et a une biodisponibilité de 80 %. Il est non laxatif aux doses thérapeutiques. Le malate est idéal pour la production d’énergie. Le citrate (biodisponibilité 30–40 %) est un bon choix économique.' },
+        { heading: 'Impact sur le sommeil et la récupération', body: 'Le magnésium module les récepteurs GABA — les mêmes récepteurs que ciblent les benzodiazépines, mais naturellement. Il réduit l’activité du système nerveux sympathique et diminue le cortisol salivaire au coucher. Les effets sur le sommeil sont : latence du sommeil réduite (endormissement plus rapide), sommeil profond accru, et moins de réveils nocturnes.' },
+        { heading: 'Dosage et timing recommandés', body: 'Prendre 200–400 mg de magnésium glycinate 30–60 minutes avant le coucher. Commencer par 200 mg et augmenter progressivement. Ne pas dépasser 400 mg/dose — au-delà, les effets laxatifs augmentent. Combiner avec 3–5 g de glycine supplémentaire pour un effet sommeil synergique.' },
+      ],
+    },
+
+
+
     'buy-testosterone-enanthate-europe-guide': {
       title: 'Acheter de la Testostérone Énanthate en Europe : Guide complet 2026',
       excerpt: 'La Testostérone Énanthate reste l\'ester de testostérone injectable le plus utilisé en Europe. Ce guide couvre les dosages, la structure du cycle, l\'approvisionnement sécurisé et ce qu\'il faut rechercher pour commander en ligne avec livraison EU.',

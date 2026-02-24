@@ -9,7 +9,8 @@
         "about": "Chi siamo",
         "cart": "Carrello",
         "account": "Account",
-        "admin": "Admin"
+        "admin": "Admin",
+        "searchPlaceholder": "Cerca prodotti..."
     },
     "home": {
         "hero": {
@@ -41,13 +42,15 @@
             "payment": {
                 "title": "Pagamento sicuro",
                 "desc": "Pagamento tramite bonifico bancario con piena sicurezza e tracciamento degli ordini."
-            }
+            },
+            "startChat": "Avvia chat"
         },
         "bestsellers": {
             "title": "Bestseller",
             "subtitle": "I prodotti più popolari tra i nostri clienti",
             "viewAll": "Visualizza tutti i prodotti"
-        }
+        },
+        "shopByCategory": "Acquista per categoria"
     },
     "products": {
         "title": "Tutti i prodotti",
@@ -72,7 +75,14 @@
         "addToCart": "Aggiungi al carrello",
         "inStock": "Disponibile",
         "outOfStock": "Esaurito",
-        "perServing": "per porzione"
+        "perServing": "per porzione",
+        "noProductsFound": "Nessun prodotto trovato",
+        "clearFilters": "Cancella filtri",
+        "priceFilter": "Prezzo, €",
+        "price0_20": "Fino a €20",
+        "price20_40": "€20 – €40",
+        "price40_60": "€40 – €60",
+        "price60plus": "Oltre €60"
     },
     "product": {
         "description": "Descrizione",
@@ -272,7 +282,11 @@
         "title": "PharmaForce Blog",
         "subtitle": "Guide basate su prove scientifiche sulla farmacologia sportiva, nutrizione e performance atletica.",
         "readArticle": "Leggi articolo",
-        "minRead": "min di lettura"
+        "minRead": "min di lettura",
+        "backToBlog": "Torna al Blog",
+        "writtenBy": "Scritto da",
+        "allArticles": "Tutti gli articoli",
+        "by": "Di"
     },
     "categories": {
         "all": "Tutti i prodotti",
@@ -292,5 +306,19 @@
         "womens-health": "Salute femminile",
         "sexual-health": "Salute sessuale",
         "anti-aging": "Anti-invecchiamento"
+    },
+    "about": {
+        "title": "Chi siamo — PharmaForce",
+        "subtitle": "PharmaForce è un fornitore europeo di farmacologia sportiva professionale, integratori e vitamine. La nostra missione è dare a ogni atleta accesso a prodotti di performance farmaceutici.",
+        "labCertTitle": "Certificato in laboratorio",
+        "labCertDesc": "Ogni lotto è testato per purezza, potenza e sicurezza da laboratori europei indipendenti.",
+        "shippingTitle": "Spedizione pan-europea",
+        "shippingDesc": "Consegna rapida e discreta in 30+ paesi UE e SEE. Tempi tipici: 3–7 giorni lavorativi.",
+        "qualityTitle": "Qualità professionale",
+        "qualityDesc": "Ci riforniamo direttamente da produttori certificati, garantendo standard farmaceutici.",
+        "athletesTitle": "2.400+ atleti",
+        "athletesDesc": "Scelto da atleti agonisti, bodybuilder e appassionati di fitness in tutta Europa.",
+        "commitmentTitle": "Il nostro impegno",
+        "commitmentText": "Tutti i prodotti venduti tramite PharmaForce rispettano le normative UE per gli integratori alimentari. Siamo pienamente conformi al GDPR e impegnati in pratiche commerciali trasparenti."
     }
 }

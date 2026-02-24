@@ -91,7 +91,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
               {featured.excerpt}
             </p>
               <div className="flex items-center justify-between">
-              <span className="text-white/50 text-xs">By <span className="text-white/80">{featured.author}</span> · {featured.date}</span>
+              <span className="text-white/50 text-xs">{t('by')} <span className="text-white/80">{featured.author}</span> · {featured.date}</span>
               <div className="flex items-center gap-2 text-brand font-bold text-sm">
                 {t('readArticle')} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>

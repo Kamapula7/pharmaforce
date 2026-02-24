@@ -57,42 +57,12 @@ const BADGE_COLORS: Record<string, string> = {
   'TOP RATED':  'bg-success text-white',
 };
 
-const AAS_SUBS = [
-  { key: 'injections', label: 'Injections' },
-  { key: 'tablets',    label: 'Tablets / Capsules' },
-];
-
-const PEPTIDES_SUBS = [
-  { key: 'secretagogues', label: 'Growth Hormone Stimulants' },
-  { key: 'hormones',      label: 'Hormones & Growth Factors' },
-];
-
-const MODULATORS_SUBS = [
-  { key: 'sarms',                  label: 'SARMs' },
-  { key: 'aromatase-inhibitors',   label: 'Aromatase Inhibitors' },
-  { key: 'serms',                  label: 'SERMs / PCT' },
-  { key: 'metabolic',              label: 'Metabolic Modulators' },
-];
-
-const WOMENS_SUBS = [
-  { key: 'weight-loss',    label: 'Weight Loss' },
-  { key: 'hair-growth',   label: 'Hair Growth' },
-  { key: 'anti-hirsutism', label: 'Anti-Hirsutism' },
-  { key: 'skin-health',     label: 'Skin Health' },
-  { key: 'hormone-therapy', label: 'Hormone Therapy' },
-];
-
-const SEXUAL_HEALTH_SUBS = [
-  { key: 'ed-medications',   label: 'ED Medications' },
-  { key: 'hormonal-support', label: 'Hormonal Support' },
-  { key: 'sh-peptides',      label: 'Peptides' },
-];
-
-const ANTI_AGING_SUBS = [
-  { key: 'skin',        label: 'Skin Rejuvenation' },
-  { key: 'longevity',   label: 'Longevity' },
-  { key: 'aa-peptides', label: 'Anti-Aging Peptides' },
-];
+const AAS_SUB_KEYS = ['injections', 'tablets'];
+const PEPTIDES_SUB_KEYS = ['secretagogues', 'hormones'];
+const MODULATORS_SUB_KEYS = ['sarms', 'aromatase-inhibitors', 'serms', 'metabolic'];
+const WOMENS_SUB_KEYS = ['weight-loss', 'hair-growth', 'anti-hirsutism', 'skin-health', 'hormone-therapy'];
+const SEXUAL_HEALTH_SUB_KEYS = ['ed-medications', 'hormonal-support', 'sh-peptides'];
+const ANTI_AGING_SUB_KEYS = ['skin', 'longevity', 'aa-peptides'];
 
 
 export default async function ProductsPage({ params, searchParams }: ProductsPageProps) {
@@ -283,14 +253,14 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
           {/* Price */}
           <div className="bg-surface border border-border rounded-xl overflow-hidden">
             <div className="px-4 py-3 border-b border-border">
-              <span className="text-white font-semibold text-sm">Price, €</span>
+              <span className="text-white font-semibold text-sm">{tP("priceFilter")}</span>
             </div>
             <div className="p-2 space-y-0.5">
               {([
-                { key: '0-20',  label: 'Up to €20' },
-                { key: '20-40', label: '€20 – €40' },
-                { key: '40-60', label: '€40 – €60' },
-                { key: '60+',   label: 'Over €60'  },
+                { key: '0-20',  label: tP('price0_20') },
+                { key: '20-40', label: tP('price20_40') },
+                { key: '40-60', label: tP('price40_60') },
+                { key: '60+',   label: tP('price60plus') },
               ] as { key: string; label: string }[]).map(({ key, label }) => {
                 const active = price === key;
                 const params = new URLSearchParams();
@@ -351,7 +321,7 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
               <Link href={`/${locale}/products?category=womens-health`}
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${!sub ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
               >{tCat('womens-health')}</Link>
-              {WOMENS_SUBS.map(({ key: sk }) => (
+              {WOMENS_SUB_KEYS.map((sk) => (
                 <Link key={sk} href={sub === sk ? `/${locale}/products?category=womens-health` : `/${locale}/products?category=womens-health&sub=${sk}`}
                   className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${sub === sk ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
                 >{tSub(sk as Parameters<typeof tSub>[0])}</Link>
@@ -365,7 +335,7 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
               <Link href={`/${locale}/products?category=aas`}
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${!sub ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
               >{tCat('aas')}</Link>
-              {AAS_SUBS.map(({ key: sk }) => (
+              {AAS_SUB_KEYS.map((sk) => (
                 <Link key={sk} href={sub === sk ? `/${locale}/products?category=aas` : `/${locale}/products?category=aas&sub=${sk}`}
                   className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${sub === sk ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
                 >{tSub(sk as Parameters<typeof tSub>[0])}</Link>
@@ -379,7 +349,7 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
               <Link href={`/${locale}/products?category=modulators`}
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${!sub ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
               >{tCat('modulators')}</Link>
-              {MODULATORS_SUBS.map(({ key: sk }) => (
+              {MODULATORS_SUB_KEYS.map((sk) => (
                 <Link key={sk} href={sub === sk ? `/${locale}/products?category=modulators` : `/${locale}/products?category=modulators&sub=${sk}`}
                   className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${sub === sk ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
                 >{tSub(sk as Parameters<typeof tSub>[0])}</Link>
@@ -393,7 +363,7 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
               <Link href={`/${locale}/products?category=peptides`}
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${!sub ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
               >{tCat('peptides')}</Link>
-              {PEPTIDES_SUBS.map(({ key: sk }) => (
+              {PEPTIDES_SUB_KEYS.map((sk) => (
                 <Link key={sk} href={sub === sk ? `/${locale}/products?category=peptides` : `/${locale}/products?category=peptides&sub=${sk}`}
                   className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${sub === sk ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
                 >{tSub(sk as Parameters<typeof tSub>[0])}</Link>
@@ -406,11 +376,11 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
             <div className="flex gap-2 mb-5 flex-wrap">
               <Link href={`/${locale}/products?category=sexual-health`}
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${!sub ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
-              >Sexual Health</Link>
-              {SEXUAL_HEALTH_SUBS.map(({ key: sk, label }) => (
+              >{tCat("sexual-health")}</Link>
+              {SEXUAL_HEALTH_SUB_KEYS.map((sk) => (
                 <Link key={sk} href={sub === sk ? `/${locale}/products?category=sexual-health` : `/${locale}/products?category=sexual-health&sub=${sk}`}
                   className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${sub === sk ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
-                >{label}</Link>
+                >{tSub(sk as Parameters<typeof tSub>[0])}</Link>
               ))}
             </div>
           )}
@@ -420,11 +390,11 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
             <div className="flex gap-2 mb-5 flex-wrap">
               <Link href={`/${locale}/products?category=anti-aging`}
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${!sub ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
-              >Anti-Aging</Link>
-              {ANTI_AGING_SUBS.map(({ key: sk, label }) => (
+              >{tCat("anti-aging")}</Link>
+              {ANTI_AGING_SUB_KEYS.map((sk) => (
                 <Link key={sk} href={sub === sk ? `/${locale}/products?category=anti-aging` : `/${locale}/products?category=anti-aging&sub=${sk}`}
                   className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${sub === sk ? 'bg-brand text-dark' : 'bg-surface border border-border text-muted hover:text-white'}`}
-                >{label}</Link>
+                >{tSub(sk as Parameters<typeof tSub>[0])}</Link>
               ))}
             </div>
           )}
@@ -515,7 +485,7 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
           {/* Empty state */}
           {sorted.length === 0 && (
             <div className="text-center py-20 text-muted">
-              <p className="text-lg font-semibold text-white mb-2">No products found</p>
+              <p className="text-lg font-semibold text-white mb-2">{tP("noProductsFound")}</p>
               <Link href={`/${locale}/products`} className="text-brand hover:underline text-sm">
                 Clear filters
               </Link>

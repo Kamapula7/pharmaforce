@@ -38,7 +38,7 @@ export default function FeaturesSection() {
                 <p className="text-muted text-sm leading-relaxed">{t(`${key}.desc`)}</p>
                 {isSupport && (
                   <span className="inline-block mt-3 text-brand text-xs font-semibold hover:underline">
-                    Start chat →
+                    {t('startChat')}
                   </span>
                 )}
               </div>

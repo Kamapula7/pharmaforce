@@ -207,7 +207,7 @@ export default async function AdminDashboard() {
       <div className="bg-[#111118] border border-white/8 rounded-xl overflow-hidden">
         <div className="px-4 py-3 border-b border-white/8 flex items-center justify-between">
           <h2 className="text-white font-semibold text-sm">Recent Orders</h2>
-          <a href="/admin/orders" className="text-brand text-xs hover:underline">View all в†’</a>
+          <a href="/pf-secure-9k2/orders" className="text-brand text-xs hover:underline">View all в†’</a>
         </div>
 
         {orders.length === 0 ? (

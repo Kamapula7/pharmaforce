@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 
+
 interface CategoryGridProps {
   locale: string;
 }
@@ -18,11 +19,12 @@ const CATEGORIES = [
 
 export default function CategoryGrid({ locale }: CategoryGridProps) {
   const t = useTranslations('categories');
+  const tHome = useTranslations('home');
 
   return (
     <section className="py-16 bg-surface-2/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-xl font-bold text-white mb-8">Shop by Category</h2>
+        <h2 className="text-xl font-bold text-white mb-8">{tHome('shopByCategory')}</h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-3">
           {CATEGORIES.map((cat) => (
             <Link

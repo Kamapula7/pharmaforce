@@ -9,7 +9,8 @@
         "about": "About",
         "cart": "Cart",
         "account": "Account",
-        "admin": "Admin"
+        "admin": "Admin",
+        "searchPlaceholder": "Search products..."
     },
     "home": {
         "hero": {
@@ -41,8 +42,10 @@
             "payment": {
                 "title": "Secure Payment",
                 "desc": "Pay via bank transfer with full security and order tracking."
-            }
+            },
+            "startChat": "Start chat"
         },
+        "shopByCategory": "Shop by Category",
         "bestsellers": {
             "title": "Best Sellers",
             "subtitle": "Most popular products among our customers",
@@ -72,7 +75,28 @@
         "addToCart": "Add to Cart",
         "inStock": "In Stock",
         "outOfStock": "Out of Stock",
-        "perServing": "per serving"
+        "perServing": "per serving",
+        "noProductsFound": "No products found",
+        "clearFilters": "Clear filters",
+        "priceFilter": "Price, €",
+        "price0_20": "Up to €20",
+        "price20_40": "€20 – €40",
+        "price40_60": "€40 – €60",
+        "price60plus": "Over €60"
+    },
+    "about": {
+        "title": "About PharmaForce",
+        "subtitle": "PharmaForce is a European-based supplier of professional sports pharmacology, supplements, and vitamins. Our mission is to give every athlete access to pharmaceutical-grade performance products.",
+        "labCertTitle": "Lab Certified",
+        "labCertDesc": "Every batch tested for purity, potency, and safety by independent European laboratories.",
+        "shippingTitle": "Pan-European Shipping",
+        "shippingDesc": "Fast, discreet delivery to 30+ EU and EEA countries. Typical delivery: 3–7 business days.",
+        "qualityTitle": "Pro-Grade Quality",
+        "qualityDesc": "We source directly from certified manufacturers, ensuring pharmaceutical-grade standards.",
+        "athletesTitle": "2,400+ Athletes",
+        "athletesDesc": "Trusted by competitive athletes, bodybuilders, and fitness enthusiasts across Europe.",
+        "commitmentTitle": "Our Commitment",
+        "commitmentText": "All products sold through PharmaForce comply with EU regulations for food supplements and sports nutrition. We are fully GDPR compliant and committed to transparent business practices. Our bank transfer payment system ensures your financial data is never shared with third parties."
     },
     "product": {
         "description": "Description",
@@ -261,7 +285,11 @@
         "title": "PharmaForce Blog",
         "subtitle": "Evidence-based guides on sports pharmacology, nutrition science, and peak athletic performance.",
         "readArticle": "Read Article",
-        "minRead": "min read"
+        "minRead": "min read",
+        "backToBlog": "Back to Blog",
+        "writtenBy": "Written by",
+        "allArticles": "All Articles",
+        "by": "By"
     },
     "search": {
         "title": "Search Products",
