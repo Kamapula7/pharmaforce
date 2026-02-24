@@ -1,0 +1,866 @@
+import type { BlogPost } from './blog-content';
+
+type TranslatedPost = Pick<BlogPost, 'title' | 'excerpt' | 'sections'>;
+type LangMap = Record<string, TranslatedPost>;
+
+export const BLOG_TRANSLATIONS: Record<string, LangMap> = {
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // GERMAN (DE)
+  // ═══════════════════════════════════════════════════════════════════════════
+  de: {
+    'best-protein-supplements-2026': {
+      title: 'Die besten Protein-Supplemente 2026: Vollständiger Ratgeber',
+      excerpt: 'Whey-Isolat, Kasein oder pflanzliches Protein? Wir haben über 40 Produkte analysiert und zeigen, welche Proteine die höchste Bioverfügbarkeit, den niedrigsten Laktosegehalt und den besten Preis-Leistungs-Wert für europäische Athleten bieten.',
+      sections: [
+        { heading: 'Warum Proteinqualität wichtiger ist als Quantität', body: 'Die meisten Athleten konzentrieren sich auf ein tägliches Grammziel — 1,6 bis 2,2 g pro kg Körpergewicht — ignorieren aber die Qualität der Quelle. Biologischer Wert (BW) und der DIAAS-Score sind weitaus relevantere Metriken. Whey-Proteinkonzentrat erreicht BW 104, Whey-Isolat BW 159, während Sojaprotein bei BW 74 liegt. Gramm für Gramm liefert Whey deutlich mehr anabole Aminosäuren.' },
+        { heading: 'Whey-Konzentrat vs. Whey-Isolat', body: 'Konzentrat (WPC) enthält 70–80 % Protein, 5–8 % Laktose und 5–7 % Fett. Es ist günstiger und bewahrt mehr bioaktive Fraktionen. Isolat (WPI) wird zusätzlich mikrofiltriert: 90–95 % Protein, unter 1 % Laktose, nahezu kein Fett. Für Laktoseintolerante oder Athleten in der Diätphase ist Isolat die klare Wahl. Optimaler Zeitpunkt für Whey: 30–45 Minuten nach dem Training.' },
+        { heading: 'Kasein: Das langsame Protein für die Regeneration', body: 'Mizellares Kasein wird über 5–7 Stunden verdaut und schafft eine anhaltende Aminosäurefreisetzung — ideal vor dem Schlaf. Eine Studie aus 2012 zeigte, dass 40 g Kasein 30 Minuten vor dem Schlaf die nächtliche Muskelproteinsynthese um 22 % steigert. Eine der effektivsten Ergänzungen für Athleten mit hartem Training und 7–8 Stunden Schlaf.' },
+        { heading: 'Pflanzliche Proteine: Erbsen, Reis und Mischungen', body: 'Erbsenprotein (DIAAS ~0,82) ist die stärkste pflanzliche Einzelquelle, besonders reich an Arginin und BCAAs. Reisprotein allein ist arm an Lysin; kombiniert mit Erbse im Verhältnis 70:30 ergibt sich ein vollständiges Aminosäureprofil vergleichbar mit Whey. Für Veganer: mindestens 25 g pro Portion für maximale Muskelproteinsynthese.' },
+        { heading: 'Praktische Empfehlungen', body: 'Ziele auf 0,4 g Protein pro kg pro Mahlzeit über 4–5 Mahlzeiten. Nach dem Training: 25–40 g Whey-Isolat. Vor dem Schlaf: 30–40 g Kasein. Überschreite nicht 60 g pro Shake — darüber hinaus werden überschüssige Aminosäuren einfach oxidiert. Geöffnetes Pulver kühl und trocken lagern und innerhalb von 2 Monaten verbrauchen.' },
+      ],
+    },
+
+    'creatine-vs-beta-alanine': {
+      title: 'Kreatin vs. Beta-Alanin: Was ist das Richtige für dich?',
+      excerpt: 'Kreatin steigert explosive Kraft; Beta-Alanin bekämpft muskuläre Ermüdung. Doch die Kombination beider könnte der echte Performance-Booster sein — hier ist die Wissenschaft dahinter.',
+      sections: [
+        { heading: 'Wie Kreatin wirkt', body: 'Kreatinphosphat ist der primäre Treibstoff für die ATP-Regeneration bei maximalen Kraftanstrengungen von 1–10 Sekunden. Durch Aufsättigung der Muskeln mit Kreatin (Ladephase: 20 g/Tag für 5 Tage, dann 3–5 g/Tag Erhaltung) verlängerst du das Phosphokreatinfenster um ca. 10–15 %. Das praktische Ergebnis: 1–2 zusätzliche Wiederholungen bei schweren Verbundübungen und schnellere Regeneration zwischen den Sätzen.' },
+        { heading: 'Wie Beta-Alanin wirkt', body: 'Beta-Alanin ist der geschwindigkeitslimitierende Vorläufer von Carnosin — einem Dipeptid, das Wasserstoffionen (H+) im Muskelgewebe puffert. Während hochrepetitiver Sätze oder Ausdauerintervallen verursacht H+-Ansammlung das Brennen, das dich zwingt aufzuhören. Mehr Carnosin = höhere Pufferkapazität = mehr Wiederholungen vor dem Versagen. Effektive Dosis: 3,2–6,4 g/Tag.' },
+        { heading: 'Wann Kreatin, wann Beta-Alanin verwenden', body: 'Kreatin dominiert bei Kraftsportarten: Powerlifting, Sprinten, olympisches Gewichtheben. Beta-Alanin glänzt im 1–4 Minuten-Bereich: 400 m–1500 m Laufen, CrossFit, hochrepetitives Bodybuilding. Wenn deine Sportart sowohl explosive Kurzbemühungen als auch anhaltende Hochintensitätsintervalle beinhaltet — Fußball, Rugby, MMA — macht ein Stack beider Supplemente klar Sinn.' },
+        { heading: 'Der Stack: Warum die Kombination effektiv ist', body: 'Kreatin und Beta-Alanin zielen auf völlig verschiedene Ermüdungsmechanismen ab, was sie vollständig komplementär macht. Eine 10-wöchige randomisierte kontrollierte Studie fand, dass die Kreatin + Beta-Alanin-Gruppe deutlich mehr Muskelmasse gewann und mehr Körperfett verlor als jedes Supplement allein. Ladephase (Tage 1–5): Kreatin 5 g × 4 täglich. Beta-Alanin 1,6 g × 4 täglich. Erhaltung: Kreatin 3–5 g/Tag, Beta-Alanin 3,2–6,4 g/Tag aufgeteilt.' },
+      ],
+    },
+
+    'vitamin-d3-athletes-guide': {
+      title: 'Warum jeder Athlet Vitamin D3 braucht',
+      excerpt: 'Über 60 % der Europäer leiden unter Vitamin-D-Mangel. Niedriger D3-Spiegel senkt direkt den Testosteronspiegel, die Regenerationsgeschwindigkeit und die Immunabwehr. So dosierst du es das ganze Jahr über richtig.',
+      sections: [
+        { heading: 'Vitamin-D-Mangel bei europäischen Athleten', body: 'Eine Studie im British Journal of Sports Medicine ergab, dass 57 % der professionellen Athleten in Nord- und Mitteleuropa Serum-25(OH)D-Werte unter 30 ng/ml hatten. In den Wintermonaten (Oktober–März) ist die UVB-Strahlung oberhalb des 50. Breitengrades nicht ausreichend für die kutane Vitamin-D-Synthese. Athleten in Deutschland, Polen, Großbritannien und Skandinavien können in der Hälfte des Jahres kein ausreichendes D3 aus Sonneneinstrahlung produzieren.' },
+        { heading: 'Wie Vitamin D3 die sportliche Leistung beeinflusst', body: 'Vitamin-D-Rezeptoren (VDR) finden sich in Muskelgewebe, Knochen und Hoden. Mangel unter 20 ng/ml ist verbunden mit: reduzierter Muskelproteinsynthese, einem 10–15%igen Rückgang der Testosteronproduktion, beeinträchtigter Kalziumaufnahme und langsamerer Immunantwort. Athleten, die Supplementierung auf 40–60 ng/ml aufrechterhalten, übertreffen gematchte Kontrollgruppen konsistent in Kraft- und Sprungtests.' },
+        { heading: 'Korrektes Dosierungsprotokoll', body: 'Wenn noch nicht supplementiert: Beginne mit 4.000–5.000 IE/Tag für 8 Wochen, dann 2.000–3.000 IE/Tag zur Erhaltung. Idealerweise Serum-25(OH)D vor der Supplementierung und nach 12 Wochen testen. Zielbereich: 40–60 ng/ml. Kombiniere mit Vitamin K2 (MK-7, 100–200 mcg/Tag), um Kalzium in die Knochen statt in Weichgewebe zu leiten.' },
+      ],
+    },
+
+    'pre-workout-timing-guide': {
+      title: 'Pre-Workout-Timing: Wann und wie viel nehmen',
+      excerpt: 'Dein Pre-Workout 20 Minuten zu früh (oder zu spät) zu nehmen kann seine Wirkung halbieren. Wir erklären das optimale Koffeinfenster, Beta-Alanin-Laden und wie du den Absturz vermeidest.',
+      sections: [
+        { heading: 'Das Koffein-Pharmakokinetik-Fenster', body: 'Koffein erreicht 30–60 Minuten nach der Einnahme die Spitzenplasmakonzentration. Optimale Einnahme: 30–45 Minuten vor dem Training. Dosis: 3–6 mg/kg Körpergewicht. Für einen 80-kg-Athleten: 240–480 mg. Die meisten kommerziellen Pre-Workouts enthalten 150–300 mg — die Etiketten prüfen, nicht mit Kaffee kombinieren.' },
+        { heading: 'Stickstoffmonoxid-Booster: Citrullin und Arginin', body: 'L-Citrullin (nicht Arginin) ist der überlegene NO-Vorläufer — er umgeht den hepatischen First-Pass-Metabolismus und erhöht die Arginin-Spiegel effektiver. Dosis: 6–8 g Citrullin-Malat, 45–60 Minuten vor dem Training. Erwarte spürbare Steigerungen des Pumps, der Vaskularität und eine 5–10%ige Reduktion der wahrgenommenen Anstrengung bei hochrepetitiven Sätzen.' },
+        { heading: 'Den Absturz vermeiden', body: 'Post-Workout-Energieabstürze werden durch Adenosin-Rebound und Blutzuckerabfälle verursacht. Gegenmaßnahmen: (1) Gesamtkoffein nicht über 400 mg, (2) innerhalb von 60 Minuten nach dem Training eine gemischte Kohlenhydrat-Protein-Mahlzeit zu sich nehmen, (3) gut hydriert bleiben. Pre-Workouts nicht innerhalb von 6 Stunden vor dem Schlaf nehmen.' },
+      ],
+    },
+
+    'omega3-recovery-science': {
+      title: 'Omega-3 und Muskelregeneration: Der übersehene Stack',
+      excerpt: 'Fischöl ist mehr als ein Herzergänzungsmittel. Studien zeigen, dass 3 g/Tag EPA+DHA den Muskelkater um bis zu 35 % reduzieren und systemische Entzündungen senken — ein Regenerations-Essenzial.',
+      sections: [
+        { heading: 'EPA und DHA: Die entscheidenden Fettsäuren', body: 'Nicht alle Omega-3-Fettsäuren sind gleich geschaffen. ALA (aus Leinsamen) muss in EPA und DHA umgewandelt werden — eine Umwandlungseffizienz von nur 5–15 %. Nur EPA und DHA sind biologisch aktiv bei der Regulierung von Entzündungen und der Muskelproteinsynthese. Ziel: mindestens 2–3 g EPA+DHA täglich aus Fischöl oder Krilöl.' },
+        { heading: 'Omega-3 und Muskelproteinsynsthese', body: 'Omega-3-Fettsäuren aktivieren den mTORC1-Signalweg und erhöhen die Insulinsensitivität in der Muskelzelle — was die Aminosäureaufnahme direkt nach dem Training verbessert. Eine Studie der University of Washington fand, dass 4 g/Tag Fischöl über 8 Wochen die Muskelproteinsynthese bei älteren Erwachsenen um 35 % steigerte und Muskelabbau im Energiedefizit verhinderte.' },
+        { heading: 'Praktisches Protokoll', body: 'Dosis: 2–3 g EPA+DHA täglich (entspricht ca. 6–9 g typisches Fischöl). Mit der fettreichsten Mahlzeit des Tages einnehmen für maximale Absorption. Qualität: destilliertes Fischöl mit niedrigem Schwermetallgehalt bevorzugen. Wähle Produkte mit mindestens 60 % EPA+DHA-Gehalt.' },
+      ],
+    },
+
+    'magnesium-sleep-gains': {
+      title: 'Magnesiumglycinat: Das Supplement, das deinen Schlaf verbessert',
+      excerpt: 'Mehr als 70 % des Wachstumshormons werden während des Tiefschlafs ausgeschüttet. Magnesiumglycinat verbessert die Schlafqualität, reduziert Cortisol und kostet unter 0,30 €/Tag.',
+      sections: [
+        { heading: 'Warum Magnesium für Sportler essenziell ist', body: 'Magnesium ist an über 300 enzymatischen Reaktionen im Körper beteiligt, einschließlich ATP-Synthese, Proteinbiosynthese und Muskelfunktion. Athleten verlieren Magnesium durch Schweiß bei einer Rate von 36–58 mg pro Stunde intensiven Trainings. Studien zeigen, dass über 70 % der europäischen Athleten unter dem empfohlenen Tagesbedarf liegen. Magnesiummangel korreliert direkt mit reduzierter Schlafqualität, erhöhtem Cortisol und verminderten Kraftleistungen.' },
+        { heading: 'Magnesiumglycinat vs. andere Formen', body: 'Magnesiumglycinat (Magnesium gebunden an Glycin) hat die höchste Bioverfügbarkeit und verursacht keine Verdauungsprobleme — im Gegensatz zu Magnesiumoxid (Absorption ~4 %) oder Magnesiumzitrat (kann Durchfall verursachen). Glycin hat selbst anxiolytische und schlaffördernde Eigenschaften, was die Schlafwirkung von Magnesiumglycinat verstärkt.' },
+        { heading: 'Dosierungsprotokoll', body: 'Dosis: 300–400 mg elementares Magnesium als Glycinat täglich, 30–60 Minuten vor dem Schlaf. Effekte: verbesserte Schlafqualität innerhalb von 2–3 Wochen, reduzierter Muskelkrampf während der Nacht, niedrigere Morgen-Cortisolspiegel. Kombiniere mit Zink für zusätzliche Testosteronunterstützung (ZMA-Stack).' },
+      ],
+    },
+
+    'testosterone-cycle-beginners-guide': {
+      title: 'Testosteron-Kur für Einsteiger: Dosierung, Dauer und Sicherheit',
+      excerpt: 'Testosteron Enanthat oder Propionat? 10 Wochen oder 16? Wir erklären die sichersten Protokolle für die erste Kur, Blutbild-Timing und was du in Bezug auf Gewinne und Nebenwirkungen erwarten kannst.',
+      sections: [
+        { heading: 'Warum Testosteron die Basis jeder Kur ist', body: 'Testosteron ist das körpereigene anabole Hormon — jeder AAS-Nutzer hat bereits Erfahrung damit, da es endogen produziert wird. Eine Kur mit exogenem Testosteron erhöht lediglich die Spiegel über den physiologischen Bereich hinaus. Als erste Kur empfohlen: nur Testosteron (kein Stapeln mit anderen Verbindungen), um Reaktionen isoliert beurteilen zu können. Typische erste Kur: Testosteron Enanthat 300–400 mg/Woche für 10–12 Wochen.' },
+        { heading: 'Testosteron Enanthat vs. Propionat', body: 'Enanthat (HWZ ~10 Tage): zweimal wöchentliche Injektion, stabile Blutspiegel, ideal für Einsteiger. Propionat (HWZ ~2 Tage): jeden zweiten Tag injizieren, schnellere Clearance für PCT, aber mehr Injektionen. Für die erste Kur ist Enanthat fast immer die richtige Wahl: weniger Injektionen, einfachere Handhabung, vorhersehbare Pharmakokinetik.' },
+        { heading: 'Aromatasekontrolle und Östrogen', body: 'Testosteron aromatisiert zu Östradiol (E2). Bei 400 mg+/Woche steigt E2 und verursacht Wassereinlagerungen und potenziell Gynäkomastie. AI verwenden: Anastrozol 0,5 mg jeden zweiten Tag oder Exemestan 12,5 mg jeden zweiten Tag. Blutbild in Woche 6 für die AI-Dosierung kalibrieren.' },
+        { heading: 'PCT nach Testosteron-Kur', body: 'PCT beginnt 2 Wochen nach der letzten Injektion (für Enanthat). Standard-PCT: Nolvadex (Tamoxifen) 40 mg/Tag für 2 Wochen, dann 20 mg/Tag für 2 Wochen. Die meisten Nutzer erholen sich innerhalb von 8–16 Wochen nach Abschluss der PCT. Blutbild 4–6 Wochen nach PCT bestätigt die Erholung.' },
+      ],
+    },
+
+    'pct-guide-nolvadex-clomid': {
+      title: 'Post-Cycle-Therapie: Nolvadex vs. Clomid — Was wirkt besser?',
+      excerpt: 'Die PCT nach einer AAS-Kur zu überspringen ist einer der häufigsten Fehler. Wir vergleichen Tamoxifen- und Clomiphen-Protokolle, Timing nach verschiedenen Estern und wie du die natürliche Testosteronproduktion wiederherstellen kannst.',
+      sections: [
+        { heading: 'Was PCT ist und warum sie unerlässlich ist', body: 'Während einer AAS-Kur unterdrückt exogenes Testosteron (oder andere Androgene) die Hypothalamus-Hypophysen-Gonaden-Achse (HPG) und stoppt die körpereigene Testosteronproduktion. Nach Kur-Ende müssen die Hoden neu starten — ohne PCT ein langsamer Prozess von Monaten mit niedrigem Testosteron, Muskelverlust, Depression und Libidoproblemen.' },
+        { heading: 'Nolvadex (Tamoxifen): Die Standard-PCT-Basis', body: 'Tamoxifencitrat (Nolvadex) ist ein SERM, das Östrogenrezeptoren an Hypothalamus und Hypophyse blockiert, wodurch die Hypophyse LH und FSH erhöht und die Hoden zur Testosteronproduktion stimuliert. Standardprotokoll: 40 mg/Tag für 2 Wochen, dann 20 mg/Tag für 2 Wochen.' },
+        { heading: 'Clomid (Clomiphen): Wann und wie verwenden', body: 'Clomiphencitrat wirkt sowohl am Hypothalamus als auch an der Hypophyse und produziert einen stärkeren LH-Schub als Nolvadex. Standarddosis PCT: 50 mg/Tag für 2–4 Wochen. Bei stark unterdrückter Erholung: Clomid 50 mg + Nolvadex 20 mg täglich kombinieren.' },
+        { heading: 'PCT-Timing nach Ester', body: 'Testosteron Propionat (HWZ ~2 Tage): PCT 3–4 Tage nach letzter Injektion beginnen. Testosteron Enanthat (HWZ ~10 Tage): PCT 14 Tage nach letzter Injektion beginnen. Sustanon 250 / Nandrolon Dekanat: PCT 21 Tage nach letzter Injektion beginnen.' },
+      ],
+    },
+
+    'sarms-vs-steroids-comparison': {
+      title: 'SARMs vs. Steroide: Ehrlicher Vergleich für Athleten',
+      excerpt: 'Ostarin, RAD-140 und LGD-4033 versprechen steroidähnliche Zuwächse ohne Lebertoxizität. Doch wie vergleichen sie sich wirklich? Wir analysieren Wirksamkeitsdaten, Suppressionsrisiko und welche Verbindungen welchen Zielen dienen.',
+      sections: [
+        { heading: 'Was sind SARMs?', body: 'Selektive Androgenrezeptor-Modulatoren (SARMs) binden selektiv an Androgenrezeptoren in Muskel- und Knochengewebe, mit minimaler Aktivität in anderen Geweben (Prostata, Haut, Leber). Dies ist der theoretische Vorteil gegenüber Anabolika: anabole Vorteile ohne androgenbedingte Nebenwirkungen. In der Praxis variiert die Selektivität erheblich zwischen den Verbindungen.' },
+        { heading: 'Die wichtigsten SARMs: Wirksamkeit und Risiken', body: 'Ostarin (MK-2866): mildeste, 10–25 mg/Tag, 8–12 Wochen. Bescheidene Kraft- und Muskelmassezuwächse, minimale Suppression. LGD-4033 (Ligandrol): stärker, 5–10 mg/Tag. Vergleichbar mit niedrig dosiertem Testosteron bei Kraft und Masse, aber signifikante Suppression. RAD-140 (Testolone): stärkste SARM, 10–20 mg/Tag. Signifikante anabole Effekte, starke Suppression erfordert PCT.' },
+        { heading: 'SARMs vs. Testosteron: Realistischer Vergleich', body: 'SARMs liefern keine steroidgleichen Ergebnisse ohne steroidgleiche Nebenwirkungen — das ist Marketing-Mythos. Bei vergleichbaren anabolen Effekten (z.B. RAD-140 vs. 300 mg/Woche Testosteron) ist die Suppressionstiefe ähnlich, die Blutwertveränderungen oft vergleichbar. Der Hauptvorteil: keine Aromatisierung zu Östrogen, keine DHT-Konversion, keine Injektionen.' },
+      ],
+    },
+
+    'hgh-peptides-guide-ghrp-cjc': {
+      title: 'HGH-Peptide: GHRP-6, Ipamorelin, CJC-1295 — Vollständiger Überblick',
+      excerpt: 'Wachstumshormon-Sekretagoga stimulieren deine eigene Hypophyse — keine Suppression, kein synthetisches GH. Wir vergleichen GHRP-6, GHRP-2, Ipamorelin und CJC-1295-Stacks, Dosierungsfenster und erwartete Ergebnisse.',
+      sections: [
+        { heading: 'Was sind GH-Peptide und wie wirken sie?', body: 'GH-Peptide (Wachstumshormon-Sekretagoga) stimulieren die Hypophyse zur Ausschüttung von körpereigenem Wachstumshormon. Im Gegensatz zu rekombiniertem HGH (rHGH) unterdrücken sie die natürliche GH-Achse nicht — die Hypophyse wird stimuliert, nicht ersetzt. Es gibt zwei Klassen: GHRP (Wachstumshormon-Releasing-Peptide): direkte GH-Sekretagoga. GHRH-Analoga (wie CJC-1295): verlängern die GH-Puls-Amplitude.' },
+        { heading: 'GHRP-6 vs. GHRP-2 vs. Ipamorelin', body: 'GHRP-6: stärkster GH-Puls, verursacht aber erheblichen Hunger und Cortisol/Prolaktin-Anstieg. Dosis: 100–300 mcg. GHRP-2: ähnlich stark, etwas weniger Hunger. Ipamorelin: selektivster GHRP — produziert GH-Puls ohne signifikanten Cortisol- oder Prolaktin-Anstieg. Erstewahl für die meisten Nutzer, besonders nachts. Dosis: 100–300 mcg.' },
+        { heading: 'CJC-1295: GH-Pulse verlängern', body: 'CJC-1295 mit DAC (Drug Affinity Complex) bindet nach Injektion an Albumin und verlängert die Halbwertszeit auf mehrere Tage, was einen kontinuierlichen GH-Anstieg erzeugt. CJC-1295 DAC 1–2 mg einmal wöchentlich kombiniert mit täglichem Ipamorelin ist ein klassischer Stack für Fettabbau, verbesserte Regeneration und Schlafqualität.' },
+        { heading: 'Realistische Ergebnisse', body: 'Nach 3–6 Monaten Peptid-Stack: verbesserter Schlaf (GH wird hauptsächlich im Tiefschlaf ausgeschüttet), beschleunigter Fettabbau, verbesserte Hautqualität und Bindegewebsregeneration, moderat erhöhte Muskelmasse. Keine dramatischen Ergebnisse wie mit exogenem HGH — aber ein sichereres Profil und kein Shutdown der körpereigenen Achse.' },
+      ],
+    },
+
+    'anastrozole-vs-exemestane-ai-guide': {
+      title: 'Anastrozol vs. Exemestan: Welchen Aromatasehemmer wählen?',
+      excerpt: 'Östrogenmanagement während der Kur ist entscheidend. Anastrozol (Arimidex) hemmt die Aromatase reversibel; Exemestan (Aromasin) deaktiviert sie dauerhaft. Wann welches verwenden und wie du deinen Östradiolspiegel nicht abstürzen lässt.',
+      sections: [
+        { heading: 'Warum Östrogenkontrolle während der Kur notwendig ist', body: 'Exogenes Testosteron aromatisiert zu Östradiol (E2). Ohne Aromatasehemmer (AI) steigen E2-Spiegel bei Dosen über 300 mg/Woche, was verursacht: Wassereinlagerungen, Stimmungsschwankungen, reduzierte Libido bei extremen Werten und Gynäkomastie (Brustdrüsenwachstum). Übermäßige Östrogensuppression hingegen verursacht schmerzhafte Gelenke, Libidoverlust und Stimmungsabfall.' },
+        { heading: 'Anastrozol: Nicht-steroidaler reversibler AI', body: 'Anastrozol (Arimidex) unterdrückt die Aromatase reversibel und hemmt die Östrogensynthese um ca. 97 % bei klinischen Dosen. On-Cycle-Dosis: 0,5 mg jeden zweiten Tag, bei Bedarf auf 1 mg jeden zweiten Tag erhöhen. Nachteil: Anastrozol kann die Tamoxifen-Wirksamkeit auf Hypophysenebene reduzieren — bei Nolvadex-PCT also auf Exemestan wechseln.' },
+        { heading: 'Exemestan: Steroidaler Suizid-Inhibitor', body: 'Exemestan (Aromasin) bindet dauerhaft an die Aromatase und deaktiviert sie. Es hat eine milde intrinsische androgene Aktivität und bewahrt im Gegensatz zu Anastrozol das HDL-Cholesterin. Bevorzugt während der PCT und bei langen Kuren. On-Cycle-Dosis: 12,5–25 mg jeden zweiten Tag.' },
+        { heading: 'Niedrigen Östrogenspiegel erkennen und korrigieren', body: 'Zeichen der Übersuppression: schmerzende Gelenke, plötzlicher Libidoverlust, extreme Lethargie, emotionale Abflachung. Bei diesen Symptomen: AI sofort stoppen, E2 5–7 Tage erholen lassen, dann mit niedrigerer Dosis wieder einführen. Regelmäßige E2-Bluttests sind der einzige präzise Weg zur AI-Dosierungskalibrierung.' },
+      ],
+    },
+
+    'cardarine-gw501516-fat-loss-guide': {
+      title: 'Cardarin (GW-501516): Der Fettabbau-Modulator erklärt',
+      excerpt: 'Cardarin ist kein SARM — es ist ein PPARδ-Agonist, der deinen Stoffwechsel in Richtung Fettoxidation verschiebt, die Ausdauer steigert und die Muskeln im Defizit erhält. Was die Forschung wirklich zeigt.',
+      sections: [
+        { heading: 'Was ist Cardarin — und was es nicht ist', body: 'GW-501516 (Cardarin, Endurobol) wird häufig neben SARMs aufgeführt, ist aber mechanistisch anders — es ist ein PPARδ-Agonist. PPARδ reguliert Gene, die am Energieverbrauch, der Fettsäureoxidation und der mitochondrialen Biogenese beteiligt sind. Die Aktivierung von PPARδ umprogrammiert den Stoffwechsel, um Fett bevorzugt als Brennstoff zu verbrennen — auch im Ruhezustand.' },
+        { heading: 'Fettabbaumechanismus', body: 'PPARδ-Aktivierung erhöht die Fettsäure-Beta-Oxidation in Skelettmuskel und Leber. In klinischen Studien zu metabolischem Syndrom reduzierte es LDL-Cholesterin und viszerales Fett erheblich, während es HDL erhöhte. Kombiniert mit seinem Ausdauereffekt schafft Cardarin eine starke Fettabbau-Umgebung: längeres Training, schnellere Erholung, erhöhte basale Fettoxidationsrate.' },
+        { heading: 'Die Krebskontroverse', body: 'GlaxoSmithKline stoppte 2007 Humanstudien, nachdem Nagetier-Studien bei sehr hohen Dosen über verlängerte Zeiträume beschleunigtes Wachstum bereits vorhandener Tumore zeigten. Wichtiger Kontext: Ratten wurden mit 3 mg/kg für 2 Jahre dosiert (entspricht 240 mg/Tag bei einem 80-kg-Menschen — 12–24× typische Performancedosen). Bei Performancedosen wurden bisher keine Krebsfälle beim Menschen dokumentiert.' },
+        { heading: 'Praktisches Protokoll', body: 'Dosis: 10–20 mg/Tag, 30–45 Minuten vor dem Cardio. Kurslänge: 8–12 Wochen, gefolgt von einer gleichlangen Pause. Keine Hormonsuppression, keine Lebertoxizität, keine PCT erforderlich. Wirksam kombiniert mit einem Kaloriendefizit und HIIT-Training.' },
+      ],
+    },
+
+    'igf-1-lr3-muscle-growth': {
+      title: 'IGF-1 LR3: Wie Insulin-ähnlicher Wachstumsfaktor Muskeln aufbaut',
+      excerpt: 'IGF-1 LR3 wirkt nachgelagert von HGH, um die Proliferation von Satellitenzellen und Hyperplasie zu stimulieren — tatsächlich neue Muskelfasern, nicht nur Hypertrophie.',
+      sections: [
+        { heading: 'Die GH → IGF-1-Achse', body: 'Wachstumshormon baut nicht direkt Muskeln auf. GH wandert zur Leber, die es in IGF-1 umwandelt. IGF-1 ist der primäre Vermittler der meisten anabolen Effekte, die GH zugeschrieben werden: Proteinsynthese, Satellitenzellaktivierung, Knochenwachstum und Fettlipolyse. Endogenes IGF-1 hat eine sehr kurze Halbwertszeit (~12–15 Minuten). IGF-1 LR3 ist ein modifiziertes Analogon mit einer Halbwertszeit von 20–30 Stunden.' },
+        { heading: 'Hyperplasie vs. Hypertrophie', body: 'Standardtraining und die meisten anabolen Verbindungen verursachen Hypertrophie — bestehende Muskelfasern werden größer. IGF-1 ist eine der wenigen Verbindungen, die Hyperplasie stimulieren — die Schaffung neuer Muskelfasern — durch Aktivierung und Proliferation von Satellitenzellen. Neue Fasern sind dauerhaft — im Gegensatz zu Hypertrophiegewinnen.' },
+        { heading: 'Dosierungsprotokoll', body: 'IGF-1 LR3 Dosis: 40–100 mcg/Tag. Injektion: subkutan oder intramuskulär nach dem Training. Kurslänge: 4–6 Wochen, gefolgt von einer gleich langen Pause (Rezeptor-Downregulation bei längerem Einsatz). Rekonstituierung mit bakteriostatischem Wasser; gekühlt lagern; nach Rekonstituierung 20–30 Tage stabil.' },
+      ],
+    },
+
+    'dianabol-cycle-guide': {
+      title: 'Dianabol (Methandienon) Kur: Zuwächse, Risiken und Leberschutz',
+      excerpt: 'Dianabol ist das schnellst wirkende orale Steroid — erwarte 5–8 kg in 4 Wochen. Aber C17-Alpha-Alkylierung bedeutet ernsthafte Hepatotoxizität. Wir erklären sichere Kurslängen, TUDCA-Dosierung und wie du deine Blutwerte sauber hältst.',
+      sections: [
+        { heading: 'Warum Dianabol der ikonische Masseaufbauer wurde', body: 'Methandienon wurde in den 1950er Jahren von CIBA entwickelt, um die sowjetische Dominanz (Testosteroninjektionen) zu kontern. Es steigert erheblich die Stickstoffretention, Proteinsynthese und Glykogenolyse — was schnelle Kraft- und Massezuwächse innerhalb der ersten 2 Wochen erzeugt. Eine gut geplante 4-wöchige Dianabol-Kickstart kann 5–8 kg Körpergewicht hinzufügen, mit 3–5 kg als tatsächliche Muskelmasse nach dem PCT-Wasserverlust.' },
+        { heading: 'Lebertoxizität und Schutzprotokoll', body: 'Die Modifikation, die Dianabol oral wirksam macht — 17-Alpha-Alkylierung — macht es auch hepatotoxisch. ALT und AST steigen innerhalb von 2–3 Wochen. Mit den richtigen Protokollen ist dies reversibel. Leberschutz ist nicht optional: TUDCA 500 mg/Tag, NAC 600–1.200 mg/Tag. Alkohol während der Kur vollständig meiden.' },
+        { heading: 'Östrogen, Wasser und Dosierung', body: 'Dianabol aromatisiert deutlich — AI ist ab Tag 1 der Kur notwendig. Standarddosis: 30–50 mg/Tag. Einsteiger: mit 20–30 mg/Tag beginnen. Dosen über 50 mg/Tag erhöhen Nebenwirkungen dramatisch ohne proportionalen Nutzen. Kurslänge: maximal 4–6 Wochen.' },
+      ],
+    },
+
+    'meldonium-mildronate-endurance': {
+      title: 'Meldonium (Mildronate): Das Ausdauermedikament, das Sharapova gesperrt hat',
+      excerpt: 'Meldonium reduziert die Fettsäureoxidation in Herzmuskelzellen und zwingt das Herz, effizienteren Kohlenhydrat-Brennstoff zu verwenden. In Osteuropa legal als Kardioprotektor eingesetzt — hier ist die Wissenschaft und die Sportanwendung.',
+      sections: [
+        { heading: 'Was ist Meldonium?', body: 'Meldonium ist ein TMAO-Inhibitor, der in den Carnitintransport eingreift und die Fettsäureoxidation in Herzmuskelzellen reduziert. Dies zwingt Zellen, Glukose über den effizienteren Weg zu nutzen, reduziert toxische Fettsäuremetaboliten unter Stressbedingungen und erhöht die Nitrostickstoffmonoxid-Produktion für verbesserte Vasodilatation. In Lettland, Litauen und Russland ist es als pharmazeutisches Medikament registriert.' },
+        { heading: 'Sportliche Anwendung', body: 'Für Ausdauersportler verbessert die Glukose-über-Fett-Verschiebung die Leistung bei hohen Intensitäten, wo die Sauerstoffversorgung limitierend wird. Athleten nutzen es, um VO₂max zu verbessern, kardiale Ermüdung zu reduzieren und die Hochintensitätsleistung zu verlängern. Maria Scharapovas positiver Test 2016 brachte internationale Aufmerksamkeit für die Verbindung.' },
+        { heading: 'Dosierung und Rechtsstatus', body: 'Typische klinische Dosis: 500–1.000 mg/Tag in geteilten Dosen für 4–6 Wochenkurse. WADA-verboten in Wettkämpfen (S4). Außerhalb des Wettkampfes ist der Rechtsstatus unterschiedlich: Pharmakologisch registriert in Lettland, Litauen, Russland und anderen osteuropäischen Ländern. WADA-Nachweisfenster: bis zu 3 Monate nach Absetzen.' },
+      ],
+    },
+
+    'buy-testosterone-enanthate-europe-guide': {
+      title: 'Testosteron Enanthat online in Europa kaufen (2026)',
+      excerpt: 'Testosteron Enanthat ist der beliebteste injizierbare Testosteronester in Europa. Dieser Leitfaden behandelt Dosierung, Kursstruktur, sicheres Sourcing und was bei der Online-Bestellung mit EU-Lieferung zu beachten ist.',
+      sections: [
+        { heading: 'Warum Testosteron Enanthat die beliebteste Wahl in Europa ist', body: 'Testosteron Enanthat (Test E, TE) ist seit über 60 Jahren der Grundstein anaboler Kuren. Seine lange Esterkette (Enanthat) bietet eine Halbwertszeit von ca. 10,5 Tagen, was es zu einem der bequemsten injizierbaren Testosteronester macht — nur 2 Injektionen pro Woche für stabile Blutspiegel. In Europa war es historisch als Testoviron (Schering), Cidoteston und generische pharmazeutische Qualitäten erhältlich.' },
+        { heading: 'Testosteron Enanthat Dosierung und Kurslänge', body: 'Einsteigerdosis: 300–400 mg/Woche (zweimal wöchentlich injiziert, z.B. Montag und Donnerstag). Mittelstufe: 400–600 mg/Woche. Erfahrene Nutzer: 600–800 mg/Woche, obwohl das Nebenwirkungsrisiko über 600 mg überproportional steigt. Standard-Erstkurs: 10–12 Wochen. Typische Ergebnisse: 6–10 kg Gesamtmassezugewinn, mit 4–7 kg als tatsächliche Muskelmasse nach der PCT.' },
+        { heading: 'Aromatisierung und Östrogenkontrolle', body: 'Testosteron aromatisiert über das Aromatase-Enzym zu Östradiol (E2). Bei höheren Dosen (400 mg+/Woche) steigt E2 — was Wassereinlagerungen, potenzielle Gynäkomastie, Stimmungsschwankungen verursacht. AI empfohlen: Anastrozol 0,5 mg jeden zweiten Tag oder Exemestan 12,5 mg jeden zweiten Tag. Blutbild in Woche 6 dringend empfohlen.' },
+        { heading: 'Qualitätsmerkmale beim Kauf in Europa', body: 'Bei der Online-Beschaffung von Testosteron Enanthat in Europa sind folgende Qualitätsmerkmale entscheidend: pharmazeutische Herstellung (GMP-Zertifizierung), korrekte Konzentrationsangabe (200–250 mg/ml Standard), sterile Ampullen oder Durchstechflaschen mit Chargennummern und Verfallsdaten, EU-Lagerung für diskrete lokale Lieferung. PharmaForce lagert Testosteron Enanthat von verifizierten Herstellern inkl. BayerPro Schering und Balkan Pharmaceuticals, versandt aus der EU für 3–10 Tage Lieferung in alle europäischen Länder.' },
+        { heading: 'PCT nach Testosteron Enanthat', body: 'PCT beginnt 2 Wochen nach der letzten Injektion. Standard-PCT: Nolvadex 40 mg/Tag für 2 Wochen, dann 20 mg/Tag für 2 Wochen. Die meisten Nutzer erholen sich innerhalb von 8–16 Wochen nach Abschluss der PCT. Eine kurze, korrekt dosierte Kur mit angemessener PCT eliminiert praktisch das Risiko einer dauerhaften Unterdrückung bei gesunden Erwachsenen.' },
+      ],
+    },
+
+    'sustanon-250-cycle-guide-europe': {
+      title: 'Sustanon 250: Vollständiger Kur-Leitfaden für europäische Athleten (2026)',
+      excerpt: 'Sustanon 250 kombiniert vier Testosteronester für sofortige und anhaltende Freisetzung. Dieser vollständige Leitfaden behandelt Dosierung, Injektionsfrequenz, PCT und wie man Sustanon 250 mit europäischer Lieferung bestellen kann.',
+      sections: [
+        { heading: 'Was ist Sustanon 250 und wie unterscheidet es sich von anderen Testostestenestern?', body: 'Sustanon 250 ist eine Mischung aus vier Testostesonestern in einer einzigen Ampulle: Testosteron Propionat (30 mg, HWZ ~2 Tage), Testosteron Phenylpropionat (60 mg, HWZ ~4 Tage), Testosteron Isocaproat (60 mg, HWZ ~9 Tage) und Testosteron Decanoat (100 mg, HWZ ~15 Tage). Diese Mischung wurde von Organon (Niederlande) entwickelt für eine einzige wöchentliche Injektion für Testosteronersatztherapie.' },
+        { heading: 'Sustanon 250 Kur: Dosierung und Häufigkeit', body: 'Trotz seiner Auslegung für einmal wöchentliche Injektionen injizieren Performancenutzern typischerweise alle 3–4 Tage. Grund: Der kurzwirkende Propionatester verursacht Spitzen innerhalb von 24–48 Stunden. Bei nur einmal wöchentlicher Injektion entstehen Spitzen-Tals-Muster mit Stimmungsschwankungen und inkonsistenten Östrogenspiegeln. Standarddosis: 250–500 mg/Woche für einen 10–14-wöchigen Kurs.' },
+        { heading: 'Sustanon vs. Testosteron Enanthat: Was wählen?', body: 'Für TRT oder erste Kuren ist Testosteron Enanthat generell bevorzugt für seine Einfachheit: ein reiner Ester, zweimal wöchentliche Injektionen, hochvorhersehbare Pharmakokinetik. Sustanon 250 eignet sich für Nutzer, die sowohl sofortige Testosteronerhöhung als auch langanhaltende Abdeckung wollen, oder die Zugang zu pharmazeutischem Sustanon aus europäischen Apotheken haben.' },
+        { heading: 'Sustanon 250 mit europäischer Lieferung kaufen', body: 'Pharmazeutisches Sustanon 250 in Europa wird am häufigsten von Organon (Niederlande), Aspen (ehemals Schering) und verschiedenen osteuropäischen Herstellern produziert. PharmaForce lagert Sustanon 250 im Original-Ampullenformat von BayerPro Schering aus EU-basiertem Lager mit 3–7 Tagen Lieferzeit nach Deutschland, Polen, Frankreich, Niederlande, Österreich, Italien und 25+ anderen EU-Ländern — vollständig diskrete schlichte Verpackung.' },
+        { heading: 'PCT-Timing nach Sustanon 250', body: 'Aufgrund des Decanoatesters (HWZ ~15 Tage) beginne PCT 3 Wochen nach der letzten Injektion. PCT-Protokoll identisch: Nolvadex 40/40/20/20 mg/Tag über 4 Wochen. Die natürliche Testosteronwiederherstellung erfolgt typischerweise innerhalb von 12–20 Wochen nach Abschluss der PCT.' },
+      ],
+    },
+
+    'buy-peptides-europe-bpc157-tb500': {
+      title: 'Peptide in Europa kaufen: BPC-157, TB-500 und Ipamorelin Vollständiger Leitfaden',
+      excerpt: 'Research-Peptide wie BPC-157 und TB-500 sind in europäischen Ländern für Verletzungsregeneration und Performance sehr beliebt. Dieser Leitfaden behandelt Mechanismen, Dosierung, Rekonstituierung und den Online-Kauf von Peptiden in Europa.',
+      sections: [
+        { heading: 'Was sind Research-Peptide und warum Europäer sie nutzen', body: 'Peptide sind kurze Aminosäureketten, die als Signalmoleküle im Körper wirken. Im Gegensatz zu Anabolika unterdrücken die meisten Research-Peptide nicht die natürliche Hormonproduktion oder verursachen Lebertoxizität. In Europa ist die Peptidnutzung seit 2020 deutlich gestiegen, besonders bei Athleten, die BPC-157 für Gelenk- und Sehnenheilung, TB-500 für Geweberegeneration und Ipamorelin/CJC-1295 für Wachstumshormonstimulation einsetzen.' },
+        { heading: 'BPC-157: Das Heilungspeptid', body: 'BPC-157 (Body Protection Compound 157) ist ein 15-Aminosäuren-Peptid aus humanem Magensaft. In umfangreichen Nagetier-Studien hat es bemerkenswerte Heilungsbeschleunigung über mehrere Gewebetypen demonstriert: Sehnen, Bänder, Muskeln, Knochen und den Magen-Darm-Trakt. Athleten verwenden BPC-157 hauptsächlich für Verletzungsregeneration — Rotatorenmanschetten-Risse, Kniebandverletzungen, Achillessehnenprobleme. Dosis: 200–500 mcg/Tag, subkutan nahe der Verletzungsstelle injiziert.' },
+        { heading: 'Wie man Peptide online in Europa kauft', body: 'Bei der Beschaffung von Peptiden in Europa sind entscheidende Qualitätsmerkmale: lyophilisiertes Pulver (nicht flüssig), mindestens 98 % Reinheit per HPLC-Test, versiegelte Ampullen mit stickstoffgespültem Kopfraum und EU-basierte Lagerung. PharmaForce lagert BPC-157, TB-500, Ipamorelin, CJC-1295 und weitere HGH-Peptide aus EU-Lager. Lieferung nach Deutschland, Frankreich, Polen, Niederlande, Italien, Spanien und 25+ EU-Ländern. Typische Lieferzeit: 3–8 Werktage.' },
+        { heading: 'Rekonstituierung und Lagerung von Peptiden', body: 'Lyophilisiertes Peptidpulver muss mit bakteriostatischem Wasser (BAC-Wasser) vor der Injektion rekonstituiert werden. Standard-Rekonstituierung: 1–2 ml BAC-Wasser pro 5-mg-Ampulle hinzufügen. Einmal rekonstituiert: gekühlt lagern (4 °C), innerhalb von 30 Tagen verwenden, vor Licht schützen. Trockenes Pulver: bei Raumtemperatur für Monate stabil; für Langzeitlegerung gekühlt oder eingefroren halten.' },
+        { heading: 'TB-500: Systemische Gewebereparatur', body: 'TB-500 (Thymosin Beta-4) fördert Zellmigration, Differenzierung und Angiogenese auf systemischer Ebene. Wo BPC-157 am besten lokal wirkt, wirkt TB-500 systemisch — ideal für weitverbreitete Muskelschäden oder mehrere Verletzungsstellen. Dosis: 2–2,5 mg zweimal pro Woche für 4–6 Wochen (Ladephase), dann 2–2,5 mg einmal pro Woche zur Erhaltung. Oft mit BPC-157 für synergistische Reparatur kombiniert.' },
+      ],
+    },
+
+    'nandrolone-decanoate-deca-guide-europe': {
+      title: 'Nandrolon Dekanat (Deca-Durabolin) Kur-Leitfaden für europäische Athleten',
+      excerpt: 'Nandrolon Dekanat (Deca-Durabolin) ist eines der ältesten und meistgenutzten Anabolika in Europa. Dieser Leitfaden behandelt Dosierung, Gelenkvorteile, häufige Nebenwirkungen, PCT-Anforderungen und wie man Deca mit EU-Lieferung bezieht.',
+      sections: [
+        { heading: 'Nandrolon Dekanat: Geschichte und Pharmakologie', body: 'Nandrolon Dekanat (Markenname Deca-Durabolin, von Organon) wurde 1962 erstmals synthetisiert und in Europa weit verbreitet zur Behandlung von Muskelabbau-Erkrankungen, Anämie und Osteoporose eingesetzt. Sein anaboles-zu-androgenes Verhältnis von ca. 125:37 macht es hochanabol mit relativ geringer androgener Aktivität. Der Decanoatester bietet eine Halbwertszeit von ca. 15 Tagen.' },
+        { heading: 'Hauptvorteile: Muskelmasse und Gelenkschutz', body: 'Nandrolon ist einzigartig unter gängigen Anabolika für seine ausgeprägten Gelenkschutz- und Schmiereigenschaften. Es steigert erheblich die Kollagensynthese und Knochenmineraldichte, und viele Nutzer berichten über nahezu vollständige Gelenkschmerzlinderung während der Kur — besonders in Schultern, Knien und Ellbogen. Masseaufbau: bei 300–400 mg/Woche über einen 12–16-wöchigen Kurs gewinnen Nutzer typischerweise 5–10 kg Muskelmasse.' },
+        { heading: 'Prolaktinmanagement: Die übersehene Nebenwirkung', body: 'Nandrolon ist eine 19-Nor-Verbindung, die an Progesteronrezeptoren bindet und Prolaktinspiegeln erhöhen kann — was potenzielle Gynäkomastie selbst bei kontrolliertem E2 verursacht. Cabergolin (Dostinex) bei 0,25–0,5 mg zweimal wöchentlich ist das Standard-Prolaktin-Management-Tool. Blutbild muss Prolaktin in Woche 6 und 12 jeder Nandrolon-Kur beinhalten.' },
+        { heading: 'Nandrolon Dekanat online in Europa kaufen', body: 'Pharmazeutisches Nandrolon Dekanat in Europa umfasst Deca-Durabolin (Organon/Aspen) und zahlreiche generische Hersteller aus etablierten europäischen Pharmabetrieben. PharmaForce lagert Nandrolon Dekanat 250 mg/ml von Balkan Pharmaceuticals — einem lizenzierten osteuropäischen Hersteller mit GMP-Zertifizierung. EU-Lieferung nach Deutschland, Frankreich, Niederlande, Polen, Italien, Österreich, Spanien, Belgien und 25+ EU-Ländern in 3–7 Werktagen, diskrete schlichte Verpackung.' },
+        { heading: 'Dosierung und Kursstruktur', body: 'Standarddosis: 200–400 mg/Woche für Einsteiger; 400–600 mg/Woche für fortgeschrittene Nutzer. Nandrolon wird fast immer mit Testosteron gestapelt (mindestens TRT-Dosis 200 mg/Woche), da es die natürliche Testosteronproduktion stark unterdrückt und auch DHT an Rezeptorstellen verdrängt — was ohne ausreichendes exogenes Testosteron zu "Deca-Dick" führt.' },
+      ],
+    },
+
+    'boldenone-equipoise-lean-gains-europe': {
+      title: 'Boldenon Undecylenat (Equipoise): Lean-Gains Kur-Leitfaden für europäische Athleten',
+      excerpt: 'Boldenon Undecylenat (Equipoise, EQ) liefert stetige Qualitätsmuskeln mit verbesserter Vaskularität und minimaler Wassereinlagerung. Kursstruktur, Dosierung, Nebenwirkungen und wo man Boldenon in Europa kaufen kann.',
+      sections: [
+        { heading: 'Was ist Boldenon Undecylenat (Equipoise)?', body: 'Boldenon Undecylenat (Handelsname Equipoise, "EQ") wurde ursprünglich als Veterinäranabolikum für Pferde entwickelt. Es ist strukturell eine modifizierte Form von Testosteron mit einer hinzugefügten Doppelbindung an der C1–C2-Position, die seine Aromatisierungsrate erheblich reduziert (ca. 50 % weniger als Testosteron). Der Undecyleatester gibt ihm eine sehr lange Halbwertszeit von ca. 14 Tagen. Boldenon erzeugt langsame, stetige Qualitätsmuskeln mit merklicher Vaskularitätssteigerung und erhöhter Roten-Blutkörperchen-Produktion.' },
+        { heading: 'Boldenon Dosierung und Kurslänge', body: 'Standarddosis: 300–500 mg/Woche; fortgeschrittene Nutzer können 500–700 mg/Woche nehmen. Kurslänge: mindestens 12–16 Wochen (aufgrund des langen Esters). Zweimal wöchentlich injizieren. Ein klassisches Lean-Mass-Protokoll: Testosteron Enanthat 300 mg/Woche + Boldenon 400 mg/Woche für 16 Wochen. Erwartete Ergebnisse: 4–7 kg Qualitätsmuskelmasse, deutlich verbesserte Vaskularität.' },
+        { heading: 'Boldenon Undecylenat in Europa kaufen', body: 'PharmaForce lagert Boldenon Undecylenat 250 mg/ml (10 × 1ml Ampullenboxen) von Alpha Pharma — einem Hersteller mit konsistenten unabhängigen Laborverifikationsberichten. Alle Bestellungen werden aus EU-Lagern versandt für vollständig innereeuropäischen Versand — keine Zollverzögerungen für europäische Käufer. Lieferung nach Deutschland, Frankreich, Niederlande, Polen, Spanien, Italien, Österreich und 25+ EU-Ländern in 3–8 Werktagen.' },
+        { heading: 'Östrogen- und androgene Nebenwirkungen', body: 'Boldenon aromatisiert mit etwa der Hälfte der Testosteronrate — für die meisten Nutzer ohne schwere AI-Nutzung handhabbar. Androgenisch ist es milder als Testosteron (androgene Bewertung ~50 vs. 100) — DHT-bedingte Nebenwirkungen wie Haarausfall und Akne sind weniger ausgeprägt. Keine nennenswerte Progestogenaktivität (im Gegensatz zu Nandrolon), was das Management-Profil vereinfacht.' },
+        { heading: 'PCT nach Boldenon Undecylenat', body: 'Aufgrund des sehr langen Undecyleatesters: PCT 3 Wochen nach der letzten Injektion beginnen. Boldenons Suppression ist moderat — weniger schwer als Nandrolon. Standard-PCT reicht aus: Nolvadex 40/40/20/20 mg/Tag über 4 Wochen. Blutbild 4–6 Wochen nach PCT zur Bestätigung der vollständigen Erholung empfohlen.' },
+      ],
+    },
+
+    'post-cycle-therapy-complete-guide-2026': {
+      title: 'Post-Cycle-Therapie (PCT): Vollständiger Leitfaden für europäische Athleten (2026)',
+      excerpt: 'PCT ist die wichtigste Phase jeder Anabolika-Kur. Falsche oder ausgelassene PCT führt zu anhaltender Testosteronunterdrückung, Muskelverlust und Gesundheitsrisiken. Dieser Leitfaden behandelt Nolvadex, Clomid, HCG-Timing und wo PCT-Verbindungen in Europa bezogen werden können.',
+      sections: [
+        { heading: 'Was während einer AAS-Kur mit deinem Körper passiert', body: 'Während einer Anabolika-Kur signalisiert exogenes Testosteron (oder andere Androgene) der HPG-Achse, die körpereigene Testosteronproduktion einzustellen. Nach Kur-Ende muss die HPG-Achse neu starten — ein Prozess, der Wochen bis Monate dauert. Ohne PCT: niedriger Testosteronspiegel für Monate, Muskelverlust, Depression, Müdigkeit und Libidoverlust. PCT beschleunigt diese Erholung dramatisch.' },
+        { heading: 'Nolvadex (Tamoxifen): Die Standard-PCT-Basis', body: 'Tamoxifencitrat blockiert Östrogenrezeptoren an Hypothalamus und Hypophyse. Wenn Östrogen diese Stellen nicht signalisieren kann, erhöht die Hypophyse die Sekretion von LH und FSH, was die Hoden stimuliert, die Testosteronproduktion wieder aufzunehmen. Standardprotokoll: 40 mg/Tag für 2 Wochen, dann 20 mg/Tag für 2 Wochen.' },
+        { heading: 'HCG: Das Geheimnis für schnellere Erholung', body: 'Humanes Choriongonadotropin (HCG) ahmt LH nach und stimuliert direkt die Leydig-Zellen in den Hoden zur Testosteronproduktion. Durch die Verwendung von HCG in den letzten 3–4 Wochen der Kur (500 IE jeden zweiten Tag) erhältst du die Hodenempfindlichkeit und das Hodenvolumen vor Beginn der PCT — was die anschließende SERM-basierte PCT deutlich effektiver macht.' },
+        { heading: 'PCT in Europa kaufen', body: 'PharmaForce lagert Nolvadex (Tamoxifen 20 mg Tabletten), Clomid (Clomiphen 50 mg Tabletten) und HCG von lizenzierten pharmazeutischen Herstellern, versandt aus der EU. Lieferung nach Deutschland, Frankreich, Niederlande, Polen, Italien, Österreich, Spanien, Belgien und 25+ EU-Ländern in 3–8 Werktagen, vollständig diskrete schlichte Verpackung.' },
+        { heading: 'Clomid (Clomiphen): Wann verwenden', body: 'Clomiphencitrat wirkt sowohl am Hypothalamus als auch an der Hypophyse und produziert einen stärkeren LH-Schub als Nolvadex, hat aber mehr Nebenwirkungen: visuelle Störungen, Stimmungsschwankungen. Standard-PCT-Dosis: 50 mg/Tag für 2–4 Wochen. Bei stark unterdrückter Erholung: Clomid 50 mg + Nolvadex 20 mg täglich kombinieren.' },
+      ],
+    },
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // FRENCH (FR)
+  // ═══════════════════════════════════════════════════════════════════════════
+  fr: {
+    'best-protein-supplements-2026': {
+      title: 'Les meilleurs suppléments protéinés en 2026 : Guide complet',
+      excerpt: 'Whey isolat, caséine ou protéine végétale ? Nous avons analysé plus de 40 produits et révélons quelles protéines offrent la meilleure biodisponibilité, la teneur en lactose la plus faible et le meilleur rapport qualité-prix pour les athlètes européens.',
+      sections: [
+        { heading: 'Pourquoi la qualité des protéines compte plus que la quantité', body: 'La plupart des athlètes se concentrent sur un objectif journalier en grammes — 1,6 à 2,2 g par kg de poids corporel — mais ignorent la qualité de la source. La valeur biologique (VB) et le score DIAAS sont des métriques bien plus pertinentes. La whey concentrée atteint VB 104, la whey isolat VB 159, tandis que la protéine de soja se situe à VB 74. Gramme pour gramme, la whey fournit significativement plus d\'acides aminés anaboliques à vos muscles.' },
+        { heading: 'Whey concentrée vs Whey isolat', body: 'Le concentré (WPC) contient 70–80 % de protéines, 5–8 % de lactose et 5–7 % de lipides. L\'isolat (WPI) est filtré plus finement : 90–95 % de protéines, moins de 1 % de lactose, presque zéro lipides. Pour les intolérants au lactose ou les athlètes en phase de sèche, l\'isolat est clairement préférable. Moment optimal pour la whey : 30–45 minutes après l\'entraînement.' },
+        { heading: 'Caséine : La protéine lente pour la récupération', body: 'La caséine micellaire se digère sur 5–7 heures, créant une libération soutenue d\'acides aminés — idéale avant le coucher. Une étude de 2012 dans Medicine & Science in Sports & Exercise a montré que 40 g de caséine 30 minutes avant le sommeil augmentait la synthèse protéique musculaire nocturne de 22 %. Un des suppléments au meilleur rapport efficacité-coût pour les athlètes s\'entraînant intensément.' },
+        { heading: 'Protéines végétales : Pois, riz et mélanges', body: 'La protéine de pois (DIAAS ~0,82) est la meilleure option végétale en solitaire, particulièrement riche en arginine et BCAA. La protéine de riz seule est déficiente en lysine ; combinée avec le pois dans un rapport 70:30, elle crée un profil d\'acides aminés complet comparable à la whey. Pour les vegans : au minimum 25 g par portion pour maximiser la synthèse protéique musculaire.' },
+        { heading: 'Recommandations pratiques', body: 'Visez 0,4 g de protéines par kg par repas sur 4–5 repas. Post-entraînement : 25–40 g de whey isolat. Avant le coucher : 30–40 g de caséine. Ne dépassez pas 60 g par shake. Conservez la poudre ouverte dans un endroit frais et sec et consommez-la dans les 2 mois.' },
+      ],
+    },
+
+    'buy-testosterone-enanthate-europe-guide': {
+      title: 'Acheter de la Testostérone Énanthate en Europe : Guide complet 2026',
+      excerpt: 'La Testostérone Énanthate reste l\'ester de testostérone injectable le plus utilisé en Europe. Ce guide couvre les dosages, la structure du cycle, l\'approvisionnement sécurisé et ce qu\'il faut rechercher pour commander en ligne avec livraison EU.',
+      sections: [
+        { heading: 'Pourquoi la Testostérone Énanthate est le choix le plus populaire en Europe', body: 'La Testostérone Énanthate (Test E) est la pierre angulaire des cycles anabolisants depuis plus de 60 ans. Sa longue chaîne ester (énanthate) offre une demi-vie d\'environ 10,5 jours, nécessitant seulement 2 injections par semaine pour maintenir des niveaux sanguins stables. En Europe, elle était historiquement disponible sous forme de Testoviron (Schering), Cidoteston et en qualités pharmaceutiques génériques.' },
+        { heading: 'Dosage et durée du cycle', body: 'Dose débutant : 300–400 mg/semaine (injectée deux fois par semaine). Intermédiaire : 400–600 mg/semaine. Cycle standard pour une première cure : 10–12 semaines. Résultats typiques : 6–10 kg de gain de masse totale, avec 4–7 kg conservés comme muscle sec après la PCT.' },
+        { heading: 'Gestion de l\'aromatisation et des œstrogènes', body: 'La testostérone s\'aromatise en œstradiol (E2) via l\'enzyme aromatase. À des doses plus élevées (400 mg+/semaine), l\'E2 augmentera. Inhibiteur d\'aromatase recommandé : Anastrozole 0,5 mg tous les deux jours ou Exémestane 12,5 mg tous les deux jours. Bilan sanguin à la semaine 6 fortement recommandé.' },
+        { heading: 'Acheter de la Testostérone Énanthate en Europe', body: 'PharmaForce stocke la Testostérone Énanthate de fabricants vérifiés incluant BayerPro Schering et Balkan Pharmaceuticals, expédiée depuis l\'UE pour une livraison de 3–10 jours dans tous les pays européens. Livraison discrète en emballage neutre sans noms de produits à l\'extérieur.' },
+        { heading: 'PCT après Testostérone Énanthate', body: 'La PCT commence 2 semaines après la dernière injection. Protocole standard : Nolvadex 40 mg/jour pendant 2 semaines, puis 20 mg/jour pendant 2 semaines. La plupart des utilisateurs récupèrent dans les 8–16 semaines suivant la PCT.' },
+      ],
+    },
+
+    'sustanon-250-cycle-guide-europe': {
+      title: 'Sustanon 250 : Guide complet du cycle pour les athlètes européens (2026)',
+      excerpt: 'Le Sustanon 250 combine quatre esters de testostérone pour une libération immédiate et prolongée. Ce guide complet couvre le dosage, la fréquence d\'injection, la PCT et comment commander le Sustanon 250 avec livraison européenne.',
+      sections: [
+        { heading: 'Qu\'est-ce que le Sustanon 250 ?', body: 'Le Sustanon 250 est un mélange de quatre esters de testostérone : Testostérone Propionate (30 mg, t½ ~2 jours), Testostérone Phénylpropionate (60 mg, t½ ~4 jours), Testostérone Isocaproate (60 mg, t½ ~9 jours) et Testostérone Décanoate (100 mg, t½ ~15 jours). Ce mélange a été initialement conçu par Organon (Pays-Bas) pour une injection hebdomadaire unique en thérapie de remplacement de testostérone.' },
+        { heading: 'Dosage et fréquence d\'injection', body: 'Malgré sa conception pour des injections hebdomadaires, les utilisateurs de performance injectent généralement tous les 3–4 jours pour maintenir des niveaux sanguins stables. Dose standard : 250–500 mg/semaine pour un cycle de 10–14 semaines.' },
+        { heading: 'Sustanon 250 vs Testostérone Énanthate', body: 'Pour la TRT ou les premiers cycles, la Testostérone Énanthate est généralement préférée pour sa simplicité. Le Sustanon 250 convient aux utilisateurs qui souhaitent à la fois une élévation immédiate de la testostérone et une couverture prolongée.' },
+        { heading: 'Acheter Sustanon 250 avec livraison européenne', body: 'PharmaForce stocke le Sustanon 250 au format ampoule original de BayerPro Schering, expédié depuis un entrepôt UE. Livraison en 3–7 jours vers l\'Allemagne, la Pologne, la France, les Pays-Bas, l\'Autriche, l\'Italie et 25+ autres pays UE.' },
+        { heading: 'Timing de la PCT après Sustanon 250', body: 'En raison de l\'ester décanoate (t½ ~15 jours), commencez la PCT 3 semaines après la dernière injection. Protocole PCT : Nolvadex 40/40/20/20 mg/jour sur 4 semaines.' },
+      ],
+    },
+
+    'buy-peptides-europe-bpc157-tb500': {
+      title: 'Acheter des Peptides en Europe : BPC-157, TB-500 et Ipamorelin Guide complet',
+      excerpt: 'Les peptides de recherche comme le BPC-157 et le TB-500 ont gagné une grande popularité dans les pays européens pour la récupération des blessures et les performances. Ce guide couvre les mécanismes, le dosage, la reconstitution et l\'achat de peptides en ligne en Europe.',
+      sections: [
+        { heading: 'Que sont les peptides de recherche ?', body: 'Les peptides sont de courtes chaînes d\'acides aminés agissant comme molécules de signalisation dans le corps. Contrairement aux stéroïdes anabolisants, la plupart des peptides de recherche ne suppriment pas la production hormonale naturelle ni ne causent de toxicité hépatique. En Europe, l\'utilisation de peptides a considérablement augmenté depuis 2020, notamment avec BPC-157 pour la réparation des tendons et articulations, TB-500 pour la régénération tissulaire.' },
+        { heading: 'BPC-157 : Le peptide de guérison', body: 'BPC-157 (Body Protection Compound 157) est un peptide de 15 acides aminés dérivé d\'une protéine trouvée dans le suc gastrique humain. Dans de nombreuses études sur les rongeurs, il a démontré une accélération remarquable de la guérison sur plusieurs types de tissus : tendons, ligaments, muscles, os et tube digestif. Dose : 200–500 mcg/jour, injecté en sous-cutané près du site de blessure, pendant 4–8 semaines.' },
+        { heading: 'Acheter des peptides en Europe avec livraison rapide', body: 'PharmaForce stocke BPC-157, TB-500, Ipamorelin, CJC-1295 et une gamme complète de peptides HGH depuis des entrepôts UE. Livraison vers l\'Allemagne, la France, les Pays-Bas, la Pologne, l\'Italie, l\'Espagne et 25+ pays européens. Délai de livraison typique : 3–8 jours ouvrables, emballage discret neutre.' },
+        { heading: 'TB-500 : Réparation tissulaire systémique', body: 'TB-500 (Thymosin Beta-4) favorise la migration cellulaire, la différenciation et l\'angiogenèse au niveau systémique. Idéal pour les dommages musculaires étendus ou les sites de blessures multiples. Dose : 2–2,5 mg deux fois par semaine pendant 4–6 semaines (phase de charge), puis 2–2,5 mg une fois par semaine en maintenance.' },
+        { heading: 'Reconstitution et stockage des peptides', body: 'La poudre lyophilisée doit être reconstituée avec de l\'eau bactériostatique avant injection. Technique : ajouter 1–2 ml d\'eau BAC par flacon de 5 mg lentement. Une fois reconstitué : conserver réfrigéré (4°C), utiliser dans les 30 jours, protéger de la lumière. Poudre sèche : stable à température ambiante pendant des mois.' },
+      ],
+    },
+
+    'nandrolone-decanoate-deca-guide-europe': {
+      title: 'Nandrolone Décanoate (Deca-Durabolin) : Guide du cycle pour les athlètes européens',
+      excerpt: 'La Nandrolone Décanoate (Deca-Durabolin) est l\'un des stéroïdes anabolisants les plus anciens et les plus utilisés en Europe. Ce guide couvre le dosage, les bienfaits articulaires, les effets secondaires et comment acheter la Deca avec livraison EU.',
+      sections: [
+        { heading: 'Pharmacologie et bienfaits articulaires', body: 'La Nandrolone Décanoate a un rapport anabolisant/androgène d\'environ 125:37, ce qui la rend hautement anabolisante avec une activité androgène relativement faible. Elle est unique parmi les anabolisants pour ses propriétés de protection et de lubrification articulaires prononcées — augmentant significativement la synthèse de collagène et la densité minérale osseuse.' },
+        { heading: 'Dosage et structure du cycle', body: 'Dose standard : 200–400 mg/semaine pour les débutants. La Nandrolone est presque toujours combinée avec de la testostérone (minimum TRT : 200 mg/semaine) car elle supprime fortement la production naturelle de testostérone. Cycle typique : Testostérone Énanthate 400 mg/semaine + Nandrolone Décanoate 300 mg/semaine pendant 14 semaines.' },
+        { heading: 'Gestion de la prolactine', body: 'La Nandrolone est un composé 19-nor qui peut augmenter les niveaux de prolactine. La Cabergoline (Dostinex) à 0,25–0,5 mg deux fois par semaine est l\'outil standard de gestion de la prolactine. Les analyses sanguines doivent inclure la prolactine aux semaines 6 et 12.' },
+        { heading: 'Acheter la Nandrolone Décanoate en Europe', body: 'PharmaForce stocke la Nandrolone Décanoate 250 mg/ml de Balkan Pharmaceuticals, expédiée depuis un entrepôt UE. Livraison en 3–7 jours vers l\'Allemagne, la France, les Pays-Bas, la Pologne, l\'Italie, l\'Autriche, l\'Espagne et 25+ pays UE, emballage discret neutre.' },
+        { heading: 'Timing PCT après Nandrolone Décanoate', body: 'En raison de l\'ester décanoate (t½ ~15 jours), ne commencez pas la PCT avant 3 semaines après la dernière injection. La Nandrolone est plus suppressive que la testostérone, et la récupération est généralement plus lente. Protocole PCT étendu : Nolvadex 40 mg/jour pendant 2 semaines, puis 20 mg/jour pendant 4 semaines.' },
+      ],
+    },
+
+    'boldenone-equipoise-lean-gains-europe': {
+      title: 'Boldenone Undécylénate (Equipoise) : Guide du cycle pour gains secs en Europe',
+      excerpt: 'La Boldenone Undécylénate (Equipoise, EQ) offre des gains musculaires secs progressifs avec une vascularité améliorée et une rétention d\'eau minimale. Dosage, effets secondaires et comment acheter la Boldenone en Europe.',
+      sections: [
+        { heading: 'Qu\'est-ce que la Boldenone Undécylénate ?', body: 'La Boldenone Undécylénate (nom commercial Equipoise) était initialement développée comme anabolisant vétérinaire pour les chevaux. Structurellement, c\'est une forme modifiée de testostérone avec une double liaison ajoutée en C1–C2, ce qui réduit son taux d\'aromatisation d\'environ 50 % par rapport à la testostérone. L\'ester undécylénate lui confère une demi-vie d\'environ 14 jours.' },
+        { heading: 'Dosage et durée du cycle', body: 'Dose standard : 300–500 mg/semaine. Durée du cycle : minimum 12–16 semaines. Injecter deux fois par semaine. Protocole classique : Testostérone Énanthate 300 mg/semaine + Boldenone 400 mg/semaine pendant 16 semaines. Résultats attendus : 4–7 kg de masse musculaire de qualité, vascularité significativement améliorée.' },
+        { heading: 'Acheter la Boldenone en Europe', body: 'PharmaForce stocke la Boldenone Undécylénate 250 mg/ml (boîtes de 10 × 1ml) d\'Alpha Pharma, expédiée depuis des entrepôts UE. Livraison vers l\'Allemagne, la France, les Pays-Bas, la Pologne, l\'Espagne, l\'Italie, l\'Autriche et 25+ pays UE en 3–8 jours ouvrables.' },
+        { heading: 'Effets secondaires œstrogéniques et androgéniques', body: 'La Boldenone s\'aromatise à environ la moitié du taux de la testostérone — gérable sans utilisation intensive d\'IA pour la plupart des utilisateurs. Androgéniquement, elle est plus douce que la testostérone (classement androgénique ~50 vs 100). Pas d\'activité progestogénique notable, simplifiant le profil de gestion.' },
+        { heading: 'PCT après Boldenone Undécylénate', body: 'En raison de l\'ester undécylénate très long (t½ ~14 jours), commencez la PCT 3 semaines après la dernière injection. La suppression de la Boldenone est modérée. PCT standard : Nolvadex 40/40/20/20 mg/jour sur 4 semaines.' },
+      ],
+    },
+
+    'post-cycle-therapy-complete-guide-2026': {
+      title: 'Thérapie Post-Cycle (PCT) : Guide complet pour les athlètes européens (2026)',
+      excerpt: 'La PCT est la phase la plus importante de tout cycle de stéroïdes anabolisants. Ignorer ou mal faire la PCT conduit à une suppression prolongée de la testostérone, une perte musculaire et des risques pour la santé. Ce guide couvre Nolvadex, Clomid, HCG et où trouver les composés PCT en Europe.',
+      sections: [
+        { heading: 'Ce qui arrive à votre corps pendant un cycle AAS', body: 'Pendant un cycle de stéroïdes anabolisants, la testostérone exogène signale à l\'axe HPG d\'arrêter la production endogène de testostérone. Après la fin du cycle, l\'axe HPG doit redémarrer — un processus qui prend des semaines à des mois. Sans PCT : testostérone basse pendant des mois, perte musculaire, dépression, fatigue et absence de libido.' },
+        { heading: 'Nolvadex (Tamoxifène) : La base standard de la PCT', body: 'Le citrate de tamoxifène (Nolvadex) est un SERM qui bloque les récepteurs œstrogéniques à l\'hypothalamus et à l\'hypophyse, permettant à l\'hypophyse d\'augmenter la sécrétion de LH et FSH. Protocole standard : 40 mg/jour pendant 2 semaines, puis 20 mg/jour pendant 2 semaines.' },
+        { heading: 'HCG : La clé pour une récupération plus rapide', body: 'La gonadotrophine chorionique humaine (HCG) imite la LH et stimule directement les cellules de Leydig dans les testicules. En utilisant l\'HCG dans les 3–4 dernières semaines du cycle (500 UI tous les deux jours), vous maintenez la sensibilité testiculaire avant le début de la PCT.' },
+        { heading: 'Acheter Nolvadex, Clomid et HCG en Europe', body: 'PharmaForce stocke Nolvadex (Tamoxifène 20 mg comprimés), Clomid (Clomiphène 50 mg comprimés) et HCG depuis des entrepôts UE. Livraison en 3–8 jours vers l\'Allemagne, la France, les Pays-Bas, la Pologne, l\'Italie, l\'Autriche et 25+ pays européens, emballage totalement discret.' },
+        { heading: 'Timing de la PCT selon l\'ester', body: 'Testostérone Propionate (t½ ~2 jours) : commencer la PCT 3–4 jours après. Testostérone Énanthate (t½ ~10 jours) : commencer 14 jours après. Sustanon 250 / Nandrolone Décanoate : commencer 21 jours après la dernière injection.' },
+      ],
+    },
+
+    'testosterone-cycle-beginners-guide': {
+      title: 'Cycle de Testostérone pour Débutants : Dosage, Durée et Sécurité',
+      excerpt: 'Testostérone Énanthate ou Propionate ? 10 semaines ou 16 ? Nous détaillons les protocoles les plus sûrs pour un premier cycle, le timing des analyses sanguines et ce qu\'attendre en termes de gains et effets secondaires.',
+      sections: [
+        { heading: 'Pourquoi la testostérone est la base de tout cycle', body: 'La testostérone est l\'hormone anabolisante endogène — tout utilisateur d\'AAS en a déjà fait l\'expérience car elle est produite naturellement. Un cycle de testostérone exogène augmente simplement les niveaux au-delà de la plage physiologique. Pour un premier cycle : testostérone seule (sans combinaison), pour évaluer les réponses de façon isolée.' },
+        { heading: 'Contrôle des œstrogènes et PCT', body: 'La testostérone s\'aromatise en œstradiol (E2). Aux doses supérieures à 400 mg/semaine, l\'E2 augmente et peut causer rétention d\'eau et gynécomastie. IA recommandé : Anastrozole 0,5 mg tous les deux jours. PCT standard après cycle : Nolvadex 40/40/20/20 mg/jour sur 4 semaines.' },
+        { heading: 'Dosage et durée', body: 'Dose débutant : 300–400 mg/semaine de Testostérone Énanthate, deux injections par semaine, cycle de 10–12 semaines. Résultats typiques : 6–10 kg de gain total, avec 4–7 kg conservés comme muscle sec.' },
+      ],
+    },
+
+    'pct-guide-nolvadex-clomid': {
+      title: 'Thérapie Post-Cycle : Nolvadex vs Clomid — Lequel fonctionne le mieux ?',
+      excerpt: 'Ignorer la PCT après un cycle AAS est l\'une des erreurs les plus communes. Nous comparons les protocoles Tamoxifène et Clomiphène, le timing selon les esters et comment restaurer la production naturelle de testostérone.',
+      sections: [
+        { heading: 'Nolvadex vs Clomid : Différences clés', body: 'Le Nolvadex (Tamoxifène) bloque les récepteurs œstrogéniques à l\'hypophyse, augmentant la sécrétion de LH et FSH. Le Clomid (Clomiphène) agit à la fois sur l\'hypothalamus et l\'hypophyse — stimulant plus directement la libération de gonadotrophines. Le Clomid produit une poussée de LH plus forte mais présente plus d\'effets secondaires.' },
+        { heading: 'Protocoles recommandés', body: 'Nolvadex : 40 mg/jour pendant 2 semaines, puis 20 mg/jour pendant 2 semaines. Clomid : 50 mg/jour pendant 2–4 semaines. Pour les cycles sévèrement suppresseurs : Clomid 50 mg + Nolvadex 20 mg combinés quotidiennement pendant 4 semaines.' },
+        { heading: 'Timing PCT selon les esters', body: 'Propionate de testostérone : PCT 3–4 jours après la dernière injection. Énanthate de testostérone : PCT 14 jours après. Sustanon 250 / Décanoate de Nandrolone : PCT 21 jours après.' },
+      ],
+    },
+
+    'sarms-vs-steroids-comparison': {
+      title: 'SARMs vs Stéroïdes : Comparaison honnête pour les athlètes',
+      excerpt: 'Ostarine, RAD-140 et LGD-4033 promettent des gains similaires aux stéroïdes sans toxicité hépatique. Mais comment se comparent-ils vraiment ? Analyse des données d\'efficacité, risque de suppression et quels composés conviennent à quels objectifs.',
+      sections: [
+        { heading: 'Que sont les SARMs ?', body: 'Les Modulateurs Sélectifs des Récepteurs aux Androgènes (SARMs) se lient sélectivement aux récepteurs androgéniques dans les tissus musculaires et osseux, avec une activité minimale dans d\'autres tissus. C\'est l\'avantage théorique par rapport aux anabolisants : bénéfices anabolisants sans effets secondaires androgènes.' },
+        { heading: 'SARMs vs Testostérone : Comparaison réaliste', body: 'Les SARMs ne fournissent pas des résultats équivalents aux stéroïdes sans effets secondaires équivalents. À des effets anabolisants comparables (ex. RAD-140 vs 300 mg/semaine testostérone), le degré de suppression est similaire. L\'avantage principal : pas d\'aromatisation en œstrogène, pas de conversion en DHT, pas d\'injections.' },
+        { heading: 'Les principaux SARMs et leurs usages', body: 'Ostarine (MK-2866) : le plus doux, 10–25 mg/jour. LGD-4033 : plus puissant, gains significatifs en force et masse, suppression notable. RAD-140 : le plus puissant, effets anabolisants significatifs, suppression forte nécessitant une PCT.' },
+      ],
+    },
+
+    'hgh-peptides-guide-ghrp-cjc': {
+      title: 'Peptides HGH : GHRP-6, Ipamorelin, CJC-1295 — Vue d\'ensemble complète',
+      excerpt: 'Les sécrétagogues de l\'hormone de croissance stimulent votre propre hypophyse — sans suppression, sans GH synthétique. Comparaison de GHRP-6, GHRP-2, Ipamorelin et CJC-1295, fenêtres de dosage et résultats attendus.',
+      sections: [
+        { heading: 'Comment fonctionnent les peptides GH', body: 'Les peptides GH (sécrétagogues de l\'hormone de croissance) stimulent l\'hypophyse à libérer de l\'hormone de croissance endogène. Contrairement à la rhGH recombinante, ils ne suppriment pas l\'axe GH naturel. Il existe deux classes : les GHRP (sécrétagogues directs de GH) et les analogues GHRH comme CJC-1295.' },
+        { heading: 'Ipamorelin + CJC-1295 : Le stack GH peptide', body: 'L\'Ipamorelin est le GHRP le plus sélectif — stimule les pulses de GH sans augmentation significative du cortisol ou de la prolactine. CJC-1295 avec DAC prolonge la durée des pulses de GH. Combinés : Ipamorelin 200 mcg + CJC-1295 100 mcg injectés en sous-cutané avant le coucher, 5 jours par semaine.' },
+        { heading: 'Résultats attendus', body: 'Après 3–6 mois : amélioration de la qualité du sommeil, accélération de la perte de graisses, meilleure récupération musculaire, amélioration de la texture cutanée. Pas de shutdown de l\'axe GH naturel contrairement à la rhGH exogène.' },
+      ],
+    },
+
+    'anastrozole-vs-exemestane-ai-guide': {
+      title: 'Anastrozole vs Exémestane : Quel inhibiteur d\'aromatase choisir ?',
+      excerpt: 'Le contrôle des œstrogènes pendant le cycle est crucial. L\'Anastrozole (Arimidex) inhibe l\'aromatase de façon réversible ; l\'Exémestane (Aromasin) la désactive de façon permanente. Quand utiliser chacun et comment éviter de faire chuter votre œstradiol.',
+      sections: [
+        { heading: 'Anastrozole : IA non stéroïdien réversible', body: 'L\'Anastrozole supprime l\'aromatase de façon réversible, inhibant la synthèse des œstrogènes d\'environ 97 %. Dose en cycle : 0,5 mg tous les deux jours. Inconvénient : peut réduire l\'efficacité du Tamoxifène (Nolvadex) au niveau hypophysaire.' },
+        { heading: 'Exémestane : Inhibiteur suicide stéroïdien', body: 'L\'Exémestane se lie de façon permanente à l\'aromatase. Il a une activité androgène intrinsèque modérée et préserve mieux le HDL que l\'Anastrozole. Préféré pendant la PCT et les cycles longs. Dose : 12,5–25 mg tous les deux jours.' },
+        { heading: 'Reconnaître et corriger un faible taux d\'œstrogène', body: 'Signes de suppression excessive : articulations douloureuses, perte soudaine de libido, léthargie extrême, aplatissement émotionnel. Si ces symptômes apparaissent : arrêter immédiatement l\'IA, laisser l\'E2 récupérer pendant 5–7 jours, puis réintroduire à dose plus faible.' },
+      ],
+    },
+
+    'cardarine-gw501516-fat-loss-guide': {
+      title: 'Cardarine (GW-501516) : Le modulateur de perte de graisses expliqué',
+      excerpt: 'La Cardarine n\'est pas un SARM — c\'est un agoniste PPARδ qui oriente votre métabolisme vers l\'oxydation des graisses, booste l\'endurance et préserve le muscle en déficit. Ce que la recherche montre vraiment.',
+      sections: [
+        { heading: 'Mécanisme de perte de graisses', body: 'L\'activation PPARδ augmente la bêta-oxydation des acides gras dans le muscle squelettique et le foie. Dans les essais cliniques pour le syndrome métabolique, elle a significativement réduit le LDL et les graisses viscérales tout en augmentant le HDL. Combinée avec son effet d\'endurance, la Cardarine crée un environnement puissant de perte de graisses.' },
+        { heading: 'Protocole pratique', body: 'Dose : 10–20 mg/jour, 30–45 minutes avant le cardio. Durée du cycle : 8–12 semaines suivies d\'une pause équivalente. Aucune suppression hormonale, aucune toxicité hépatique, aucune PCT requise.' },
+        { heading: 'La controverse sur le cancer', body: 'GSK a arrêté les essais humains en 2007 après que des études sur des rongeurs à très fortes doses sur de longues périodes aient montré une croissance accélérée de tumeurs préexistantes. Contexte important : les rats recevaient 3 mg/kg pendant 2 ans (équivalent à 240 mg/jour pour un humain de 80 kg — 12–24× les doses de performance typiques).' },
+      ],
+    },
+
+    'igf-1-lr3-muscle-growth': {
+      title: 'IGF-1 LR3 : Comment le facteur de croissance analogue à l\'insuline construit les muscles',
+      excerpt: 'L\'IGF-1 LR3 agit en aval de l\'HGH pour stimuler la prolifération des cellules satellites et l\'hyperplasie — de vraies nouvelles fibres musculaires, pas seulement de l\'hypertrophie.',
+      sections: [
+        { heading: 'Hyperplasie vs Hypertrophie', body: 'L\'entraînement standard cause l\'hypertrophie — les fibres musculaires existantes s\'agrandissent. L\'IGF-1 est l\'un des rares composés capables de stimuler l\'hyperplasie — la création de nouvelles fibres musculaires — en activant et proliférant les cellules satellites. Les nouvelles fibres sont permanentes.' },
+        { heading: 'Protocole de dosage', body: 'Dose IGF-1 LR3 : 40–100 mcg/jour. Injection : sous-cutané ou intramusculaire après l\'entraînement directement dans le groupe musculaire travaillé. Durée du cycle : 4–6 semaines suivies d\'une pause équivalente. Reconstituer avec de l\'eau bactériostatique ; conserver réfrigéré.' },
+        { heading: 'Synergies et empilage', body: 'L\'IGF-1 LR3 est le plus efficace combiné avec des peptides HGH (stack GHRP/CJC) et des stéroïdes anabolisants. GH peptides élèvent l\'IGF-1 endogène ; l\'IGF-1 LR3 exogène sature directement les récepteurs IGF-1 périphériques.' },
+      ],
+    },
+
+    'dianabol-cycle-guide': {
+      title: 'Cycle Dianabol (Méthandiénone) : Gains, Risques et Protection du Foie',
+      excerpt: 'Le Dianabol est le stéroïde oral le plus rapidement efficace — attendez 5–8 kg en 4 semaines. Mais l\'alkylation en C17 signifie une hépatotoxicité sérieuse. Durées de cycle sûres, dosage de TUDCA et comment garder vos bilans sanguins propres.',
+      sections: [
+        { heading: 'Protection du foie : Protocole obligatoire', body: 'TUDCA (acide tauroursodésoxycholique) : 500 mg/jour pendant le cycle et 2 semaines après — l\'hépatoprotecteur le plus basé sur des preuves. NAC (N-Acétyl Cystéine) : 600–1 200 mg/jour — augmente la synthèse de glutathion. Éviter complètement l\'alcool pendant le cycle. Durée maximale du cycle : 4–6 semaines.' },
+        { heading: 'Dianabol comme kickstart vs utilisation seul', body: 'L\'utilisation la plus courante du Dianabol est comme "kickstart" pour les 4 premières semaines d\'un cycle injectab le plus long (ex. testostérone énanthate). Les injectables mettent 3–4 semaines à atteindre des niveaux sanguins maximaux ; le Dianabol comble ce vide avec des gains immédiats de force et de masse.' },
+        { heading: 'Dosage et gestion des œstrogènes', body: 'Dose standard : 30–50 mg/jour. Débutants : commencer à 20–30 mg/jour. L\'IA est essentielle dès le jour 1 d\'un cycle Dianabol — pas à la semaine 2.' },
+      ],
+    },
+
+    'meldonium-mildronate-endurance': {
+      title: 'Méldonium (Mildronate) : Le médicament d\'endurance qui a suspendu Sharapova',
+      excerpt: 'Le Méldonium réduit l\'oxydation des acides gras dans les cellules cardiaques, forçant le cœur à utiliser un carburant glucidique plus efficace. Utilisé légalement en Europe de l\'Est comme cardioprotecteur — voici la science et l\'application sportive.',
+      sections: [
+        { heading: 'Application sportive et statut légal', body: 'Pour les athlètes d\'endurance, le changement glucose-vs-graisse améliore les performances aux intensités élevées. Interdit par l\'AMA (S4 : Modulateurs hormonaux et métaboliques) dans les compétitions. Statut légal variable en Europe : enregistré comme médicament en Lettonie, Lituanie, Russie. Fenêtre de détection AMA : jusqu\'à 3 mois après l\'arrêt.' },
+        { heading: 'Dosage', body: 'Dose clinique typique : 500–1 000 mg/jour en doses fractionnées, pour des cures de 4–6 semaines, 2× par an. Soluble dans l\'eau, peut être pris par voie orale. Pas de toxicité hépatique significative ou de perturbation endocrinienne aux doses standard.' },
+        { heading: 'Mécanisme d\'action', body: 'Le Méldonium est un inhibiteur TMAO qui interfère avec le transport de carnitine et réduit l\'oxydation des acides gras dans les cellules du muscle cardiaque. Cela force les cellules à utiliser du glucose via la voie plus efficace et réduit les métabolites toxiques des acides gras dans les conditions de stress.' },
+      ],
+    },
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // POLISH (PL)
+  // ═══════════════════════════════════════════════════════════════════════════
+  pl: {
+    'best-protein-supplements-2026': {
+      title: 'Najlepsze suplementy białkowe 2026: Kompletny przewodnik',
+      excerpt: 'Izolat serwatki, kazeina czy białko roślinne? Przeanalizowaliśmy ponad 40 produktów i ujawniamy, które białka oferują najwyższą biodostępność, najniższą zawartość laktozy i najlepszy stosunek jakości do ceny dla europejskich sportowców.',
+      sections: [
+        { heading: 'Dlaczego jakość białka jest ważniejsza niż ilość', body: 'Większość sportowców skupia się na dziennym celu gramów — 1,6–2,2 g na kg masy ciała — ale ignoruje jakość źródła. Wartość biologiczna (WB) i wskaźnik DIAAS to znacznie bardziej istotne metryki. Koncentrat serwatki osiąga WB 104, izolat serwatki WB 159, podczas gdy białko sojowe wynosi WB 74.' },
+        { heading: 'Koncentrat vs Izolat serwatki', body: 'Koncentrat (WPC) zawiera 70–80% białka, 5–8% laktozy i 5–7% tłuszczu. Izolat (WPI) przechodzi dodatkową mikrofiltrację: 90–95% białka, poniżej 1% laktozy, prawie zero tłuszczu. Dla osób nietolerujących laktozy lub sportowców na redukcji, izolat jest zdecydowanym wyborem. Optymalny czas przyjmowania: 30–45 minut po treningu.' },
+        { heading: 'Kazeina: Wolne białko dla regeneracji', body: 'Kazeina micelarna trawi się przez 5–7 godzin, tworząc przedłużone uwalnianie aminokwasów — idealne przed snem. Badanie z 2012 roku wykazało, że 40 g kazeiny 30 minut przed snem zwiększa nocną syntezę białek mięśniowych o 22%. Jeden z suplementów o najwyższym stosunku skuteczności do kosztu dla intensywnie trenujących sportowców.' },
+        { heading: 'Białka roślinne: Groch, ryż i mieszanki', body: 'Białko grochu (DIAAS ~0,82) jest najsilniejszą roślinną opcją, szczególnie bogate w argininę i BCAA. Białko ryżu samo w sobie jest ubogie w lizynę; połączone z grochem w proporcji 70:30 tworzy kompletny profil aminokwasowy porównywalny z serwatką. Dla wegan: minimum 25 g na porcję.' },
+        { heading: 'Praktyczne zalecenia', body: 'Dąż do 0,4 g białka na kg na posiłek przez 4–5 posiłków. Po treningu: 25–40 g izolatu serwatki. Przed snem: 30–40 g kazeiny. Nie przekraczaj 60 g w jednym shake\'u. Otwarte opakowanie przechowuj w chłodnym, suchym miejscu i zużyj w ciągu 2 miesięcy.' },
+      ],
+    },
+
+    'buy-testosterone-enanthate-europe-guide': {
+      title: 'Jak kupić Testosteron Enanthat online w Europie (2026)',
+      excerpt: 'Testosteron Enanthat pozostaje najpopularniejszym iniekcyjnym estrem testosteronu w Europie. Ten przewodnik omawia dawkowanie, strukturę cyklu, bezpieczne zaopatrzenie i na co zwracać uwagę przy zamawianiu online z dostawą EU.',
+      sections: [
+        { heading: 'Dlaczego Testosteron Enanthat jest najpopularniejszym wyborem w Europie', body: 'Testosteron Enanthat (Test E) jest podstawą cykli anabolicznych od ponad 60 lat. Jego długi łańcuch estrowy (enanthan) zapewnia okres półtrwania około 10,5 dnia, wymagając tylko 2 zastrzyków tygodniowo dla utrzymania stabilnych poziomów we krwi. W Europie był historycznie dostępny jako Testoviron (Schering), Cidoteston i generyczne preparaty farmaceutyczne.' },
+        { heading: 'Dawkowanie i długość cyklu', body: 'Dawka początkująca: 300–400 mg/tydzień (wstrzykiwana dwa razy w tygodniu). Średniozaawansowani: 400–600 mg/tydzień. Standardowy pierwszy cykl: 10–12 tygodni. Typowe wyniki: 6–10 kg całkowitego przyrostu masy, z 4–7 kg zatrzymanymi jako mięśnie po PCT.' },
+        { heading: 'Aromatyzacja i kontrola estrogenów', body: 'Testosteron aromatyzuje do estradiolu (E2). Przy wyższych dawkach (400 mg+/tydzień) E2 wzrośnie. Zalecany inhibitor aromatazy: Anastrozol 0,5 mg co drugi dzień. Morfologia krwi w 6. tygodniu jest zdecydowanie zalecana.' },
+        { heading: 'Kupowanie Testosteronu Enanthatu w Europie', body: 'PharmaForce posiada w magazynie Testosteron Enanthat od zweryfikowanych producentów, w tym BayerPro Schering i Balkan Pharmaceuticals, wysyłany z UE dla 3–10-dniowej dostawy do wszystkich krajów europejskich. Dyskretne opakowanie bez nazw produktów na zewnątrz.' },
+        { heading: 'PCT po Testosteronie Enanthanie', body: 'PCT rozpoczyna się 2 tygodnie po ostatniej iniekcji. Standardowy protokół: Nolvadex 40 mg/dzień przez 2 tygodnie, następnie 20 mg/dzień przez 2 tygodnie. Większość użytkowników odzyskuje naturalne poziomy testosteronu w ciągu 8–16 tygodni po zakończeniu PCT.' },
+      ],
+    },
+
+    'sustanon-250-cycle-guide-europe': {
+      title: 'Sustanon 250: Kompletny przewodnik po cyklu dla europejskich sportowców (2026)',
+      excerpt: 'Sustanon 250 łączy cztery estry testosteronu dla natychmiastowego i długotrwałego uwalniania. Ten kompletny przewodnik omawia dawkowanie, częstotliwość iniekcji, PCT i jak zamówić Sustanon 250 z dostawą europejską.',
+      sections: [
+        { heading: 'Czym jest Sustanon 250?', body: 'Sustanon 250 to mieszanina czterech estrów testosteronu w jednej ampułce: Testosteron Propionian (30 mg, t½ ~2 dni), Testosteron Fenylopropionian (60 mg, t½ ~4 dni), Testosteron Izokapronian (60 mg, t½ ~9 dni) i Testosteron Dekanian (100 mg, t½ ~15 dni). Ta mieszanka została pierwotnie zaprojektowana przez Organon (Holandia) dla jednej cotygodniowej iniekcji w terapii zastępczej testosteronem.' },
+        { heading: 'Dawkowanie i częstotliwość iniekcji', body: 'Pomimo przeznaczenia dla cotygodniowych iniekcji, użytkownicy wydajnościowi zazwyczaj wstrzykują co 3–4 dni dla utrzymania stabilnych poziomów we krwi. Standardowa dawka: 250–500 mg/tydzień przez 10–14 tygodni.' },
+        { heading: 'Kupowanie Sustanonu 250 z dostawą europejską', body: 'PharmaForce posiada w magazynie Sustanon 250 w oryginalnym formacie ampułek od BayerPro Schering, wysyłany z magazynu UE z 3–7-dniową dostawą do Niemiec, Polski, Francji, Holandii, Austrii, Włoch i 25+ innych krajów UE.' },
+        { heading: 'Timing PCT po Sustanonie 250', body: 'Ze względu na ester dekanianowy (t½ ~15 dni), rozpocznij PCT 3 tygodnie po ostatniej iniekcji. Protokół PCT: Nolvadex 40/40/20/20 mg/dzień przez 4 tygodnie.' },
+        { heading: 'Sustanon vs Testosteron Enanthat', body: 'Dla TRT lub pierwszych cykli, Testosteron Enanthat jest ogólnie preferowany ze względu na prostotę. Sustanon 250 pasuje do użytkowników, którzy chcą zarówno natychmiastowego wzrostu testosteronu, jak i długotrwałego pokrycia.' },
+      ],
+    },
+
+    'buy-peptides-europe-bpc157-tb500': {
+      title: 'Kup Peptydy w Europie: BPC-157, TB-500 i Ipamorelin Kompletny przewodnik',
+      excerpt: 'Peptydy badawcze, takie jak BPC-157 i TB-500, zyskały ogromną popularność w krajach europejskich do regeneracji urazów i poprawy wyników. Ten przewodnik omawia mechanizmy, dawkowanie, rekonstytucję i zakup peptydów online w Europie.',
+      sections: [
+        { heading: 'Co to są peptydy badawcze?', body: 'Peptydy to krótkie łańcuchy aminokwasów działające jako cząsteczki sygnalizacyjne w organizmie. W odróżnieniu od sterydów anabolicznych, większość peptydów badawczych nie hamuje naturalnej produkcji hormonów ani nie powoduje toksyczności wątroby. W Europie stosowanie peptydów znacznie wzrosło od 2020 roku, szczególnie BPC-157 do naprawy stawów i ścięgien, TB-500 do regeneracji tkanek.' },
+        { heading: 'BPC-157: Peptyd gojący', body: 'BPC-157 (Body Protection Compound 157) to peptyd 15-aminokwasowy wyprowadzony z białka z ludzkiego soku żołądkowego. W licznych badaniach na gryzoniach wykazał niezwykłe przyspieszenie gojenia różnych tkanek: ścięgien, więzadeł, mięśni, kości i przewodu pokarmowego. Dawka: 200–500 mcg/dzień, wstrzykiwany podskórnie blisko miejsca urazu.' },
+        { heading: 'Jak kupić peptydy online w Europie', body: 'PharmaForce posiada w magazynie BPC-157, TB-500, Ipamorelin, CJC-1295 z magazynów UE. Dostawa do Niemiec, Francji, Polski, Holandii, Włoch, Hiszpanii i 25+ krajów europejskich. Typowy czas dostawy: 3–8 dni roboczych, dyskretne opakowanie.' },
+        { heading: 'TB-500: Systemowa naprawa tkanek', body: 'TB-500 (Thymosin Beta-4) promuje migrację komórek, różnicowanie i angiogenezę na poziomie systemowym. Idealne dla rozległych uszkodzeń mięśni lub wielu miejsc urazu. Dawka: 2–2,5 mg dwa razy w tygodniu przez 4–6 tygodni (faza ładowania), następnie 2–2,5 mg raz w tygodniu.' },
+        { heading: 'Rekonstytucja i przechowywanie peptydów', body: 'Liofilizowany proszek musi być rekonstytuowany wodą bakteriostatyczną przed iniekcją. Po rekonstytucji: przechowywać w lodówce (4°C), używać w ciągu 30 dni, chronić przed światłem. Suchy proszek: stabilny w temperaturze pokojowej przez miesiące.' },
+      ],
+    },
+
+    'nandrolone-decanoate-deca-guide-europe': {
+      title: 'Nandrolon Dekanian (Deca-Durabolin): Przewodnik po cyklu dla europejskich sportowców',
+      excerpt: 'Nandrolon Dekanian (Deca-Durabolin) to jeden z najstarszych i najszerzej stosowanych sterydów anabolicznych w Europie. Ten przewodnik omawia dawkowanie, korzyści dla stawów, efekty uboczne, wymagania PCT i jak pozyskać Deca z dostawą EU.',
+      sections: [
+        { heading: 'Farmakologia i korzyści dla stawów', body: 'Nandrolon Dekanian ma stosunek anaboliczny do androgennego wynoszący około 125:37, co czyni go wysoce anabolicznym przy stosunkowo niskiej aktywności androgennej. Jest wyjątkowy wśród popularnych sterydów anabolicznych ze względu na wyraźne właściwości ochrony i smarowania stawów — znacznie zwiększa syntezę kolagenu i gęstość mineralną kości.' },
+        { heading: 'Dawkowanie i struktura cyklu', body: 'Standardowa dawka: 200–400 mg/tydzień dla początkujących. Nandrolon jest prawie zawsze łączony z testosteronem (minimum dawka TRT: 200 mg/tydzień), ponieważ silnie hamuje naturalną produkcję testosteronu. Typowy cykl: Testosteron Enanthat 400 mg/tydzień + Nandrolon Dekanian 300 mg/tydzień przez 14 tygodni.' },
+        { heading: 'Kupowanie Nandrolonu Dekaniantu w Europie', body: 'PharmaForce posiada w magazynie Nandrolon Dekanian 250 mg/ml od Balkan Pharmaceuticals — licencjonowanego wschodnioeuropejskiego producenta z certyfikatem GMP. Dostawa do Niemiec, Francji, Holandii, Polski, Włoch, Austrii i 25+ krajów UE w 3–7 dni roboczych.' },
+        { heading: 'Zarządzanie prolaktyną', body: 'Nandrolon jest związkiem 19-nor, który może podwyższać poziom prolaktyny. Kabergolina (Dostinex) w dawce 0,25–0,5 mg dwa razy w tygodniu jest standardowym narzędziem kontroli prolaktyny. Morfologia musi zawierać prolaktynę w 6. i 12. tygodniu każdego cyklu nandrolonowego.' },
+        { heading: 'Timing PCT po Nandrolonie Dekaniancie', body: 'Ze względu na ester dekanianowy (t½ ~15 dni), nie rozpoczynaj PCT przed 3 tygodniami po ostatniej iniekcji. Nandrolon jest bardziej supresyjny niż testosteron. Rozszerzony protokół PCT: Nolvadex 40 mg/dzień przez 2 tygodnie, następnie 20 mg/dzień przez 4 tygodnie.' },
+      ],
+    },
+
+    'boldenone-equipoise-lean-gains-europe': {
+      title: 'Boldenon Undecylenat (Equipoise): Przewodnik po cyklu dla europejskich sportowców',
+      excerpt: 'Boldenon Undecylenat (Equipoise, EQ) zapewnia stałe, jakościowe przyrosty mięśniowe z wyraźną waskularyzacją i minimalną retencją wody. Dawkowanie, efekty uboczne i gdzie kupić Boldenon w Europie.',
+      sections: [
+        { heading: 'Czym jest Boldenon Undecylenat?', body: 'Boldenon Undecylenat (nazwa handlowa Equipoise) był pierwotnie opracowany jako weterynaryjny steryd anaboliczny dla koni. Strukturalnie jest zmodyfikowaną formą testosteronu z dodanym wiązaniem podwójnym w pozycji C1–C2, co znacznie obniża jego stopień aromatyzacji (około 50% mniej niż testosteron). Ester undecylenat zapewnia bardzo długi okres półtrwania około 14 dni.' },
+        { heading: 'Dawkowanie i długość cyklu', body: 'Standardowa dawka: 300–500 mg/tydzień. Długość cyklu: minimum 12–16 tygodni. Iniekcje dwa razy w tygodniu. Klasyczny protokół lean mass: Testosteron Enanthat 300 mg/tydzień + Boldenon 400 mg/tydzień przez 16 tygodni. Oczekiwane wyniki: 4–7 kg jakościowej masy mięśniowej, wyraźnie lepsza waskularyzacja.' },
+        { heading: 'Kupowanie Boldenonu w Europie', body: 'PharmaForce posiada Boldenon Undecylenat 250 mg/ml od Alpha Pharma z magazynów UE. Dostawa do Niemiec, Francji, Holandii, Polski, Hiszpanii, Włoch, Austrii i 25+ krajów UE w 3–8 dni roboczych.' },
+        { heading: 'Efekty uboczne estrogenowe i androgenne', body: 'Boldenon aromatyzuje z około połową szybkości testosteronu — dla większości użytkowników kontrolowalny bez intensywnego stosowania inhibitora aromatazy. Androgennie jest łagodniejszy niż testosteron. Brak znaczącej aktywności progestogennej (w odróżnieniu od Nandrolonu).' },
+        { heading: 'PCT po Boldenonie Undecylenacie', body: 'Ze względu na bardzo długi ester undecylenu (t½ ~14 dni): PCT 3 tygodnie po ostatniej iniekcji. Supresja Boldenonu jest umiarkowana. Standardowy PCT: Nolvadex 40/40/20/20 mg/dzień przez 4 tygodnie.' },
+      ],
+    },
+
+    'post-cycle-therapy-complete-guide-2026': {
+      title: 'Terapia po Cyklu (PCT): Kompletny przewodnik dla europejskich sportowców (2026)',
+      excerpt: 'PCT jest najważniejszą fazą każdego cyklu sterydów anabolicznych. Pominięcie lub nieprawidłowe wykonanie PCT prowadzi do przedłużonej supresji testosteronu, utraty mięśni i zagrożeń zdrowotnych. Ten przewodnik omawia Nolvadex, Clomid, czas HCG i gdzie pozyskać związki PCT w Europie.',
+      sections: [
+        { heading: 'Co dzieje się z Twoim ciałem podczas cyklu AAS', body: 'Podczas cyklu sterydów anabolicznych egzogenny testosteron sygnalizuje osi HPG zatrzymanie endogennej produkcji testosteronu. Po zakończeniu cyklu oś HPG musi się ponownie uruchomić — proces trwający tygodnie do miesięcy. Bez PCT: niski testosteron przez miesiące, utrata mięśni, depresja, zmęczenie i brak libido.' },
+        { heading: 'Nolvadex (Tamoksyfen): Standardowa podstawa PCT', body: 'Cytrynian tamoksyfenu blokuje receptory estrogenowe w podwzgórzu i przysadce, co zwiększa wydzielanie LH i FSH przez przysadkę. Standardowy protokół: 40 mg/dzień przez 2 tygodnie, następnie 20 mg/dzień przez 2 tygodnie.' },
+        { heading: 'HCG: Klucz do szybszej regeneracji', body: 'Ludzka gonadotropina kosmówkowa (HCG) naśladuje LH i bezpośrednio stymuluje komórki Leydiga w jądrach. Stosowanie HCG w ostatnich 3–4 tygodniach cyklu (500 IU co drugi dzień) utrzymuje wrażliwość jąder przed rozpoczęciem PCT.' },
+        { heading: 'Zakup Nolvadexu, Clomidu i HCG w Europie', body: 'PharmaForce posiada Nolvadex (Tamoksyfen 20 mg tabletki), Clomid (Klomifen 50 mg tabletki) i HCG z magazynów UE. Dostawa do Niemiec, Francji, Holandii, Polski, Włoch, Austrii i 25+ krajów europejskich w 3–8 dni roboczych, całkowicie dyskretne opakowanie.' },
+        { heading: 'Timing PCT według estru', body: 'Testosteron Propionian (t½ ~2 dni): PCT 3–4 dni po ostatniej iniekcji. Testosteron Enanthat (t½ ~10 dni): PCT 14 dni po. Sustanon 250 / Nandrolon Dekanian: PCT 21 dni po ostatniej iniekcji.' },
+      ],
+    },
+
+    'testosterone-cycle-beginners-guide': {
+      title: 'Cykl Testosteronowy dla Początkujących: Dawkowanie, Czas trwania i Bezpieczeństwo',
+      excerpt: 'Testosteron Enanthat czy Propionian? 10 tygodni czy 16? Omawiamy najbezpieczniejsze protokoły pierwszego cyklu, timing badań krwi i czego spodziewać się w zakresie przyrostów i efektów ubocznych.',
+      sections: [
+        { heading: 'Dlaczego testosteron jest podstawą każdego cyklu', body: 'Testosteron to endogenny hormon anaboliczny. Cykl egzogennego testosteronu po prostu podwyższa poziomy powyżej zakresu fizjologicznego. Na pierwszy cykl zalecany: tylko testosteron, aby oceniać reakcje w izolacji. Typowy pierwszy cykl: Testosteron Enanthat 300–400 mg/tydzień przez 10–12 tygodni.' },
+        { heading: 'Kontrola estrogenów i PCT', body: 'Testosteron aromatyzuje do estradiolu (E2). Przy dawkach powyżej 400 mg/tydzień E2 wzrośnie. Zalecany inhibitor aromatazy: Anastrozol 0,5 mg co drugi dzień. Standardowy PCT: Nolvadex 40/40/20/20 mg/dzień przez 4 tygodnie.' },
+        { heading: 'Dawkowanie i wyniki', body: 'Dawka początkująca: 300–400 mg/tydzień, dwa zastrzyknięcia tygodniowo, cykl 10–12 tygodni. Typowe wyniki: 6–10 kg łącznego przyrostu masy, z 4–7 kg zachowanych jako mięśnie na sucho.' },
+      ],
+    },
+
+    'pct-guide-nolvadex-clomid': {
+      title: 'Terapia Po Cyklu: Nolvadex vs Clomid — Co działa lepiej?',
+      excerpt: 'Pominięcie PCT po cyklu AAS to jeden z najczęstszych błędów. Porównujemy protokoły Tamoksyfenu i Klomifenu, timing po różnych estrach i jak przywrócić naturalną produkcję testosteronu.',
+      sections: [
+        { heading: 'Nolvadex vs Clomid: Kluczowe różnice', body: 'Nolvadex blokuje receptory estrogenowe w przysadce, zwiększając wydzielanie LH i FSH. Clomid działa zarówno na podwzgórze, jak i przysadkę, stymulując uwalnianie gonadotropin bardziej bezpośrednio. Clomid wywołuje silniejszy wzrost LH, ale ma więcej efektów ubocznych.' },
+        { heading: 'Zalecane protokoły', body: 'Nolvadex: 40 mg/dzień przez 2 tygodnie, następnie 20 mg/dzień przez 2 tygodnie. Clomid: 50 mg/dzień przez 2–4 tygodnie. Dla silnie supresyjnych cykli: kombinacja Clomid 50 mg + Nolvadex 20 mg dziennie przez 4 tygodnie.' },
+        { heading: 'Timing PCT według estru', body: 'Testosteron Propionian: PCT 3–4 dni po. Testosteron Enanthat: PCT 14 dni po. Sustanon 250 / Nandrolon Dekanian: PCT 21 dni po ostatniej iniekcji.' },
+      ],
+    },
+
+    'sarms-vs-steroids-comparison': {
+      title: 'SARMs vs Sterydy: Uczciwe porównanie dla sportowców',
+      excerpt: 'Ostarine, RAD-140 i LGD-4033 obiecują przyrosty porównywalne ze sterydami bez toksyczności wątroby. Ale jak naprawdę się porównują? Analizujemy dane skuteczności, ryzyko supresji i które związki pasują do jakich celów.',
+      sections: [
+        { heading: 'Czym są SARMs?', body: 'Selektywne Modulatory Receptora Androgenowego (SARMs) wiążą się selektywnie z receptorami androgenowymi w tkance mięśniowej i kostnej, przy minimalnej aktywności w innych tkankach. To teoretyczna przewaga nad sterydami anabolicznymi: korzyści anaboliczne bez androgennych efektów ubocznych.' },
+        { heading: 'SARMs vs Testosteron: Realistyczne porównanie', body: 'SARMs nie zapewniają wyników porównywalnych ze sterydami bez porównywalnych efektów ubocznych. Przy porównywalnych efektach anabolicznych, głębokość supresji jest podobna. Główna zaleta: brak aromatyzacji do estrogenu, brak konwersji DHT, brak iniekcji.' },
+        { heading: 'Główne SARMs i ich zastosowanie', body: 'Ostarine (MK-2866): najłagodniejszy, 10–25 mg/dzień. LGD-4033: silniejszy, znaczące przyrosty siły i masy, istotna supresja. RAD-140: najsilniejszy SARM, znaczące efekty anaboliczne, silna supresja wymagająca PCT.' },
+      ],
+    },
+
+    'hgh-peptides-guide-ghrp-cjc': {
+      title: 'Peptydy HGH: GHRP-6, Ipamorelin, CJC-1295 — Kompleksowy przegląd',
+      excerpt: 'Sekretagogi hormonu wzrostu stymulują własną przysadkę — bez supresji, bez syntetycznego GH. Porównanie GHRP-6, GHRP-2, Ipamoreliny i stacków CJC-1295, okna dawkowania i oczekiwane wyniki.',
+      sections: [
+        { heading: 'Jak działają peptydy GH', body: 'Peptydy GH stymulują przysadkę do uwalniania endogennego hormonu wzrostu. W odróżnieniu od rekombinowanego HGH, nie hamują naturalnej osi GH. Istnieją dwie klasy: GHRP (bezpośrednie sekretagogi GH) i analogi GHRH jak CJC-1295.' },
+        { heading: 'Ipamorelin + CJC-1295: Stack peptydów GH', body: 'Ipamorelin jest najbardziej selektywnym GHRP — stymuluje pulsy GH bez znaczącego wzrostu kortyzolu lub prolaktyny. CJC-1295 z DAC przedłuża czas trwania pulsów GH. W połączeniu: Ipamorelin 200 mcg + CJC-1295 100 mcg wstrzykiwane podskórnie przed snem, 5 dni w tygodniu.' },
+        { heading: 'Oczekiwane wyniki', body: 'Po 3–6 miesiącach: poprawiona jakość snu, przyspieszone spalanie tłuszczu, lepsza regeneracja mięśniowa, poprawa tekstury skóry. Brak wyłączenia naturalnej osi GH w odróżnieniu od egzogennego HGH.' },
+      ],
+    },
+
+    'anastrozole-vs-exemestane-ai-guide': {
+      title: 'Anastrozol vs Eksemestan: Który inhibitor aromatazy wybrać?',
+      excerpt: 'Kontrola estrogenu podczas cyklu jest kluczowa. Anastrozol (Arimidex) odwracalnie hamuje aromatazę; Eksemestan (Aromasin) trwale ją dezaktywuje. Kiedy używać każdego i jak uniknąć spadku estradiolu.',
+      sections: [
+        { heading: 'Anastrozol: Odwracalny niesteroidowy inhibitor aromatazy', body: 'Anastrozol odwracalnie hamuje aromatazę, inhibując syntezę estrogenów o ok. 97%. Dawka podczas cyklu: 0,5 mg co drugi dzień. Wada: może redukować skuteczność Tamoksyfenu na poziomie przysadki.' },
+        { heading: 'Eksemestan: Steroidowy inhibitor samobójczy', body: 'Eksemestan trwale wiąże i niszczy enzym aromatazy. Ma łagodną androgenną aktywność intrynzyczną i lepiej zachowuje HDL niż Anastrozol. Preferowany podczas PCT i w długich cyklach. Dawka: 12,5–25 mg co drugi dzień.' },
+        { heading: 'Rozpoznawanie i korygowanie niskiego estrogenu', body: 'Oznaki nadmiernej supresji: bolesne stawy, nagła utrata libido, ekstremalna letargia, emocjonalna płaskość. W przypadku tych objawów: natychmiast zaprzestać stosowania IA, pozwolić E2 odbudować się przez 5–7 dni, następnie ponownie wprowadzić w niższej dawce.' },
+      ],
+    },
+
+    'cardarine-gw501516-fat-loss-guide': {
+      title: 'Cardarine (GW-501516): Modulator utraty tłuszczu wyjaśniony',
+      excerpt: 'Cardarine nie jest SARM — jest agonistą PPARδ, który kieruje metabolizm w stronę oksydacji tłuszczów, zwiększa wytrzymałość i zachowuje mięśnie w deficycie. Co naprawdę pokazują badania.',
+      sections: [
+        { heading: 'Mechanizm utraty tłuszczu', body: 'Aktywacja PPARδ zwiększa β-oksydację kwasów tłuszczowych w mięśniach szkieletowych i wątrobie. W próbach klinicznych dla zespołu metabolicznego znacząco obniżała LDL i tłuszcz trzewny, jednocześnie zwiększając HDL. Kombinując ze swoim efektem wytrzymałościowym, Cardarine tworzy silne środowisko do utraty tłuszczu.' },
+        { heading: 'Praktyczny protokół', body: 'Dawka: 10–20 mg/dzień, 30–45 minut przed cardio. Długość cyklu: 8–12 tygodni, następnie równie długa przerwa. Brak supresji hormonalnej, brak toksyczności wątroby, brak wymaganego PCT.' },
+        { heading: 'Kontrowersje dotyczące raka', body: 'GSK wstrzymało próby na ludziach w 2007 r. po badaniach na gryzoniach przy bardzo wysokich dawkach przez dłuższy czas wykazały przyspieszony wzrost już istniejących guzów. Ważny kontekst: szczury otrzymywały 3 mg/kg przez 2 lata (odpowiednik 240 mg/dzień u 80-kg człowieka — 12–24× typowych dawek wydajnościowych).' },
+      ],
+    },
+
+    'igf-1-lr3-muscle-growth': {
+      title: 'IGF-1 LR3: Jak insulinopodobny czynnik wzrostu buduje mięśnie',
+      excerpt: 'IGF-1 LR3 działa poniżej HGH, stymulując proliferację komórek satelitarnych i hiperplazję — prawdziwe nowe włókna mięśniowe, nie tylko hipertrofia.',
+      sections: [
+        { heading: 'Hiperplazja vs Hipertrofia', body: 'Standardowy trening powoduje hipertrofię — istniejące włókna mięśniowe się powiększają. IGF-1 jest jednym z niewielu związków zdolnych do stymulowania hiperplazji — tworzenia nowych włókien mięśniowych — poprzez aktywację i proliferację komórek satelitarnych. Nowe włókna są trwałe.' },
+        { heading: 'Protokół dawkowania', body: 'Dawka IGF-1 LR3: 40–100 mcg/dzień. Iniekcja: podskórna lub domięśniowa po treningu bezpośrednio do trenowanej grupy mięśniowej. Długość cyklu: 4–6 tygodni, następnie równie długa przerwa. Rekonstytuować wodą bakteriostatyczną; przechowywać w lodówce.' },
+        { heading: 'Synergia i stackowanie', body: 'IGF-1 LR3 jest najskuteczniejszy w połączeniu z peptydami HGH (stack GHRP/CJC) i sterydami anabolicznymi. Realistyczne oczekiwanie po 6-tygodniowym cyklu IGF-1 LR3 (50 mcg/dzień) z nadwyżką kaloryczną: 2–4 kg masy mięśniowej na sucho.' },
+      ],
+    },
+
+    'dianabol-cycle-guide': {
+      title: 'Cykl Dianabolu (Metandienon): Przyrosty, Ryzyko i Ochrona Wątroby',
+      excerpt: 'Dianabol jest najszybciej działającym sterydiem oralnym — spodziewaj się 5–8 kg w 4 tygodnie. Ale alkilacja C17 oznacza poważną hepatotoksyczność. Bezpieczne długości cykli, dawkowanie TUDCA i jak utrzymać czyste wyniki badań krwi.',
+      sections: [
+        { heading: 'Ochrona wątroby: Obowiązkowy protokół', body: 'TUDCA (kwas tauroursodeoksycholowy): 500 mg/dzień podczas cyklu i 2 tygodnie po — oparty na najlepszych dowodach hepatoprotektor. NAC (N-Acetylocysteina): 600–1 200 mg/dzień — zwiększa syntezę glutationu. Całkowite unikanie alkoholu podczas cyklu. Maksymalna długość cyklu: 4–6 tygodni.' },
+        { heading: 'Dianabol jako kickstart vs samodzielny', body: 'Najczęstsze zastosowanie Dianabolu to "kickstart" przez pierwsze 4 tygodnie dłuższego cyklu iniekcyjnego (np. testosteron enanthan). Injekcyjne preparaty potrzebują 3–4 tygodni do osiągnięcia szczytowych poziomów we krwi; Dianabol wypełnia tę lukę natychmiastowymi przyrostami siły i masy.' },
+        { heading: 'Dawkowanie i zarządzanie estrogenami', body: 'Standardowa dawka: 30–50 mg/dzień. Początkujący: zaczynaj od 20–30 mg/dzień. IA jest niezbędny od dnia 1 cyklu Dianabolu — nie od tygodnia 2. Dawki powyżej 50 mg/dzień dramatycznie zwiększają efekty uboczne bez proporcjonalnych korzyści.' },
+      ],
+    },
+
+    'meldonium-mildronate-endurance': {
+      title: 'Meldonium (Mildronate): Lek na wytrzymałość, który zawiesił Szarapową',
+      excerpt: 'Meldonium redukuje oksydację kwasów tłuszczowych w komórkach sercowych, zmuszając serce do używania wydajniejszego paliwa węglowodanowego. Stosowany legalnie w Europie Wschodniej jako kardiopretektor — oto nauka i zastosowanie sportowe.',
+      sections: [
+        { heading: 'Zastosowanie sportowe i status prawny', body: 'Dla sportowców wytrzymałościowych zmiana glukoza-vs-tłuszcz poprawia wyniki przy wysokich intensywnościach. Zakazany przez WADA (S4: Modulatory hormonalne i metaboliczne) w zawodach. Status prawny zmienny w Europie: zarejestrowany jako lek w Łotwie, Litwie, Rosji. Okno wykrywalności WADA: do 3 miesięcy po odstawieniu.' },
+        { heading: 'Dawkowanie', body: 'Typowa dawka kliniczna: 500–1 000 mg/dzień w podzielonych dawkach, przez kursy 4–6 tygodni, 2× w roku. Rozpuszczalny w wodzie, można przyjmować doustnie. Brak istotnej hepatotoksyczności ani zaburzeń endokrynologicznych przy standardowych dawkach.' },
+        { heading: 'Mechanizm działania', body: 'Meldonium jest inhibitorem TMAO, który zakłóca transport karnityny i redukuje oksydację kwasów tłuszczowych w komórkach mięśnia sercowego. Zmusza to komórki do korzystania z glukozy poprzez wydajniejszy szlak i redukuje toksyczne metabolity kwasów tłuszczowych w warunkach stresowych.' },
+      ],
+    },
+
+    'omega3-recovery-science': {
+      title: 'Omega-3 i regeneracja mięśni: Przeoczony stack',
+      excerpt: 'Olej rybny to coś więcej niż suplement na serce. Badania pokazują, że 3 g/dzień EPA+DHA redukuje DOMS nawet o 35% i obniża ogólnoustrojowy stan zapalny — czyniąc go niezbędnym dla regeneracji.',
+      sections: [
+        { heading: 'EPA i DHA: Kluczowe kwasy tłuszczowe', body: 'Nie wszystkie kwasy omega-3 są sobie równe. ALA (z siemienia lnianego) musi być przekształcony w EPA i DHA — wydajność konwersji zaledwie 5–15%. Tylko EPA i DHA są biologicznie aktywne w regulacji stanów zapalnych i syntezie białek mięśniowych. Cel: co najmniej 2–3 g EPA+DHA dziennie z oleju rybiego lub oleju z kryla.' },
+        { heading: 'Omega-3 i synteza białek mięśniowych', body: 'Kwasy tłuszczowe omega-3 aktywują szlak sygnałowy mTORC1 i zwiększają wrażliwość insulinową w komórce mięśniowej — co poprawia wchłanianie aminokwasów bezpośrednio po treningu. Badanie University of Washington wykazało, że 4 g/dzień oleju rybiego przez 8 tygodni zwiększyło syntezę białek mięśniowych u starszych dorosłych o 35%.' },
+        { heading: 'Praktyczny protokół', body: 'Dawka: 2–3 g EPA+DHA dziennie. Przyjmować z najbardziej tłustym posiłkiem dnia dla maksymalnej absorpcji. Jakość: preferować destylowany olej rybi z niską zawartością metali ciężkich. Wybierać produkty z co najmniej 60% zawartością EPA+DHA.' },
+      ],
+    },
+
+    'magnesium-sleep-gains': {
+      title: 'Glicynian Magnezu: Suplement naprawiający Twój sen',
+      excerpt: 'Ponad 70% hormonu wzrostu uwalniane jest podczas głębokiego snu. Glicynian magnezu poprawia jakość snu, redukuje kortyzol i kosztuje poniżej 0,30 €/dzień.',
+      sections: [
+        { heading: 'Dlaczego magnez jest niezbędny dla sportowców', body: 'Magnez jest zaangażowany w ponad 300 reakcji enzymatycznych, w tym syntezę ATP, biosyntezę białek i funkcję mięśni. Sportowcy tracą magnez z potem w tempie 36–58 mg na godzinę intensywnego treningu. Badania pokazują, że ponad 70% europejskich sportowców ma poziomy poniżej zalecanego dziennego zapotrzebowania.' },
+        { heading: 'Glicynian Magnezu vs inne formy', body: 'Glicynian magnezu (magnez związany z glicyną) ma najwyższą biodostępność i nie powoduje problemów trawiennych — w przeciwieństwie do tlenku magnezu (absorpcja ~4%) lub cytrynianu magnezu (może powodować biegunkę). Glicyna sama w sobie ma właściwości anksjolityczne i wspomagające sen.' },
+        { heading: 'Protokół dawkowania', body: 'Dawka: 300–400 mg elementarnego magnezu jako glicynian dziennie, 30–60 minut przed snem. Efekty: poprawiona jakość snu w ciągu 2–3 tygodni, zredukowane nocne skurcze mięśni, niższe poranne poziomy kortyzolu.' },
+      ],
+    },
+
+    'vitamin-d3-athletes-guide': {
+      title: 'Dlaczego każdy sportowiec potrzebuje Witaminy D3',
+      excerpt: 'Ponad 60% Europejczyków ma niedobór witaminy D. Niski poziom D3 bezpośrednio obniża testosteron, szybkość regeneracji i obronę immunologiczną. Jak prawidłowo dawkować przez cały rok.',
+      sections: [
+        { heading: 'Niedobór witaminy D u europejskich sportowców', body: 'Badanie w British Journal of Sports Medicine wykazało, że 57% profesjonalnych sportowców w Europie Północnej i Środkowej miało poziomy 25(OH)D poniżej 30 ng/ml. W miesiącach zimowych (październik–marzec) promieniowanie UVB powyżej 50. równoleżnika jest niewystarczające dla skórnej syntezy witaminy D. Sportowcy w Polsce, Niemczech, Wielkiej Brytanii i Skandynawii nie mogą produkować odpowiednich ilości D3 ze słońca przez połowę roku.' },
+        { heading: 'Wpływ witaminy D3 na wyniki sportowe', body: 'Receptory witaminy D (VDR) znajdują się w tkance mięśniowej, kościach i jądrach. Niedobór poniżej 20 ng/ml jest związany z: obniżoną syntezą białek mięśniowych, 10–15% spadkiem produkcji testosteronu, zaburzoną absorpcją wapnia i wolniejszą odpowiedzią immunologiczną.' },
+        { heading: 'Prawidłowy protokół dawkowania', body: 'Jeśli nie byłeś dotychczas suplementowany: zacznij od 4 000–5 000 IU/dzień przez 8 tygodni, następnie 2 000–3 000 IU/dzień do utrzymania. Docelowy zakres: 40–60 ng/ml. Łącz z witaminą K2 (MK-7, 100–200 mcg/dzień) dla kierowania wapnia do kości.' },
+      ],
+    },
+
+    'pre-workout-timing-guide': {
+      title: 'Timing Pre-Workout: Kiedy i ile przyjmować',
+      excerpt: 'Przyjmowanie pre-workoutu 20 minut za wcześnie (lub za późno) może zmniejszyć jego efekt o połowę. Omawiamy optymalne okno kofeinowe, ładowanie beta-alaniną i jak uniknąć krachu.',
+      sections: [
+        { heading: 'Okno farmakokinetyki kofeiny', body: 'Kofeina osiąga szczytowe stężenie w osoczu 30–60 minut po spożyciu. Optymalne przyjmowanie: 30–45 minut przed treningiem. Dawka: 3–6 mg/kg masy ciała. Dla 80-kg sportowca: 240–480 mg. Większość komercyjnych pre-workoutów zawiera 150–300 mg.' },
+        { heading: 'Wzmacniacze tlenku azotu: Cytrulina i Arginina', body: 'L-Cytrulina (nie arginina) jest lepszym prekursorem NO — omija hepatyczny metabolizm pierwszego przejścia. Dawka: 6–8 g cytrynianu cytruliny, 45–60 minut przed treningiem. Spodziewaj się wyraźnych wzrostów pompowania i waskularyzacji.' },
+        { heading: 'Unikanie krachu', body: 'Krachy energetyczne po treningu są spowodowane odbiciem adenozyny i spadkami cukru we krwi. Środki zaradcze: (1) nie przekraczać 400 mg kofeiny łącznie, (2) zjeść mieszany posiłek węglowodanowo-białkowy w ciągu 60 minut po treningu, (3) pozostać dobrze nawodnionym.' },
+      ],
+    },
+  },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // ITALIAN (IT)
+  // ═══════════════════════════════════════════════════════════════════════════
+  it: {
+    'best-protein-supplements-2026': {
+      title: 'I migliori integratori proteici per il 2026: Guida completa',
+      excerpt: 'Whey isolate, caseina o proteine vegetali? Abbiamo analizzato oltre 40 prodotti e riveliamo quali proteine offrono la massima biodisponibilità, il più basso contenuto di lattosio e il miglior rapporto qualità-prezzo per gli atleti europei.',
+      sections: [
+        { heading: 'Perché la qualità delle proteine conta più della quantità', body: 'La maggior parte degli atleti si concentra su un obiettivo giornaliero in grammi — 1,6–2,2 g per kg di peso corporeo — ma ignorano la qualità della fonte. Il valore biologico (VB) e lo score DIAAS sono metriche molto più rilevanti. La whey concentrata raggiunge VB 104, la whey isolate VB 159, mentre la proteina di soia si attesta a VB 74.' },
+        { heading: 'Whey concentrata vs Whey isolate', body: 'Il concentrato (WPC) contiene 70–80% di proteine, 5–8% di lattosio e 5–7% di grassi. L\'isolate (WPI) subisce ulteriore microfiltrazione: 90–95% di proteine, meno dell\'1% di lattosio, grassi quasi nulli. Per gli intolleranti al lattosio o gli atleti in fase di definizione, l\'isolate è la scelta chiara. Momento ottimale per la whey: 30–45 minuti dopo l\'allenamento.' },
+        { heading: 'Caseina: La proteina lenta per il recupero', body: 'La caseina micellare si digerisce nell\'arco di 5–7 ore, creando un rilascio prolungato di aminoacidi — ideale prima del sonno. Uno studio del 2012 ha mostrato che 40 g di caseina 30 minuti prima del sonno aumenta la sintesi proteica muscolare notturna del 22%. Uno dei supplementi con il miglior rapporto costo-efficacia per atleti che si allenano intensamente.' },
+        { heading: 'Proteine vegetali: Pisello, riso e miscele', body: 'La proteina del pisello (DIAAS ~0,82) è la migliore opzione vegetale singola, particolarmente ricca di arginina e BCAA. La proteina di riso da sola è carente di lisina; combinata con il pisello nel rapporto 70:30 crea un profilo aminoacidico completo paragonabile alla whey. Per vegani: almeno 25 g per porzione.' },
+        { heading: 'Raccomandazioni pratiche', body: 'Punta a 0,4 g di proteine per kg per pasto su 4–5 pasti. Post-allenamento: 25–40 g di whey isolate. Prima di dormire: 30–40 g di caseina. Non superare 60 g per shake. Conservare la polvere aperta in un posto fresco e asciutto e consumarla entro 2 mesi.' },
+      ],
+    },
+
+    'buy-testosterone-enanthate-europe-guide': {
+      title: 'Come acquistare Testosterone Enantato online in Europa (2026)',
+      excerpt: 'Il Testosterone Enantato rimane l\'estere di testosterone iniettabile più utilizzato in Europa. Questa guida tratta dosaggio, struttura del ciclo, approvvigionamento sicuro e cosa cercare quando si ordina online con consegna EU.',
+      sections: [
+        { heading: 'Perché il Testosterone Enantato è la scelta più popolare in Europa', body: 'Il Testosterone Enantato (Test E) è la pietra angolare dei cicli anabolici da oltre 60 anni. La sua lunga catena esterica (enantato) offre un\'emivita di circa 10,5 giorni, richiedendo solo 2 iniezioni a settimana per mantenere livelli ematici stabili. In Europa era storicamente disponibile come Testoviron (Schering), Cidoteston e qualità farmaceutiche generiche.' },
+        { heading: 'Dosaggio e durata del ciclo', body: 'Dose principiante: 300–400 mg/settimana (iniettata due volte a settimana). Intermedi: 400–600 mg/settimana. Primo ciclo standard: 10–12 settimane. Risultati tipici: 6–10 kg di guadagno totale di massa, con 4–7 kg mantenuti come muscolo magro dopo la PCT.' },
+        { heading: 'Aromatizzazione e gestione degli estrogeni', body: 'Il testosterone aromatizza in estradiolo (E2) tramite l\'enzima aromatasi. A dosi più elevate (400 mg+/settimana), l\'E2 aumenterà. Inibitore dell\'aromatasi raccomandato: Anastrozolo 0,5 mg a giorni alterni. Esami del sangue alla settimana 6 fortemente raccomandati.' },
+        { heading: 'Acquistare Testosterone Enantato in Europa', body: 'PharmaForce tiene in stock Testosterone Enantato di produttori verificati tra cui BayerPro Schering e Balkan Pharmaceuticals, spedito dall\'UE per consegne in 3–10 giorni in tutti i paesi europei. Imballaggio discreto neutro senza nomi di prodotto all\'esterno.' },
+        { heading: 'PCT dopo Testosterone Enantato', body: 'La PCT inizia 2 settimane dopo l\'ultima iniezione. Protocollo standard: Nolvadex 40 mg/giorno per 2 settimane, poi 20 mg/giorno per 2 settimane. La maggior parte degli utenti recupera la produzione naturale di testosterone entro 8–16 settimane dal completamento della PCT.' },
+      ],
+    },
+
+    'sustanon-250-cycle-guide-europe': {
+      title: 'Sustanon 250: Guida completa al ciclo per atleti europei (2026)',
+      excerpt: 'Il Sustanon 250 combina quattro esteri di testosterone per un rilascio immediato e prolungato. Questa guida completa tratta dosaggio, frequenza di iniezione, PCT e come ordinare Sustanon 250 con consegna europea.',
+      sections: [
+        { heading: 'Cos\'è il Sustanon 250?', body: 'Il Sustanon 250 è una miscela di quattro esteri di testosterone in una singola fiala: Testosterone Propionato (30 mg, t½ ~2 giorni), Testosterone Fenilpropionato (60 mg, t½ ~4 giorni), Testosterone Isocaproato (60 mg, t½ ~9 giorni) e Testosterone Decanoato (100 mg, t½ ~15 giorni). Questa miscela è stata originariamente progettata da Organon (Paesi Bassi) per un\'iniezione settimanale unica nella terapia sostitutiva del testosterone.' },
+        { heading: 'Dosaggio e frequenza di iniezione', body: 'Nonostante la progettazione per iniezioni settimanali, gli utenti di performance iniettano generalmente ogni 3–4 giorni per mantenere livelli ematici stabili. Dose standard: 250–500 mg/settimana per un ciclo di 10–14 settimane.' },
+        { heading: 'Acquistare Sustanon 250 con consegna europea', body: 'PharmaForce tiene in stock Sustanon 250 in formato fiala originale di BayerPro Schering, spedito da magazzino UE. Consegna in 3–7 giorni verso Germania, Polonia, Francia, Paesi Bassi, Austria, Italia e 25+ altri paesi UE.' },
+        { heading: 'Timing PCT dopo Sustanon 250', body: 'A causa dell\'estere decanoato (t½ ~15 giorni), inizia la PCT 3 settimane dopo l\'ultima iniezione. Protocollo PCT: Nolvadex 40/40/20/20 mg/giorno su 4 settimane.' },
+        { heading: 'Sustanon vs Testosterone Enantato', body: 'Per TRT o primi cicli, il Testosterone Enantato è generalmente preferito per la sua semplicità. Il Sustanon 250 è adatto agli utenti che desiderano sia un\'elevazione immediata del testosterone che una copertura prolungata.' },
+      ],
+    },
+
+    'buy-peptides-europe-bpc157-tb500': {
+      title: 'Acquistare Peptidi in Europa: BPC-157, TB-500 e Ipamorelin Guida completa',
+      excerpt: 'I peptidi di ricerca come BPC-157 e TB-500 hanno guadagnato grande popolarità nei paesi europei per il recupero degli infortuni e le prestazioni. Questa guida tratta meccanismi, dosaggio, ricostituzione e acquisto di peptidi online in Europa.',
+      sections: [
+        { heading: 'Cosa sono i peptidi di ricerca?', body: 'I peptidi sono brevi catene di aminoacidi che agiscono come molecole di segnalazione nel corpo. A differenza degli steroidi anabolizzanti, la maggior parte dei peptidi di ricerca non sopprime la produzione ormonale naturale né causa tossicità epatica. In Europa l\'uso di peptidi è aumentato significativamente dal 2020, in particolare BPC-157 per la riparazione di articolazioni e tendini, TB-500 per la rigenerazione tissutale.' },
+        { heading: 'BPC-157: Il peptide guaritore', body: 'BPC-157 (Body Protection Compound 157) è un peptide di 15 aminoacidi derivato da una proteina trovata nel succo gastrico umano. In numerosi studi sui roditori, ha dimostrato una notevole accelerazione della guarigione su più tipi di tessuti: tendini, legamenti, muscoli, ossa e tratto gastrointestinale. Dose: 200–500 mcg/giorno, iniettato per via sottocutanea vicino al sito di infortunio.' },
+        { heading: 'Come acquistare peptidi online in Europa', body: 'PharmaForce tiene in stock BPC-157, TB-500, Ipamorelin, CJC-1295 da magazzini UE. Consegna verso Germania, Francia, Paesi Bassi, Polonia, Italia, Spagna e 25+ paesi europei. Tempo di consegna tipico: 3–8 giorni lavorativi, imballaggio discreto.' },
+        { heading: 'TB-500: Riparazione tissutale sistemica', body: 'TB-500 (Thymosin Beta-4) promuove la migrazione cellulare, differenziazione e angiogenesi a livello sistemico. Ideale per danni muscolari diffusi o siti di infortuni multipli. Dose: 2–2,5 mg due volte a settimana per 4–6 settimane (fase di carico), poi 2–2,5 mg una volta a settimana per il mantenimento.' },
+        { heading: 'Ricostituzione e conservazione dei peptidi', body: 'La polvere liofilizzata deve essere ricostituita con acqua batteriostatica prima dell\'iniezione. Una volta ricostituita: conservare refrigerata (4°C), usare entro 30 giorni, proteggere dalla luce. Polvere secca: stabile a temperatura ambiente per mesi.' },
+      ],
+    },
+
+    'nandrolone-decanoate-deca-guide-europe': {
+      title: 'Nandrolone Decanoato (Deca-Durabolin): Guida al ciclo per atleti europei',
+      excerpt: 'Il Nandrolone Decanoato (Deca-Durabolin) è uno degli steroidi anabolizzanti più antichi e utilizzati in Europa. Questa guida tratta dosaggio, benefici articolari, effetti collaterali, requisiti PCT e come acquistare Deca con consegna EU.',
+      sections: [
+        { heading: 'Farmacologia e benefici articolari', body: 'Il Nandrolone Decanoato ha un rapporto anabolico/androgenico di circa 125:37, rendendolo altamente anabolico con attività androgenica relativamente bassa. È unico tra i comuni steroidi anabolizzanti per le sue pronunciate proprietà di protezione e lubrificazione articolare — aumenta significativamente la sintesi del collagene e la densità minerale ossea.' },
+        { heading: 'Dosaggio e struttura del ciclo', body: 'Dose standard: 200–400 mg/settimana per principianti. Il Nandrolone è quasi sempre combinato con il testosterone (minimo dose TRT: 200 mg/settimana) perché sopprime fortemente la produzione naturale di testosterone. Ciclo tipico: Testosterone Enantato 400 mg/settimana + Nandrolone Decanoato 300 mg/settimana per 14 settimane.' },
+        { heading: 'Acquistare Nandrolone Decanoato in Europa', body: 'PharmaForce tiene in stock Nandrolone Decanoato 250 mg/ml di Balkan Pharmaceuticals, spedito da magazzino UE. Consegna verso Germania, Francia, Paesi Bassi, Polonia, Italia, Austria e 25+ paesi UE in 3–7 giorni lavorativi.' },
+        { heading: 'Gestione della prolattina', body: 'Il Nandrolone è un composto 19-nor che può aumentare i livelli di prolattina. La Cabergolina (Dostinex) a 0,25–0,5 mg due volte a settimana è lo strumento standard di gestione della prolattina. Gli esami del sangue devono includere la prolattina alle settimane 6 e 12.' },
+        { heading: 'Timing PCT dopo Nandrolone Decanoato', body: 'A causa dell\'estere decanoato (t½ ~15 giorni), non iniziare la PCT prima di 3 settimane dall\'ultima iniezione. Protocollo PCT esteso: Nolvadex 40 mg/giorno per 2 settimane, poi 20 mg/giorno per 4 settimane.' },
+      ],
+    },
+
+    'boldenone-equipoise-lean-gains-europe': {
+      title: 'Boldenone Undecilenoato (Equipoise): Guida al ciclo per guadagni magri in Europa',
+      excerpt: 'Il Boldenone Undecilenoato (Equipoise, EQ) offre guadagni muscolari magri e costanti con vascolarità migliorata e minima ritenzione idrica. Dosaggio, effetti collaterali e dove acquistare Boldenone in Europa.',
+      sections: [
+        { heading: 'Cos\'è il Boldenone Undecilenoato?', body: 'Il Boldenone Undecilenoato (nome commerciale Equipoise) era originariamente sviluppato come steroide anabolizzante veterinario per i cavalli. Strutturalmente è una forma modificata di testosterone con un doppio legame aggiunto in C1–C2, che riduce significativamente il suo tasso di aromatizzazione (circa il 50% in meno rispetto al testosterone). L\'estere undecilenoato gli conferisce un\'emivita molto lunga di circa 14 giorni.' },
+        { heading: 'Dosaggio e durata del ciclo', body: 'Dose standard: 300–500 mg/settimana. Durata del ciclo: minimo 12–16 settimane. Iniettare due volte a settimana. Protocollo classico lean mass: Testosterone Enantato 300 mg/settimana + Boldenone 400 mg/settimana per 16 settimane. Risultati attesi: 4–7 kg di massa muscolare di qualità, vascolarità significativamente migliorata.' },
+        { heading: 'Acquistare Boldenone in Europa', body: 'PharmaForce tiene in stock Boldenone Undecilenoato 250 mg/ml (confezioni da 10 × 1ml) di Alpha Pharma da magazzini UE. Consegna verso Germania, Francia, Paesi Bassi, Polonia, Spagna, Italia, Austria e 25+ paesi UE in 3–8 giorni lavorativi.' },
+        { heading: 'Effetti collaterali estrogenici e androgenici', body: 'Il Boldenone aromatizza a circa la metà del tasso del testosterone — gestibile senza uso intensivo di IA per la maggior parte degli utenti. Androgenicamente è più mite del testosterone. Nessuna attività progestogenica rilevante (a differenza del Nandrolone), semplificando il profilo di gestione.' },
+        { heading: 'PCT dopo Boldenone Undecilenoato', body: 'A causa dell\'ester undecilenoato molto lungo (t½ ~14 giorni): PCT 3 settimane dopo l\'ultima iniezione. La soppressione del Boldenone è moderata. PCT standard: Nolvadex 40/40/20/20 mg/giorno su 4 settimane.' },
+      ],
+    },
+
+    'post-cycle-therapy-complete-guide-2026': {
+      title: 'Terapia Post Ciclo (PCT): Guida completa per atleti europei (2026)',
+      excerpt: 'La PCT è la fase più importante di qualsiasi ciclo di steroidi anabolizzanti. Saltare o fare male la PCT porta a soppressione prolungata del testosterone, perdita muscolare e rischi per la salute. Questa guida tratta Nolvadex, Clomid, timing HCG e dove trovare i composti PCT in Europa.',
+      sections: [
+        { heading: 'Cosa succede al tuo corpo durante un ciclo AAS', body: 'Durante un ciclo di steroidi anabolizzanti, il testosterone esogeno segnala all\'asse HPG di interrompere la produzione endogena di testosterone. Dopo la fine del ciclo, l\'asse HPG deve riavviarsi — un processo che richiede settimane o mesi. Senza PCT: testosterone basso per mesi, perdita muscolare, depressione, stanchezza e assenza di libido.' },
+        { heading: 'Nolvadex (Tamoxifene): La base standard della PCT', body: 'Il citrato di tamoxifene blocca i recettori estrogenici a ipotalamo e ipofisi, consentendo all\'ipofisi di aumentare la secrezione di LH e FSH. Protocollo standard: 40 mg/giorno per 2 settimane, poi 20 mg/giorno per 2 settimane.' },
+        { heading: 'HCG: Il segreto per un recupero più rapido', body: 'La gonadotropina corionica umana (HCG) mima l\'LH e stimola direttamente le cellule di Leydig nei testicoli. Usando HCG nelle ultime 3–4 settimane del ciclo (500 UI a giorni alterni), si mantiene la sensibilità testicolare prima dell\'inizio della PCT.' },
+        { heading: 'Acquistare Nolvadex, Clomid e HCG in Europa', body: 'PharmaForce tiene in stock Nolvadex (Tamoxifene 20 mg compresse), Clomid (Clomifene 50 mg compresse) e HCG da magazzini UE. Consegna verso Germania, Francia, Paesi Bassi, Polonia, Italia, Austria e 25+ paesi europei in 3–8 giorni lavorativi, imballaggio totalmente discreto.' },
+        { heading: 'Timing PCT per estere', body: 'Testosterone Propionato (t½ ~2 giorni): inizia PCT 3–4 giorni dopo. Testosterone Enantato (t½ ~10 giorni): inizia PCT 14 giorni dopo. Sustanon 250 / Nandrolone Decanoato: inizia PCT 21 giorni dopo l\'ultima iniezione.' },
+      ],
+    },
+
+    'testosterone-cycle-beginners-guide': {
+      title: 'Ciclo di Testosterone per Principianti: Dosaggio, Durata e Sicurezza',
+      excerpt: 'Testosterone Enantato o Propionato? 10 settimane o 16? Illustriamo i protocolli più sicuri per il primo ciclo, il timing degli esami del sangue e cosa aspettarsi in termini di guadagni ed effetti collaterali.',
+      sections: [
+        { heading: 'Perché il testosterone è la base di ogni ciclo', body: 'Il testosterone è l\'ormone anabolico endogeno. Un ciclo di testosterone esogeno semplicemente aumenta i livelli al di sopra dell\'intervallo fisiologico. Per il primo ciclo: solo testosterone (nessuna combinazione) per valutare le risposte in modo isolato. Primo ciclo tipico: Testosterone Enantato 300–400 mg/settimana per 10–12 settimane.' },
+        { heading: 'Controllo degli estrogeni e PCT', body: 'Il testosterone aromatizza in estradiolo (E2). A dosi superiori a 400 mg/settimana l\'E2 aumenterà. Inibitore dell\'aromatasi raccomandato: Anastrozolo 0,5 mg a giorni alterni. PCT standard: Nolvadex 40/40/20/20 mg/giorno su 4 settimane.' },
+        { heading: 'Dosaggio e risultati', body: 'Dose principiante: 300–400 mg/settimana, due iniezioni a settimana, ciclo di 10–12 settimane. Risultati tipici: 6–10 kg di guadagno totale, con 4–7 kg mantenuti come muscolo magro.' },
+      ],
+    },
+
+    'pct-guide-nolvadex-clomid': {
+      title: 'Terapia Post-Ciclo: Nolvadex vs Clomid — Quale funziona meglio?',
+      excerpt: 'Saltare la PCT dopo un ciclo AAS è uno degli errori più comuni. Confrontiamo i protocolli Tamoxifene e Clomifene, il timing dopo i diversi esteri e come ripristinare la produzione naturale di testosterone.',
+      sections: [
+        { heading: 'Nolvadex vs Clomid: Differenze chiave', body: 'Il Nolvadex (Tamoxifene) blocca i recettori estrogenici all\'ipofisi, aumentando la secrezione di LH e FSH. Il Clomid (Clomifene) agisce sia sull\'ipotalamo che sull\'ipofisi — stimolando più direttamente il rilascio di gonadotropine. Il Clomid produce un aumento di LH più forte ma ha più effetti collaterali.' },
+        { heading: 'Protocolli raccomandati', body: 'Nolvadex: 40 mg/giorno per 2 settimane, poi 20 mg/giorno per 2 settimane. Clomid: 50 mg/giorno per 2–4 settimane. Per cicli fortemente soppressivi: combinazione Clomid 50 mg + Nolvadex 20 mg giornalmente per 4 settimane.' },
+        { heading: 'Timing PCT per estere', body: 'Testosterone Propionato: PCT 3–4 giorni dopo. Testosterone Enantato: PCT 14 giorni dopo. Sustanon 250 / Nandrolone Decanoato: PCT 21 giorni dopo l\'ultima iniezione.' },
+      ],
+    },
+
+    'sarms-vs-steroids-comparison': {
+      title: 'SARM vs Steroidi: Confronto onesto per gli atleti',
+      excerpt: 'Ostarina, RAD-140 e LGD-4033 promettono guadagni simili agli steroidi senza tossicità epatica. Ma come si confrontano davvero? Analizziamo i dati sull\'efficacia, il rischio di soppressione e quali composti si adattano a quali obiettivi.',
+      sections: [
+        { heading: 'Cosa sono i SARM?', body: 'I Modulatori Selettivi del Recettore degli Androgeni (SARM) si legano selettivamente ai recettori androgenici nel tessuto muscolare e osseo, con minima attività in altri tessuti. Questo è il vantaggio teorico rispetto agli anabolizzanti: benefici anabolici senza effetti collaterali androgeni.' },
+        { heading: 'SARM vs Testosterone: Confronto realistico', body: 'I SARM non forniscono risultati equivalenti agli steroidi senza effetti collaterali equivalenti. A effetti anabolici comparabili, la profondità della soppressione è simile. Il vantaggio principale: nessuna aromatizzazione in estrogeno, nessuna conversione in DHT, nessuna iniezione.' },
+        { heading: 'I principali SARM e i loro usi', body: 'Ostarina (MK-2866): il più delicato, 10–25 mg/giorno. LGD-4033: più potente, guadagni significativi in forza e massa, soppressione notevole. RAD-140: il SARM più potente, effetti anabolici significativi, forte soppressione che richiede PCT.' },
+      ],
+    },
+
+    'hgh-peptides-guide-ghrp-cjc': {
+      title: 'Peptidi HGH: GHRP-6, Ipamorelin, CJC-1295 — Panoramica completa',
+      excerpt: 'I secretagoghi dell\'ormone della crescita stimolano la tua stessa ipofisi — nessuna soppressione, nessun GH sintetico. Confronto di GHRP-6, GHRP-2, Ipamorelin e stack CJC-1295, finestre di dosaggio e risultati attesi.',
+      sections: [
+        { heading: 'Come funzionano i peptidi GH', body: 'I peptidi GH stimolano l\'ipofisi a rilasciare ormone della crescita endogeno. A differenza dell\'HGH ricombinante, non sopprimono l\'asse GH naturale. Esistono due classi: GHRP (secretagoghi diretti di GH) e analoghi GHRH come CJC-1295.' },
+        { heading: 'Ipamorelin + CJC-1295: Lo stack di peptidi GH', body: 'L\'Ipamorelin è il GHRP più selettivo — stimola i picchi di GH senza aumento significativo di cortisolo o prolattina. CJC-1295 con DAC prolunga la durata dei picchi di GH. In combinazione: Ipamorelin 200 mcg + CJC-1295 100 mcg iniettati per via sottocutanea prima di dormire, 5 giorni a settimana.' },
+        { heading: 'Risultati attesi', body: 'Dopo 3–6 mesi: miglioramento della qualità del sonno, perdita di grasso accelerata, recupero muscolare migliorato, miglioramento della texture della pelle. Nessun shutdown dell\'asse GH naturale a differenza dell\'HGH esogeno.' },
+      ],
+    },
+
+    'anastrozole-vs-exemestane-ai-guide': {
+      title: 'Anastrozolo vs Exemestane: Quale inibitore dell\'aromatasi scegliere?',
+      excerpt: 'Il controllo degli estrogeni durante il ciclo è cruciale. L\'Anastrozolo (Arimidex) inibisce l\'aromatasi in modo reversibile; l\'Exemestane (Aromasin) la disattiva in modo permanente. Quando usare ciascuno e come evitare di far crollare il tuo estradiolo.',
+      sections: [
+        { heading: 'Anastrozolo: IA non steroideo reversibile', body: 'L\'Anastrozolo inibisce reversibilmente l\'aromatasi, inibendo la sintesi degli estrogeni di circa il 97%. Dose in ciclo: 0,5 mg a giorni alterni. Svantaggio: può ridurre l\'efficacia del Tamoxifene a livello ipofisario.' },
+        { heading: 'Exemestane: Inibitore suicida steroideo', body: 'L\'Exemestane si lega permanentemente e disattiva l\'aromatasi. Ha una moderata attività androgenica intrinseca e preserva meglio l\'HDL rispetto all\'Anastrozolo. Preferito durante la PCT e nei cicli lunghi. Dose: 12,5–25 mg a giorni alterni.' },
+        { heading: 'Riconoscere e correggere bassi livelli di estrogeni', body: 'Segni di soppressione eccessiva: articolazioni doloranti, perdita improvvisa di libido, letargia estrema, piattezza emotiva. Se questi sintomi compaiono: interrompere immediatamente l\'IA, lasciare che l\'E2 si recuperi per 5–7 giorni, poi reintrodurre a dose inferiore.' },
+      ],
+    },
+
+    'cardarine-gw501516-fat-loss-guide': {
+      title: 'Cardarine (GW-501516): Il modulatore della perdita di grasso spiegato',
+      excerpt: 'La Cardarine non è un SARM — è un agonista PPARδ che orienta il tuo metabolismo verso l\'ossidazione dei grassi, aumenta l\'endurance e preserva il muscolo in deficit. Cosa mostra davvero la ricerca.',
+      sections: [
+        { heading: 'Meccanismo di perdita di grasso', body: 'L\'attivazione PPARδ aumenta la beta-ossidazione degli acidi grassi nel muscolo scheletrico e nel fegato. Negli studi clinici per la sindrome metabolica, ha ridotto significativamente l\'LDL e il grasso viscerale aumentando l\'HDL. Combinata con il suo effetto sull\'endurance, la Cardarine crea un potente ambiente di perdita di grasso.' },
+        { heading: 'Protocollo pratico', body: 'Dose: 10–20 mg/giorno, 30–45 minuti prima del cardio. Durata del ciclo: 8–12 settimane seguite da una pausa equivalente. Nessuna soppressione ormonale, nessuna tossicità epatica, nessuna PCT richiesta.' },
+        { heading: 'La controversia sul cancro', body: 'GSK ha interrotto gli studi umani nel 2007 dopo che studi sui roditori a dosi molto elevate per periodi prolungati hanno mostrato una crescita accelerata di tumori preesistenti. Contesto importante: i ratti venivano dosati con 3 mg/kg per 2 anni (equivalente a 240 mg/giorno per un umano di 80 kg — 12–24× le dosi tipiche di performance).' },
+      ],
+    },
+
+    'igf-1-lr3-muscle-growth': {
+      title: 'IGF-1 LR3: Come il Fattore di Crescita Insulino-simile costruisce i muscoli',
+      excerpt: 'L\'IGF-1 LR3 agisce a valle dell\'HGH per stimolare la proliferazione delle cellule satellite e l\'iperplasia — reali nuove fibre muscolari, non solo ipertrofia.',
+      sections: [
+        { heading: 'Iperplasia vs Ipertrofia', body: 'L\'allenamento standard causa ipertrofia — le fibre muscolari esistenti si ingrandiscono. L\'IGF-1 è uno dei pochi composti capaci di stimolare l\'iperplasia — la creazione di nuove fibre muscolari — attivando e proliferando le cellule satellite. Le nuove fibre sono permanenti.' },
+        { heading: 'Protocollo di dosaggio', body: 'Dose IGF-1 LR3: 40–100 mcg/giorno. Iniezione: sottocutanea o intramuscolare dopo l\'allenamento nel gruppo muscolare allenato. Durata del ciclo: 4–6 settimane seguite da una pausa equivalente. Ricostituire con acqua batteriostatica; conservare refrigerato.' },
+        { heading: 'Sinergie e stacking', body: 'L\'IGF-1 LR3 è più efficace combinato con peptidi HGH (stack GHRP/CJC) e steroidi anabolizzanti. I peptidi GH alzano l\'IGF-1 endogeno; l\'IGF-1 LR3 esogeno satura direttamente i recettori IGF-1 periferici.' },
+      ],
+    },
+
+    'dianabol-cycle-guide': {
+      title: 'Ciclo Dianabol (Metandienone): Guadagni, Rischi e Protezione del Fegato',
+      excerpt: 'Il Dianabol è lo steroide orale più veloce ad agire — aspettati 5–8 kg in 4 settimane. Ma l\'alchilazione in C17 significa seria epatotossicità. Durate di ciclo sicure, dosaggio di TUDCA e come mantenere gli esami del sangue puliti.',
+      sections: [
+        { heading: 'Protezione del fegato: Protocollo obbligatorio', body: 'TUDCA (acido tauroursodeossicolico): 500 mg/giorno durante il ciclo e 2 settimane dopo — l\'epatoprotettore più basato su evidenze. NAC (N-Acetil Cisteina): 600–1.200 mg/giorno. Evitare completamente l\'alcol durante il ciclo. Durata massima del ciclo: 4–6 settimane.' },
+        { heading: 'Dianabol come kickstart vs uso standalone', body: 'L\'uso più comune del Dianabol è come "kickstart" per le prime 4 settimane di un ciclo iniettivo più lungo (es. testosterone enantato). Gli iniettabili impiegano 3–4 settimane per raggiungere i livelli ematici di picco; il Dianabol colma questo divario con guadagni immediati di forza e massa.' },
+        { heading: 'Dosaggio e gestione degli estrogeni', body: 'Dose standard: 30–50 mg/giorno. Principianti: inizia a 20–30 mg/giorno. L\'IA è essenziale dal giorno 1 di un ciclo Dianabol — non dalla settimana 2. Dosi superiori a 50 mg/giorno aumentano drammaticamente gli effetti collaterali senza benefici proporzionali.' },
+      ],
+    },
+
+    'meldonium-mildronate-endurance': {
+      title: 'Meldonium (Mildronate): Il farmaco per l\'endurance che ha sospeso Sharapova',
+      excerpt: 'Il Meldonium riduce l\'ossidazione degli acidi grassi nelle cellule cardiache, costringendo il cuore a utilizzare carburante a carboidrati più efficiente. Usato legalmente nell\'Europa dell\'Est come cardioprotettore — ecco la scienza e l\'applicazione sportiva.',
+      sections: [
+        { heading: 'Applicazione sportiva e stato legale', body: 'Per gli atleti di endurance, lo spostamento glucosio-vs-grasso migliora le prestazioni alle alte intensità. Vietato dalla WADA (S4: Modulatori ormonali e metabolici) nelle competizioni. Stato legale variabile in Europa: registrato come farmaco in Lettonia, Lituania, Russia. Finestra di rilevamento WADA: fino a 3 mesi dopo la cessazione.' },
+        { heading: 'Dosaggio', body: 'Dose clinica tipica: 500–1.000 mg/giorno in dosi frazionate, per cicli di 4–6 settimane, 2× per anno. Idrosolubile, può essere assunto per via orale. Nessuna epatotossicità significativa o disturbi endocrini alle dosi standard.' },
+        { heading: 'Meccanismo d\'azione', body: 'Il Meldonium è un inibitore TMAO che interferisce con il trasporto della carnitina e riduce l\'ossidazione degli acidi grassi nelle cellule del muscolo cardiaco. Questo costringe le cellule a utilizzare il glucosio attraverso la via più efficiente e riduce i metaboliti tossici degli acidi grassi nelle condizioni di stress.' },
+      ],
+    },
+
+    'omega3-recovery-science': {
+      title: 'Omega-3 e recupero muscolare: Lo stack trascurato',
+      excerpt: 'L\'olio di pesce è più di un integratore per il cuore. Gli studi mostrano che 3 g/giorno di EPA+DHA riducono il DOMS fino al 35% e abbassano l\'infiammazione sistemica — rendendolo essenziale per il recupero.',
+      sections: [
+        { heading: 'EPA e DHA: Gli acidi grassi chiave', body: 'Non tutti gli omega-3 sono uguali. L\'ALA (dal lino) deve essere convertito in EPA e DHA — con un\'efficienza di conversione di solo il 5–15%. Solo EPA e DHA sono biologicamente attivi nella regolazione dell\'infiammazione e della sintesi proteica muscolare. Obiettivo: almeno 2–3 g di EPA+DHA al giorno dall\'olio di pesce o dall\'olio di krill.' },
+        { heading: 'Omega-3 e sintesi proteica muscolare', body: 'Gli acidi grassi omega-3 attivano la via di segnalazione mTORC1 e aumentano la sensibilità all\'insulina nella cellula muscolare. Uno studio dell\'Università di Washington ha trovato che 4 g/giorno di olio di pesce per 8 settimane ha aumentato la sintesi proteica muscolare del 35%.' },
+        { heading: 'Protocollo pratico', body: 'Dose: 2–3 g di EPA+DHA al giorno. Assumerlo con il pasto più ricco di grassi della giornata per la massima assorbimento. Preferire olio di pesce distillato con basso contenuto di metalli pesanti. Scegliere prodotti con almeno il 60% di contenuto EPA+DHA.' },
+      ],
+    },
+
+    'magnesium-sleep-gains': {
+      title: 'Gliccinato di Magnesio: Il supplemento che sistema il tuo sonno',
+      excerpt: 'Più del 70% dell\'ormone della crescita viene rilasciato durante il sonno profondo. Il glicinato di magnesio migliora la qualità del sonno, riduce il cortisolo e costa meno di €0,30/giorno.',
+      sections: [
+        { heading: 'Perché il magnesio è essenziale per gli atleti', body: 'Il magnesio è coinvolto in oltre 300 reazioni enzimatiche, inclusa la sintesi di ATP, la biosintesi delle proteine e la funzione muscolare. Gli atleti perdono magnesio attraverso il sudore a un tasso di 36–58 mg per ora di allenamento intenso. Ricerche mostrano che oltre il 70% degli atleti europei ha livelli inferiori al fabbisogno giornaliero raccomandato.' },
+        { heading: 'Glicinato di Magnesio vs altre forme', body: 'Il glicinato di magnesio (magnesio legato alla glicina) ha la massima biodisponibilità e non causa problemi digestivi — a differenza dell\'ossido di magnesio (assorbimento ~4%) o del citrato di magnesio (può causare diarrea). La glicina stessa ha proprietà ansiolitiche e che favoriscono il sonno.' },
+        { heading: 'Protocollo di dosaggio', body: 'Dose: 300–400 mg di magnesio elementare come glicinato al giorno, 30–60 minuti prima di dormire. Effetti: qualità del sonno migliorata entro 2–3 settimane, ridotti crampi muscolari notturni, livelli di cortisolo mattutino più bassi.' },
+      ],
+    },
+
+    'vitamin-d3-athletes-guide': {
+      title: 'Perché ogni atleta ha bisogno della Vitamina D3',
+      excerpt: 'Oltre il 60% degli europei è carente di vitamina D. Bassi livelli di D3 abbassano direttamente il testosterone, la velocità di recupero e le difese immunitarie. Come dosarla correttamente tutto l\'anno.',
+      sections: [
+        { heading: 'Carenza di vitamina D negli atleti europei', body: 'Uno studio nel British Journal of Sports Medicine ha trovato che il 57% degli atleti professionisti in Europa settentrionale e centrale aveva livelli sierici di 25(OH)D inferiori a 30 ng/ml. Nei mesi invernali (ottobre–marzo), la radiazione UVB è insufficiente al di sopra del 50° parallelo per la sintesi cutanea di vitamina D.' },
+        { heading: 'Effetti della vitamina D3 sulle prestazioni atletiche', body: 'I recettori della vitamina D (VDR) si trovano nel tessuto muscolare, nelle ossa e nei testicoli. La carenza al di sotto di 20 ng/ml è associata a: ridotta sintesi proteica muscolare, calo del 10–15% della produzione di testosterone, risposta immunitaria più lenta.' },
+        { heading: 'Protocollo di dosaggio corretto', body: 'Se non si è ancora supplementato: inizia con 4.000–5.000 UI/giorno per 8 settimane, poi 2.000–3.000 UI/giorno per il mantenimento. Intervallo target: 40–60 ng/ml. Combina con vitamina K2 (MK-7, 100–200 mcg/giorno) per dirigere il calcio alle ossa.' },
+      ],
+    },
+
+    'pre-workout-timing-guide': {
+      title: 'Timing Pre-Workout: Quando e quanto assumere',
+      excerpt: 'Assumere il tuo pre-workout 20 minuti troppo presto (o tardi) può dimezzarne l\'effetto. Spieghiamo la finestra ottimale della caffeina, il carico di beta-alanina e come evitare il crash.',
+      sections: [
+        { heading: 'La finestra di farmacocinetica della caffeina', body: 'La caffeina raggiunge la concentrazione plasmatica di picco 30–60 minuti dopo l\'assunzione. Assunzione ottimale: 30–45 minuti prima dell\'allenamento. Dose: 3–6 mg/kg di peso corporeo. Per un atleta di 80 kg: 240–480 mg. La maggior parte dei pre-workout commerciali contiene 150–300 mg.' },
+        { heading: 'Booster di ossido nitrico: Citrullina e Arginina', body: 'La L-Citrullina (non arginina) è il precursore NO superiore — bypassa il metabolismo epatico di primo passaggio. Dose: 6–8 g di malato di citrullina, 45–60 minuti prima dell\'allenamento. Aspettati aumenti notevoli di pump e vascolarità.' },
+        { heading: 'Evitare il crash', body: 'I crash energetici post-allenamento sono causati dal rimbalzo dell\'adenosina e dai cali di zucchero nel sangue. Contromisure: (1) non superare 400 mg totali di caffeina, (2) mangiare un pasto misto carboidrati-proteine entro 60 minuti post-allenamento, (3) rimanere ben idratati.' },
+      ],
+    },
+  },
+};
+
+export function getBlogPostForLocale(post: BlogPost, locale: string): BlogPost {
+  if (locale === 'en') return post;
+  const translation = BLOG_TRANSLATIONS[locale]?.[post.slug];
+  if (!translation) return post;
+  return { ...post, ...translation };
+}

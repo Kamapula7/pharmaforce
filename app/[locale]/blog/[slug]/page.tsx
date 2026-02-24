@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, Clock, User, Tag } from 'lucide-react';
 import { BLOG_POSTS } from '@/lib/blog-content';
+import { getBlogPostForLocale } from '@/lib/blog-translations';
 
 interface BlogPostPageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -11,8 +12,9 @@ interface BlogPostPageProps {
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { locale, slug } = await params;
-  const post = BLOG_POSTS.find((p) => p.slug === slug);
-  if (!post) return {};
+  const rawPost = BLOG_POSTS.find((p) => p.slug === slug);
+  if (!rawPost) return {};
+  const post = getBlogPostForLocale(rawPost, locale);
 
   return {
     title: post.title,
@@ -41,8 +43,9 @@ const TAG_COLOR: Record<string, string> = {
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { locale, slug } = await params;
-  const post = BLOG_POSTS.find(p => p.slug === slug);
-  if (!post) notFound();
+  const rawPost = BLOG_POSTS.find(p => p.slug === slug);
+  if (!rawPost) notFound();
+  const post = getBlogPostForLocale(rawPost, locale);
 
   const jsonLd = {
     '@context': 'https://schema.org',

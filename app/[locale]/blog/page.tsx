@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Clock } from 'lucide-react';
 import { BLOG_POSTS } from '@/lib/blog-content';
+import { getBlogPostForLocale } from '@/lib/blog-translations';
 
 interface BlogPageProps {
   params: Promise<{ locale: string }>;
@@ -42,7 +43,8 @@ const TAG_STYLE: Record<string, string> = {
 
 export default async function BlogPage({ params }: BlogPageProps) {
   const { locale } = await params;
-  const [featured, ...rest] = BLOG_POSTS;
+  const localizedPosts = BLOG_POSTS.map((p) => getBlogPostForLocale(p, locale));
+  const [featured, ...rest] = localizedPosts;
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
