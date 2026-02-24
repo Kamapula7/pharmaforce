@@ -2,7 +2,7 @@
 
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { ShoppingCart, User, Menu, X, Zap, ChevronLeft, Search, Package, LogOut, LogIn, UserPlus } from 'lucide-react';
 import { useSession, signOut } from 'next-auth/react';
@@ -21,6 +21,16 @@ export default function Header({ locale }: HeaderProps) {
   const [accountOpen, setAccountOpen] = useState(false);
   const accountRef = useRef<HTMLDivElement>(null);
   const { data: session } = useSession();
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (accountRef.current && !accountRef.current.contains(e.target as Node)) {
+        setAccountOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
   const cartCount = useCartStore((s) => s.totalItems());
   const router = useRouter();
   const pathname = usePathname();
@@ -127,8 +137,8 @@ export default function Header({ locale }: HeaderProps) {
               onMouseEnter={() => setAccountOpen(true)}
               onMouseLeave={() => setAccountOpen(false)}
             >
-              <Link
-                href={`/${locale}/account`}
+              <button
+                onClick={() => setAccountOpen(!accountOpen)}
                 className={`p-2 transition-colors rounded-lg hover:bg-surface-2 flex items-center gap-1 ${session ? 'text-brand' : 'text-muted hover:text-white'}`}
                 aria-label={t('account')}
               >
@@ -138,7 +148,7 @@ export default function Header({ locale }: HeaderProps) {
                     {session.user?.name?.split(' ')[0] || 'Account'}
                   </span>
                 )}
-              </Link>
+              </button>
 
               {accountOpen && (
                 <div className="absolute right-0 top-full pt-1 w-48 z-50">
