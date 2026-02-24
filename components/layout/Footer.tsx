@@ -8,7 +8,6 @@ interface FooterProps {
 
 export default function Footer({ locale }: FooterProps) {
   const t = useTranslations('footer');
-  const tCat = useTranslations('categories');
   const year = new Date().getFullYear();
 
   return (
@@ -53,13 +52,20 @@ export default function Footer({ locale }: FooterProps) {
           <div>
             <h3 className="text-white font-semibold mb-4">{t('shop')}</h3>
             <ul className="space-y-2">
-              {['protein', 'aminoacids', 'vitamins', 'fatBurners', 'preworkout'].map((cat) => (
-                <li key={cat}>
+              {[
+                { key: 'protein',       label: 'Protein' },
+                { key: 'creatine',      label: 'Creatine' },
+                { key: 'amino-acids',   label: 'Amino Acids' },
+                { key: 'aas',           label: 'Anabolic Steroids' },
+                { key: 'peptides',      label: 'Peptides & HGH' },
+                { key: 'modulators',    label: 'PCT & SARMs' },
+              ].map(({ key, label }) => (
+                <li key={key}>
                   <Link
-                    href={`/${locale}/products?category=${cat}`}
+                    href={`/${locale}/products?category=${key}`}
                     className="text-muted hover:text-white transition-colors text-sm"
                   >
-                    {tCat(cat as Parameters<typeof tCat>[0])}
+                    {label}
                   </Link>
                 </li>
               ))}
