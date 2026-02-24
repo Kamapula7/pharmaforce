@@ -67,7 +67,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const DESCRIPTIONS = getProductDescriptions(locale);
   const isAAS = product.category === 'AAS' || product.category === 'Peptides' || product.category === 'Modulators' || product.category === 'Womens Health' || product.category === 'Anti-Aging' || product.category === 'Sexual Health';
   const extra = DESCRIPTIONS[product.category] ?? DESCRIPTIONS['Vitamins'];
-  const pricePerServing = isAAS ? null : formatPrice(product.price / extra.servings);
+  const weightServings = product.weight ? parseInt(product.weight.match(/\((\d+)\s*servings?\)/i)?.[1] ?? '') : NaN;
+  const actualServings = !isNaN(weightServings) ? weightServings : extra.servings;
+  const pricePerServing = isAAS ? null : formatPrice(product.price / actualServings);
   const reviews = getReviewsForCategory(product.category);
 
   const related = PRODUCTS
@@ -141,7 +143,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           <h1 className="text-2xl font-extrabold text-white mb-3 leading-tight">{product.name}</h1>
 
           {product.weight && (
-            <p className="text-muted text-sm mb-4">{product.weight}{!isAAS ? ` · ${extra.servings} ${t('servings')}` : ''}</p>
+            <p className="text-muted text-sm mb-4">{product.weight}{!isAAS && !product.weight?.includes('servings') ? ` · ${extra.servings} ${t('servings')}` : ''}</p>
           )}
 
           {/* Rating */}
@@ -243,7 +245,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 [t('category'),   product.category],
                 [t('subcategory'),product.subcategory],
                 [t('volume'),     product.weight ?? '—'],
-                ...(!isAAS ? [[t('servings'), `${extra.servings}`], [t('perServing'), pricePerServing]] : []),
+                ...(!isAAS ? [[t('servings'), `${actualServings}`], [t('perServing'), pricePerServing]] : []),
               ] as [string, string][]).map(([label, value]) => (
                 <div key={label} className="flex justify-between gap-2">
                   <dt className="text-muted shrink-0">{label}</dt>
