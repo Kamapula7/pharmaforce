@@ -21,7 +21,7 @@ async function getStats() {
     const week = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
     const month = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
 
-    const [ordersRaw, usersCount, viewsToday, viewsWeek, viewsMonth, viewsTotal, topPages] = await Promise.all([
+    const [ordersRaw, usersCount, viewsToday, viewsWeek, viewsMonth, viewsTotal, topPages, topCountries] = await Promise.all([
       prisma.order.findMany({ include: { items: true }, orderBy: { createdAt: 'desc' }, take: 50 }),
       prisma.user.count(),
       prisma.pageView.count({ where: { createdAt: { gte: today } } }),
@@ -34,6 +34,13 @@ async function getStats() {
         orderBy: { _count: { path: 'desc' } },
         take: 5,
         where: { createdAt: { gte: week } },
+      }),
+      prisma.pageView.groupBy({
+        by: ['country'],
+        _count: { country: true },
+        orderBy: { _count: { country: 'desc' } },
+        take: 8,
+        where: { country: { not: null }, createdAt: { gte: month } },
       }),
     ]);
 
@@ -51,18 +58,20 @@ async function getStats() {
       orders, totalRevenue, byStatus, usersCount, error: null,
       views: { today: viewsToday, week: viewsWeek, month: viewsMonth, total: viewsTotal },
       topPages: (topPages as Array<{ path: string; _count: { path: number } }>).map(p => ({ path: p.path, views: p._count.path })),
+      topCountries: (topCountries as Array<{ country: string | null; _count: { country: number } }>).map(c => ({ country: c.country ?? 'Unknown', views: c._count.country })),
     };
   } catch {
     return {
       orders: [], totalRevenue: 0, byStatus: {} as Record<string, number>, usersCount: 0, error: 'DB not connected',
       views: { today: 0, week: 0, month: 0, total: 0 },
       topPages: [],
+      topCountries: [],
     };
   }
 }
 
 export default async function AdminDashboard() {
-  const [{ orders, totalRevenue, byStatus, usersCount, error, views, topPages }] = await Promise.all([
+  const [{ orders, totalRevenue, byStatus, usersCount, error, views, topPages, topCountries }] = await Promise.all([
     getStats(),
   ]);
 
@@ -119,19 +128,44 @@ export default async function AdminDashboard() {
             </div>
           ))}
         </div>
-        {topPages.length > 0 && (
-          <div>
-            <p className="text-muted text-xs mb-2">Top pages (7 days)</p>
-            <div className="space-y-1">
-              {topPages.map(({ path, views: v }) => (
-                <div key={path} className="flex items-center justify-between text-xs py-1 border-b border-white/4">
-                  <span className="text-muted font-mono truncate max-w-[70%]">{path}</span>
-                  <span className="text-white font-semibold">{v} views</span>
-                </div>
-              ))}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {topPages.length > 0 && (
+            <div>
+              <p className="text-muted text-xs mb-2">Top pages (7 days)</p>
+              <div className="space-y-1">
+                {topPages.map(({ path, views: v }) => (
+                  <div key={path} className="flex items-center justify-between text-xs py-1 border-b border-white/4">
+                    <span className="text-muted font-mono truncate max-w-[70%]">{path}</span>
+                    <span className="text-white font-semibold">{v} views</span>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+          {topCountries.length > 0 && (
+            <div>
+              <p className="text-muted text-xs mb-2">Top countries (30 days)</p>
+              <div className="space-y-1">
+                {topCountries.map(({ country, views: v }) => (
+                  <div key={country} className="flex items-center justify-between text-xs py-1 border-b border-white/4">
+                    <span className="text-white flex items-center gap-2">
+                      <img
+                        src={`https://flagcdn.com/20x15/${country.toLowerCase()}.png`}
+                        alt={country}
+                        width={20}
+                        height={15}
+                        className="rounded-sm"
+                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
+                      />
+                      {country}
+                    </span>
+                    <span className="text-white font-semibold">{v} views</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
