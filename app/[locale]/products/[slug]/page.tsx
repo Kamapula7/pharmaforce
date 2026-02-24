@@ -5,11 +5,13 @@ import { formatPrice } from '@/lib/utils';
 import ProductActions from '@/components/product/ProductActions';
 import ProductGallery from '@/components/product/ProductGallery';
 import StickyAddToCart from '@/components/product/StickyAddToCart';
+import ReviewsSection from '@/components/product/ReviewsSection';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PRODUCTS } from '@/lib/products';
 import { getTranslations } from 'next-intl/server';
 import { getProductDescriptions } from '@/lib/product-page-translations';
+import { getReviewsForCategory } from '@/lib/reviews';
 
 interface ProductPageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -45,49 +47,6 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 }
 
 
-const REVIEWS_BY_CATEGORY: Record<string, { id: string; name: string; country: string; rating: number; comment: string; date: string }[]> = {
-  Protein: [
-    { id: '1', name: 'Marcus W.', country: '🇩🇪', rating: 5, comment: 'Excellent texture and taste. Mixes perfectly in a shaker, no clumps. Fast delivery to Germany.', date: 'Jan 15, 2026' },
-    { id: '2', name: 'Anna K.', country: '🇵🇱', rating: 5, comment: 'Best price in Europe for this quality. 24g protein per serving is exactly what I needed for my cut.', date: 'Jan 28, 2026' },
-    { id: '3', name: 'Luca B.', country: '🇮🇹', rating: 4, comment: 'Arrived in perfect condition. Chocolate flavour is genuinely good — not too sweet.', date: 'Feb 10, 2026' },
-  ],
-  Creatine: [
-    { id: '1', name: 'Stefan R.', country: '🇩🇪', rating: 5, comment: 'Noticeable strength increase after 2 weeks of loading. No GI issues, dissolves completely.', date: 'Jan 12, 2026' },
-    { id: '2', name: 'Tomasz W.', country: '🇵🇱', rating: 5, comment: 'Pharmaceutical grade purity, exactly what I was looking for. Reordering my 3rd batch.', date: 'Jan 25, 2026' },
-    { id: '3', name: 'Claire M.', country: '🇫🇷', rating: 4, comment: 'Great value, fast shipping. Mixes well with my pre-workout. Solid product.', date: 'Feb 8, 2026' },
-  ],
-  'Amino Acids': [
-    { id: '1', name: 'Hans D.', country: '🇩🇪', rating: 5, comment: 'Recovery noticeably improved. Take it intra-workout — great endurance boost too.', date: 'Jan 18, 2026' },
-    { id: '2', name: 'Karolina P.', country: '🇵🇱', rating: 5, comment: 'Perfect ratio, no fillers. I use it daily and my DOMS have practically disappeared.', date: 'Feb 1, 2026' },
-    { id: '3', name: 'Marco F.', country: '🇮🇹', rating: 4, comment: 'Good quality, mixes easily. Slightly unflavoured taste but easy to add to any drink.', date: 'Feb 14, 2026' },
-  ],
-  AAS: [
-    { id: '1', name: 'R. K.', country: '🇩🇪', rating: 5, comment: 'Pharmaceutical grade, exactly as described. Discreet packaging, arrived within 4 days.', date: 'Jan 20, 2026' },
-    { id: '2', name: 'M. T.', country: '🇵🇱', rating: 5, comment: 'Genuine product, lab-verified. Strength gains from week 2 were very noticeable. Will reorder.', date: 'Feb 3, 2026' },
-    { id: '3', name: 'J. V.', country: '🇳🇱', rating: 4, comment: 'Quality matches the price point. Packaging secure, communication was professional.', date: 'Feb 15, 2026' },
-  ],
-  Peptides: [
-    { id: '1', name: 'F. B.', country: '🇩🇪', rating: 5, comment: 'Lyophilized correctly, reconstitution was smooth. Noticed effects within the first week.', date: 'Jan 22, 2026' },
-    { id: '2', name: 'D. L.', country: '🇸🇪', rating: 5, comment: 'Excellent product, discreet packaging. GH levels confirmed via blood work. Very impressed.', date: 'Feb 5, 2026' },
-    { id: '3', name: 'P. M.', country: '🇫🇷', rating: 4, comment: 'Good quality peptide, proper cold chain maintained. Arrived cold with ice packs intact.', date: 'Feb 17, 2026' },
-  ],
-  Modulators: [
-    { id: '1', name: 'T. G.', country: '🇩🇪', rating: 5, comment: 'Bloodwork confirms it works. Estrogen was perfectly controlled on cycle. Great product.', date: 'Jan 19, 2026' },
-    { id: '2', name: 'A. S.', country: '🇳🇱', rating: 5, comment: 'Used for PCT — testosterone recovery was much faster than without. Highly recommend.', date: 'Feb 2, 2026' },
-    { id: '3', name: 'K. W.', country: '🇵🇱', rating: 4, comment: 'Genuine pharmaceutical grade. Packaging intact, no issues with shipping. Will reorder.', date: 'Feb 16, 2026' },
-  ],
-  'Womens Health': [
-    { id: '1', name: 'Sophie L.', country: '🇩🇪', rating: 5, comment: 'Exactly as described, genuine packaging. Discreet delivery and very fast shipping to Germany.', date: 'Jan 17, 2026' },
-    { id: '2', name: 'Marta K.', country: '🇵🇱', rating: 5, comment: 'I checked the batch number — authentic product. Results are exactly what I expected. Very happy.', date: 'Feb 1, 2026' },
-    { id: '3', name: 'Isabelle D.', country: '🇫🇷', rating: 4, comment: 'Packaging arrived perfectly sealed and discreet. Good communication from the seller.', date: 'Feb 14, 2026' },
-  ],
-};
-
-const DEFAULT_REVIEWS = [
-  { id: '1', name: 'Marcus W.', country: '🇩🇪', rating: 5, comment: 'Excellent quality, fast delivery. Will definitely order again.', date: 'Jan 15, 2026' },
-  { id: '2', name: 'Anna K.', country: '🇵🇱', rating: 5, comment: 'Best price in Europe for this quality. Very satisfied.', date: 'Jan 28, 2026' },
-  { id: '3', name: 'Luca B.', country: '🇮🇹', rating: 4, comment: 'Good product, arrived in perfect condition. Packaging was discreet.', date: 'Feb 10, 2026' },
-];
 
 export default async function ProductPage({ params }: ProductPageProps) {
   const { locale, slug } = await params;
@@ -101,7 +60,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const isAAS = product.category === 'AAS' || product.category === 'Peptides' || product.category === 'Modulators' || product.category === 'Womens Health' || product.category === 'Anti-Aging' || product.category === 'Sexual Health';
   const extra = DESCRIPTIONS[product.category] ?? DESCRIPTIONS['Vitamins'];
   const pricePerServing = isAAS ? null : formatPrice(product.price / extra.servings);
-  const reviews = REVIEWS_BY_CATEGORY[product.category] ?? DEFAULT_REVIEWS;
+  const reviews = getReviewsForCategory(product.category);
 
   const related = PRODUCTS
     .filter(p => p.category === product.category && p.slug !== product.slug && p.inStock)
@@ -251,30 +210,13 @@ export default async function ProductPage({ params }: ProductPageProps) {
           )}
 
           {/* Reviews */}
-          <div className="bg-surface border border-border rounded-2xl p-6">
-            <h2 className="text-white font-bold text-lg mb-5">{t('reviews')} ({product.reviews})</h2>
-            <div className="space-y-4">
-              {reviews.map((r) => (
-                <div key={r.id} className="border-b border-border pb-4 last:border-0 last:pb-0">
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="flex items-center gap-2.5">
-                      <div className="w-8 h-8 bg-brand/20 rounded-full flex items-center justify-center text-brand font-bold text-sm">
-                        {r.name[0]}
-                      </div>
-                      <span className="text-white font-medium text-sm">{r.name} {r.country}</span>
-                    </div>
-                    <span className="text-muted text-xs">{r.date}</span>
-                  </div>
-                  <div className="flex mb-2">
-                    {[1,2,3,4,5].map((i) => (
-                      <Star key={i} className={`w-3.5 h-3.5 ${i <= r.rating ? 'fill-brand text-brand' : 'fill-border text-border'}`} />
-                    ))}
-                  </div>
-                  <p className="text-muted text-sm">{r.comment}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+          <ReviewsSection
+            reviews={reviews}
+            total={product.reviews}
+            title={t('reviews')}
+            showAll={t('showAllReviews')}
+            showLess={t('showLessReviews')}
+          />
         </div>
 
         {/* Sidebar */}

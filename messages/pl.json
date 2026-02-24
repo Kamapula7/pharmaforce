@@ -78,6 +78,8 @@
         "description": "Opis",
         "composition": "Skład",
         "howToUse": "Sposób użycia",
+        "showAllReviews": "Pokaż wszystkie opinie",
+        "showLessReviews": "Pokaż mniej",
         "reviews": "Opinie",
         "relatedProducts": "Może ci się spodobać",
         "quantity": "Ilość",
