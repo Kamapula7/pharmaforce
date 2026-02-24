@@ -146,22 +146,20 @@ export default async function AdminDashboard() {
             <div>
               <p className="text-muted text-xs mb-2">Top countries (30 days)</p>
               <div className="space-y-1">
-                {topCountries.map(({ country, views: v }) => (
-                  <div key={country} className="flex items-center justify-between text-xs py-1 border-b border-white/4">
-                    <span className="text-white flex items-center gap-2">
-                      <img
-                        src={`https://flagcdn.com/20x15/${country.toLowerCase()}.png`}
-                        alt={country}
-                        width={20}
-                        height={15}
-                        className="rounded-sm"
-                        onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
-                      />
-                      {country}
-                    </span>
-                    <span className="text-white font-semibold">{v} views</span>
-                  </div>
-                ))}
+                {topCountries.map(({ country, views: v }) => {
+                  const flag = country.length === 2
+                    ? country.toUpperCase().replace(/./g, c => String.fromCodePoint(127397 + c.charCodeAt(0)))
+                    : '🌐';
+                  return (
+                    <div key={country} className="flex items-center justify-between text-xs py-1 border-b border-white/4">
+                      <span className="text-white flex items-center gap-2">
+                        <span>{flag}</span>
+                        {country}
+                      </span>
+                      <span className="text-white font-semibold">{v} views</span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           )}
