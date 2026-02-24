@@ -307,7 +307,27 @@ export default function CheckoutClient({ locale }: { locale: string }) {
                 </div>
 
                 <button type="button"
-                  onClick={() => completeStep(3, 4)}
+                  onClick={async () => {
+                    completeStep(3, 4);
+                    // Save order to DB as soon as user sees payment details
+                    try {
+                      await fetch('/api/orders', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                          firstName, lastName, email, phone,
+                          country, city, address, zip, notes,
+                          total, orderRef,
+                          items: items.map(i => ({
+                            productId: i.id,
+                            nameEn: i.nameEn,
+                            quantity: i.quantity,
+                            price: i.price,
+                          })),
+                        }),
+                      });
+                    } catch { /* silent */ }
+                  }}
                   className="w-full bg-brand text-dark font-bold py-3 rounded-xl hover:bg-brand-dark transition-colors flex items-center justify-center gap-2">
                   I've Seen the Details <ArrowRight className="w-4 h-4" />
                 </button>
@@ -338,25 +358,6 @@ export default function CheckoutClient({ locale }: { locale: string }) {
                 <button
                   type="button"
                   onClick={async () => {
-                    // Save to DB
-                    try {
-                      await fetch('/api/orders', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                          firstName, lastName, email, phone,
-                          country, city, address, zip, notes,
-                          total, orderRef,
-                          items: items.map(i => ({
-                            productId: i.id,
-                            nameEn: i.nameEn,
-                            quantity: i.quantity,
-                            price: i.price,
-                          })),
-                        }),
-                      });
-                    } catch { /* silent */ }
-
                     // Save to local order history (fallback)
                     addOrder({
                       ref: orderRef,
