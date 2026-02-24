@@ -25,15 +25,17 @@ function detectLocale(req: NextRequest): string {
   return 'en';
 }
 
+const ADMIN_PATH = '/pf-secure-9k2';
+
 export default function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  // Admin protection
-  if (pathname.startsWith('/admin')) {
-    if (pathname === '/admin/login') return NextResponse.next();
+  // Admin protection — skip intl, allow direct access
+  if (pathname.startsWith(ADMIN_PATH)) {
+    if (pathname === `${ADMIN_PATH}/login`) return NextResponse.next();
     const session = req.cookies.get('admin_session');
     if (!session || session.value !== 'authenticated') {
-      return NextResponse.redirect(new URL('/admin/login', req.url));
+      return NextResponse.redirect(new URL(`${ADMIN_PATH}/login`, req.url));
     }
     return NextResponse.next();
   }
