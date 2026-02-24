@@ -21,12 +21,12 @@ export default function ProductGallery({ mainImage, gallery, name, badge, oldPri
   return (
     <div className="space-y-4">
       {/* Main image */}
-      <div className="relative aspect-square bg-[#f5f5f5] rounded-2xl overflow-hidden border border-border">
+      <div className="relative aspect-square rounded-2xl overflow-hidden border border-border">
         <Image
           src={images[active]}
           alt={name}
           fill
-          className="object-contain p-4 transition-opacity duration-200"
+          className="object-cover transition-opacity duration-200"
           sizes="(max-width: 1024px) 100vw, 50vw"
           priority
         />
@@ -50,7 +50,7 @@ export default function ProductGallery({ mainImage, gallery, name, badge, oldPri
           <button
             key={i}
             onClick={() => setActive(i)}
-            className={`relative aspect-square bg-[#f5f5f5] rounded-xl overflow-hidden border transition-all cursor-pointer ${
+            className={`relative aspect-square rounded-xl overflow-hidden border transition-all cursor-pointer ${
               active === i ? 'border-brand ring-2 ring-brand/40' : 'border-border hover:border-brand/50'
             }`}
           >
@@ -58,7 +58,7 @@ export default function ProductGallery({ mainImage, gallery, name, badge, oldPri
               src={src}
               alt={`${name} photo ${i + 1}`}
               fill
-              className="object-contain p-1"
+              className="object-cover"
               sizes="10vw"
             />
           </button>

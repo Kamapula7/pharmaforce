@@ -57,13 +57,13 @@ export default function CartPageClient({ locale }: { locale: string }) {
             <div key={item.id} className="bg-surface border border-border rounded-2xl p-4 flex gap-4">
               {/* Image */}
               <Link href={`/${locale}/products/${item.slug}`}>
-                <div className="w-20 h-20 bg-[#f5f5f5] rounded-xl overflow-hidden shrink-0 hover:border-brand border border-border transition-colors relative">
+                <div className="w-20 h-20 rounded-xl overflow-hidden shrink-0 hover:border-brand border border-border transition-colors relative">
                   {item.image ? (
                     <Image
                       src={item.image}
                       alt={item.nameEn}
                       fill
-                      className="object-contain p-1"
+                      className="object-cover"
                       sizes="80px"
                     />
                   ) : (

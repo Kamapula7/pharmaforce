@@ -112,12 +112,12 @@ export default function SearchInput({ locale, initialQuery = '', placeholder = '
               onMouseDown={() => handleSelect(product.slug)}
               className="w-full flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition-colors text-left border-b border-white/5 last:border-0"
             >
-              <div className="w-10 h-10 bg-[#f5f5f5] rounded-lg overflow-hidden shrink-0 relative">
+              <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 relative">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-contain p-1"
+                  className="object-cover"
                   sizes="40px"
                 />
               </div>

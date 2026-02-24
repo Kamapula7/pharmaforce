@@ -207,9 +207,9 @@ export default function AccountClient({ locale }: { locale: string }) {
                             const product = PRODUCTS.find(p => p.name === item.nameEn);
                             return (
                               <div key={i} className="flex items-center gap-3 bg-surface border border-border rounded-xl p-3">
-                                <div className="w-16 h-16 bg-[#f5f5f5] rounded-lg overflow-hidden shrink-0 relative">
+                                <div className="w-16 h-16 rounded-lg overflow-hidden shrink-0 relative">
                                   {product?.image ? (
-                                    <Image src={product.image} alt={item.nameEn} fill className="object-contain p-1" sizes="64px" />
+                                    <Image src={product.image} alt={item.nameEn} fill className="object-cover" sizes="64px" />
                                   ) : (
                                     <div className="w-full h-full flex items-center justify-center text-2xl">💊</div>
                                   )}

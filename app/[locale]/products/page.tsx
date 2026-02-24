@@ -407,12 +407,12 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
                 className="group bg-surface border border-border rounded-xl overflow-hidden hover:border-brand/40 hover:shadow-lg hover:shadow-brand/5 transition-all duration-300 flex flex-col"
               >
                 {/* Image */}
-                <Link href={`/${locale}/products/${product.slug}`} className="relative bg-[#f5f5f5] aspect-square overflow-hidden block">
+                <Link href={`/${locale}/products/${product.slug}`} className="relative aspect-square overflow-hidden block">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
-                    className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                     sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   />
 

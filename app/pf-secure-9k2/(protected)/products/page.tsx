@@ -37,7 +37,7 @@ export default function AdminProductsPage() {
                   <tr key={p.slug} className="border-b border-white/4 hover:bg-white/2 transition-colors">
                     <td className="px-4 py-2">
                       <div className="w-10 h-10 relative rounded-lg overflow-hidden bg-white/5">
-                        <Image src={p.image} alt={p.name} fill className="object-contain p-1" unoptimized />
+                        <Image src={p.image} alt={p.name} fill className="object-cover" unoptimized />
                       </div>
                     </td>
                     <td className="px-4 py-2 text-white text-xs max-w-[200px]">
