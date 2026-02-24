@@ -122,12 +122,21 @@ export default function AccountClient({ locale }: { locale: string }) {
               Welcome back, {session.user?.name || session.user?.email || 'Athlete'}
             </p>
           </div>
-          <button
-            onClick={() => signOut({ callbackUrl: `/${locale}/account` })}
-            className="text-muted hover:text-white text-sm transition-colors border border-border px-4 py-2 rounded-lg hover:bg-surface-2"
-          >
-            Log out
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={loadOrders}
+              className="text-muted hover:text-brand text-sm transition-colors px-3 py-2 rounded-lg hover:bg-surface-2"
+              title="Refresh orders"
+            >
+              ↻ Refresh
+            </button>
+            <button
+              onClick={() => signOut({ callbackUrl: `/${locale}/account` })}
+              className="text-muted hover:text-white text-sm transition-colors border border-border px-4 py-2 rounded-lg hover:bg-surface-2"
+            >
+              Log out
+            </button>
+          </div>
         </div>
 
         {ordersToShow.length > 0 && (
