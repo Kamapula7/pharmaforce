@@ -14,8 +14,9 @@ import {
 const BANK_DETAILS = {
   accountHolder: 'Antonietta Ferrara',
   iban: 'DE90 2022 0800 0058 7073 15',
-  bic: 'HCOBDEBBXXX',
-  bank: 'Hamburg Commercial Bank',
+  bic: 'SXPYDEHHXXX',
+  bank: 'Banking Circle - German Branch',
+  address: '80333 München',
 };
 
 const EU_COUNTRIES = [
