@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useCartStore } from '@/store/cartStore';
 import { useOrdersStore } from '@/store/ordersStore';
+import { useSession } from 'next-auth/react';
 import { formatPrice } from '@/lib/utils';
 import Link from 'next/link';
 import {
@@ -30,6 +31,7 @@ type Step = 1 | 2 | 3 | 4;
 export default function CheckoutClient({ locale }: { locale: string }) {
   const { items, totalPrice, clearCart } = useCartStore();
   const { addOrder } = useOrdersStore();
+  useSession(); // ensures session cookie is sent with fetch requests
 
   const [openStep, setOpenStep] = useState<Step>(1);
   const [doneSteps, setDoneSteps] = useState<Set<Step>>(new Set());
@@ -335,7 +337,26 @@ export default function CheckoutClient({ locale }: { locale: string }) {
                 <button
                   type="button"
                   onClick={async () => {
-                    // Save to order history
+                    // Save to DB
+                    try {
+                      await fetch('/api/orders', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                          firstName, lastName, email, phone,
+                          country, city, address, zip, notes,
+                          total, orderRef,
+                          items: items.map(i => ({
+                            productId: i.id,
+                            nameEn: i.nameEn,
+                            quantity: i.quantity,
+                            price: i.price,
+                          })),
+                        }),
+                      });
+                    } catch { /* silent */ }
+
+                    // Save to local order history (fallback)
                     addOrder({
                       ref: orderRef,
                       date: new Date().toISOString(),
