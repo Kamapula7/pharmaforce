@@ -491,6 +491,19 @@ export const BLOG_TRANSLATIONS: Record<string, LangMap> = {
       ],
     },
 
+    'creatine-vs-beta-alanine': {
+      title: 'Kreatyna vs. Beta-Alanina : Co wybrać?',
+      excerpt: 'Kreatyna zwiększa siłę eksplozywną, a beta-alanina zwalcza zmęczenie mięśni. Jednak ich połączenie może być prawdziwym boosterem wydajności — oto nauka stojąca za tym.',
+      sections: [
+        { heading: 'Jak działa kreatyna', body: 'Fosforan kreatyny jest głównym paliwem do regeneracji ATP podczas maksymalnych wysiłków trwających 1–10 sekund. Nasycając mięśnie kreatyń (faza ładowania: 20 g/dzień przez 5 dni, następnie 3–5 g/dzień podtrzymania) wydłużasz okno fosfokreatynowe o ok. 10–15 %. Praktyczny efekt: 1–2 dodatkowe powtórzenia przy ciężkich ćwiczeniach złożonych i szybsza regeneracja między seriami.' },
+        { heading: 'Jak działa beta-alanina', body: 'Beta-alanina jest prekursorem karnozyńy — dipeptydu buforującego jony wodoru (H+) w tkance mięśniowej. Więcej karnozyńy = większa pojemność buforowaňia = więcej powtórzeń przed porażką. Skuteczna dawka: 3,2–6,4 g/dzień.' },
+        { heading: 'Kiedy używać kreatyny, a kiedy beta-alaniny', body: 'Kreatyna dominuje w sportach siłowych: powerlifting, sprint, podnoszenie ciężarów. Beta-alanina sprawdza się w zakresie 1–4 minut: biegi 400–1500 m, CrossFit, kulturystyka z wysoką liczbą powtórzeń. Jeśli twój sport łączy krótkie wysiłki eksplozywne z długimi intensywnymi interwałami, np. piłka nożna, rugby, MMA — stosowanie obu suplementów ma sens.' },
+        { heading: 'Stack: dlaczego kombinacja działa', body: 'Kreatyna i beta-alanina celują w zupełnie różne mechanizmy zmęczenia, co czyni je w pełni komplementarnymi. 10-tygodniowe randomizowane badanie kontrolowane wykazało, że grupa kreatyna + beta-alanina zyskała znacznie więcej masy mięśniowej i straciła więcej tłuszczu niż każdy suplement osobno.' },
+      ],
+    },
+
+
+
     'buy-testosterone-enanthate-europe-guide': {
       title: 'Jak kupić Testosteron Enanthat online w Europie (2026)',
       excerpt: 'Testosteron Enanthat pozostaje najpopularniejszym iniekcyjnym estrem testosteronu w Europie. Ten przewodnik omawia dawkowanie, strukturę cyklu, bezpieczne zaopatrzenie i na co zwracać uwagę przy zamawianiu online z dostawą EU.',
@@ -709,6 +722,19 @@ export const BLOG_TRANSLATIONS: Record<string, LangMap> = {
         { heading: 'Raccomandazioni pratiche', body: 'Punta a 0,4 g di proteine per kg per pasto su 4–5 pasti. Post-allenamento: 25–40 g di whey isolate. Prima di dormire: 30–40 g di caseina. Non superare 60 g per shake. Conservare la polvere aperta in un posto fresco e asciutto e consumarla entro 2 mesi.' },
       ],
     },
+
+    'creatine-vs-beta-alanine': {
+      title: 'Creatina vs. Beta-Alanina : quale scegliere?',
+      excerpt: 'La creatina potenzia la forza esplosiva, la beta-alanina combatte la fatica muscolare. Ma combinarle potrebbe essere il vero acceleratore di performance — ecco la scienza.',
+      sections: [
+        { heading: 'Come funziona la creatina', body: 'Il fosfocreatina è il principale carburante per la rigenerazione dell’ATP durante sforzi massimali di 1–10 secondi. Saturando i muscoli di creatina (fase di carico: 20 g/giorno per 5 giorni, poi 3–5 g/giorno di mantenimento) si prolunga la finestra fosfocreatina di circa il 10–15 %. Risultato pratico: 1–2 ripetizioni extra sugli esercizi composti pesanti e recupero più rapido tra le serie.' },
+        { heading: 'Come funziona la beta-alanina', body: 'La beta-alanina è il precursore limitante della carnosina — un dipeptide che tampona gli ioni idrogeno (H+) nel tessuto muscolare. Più carnosina = maggiore capacità tampone = più ripetizioni prima dell’esaurimento. Dose efficace: 3,2–6,4 g/giorno.' },
+        { heading: 'Quando usare creatina vs beta-alanina', body: 'La creatina domina negli sport di forza: powerlifting, sprint, sollevamento pesi. La beta-alanina eccelle nell’intervallo 1–4 minuti: 400–1500 m, CrossFit, culturismo ad alto numero di ripetizioni. Se il tuo sport combina sforzi esplosivi brevi e intervalli intensi prolungati — calcio, rugby, MMA — lo stack di entrambi ha senso.' },
+        { heading: 'Lo stack: perché la combinazione funziona', body: 'Creatina e beta-alanina agiscono su meccanismi di affaticamento completamente diversi, rendendole pienamente complementari. Uno studio randomizzato controllato di 10 settimane ha dimostrato che il gruppo creatina + beta-alanina ha guadagnato significativamente più massa muscolare e perso più grasso rispetto a ciascun integratore da solo.' },
+      ],
+    },
+
+
 
     'buy-testosterone-enanthate-europe-guide': {
       title: 'Come acquistare Testosterone Enantato online in Europa (2026)',
