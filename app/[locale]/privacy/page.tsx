@@ -5,7 +5,7 @@ interface PrivacyPageProps {
 const SECTIONS = [
   {
     title: '1. Who We Are',
-    body: `PharmaForce ("we", "us", "our") is an e-commerce business operating at pharmaforce.eu, supplying sports pharmacology, dietary supplements, and performance products to customers across the European Union. Our contact email is pharmaforce@gmail.com.`,
+    body: `PharmaForce ("we", "us", "our") is an e-commerce business operating at pharmaforce.eu, supplying sports pharmacology, dietary supplements, and performance products to customers across the European Union. Our contact email is pharmaforce@inbox.eu.`,
   },
   {
     title: '2. What Data We Collect',
@@ -61,7 +61,7 @@ After the retention period, data is securely deleted or anonymised.`,
 • Right to object — object to processing based on legitimate interest
 • Right to withdraw consent — where processing is consent-based
 
-To exercise any of these rights, contact us at pharmaforce@gmail.com. We will respond within 30 days. You also have the right to lodge a complaint with your national data protection authority.`,
+To exercise any of these rights, contact us at pharmaforce@inbox.eu. We will respond within 30 days. You also have the right to lodge a complaint with your national data protection authority.`,
   },
   {
     title: '7. Cookies',
@@ -78,7 +78,7 @@ We do not use advertising or tracking cookies. You can manage cookie preferences
 • Access controls limiting data access to authorised personnel only
 • Regular security reviews of our systems
 
-No system is 100% secure. If you suspect a security incident involving your data, contact us immediately at pharmaforce@gmail.com.`,
+No system is 100% secure. If you suspect a security incident involving your data, contact us immediately at pharmaforce@inbox.eu.`,
   },
   {
     title: '9. International Transfers',
@@ -129,8 +129,8 @@ export default async function PrivacyPage({ params }: PrivacyPageProps) {
         <h3 className="text-white font-semibold mb-2">Data Protection Contact</h3>
         <p className="text-muted text-sm">
           For any privacy-related questions or requests, contact us at{' '}
-          <a href="mailto:pharmaforce@gmail.com" className="text-brand hover:underline">
-            pharmaforce@gmail.com
+          <a href="mailto:pharmaforce@inbox.eu" className="text-brand hover:underline">
+            pharmaforce@inbox.eu
           </a>
           . We will respond within 30 calendar days.
         </p>

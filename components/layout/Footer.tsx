@@ -27,11 +27,11 @@ export default function Footer({ locale }: FooterProps) {
             </Link>
             <p className="text-muted text-sm leading-relaxed mb-3">{t('tagline')}</p>
             <a
-              href="mailto:pharmaforce@gmail.com"
+              href="mailto:pharmaforce@inbox.eu"
               className="inline-flex items-center gap-1.5 text-muted hover:text-brand transition-colors text-sm mb-4"
             >
               <Mail className="w-3.5 h-3.5" />
-              pharmaforce@gmail.com
+              pharmaforce@inbox.eu
             </a>
             <div className="flex items-center gap-3">
               <a

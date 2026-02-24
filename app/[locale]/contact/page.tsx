@@ -80,7 +80,7 @@ export default async function ContactPage({ params }: ContactPageProps) {
             </div>
 
             <a
-              href="mailto:pharmaforce@gmail.com"
+              href="mailto:pharmaforce@inbox.eu"
               className="w-full inline-flex items-center justify-center gap-2 bg-brand hover:bg-brand/90 text-dark font-bold py-3 px-6 rounded-xl transition-colors cursor-pointer text-sm"
             >
               <Send className="w-4 h-4" />
@@ -105,10 +105,10 @@ export default async function ContactPage({ params }: ContactPageProps) {
                 <h3 className="text-white font-semibold mb-1">Email Support</h3>
                 <p className="text-muted text-sm mb-2">For orders, products, and general inquiries</p>
                 <a
-                  href="mailto:pharmaforce@gmail.com"
+                  href="mailto:pharmaforce@inbox.eu"
                   className="text-brand font-semibold hover:underline text-sm"
                 >
-                  pharmaforce@gmail.com
+                  pharmaforce@inbox.eu
                 </a>
               </div>
             </div>

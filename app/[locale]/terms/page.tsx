@@ -7,7 +7,7 @@ const SECTIONS = [
     title: '1. About PharmaForce',
     body: `PharmaForce ("Company", "we", "us") operates an online store at pharmaforce.eu specialising in sports pharmacology, dietary supplements, vitamins, and performance products. By accessing or using our website and placing an order, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services.
 
-Contact: pharmaforce@gmail.com`,
+Contact: pharmaforce@inbox.eu`,
   },
   {
     title: '2. Eligibility',
@@ -45,7 +45,7 @@ PharmaForce is not responsible for delays caused by customs, postal services, or
 • Unopened and in original, undamaged packaging
 • Not perishable or health/hygiene products that have been unsealed
 
-To initiate a return, contact us at pharmaforce@gmail.com within 14 days of receipt. We will provide return instructions. Return shipping costs are borne by the customer unless the return is due to our error (wrong product or defective item).
+To initiate a return, contact us at pharmaforce@inbox.eu within 14 days of receipt. We will provide return instructions. Return shipping costs are borne by the customer unless the return is due to our error (wrong product or defective item).
 
 Refunds are processed within 14 days of receiving the returned goods and are issued via bank transfer to the original payment account.`,
   },
@@ -80,7 +80,7 @@ You may not reproduce, distribute, modify, or create derivative works from any c
     title: '11. Governing Law and Disputes',
     body: `These Terms of Service are governed by and construed in accordance with the laws of the European Union and the applicable national legislation of the country in which PharmaForce is registered.
 
-In the event of a dispute, we encourage you to contact us first at pharmaforce@gmail.com to seek an amicable resolution. EU consumers also have access to the European Online Dispute Resolution (ODR) platform at https://ec.europa.eu/odr.
+In the event of a dispute, we encourage you to contact us first at pharmaforce@inbox.eu to seek an amicable resolution. EU consumers also have access to the European Online Dispute Resolution (ODR) platform at https://ec.europa.eu/odr.
 
 If a dispute cannot be resolved amicably, it shall be submitted to the competent courts of the jurisdiction applicable under EU consumer protection rules.`,
   },
@@ -129,8 +129,8 @@ export default async function TermsPage({ params }: TermsPageProps) {
         <h3 className="text-white font-semibold mb-2">Questions About These Terms?</h3>
         <p className="text-muted text-sm">
           Contact us at{' '}
-          <a href="mailto:pharmaforce@gmail.com" className="text-brand hover:underline">
-            pharmaforce@gmail.com
+          <a href="mailto:pharmaforce@inbox.eu" className="text-brand hover:underline">
+            pharmaforce@inbox.eu
           </a>
           {' '}and we will respond within 2 business days.
         </p>
