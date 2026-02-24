@@ -1,4 +1,4 @@
-import { PRODUCTS } from '@/lib/products';
+﻿import { PRODUCTS } from '@/lib/products';
 import { formatPrice } from '@/lib/utils';
 import type { Order, OrderItem } from '@/app/generated/prisma/client';
 
@@ -76,22 +76,22 @@ export default async function AdminDashboard() {
   ]);
 
   const stats = [
-    { label: 'Total Orders',   value: orders.length,            icon: '📦', color: 'text-blue-400' },
-    { label: 'Revenue',        value: formatPrice(totalRevenue), icon: '💶', color: 'text-green-400' },
-    { label: 'Products',       value: PRODUCTS.length,          icon: '💊', color: 'text-brand' },
-    { label: 'Users',          value: usersCount,               icon: '👤', color: 'text-purple-400' },
+    { label: 'Total Orders',   value: orders.length,            icon: 'рџ“¦', color: 'text-blue-400' },
+    { label: 'Revenue',        value: formatPrice(totalRevenue), icon: 'рџ’¶', color: 'text-green-400' },
+    { label: 'Products',       value: PRODUCTS.length,          icon: 'рџ’Љ', color: 'text-brand' },
+    { label: 'Users',          value: usersCount,               icon: 'рџ‘¤', color: 'text-purple-400' },
   ];
 
   return (
     <div className="space-y-6">
       <div>
         <h1 className="text-white font-bold text-2xl">Dashboard</h1>
-        <p className="text-muted text-sm mt-1">Welcome back — here&apos;s what&apos;s happening</p>
+        <p className="text-muted text-sm mt-1">Welcome back вЂ” here&apos;s what&apos;s happening</p>
       </div>
 
       {error && (
         <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl px-4 py-3 text-yellow-400 text-sm">
-          ⚠ {error} — showing placeholder data
+          вљ  {error} вЂ” showing placeholder data
         </div>
       )}
 
@@ -100,7 +100,7 @@ export default async function AdminDashboard() {
           <div key={label} className="bg-[#111118] border border-white/8 rounded-xl p-4">
             <div className="flex items-center justify-between mb-3">
               <span className="text-xl">{icon}</span>
-              <span className={`text-xs font-medium ${color}`}>↑</span>
+              <span className={`text-xs font-medium ${color}`}>в†‘</span>
             </div>
             <p className={`text-2xl font-bold ${color}`}>{value}</p>
             <p className="text-muted text-xs mt-1">{label}</p>
@@ -111,7 +111,7 @@ export default async function AdminDashboard() {
       {/* Visits */}
       <div className="bg-[#111118] border border-white/8 rounded-xl p-4">
         <div className="flex items-center gap-2 mb-4">
-          <span className="text-lg">📈</span>
+          <span className="text-lg">рџ“€</span>
           <h2 className="text-white font-semibold text-sm">Website Traffic</h2>
           <span className="text-[10px] bg-green-500/15 text-green-400 px-2 py-0.5 rounded-full">Live</span>
         </div>
@@ -149,7 +149,7 @@ export default async function AdminDashboard() {
                 {topCountries.map(({ country, views: v }) => {
                   const flag = country.length === 2
                     ? country.toUpperCase().replace(/./g, c => String.fromCodePoint(127397 + c.charCodeAt(0)))
-                    : '🌐';
+                    : 'рџЊђ';
                   return (
                     <div key={country} className="flex items-center justify-between text-xs py-1 border-b border-white/4">
                       <span className="text-white flex items-center gap-2">
@@ -185,10 +185,10 @@ export default async function AdminDashboard() {
           <h2 className="text-white font-semibold text-sm mb-4">Quick Links</h2>
           <div className="space-y-2">
             {[
-              { href: '/admin/orders',   label: '📦 All Orders', desc: 'View and manage orders' },
-              { href: '/admin/products', label: '💊 Products',   desc: 'Edit product catalog' },
-              { href: '/admin/users',    label: '👤 Customers',  desc: 'View registered users' },
-              { href: '/',               label: '🌐 View Store', desc: 'Open live website' },
+              { href: '/pf-secure-9k2/orders',   label: 'рџ“¦ All Orders', desc: 'View and manage orders' },
+              { href: '/pf-secure-9k2/products', label: 'рџ’Љ Products',   desc: 'Edit product catalog' },
+              { href: '/pf-secure-9k2/users',    label: 'рџ‘¤ Customers',  desc: 'View registered users' },
+              { href: '/',               label: 'рџЊђ View Store', desc: 'Open live website' },
             ].map(({ href, label, desc }) => (
               <a key={href} href={href}
                 className="flex items-center justify-between p-3 rounded-lg bg-white/3 hover:bg-white/6 transition-colors group"
@@ -197,7 +197,7 @@ export default async function AdminDashboard() {
                   <p className="text-white text-xs font-medium">{label}</p>
                   <p className="text-muted text-[11px]">{desc}</p>
                 </div>
-                <span className="text-muted group-hover:text-white transition-colors text-xs">→</span>
+                <span className="text-muted group-hover:text-white transition-colors text-xs">в†’</span>
               </a>
             ))}
           </div>
@@ -207,7 +207,7 @@ export default async function AdminDashboard() {
       <div className="bg-[#111118] border border-white/8 rounded-xl overflow-hidden">
         <div className="px-4 py-3 border-b border-white/8 flex items-center justify-between">
           <h2 className="text-white font-semibold text-sm">Recent Orders</h2>
-          <a href="/admin/orders" className="text-brand text-xs hover:underline">View all →</a>
+          <a href="/admin/orders" className="text-brand text-xs hover:underline">View all в†’</a>
         </div>
 
         {orders.length === 0 ? (
@@ -253,3 +253,4 @@ export default async function AdminDashboard() {
     </div>
   );
 }
+

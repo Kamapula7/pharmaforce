@@ -21,7 +21,7 @@ export default function AdminLoginPage() {
     });
 
     if (res.ok) {
-      router.push('/admin');
+      router.push('/pf-secure-9k2');
       router.refresh();
     } else {
       setError('Invalid password');
