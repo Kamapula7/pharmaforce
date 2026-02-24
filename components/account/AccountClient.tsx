@@ -47,8 +47,14 @@ export default function AccountClient({ locale }: { locale: string }) {
   const loadOrders = async () => {
     try {
       const res = await fetch('/api/account/orders');
-      if (res.ok) setOrders(await res.json());
-    } catch {}
+      if (res.ok) {
+        setOrders(await res.json());
+      } else {
+        setOrders([]);
+      }
+    } catch {
+      setOrders([]);
+    }
   };
 
   useEffect(() => {
