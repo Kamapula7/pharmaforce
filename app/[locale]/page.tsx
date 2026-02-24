@@ -36,8 +36,15 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
     title: m.title,
     description: m.description,
     alternates: {
-      canonical: `/${locale}`,
-      languages: { en: '/en', de: '/de', pl: '/pl', fr: '/fr', it: '/it' },
+      canonical: `https://pharmaforce-store.com/${locale}`,
+      languages: {
+        en: 'https://pharmaforce-store.com/en',
+        de: 'https://pharmaforce-store.com/de',
+        pl: 'https://pharmaforce-store.com/pl',
+        fr: 'https://pharmaforce-store.com/fr',
+        it: 'https://pharmaforce-store.com/it',
+        'x-default': 'https://pharmaforce-store.com/en',
+      },
     },
   };
 }

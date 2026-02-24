@@ -26,13 +26,14 @@ export const metadata: Metadata = {
   creator: 'PharmaForce',
   metadataBase: new URL('https://pharmaforce-store.com'),
   alternates: {
-    canonical: '/',
+    canonical: 'https://pharmaforce-store.com/en',
     languages: {
-      'en': '/en',
-      'de': '/de',
-      'pl': '/pl',
-      'fr': '/fr',
-      'it': '/it',
+      'en':    'https://pharmaforce-store.com/en',
+      'de':    'https://pharmaforce-store.com/de',
+      'pl':    'https://pharmaforce-store.com/pl',
+      'fr':    'https://pharmaforce-store.com/fr',
+      'it':    'https://pharmaforce-store.com/it',
+      'x-default': 'https://pharmaforce-store.com/en',
     },
   },
   openGraph: {

@@ -4,18 +4,46 @@ import { NextRequest, NextResponse } from 'next/server';
 
 const intlMiddleware = createMiddleware(routing);
 
+// EU-biased locale detection from Accept-Language header
+function detectLocale(req: NextRequest): string {
+  const accepted = req.headers.get('accept-language') ?? '';
+  const preferred = accepted
+    .split(',')
+    .map(s => s.split(';')[0].trim().toLowerCase().slice(0, 2));
+
+  const map: Record<string, string> = {
+    de: 'de', at: 'de', ch: 'de',
+    pl: 'pl',
+    fr: 'fr', be: 'fr',
+    it: 'it',
+    en: 'en',
+  };
+
+  for (const lang of preferred) {
+    if (map[lang]) return map[lang];
+  }
+  return 'en';
+}
+
 export default function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
+  // Admin protection
   if (pathname.startsWith('/admin')) {
-    if (pathname === '/admin/login') {
-      return NextResponse.next();
-    }
+    if (pathname === '/admin/login') return NextResponse.next();
     const session = req.cookies.get('admin_session');
     if (!session || session.value !== 'authenticated') {
       return NextResponse.redirect(new URL('/admin/login', req.url));
     }
     return NextResponse.next();
+  }
+
+  // Redirect bare root to locale detected from Accept-Language
+  if (pathname === '/') {
+    const locale = detectLocale(req);
+    const url = req.nextUrl.clone();
+    url.pathname = `/${locale}`;
+    return NextResponse.redirect(url, { status: 302 });
   }
 
   return intlMiddleware(req);
