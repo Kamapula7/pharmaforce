@@ -51,6 +51,11 @@ export default function AccountClient({ locale }: { locale: string }) {
     } catch {}
   };
 
+  useEffect(() => {
+    if (session) loadOrders();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [session]);
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
@@ -118,15 +123,6 @@ export default function AccountClient({ locale }: { locale: string }) {
             Log out
           </button>
         </div>
-
-        {orders === null && (
-          <button
-            onClick={loadOrders}
-            className="mb-6 text-sm text-brand hover:underline"
-          >
-            Load my orders
-          </button>
-        )}
 
         {ordersToShow.length > 0 && (
           <>
