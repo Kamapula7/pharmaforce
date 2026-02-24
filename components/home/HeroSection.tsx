@@ -25,7 +25,7 @@ export default function HeroSection({ locale }: HeroSectionProps) {
               </Badge>
             </div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-white leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
               {t('title')}{' '}
               <span className="text-brand relative inline-block">
                 {t('titleAccent')}

@@ -188,7 +188,7 @@ export default function CheckoutClient({ locale }: { locale: string }) {
 
             {openStep === 1 && (
               <div className="px-5 pb-5 border-t border-border pt-5 space-y-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-muted mb-1.5">{t('firstName')} *</label>
                     <input value={firstName} onChange={(e) => setFirstName(e.target.value)}
@@ -242,7 +242,7 @@ export default function CheckoutClient({ locale }: { locale: string }) {
                   </select>
                   {err2.country && <p className="text-red-400 text-xs mt-1">{err2.country}</p>}
                 </div>
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium text-muted mb-1.5">{t('city')} *</label>
                     <input value={city} onChange={(e) => setCity(e.target.value)}

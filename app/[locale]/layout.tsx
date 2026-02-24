@@ -50,7 +50,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
     <html lang={locale}>
       <body>
         <NextIntlClientProvider messages={messages}>
-          <div className="min-h-screen flex flex-col bg-dark">
+          <div className="min-h-screen flex flex-col bg-dark overflow-x-hidden">
             <Header locale={locale}  />
             <main className="flex-1">{children}</main>
             <Footer locale={locale} />

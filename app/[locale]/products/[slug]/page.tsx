@@ -158,7 +158,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </div>
 
           {/* Price */}
-          <div className="flex items-baseline gap-4 mb-6">
+          <div className="flex flex-wrap items-baseline gap-3 mb-6">
             <span className="text-4xl font-extrabold text-white">{formatPrice(product.price)}</span>
             {product.oldPrice && (
               <span className="text-muted text-xl line-through">{formatPrice(product.oldPrice)}</span>
