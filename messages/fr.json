@@ -1,4 +1,8 @@
 {
+    "promo": {
+        "banner": "Achetez 2 — le 3ème GRATUIT sur les produits sélectionnés",
+        "seeAll": "Voir tous les produits promo →"
+    },
     "nav": {
         "products": "Produits",
         "blog": "Blog",

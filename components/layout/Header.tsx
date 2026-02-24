@@ -16,6 +16,7 @@ interface HeaderProps {
 
 export default function Header({ locale }: HeaderProps) {
   const t = useTranslations('nav');
+  const tPromo = useTranslations('promo');
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
@@ -50,10 +51,10 @@ export default function Header({ locale }: HeaderProps) {
       {/* Promo announcement bar */}
       <div className="bg-brand text-dark text-xs font-bold text-center py-2 px-4 flex items-center justify-center gap-2">
         <span>🎁</span>
-        <span>BUY 2 — GET 3rd FREE on selected products across the store</span>
+        <span>{tPromo('banner')}</span>
         <span className="hidden sm:inline">·</span>
         <Link href={`/${locale}/products?promo=true`} className="hidden sm:inline underline hover:no-underline">
-          See all promo products →
+          {tPromo('seeAll')}
         </Link>
       </div>
 
