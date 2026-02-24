@@ -47,6 +47,11 @@
     },
     "products": {
         "title": "Tous les produits",
+        "subtitle": "Suppléments pharmaceutiques, SAA, peptides et modulateurs de performance — livraison discrète directement chez vous dans toute l'Europe.",
+        "badge": "Aucune ordonnance requise · Tout disponible à la commande",
+        "stat1": "Produits",
+        "stat2": "Pays de l'UE",
+        "stat3": "Testé en labo",
         "filters": {
             "category": "Catégorie",
             "price": "Prix",

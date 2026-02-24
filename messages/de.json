@@ -47,6 +47,11 @@
     },
     "products": {
         "title": "Alle Produkte",
+        "subtitle": "Pharmazeutische Nahrungsergänzungsmittel, AAS, Peptide und Leistungsmodulatoren — diskrete Lieferung direkt zu Ihrer Tür in ganz Europa.",
+        "badge": "Kein Rezept erforderlich · Alles bestellbar",
+        "stat1": "Produkte",
+        "stat2": "EU-Länder",
+        "stat3": "Lab-zertifiziert",
         "filters": {
             "category": "Kategorie",
             "price": "Preis",

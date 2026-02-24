@@ -47,6 +47,11 @@
     },
     "products": {
         "title": "All Products",
+        "subtitle": "Pharmaceutical-grade supplements, AAS, peptides and performance modulators — discreet delivery straight to your door across Europe.",
+        "badge": "No prescription required · Everything available for order",
+        "stat1": "Products",
+        "stat2": "EU Countries",
+        "stat3": "Lab Tested",
         "filters": {
             "category": "Category",
             "price": "Price",

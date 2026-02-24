@@ -100,6 +100,7 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
   const { category, sub, brand, sort, search, promo, price } = await searchParams;
   const tCat = await getTranslations({ locale, namespace: 'categories' });
   const tSub = await getTranslations({ locale, namespace: 'subcategories' });
+  const tP = await getTranslations({ locale, namespace: 'products' });
 
   const isAAS          = category === 'aas';
   const isPeptides     = category === 'peptides';
@@ -221,20 +222,20 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <div>
             <p className="text-brand text-xs font-bold uppercase tracking-widest mb-1">PharmaForce Store</p>
-            <h1 className="text-3xl sm:text-4xl font-extrabold text-white mb-2">All Products</h1>
+            <h1 className="text-3xl sm:text-4xl font-extrabold text-white mb-2">{tP('title')}</h1>
             <p className="text-muted text-sm max-w-lg">
-              Pharmaceutical-grade supplements, AAS, peptides and performance modulators — discreet delivery straight to your door across Europe.
+              {tP('subtitle')}
             </p>
             <p className="mt-3 inline-flex items-center gap-2 text-xs text-brand/80 bg-brand/10 border border-brand/20 rounded-full px-3 py-1">
               <span className="w-1.5 h-1.5 rounded-full bg-brand animate-pulse inline-block" />
-              No prescription required · Everything available for order
+              {tP('badge')}
             </p>
           </div>
           <div className="flex gap-6 shrink-0 relative z-10">
             {[
-              { value: '120+', label: 'Products' },
-              { value: '30+', label: 'EU Countries' },
-              { value: '100%', label: 'Lab Tested' },
+              { value: '120+', label: tP('stat1') },
+              { value: '30+', label: tP('stat2') },
+              { value: '100%', label: tP('stat3') },
             ].map(({ value, label }) => (
               <div key={label} className="text-center">
                 <p className="text-2xl font-extrabold text-brand">{value}</p>

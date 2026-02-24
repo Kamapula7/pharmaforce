@@ -47,6 +47,11 @@
     },
     "products": {
         "title": "Wszystkie produkty",
+        "subtitle": "Suplementy farmaceutyczne, SAA, peptydy i modulatory wydajności — dyskretna dostawa prosto pod Twoje drzwi w całej Europie.",
+        "badge": "Bez recepty · Wszystko dostępne do zamówienia",
+        "stat1": "Produkty",
+        "stat2": "Kraje UE",
+        "stat3": "Testowane w lab.",
         "filters": {
             "category": "Kategoria",
             "price": "Cena",
