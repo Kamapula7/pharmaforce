@@ -10,12 +10,21 @@ import Link from 'next/link';
 type Tab = 'login' | 'register';
 
 const STATUS_STYLE: Record<string, string> = {
-  PENDING: 'bg-warning/10 text-warning',
-  AWAITING_PAYMENT: 'bg-warning/10 text-warning',
-  PAID: 'bg-brand/10 text-brand',
-  SHIPPED: 'bg-blue-500/10 text-blue-400',
-  DELIVERED: 'bg-success/10 text-success',
-  CANCELLED: 'bg-red-500/10 text-red-400',
+  PENDING:          'bg-yellow-500/10 text-yellow-400',
+  AWAITING_PAYMENT: 'bg-orange-500/10 text-orange-400',
+  PAID:             'bg-green-500/15 text-green-400',
+  SHIPPED:          'bg-blue-500/10 text-blue-400',
+  DELIVERED:        'bg-emerald-500/10 text-emerald-400',
+  CANCELLED:        'bg-red-500/10 text-red-400',
+};
+
+const STATUS_LABEL: Record<string, string> = {
+  PENDING:          'Pending',
+  AWAITING_PAYMENT: 'Awaiting Payment',
+  PAID:             'Paid ✓',
+  SHIPPED:          'Shipped 🚚',
+  DELIVERED:        'Delivered ✓',
+  CANCELLED:        'Cancelled',
 };
 
 interface Order {
@@ -43,6 +52,7 @@ export default function AccountClient({ locale }: { locale: string }) {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [orders, setOrders] = useState<Order[] | null>(null);
+  const [expandedOrder, setExpandedOrder] = useState<string | null>(null);
 
   const loadOrders = async () => {
     try {
@@ -158,39 +168,70 @@ export default function AccountClient({ locale }: { locale: string }) {
               <h2 className="text-white font-bold text-lg mb-5 flex items-center gap-2">
                 <Package className="w-5 h-5 text-brand" /> Order History
               </h2>
-              <div className="space-y-4">
-                {ordersToShow.map((order) => (
+              <div className="space-y-3">
+                {ordersToShow.map((order) => {
+                  const isOpen = expandedOrder === order.id;
+                  return (
                   <div
                     key={order.id}
-                    className="border border-border rounded-xl p-4 hover:border-brand/40 transition-colors"
+                    className="border border-border rounded-xl overflow-hidden hover:border-brand/40 transition-colors"
                   >
-                    <div className="flex items-start justify-between mb-3">
+                    {/* Header row — click to expand */}
+                    <div
+                      className="flex items-center justify-between p-4 cursor-pointer"
+                      onClick={() => setExpandedOrder(isOpen ? null : order.id)}
+                    >
                       <div>
-                        <p className="text-white font-semibold font-mono">{order.id.slice(0, 12).toUpperCase()}</p>
+                        <p className="text-white font-semibold font-mono text-sm">#{order.id.slice(-8).toUpperCase()}</p>
                         <p className="text-muted text-xs mt-0.5">
-                          {new Date(order.createdAt).toLocaleDateString()}
+                          {new Date(order.createdAt).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}
                         </p>
                       </div>
                       <div className="flex items-center gap-3">
-                        <span
-                          className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
-                            STATUS_STYLE[order.status] ?? 'bg-muted/10 text-muted'
-                          }`}
-                        >
-                          {order.status}
+                        <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${STATUS_STYLE[order.status] ?? 'bg-muted/10 text-muted'}`}>
+                          {STATUS_LABEL[order.status] ?? order.status}
                         </span>
-                        <span className="text-white font-bold">{formatPrice(order.total)}</span>
+                        <span className="text-white font-bold text-sm">{formatPrice(order.total)}</span>
+                        <span className={`text-muted text-xs transition-transform ${isOpen ? 'rotate-180' : ''}`}>▼</span>
                       </div>
                     </div>
-                    <div className="flex flex-wrap gap-1.5">
-                      {order.items.map((item, i) => (
-                        <span key={i} className="text-xs text-muted bg-surface-2 px-2 py-1 rounded-lg">
-                          {item.nameEn} × {item.quantity}
-                        </span>
-                      ))}
-                    </div>
+
+                    {/* Expanded details */}
+                    {isOpen && (
+                      <div className="border-t border-border p-4 bg-surface-2 space-y-3">
+                        <p className="text-muted text-xs font-medium uppercase tracking-wide">Order Items</p>
+                        <div className="space-y-2">
+                          {order.items.map((item, i) => (
+                            <div key={i} className="flex items-center justify-between">
+                              <span className="text-white text-sm">{item.nameEn}</span>
+                              <span className="text-muted text-sm">× {item.quantity}</span>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="border-t border-border pt-3 flex justify-between">
+                          <span className="text-muted text-sm">Total</span>
+                          <span className="text-white font-bold">{formatPrice(order.total)}</span>
+                        </div>
+                        {order.status === 'AWAITING_PAYMENT' && (
+                          <div className="bg-orange-500/10 border border-orange-500/20 rounded-lg p-3 text-xs text-orange-300">
+                            Waiting for payment confirmation. We'll update your order once the transfer is received.
+                          </div>
+                        )}
+                        {order.status === 'PAID' && (
+                          <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-3 text-xs text-green-300">
+                            Payment confirmed! Your order is being prepared for shipping.
+                          </div>
+                        )}
+                        {order.status === 'SHIPPED' && (
+                          <div className="bg-blue-500/10 border border-blue-500/20 rounded-lg p-3 text-xs text-blue-300">
+                            Your order is on its way!
+                          </div>
+                        )}
+                      </div>
+                    )}
                   </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </>
