@@ -532,4 +532,240 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+
+  // ─── SEO-targeted EU commercial articles ────────────────────────────────────
+
+  {
+    slug: 'buy-testosterone-enanthate-europe-guide',
+    title: 'How to Buy Testosterone Enanthate Online in Europe (2026)',
+    excerpt: 'Testosterone Enanthate remains the most widely used injectable testosterone ester in Europe. This guide covers dosage, cycle structure, safe sourcing, and what to look for when ordering online with EU delivery.',
+    date: 'Feb 20, 2026',
+    readTime: '10 min',
+    category: 'AAS',
+    tag: 'GUIDE',
+    author: 'Dr. Markus Hein',
+    authorRole: 'Sports Pharmacologist',
+    photo: 'https://images.unsplash.com/photo-1559757175-5700dde675bc?w=900&q=80',
+    sections: [
+      {
+        heading: 'Why Testosterone Enanthate Is the Most Popular Choice in Europe',
+        body: 'Testosterone Enanthate (Test E, TE) has been the cornerstone of anabolic cycles for over 60 years. Its long ester chain (enanthate) provides a half-life of approximately 10.5 days, making it one of the most convenient injectable testosterone esters — requiring only 2 injections per week to maintain stable blood levels. In Europe, it has historically been available as Testoviron (Schering), Cidoteston, and generic pharmaceutical grades. Its pharmacokinetic profile suits both beginner and advanced users: predictable, stable testosterone elevation with minimal peaks and troughs when dosed correctly.',
+      },
+      {
+        heading: 'Testosterone Enanthate Dosage and Cycle Length',
+        body: 'Beginner dose: 300–400 mg/week (injected twice weekly, e.g. Monday and Thursday). Intermediate: 400–600 mg/week. Advanced users may run 600–800 mg/week, though side effect risk increases disproportionately above 600 mg with diminishing anabolic returns. Standard first cycle: 10–12 weeks. Due to the long ester, clear the compound for at least 14–16 days before beginning PCT (to allow blood levels to drop sufficiently). Typical first cycle results: 6–10 kg total mass gain, with 4–7 kg retained as lean muscle after PCT water loss.',
+      },
+      {
+        heading: 'Aromatisation and Estrogen Management',
+        body: 'Testosterone aromatises to estradiol (E2) via the aromatase enzyme. At higher doses (400 mg+/week), E2 will rise — causing water retention, potential gynecomastia, mood volatility, and reduced libido at extremes. Aromatase inhibitor (AI) use is recommended: Anastrozole 0.5 mg every other day or Exemestane 12.5 mg every other day. Begin AI in week 3 once testosterone levels are building, not from day 1. Bloodwork at week 6 is strongly recommended to calibrate AI dose to your individual aromatisation rate.',
+      },
+      {
+        heading: 'PCT After Testosterone Enanthate',
+        body: 'Post Cycle Therapy begins 2 weeks after the last injection (to allow ester clearance). Standard PCT: Nolvadex (Tamoxifen) 40 mg/day for 2 weeks, then 20 mg/day for 2 weeks. Or Clomid (Clomiphene) 50 mg/day for 4 weeks. Most users recover natural testosterone production within 8–16 weeks of completing PCT. Bloodwork (total testosterone, LH, FSH) at 4–6 weeks post-PCT confirms recovery. Combining a short, properly dosed cycle with correct PCT essentially eliminates the risk of permanent suppression in healthy adults.',
+      },
+      {
+        heading: 'What to Look for When Buying Testosterone Enanthate Online in Europe',
+        body: 'When sourcing Testosterone Enanthate online in Europe, key quality indicators are: pharmaceutical-grade manufacturing (GMP certification), correct concentration labelling (200–250 mg/ml is standard), sterile vials or ampoules with batch numbers and expiry dates, EU-based warehousing for discreet local delivery. At PharmaForce, Testosterone Enanthate is stocked from verified manufacturers including BayerPro Schering and Balkan Pharmaceuticals, shipped from within the EU for fast 3–10 day delivery across all European countries with no customs exposure.',
+      },
+      {
+        heading: 'Storage and Handling',
+        body: 'Testosterone Enanthate should be stored at room temperature (15–25°C), away from direct sunlight. Do not refrigerate — cold temperature can cause the oil to cloud or crystallise temporarily (warming in hands restores clarity without any quality degradation). Use a 23–25 gauge needle for injection to minimise tissue damage. Rotate injection sites: glutes, quads, ventro-glutes, and delts are the primary sites. Discard any vial that shows particulate matter, unexpected colour, or has been stored improperly.',
+      },
+    ],
+  },
+
+  {
+    slug: 'sustanon-250-cycle-guide-europe',
+    title: 'Sustanon 250: Complete Cycle Guide for European Athletes (2026)',
+    excerpt: 'Sustanon 250 combines four testosterone esters for immediate and sustained release. This complete guide covers dosing, injection frequency, PCT, and how to order Sustanon 250 with European delivery.',
+    date: 'Feb 18, 2026',
+    readTime: '9 min',
+    category: 'AAS',
+    tag: 'GUIDE',
+    author: 'Ivan Kowalski',
+    authorRole: 'Exercise Physiologist',
+    photo: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=900&q=80',
+    sections: [
+      {
+        heading: 'What Is Sustanon 250 and How It Differs from Other Testosterone Esters',
+        body: 'Sustanon 250 is a blend of four testosterone esters in a single ampule: Testosterone Propionate (30 mg, t½ ~2 days), Testosterone Phenylpropionate (60 mg, t½ ~4 days), Testosterone Isocaproate (60 mg, t½ ~9 days), and Testosterone Decanoate (100 mg, t½ ~15 days). This blend was originally designed by Organon (Netherlands) to provide a single once-per-week injection suitable for testosterone replacement therapy. The fast esters (propionate, phenylpropionate) elevate testosterone within 24 hours; the slow esters (isocaproate, decanoate) maintain stable levels for up to 3 weeks.',
+      },
+      {
+        heading: 'Sustanon 250 Cycle: Dosage and Frequency',
+        body: 'Despite its design for once-weekly injections, performance users typically inject Sustanon 250 every 3–4 days. The reason: the fast-acting propionate ester causes peaks within 24–48 hours. If injected only once per week, you experience a spike-and-trough pattern that can cause mood volatility, fluctuating libido, and inconsistent estrogen levels — making AI dosing difficult. Every-3-day injection creates far more stable blood levels. Standard performance dose: 250–500 mg/week. For a 10–14 week cycle, total testosterone exposure is comparable to Testosterone Enanthate at the same weekly dose.',
+      },
+      {
+        heading: 'Sustanon vs Testosterone Enanthate: Which to Choose?',
+        body: 'For TRT (testosterone replacement therapy) or first cycles, Testosterone Enanthate is generally preferred for its simplicity: one pure ester, twice-weekly injections, highly predictable pharmacokinetics. Sustanon 250 suits users who want the "best of both worlds" — immediate testosterone elevation plus long-lasting coverage — or who have access to pharmaceutical-grade Sustanon from European pharmacies. In clinical trials, both produce equivalent testosterone elevation and anabolic outcomes at equivalent total weekly doses. The choice often comes down to personal preference and product availability.',
+      },
+      {
+        heading: 'Estrogen Control with Sustanon 250',
+        body: 'Sustanon 250 aromatises at the same rate as other testosterone preparations — management is identical. Due to the propionate fraction causing earlier testosterone spikes, E2 may rise slightly earlier in the cycle compared to long-ester-only preparations. Start AI (Anastrozole or Exemestane) from week 2 rather than week 3. The mixed ester also means that if you experience estrogenic side effects, adjusting AI dose brings relief faster than with decanoate-only preparations, because short esters clear quickly.',
+      },
+      {
+        heading: 'PCT Timing After Sustanon 250',
+        body: 'Due to the decanoate ester (half-life ~15 days), the full clearance time of Sustanon is longer than Testosterone Enanthate. Begin PCT 3 weeks after the last injection — not 2 weeks as with enanthate. PCT protocol is identical: Nolvadex 40/40/20/20 mg/day over 4 weeks. Natural testosterone recovery typically occurs within 12–20 weeks of completing PCT. The critical factor for full recovery: PCT must begin at the correct time — too early (active testosterone still present) and it is partially ineffective; too late (gonadotropins already normalising) and you delay recovery unnecessarily.',
+      },
+      {
+        heading: 'Buying Sustanon 250 Online with European Delivery',
+        body: 'Pharmaceutical-grade Sustanon 250 in Europe is most commonly produced by Organon (Netherlands), Aspen (formally Schering), and various Eastern European manufacturers. Key quality indicators: ampoules (1 ml) or multi-dose vials from licensed facilities, correct 250 mg/ml concentration, clear oil with no particulate matter. PharmaForce stocks Sustanon 250 in original ampoule format from BayerPro Schering with EU-based warehouse dispatch, enabling 3–7 day delivery across Germany, Poland, France, Netherlands, Austria, Italy and 25+ other EU countries — fully discreet plain packaging.',
+      },
+    ],
+  },
+
+  {
+    slug: 'buy-peptides-europe-bpc157-tb500',
+    title: 'Buy Peptides in Europe: BPC-157, TB-500 and Ipamorelin Complete Guide',
+    excerpt: 'Research peptides like BPC-157 and TB-500 have gained major popularity in European countries for injury recovery and performance. This guide covers mechanisms, dosing, reconstitution, and how to buy peptides online in Europe.',
+    date: 'Feb 16, 2026',
+    readTime: '11 min',
+    category: 'PEPTIDES',
+    tag: 'GUIDE',
+    author: 'Sofia Brenner',
+    authorRole: 'Certified Strength & Conditioning Coach',
+    photo: 'https://images.unsplash.com/photo-1631549916768-4119b2e5f926?w=900&q=80',
+    sections: [
+      {
+        heading: 'What Are Research Peptides and Why Europeans Are Using Them',
+        body: 'Peptides are short chains of amino acids that act as signalling molecules in the body. Unlike anabolic steroids, most research peptides do not suppress natural hormone production or cause liver toxicity — making them attractive for athletes who want performance and recovery enhancement with a more manageable risk profile. In Europe, peptide use has grown significantly since 2020, particularly among athletes using BPC-157 for joint and tendon repair, TB-500 for tissue regeneration, and Ipamorelin/CJC-1295 for growth hormone stimulation. EU-based shipping and improving supply chains have made quality peptides more accessible than ever.',
+      },
+      {
+        heading: 'BPC-157: The Healing Peptide',
+        body: 'BPC-157 (Body Protection Compound 157) is a 15-amino-acid peptide derived from a protein found in human gastric juice. In extensive rodent studies, it has demonstrated remarkable healing acceleration across multiple tissue types: tendons, ligaments, muscles, bone, and the gastrointestinal tract. Mechanisms include upregulation of growth hormone receptors in tendon fibroblasts, promotion of angiogenesis (new blood vessel formation), and modulation of nitric oxide synthase. Athletes use BPC-157 primarily for injury recovery — rotator cuff tears, knee ligament injuries, and Achilles tendon issues. Dose: 200–500 mcg/day, injected subcutaneously near the injury site, for 4–8 weeks.',
+      },
+      {
+        heading: 'TB-500: Systemic Tissue Repair',
+        body: 'TB-500 (Thymosin Beta-4) is a 43-amino-acid peptide that promotes cell migration, differentiation, and angiogenesis on a systemic level. Where BPC-157 is best used locally (injection near injury site), TB-500 works systemically — making it ideal for widespread muscle damage, multiple injury sites, or when the injury location is difficult to target directly. It accelerates muscle satellite cell activation, reduces inflammation, and improves flexibility of connective tissue. Dose: 2–2.5 mg twice per week for 4–6 weeks (loading phase), then 2–2.5 mg once per week for maintenance. Often stacked with BPC-157 for synergistic repair.',
+      },
+      {
+        heading: 'Ipamorelin + CJC-1295: The GH Peptide Stack',
+        body: 'Ipamorelin is a selective growth hormone secretagogue (GHRP) — it stimulates the pituitary to release GH with minimal effect on cortisol or prolactin (unlike GHRP-6 and GHRP-2). CJC-1295 (with DAC) extends GH pulse duration by binding to albumin after injection, maintaining elevated GH levels for days rather than hours. Combined: Ipamorelin 200 mcg + CJC-1295 100 mcg injected subcutaneously before bed, 5 days per week. Expected results after 3–6 months: improved sleep quality (GH is released primarily in slow-wave sleep), accelerated fat loss, enhanced muscle recovery, and improved skin texture. No suppression of natural GH axis — unlike exogenous recombinant HGH.',
+      },
+      {
+        heading: 'Reconstituting and Storing Peptides',
+        body: 'Lyophilised (freeze-dried) peptide powder must be reconstituted with bacteriostatic water (BAC water) before injection. Standard reconstitution: add 1–2 ml BAC water per 5 mg vial using a slow, side-wall injection technique (do not shake vigorously — peptides are fragile). Once reconstituted: store refrigerated (4°C), use within 30 days, protect from light. Dry powder: stable at room temperature for months; for long-term storage, keep refrigerated or frozen. Draw using insulin syringes (U-100, 29–31 gauge) for precise dosing and minimally painful subcutaneous injection.',
+      },
+      {
+        heading: 'How to Buy Peptides Online in Europe with Fast Delivery',
+        body: 'When sourcing peptides in Europe, key quality markers are: lyophilised powder (not liquid — liquids degrade faster in transit), minimum 98% purity confirmed by HPLC testing, sealed vials with nitrogen-purged headspace, and EU-based warehousing for domestic shipping. PharmaForce stocks BPC-157, TB-500, Ipamorelin, CJC-1295, and a full range of growth hormone peptides from verified suppliers with EU warehouse dispatch. All orders are shipped within the EU — no customs delays — with discreet plain packaging to Germany, France, Poland, Netherlands, Italy, Spain, and 25+ European countries. Typical delivery: 3–8 business days.',
+      },
+    ],
+  },
+
+  {
+    slug: 'nandrolone-decanoate-deca-guide-europe',
+    title: 'Nandrolone Decanoate (Deca-Durabolin) Cycle Guide for European Athletes',
+    excerpt: 'Nandrolone Decanoate (Deca-Durabolin) is one of the oldest and most widely used anabolic steroids in Europe. This guide covers dosage, joint benefits, common side effects, PCT requirements, and how to source Deca with EU delivery.',
+    date: 'Feb 14, 2026',
+    readTime: '9 min',
+    category: 'AAS',
+    tag: 'GUIDE',
+    author: 'Dr. Markus Hein',
+    authorRole: 'Sports Pharmacologist',
+    photo: 'https://images.unsplash.com/photo-1617972436741-4b46ec6e4a53?w=900&q=80',
+    sections: [
+      {
+        heading: 'Nandrolone Decanoate: History and Pharmacology',
+        body: 'Nandrolone Decanoate (brand name Deca-Durabolin, by Organon) was first synthesised in 1962 and became widely used in Europe for treating muscle-wasting diseases, anaemia, and osteoporosis. Its anabolic-to-androgenic ratio of approximately 125:37 (compared to testosterone\'s 100:100) makes it highly anabolic with relatively low androgenic activity. It converts to dihydronandrolone (DHN) via 5-alpha reductase — a much weaker androgen than DHT — making it significantly less likely to cause hair loss and prostate issues compared to testosterone. The decanoate ester provides a half-life of approximately 15 days.',
+      },
+      {
+        heading: 'Primary Benefits: Muscle Mass and Joint Relief',
+        body: 'Nandrolone is unique among common anabolic steroids for its pronounced joint protective and lubricating properties. It significantly increases collagen synthesis and bone mineral density, and many users report near-complete elimination of joint pain during cycles — particularly in the shoulders, knees, and elbows. This makes it a favourite for powerlifters, strongmen, and older athletes with joint wear. Mass-building wise: at 300–400 mg/week over a 12–16 week cycle, users typically gain 5–10 kg of lean muscle with moderate water retention — less than testosterone but with better quality retention post-cycle.',
+      },
+      {
+        heading: 'Nandrolone Dosage and Cycle Structure',
+        body: 'Standard performance dose: 200–400 mg/week for beginners; 400–600 mg/week for intermediate-to-advanced users. Nandrolone is almost always stacked with testosterone at minimum a TRT dose (200 mg/week) because Nandrolone heavily suppresses natural testosterone and also displaces DHT at receptor sites — causing "Deca dick" (erectile dysfunction) without adequate exogenous testosterone. A typical cycle: Testosterone Enanthate 400 mg/week + Nandrolone Decanoate 300 mg/week for 14 weeks. Inject both compounds on the same days twice per week for simplicity.',
+      },
+      {
+        heading: 'Managing Prolactin: The Most Overlooked Side Effect',
+        body: 'Nandrolone is a 19-nor compound that binds to progesterone receptors and can raise prolactin levels — causing potential gynecomastia even with E2 under control, reduced libido, and lactation (rare but documented). Cabergoline (Dostinex) at 0.25–0.5 mg twice per week is the standard prolactin management tool. Bloodwork should include prolactin at weeks 6 and 12 of any Nandrolone cycle. Unlike estrogenic gynecomastia (reversible with SERM or AI), progesterone/prolactin gynecomastia responds poorly to anti-estrogens and requires prolactin management.',
+      },
+      {
+        heading: 'PCT After Nandrolone Decanoate',
+        body: 'Due to the long decanoate ester (half-life ~15 days), do not begin PCT until 3 weeks after the last injection — some experienced users wait 4 weeks for very long cycles. Nandrolone is more suppressive than testosterone, and recovery is typically slower. PCT protocol: Nolvadex 40 mg/day for 2 weeks, then 20 mg/day for 4 weeks (extending the standard protocol). HCG use during the last 3–4 weeks of the cycle at 500 IU every other day significantly jumpstarts LH receptor recovery before PCT begins and is highly recommended after Nandrolone cycles of 12 weeks or longer.',
+      },
+      {
+        heading: 'Buying Nandrolone Decanoate Online in Europe',
+        body: 'Pharmaceutical-grade Nandrolone Decanoate in Europe includes Deca-Durabolin (Organon/Aspen) and numerous generic manufacturers from established European pharmaceutical facilities. Key sourcing criteria: stated concentration (200–250 mg/ml), original sealed ampoules or multi-dose vials, EU-based warehousing, and discreet shipping. PharmaForce stocks Nandrolone Decanoate 250 mg/ml (10 × 1ml ampoule boxes) from Balkan Pharmaceuticals — a licensed Eastern European manufacturer with GMP certification. EU domestic shipping with delivery to Germany, France, Netherlands, Poland, Italy, Spain, and 25+ countries. 3–7 day delivery, plain packaging.',
+      },
+    ],
+  },
+
+  {
+    slug: 'boldenone-equipoise-lean-gains-europe',
+    title: 'Boldenone Undecylenate (Equipoise): Lean Gains Cycle Guide for European Athletes',
+    excerpt: 'Boldenone Undecylenate (Equipoise, EQ) delivers steady lean muscle gains with enhanced vascularity and minimal water retention. This guide covers cycle structure, dosage, side effects, and how to buy Boldenone in Europe.',
+    date: 'Feb 12, 2026',
+    readTime: '8 min',
+    category: 'AAS',
+    tag: 'GUIDE',
+    author: 'Ivan Kowalski',
+    authorRole: 'Exercise Physiologist',
+    photo: 'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=900&q=80',
+    sections: [
+      {
+        heading: 'What Is Boldenone Undecylenate (Equipoise)?',
+        body: 'Boldenone Undecylenate (trade name Equipoise, "EQ") was originally developed as a veterinary anabolic steroid for horses — but its pharmacological profile has made it widely popular among human performance athletes. It is structurally a modified form of testosterone with an added double bond at the C1–C2 position, which significantly reduces its aromatisation rate (approximately 50% less than testosterone) and increases its anabolic stability. The undecylenate ester gives it a very long half-life of approximately 14 days. Boldenone produces slow, steady lean muscle gains with notable increases in vascularity and red blood cell production — making it particularly valued for cutting and recomposition phases.',
+      },
+      {
+        heading: 'Boldenone Dosage and Cycle Length',
+        body: 'Standard dose: 300–500 mg/week for most users; advanced users may run 500–700 mg/week. Cycle length: 12–16 weeks minimum (due to the long ester, shorter cycles do not allow sufficient blood level stabilisation). Inject twice per week to minimise blood level fluctuations despite the long half-life. Boldenone is almost always stacked with testosterone — a Testosterone Enanthate 300 mg/week + Boldenone 400 mg/week cycle for 16 weeks is a classic lean mass protocol. Expected results: 4–7 kg of quality lean mass, significantly enhanced vascularity and muscle separation, modest strength gains.',
+      },
+      {
+        heading: 'The Appetite and Erythropoiesis Effects',
+        body: 'Two of Boldenone\'s most notable effects are significantly increased appetite and elevated red blood cell (RBC) production. The appetite-stimulating effect is welcome during bulking phases but can make it challenging to maintain a caloric deficit. The erythropoietic effect (EPO-like) increases haematocrit and haemoglobin, improving oxygen-carrying capacity and muscular endurance. However, at higher doses or in individuals prone to high haematocrit, regular blood donation or haematocrit monitoring is advisable — thickened blood raises cardiovascular risk.',
+      },
+      {
+        heading: 'Estrogen and Androgenic Side Effects',
+        body: 'Boldenone aromatises at approximately half the rate of testosterone — this makes it manageable without heavy AI use for most users, though some individuals with high aromatase activity may still require Anastrozole 0.25 mg every other day. Androgenically, it is milder than testosterone (androgenic rating ~50 vs 100) — DHT-related sides like hair loss and acne are less pronounced. However, it does significantly increase libido during cycle — this is generally considered a positive effect. No notable progestogenic activity (unlike Nandrolone), simplifying the management profile.',
+      },
+      {
+        heading: 'PCT After Boldenone Undecylenate',
+        body: 'Due to the very long undecylenate ester (half-life ~14 days), do not start PCT until 3 weeks after the last injection. Boldenone suppression is moderate — less severe than Nandrolone, comparable to Testosterone. Standard PCT suffices: Nolvadex 40/40/20/20 mg/day over 4 weeks. Natural testosterone recovery is generally smooth due to the moderate suppression profile. Bloodwork 4–6 weeks post-PCT is recommended to confirm full recovery of LH, FSH, and total testosterone to baseline.',
+      },
+      {
+        heading: 'How to Buy Boldenone (Equipoise) Online in Europe',
+        body: 'Boldenone Undecylenate is widely available from several verified European manufacturers at concentrations of 200–300 mg/ml. PharmaForce stocks Boldenone Undecylenate 250 mg/ml (10 × 1ml ampoule boxes) from Alpha Pharma — a manufacturer with consistent independent lab verification reports confirming stated concentration. All orders are dispatched from EU-based warehouses for full domestic EU shipping — no customs declarations or delays for European buyers. Available in Germany, France, Netherlands, Poland, Spain, Italy, Austria, Sweden, and 25+ EU countries with delivery in 3–8 business days. Plain, discreet packaging.',
+      },
+    ],
+  },
+
+  {
+    slug: 'post-cycle-therapy-complete-guide-2026',
+    title: 'Post Cycle Therapy (PCT): Complete Guide for European Athletes (2026)',
+    excerpt: 'PCT is the most important phase of any anabolic steroid cycle. Skipping or doing PCT incorrectly leads to prolonged testosterone suppression, muscle loss, and health risks. This guide covers Nolvadex, Clomid, HCG timing, and where to source PCT compounds in Europe.',
+    date: 'Feb 22, 2026',
+    readTime: '10 min',
+    category: 'PCT',
+    tag: 'GUIDE',
+    author: 'Dr. Markus Hein',
+    authorRole: 'Sports Pharmacologist',
+    photo: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&q=80',
+    sections: [
+      {
+        heading: 'What Happens to Your Body During an AAS Cycle',
+        body: 'During an anabolic steroid cycle, exogenous testosterone (or other androgens) signals the hypothalamic-pituitary-gonadal (HPG) axis to shut down endogenous testosterone production. High testosterone levels suppress GnRH from the hypothalamus → which reduces LH and FSH from the pituitary → which causes the testes to cease testosterone and sperm production. After the cycle ends and exogenous androgens clear, the HPG axis must restart this chain — a process that takes weeks to months. Without PCT, recovery is slow: low testosterone for months means muscle loss, depression, fatigue, and libido failure. PCT dramatically accelerates this recovery.',
+      },
+      {
+        heading: 'Nolvadex (Tamoxifen): The Standard PCT Foundation',
+        body: 'Tamoxifen Citrate (Nolvadex) is a Selective Estrogen Receptor Modulator (SERM) that blocks estrogen receptors at the hypothalamus and pituitary. When estrogen cannot signal suppression at these sites, the pituitary increases secretion of LH and FSH, which stimulates the testes to restart testosterone production. Nolvadex does not increase testosterone production directly — it removes the estrogenic brake on the HPG axis. Standard protocol: 40 mg/day for 2 weeks, then 20 mg/day for 2 weeks. For longer, more suppressive cycles (Nandrolone, multiple compounds): 40 mg for 2 weeks, 20 mg for 4 weeks.',
+      },
+      {
+        heading: 'Clomid (Clomiphene): When and How to Use It',
+        body: 'Clomiphene Citrate (Clomid) is also a SERM but acts both at the hypothalamus and pituitary — it stimulates both GnRH and gonadotropin release more directly. It produces a stronger LH surge than Nolvadex but has more side effects: visual disturbances (temporary phosphene flashes), mood swings, and emotional lability in susceptible individuals. Standard PCT dose: 50 mg/day for 2–4 weeks. For severely suppressed recoveries (12+ week cycles with multiple androgens, or after trenbolone), combining Clomid 50 mg + Nolvadex 20 mg daily is a potent combination that has strong anecdotal and some clinical support.',
+      },
+      {
+        heading: 'HCG: The Secret to Faster Recovery',
+        body: 'Human Chorionic Gonadotropin (hCG) mimics LH — it directly stimulates Leydig cells in the testes to produce testosterone and maintain testicular volume. During a cycle, the testes atrophy from LH deprivation. By using HCG in the last 3–4 weeks of the cycle (500 IU every other day), you maintain testicular sensitivity and volume before PCT begins — making the subsequent SERM-based PCT far more effective. Do NOT use HCG during PCT itself: it will further suppress the pituitary by providing exogenous LH-like stimulus. The protocol is: HCG during last 4 weeks of cycle → clear HCG (3–4 days, it has a short half-life) → begin Nolvadex/Clomid PCT.',
+      },
+      {
+        heading: 'When to Start PCT: Timing by Ester',
+        body: 'PCT timing is determined entirely by when the cycle compounds clear the body — starting PCT too early means active androgens are still suppressing the HPG axis and the SERMs are fighting against ongoing suppression. Starting too late means delayed recovery. By ester: Testosterone Propionate (t½ ~2 days): begin PCT 3–4 days after last injection. Testosterone Enanthate / Cypionate (t½ ~10–12 days): begin PCT 14 days after last injection. Sustanon 250 / Testosterone Decanoate-containing: begin PCT 21 days after last injection. Nandrolone Decanoate / Boldenone Undecylenate (t½ ~14–15 days): begin PCT 21 days after last injection.',
+      },
+      {
+        heading: 'Where to Buy Nolvadex, Clomid, and HCG in Europe',
+        body: 'PCT compounds (Tamoxifen, Clomiphene, HCG) are pharmaceutical medications — look for original packaging, stated active ingredient concentration, and EU-based warehousing. PharmaForce stocks Nolvadex (Tamoxifen 20 mg tablets), Clomid (Clomiphene 50 mg tablets), and HCG from licensed pharmaceutical manufacturers, shipped from within the EU. Delivery to Germany, France, Netherlands, Poland, Italy, Austria, Spain, Belgium, Sweden, Czech Republic, and 25+ European countries. 3–8 business day delivery, fully discreet plain packaging with no product names on the outside.',
+      },
+    ],
+  },
 ];

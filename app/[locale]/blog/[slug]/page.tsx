@@ -44,7 +44,42 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const post = BLOG_POSTS.find(p => p.slug === slug);
   if (!post) notFound();
 
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    image: post.photo,
+    author: {
+      '@type': 'Person',
+      name: post.author,
+      jobTitle: post.authorRole,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'PharmaForce',
+      url: 'https://pharmaforce-store.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://pharmaforce-store.com/icon.svg',
+      },
+    },
+    datePublished: post.date,
+    dateModified: post.date,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://pharmaforce-store.com/${locale}/blog/${slug}`,
+    },
+    inLanguage: locale,
+    keywords: `${post.category}, ${post.tag}, ${post.title}`,
+  };
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
       {/* Back */}
@@ -129,5 +164,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </div>
 
     </div>
+    </>
   );
 }
