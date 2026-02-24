@@ -1,5 +1,6 @@
-﻿import { PRODUCTS } from '@/lib/products';
+import { PRODUCTS } from '@/lib/products';
 import { formatPrice } from '@/lib/utils';
+import { Package, Euro, Pill, Users, BarChart2, ArrowUpRight, ExternalLink } from 'lucide-react';
 import type { Order, OrderItem } from '@/app/generated/prisma/client';
 
 type OrderWithItems = Order & { items: OrderItem[] };
@@ -9,16 +10,25 @@ const STATUS_COLORS: Record<string, string> = {
   AWAITING_PAYMENT: 'bg-orange-500/15 text-orange-400',
   PAID:             'bg-green-500/15 text-green-400',
   SHIPPED:          'bg-blue-500/15 text-blue-400',
-  DELIVERED:        'bg-emerald-500/15 text-emerald-400',
+  DELIVERED:        'bg-green-700/15 text-green-300',
   CANCELLED:        'bg-red-500/15 text-red-400',
+};
+
+const COUNTRY_FLAGS: Record<string, string> = {
+  DE: '🇩🇪', FR: '🇫🇷', PL: '🇵🇱', IT: '🇮🇹', ES: '🇪🇸',
+  NL: '🇳🇱', BE: '🇧🇪', AT: '🇦🇹', CH: '🇨🇭', PT: '🇵🇹',
+  SE: '🇸🇪', NO: '🇳🇴', DK: '🇩🇰', FI: '🇫🇮', CZ: '🇨🇿',
+  SK: '🇸🇰', HU: '🇭🇺', RO: '🇷🇴', BG: '🇧🇬', HR: '🇭🇷',
+  US: '🇺🇸', GB: '🇬🇧', CA: '🇨🇦', AU: '🇦🇺',
+  MD: '🇲🇩', UA: '🇺🇦', IE: '🇮🇪',
 };
 
 async function getStats() {
   try {
     const { prisma } = await import('@/lib/prisma');
-    const now = new Date();
-    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    const week = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    const week  = new Date(today.getTime() - 6 * 24 * 60 * 60 * 1000);
     const month = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
 
     const [ordersRaw, usersCount, viewsToday, viewsWeek, viewsMonth, viewsTotal, topPages, topCountries] = await Promise.all([
@@ -28,31 +38,14 @@ async function getStats() {
       prisma.pageView.count({ where: { createdAt: { gte: week } } }),
       prisma.pageView.count({ where: { createdAt: { gte: month } } }),
       prisma.pageView.count(),
-      prisma.pageView.groupBy({
-        by: ['path'],
-        _count: { path: true },
-        orderBy: { _count: { path: 'desc' } },
-        take: 5,
-        where: { createdAt: { gte: week } },
-      }),
-      prisma.pageView.groupBy({
-        by: ['country'],
-        _count: { country: true },
-        orderBy: { _count: { country: 'desc' } },
-        take: 8,
-        where: { country: { not: null }, createdAt: { gte: month } },
-      }),
+      prisma.pageView.groupBy({ by: ['path'], _count: { path: true }, orderBy: { _count: { path: 'desc' } }, take: 10, where: { createdAt: { gte: week } } }),
+      prisma.pageView.groupBy({ by: ['country'], _count: { country: true }, orderBy: { _count: { country: 'desc' } }, take: 10, where: { createdAt: { gte: month } } }),
     ]);
 
     const orders = ordersRaw as OrderWithItems[];
-    const totalRevenue = orders
-      .filter(o => ['PAID', 'SHIPPED', 'DELIVERED'].includes(o.status))
-      .reduce((sum, o) => sum + o.total, 0);
-
-    const byStatus = orders.reduce<Record<string, number>>((acc, o) => {
-      acc[o.status] = (acc[o.status] ?? 0) + 1;
-      return acc;
-    }, {});
+    const totalRevenue = orders.filter(o => ['PAID','SHIPPED','DELIVERED'].includes(o.status)).reduce((s, o) => s + o.total, 0);
+    const byStatus: Record<string, number> = {};
+    orders.forEach(o => { byStatus[o.status] = (byStatus[o.status] ?? 0) + 1; });
 
     return {
       orders, totalRevenue, byStatus, usersCount, error: null,
@@ -76,31 +69,31 @@ export default async function AdminDashboard() {
   ]);
 
   const stats = [
-    { label: 'Total Orders',   value: orders.length,            icon: 'рџ“¦', color: 'text-blue-400' },
-    { label: 'Revenue',        value: formatPrice(totalRevenue), icon: 'рџ’¶', color: 'text-green-400' },
-    { label: 'Products',       value: PRODUCTS.length,          icon: 'рџ’Љ', color: 'text-brand' },
-    { label: 'Users',          value: usersCount,               icon: 'рџ‘¤', color: 'text-purple-400' },
+    { label: 'Total Orders',   value: orders.length,            Icon: Package,  color: 'text-blue-400' },
+    { label: 'Revenue',        value: formatPrice(totalRevenue), Icon: Euro,     color: 'text-green-400' },
+    { label: 'Products',       value: PRODUCTS.length,          Icon: Pill,     color: 'text-brand' },
+    { label: 'Users',          value: usersCount,               Icon: Users,    color: 'text-purple-400' },
   ];
 
   return (
     <div className="space-y-6">
       <div>
         <h1 className="text-white font-bold text-2xl">Dashboard</h1>
-        <p className="text-muted text-sm mt-1">Welcome back вЂ” here&apos;s what&apos;s happening</p>
+        <p className="text-muted text-sm mt-1">Welcome back — here&apos;s what&apos;s happening</p>
       </div>
 
       {error && (
         <div className="bg-yellow-500/10 border border-yellow-500/20 rounded-xl px-4 py-3 text-yellow-400 text-sm">
-          вљ  {error} вЂ” showing placeholder data
+          ⚠️ {error} — showing placeholder data
         </div>
       )}
 
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        {stats.map(({ label, value, icon, color }) => (
+        {stats.map(({ label, value, Icon, color }) => (
           <div key={label} className="bg-[#111118] border border-white/8 rounded-xl p-4">
             <div className="flex items-center justify-between mb-3">
-              <span className="text-xl">{icon}</span>
-              <span className={`text-xs font-medium ${color}`}>в†‘</span>
+              <Icon className={`w-5 h-5 ${color}`} />
+              <ArrowUpRight className={`w-4 h-4 ${color} opacity-60`} />
             </div>
             <p className={`text-2xl font-bold ${color}`}>{value}</p>
             <p className="text-muted text-xs mt-1">{label}</p>
@@ -111,7 +104,7 @@ export default async function AdminDashboard() {
       {/* Visits */}
       <div className="bg-[#111118] border border-white/8 rounded-xl p-4">
         <div className="flex items-center gap-2 mb-4">
-          <span className="text-lg">рџ“€</span>
+          <BarChart2 className="w-4 h-4 text-muted" />
           <h2 className="text-white font-semibold text-sm">Website Traffic</h2>
           <span className="text-[10px] bg-green-500/15 text-green-400 px-2 py-0.5 rounded-full">Live</span>
         </div>
@@ -147,9 +140,7 @@ export default async function AdminDashboard() {
               <p className="text-muted text-xs mb-2">Top countries (30 days)</p>
               <div className="space-y-1">
                 {topCountries.map(({ country, views: v }) => {
-                  const flag = country.length === 2
-                    ? country.toUpperCase().replace(/./g, c => String.fromCodePoint(127397 + c.charCodeAt(0)))
-                    : 'рџЊђ';
+                  const flag = COUNTRY_FLAGS[country] ?? '🌍';
                   return (
                     <div key={country} className="flex items-center justify-between text-xs py-1 border-b border-white/4">
                       <span className="text-white flex items-center gap-2">
@@ -185,19 +176,22 @@ export default async function AdminDashboard() {
           <h2 className="text-white font-semibold text-sm mb-4">Quick Links</h2>
           <div className="space-y-2">
             {[
-              { href: '/pf-secure-9k2/orders',   label: 'рџ“¦ All Orders', desc: 'View and manage orders' },
-              { href: '/pf-secure-9k2/products', label: 'рџ’Љ Products',   desc: 'Edit product catalog' },
-              { href: '/pf-secure-9k2/users',    label: 'рџ‘¤ Customers',  desc: 'View registered users' },
-              { href: '/',               label: 'рџЊђ View Store', desc: 'Open live website' },
-            ].map(({ href, label, desc }) => (
+              { href: '/pf-secure-9k2/orders',   Icon: Package,      label: 'All Orders',    desc: 'View and manage orders' },
+              { href: '/pf-secure-9k2/products', Icon: Pill,         label: 'Products',      desc: 'Edit product catalog' },
+              { href: '/pf-secure-9k2/users',    Icon: Users,        label: 'Customers',     desc: 'View registered users' },
+              { href: '/',                        Icon: ExternalLink, label: 'View Store',    desc: 'Open live website' },
+            ].map(({ href, Icon, label, desc }) => (
               <a key={href} href={href}
                 className="flex items-center justify-between p-3 rounded-lg bg-white/3 hover:bg-white/6 transition-colors group"
               >
-                <div>
-                  <p className="text-white text-xs font-medium">{label}</p>
-                  <p className="text-muted text-[11px]">{desc}</p>
+                <div className="flex items-center gap-3">
+                  <Icon className="w-4 h-4 text-muted group-hover:text-white transition-colors" />
+                  <div>
+                    <p className="text-white text-xs font-medium">{label}</p>
+                    <p className="text-muted text-[11px]">{desc}</p>
+                  </div>
                 </div>
-                <span className="text-muted group-hover:text-white transition-colors text-xs">в†’</span>
+                <ArrowUpRight className="w-4 h-4 text-muted group-hover:text-white transition-colors" />
               </a>
             ))}
           </div>
@@ -207,7 +201,9 @@ export default async function AdminDashboard() {
       <div className="bg-[#111118] border border-white/8 rounded-xl overflow-hidden">
         <div className="px-4 py-3 border-b border-white/8 flex items-center justify-between">
           <h2 className="text-white font-semibold text-sm">Recent Orders</h2>
-          <a href="/pf-secure-9k2/orders" className="text-brand text-xs hover:underline">View all в†’</a>
+          <a href="/pf-secure-9k2/orders" className="text-brand text-xs hover:underline flex items-center gap-1">
+            View all <ArrowUpRight className="w-3 h-3" />
+          </a>
         </div>
 
         {orders.length === 0 ? (
@@ -253,4 +249,3 @@ export default async function AdminDashboard() {
     </div>
   );
 }
-
