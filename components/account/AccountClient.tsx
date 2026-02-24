@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { signIn, signOut, useSession } from 'next-auth/react';
+import { useSearchParams } from 'next/navigation';
 import { User, Package, LogIn, Eye, EyeOff, CheckCircle, Loader2 } from 'lucide-react';
 import { formatPrice } from '@/lib/utils';
 import Link from 'next/link';
@@ -27,7 +28,14 @@ interface Order {
 
 export default function AccountClient({ locale }: { locale: string }) {
   const { data: session, status } = useSession();
-  const [tab, setTab] = useState<Tab>('login');
+  const searchParams = useSearchParams();
+  const [tab, setTab] = useState<Tab>(() =>
+    searchParams.get('tab') === 'register' ? 'register' : 'login'
+  );
+
+  useEffect(() => {
+    if (searchParams.get('tab') === 'register') setTab('register');
+  }, [searchParams]);
   const [showPass, setShowPass] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

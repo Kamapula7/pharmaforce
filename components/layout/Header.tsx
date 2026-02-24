@@ -2,9 +2,10 @@
 
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
-import { ShoppingCart, User, Menu, X, Zap, ChevronLeft, Search } from 'lucide-react';
+import { ShoppingCart, User, Menu, X, Zap, ChevronLeft, Search, Package, LogOut, LogIn, UserPlus } from 'lucide-react';
+import { useSession, signOut } from 'next-auth/react';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useCartStore } from '@/store/cartStore';
 
@@ -17,6 +18,9 @@ export default function Header({ locale }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const [accountOpen, setAccountOpen] = useState(false);
+  const accountRef = useRef<HTMLDivElement>(null);
+  const { data: session } = useSession();
   const cartCount = useCartStore((s) => s.totalItems());
   const router = useRouter();
   const pathname = usePathname();
@@ -116,13 +120,78 @@ export default function Header({ locale }: HeaderProps) {
 
             <LanguageSwitcher currentLocale={locale} />
 
-            <Link
-              href={`/${locale}/account`}
-              className="p-2 text-muted hover:text-white transition-colors rounded-lg hover:bg-surface-2"
-              aria-label={t('account')}
+            {/* Account dropdown */}
+            <div
+              ref={accountRef}
+              className="relative"
+              onMouseEnter={() => setAccountOpen(true)}
+              onMouseLeave={() => setAccountOpen(false)}
             >
-              <User className="w-5 h-5" />
-            </Link>
+              <Link
+                href={`/${locale}/account`}
+                className={`p-2 transition-colors rounded-lg hover:bg-surface-2 flex items-center gap-1 ${session ? 'text-brand' : 'text-muted hover:text-white'}`}
+                aria-label={t('account')}
+              >
+                <User className="w-5 h-5" />
+                {session && (
+                  <span className="hidden sm:block text-xs font-medium max-w-[80px] truncate">
+                    {session.user?.name?.split(' ')[0] || 'Account'}
+                  </span>
+                )}
+              </Link>
+
+              {accountOpen && (
+                <div className="absolute right-0 top-full pt-1 w-48 z-50">
+                  <div className="bg-[#111118] border border-white/10 rounded-xl shadow-xl overflow-hidden">
+                    {session ? (
+                      <>
+                        <div className="px-4 py-3 border-b border-white/8">
+                          <p className="text-white text-xs font-semibold truncate">{session.user?.name || 'Athlete'}</p>
+                          <p className="text-muted text-[11px] truncate">{session.user?.email}</p>
+                        </div>
+                        <Link
+                          href={`/${locale}/account`}
+                          className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-muted hover:text-white hover:bg-white/5 transition-colors"
+                          onClick={() => setAccountOpen(false)}
+                        >
+                          <User className="w-4 h-4" /> My Account
+                        </Link>
+                        <Link
+                          href={`/${locale}/account`}
+                          className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-muted hover:text-white hover:bg-white/5 transition-colors"
+                          onClick={() => setAccountOpen(false)}
+                        >
+                          <Package className="w-4 h-4" /> My Orders
+                        </Link>
+                        <button
+                          onClick={() => { signOut({ callbackUrl: `/${locale}/account` }); setAccountOpen(false); }}
+                          className="w-full flex items-center gap-2.5 px-4 py-2.5 text-sm text-red-400 hover:bg-white/5 transition-colors border-t border-white/8"
+                        >
+                          <LogOut className="w-4 h-4" /> Log out
+                        </button>
+                      </>
+                    ) : (
+                      <>
+                        <Link
+                          href={`/${locale}/account`}
+                          className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-muted hover:text-white hover:bg-white/5 transition-colors"
+                          onClick={() => setAccountOpen(false)}
+                        >
+                          <LogIn className="w-4 h-4" /> Login
+                        </Link>
+                        <Link
+                          href={`/${locale}/account?tab=register`}
+                          className="flex items-center gap-2.5 px-4 py-2.5 text-sm text-brand hover:bg-white/5 transition-colors"
+                          onClick={() => setAccountOpen(false)}
+                        >
+                          <UserPlus className="w-4 h-4" /> Register
+                        </Link>
+                      </>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
 
             <Link
               href={`/${locale}/cart`}
