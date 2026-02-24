@@ -8,9 +8,16 @@ export async function POST(req: NextRequest) {
     const country = req.headers.get('x-vercel-ip-country') ?? null;
     const userAgent = req.headers.get('user-agent') ?? null;
 
+    const clientIp =
+      req.headers.get('x-real-ip') ??
+      req.headers.get('x-forwarded-for')?.split(',')[0].trim() ?? '';
+
+    const excludeIps = (process.env.EXCLUDE_IPS ?? '').split(',').map(s => s.trim()).filter(Boolean);
+
     if (
       path.startsWith('/admin') ||
       path.startsWith('/api') ||
+      excludeIps.includes(clientIp) ||
       /bot|crawl|spider|slurp|facebookexternalhit/i.test(userAgent ?? '')
     ) {
       return NextResponse.json({ ok: true });
