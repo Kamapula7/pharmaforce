@@ -23,7 +23,9 @@
             "deliveryLabel": "Delivery across Europe",
             "deliverySub": "30+ EU countries",
             "happyLabel": "0 unhappy clients",
-            "happySub": "Quality guaranteed"
+            "happySub": "Quality guaranteed",
+            "happyAthletes": "2,400+ happy athletes",
+            "labCertified": "Lab certified"
         },
         "features": {
             "title": "Why Choose Us",
@@ -82,7 +84,14 @@
         "price0_20": "Up to €20",
         "price20_40": "€20 – €40",
         "price40_60": "€40 – €60",
-        "price60plus": "Over €60"
+        "price60plus": "Over €60",
+        "sortLabel": "Sort",
+        "sortPopular": "Popular",
+        "sortTopRated": "Top Rated",
+        "sortPriceAsc": "Price: Low to High",
+        "sortPriceDesc": "Price: High to Low",
+        "categoriesBtn": "Categories",
+        "productsCount": "products"
     },
     "about": {
         "title": "About PharmaForce",

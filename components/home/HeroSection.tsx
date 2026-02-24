@@ -76,13 +76,13 @@ export default function HeroSection({ locale }: HeroSectionProps) {
                       <Star key={i} className="w-3.5 h-3.5 fill-brand text-brand" />
                     ))}
                   </div>
-                  <p className="text-xs text-white/50">2,400+ happy athletes</p>
+                  <p className="text-xs text-white/50">{t('happyAthletes')}</p>
                 </div>
               </div>
               <div className="flex items-center gap-5 text-sm text-white/60">
                 <span className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-success" />
-                  Lab certified
+                  {t('labCertified')}
                 </span>
               </div>
             </div>

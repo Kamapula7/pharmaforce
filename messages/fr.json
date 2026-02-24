@@ -23,7 +23,9 @@
             "deliveryLabel": "Livraison dans toute l’Europe",
             "deliverySub": "30+ pays de l’UE",
             "happyLabel": "0 clients insatisfaits",
-            "happySub": "Qualité garantie"
+            "happySub": "Qualité garantie",
+            "happyAthletes": "2 400+ athlГЁtes satisfaits",
+            "labCertified": "CertifiГ© en laboratoire"
         },
         "features": {
             "title": "Pourquoi nous?",
@@ -82,7 +84,14 @@
         "price0_20": "Jusqu'à €20",
         "price20_40": "€20 – €40",
         "price40_60": "€40 – €60",
-        "price60plus": "Plus de €60"
+        "price60plus": "Plus de €60",
+        "sortLabel": "Trier",
+        "sortPopular": "Populaire",
+        "sortTopRated": "Mieux notГ©",
+        "sortPriceAsc": "Prix : croissant",
+        "sortPriceDesc": "Prix : dГ©croissant",
+        "categoriesBtn": "CatГ©gories",
+        "productsCount": "produits"
     },
     "product": {
         "description": "Description",
@@ -258,9 +267,9 @@
         "hormone-therapy": "Thérapie Hormonale",
         "anti-hirsutism": "Anti-Hirsutisme",
         "skin-health": "Santé de la Peau",
-        "hair-growth": "Croissance des Cheveux",
-        "ed-medications": "ED Medications",
-        "hormonal-support": "Hormonal Support",
+        "hair-growth": "Croissance des cheveux",
+        "ed-medications": "MГ©dicaments DE",
+        "hormonal-support": "Soutien hormonal",
         "sh-peptides": "Peptides",
         "skin": "Rajeunissement cutané",
         "longevity": "Longévité",

@@ -23,7 +23,9 @@
             "deliveryLabel": "Lieferung in ganz Europa",
             "deliverySub": "30+ EU-Länder",
             "happyLabel": "0 unzufriedene Kunden",
-            "happySub": "Qualität garantiert"
+            "happySub": "Qualität garantiert",
+            "happyAthletes": "2.400+ zufriedene Athleten",
+            "labCertified": "LaborgeprГјft"
         },
         "features": {
             "title": "Warum wir?",
@@ -82,7 +84,14 @@
         "price0_20": "Bis €20",
         "price20_40": "€20 – €40",
         "price40_60": "€40 – €60",
-        "price60plus": "Über €60"
+        "price60plus": "Über €60",
+        "sortLabel": "Sortieren",
+        "sortPopular": "Beliebt",
+        "sortTopRated": "Bestbewertet",
+        "sortPriceAsc": "Preis: Aufsteigend",
+        "sortPriceDesc": "Preis: Absteigend",
+        "categoriesBtn": "Kategorien",
+        "productsCount": "Produkte"
     },
     "product": {
         "description": "Beschreibung",
@@ -258,10 +267,10 @@
         "hormone-therapy": "Hormontherapie",
         "anti-hirsutism": "Anti-Hirsutismus",
         "skin-health": "Hautgesundheit",
-        "hair-growth": "Hair Growth",
-        "ed-medications": "ED Medications",
-        "hormonal-support": "Hormonal Support",
-        "sh-peptides": "Peptides",
+        "hair-growth": "Haarwuchs",
+        "ed-medications": "ED-Medikamente",
+        "hormonal-support": "Hormonelle UnterstГјtzung",
+        "sh-peptides": "Peptide",
         "skin": "Hautpflege",
         "longevity": "Langlebigkeit",
         "aa-peptides": "Anti-Aging Peptide"

@@ -23,7 +23,9 @@
             "deliveryLabel": "Dostawa w całej Europie",
             "deliverySub": "30+ krajów UE",
             "happyLabel": "0 niezadowolonych klientów",
-            "happySub": "Jakość gwarantowana"
+            "happySub": "Jakość gwarantowana",
+            "happyAthletes": "2 400+ zadowolonych sportowcГіw",
+            "labCertified": "Certyfikat laboratoryjny"
         },
         "features": {
             "title": "Dlaczego my?",
@@ -82,7 +84,14 @@
         "price0_20": "Do €20",
         "price20_40": "€20 – €40",
         "price40_60": "€40 – €60",
-        "price60plus": "Powyżej €60"
+        "price60plus": "Powyżej €60",
+        "sortLabel": "Sortuj",
+        "sortPopular": "Popularne",
+        "sortTopRated": "Najlepiej oceniane",
+        "sortPriceAsc": "Cena: rosnД…co",
+        "sortPriceDesc": "Cena: malejД…co",
+        "categoriesBtn": "Kategorie",
+        "productsCount": "produktГіw"
     },
     "product": {
         "description": "Opis",
@@ -258,10 +267,10 @@
         "hormone-therapy": "Terapia Hormonalna",
         "anti-hirsutism": "Anty-hirsutyzm",
         "skin-health": "Zdrowie Skóry",
-        "hair-growth": "Wzrost Włosów",
-        "ed-medications": "ED Medications",
-        "hormonal-support": "Hormonal Support",
-        "sh-peptides": "Peptides",
+        "hair-growth": "Wzrost wЕ‚osГіw",
+        "ed-medications": "Leki na ED",
+        "hormonal-support": "Wsparcie hormonalne",
+        "sh-peptides": "Peptydy",
         "skin": "Odmładzanie skóry",
         "longevity": "Długowieczność",
         "aa-peptides": "Peptydy anti-aging"
