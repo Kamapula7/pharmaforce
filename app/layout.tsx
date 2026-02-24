@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist } from 'next/font/google';
 import Script from 'next/script';
+import SessionProviderWrapper from '@/components/providers/SessionProviderWrapper';
 import './globals.css';
 
 const geist = Geist({
@@ -76,7 +77,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html suppressHydrationWarning>
       <body className={`${geist.variable} antialiased`}>
+        <SessionProviderWrapper>
         {children}
+        </SessionProviderWrapper>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-BTZK8NZQ95"
           strategy="afterInteractive"
