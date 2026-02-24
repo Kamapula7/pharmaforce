@@ -8,6 +8,7 @@ import { ShoppingCart, User, Menu, X, Zap, ChevronLeft, Search, Package, LogOut,
 import { useSession, signOut } from 'next-auth/react';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useCartStore } from '@/store/cartStore';
+import SearchInput from '@/components/search/SearchInput';
 
 interface HeaderProps {
   locale: string;
@@ -17,7 +18,6 @@ export default function Header({ locale }: HeaderProps) {
   const t = useTranslations('nav');
   const [mobileOpen, setMobileOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
   const [accountOpen, setAccountOpen] = useState(false);
   const accountRef = useRef<HTMLDivElement>(null);
   const { data: session } = useSession();
@@ -34,15 +34,6 @@ export default function Header({ locale }: HeaderProps) {
   const cartCount = useCartStore((s) => s.totalItems());
   const router = useRouter();
   const pathname = usePathname();
-
-  const handleSearch = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (searchQuery.trim()) {
-      router.push(`/${locale}/products?search=${encodeURIComponent(searchQuery.trim())}`);
-      setSearchOpen(false);
-      setSearchQuery('');
-    }
-  };
 
   // Show back button only when user is NOT on the homepage
   const isHome = pathname === `/${locale}` || pathname === '/';
@@ -106,27 +97,22 @@ export default function Header({ locale }: HeaderProps) {
           {/* Actions */}
           <div className="flex items-center gap-2">
             {/* Search */}
-            <form onSubmit={handleSearch} className={`flex items-center transition-all duration-300 overflow-hidden ${searchOpen ? 'w-44 sm:w-56' : 'w-8'}`}>
+            <div className={`flex items-center transition-all duration-300 overflow-visible ${searchOpen ? 'w-64 sm:w-80' : 'w-8'}`}>
               {searchOpen ? (
-                <div className="flex items-center w-full bg-surface border border-brand/40 rounded-lg overflow-hidden">
-                  <input
-                    autoFocus
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
+                <div className="w-full relative">
+                  <SearchInput
+                    locale={locale}
                     placeholder="Search products..."
-                    className="flex-1 bg-transparent text-white text-sm px-3 py-1.5 outline-none placeholder:text-muted/50 min-w-0"
+                    autoFocus
+                    onClose={() => setSearchOpen(false)}
                   />
-                  <button type="button" onClick={() => { setSearchOpen(false); setSearchQuery(''); }} className="p-1.5 text-muted hover:text-white">
-                    <X className="w-4 h-4" />
-                  </button>
                 </div>
               ) : (
                 <button type="button" onClick={() => setSearchOpen(true)} className="p-2 text-muted hover:text-white transition-colors rounded-lg hover:bg-surface-2" aria-label="Search">
                   <Search className="w-5 h-5" />
                 </button>
               )}
-            </form>
+            </div>
 
             <LanguageSwitcher currentLocale={locale} />
 

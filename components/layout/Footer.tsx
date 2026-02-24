@@ -93,6 +93,16 @@ export default function Footer({ locale }: FooterProps) {
             <h3 className="text-white font-semibold mb-4">{t('legal')}</h3>
             <ul className="space-y-2">
               <li>
+                <Link href={`/${locale}/shipping`} className="text-muted hover:text-white transition-colors text-sm">
+                  Shipping Info
+                </Link>
+              </li>
+              <li>
+                <Link href={`/${locale}/faq`} className="text-muted hover:text-white transition-colors text-sm">
+                  FAQ
+                </Link>
+              </li>
+              <li>
                 <Link href={`/${locale}/privacy`} className="text-muted hover:text-white transition-colors text-sm">
                   {t('privacy')}
                 </Link>
