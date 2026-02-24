@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -8,6 +9,8 @@ import TawkChat from '@/components/layout/TawkChat';
 import FloatingChatButton from '@/components/layout/FloatingChatButton';
 import PageTracker from '@/components/layout/PageTracker';
 
+const BASE = 'https://pharmaforce-store.com';
+
 interface LocaleLayoutProps {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
@@ -15,6 +18,23 @@ interface LocaleLayoutProps {
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    alternates: {
+      canonical: `${BASE}/${locale}`,
+      languages: {
+        'en':       `${BASE}/en`,
+        'de':       `${BASE}/de`,
+        'fr':       `${BASE}/fr`,
+        'pl':       `${BASE}/pl`,
+        'it':       `${BASE}/it`,
+        'x-default': `${BASE}/en`,
+      },
+    },
+  };
 }
 
 export default async function LocaleLayout({ children, params }: LocaleLayoutProps) {

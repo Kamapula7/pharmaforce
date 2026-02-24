@@ -21,7 +21,17 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
     title: post.title,
     description: post.excerpt,
     authors: [{ name: post.author }],
-    alternates: { canonical: `/${locale}/blog/${slug}` },
+    alternates: {
+      canonical: `https://pharmaforce-store.com/${locale}/blog/${slug}`,
+      languages: {
+        'en': `https://pharmaforce-store.com/en/blog/${slug}`,
+        'de': `https://pharmaforce-store.com/de/blog/${slug}`,
+        'fr': `https://pharmaforce-store.com/fr/blog/${slug}`,
+        'pl': `https://pharmaforce-store.com/pl/blog/${slug}`,
+        'it': `https://pharmaforce-store.com/it/blog/${slug}`,
+        'x-default': `https://pharmaforce-store.com/en/blog/${slug}`,
+      },
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,

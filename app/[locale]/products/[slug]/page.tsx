@@ -32,7 +32,15 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
     description,
     keywords: [product.name, product.brand, 'buy online europe', 'pharmaceutical grade', 'EU delivery'],
     alternates: {
-      canonical: `/${locale}/products/${slug}`,
+      canonical: `https://pharmaforce-store.com/${locale}/products/${slug}`,
+      languages: {
+        'en': `https://pharmaforce-store.com/en/products/${slug}`,
+        'de': `https://pharmaforce-store.com/de/products/${slug}`,
+        'fr': `https://pharmaforce-store.com/fr/products/${slug}`,
+        'pl': `https://pharmaforce-store.com/pl/products/${slug}`,
+        'it': `https://pharmaforce-store.com/it/products/${slug}`,
+        'x-default': `https://pharmaforce-store.com/en/products/${slug}`,
+      },
     },
     openGraph: {
       title,
