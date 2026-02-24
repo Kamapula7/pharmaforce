@@ -20,6 +20,12 @@ export async function POST(req: NextRequest) {
       data: { name, email, password: hashed },
     });
 
+    // Attach any guest orders placed with this email
+    await prisma.order.updateMany({
+      where: { email, userId: null },
+      data: { userId: user.id },
+    });
+
     return NextResponse.json({ id: user.id, email: user.email });
   } catch {
     return NextResponse.json({ error: 'Registration failed' }, { status: 500 });
