@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 type UserWithCount = {
   id: string; email: string; name: string | null; role: string;
   createdAt: Date; _count: { orders: number };

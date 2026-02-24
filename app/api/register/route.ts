@@ -4,7 +4,10 @@ import { prisma } from '@/lib/prisma';
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, password } = await req.json();
+    const body = await req.json();
+    const email = body.email?.toLowerCase().trim();
+    const password = body.password;
+    const name = body.name;
 
     if (!email || !password) {
       return NextResponse.json({ error: 'Email and password required' }, { status: 400 });
@@ -20,9 +23,9 @@ export async function POST(req: NextRequest) {
       data: { name, email, password: hashed },
     });
 
-    // Attach any guest orders placed with this email
+    // Attach any guest orders placed with this email (case-insensitive)
     await prisma.order.updateMany({
-      where: { email, userId: null },
+      where: { email: { equals: email, mode: 'insensitive' }, userId: null },
       data: { userId: user.id },
     });
 

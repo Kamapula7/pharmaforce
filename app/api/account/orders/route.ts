@@ -8,12 +8,12 @@ export async function GET() {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  // Find by userId OR by email (for orders placed before login)
+  // Find by userId OR by email (case-insensitive, for guest orders)
   const orders = await prisma.order.findMany({
     where: {
       OR: [
         { userId: session.user.id ?? undefined },
-        { email: session.user.email },
+        { email: { equals: session.user.email ?? '', mode: 'insensitive' } },
       ],
     },
     include: { items: { select: { nameEn: true, quantity: true, price: true } } },

@@ -8,10 +8,11 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
 
     const {
-      firstName, lastName, email, phone,
+      firstName, lastName, phone,
       country, city, address, zip, notes,
       total, items, orderRef,
     } = body;
+    const email = body.email?.toLowerCase().trim();
 
     const order = await prisma.order.create({
       data: {
