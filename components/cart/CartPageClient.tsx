@@ -1,27 +1,15 @@
 'use client';
 
-'use client';
-
 import { useState } from 'react';
 import { useCartStore } from '@/store/cartStore';
-import { useOrdersStore } from '@/store/ordersStore';
 import { formatPrice } from '@/lib/utils';
 import Link from 'next/link';
-import { Minus, Plus, Trash2, ShoppingBag, ArrowLeft, ArrowRight, ClipboardList, Clock, Package, Truck, CheckCircle, X, Banknote, Gift } from 'lucide-react';
+import { Minus, Plus, Trash2, ShoppingBag, ArrowLeft, ArrowRight, X, Banknote, Gift } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-const STATUS_LABEL: Record<string, { label: string; icon: React.ReactNode; color: string }> = {
-  pending:    { label: 'Awaiting Payment',  icon: <Clock className="w-3.5 h-3.5" />,        color: 'text-yellow-400 bg-yellow-400/10 border-yellow-400/20' },
-  processing: { label: 'Processing',        icon: <Package className="w-3.5 h-3.5" />,      color: 'text-brand bg-brand/10 border-brand/20' },
-  shipped:    { label: 'Shipped',           icon: <Truck className="w-3.5 h-3.5" />,        color: 'text-sky-400 bg-sky-400/10 border-sky-400/20' },
-  delivered:  { label: 'Delivered',         icon: <CheckCircle className="w-3.5 h-3.5" />,  color: 'text-success bg-success/10 border-success/20' },
-};
-
 export default function CartPageClient({ locale }: { locale: string }) {
   const { items, updateQuantity, removeItem, totalPrice, totalItems } = useCartStore();
-  const { orders } = useOrdersStore();
-  const [tab, setTab] = useState<'cart' | 'history'>('cart');
   const [paymentModal, setPaymentModal] = useState(false);
   const tP = useTranslations('payment');
 
@@ -45,111 +33,7 @@ export default function CartPageClient({ locale }: { locale: string }) {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
 
-      {/* Tabs */}
-      <div className="flex items-center gap-1 mb-8 bg-surface border border-border rounded-xl p-1 w-fit">
-        <button
-          onClick={() => setTab('cart')}
-          className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors ${
-            tab === 'cart' ? 'bg-brand text-dark' : 'text-muted hover:text-white'
-          }`}
-        >
-          <ShoppingBag className="w-4 h-4" />
-          Cart
-          {items.length > 0 && (
-            <span className={`text-xs font-bold px-1.5 py-0.5 rounded-full ${tab === 'cart' ? 'bg-dark/20' : 'bg-surface-2'}`}>
-              {totalItems()}
-            </span>
-          )}
-        </button>
-        <button
-          onClick={() => setTab('history')}
-          className={`flex items-center gap-2 px-5 py-2.5 rounded-lg text-sm font-semibold transition-colors ${
-            tab === 'history' ? 'bg-brand text-dark' : 'text-muted hover:text-white'
-          }`}
-        >
-          <ClipboardList className="w-4 h-4" />
-          Order History
-          {orders.length > 0 && (
-            <span className={`text-xs font-bold px-1.5 py-0.5 rounded-full ${tab === 'history' ? 'bg-dark/20' : 'bg-surface-2'}`}>
-              {orders.length}
-            </span>
-          )}
-        </button>
-      </div>
-
-      {/* ─── ORDER HISTORY TAB ─── */}
-      {tab === 'history' && (
-        <div>
-          {orders.length === 0 ? (
-            <div className="text-center py-20">
-              <div className="w-20 h-20 bg-surface-2 rounded-3xl flex items-center justify-center mx-auto mb-4">
-                <ClipboardList className="w-10 h-10 text-muted" />
-              </div>
-              <p className="text-white font-semibold mb-2">No orders yet</p>
-              <p className="text-muted text-sm mb-6">Your confirmed orders will appear here.</p>
-              <button onClick={() => setTab('cart')} className="text-brand hover:underline text-sm">Go to Cart</button>
-            </div>
-          ) : (
-            <div className="space-y-4">
-              {orders.map((order) => {
-                const st = STATUS_LABEL[order.status] ?? STATUS_LABEL.pending;
-                return (
-                  <div key={order.ref} className="bg-surface border border-border rounded-2xl overflow-hidden">
-                    {/* Header */}
-                    <div className="flex flex-wrap items-center justify-between gap-3 px-6 py-4 border-b border-border">
-                      <div className="flex items-center gap-4">
-                        <div>
-                          <p className="text-xs text-muted mb-0.5">Order</p>
-                          <p className="text-white font-bold font-mono">{order.ref}</p>
-                        </div>
-                        <div>
-                          <p className="text-xs text-muted mb-0.5">Date</p>
-                          <p className="text-white text-sm">{new Date(order.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })}</p>
-                        </div>
-                        <div>
-                          <p className="text-xs text-muted mb-0.5">Total</p>
-                          <p className="text-brand font-bold">€{order.total.toFixed(2)}</p>
-                        </div>
-                      </div>
-                      {order.status === 'pending' ? (
-                        <button
-                          onClick={() => setPaymentModal(true)}
-                          className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border cursor-pointer hover:opacity-80 transition-opacity ${st.color}`}
-                        >
-                          {st.icon} {st.label} ⓘ
-                        </button>
-                      ) : (
-                        <span className={`inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border ${st.color}`}>
-                          {st.icon} {st.label}
-                        </span>
-                      )}
-                    </div>
-
-                    {/* Items */}
-                    <div className="divide-y divide-border/50">
-                      {order.items.map((item, i) => (
-                        <div key={i} className="flex items-center gap-3 px-6 py-3">
-                          {item.image && (
-                            <div className="w-10 h-10 bg-[#f5f5f5] rounded-lg overflow-hidden shrink-0 relative">
-                              <Image src={item.image} alt={item.name} fill className="object-contain p-1" sizes="40px" />
-                            </div>
-                          )}
-                          <p className="text-white text-sm flex-1">{item.name}</p>
-                          <p className="text-muted text-sm">×{item.qty}</p>
-                          <p className="text-white text-sm font-semibold">€{(item.price * item.qty).toFixed(2)}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          )}
-        </div>
-      )}
-
-      {/* ─── CART TAB ─── */}
-      {tab === 'cart' && items.length === 0 && (
+      {items.length === 0 && (
         <div className="text-center py-20">
           <div className="w-24 h-24 bg-surface-2 rounded-3xl flex items-center justify-center mx-auto mb-6">
             <ShoppingBag className="w-12 h-12 text-muted" />
@@ -163,7 +47,7 @@ export default function CartPageClient({ locale }: { locale: string }) {
         </div>
       )}
 
-      {tab === 'cart' && items.length > 0 && (
+      {items.length > 0 && (
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Items */}
