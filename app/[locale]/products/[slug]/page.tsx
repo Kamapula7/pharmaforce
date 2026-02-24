@@ -195,19 +195,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <p className="text-muted leading-relaxed">{product.description ?? extra.desc}</p>
           </div>
 
-          {!isAAS && (
-            <>
-              <div className="bg-surface border border-border rounded-2xl p-6">
-                <h2 className="text-white font-bold text-lg mb-3">{t('composition')}</h2>
-                <p className="text-muted leading-relaxed text-sm">{extra.composition}</p>
-              </div>
+          <div className="bg-surface border border-border rounded-2xl p-6">
+            <h2 className="text-white font-bold text-lg mb-3">{t('composition')}</h2>
+            <p className="text-muted leading-relaxed text-sm">{extra.composition}</p>
+          </div>
 
-              <div className="bg-surface border border-border rounded-2xl p-6">
-                <h2 className="text-white font-bold text-lg mb-3">{t('howToUse')}</h2>
-                <p className="text-muted leading-relaxed text-sm">{extra.howToUse}</p>
-              </div>
-            </>
-          )}
+          <div className="bg-surface border border-border rounded-2xl p-6">
+            <h2 className="text-white font-bold text-lg mb-3">{t('howToUse')}</h2>
+            <p className="text-muted leading-relaxed text-sm">{extra.howToUse}</p>
+          </div>
 
           {/* Reviews */}
           <ReviewsSection
