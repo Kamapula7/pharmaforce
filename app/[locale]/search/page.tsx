@@ -57,12 +57,12 @@ export default async function SearchPage({ params, searchParams }: SearchPagePro
                   key={product.id}
                   className="group bg-surface border border-border rounded-xl overflow-hidden hover:border-brand/40 hover:shadow-lg hover:shadow-brand/5 transition-all duration-300 flex flex-col"
                 >
-                  <Link href={`/${locale}/products/${product.slug}`} className="relative aspect-square overflow-hidden block">
+                  <Link href={`/${locale}/products/${product.slug}`} className={`relative aspect-square overflow-hidden block ${product.image.includes('-bg') ? '' : 'bg-[#f5f5f5]'}`}>
                     <Image
                       src={product.image}
                       alt={product.name}
                       fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className={`group-hover:scale-105 transition-transform duration-500 ${product.image.includes('-bg') ? 'object-cover' : 'object-contain p-4'}`}
                       sizes="(max-width: 640px) 50vw, 25vw"
                     />
                     {product.oldPrice && (
