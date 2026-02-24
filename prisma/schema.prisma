@@ -46,7 +46,6 @@ model Product {
   active      Boolean     @default(true)
   categoryId  String
   category    Category    @relation(fields: [categoryId], references: [id])
-  orderItems  OrderItem[]
   reviews     Review[]
   createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt
@@ -110,7 +109,6 @@ model OrderItem {
   orderId   String
   order     Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
   productId String
-  product   Product @relation(fields: [productId], references: [id])
   quantity  Int
   price     Float
   nameEn    String
