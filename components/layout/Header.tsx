@@ -66,7 +66,7 @@ export default function Header({ locale }: HeaderProps) {
               <ChevronLeft className="w-5 h-5" />
             </button>
           )}
-          <Link href={`/${locale}`} className="flex items-center gap-2 group">
+          <Link href={`/${locale}/products`} className="flex items-center gap-2 group">
             <div className="w-8 h-8 bg-brand rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
               <Zap className="w-5 h-5 text-dark fill-dark" />
             </div>
