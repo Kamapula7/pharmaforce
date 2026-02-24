@@ -1,3 +1,4 @@
+'use client';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { Zap, Instagram, Facebook, Mail } from 'lucide-react';
@@ -8,6 +9,7 @@ interface FooterProps {
 
 export default function Footer({ locale }: FooterProps) {
   const t = useTranslations('footer');
+  const tCat = useTranslations('categories');
   const year = new Date().getFullYear();
 
   return (
@@ -52,20 +54,13 @@ export default function Footer({ locale }: FooterProps) {
           <div>
             <h3 className="text-white font-semibold mb-4">{t('shop')}</h3>
             <ul className="space-y-2">
-              {[
-                { key: 'protein',       label: 'Protein' },
-                { key: 'creatine',      label: 'Creatine' },
-                { key: 'amino-acids',   label: 'Amino Acids' },
-                { key: 'aas',           label: 'Anabolic Steroids' },
-                { key: 'peptides',      label: 'Peptides & HGH' },
-                { key: 'modulators',    label: 'PCT & SARMs' },
-              ].map(({ key, label }) => (
+              {(['protein', 'creatine', 'amino-acids', 'aas', 'peptides', 'modulators'] as const).map((key) => (
                 <li key={key}>
                   <Link
                     href={`/${locale}/products?category=${key}`}
                     className="text-muted hover:text-white transition-colors text-sm"
                   >
-                    {label}
+                    {tCat(key)}
                   </Link>
                 </li>
               ))}
@@ -100,12 +95,12 @@ export default function Footer({ locale }: FooterProps) {
             <ul className="space-y-2">
               <li>
                 <Link href={`/${locale}/shipping`} className="text-muted hover:text-white transition-colors text-sm">
-                  Shipping Info
+                  {t('shippingInfo')}
                 </Link>
               </li>
               <li>
                 <Link href={`/${locale}/faq`} className="text-muted hover:text-white transition-colors text-sm">
-                  FAQ
+                  {t('faq')}
                 </Link>
               </li>
               <li>

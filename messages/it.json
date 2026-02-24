@@ -9,26 +9,26 @@
     },
     "home": {
         "hero": {
-            "badge": "PharmaForce РІР‚вЂќ QualitР“В  Farmaceutica",
+            "badge": "PharmaForce Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ QualitР В РІР‚СљР вЂ™Р’В  Farmaceutica",
             "title": "Potenzia le tue",
             "titleAccent": "Prestazioni",
             "description": "Integratori professionali, vitamine e farmacologia sportiva. Scelti dagli atleti di tutta Europa.",
             "cta": "Acquista ora",
-            "ctaSecondary": "Scopri di piР“в„–",
+            "ctaSecondary": "Scopri di piР В РІР‚СљР Р†РІР‚С›РІР‚вЂњ",
             "deliveryLabel": "Consegna in tutta Europa",
             "deliverySub": "30+ paesi UE",
             "happyLabel": "0 clienti insoddisfatti",
-            "happySub": "QualitР“В  garantita"
+            "happySub": "QualitР В РІР‚СљР вЂ™Р’В  garantita"
         },
         "features": {
-            "title": "PerchР“В© sceglierci?",
+            "title": "PerchР В РІР‚СљР вЂ™Р’В© sceglierci?",
             "quality": {
-                "title": "QualitР“В  certificata",
+                "title": "QualitР В РІР‚СљР вЂ™Р’В  certificata",
                 "desc": "Tutti i prodotti sono testati in laboratorio e certificati per purezza ed efficacia."
             },
             "delivery": {
                 "title": "Consegna UE rapida",
-                "desc": "Spedizione in 30+ paesi europei in 3РІР‚вЂњ7 giorni lavorativi."
+                "desc": "Spedizione in 30+ paesi europei in 3Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎС™7 giorni lavorativi."
             },
             "support": {
                 "title": "Supporto esperto",
@@ -41,14 +41,14 @@
         },
         "bestsellers": {
             "title": "Bestseller",
-            "subtitle": "I prodotti piР“в„– popolari tra i nostri clienti",
+            "subtitle": "I prodotti piР В РІР‚СљР Р†РІР‚С›РІР‚вЂњ popolari tra i nostri clienti",
             "viewAll": "Visualizza tutti i prodotti"
         }
     },
     "products": {
         "title": "Tutti i prodotti",
-        "subtitle": "Integratori farmaceutici, SAA, peptidi e modulatori delle prestazioni вЂ” consegna discreta direttamente a casa tua in tutta Europa.",
-        "badge": "Nessuna prescrizione richiesta В· Tutto disponibile per ordine",
+        "subtitle": "Integratori farmaceutici, SAA, peptidi e modulatori delle prestazioni Р Р†Р вЂљРІР‚Сњ consegna discreta direttamente a casa tua in tutta Europa.",
+        "badge": "Nessuna prescrizione richiesta Р вЂ™Р’В· Tutto disponibile per ordine",
         "stat1": "Prodotti",
         "stat2": "Paesi UE",
         "stat3": "Testato in lab",
@@ -60,10 +60,10 @@
         },
         "sort": {
             "label": "Ordina per",
-            "popular": "PiР“в„– popolari",
+            "popular": "PiР В РІР‚СљР Р†РІР‚С›РІР‚вЂњ popolari",
             "priceAsc": "Prezzo: basso ad alto",
             "priceDesc": "Prezzo: alto a basso",
-            "newest": "PiР“в„– recenti"
+            "newest": "PiР В РІР‚СљР Р†РІР‚С›РІР‚вЂњ recenti"
         },
         "addToCart": "Aggiungi al carrello",
         "inStock": "Disponibile",
@@ -76,15 +76,15 @@
         "howToUse": "Come usare",
         "reviews": "Recensioni",
         "relatedProducts": "Potrebbe piacerti anche",
-        "quantity": "QuantitР“В ",
+        "quantity": "QuantitР В РІР‚СљР вЂ™Р’В ",
         "addToCart": "Aggiungi al carrello",
         "inStock": "Disponibile",
         "outOfStock": "Esaurito",
         "sku": "Codice",
         "backToProducts": "Torna ai prodotti",
-        "inStockReady": "Disponibile РІР‚вЂќ pronto per la spedizione",
+        "inStockReady": "Disponibile Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ pronto per la spedizione",
         "labCertified": "Certificato in laboratorio",
-        "euDelivery": "Consegna EU 3РІР‚вЂњ7 giorni",
+        "euDelivery": "Consegna EU 3Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎС™7 giorni",
         "securePackaging": "Imballaggio sicuro",
         "productInfo": "Info prodotto",
         "brand": "Marca",
@@ -94,22 +94,22 @@
         "servings": "Porzioni",
         "perServing": "Per porzione",
         "paymentTitle": "Pagamento",
-        "paymentDesc": "Bonifico bancario (IBAN). Effettua l'ordine РІвЂ вЂ™ ricevi le coordinate bancarie РІвЂ вЂ™ spedizione dopo conferma del pagamento.",
+        "paymentDesc": "Bonifico bancario (IBAN). Effettua l'ordine Р В Р вЂ Р Р†Р вЂљР’В Р Р†Р вЂљРІвЂћСћ ricevi le coordinate bancarie Р В Р вЂ Р Р†Р вЂљР’В Р Р†Р вЂљРІвЂћСћ spedizione dopo conferma del pagamento.",
         "customersAlsoBought": "I clienti hanno acquistato anche",
         "perServingShort": "/ porzione",
-        "alreadyInCart": "GiР“В  nel carrello:",
+        "alreadyInCart": "GiР В РІР‚СљР вЂ™Р’В  nel carrello:",
         "pack": "confezione",
         "packs": "confezioni",
         "total": "totale",
         "addedToCart": "Aggiunto al carrello!",
         "viewCart": "Vedi carrello",
-        "promoBuy2": "Acquista 2 РІР‚вЂќ ricevi il 3Р’В° GRATIS",
-        "promoAdd1": "Aggiungi ancora 1 РІР‚вЂќ prossima confezione gratis!",
+        "promoBuy2": "Acquista 2 Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ ricevi il 3Р В РІР‚в„ўР вЂ™Р’В° GRATIS",
+        "promoAdd1": "Aggiungi ancora 1 Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ prossima confezione gratis!",
         "promoFree": "confezioni GRATIS! Risparmi"
     },
     "cart": {
         "title": "Il tuo carrello",
-        "empty": "Il tuo carrello Р“РЃ vuoto",
+        "empty": "Il tuo carrello Р В РІР‚СљР В Р С“ vuoto",
         "emptyDesc": "Aggiungi prodotti per iniziare.",
         "continueShopping": "Continua gli acquisti",
         "subtotal": "Subtotale",
@@ -120,21 +120,21 @@
         "calculated": "Calcolato al momento del pagamento",
         "browseProducts": "Sfoglia i prodotti",
         "orderSummary": "Riepilogo ordine",
-        "bulkPromo": "СЂСџР‹вЂ° 15% di sconto da РІвЂљВ¬200",
-        "addMoreDiscount": "Aggiungi ancora {amount} РІР‚вЂќ ottieni il 15% di sconto su tutto",
-        "discountApplied": "СЂСџР‹вЂ° Sconto del 15% applicato!",
+        "bulkPromo": "Р РЋР вЂљР РЋРЎСџР В РІР‚в„–Р Р†Р вЂљР’В° 15% di sconto da Р В Р вЂ Р Р†Р вЂљРЎв„ўР вЂ™Р’В¬200",
+        "addMoreDiscount": "Aggiungi ancora {amount} Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ ottieni il 15% di sconto su tutto",
+        "discountApplied": "Р РЋР вЂљР РЋРЎСџР В РІР‚в„–Р Р†Р вЂљР’В° Sconto del 15% applicato!",
         "youSave": "Risparmi {amount} su questo ordine",
         "subtotalItems": "Subtotale ({count} articoli)",
         "promoDiscount": "Sconto promozionale",
-        "bulkDiscount": "СЂСџР‹вЂ° 15% sconto all'ingrosso",
+        "bulkDiscount": "Р РЋР вЂљР РЋРЎСџР В РІР‚в„–Р Р†Р вЂљР’В° 15% sconto all'ingrosso",
         "free": "GRATIS",
         "addMoreFreeShip": "Aggiungi ancora {amount} per la spedizione gratuita",
-        "freeShipApplied": "РІСљвЂњ Spedizione gratuita per il tuo ordine!",
-        "securePayment": "СЂСџвЂќвЂ™ Pagamento bancario sicuro",
-        "euShip": "СЂСџвЂЎР„СЂСџвЂЎС” Spedizione in 30+ paesi UE",
+        "freeShipApplied": "Р В Р вЂ Р РЋРЎв„ўР Р†Р вЂљРЎС™ Spedizione gratuita per il tuo ordine!",
+        "securePayment": "Р РЋР вЂљР РЋРЎСџР Р†Р вЂљРЎСљР Р†Р вЂљРІвЂћСћ Pagamento bancario sicuro",
+        "euShip": "Р РЋР вЂљР РЋРЎСџР Р†Р вЂљР Р‹Р В РІР‚С›Р РЋР вЂљР РЋРЎСџР Р†Р вЂљР Р‹Р РЋРІР‚Сњ Spedizione in 30+ paesi UE",
         "each": "cad.",
-        "packsFree": "{free} confezione(i) GRATIS РІР‚вЂќ risparmi {amount}",
-        "addMoreFreePack": "Aggiungi altri {needed} РІР‚вЂќ prossima confezione GRATIS"
+        "packsFree": "{free} confezione(i) GRATIS Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ risparmi {amount}",
+        "addMoreFreePack": "Aggiungi altri {needed} Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎСљ prossima confezione GRATIS"
     },
     "checkout": {
         "title": "Pagamento",
@@ -165,20 +165,20 @@
         "transferExactly": "Trasferisci esattamente {amount} sul conto sottostante.",
         "accountHolder": "Intestatario del conto",
         "seenDetails": "Ho visto i dettagli",
-        "transferChecklist": "СЂСџвЂњвЂ№ Lista di controllo del bonifico",
+        "transferChecklist": "Р РЋР вЂљР РЋРЎСџР Р†Р вЂљРЎС™Р Р†Р вЂљРІвЂћвЂ“ Lista di controllo del bonifico",
         "sentExactly": "Inviato esattamente {amount}",
         "toIban": "A IBAN: {iban}",
         "accountHolderIs": "Intestatario: {name}",
-        "madePay": "Ho effettuato il pagamento РІСљвЂњ",
+        "madePay": "Ho effettuato il pagamento Р В Р вЂ Р РЋРЎв„ўР Р†Р вЂљРЎС™",
         "shipsWithin": "L'ordine viene spedito entro 1-2 giorni lavorativi dalla conferma del pagamento",
-        "freeShipApplied": "РІСљвЂњ Spedizione gratuita per il tuo ordine!",
+        "freeShipApplied": "Р В Р вЂ Р РЋРЎв„ўР Р†Р вЂљРЎС™ Spedizione gratuita per il tuo ordine!",
         "addMoreFreeShip": "Aggiungi ancora {amount} per la spedizione gratuita",
         "required": "Obbligatorio",
         "validEmail": "Email valida richiesta",
         "emptyCart": "Il tuo carrello e vuoto.",
         "thankYou": "Grazie!",
         "orderConfirmedMsg": "Il tuo ordine {ref} e confermato. Spediremo entro 1-2 giorni lavorativi dalla conferma del pagamento.",
-        "bulkDiscountLabel": "СЂСџР‹вЂ° 15% sconto all'ingrosso",
+        "bulkDiscountLabel": "Р РЋР вЂљР РЋРЎСџР В РІР‚в„–Р Р†Р вЂљР’В° 15% sconto all'ingrosso",
         "freeShipping": "GRATIS",
         "notesPlaceholder": "Istruzioni di consegna speciali..."
     },
@@ -192,8 +192,8 @@
         "bic": "BIC/SWIFT",
         "reference": "Riferimento pagamento",
         "amount": "Importo",
-        "instructions": "Si prega di includere il numero dРІР‚в„ўordine come riferimento di pagamento. Il tuo ordine verrР“В  spedito entro 1РІР‚вЂњ2 giorni lavorativi dalla conferma del pagamento.",
-        "emailSent": "Una email di conferma Р“РЃ stata inviata al tuo indirizzo email."
+        "instructions": "Si prega di includere il numero dР В Р вЂ Р В РІР‚С™Р Р†РІР‚С›РЎС›ordine come riferimento di pagamento. Il tuo ordine verrР В РІР‚СљР вЂ™Р’В  spedito entro 1Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎС™2 giorni lavorativi dalla conferma del pagamento.",
+        "emailSent": "Una email di conferma Р В РІР‚СљР В Р С“ stata inviata al tuo indirizzo email."
     },
     "account": {
         "title": "Il mio account",
@@ -216,14 +216,16 @@
         "terms": "Termini di servizio",
         "allRights": "Tutti i diritti riservati.",
         "legal": "Legale",
-        "gdpr": "СЂСџвЂЎР„СЂСџвЂЎС” Conforme GDPR",
-        "secureTransfer": "СЂСџвЂќвЂ™ Bonifico bancario sicuro",
-        "euShipping": "РІСљв‚¬РїС‘РЏ Spedizione in tutta l'UE"
+        "gdpr": "Р РЋР вЂљР РЋРЎСџР Р†Р вЂљР Р‹Р В РІР‚С›Р РЋР вЂљР РЋРЎСџР Р†Р вЂљР Р‹Р РЋРІР‚Сњ Conforme GDPR",
+        "secureTransfer": "Р РЋР вЂљР РЋРЎСџР Р†Р вЂљРЎСљР Р†Р вЂљРІвЂћСћ Bonifico bancario sicuro",
+        "euShipping": "Р В Р вЂ Р РЋРЎв„ўР Р†РІР‚С™Р’В¬Р В РЎвЂ”Р РЋРІР‚ВР В Р РЏ Spedizione in tutta l'UE",
+        "shippingInfo": "Info spedizione",
+        "faq": "FAQ"
     },
     "payment": {
         "awaitingTitle": "In attesa del tuo pagamento",
-        "awaitingBody": "Stiamo aspettando il tuo bonifico bancario. Non appena la banca conferma la ricezione dei fondi, il tuo ordine verrР“В  automaticamente contrassegnato come pagato e inizieremo subito lРІР‚в„ўelaborazione.",
-        "awaitingNote": "I bonifici bancari richiedono generalmente 1РІР‚вЂњ2 giorni lavorativi. Riceverai una notifica via e-mail una volta confermato il pagamento.",
+        "awaitingBody": "Stiamo aspettando il tuo bonifico bancario. Non appena la banca conferma la ricezione dei fondi, il tuo ordine verrР В РІР‚СљР вЂ™Р’В  automaticamente contrassegnato come pagato e inizieremo subito lР В Р вЂ Р В РІР‚С™Р Р†РІР‚С›РЎС›elaborazione.",
+        "awaitingNote": "I bonifici bancari richiedono generalmente 1Р В Р вЂ Р В РІР‚С™Р Р†Р вЂљРЎС™2 giorni lavorativi. Riceverai una notifica via e-mail una volta confermato il pagamento.",
         "close": "Ho capito"
     },
     "subcategories": {
@@ -245,8 +247,15 @@
         "hormonal-support": "Hormonal Support",
         "sh-peptides": "Peptides",
         "skin": "Ringiovanimento cutaneo",
-        "longevity": "LongevitР“В ",
-        "aa-peptides": "Peptidi anti-etР“В "
+        "longevity": "LongevitР В РІР‚СљР вЂ™Р’В ",
+        "aa-peptides": "Peptidi anti-etР В РІР‚СљР вЂ™Р’В "
+    },
+    "blog": {
+        "expertKnowledge": "Conoscenza esperta",
+        "title": "PharmaForce Blog",
+        "subtitle": "Guide basate su prove scientifiche sulla farmacologia sportiva, nutrizione e performance atletica.",
+        "readArticle": "Leggi articolo",
+        "minRead": "min di lettura"
     },
     "search": {
         "title": "Cerca prodotti",

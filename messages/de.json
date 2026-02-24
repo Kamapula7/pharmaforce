@@ -218,7 +218,9 @@
         "legal": "Rechtliches",
         "gdpr": "🇪🇺 DSGVO-konform",
         "secureTransfer": "🔒 Sichere Banküberweisung",
-        "euShipping": "✈️ EU-weiter Versand"
+        "euShipping": "✈️ EU-weiter Versand",
+        "shippingInfo": "Versandinfo",
+        "faq": "FAQ"
     },
     "payment": {
         "awaitingTitle": "Wir warten auf Ihre Zahlung",
@@ -247,6 +249,13 @@
         "skin": "Hautpflege",
         "longevity": "Langlebigkeit",
         "aa-peptides": "Anti-Aging Peptide"
+    },
+    "blog": {
+        "expertKnowledge": "Expertenwissen",
+        "title": "PharmaForce Blog",
+        "subtitle": "Evidenzbasierte Ratgeber zu Sportpharmakologie, Ernährungswissenschaft und Spitzenleistung im Sport.",
+        "readArticle": "Artikel lesen",
+        "minRead": "min Lesezeit"
     },
     "search": {
         "title": "Produkte suchen",

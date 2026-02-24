@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { ArrowRight, Clock } from 'lucide-react';
 import { BLOG_POSTS } from '@/lib/blog-content';
 import { getBlogPostForLocale } from '@/lib/blog-translations';
+import { getTranslations } from 'next-intl/server';
 
 interface BlogPageProps {
   params: Promise<{ locale: string }>;
@@ -43,6 +44,7 @@ const TAG_STYLE: Record<string, string> = {
 
 export default async function BlogPage({ params }: BlogPageProps) {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'blog' });
   const localizedPosts = BLOG_POSTS.map((p) => getBlogPostForLocale(p, locale));
   const [featured, ...rest] = localizedPosts;
 
@@ -51,12 +53,12 @@ export default async function BlogPage({ params }: BlogPageProps) {
 
       {/* Header */}
       <div className="mb-10">
-        <p className="text-brand text-xs font-bold tracking-[0.2em] uppercase mb-2">Expert Knowledge</p>
+        <p className="text-brand text-xs font-bold tracking-[0.2em] uppercase mb-2">{t('expertKnowledge')}</p>
         <h1 className="text-4xl font-black text-white mb-3">
           PharmaForce <span className="text-brand">Blog</span>
         </h1>
         <p className="text-muted text-sm max-w-lg">
-          Evidence-based guides on sports pharmacology, nutrition science, and peak athletic performance.
+          {t('subtitle')}
         </p>
       </div>
 
@@ -88,10 +90,10 @@ export default async function BlogPage({ params }: BlogPageProps) {
             <p className="text-white/70 text-sm max-w-xl leading-relaxed mb-4 hidden md:block">
               {featured.excerpt}
             </p>
-            <div className="flex items-center justify-between">
+              <div className="flex items-center justify-between">
               <span className="text-white/50 text-xs">By <span className="text-white/80">{featured.author}</span> · {featured.date}</span>
               <div className="flex items-center gap-2 text-brand font-bold text-sm">
-                Read Article <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                {t('readArticle')} <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
             </div>
           </div>

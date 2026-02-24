@@ -218,7 +218,9 @@
         "legal": "Legal",
         "gdpr": "🇪🇺 GDPR Compliant",
         "secureTransfer": "🔒 Secure Bank Transfer",
-        "euShipping": "✈️ EU-wide Shipping"
+        "euShipping": "✈️ EU-wide Shipping",
+        "shippingInfo": "Shipping Info",
+        "faq": "FAQ"
     },
     "payment": {
         "awaitingTitle": "Awaiting Your Payment",
@@ -247,6 +249,13 @@
         "skin": "Skin Rejuvenation",
         "longevity": "Longevity",
         "aa-peptides": "Anti-Aging Peptides"
+    },
+    "blog": {
+        "expertKnowledge": "Expert Knowledge",
+        "title": "PharmaForce Blog",
+        "subtitle": "Evidence-based guides on sports pharmacology, nutrition science, and peak athletic performance.",
+        "readArticle": "Read Article",
+        "minRead": "min read"
     },
     "search": {
         "title": "Search Products",

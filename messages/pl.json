@@ -218,7 +218,9 @@
         "legal": "Prawne",
         "gdpr": "🇪🇺 Zgodność z RODO",
         "secureTransfer": "🔒 Bezpieczny przelew bankowy",
-        "euShipping": "✈️ Wysyłka na terenie UE"
+        "euShipping": "✈️ Wysyłka na terenie UE",
+        "shippingInfo": "Info o wysyłce",
+        "faq": "FAQ"
     },
     "payment": {
         "awaitingTitle": "Oczekujemy na Twoją płatność",
@@ -247,6 +249,13 @@
         "skin": "Odmładzanie skóry",
         "longevity": "Długowieczność",
         "aa-peptides": "Peptydy anti-aging"
+    },
+    "blog": {
+        "expertKnowledge": "Wiedza ekspercka",
+        "title": "PharmaForce Blog",
+        "subtitle": "Przewodniki oparte na dowodach dotyczące farmakologii sportowej, nauki o żywieniu i szczytowej wydajności sportowej.",
+        "readArticle": "Czytaj artykuł",
+        "minRead": "min czytania"
     },
     "search": {
         "title": "Wyszukaj produkty",
