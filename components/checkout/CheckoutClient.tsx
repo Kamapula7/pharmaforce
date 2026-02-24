@@ -54,6 +54,7 @@ export default function CheckoutClient({ locale }: { locale: string }) {
 
   const [err1, setErr1] = useState<Record<string,string>>({});
   const [err2, setErr2] = useState<Record<string,string>>({});
+  const [orderSaveErr, setOrderSaveErr] = useState(false);
 
   const bulkDiscount = totalPrice() >= 200 ? totalPrice() * 0.15 : 0;
   const afterDiscount = totalPrice() - bulkDiscount;
@@ -308,12 +309,17 @@ export default function CheckoutClient({ locale }: { locale: string }) {
                   ))}
                 </div>
 
+                {orderSaveErr && (
+                  <p className="text-red-400 text-sm text-center bg-red-500/10 border border-red-500/20 rounded-xl p-3">
+                    ⚠️ Could not save your order. Please try again or contact support.
+                  </p>
+                )}
+
                 <button type="button"
                   onClick={async () => {
-                    completeStep(3, 4);
-                    // Save order to DB as soon as user sees payment details
+                    // Save order to DB before moving forward
                     try {
-                      await fetch('/api/orders', {
+                      const res = await fetch('/api/orders', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
@@ -328,7 +334,12 @@ export default function CheckoutClient({ locale }: { locale: string }) {
                           })),
                         }),
                       });
-                    } catch { /* silent */ }
+                      if (!res.ok) throw new Error('save failed');
+                      setOrderSaveErr(false);
+                      completeStep(3, 4);
+                    } catch {
+                      setOrderSaveErr(true);
+                    }
                   }}
                   className="w-full bg-brand text-dark font-bold py-3 rounded-xl hover:bg-brand-dark transition-colors flex items-center justify-center gap-2">
                   {t('seenDetails')} <ArrowRight className="w-4 h-4" />

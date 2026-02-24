@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { formatPrice } from '@/lib/utils';
 import type { Order, OrderItem } from '@/app/generated/prisma/client';
 import OrdersTable from '@/components/admin/OrdersTable';
