@@ -134,8 +134,6 @@ export default function Header({ locale }: HeaderProps) {
             <div
               ref={accountRef}
               className="relative"
-              onMouseEnter={() => setAccountOpen(true)}
-              onMouseLeave={() => setAccountOpen(false)}
             >
               <button
                 onClick={() => setAccountOpen(!accountOpen)}
