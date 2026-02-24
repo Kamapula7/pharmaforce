@@ -12,6 +12,7 @@ export default function CartPageClient({ locale }: { locale: string }) {
   const { items, updateQuantity, removeItem, totalPrice, totalItems } = useCartStore();
   const [paymentModal, setPaymentModal] = useState(false);
   const tP = useTranslations('payment');
+  const t = useTranslations('cart');
 
   const getPromoDiscount = (item: typeof items[0]) => {
     if (item.badge !== 'BUY 2 GET 3rd FREE') return 0;
@@ -38,11 +39,11 @@ export default function CartPageClient({ locale }: { locale: string }) {
           <div className="w-24 h-24 bg-surface-2 rounded-3xl flex items-center justify-center mx-auto mb-6">
             <ShoppingBag className="w-12 h-12 text-muted" />
           </div>
-          <h1 className="text-2xl font-bold text-white mb-2">Your cart is empty</h1>
-          <p className="text-muted mb-8">Add products to get started.</p>
+          <h1 className="text-2xl font-bold text-white mb-2">{t('empty')}</h1>
+          <p className="text-muted mb-8">{t('emptyDesc')}</p>
           <Link href={`/${locale}/products`}
             className="inline-flex items-center gap-2 bg-brand text-dark font-semibold px-6 py-3 rounded-xl hover:bg-brand-dark transition-colors">
-            <ArrowLeft className="w-4 h-4" /> Browse Products
+            <ArrowLeft className="w-4 h-4" /> {t('browseProducts')}
           </Link>
         </div>
       )}
@@ -85,7 +86,7 @@ export default function CartPageClient({ locale }: { locale: string }) {
                         {item.nameEn}
                       </h3>
                     </Link>
-                    <p className="text-muted text-sm mt-1">{formatPrice(item.price)} each</p>
+                    <p className="text-muted text-sm mt-1">{formatPrice(item.price)} {t('each')}</p>
                   </div>
                   <button
                     onClick={() => removeItem(item.id)}
@@ -102,13 +103,13 @@ export default function CartPageClient({ locale }: { locale: string }) {
                   if (free > 0) return (
                     <div className="flex items-center gap-1.5 mt-2 text-xs text-green-400 font-medium">
                       <Gift className="w-3.5 h-3.5 shrink-0" />
-                      {free} pack{free > 1 ? 's' : ''} FREE — you save {formatPrice(free * item.price)}
+                      {t('packsFree', { free, amount: formatPrice(free * item.price) })}
                     </div>
                   );
                   if (item.quantity % 3 !== 0) return (
                     <div className="flex items-center gap-1.5 mt-2 text-xs text-brand font-medium">
                       <Gift className="w-3.5 h-3.5 shrink-0" />
-                      Add {needed} more — get {needed === 1 ? 'next' : 'a'} pack FREE
+                      {t('addMoreFreePack', { needed })}
                     </div>
                   );
                   return null;
@@ -148,20 +149,20 @@ export default function CartPageClient({ locale }: { locale: string }) {
             className="inline-flex items-center gap-2 text-muted hover:text-white transition-colors text-sm"
           >
             <ArrowLeft className="w-4 h-4" />
-            Continue Shopping
+            {t('continueShopping')}
           </Link>
         </div>
 
         {/* Summary */}
         <div className="lg:col-span-1">
           <div className="bg-surface border border-border rounded-2xl p-6 sticky top-24">
-            <h2 className="text-white font-bold text-lg mb-6">Order Summary</h2>
+            <h2 className="text-white font-bold text-lg mb-6">{t('orderSummary')}</h2>
 
             {/* Bulk discount progress */}
             {bulkDiscount === 0 && (
               <div className="bg-brand/5 border border-brand/20 rounded-xl p-3 mb-4">
                 <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-xs font-semibold text-brand">🎉 15% off from €200</span>
+                  <span className="text-xs font-semibold text-brand">{t('bulkPromo')}</span>
                   <span className="text-xs text-muted">{formatPrice(afterPromo)} / €200</span>
                 </div>
                 <div className="w-full bg-border rounded-full h-1.5">
@@ -171,44 +172,44 @@ export default function CartPageClient({ locale }: { locale: string }) {
                   />
                 </div>
                 <p className="text-xs text-muted mt-1.5">
-                  Add <span className="text-white font-semibold">{formatPrice(BULK_DISCOUNT_THRESHOLD - afterPromo)}</span> more — get <span className="text-brand font-semibold">15% off everything</span>
+                  {t('addMoreDiscount', { amount: formatPrice(BULK_DISCOUNT_THRESHOLD - afterPromo) })}
                 </p>
               </div>
             )}
             {bulkDiscount > 0 && (
               <div className="bg-brand/10 border border-brand/30 rounded-xl p-3 mb-4 text-center">
-                <p className="text-brand font-bold text-sm">🎉 15% discount applied!</p>
-                <p className="text-muted text-xs mt-0.5">You save {formatPrice(bulkDiscount)} on this order</p>
+                <p className="text-brand font-bold text-sm">{t('discountApplied')}</p>
+                <p className="text-muted text-xs mt-0.5">{t('youSave', { amount: formatPrice(bulkDiscount) })}</p>
               </div>
             )}
 
             <div className="space-y-3 mb-6">
               <div className="flex justify-between text-sm">
-                <span className="text-muted">Subtotal ({totalItems()} items)</span>
+                <span className="text-muted">{t('subtotalItems', { count: totalItems() })}</span>
                 <span className="text-white">{formatPrice(totalPrice())}</span>
               </div>
               {totalDiscount > 0 && (
                 <div className="flex justify-between text-sm">
-                  <span className="text-green-400 flex items-center gap-1"><Gift className="w-3.5 h-3.5" /> Promo discount</span>
+                  <span className="text-green-400 flex items-center gap-1"><Gift className="w-3.5 h-3.5" /> {t('promoDiscount')}</span>
                   <span className="text-green-400 font-semibold">−{formatPrice(totalDiscount)}</span>
                 </div>
               )}
               {bulkDiscount > 0 && (
                 <div className="flex justify-between text-sm">
-                  <span className="text-brand flex items-center gap-1">🎉 15% bulk discount</span>
+                  <span className="text-brand flex items-center gap-1">{t('bulkDiscount')}</span>
                   <span className="text-brand font-semibold">−{formatPrice(bulkDiscount)}</span>
                 </div>
               )}
               <div className="flex justify-between text-sm">
-                <span className="text-muted">Shipping</span>
+                <span className="text-muted">{t('shipping')}</span>
                 <span className={shipping === 0 ? 'text-success font-medium' : 'text-white'}>
-                  {shipping === 0 ? 'FREE' : formatPrice(shipping)}
+                  {shipping === 0 ? t('free') : formatPrice(shipping)}
                 </span>
               </div>
               {shipping > 0 && (
                 <div className="bg-surface-2 border border-border rounded-lg p-2.5">
                   <p className="text-xs text-muted mb-1.5">
-                    Add <span className="text-white font-semibold">{formatPrice(FREE_SHIPPING_THRESHOLD - discountedTotal)}</span> more for free shipping
+                    {t('addMoreFreeShip', { amount: formatPrice(FREE_SHIPPING_THRESHOLD - discountedTotal) })}
                   </p>
                   <div className="w-full bg-border rounded-full h-1.5">
                     <div
@@ -221,11 +222,11 @@ export default function CartPageClient({ locale }: { locale: string }) {
               )}
               {shipping === 0 && (
                 <p className="text-xs text-success bg-success/10 border border-success/20 rounded-lg p-2 text-center">
-                  ✓ Free shipping on your order!
+                  {t('freeShipApplied')}
                 </p>
               )}
               <div className="border-t border-border pt-3 flex justify-between">
-                <span className="text-white font-bold">Total</span>
+                <span className="text-white font-bold">{t('total')}</span>
                 <div className="text-right">
                   {bulkDiscount > 0 && (
                     <p className="text-muted text-xs line-through">{formatPrice(afterPromo + shipping)}</p>
@@ -239,16 +240,16 @@ export default function CartPageClient({ locale }: { locale: string }) {
               href={`/${locale}/checkout`}
               className="w-full flex items-center justify-center gap-2 bg-brand text-dark font-bold py-3.5 rounded-xl hover:bg-brand-dark active:scale-[0.98] transition-all"
             >
-              Proceed to Checkout
+              {t('checkout')}
               <ArrowRight className="w-5 h-5" />
             </Link>
 
             <div className="mt-4 space-y-2">
               <p className="text-xs text-muted text-center flex items-center justify-center gap-1">
-                🔒 Secure bank transfer payment
+                {t('securePayment')}
               </p>
               <p className="text-xs text-muted text-center">
-                🇪🇺 Shipping to 30+ EU countries
+                {t('euShip')}
               </p>
             </div>
           </div>

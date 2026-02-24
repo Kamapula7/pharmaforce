@@ -1,4 +1,4 @@
-{
+﻿{
     "nav": {
         "products": "Prodotti",
         "blog": "Blog",
@@ -9,26 +9,26 @@
     },
     "home": {
         "hero": {
-            "badge": "PharmaForce — Qualità Farmaceutica",
+            "badge": "PharmaForce вЂ” QualitГ  Farmaceutica",
             "title": "Potenzia le tue",
             "titleAccent": "Prestazioni",
             "description": "Integratori professionali, vitamine e farmacologia sportiva. Scelti dagli atleti di tutta Europa.",
             "cta": "Acquista ora",
-            "ctaSecondary": "Scopri di più",
+            "ctaSecondary": "Scopri di piГ№",
             "deliveryLabel": "Consegna in tutta Europa",
             "deliverySub": "30+ paesi UE",
             "happyLabel": "0 clienti insoddisfatti",
-            "happySub": "Qualità garantita"
+            "happySub": "QualitГ  garantita"
         },
         "features": {
-            "title": "Perché sceglierci?",
+            "title": "PerchГ© sceglierci?",
             "quality": {
-                "title": "Qualità certificata",
+                "title": "QualitГ  certificata",
                 "desc": "Tutti i prodotti sono testati in laboratorio e certificati per purezza ed efficacia."
             },
             "delivery": {
                 "title": "Consegna UE rapida",
-                "desc": "Spedizione in 30+ paesi europei in 3–7 giorni lavorativi."
+                "desc": "Spedizione in 30+ paesi europei in 3вЂ“7 giorni lavorativi."
             },
             "support": {
                 "title": "Supporto esperto",
@@ -41,7 +41,7 @@
         },
         "bestsellers": {
             "title": "Bestseller",
-            "subtitle": "I prodotti più popolari tra i nostri clienti",
+            "subtitle": "I prodotti piГ№ popolari tra i nostri clienti",
             "viewAll": "Visualizza tutti i prodotti"
         }
     },
@@ -55,10 +55,10 @@
         },
         "sort": {
             "label": "Ordina per",
-            "popular": "Più popolari",
+            "popular": "PiГ№ popolari",
             "priceAsc": "Prezzo: basso ad alto",
             "priceDesc": "Prezzo: alto a basso",
-            "newest": "Più recenti"
+            "newest": "PiГ№ recenti"
         },
         "addToCart": "Aggiungi al carrello",
         "inStock": "Disponibile",
@@ -71,15 +71,15 @@
         "howToUse": "Come usare",
         "reviews": "Recensioni",
         "relatedProducts": "Potrebbe piacerti anche",
-        "quantity": "Quantità",
+        "quantity": "QuantitГ ",
         "addToCart": "Aggiungi al carrello",
         "inStock": "Disponibile",
         "outOfStock": "Esaurito",
         "sku": "Codice",
         "backToProducts": "Torna ai prodotti",
-        "inStockReady": "Disponibile — pronto per la spedizione",
+        "inStockReady": "Disponibile вЂ” pronto per la spedizione",
         "labCertified": "Certificato in laboratorio",
-        "euDelivery": "Consegna EU 3–7 giorni",
+        "euDelivery": "Consegna EU 3вЂ“7 giorni",
         "securePackaging": "Imballaggio sicuro",
         "productInfo": "Info prodotto",
         "brand": "Marca",
@@ -89,22 +89,22 @@
         "servings": "Porzioni",
         "perServing": "Per porzione",
         "paymentTitle": "Pagamento",
-        "paymentDesc": "Bonifico bancario (IBAN). Effettua l'ordine → ricevi le coordinate bancarie → spedizione dopo conferma del pagamento.",
+        "paymentDesc": "Bonifico bancario (IBAN). Effettua l'ordine в†’ ricevi le coordinate bancarie в†’ spedizione dopo conferma del pagamento.",
         "customersAlsoBought": "I clienti hanno acquistato anche",
         "perServingShort": "/ porzione",
-        "alreadyInCart": "Già nel carrello:",
+        "alreadyInCart": "GiГ  nel carrello:",
         "pack": "confezione",
         "packs": "confezioni",
         "total": "totale",
         "addedToCart": "Aggiunto al carrello!",
         "viewCart": "Vedi carrello",
-        "promoBuy2": "Acquista 2 — ricevi il 3° GRATIS",
-        "promoAdd1": "Aggiungi ancora 1 — prossima confezione gratis!",
+        "promoBuy2": "Acquista 2 вЂ” ricevi il 3В° GRATIS",
+        "promoAdd1": "Aggiungi ancora 1 вЂ” prossima confezione gratis!",
         "promoFree": "confezioni GRATIS! Risparmi"
     },
     "cart": {
         "title": "Il tuo carrello",
-        "empty": "Il tuo carrello è vuoto",
+        "empty": "Il tuo carrello ГЁ vuoto",
         "emptyDesc": "Aggiungi prodotti per iniziare.",
         "continueShopping": "Continua gli acquisti",
         "subtotal": "Subtotale",
@@ -112,7 +112,24 @@
         "total": "Totale",
         "checkout": "Procedi al pagamento",
         "remove": "Rimuovi",
-        "calculated": "Calcolato al momento del pagamento"
+        "calculated": "Calcolato al momento del pagamento",
+        "browseProducts": "Sfoglia i prodotti",
+        "orderSummary": "Riepilogo ordine",
+        "bulkPromo": "рџЋ‰ 15% di sconto da в‚¬200",
+        "addMoreDiscount": "Aggiungi ancora {amount} вЂ” ottieni il 15% di sconto su tutto",
+        "discountApplied": "рџЋ‰ Sconto del 15% applicato!",
+        "youSave": "Risparmi {amount} su questo ordine",
+        "subtotalItems": "Subtotale ({count} articoli)",
+        "promoDiscount": "Sconto promozionale",
+        "bulkDiscount": "рџЋ‰ 15% sconto all'ingrosso",
+        "free": "GRATIS",
+        "addMoreFreeShip": "Aggiungi ancora {amount} per la spedizione gratuita",
+        "freeShipApplied": "вњ“ Spedizione gratuita per il tuo ordine!",
+        "securePayment": "рџ”’ Pagamento bancario sicuro",
+        "euShip": "рџ‡Єрџ‡є Spedizione in 30+ paesi UE",
+        "each": "cad.",
+        "packsFree": "{free} confezione(i) GRATIS вЂ” risparmi {amount}",
+        "addMoreFreePack": "Aggiungi altri {needed} вЂ” prossima confezione GRATIS"
     },
     "checkout": {
         "title": "Pagamento",
@@ -123,15 +140,42 @@
         "email": "E-mail",
         "phone": "Telefono",
         "country": "Paese",
-        "city": "Città",
+        "city": "Citta",
         "address": "Indirizzo",
         "zip": "CAP",
         "notes": "Note ordine (opzionale)",
         "payment": "Metodo di pagamento",
         "bankTransfer": "Bonifico bancario",
-        "bankDesc": "Dopo aver effettuato l’ordine, riceverai le nostre coordinate bancarie. Il tuo ordine verrà elaborato dopo la conferma del pagamento.",
+        "bankDesc": "Dopo aver effettuato l'ordine, riceverai le nostre coordinate bancarie. Il tuo ordine verra elaborato dopo la conferma del pagamento.",
         "placeOrder": "Effettua ordine",
-        "orderSummary": "Riepilogo ordine"
+        "orderSummary": "Riepilogo ordine",
+        "backToCart": "Torna al carrello",
+        "personalInfo": "Informazioni personali",
+        "continue": "Continua",
+        "deliveryAddress": "Indirizzo di consegna",
+        "selectCountry": "Seleziona paese...",
+        "streetAddress": "Indirizzo",
+        "transferDetails": "Dettagli del bonifico",
+        "bankTransferLabel": "Bonifico bancario",
+        "transferExactly": "Trasferisci esattamente {amount} sul conto sottostante.",
+        "accountHolder": "Intestatario del conto",
+        "seenDetails": "Ho visto i dettagli",
+        "transferChecklist": "рџ“‹ Lista di controllo del bonifico",
+        "sentExactly": "Inviato esattamente {amount}",
+        "toIban": "A IBAN: {iban}",
+        "accountHolderIs": "Intestatario: {name}",
+        "madePay": "Ho effettuato il pagamento вњ“",
+        "shipsWithin": "L'ordine viene spedito entro 1-2 giorni lavorativi dalla conferma del pagamento",
+        "freeShipApplied": "вњ“ Spedizione gratuita per il tuo ordine!",
+        "addMoreFreeShip": "Aggiungi ancora {amount} per la spedizione gratuita",
+        "required": "Obbligatorio",
+        "validEmail": "Email valida richiesta",
+        "emptyCart": "Il tuo carrello e vuoto.",
+        "thankYou": "Grazie!",
+        "orderConfirmedMsg": "Il tuo ordine {ref} e confermato. Spediremo entro 1-2 giorni lavorativi dalla conferma del pagamento.",
+        "bulkDiscountLabel": "рџЋ‰ 15% sconto all'ingrosso",
+        "freeShipping": "GRATIS",
+        "notesPlaceholder": "Istruzioni di consegna speciali..."
     },
     "order": {
         "confirmed": "Ordine confermato!",
@@ -143,8 +187,8 @@
         "bic": "BIC/SWIFT",
         "reference": "Riferimento pagamento",
         "amount": "Importo",
-        "instructions": "Si prega di includere il numero d’ordine come riferimento di pagamento. Il tuo ordine verrà spedito entro 1–2 giorni lavorativi dalla conferma del pagamento.",
-        "emailSent": "Una email di conferma è stata inviata al tuo indirizzo email."
+        "instructions": "Si prega di includere il numero dвЂ™ordine come riferimento di pagamento. Il tuo ordine verrГ  spedito entro 1вЂ“2 giorni lavorativi dalla conferma del pagamento.",
+        "emailSent": "Una email di conferma ГЁ stata inviata al tuo indirizzo email."
     },
     "account": {
         "title": "Il mio account",
@@ -167,14 +211,14 @@
         "terms": "Termini di servizio",
         "allRights": "Tutti i diritti riservati.",
         "legal": "Legale",
-        "gdpr": "🇪🇺 Conforme GDPR",
-        "secureTransfer": "🔒 Bonifico bancario sicuro",
-        "euShipping": "✈️ Spedizione in tutta l'UE"
+        "gdpr": "рџ‡Єрџ‡є Conforme GDPR",
+        "secureTransfer": "рџ”’ Bonifico bancario sicuro",
+        "euShipping": "вњ€пёЏ Spedizione in tutta l'UE"
     },
     "payment": {
         "awaitingTitle": "In attesa del tuo pagamento",
-        "awaitingBody": "Stiamo aspettando il tuo bonifico bancario. Non appena la banca conferma la ricezione dei fondi, il tuo ordine verrà automaticamente contrassegnato come pagato e inizieremo subito l’elaborazione.",
-        "awaitingNote": "I bonifici bancari richiedono generalmente 1–2 giorni lavorativi. Riceverai una notifica via e-mail una volta confermato il pagamento.",
+        "awaitingBody": "Stiamo aspettando il tuo bonifico bancario. Non appena la banca conferma la ricezione dei fondi, il tuo ordine verrГ  automaticamente contrassegnato come pagato e inizieremo subito lвЂ™elaborazione.",
+        "awaitingNote": "I bonifici bancari richiedono generalmente 1вЂ“2 giorni lavorativi. Riceverai una notifica via e-mail una volta confermato il pagamento.",
         "close": "Ho capito"
     },
     "subcategories": {
@@ -196,8 +240,8 @@
         "hormonal-support": "Hormonal Support",
         "sh-peptides": "Peptides",
         "skin": "Ringiovanimento cutaneo",
-        "longevity": "Longevità",
-        "aa-peptides": "Peptidi anti-età"
+        "longevity": "LongevitГ ",
+        "aa-peptides": "Peptidi anti-etГ "
     },
     "search": {
         "title": "Cerca prodotti",
