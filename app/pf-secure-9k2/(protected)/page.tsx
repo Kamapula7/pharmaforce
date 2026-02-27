@@ -23,6 +23,12 @@ const COUNTRY_FLAGS: Record<string, string> = {
   MD: '🇲🇩', UA: '🇺🇦', IE: '🇮🇪',
 };
 
+const EU_COUNTRY_CODES = [
+  'DE','FR','PL','IT','ES','NL','BE','AT','CH','PT','SE','NO','DK','FI',
+  'CZ','SK','HU','RO','BG','HR','GB','IE','GR','LV','LT','EE','LU','MT',
+  'CY','SI','AL','RS','ME','MK','BA','IS','LI','MC','SM','AD','UA','BY','GE',
+];
+
 async function getStats() {
   try {
     const { prisma } = await import('@/lib/prisma');
@@ -31,15 +37,17 @@ async function getStats() {
     const week  = new Date(today.getTime() - 6 * 24 * 60 * 60 * 1000);
     const month = new Date(today.getTime() - 30 * 24 * 60 * 60 * 1000);
 
+    const euFilter = { country: { in: EU_COUNTRY_CODES } };
+
     const [ordersRaw, usersCount, viewsToday, viewsWeek, viewsMonth, viewsTotal, topPages, topCountries] = await Promise.all([
       prisma.order.findMany({ include: { items: true }, orderBy: { createdAt: 'desc' }, take: 50 }),
       prisma.user.count(),
-      prisma.pageView.count({ where: { createdAt: { gte: today } } }),
-      prisma.pageView.count({ where: { createdAt: { gte: week } } }),
-      prisma.pageView.count({ where: { createdAt: { gte: month } } }),
-      prisma.pageView.count(),
-      prisma.pageView.groupBy({ by: ['path'], _count: { path: true }, orderBy: { _count: { path: 'desc' } }, take: 10, where: { createdAt: { gte: week } } }),
-      prisma.pageView.groupBy({ by: ['country'], _count: { country: true }, orderBy: { _count: { country: 'desc' } }, take: 10, where: { createdAt: { gte: month } } }),
+      prisma.pageView.count({ where: { createdAt: { gte: today }, ...euFilter } }),
+      prisma.pageView.count({ where: { createdAt: { gte: week },  ...euFilter } }),
+      prisma.pageView.count({ where: { createdAt: { gte: month }, ...euFilter } }),
+      prisma.pageView.count({ where: { ...euFilter } }),
+      prisma.pageView.groupBy({ by: ['path'], _count: { path: true }, orderBy: { _count: { path: 'desc' } }, take: 10, where: { createdAt: { gte: week }, ...euFilter } }),
+      prisma.pageView.groupBy({ by: ['country'], _count: { country: true }, orderBy: { _count: { country: 'desc' } }, take: 10, where: { createdAt: { gte: month }, ...euFilter } }),
     ]);
 
     const orders = ordersRaw as OrderWithItems[];
@@ -52,7 +60,6 @@ async function getStats() {
       views: { today: viewsToday, week: viewsWeek, month: viewsMonth, total: viewsTotal },
       topPages: (topPages as Array<{ path: string; _count: { path: number } }>).map(p => ({ path: p.path, views: p._count.path })),
       topCountries: (topCountries as Array<{ country: string | null; _count: { country: number } }>)
-        .filter(c => (c.country ?? '') !== 'US' && (c.country ?? '') !== 'MD')
         .map(c => ({ country: c.country ?? 'Unknown', views: c._count.country })),
     };
   } catch {
