@@ -59,7 +59,7 @@ export default function Header({ locale }: HeaderProps) {
         </Link>
       </div>
 
-      <div className="bg-dark/95 backdrop-blur-md border-b border-border overflow-x-hidden">
+      <div className="bg-dark/95 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Back + Logo */}
@@ -139,7 +139,7 @@ export default function Header({ locale }: HeaderProps) {
               </button>
 
               {accountOpen && (
-                <div className="absolute right-0 top-full pt-1 w-48 z-50">
+                <div className="absolute right-0 top-full pt-1 w-48 z-50 max-w-[calc(100vw-1rem)]">
                   <div className="bg-[#111118] border border-white/10 rounded-xl shadow-xl overflow-hidden">
                     {session ? (
                       <>
