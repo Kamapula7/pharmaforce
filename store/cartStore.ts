@@ -67,6 +67,7 @@ export const useCartStore = create<CartStore>()(
     }),
     {
       name: 'pharmaforce-cart',
+      skipHydration: true,
     }
   )
 );

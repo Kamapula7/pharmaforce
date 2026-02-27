@@ -10,7 +10,7 @@ interface FooterProps {
 export default function Footer({ locale }: FooterProps) {
   const t = useTranslations('footer');
   const tCat = useTranslations('categories');
-  const year = new Date().getFullYear();
+  const year = 2026;
 
   return (
     <footer className="bg-surface border-t border-border mt-20">

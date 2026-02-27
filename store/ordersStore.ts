@@ -34,6 +34,6 @@ export const useOrdersStore = create<OrdersStore>()(
         set((state) => ({ orders: [order, ...state.orders] })),
       clearOrders: () => set({ orders: [] }),
     }),
-    { name: 'pharmaforce-orders' }
+    { name: 'pharmaforce-orders', skipHydration: true }
   )
 );
