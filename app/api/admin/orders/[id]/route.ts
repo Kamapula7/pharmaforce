@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
+import { sendShippedNotification } from '@/lib/email';
 
 const VALID_STATUSES = ['PENDING', 'AWAITING_PAYMENT', 'PAID', 'SHIPPED', 'DELIVERED', 'CANCELLED'];
 
@@ -19,6 +20,16 @@ export async function PATCH(
       where: { id },
       data: { status },
     });
+
+    // Send "shipped" email notification
+    if (status === 'SHIPPED' && order.email) {
+      sendShippedNotification({
+        customerEmail: order.email,
+        customerName: `${order.firstName} ${order.lastName}`,
+        orderRef: order.bankRef ?? id.slice(-8).toUpperCase(),
+        total: order.total,
+      }).catch(err => console.error('[email shipped]', err));
+    }
 
     return NextResponse.json({ ok: true, status: order.status });
   } catch (e) {

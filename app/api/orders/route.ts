@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { auth } from '@/auth';
 import { prisma } from '@/lib/prisma';
+import { sendOrderConfirmation } from '@/lib/email';
 
 export const maxDuration = 30;
 
@@ -41,6 +42,19 @@ export async function POST(req: NextRequest) {
         },
       },
     });
+
+    // Send confirmation email (non-blocking — don't fail order if email fails)
+    sendOrderConfirmation({
+      customerEmail: email,
+      customerName: `${firstName} ${lastName}`,
+      orderRef,
+      total,
+      items: items.map((i: { nameEn: string; quantity: number; price: number }) => ({
+        name: i.nameEn,
+        qty: i.quantity,
+        price: i.price,
+      })),
+    }).catch(err => console.error('[email confirmation]', err));
 
     return NextResponse.json({ ok: true, orderId: order.id });
   } catch (e) {
