@@ -59,7 +59,7 @@ export default function Header({ locale }: HeaderProps) {
         </Link>
       </div>
 
-      <div className="bg-dark/95 backdrop-blur-md border-b border-border">
+      <div className="bg-dark/95 backdrop-blur-md border-b border-border overflow-x-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Back + Logo */}
@@ -99,7 +99,7 @@ export default function Header({ locale }: HeaderProps) {
           {/* Actions */}
           <div className="flex items-center gap-2">
             {/* Search */}
-            <div className={`flex items-center transition-all duration-300 overflow-visible ${searchOpen ? 'w-64 sm:w-80' : 'w-8'}`}>
+            <div className={`flex items-center transition-all duration-300 overflow-hidden ${searchOpen ? 'w-36 sm:w-64 md:w-80' : 'w-8'}`}>
               {searchOpen ? (
                 <div className="w-full relative">
                   <SearchInput
@@ -116,12 +116,14 @@ export default function Header({ locale }: HeaderProps) {
               )}
             </div>
 
-            <LanguageSwitcher currentLocale={locale} />
+            <div className={searchOpen ? 'hidden sm:block' : ''}>
+              <LanguageSwitcher currentLocale={locale} />
+            </div>
 
             {/* Account dropdown */}
             <div
               ref={accountRef}
-              className="relative"
+              className={`relative ${searchOpen ? 'hidden sm:block' : ''}`}
             >
               <button
                 onClick={() => setAccountOpen(!accountOpen)}
