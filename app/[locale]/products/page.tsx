@@ -39,6 +39,10 @@ export async function generateMetadata({ params, searchParams }: ProductsPagePro
       title: 'Buy Protein Supplements Europe — Whey, Isolate, Casein | PharmaForce',
       description: 'Premium whey protein, isolate and casein from Optimum Nutrition, BSN, Balkan. Best prices with fast delivery across Europe.',
     },
+    antidepressants: {
+      title: 'Buy Antidepressants Online Europe | PharmaForce',
+      description: 'Pharmaceutical-grade antidepressants. Discreet EU delivery. Verified quality.',
+    },
   };
 
   const meta = category ? (CAT_META[category] ?? null) : null;

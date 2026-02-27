@@ -280,6 +280,7 @@ export const CATEGORIES_NAV = [
   { key: 'womens-health',  label: 'Womens Health' },
   { key: 'sexual-health',  label: 'Sexual Health' },
   { key: 'anti-aging',     label: 'Anti-Aging' },
+  { key: 'antidepressants', label: 'Antidepressants' },
 ];
 
 export const BRANDS_NAV = [
