@@ -1,5 +1,25 @@
+import type { Metadata } from 'next';
+
 interface PrivacyPageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: PrivacyPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: 'Privacy Policy | PharmaForce',
+    description: 'PharmaForce Privacy Policy. How we collect, use and protect your personal data in accordance with GDPR.',
+    alternates: {
+      canonical: `https://pharmaforce-store.com/${locale}/privacy`,
+      languages: {
+        'en': 'https://pharmaforce-store.com/en/privacy',
+        'de': 'https://pharmaforce-store.com/de/privacy',
+        'fr': 'https://pharmaforce-store.com/fr/privacy',
+        'it': 'https://pharmaforce-store.com/it/privacy',
+        'pl': 'https://pharmaforce-store.com/pl/privacy',
+      },
+    },
+  };
 }
 
 const SECTIONS = [

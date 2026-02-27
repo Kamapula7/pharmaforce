@@ -1,8 +1,27 @@
+import type { Metadata } from 'next';
 import { FlaskConical, Truck, Award, Users } from 'lucide-react';
 import { getTranslations } from 'next-intl/server';
 
 interface AboutPageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: AboutPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: 'About PharmaForce — Pharmaceutical-Grade Sports Products Europe',
+    description: 'PharmaForce is a trusted European supplier of pharmaceutical-grade sports pharmacology, supplements and performance products. Lab-certified quality, discreet EU delivery.',
+    alternates: {
+      canonical: `https://pharmaforce-store.com/${locale}/about`,
+      languages: {
+        'en': 'https://pharmaforce-store.com/en/about',
+        'de': 'https://pharmaforce-store.com/de/about',
+        'fr': 'https://pharmaforce-store.com/fr/about',
+        'it': 'https://pharmaforce-store.com/it/about',
+        'pl': 'https://pharmaforce-store.com/pl/about',
+      },
+    },
+  };
 }
 
 export default async function AboutPage({ params }: AboutPageProps) {

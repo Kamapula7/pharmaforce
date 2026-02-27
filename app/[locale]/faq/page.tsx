@@ -1,7 +1,26 @@
+import type { Metadata } from 'next';
 import FaqClient from '@/components/faq/FaqClient';
 
 interface FaqPageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: FaqPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: 'FAQ — Frequently Asked Questions | PharmaForce',
+    description: 'Answers to the most common questions about ordering, shipping, payment and products at PharmaForce. EU delivery, no prescription required.',
+    alternates: {
+      canonical: `https://pharmaforce-store.com/${locale}/faq`,
+      languages: {
+        'en': 'https://pharmaforce-store.com/en/faq',
+        'de': 'https://pharmaforce-store.com/de/faq',
+        'fr': 'https://pharmaforce-store.com/fr/faq',
+        'it': 'https://pharmaforce-store.com/it/faq',
+        'pl': 'https://pharmaforce-store.com/pl/faq',
+      },
+    },
+  };
 }
 
 type FaqSection = { section: string; items: { q: string; a: string }[] };
@@ -283,5 +302,26 @@ const FAQ_CONTENT: Record<string, FaqContent> = {
 export default async function FaqPage({ params }: FaqPageProps) {
   const { locale } = await params;
   const content = FAQ_CONTENT[locale] ?? FAQ_CONTENT.en;
-  return <FaqClient content={content} />;
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: content.sections.flatMap(s =>
+      s.items.map(item => ({
+        '@type': 'Question',
+        name: item.q,
+        acceptedAnswer: { '@type': 'Answer', text: item.a },
+      }))
+    ),
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <FaqClient content={content} />
+    </>
+  );
 }

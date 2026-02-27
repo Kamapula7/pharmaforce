@@ -1,5 +1,25 @@
+import type { Metadata } from 'next';
+
 interface TermsPageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: TermsPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: 'Terms of Service | PharmaForce',
+    description: 'Terms of Service for PharmaForce online store. Read our policies on orders, payments, shipping and returns.',
+    alternates: {
+      canonical: `https://pharmaforce-store.com/${locale}/terms`,
+      languages: {
+        'en': 'https://pharmaforce-store.com/en/terms',
+        'de': 'https://pharmaforce-store.com/de/terms',
+        'fr': 'https://pharmaforce-store.com/fr/terms',
+        'it': 'https://pharmaforce-store.com/it/terms',
+        'pl': 'https://pharmaforce-store.com/pl/terms',
+      },
+    },
+  };
 }
 
 const SECTIONS = [

@@ -1,7 +1,26 @@
+import type { Metadata } from 'next';
 import { Truck, Clock, Globe, Package, AlertCircle, CheckCircle } from 'lucide-react';
 
 interface ShippingPageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: ShippingPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: 'Shipping & Delivery — EU Shipping Information | PharmaForce',
+    description: 'PharmaForce ships to 30+ European countries. Discreet packaging, flat rate €34.99 or free on orders over €150. Delivery in 3–8 business days.',
+    alternates: {
+      canonical: `https://pharmaforce-store.com/${locale}/shipping`,
+      languages: {
+        'en': 'https://pharmaforce-store.com/en/shipping',
+        'de': 'https://pharmaforce-store.com/de/shipping',
+        'fr': 'https://pharmaforce-store.com/fr/shipping',
+        'it': 'https://pharmaforce-store.com/it/shipping',
+        'pl': 'https://pharmaforce-store.com/pl/shipping',
+      },
+    },
+  };
 }
 
 type ShippingContent = {

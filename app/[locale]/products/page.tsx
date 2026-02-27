@@ -51,7 +51,7 @@ export async function generateMetadata({ params, searchParams }: ProductsPagePro
     title: meta?.title ?? 'Buy Sports Supplements & Pharmaceuticals Online Europe | PharmaForce',
     description: meta?.description ?? 'Browse 100+ pharmaceutical-grade products: steroids, peptides, SARMs, GLP-1 weight loss injections, women\'s health. Fast discreet EU delivery.',
     alternates: {
-      canonical: `/${locale}/products${category ? `?category=${category}` : ''}`,
+      canonical: `https://pharmaforce-store.com/${locale}/products${category ? `?category=${category}` : ''}`,
     },
   };
 }

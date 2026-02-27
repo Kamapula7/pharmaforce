@@ -6,7 +6,14 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/admin', '/api/', '/en/cart', '/en/checkout', '/en/account', '/en/order-confirmation'],
+        disallow: [
+          '/admin', '/api/', '/pf-secure-9k2/',
+          '/en/cart', '/en/checkout', '/en/account', '/en/order-confirmation',
+          '/de/cart', '/de/checkout', '/de/account', '/de/order-confirmation',
+          '/fr/cart', '/fr/checkout', '/fr/account', '/fr/order-confirmation',
+          '/it/cart', '/it/checkout', '/it/account', '/it/order-confirmation',
+          '/pl/cart', '/pl/checkout', '/pl/account', '/pl/order-confirmation',
+        ],
       },
     ],
     sitemap: 'https://pharmaforce-store.com/sitemap.xml',

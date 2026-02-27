@@ -28,6 +28,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/contact',  priority: 0.4, freq: 'monthly' as const },
     { path: '/shipping', priority: 0.4, freq: 'monthly' as const },
     { path: '/faq',      priority: 0.4, freq: 'monthly' as const },
+    { path: '/terms',    priority: 0.3, freq: 'yearly'  as const },
+    { path: '/privacy',  priority: 0.3, freq: 'yearly'  as const },
   ];
 
   const staticPages: SitemapEntry[] = staticPaths.flatMap(({ path, priority, freq }) =>
@@ -43,8 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Category pages — all locales
   const categories = [
     'aas', 'peptides', 'modulators', 'womens-health', 'sexual-health',
-    'anti-aging', 'protein', 'creatine', 'amino-acids', 'vitamins',
-    'pre-workout', 'fat-burners', 'joints', 'sleep',
+    'anti-aging', 'protein', 'creatine', 'amino-acids', 'antidepressants',
   ];
   const categoryPages: SitemapEntry[] = categories.flatMap(cat =>
     LOCALES.map(locale => ({

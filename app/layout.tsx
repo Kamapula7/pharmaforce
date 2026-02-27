@@ -74,10 +74,52 @@ export const metadata: Metadata = {
   },
 };
 
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://pharmaforce-store.com/#organization',
+      name: 'PharmaForce',
+      url: 'https://pharmaforce-store.com',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://pharmaforce-store.com/og-image.png',
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        email: 'pharmaforce@inbox.eu',
+        contactType: 'customer support',
+        availableLanguage: ['English', 'German', 'French', 'Italian', 'Polish'],
+      },
+      sameAs: [],
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://pharmaforce-store.com/#website',
+      url: 'https://pharmaforce-store.com',
+      name: 'PharmaForce',
+      publisher: { '@id': 'https://pharmaforce-store.com/#organization' },
+      potentialAction: {
+        '@type': 'SearchAction',
+        target: {
+          '@type': 'EntryPoint',
+          urlTemplate: 'https://pharmaforce-store.com/en/search?q={search_term_string}',
+        },
+        'query-input': 'required name=search_term_string',
+      },
+    },
+  ],
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html suppressHydrationWarning>
       <body className={`${geist.variable} antialiased`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <SessionProviderWrapper>
         {children}
         </SessionProviderWrapper>

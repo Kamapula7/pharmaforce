@@ -1,7 +1,26 @@
+import type { Metadata } from 'next';
 import { Mail, MessageSquare, Clock, Send } from 'lucide-react';
 
 interface ContactPageProps {
   params: Promise<{ locale: string }>;
+}
+
+export async function generateMetadata({ params }: ContactPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: 'Contact PharmaForce — Customer Support Europe',
+    description: 'Get in touch with PharmaForce. Questions about orders, products or shipping? Our support team responds within a few hours.',
+    alternates: {
+      canonical: `https://pharmaforce-store.com/${locale}/contact`,
+      languages: {
+        'en': 'https://pharmaforce-store.com/en/contact',
+        'de': 'https://pharmaforce-store.com/de/contact',
+        'fr': 'https://pharmaforce-store.com/fr/contact',
+        'it': 'https://pharmaforce-store.com/it/contact',
+        'pl': 'https://pharmaforce-store.com/pl/contact',
+      },
+    },
+  };
 }
 
 export default async function ContactPage({ params }: ContactPageProps) {
