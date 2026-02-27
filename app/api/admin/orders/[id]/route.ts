@@ -23,12 +23,16 @@ export async function PATCH(
 
     // Send "shipped" email notification
     if (status === 'SHIPPED' && order.email) {
-      sendShippedNotification({
-        customerEmail: order.email,
-        customerName: `${order.firstName} ${order.lastName}`,
-        orderRef: order.bankRef ?? id.slice(-8).toUpperCase(),
-        total: order.total,
-      }).catch(err => console.error('[email shipped]', err));
+      try {
+        await sendShippedNotification({
+          customerEmail: order.email,
+          customerName: `${order.firstName} ${order.lastName}`,
+          orderRef: order.bankRef ?? id.slice(-8).toUpperCase(),
+          total: order.total,
+        });
+      } catch (emailErr) {
+        console.error('[email shipped]', emailErr);
+      }
     }
 
     return NextResponse.json({ ok: true, status: order.status });

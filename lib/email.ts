@@ -167,3 +167,86 @@ export async function sendShippedNotification({
     html,
   });
 }
+
+export async function sendWelcomeEmail({
+  customerEmail,
+  customerName,
+}: {
+  customerEmail: string;
+  customerName: string;
+}) {
+  const transporter = await createTransporter();
+  const firstName = customerName?.split(' ')[0] || 'Athlete';
+
+  const html = baseLayout(`
+    <!-- Hero -->
+    <div style="background:linear-gradient(135deg,#1a1a1a 0%,#1f1a0e 100%);border:1px solid #2a2a2a;border-radius:20px;padding:40px 32px;text-align:center;margin-bottom:24px;position:relative;overflow:hidden;">
+      <div style="font-size:52px;margin-bottom:16px;">⚡</div>
+      <h1 style="color:#fff;font-size:26px;font-weight:900;margin:0 0 10px;letter-spacing:-0.5px;">
+        Welcome to PharmaForce,<br/><span style="color:#F97316;">${firstName}!</span>
+      </h1>
+      <p style="color:#999;font-size:15px;margin:0;line-height:1.6;">
+        Your account is ready. You now have access to<br/>pharmaceutical-grade performance products across Europe.
+      </p>
+    </div>
+
+    <!-- What you get -->
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:16px;padding:24px;margin-bottom:24px;">
+      <p style="color:#F97316;font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 16px;">What's included with your account</p>
+      <table style="width:100%;">
+        ${[
+          ['📦', 'Order History', 'Track all your past and current orders in one place'],
+          ['🚚', 'Fast EU Delivery', 'Discreet shipping to 30+ European countries in 3–8 days'],
+          ['✅', 'Lab-Certified Products', '165+ pharmaceutical-grade products from verified suppliers'],
+          ['💬', 'Priority Support', 'Direct access to our expert team at pharmaforce@inbox.eu'],
+        ].map(([icon, title, desc]) => `
+        <tr>
+          <td style="padding:8px 0;vertical-align:top;width:40px;">
+            <span style="font-size:22px;">${icon}</span>
+          </td>
+          <td style="padding:8px 0 8px 10px;vertical-align:top;">
+            <p style="color:#fff;font-weight:700;font-size:14px;margin:0 0 3px;">${title}</p>
+            <p style="color:#888;font-size:13px;margin:0;">${desc}</p>
+          </td>
+        </tr>`).join('')}
+      </table>
+    </div>
+
+    <!-- CTA -->
+    <div style="text-align:center;margin-bottom:24px;">
+      <a href="https://pharmaforce-store.com/en/products"
+        style="display:inline-block;background:#F97316;color:#111;font-weight:900;font-size:16px;text-decoration:none;padding:16px 40px;border-radius:14px;letter-spacing:-0.3px;">
+        Browse Products →
+      </a>
+    </div>
+
+    <!-- Categories strip -->
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:16px;padding:20px 24px;margin-bottom:24px;">
+      <p style="color:#666;font-size:12px;text-transform:uppercase;letter-spacing:1.5px;margin:0 0 14px;font-weight:700;">Popular categories</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        ${['AAS & Steroids', 'GLP-1 Weight Loss', 'Peptides & HGH', 'Antidepressants', 'Women\'s Health', 'Sexual Health', 'Protein', 'Creatine'].map(cat =>
+          `<span style="background:#222;border:1px solid #333;color:#ccc;font-size:12px;padding:5px 12px;border-radius:20px;">${cat}</span>`
+        ).join('')}
+      </div>
+    </div>
+
+    <!-- Promo note -->
+    <div style="background:#F97316/10;border:1px solid #F97316;border-radius:14px;padding:16px 20px;text-align:center;margin-bottom:24px;background-color:#1f1300;">
+      <p style="color:#F97316;font-weight:800;font-size:14px;margin:0 0 4px;">🎁 Buy 2 — Get 3rd FREE</p>
+      <p style="color:#ccc;font-size:13px;margin:0;">On selected products across the store. <a href="https://pharmaforce-store.com/en/products?promo=true" style="color:#F97316;text-decoration:none;font-weight:700;">See promo products →</a></p>
+    </div>
+
+    <!-- Support -->
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:18px 24px;text-align:center;">
+      <p style="color:#999;font-size:13px;margin:0 0 6px;">Questions? We typically respond within a few hours.</p>
+      <a href="mailto:pharmaforce@inbox.eu" style="color:#F97316;font-weight:700;font-size:14px;text-decoration:none;">pharmaforce@inbox.eu</a>
+    </div>
+  `);
+
+  await transporter.sendMail({
+    from: `"PharmaForce" <${process.env.SMTP_USER}>`,
+    to: customerEmail,
+    subject: `⚡ Welcome to PharmaForce, ${firstName}!`,
+    html,
+  });
+}

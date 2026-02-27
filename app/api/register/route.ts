@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import bcrypt from 'bcryptjs';
 import { prisma } from '@/lib/prisma';
+import { sendWelcomeEmail } from '@/lib/email';
 
 export async function POST(req: NextRequest) {
   try {
@@ -28,6 +29,13 @@ export async function POST(req: NextRequest) {
       where: { email: { equals: email, mode: 'insensitive' }, userId: null },
       data: { userId: user.id },
     });
+
+    // Send welcome email
+    try {
+      await sendWelcomeEmail({ customerEmail: email, customerName: name || email });
+    } catch (emailErr) {
+      console.error('[email welcome]', emailErr);
+    }
 
     return NextResponse.json({ id: user.id, email: user.email });
   } catch {

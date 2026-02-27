@@ -43,18 +43,23 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    // Send confirmation email (non-blocking — don't fail order if email fails)
-    sendOrderConfirmation({
-      customerEmail: email,
-      customerName: `${firstName} ${lastName}`,
-      orderRef,
-      total,
-      items: items.map((i: { nameEn: string; quantity: number; price: number }) => ({
-        name: i.nameEn,
-        qty: i.quantity,
-        price: i.price,
-      })),
-    }).catch(err => console.error('[email confirmation]', err));
+    // Send confirmation email — awaited so Vercel doesn't cancel it
+    try {
+      await sendOrderConfirmation({
+        customerEmail: email,
+        customerName: `${firstName} ${lastName}`,
+        orderRef,
+        total,
+        items: items.map((i: { nameEn: string; quantity: number; price: number }) => ({
+          name: i.nameEn,
+          qty: i.quantity,
+          price: i.price,
+        })),
+      });
+    } catch (emailErr) {
+      console.error('[email confirmation]', emailErr);
+      // Don't fail the order if email fails
+    }
 
     return NextResponse.json({ ok: true, orderId: order.id });
   } catch (e) {
