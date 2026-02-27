@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { formatPrice } from '@/lib/utils';
-import { ChevronDown, Check, Loader2 } from 'lucide-react';
+import { ChevronDown, Check, Loader2, Mail } from 'lucide-react';
+import SendEmailModal from './SendEmailModal';
 
 const STATUS_COLORS: Record<string, string> = {
   PENDING:          'bg-yellow-500/15 text-yellow-400',
@@ -45,6 +46,7 @@ export default function OrdersTable({ initialOrders }: { initialOrders: Order[] 
   const [orders, setOrders] = useState<Order[]>(initialOrders);
   const [expanded, setExpanded] = useState<string | null>(null);
   const [loading, setLoading] = useState<string | null>(null);
+  const [emailOrder, setEmailOrder] = useState<Order | null>(null);
 
   const updateStatus = async (orderId: string, newStatus: string) => {
     setLoading(orderId + newStatus);
@@ -69,6 +71,10 @@ export default function OrdersTable({ initialOrders }: { initialOrders: Order[] 
   }
 
   return (
+    <>
+    {emailOrder && (
+      <SendEmailModal order={emailOrder} onClose={() => setEmailOrder(null)} />
+    )}
     <div className="space-y-2">
       {orders.map(order => {
         const isOpen = expanded === order.id;
@@ -136,22 +142,22 @@ export default function OrdersTable({ initialOrders }: { initialOrders: Order[] 
                 </div>
 
                 {/* Actions */}
-                {actions.length > 0 && (
-                  <div className="flex items-center gap-2 flex-wrap pt-1">
-                    {actions.map(({ label, next, color }) => (
-                      <button
-                        key={next}
-                        onClick={() => updateStatus(order.id, next)}
-                        disabled={loading === order.id + next}
-                        className={`flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50 ${color}`}
-                      >
-                        {loading === order.id + next
-                          ? <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                          : <Check className="w-3.5 h-3.5" />
-                        }
-                        {label}
-                      </button>
-                    ))}
+                <div className="flex items-center gap-2 flex-wrap pt-1">
+                  {actions.map(({ label, next, color }) => (
+                    <button
+                      key={next}
+                      onClick={() => updateStatus(order.id, next)}
+                      disabled={loading === order.id + next}
+                      className={`flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors disabled:opacity-50 ${color}`}
+                    >
+                      {loading === order.id + next
+                        ? <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                        : <Check className="w-3.5 h-3.5" />
+                      }
+                      {label}
+                    </button>
+                  ))}
+                  {actions.length > 0 && (
                     <button
                       onClick={() => updateStatus(order.id, 'CANCELLED')}
                       disabled={!!loading}
@@ -159,13 +165,20 @@ export default function OrdersTable({ initialOrders }: { initialOrders: Order[] 
                     >
                       Cancel Order
                     </button>
-                  </div>
-                )}
+                  )}
+                  <button
+                    onClick={e => { e.stopPropagation(); setEmailOrder(order); }}
+                    className="flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-lg bg-purple-500/10 text-purple-400 hover:bg-purple-500/20 transition-colors ml-auto"
+                  >
+                    <Mail className="w-3.5 h-3.5" /> Написать
+                  </button>
+                </div>
               </div>
             )}
           </div>
         );
       })}
     </div>
+    </>
   );
 }
