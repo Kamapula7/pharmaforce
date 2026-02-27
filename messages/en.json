@@ -219,7 +219,8 @@
         "orderConfirmedMsg": "Your order {ref} is confirmed. We'll ship it within 1–2 business days after payment verification.",
         "bulkDiscountLabel": "🎉 15% bulk discount",
         "freeShipping": "FREE",
-        "notesPlaceholder": "Special delivery instructions..."
+        "notesPlaceholder": "Special delivery instructions...",
+        "confirmPayment": "Confirm Payment"
     },
     "order": {
         "confirmed": "Order Confirmed!",

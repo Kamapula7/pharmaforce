@@ -24,8 +24,8 @@
             "deliverySub": "30+ pays de l’UE",
             "happyLabel": "0 clients insatisfaits",
             "happySub": "Qualité garantie",
-            "happyAthletes": "2 400+ athlГЁtes satisfaits",
-            "labCertified": "CertifiГ© en laboratoire"
+            "happyAthletes": "2 400+ athlètes satisfaits",
+            "labCertified": "Certifié en laboratoire"
         },
         "features": {
             "title": "Pourquoi nous?",
@@ -205,7 +205,8 @@
         "orderConfirmedMsg": "Votre commande {ref} est confirmée. Nous expédierons dans 1–2 jours ouvrables après confirmation du paiement.",
         "bulkDiscountLabel": "🎉 15% de réduction en gros",
         "freeShipping": "GRATUIT",
-        "notesPlaceholder": "Instructions de livraison spéciales..."
+        "notesPlaceholder": "Instructions de livraison spéciales...",
+        "confirmPayment": "Confirmer le paiement"
     },
     "order": {
         "confirmed": "Commande confirmée !",

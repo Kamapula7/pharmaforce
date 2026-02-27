@@ -25,7 +25,7 @@
             "happyLabel": "0 unzufriedene Kunden",
             "happySub": "Qualität garantiert",
             "happyAthletes": "2.400+ zufriedene Athleten",
-            "labCertified": "LaborgeprГјft"
+            "labCertified": "Laborgeprüft"
         },
         "features": {
             "title": "Warum wir?",
@@ -205,7 +205,8 @@
         "orderConfirmedMsg": "Ihre Bestellung {ref} wurde bestätigt. Wir versenden innerhalb von 1–2 Werktagen nach Zahlungseingang.",
         "bulkDiscountLabel": "🎉 15% Mengenrabatt",
         "freeShipping": "GRATIS",
-        "notesPlaceholder": "Besondere Lieferhinweise..."
+        "notesPlaceholder": "Besondere Lieferhinweise...",
+        "confirmPayment": "Zahlung bestätigen"
     },
     "order": {
         "confirmed": "Bestellung bestätigt!",
