@@ -15,6 +15,16 @@ export default function TawkChat() {
       w.Tawk_API?.hideWidget?.();
     };
 
+    // Suppress badge/unread count and blinking
+    w.Tawk_API.onChatMessageSystem = () => false;
+    w.Tawk_API.onUnreadCountChanged = () => {
+      w.Tawk_API?.setAttributes?.({ 'hide-badge': true }, () => {});
+    };
+    Object.defineProperty(w.Tawk_API, 'unreadCount', {
+      get: () => 0,
+      configurable: true,
+    });
+
     const s = document.createElement('script');
     s.id = 'tawk-script';
     s.async = true;

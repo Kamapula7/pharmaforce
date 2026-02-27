@@ -4,14 +4,10 @@ import { useState, useEffect } from 'react';
 
 export default function FloatingChatButton() {
   const [visible, setVisible] = useState(false);
-  const [pulse, setPulse] = useState(true);
 
   useEffect(() => {
-    // Show button after a short delay
     const t = setTimeout(() => setVisible(true), 1500);
-    // Stop pulse after 6 seconds
-    const p = setTimeout(() => setPulse(false), 6000);
-    return () => { clearTimeout(t); clearTimeout(p); };
+    return () => clearTimeout(t);
   }, []);
 
   const openChat = () => {
@@ -29,11 +25,6 @@ export default function FloatingChatButton() {
       aria-label="Open support chat"
       className="fixed bottom-6 right-6 z-50 group cursor-pointer"
     >
-      {/* Pulse ring */}
-      {pulse && (
-        <span className="absolute inset-0 rounded-full bg-green-500/40 animate-ping" />
-      )}
-
       {/* Main button */}
       <span className="relative flex items-center justify-center w-14 h-14 rounded-full bg-green-500 shadow-lg shadow-green-500/40 group-hover:scale-110 group-hover:shadow-green-500/60 transition-all duration-300">
         {/* Dumbbell SVG */}
