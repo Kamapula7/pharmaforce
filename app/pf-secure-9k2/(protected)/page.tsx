@@ -51,7 +51,9 @@ async function getStats() {
       orders, totalRevenue, byStatus, usersCount, error: null,
       views: { today: viewsToday, week: viewsWeek, month: viewsMonth, total: viewsTotal },
       topPages: (topPages as Array<{ path: string; _count: { path: number } }>).map(p => ({ path: p.path, views: p._count.path })),
-      topCountries: (topCountries as Array<{ country: string | null; _count: { country: number } }>).map(c => ({ country: c.country ?? 'Unknown', views: c._count.country })),
+      topCountries: (topCountries as Array<{ country: string | null; _count: { country: number } }>)
+        .filter(c => (c.country ?? '') !== 'US' && (c.country ?? '') !== 'MD')
+        .map(c => ({ country: c.country ?? 'Unknown', views: c._count.country })),
     };
   } catch {
     return {

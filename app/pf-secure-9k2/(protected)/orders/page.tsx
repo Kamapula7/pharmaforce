@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic';
 import { formatPrice } from '@/lib/utils';
 import type { Order, OrderItem } from '@/app/generated/prisma/client';
 import OrdersTable from '@/components/admin/OrdersTable';
+import DeleteAllOrdersBtn from '@/components/admin/DeleteAllOrdersBtn';
 
 type OrderWithItems = Order & { items: OrderItem[] };
 
@@ -34,11 +35,14 @@ export default async function OrdersPage() {
           <h1 className="text-white font-bold text-2xl">Orders</h1>
           <p className="text-muted text-sm mt-1">{orders.length} total · {formatPrice(totalRevenue)} revenue</p>
         </div>
-        {awaitingCount > 0 && (
-          <span className="bg-orange-500/15 text-orange-400 text-xs font-semibold px-3 py-1.5 rounded-full">
-            {awaitingCount} awaiting payment confirmation
-          </span>
-        )}
+        <div className="flex items-center gap-2">
+          {awaitingCount > 0 && (
+            <span className="bg-orange-500/15 text-orange-400 text-xs font-semibold px-3 py-1.5 rounded-full">
+              {awaitingCount} awaiting payment confirmation
+            </span>
+          )}
+          <DeleteAllOrdersBtn />
+        </div>
       </div>
 
       <div className="bg-[#111118] border border-white/8 rounded-xl p-4">
