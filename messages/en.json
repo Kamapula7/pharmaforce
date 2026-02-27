@@ -171,6 +171,10 @@
         "freeShipApplied": "✓ Free shipping on your order!",
         "securePayment": "🔒 Secure bank transfer payment",
         "euShip": "🇪🇺 Shipping to 30+ EU countries",
+        "badgeSecure": "Secure bank transfer payment",
+        "badgeDiscreet": "Discreet packaging — no labels",
+        "badgeEUShip": "EU shipping · 3–8 business days",
+        "badgeLabCert": "Lab-certified pharmaceutical grade",
         "each": "each",
         "packsFree": "{free} pack(s) FREE — you save {amount}",
         "addMoreFreePack": "Add {needed} more — get next pack FREE"

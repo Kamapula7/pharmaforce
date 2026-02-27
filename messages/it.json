@@ -157,6 +157,10 @@
         "freeShipApplied": "✓ Spedizione gratuita per il tuo ordine!",
         "securePayment": "🔒 Pagamento bancario sicuro",
         "euShip": "🇪🇺 Spedizione in 30+ paesi UE",
+        "badgeSecure": "Pagamento sicuro tramite bonifico bancario",
+        "badgeDiscreet": "Imballaggio discreto — senza etichette",
+        "badgeEUShip": "Spedizione UE · 3–8 giorni lavorativi",
+        "badgeLabCert": "Certificato da laboratorio — qualità farmaceutica",
         "each": "cad.",
         "packsFree": "{free} confezione(i) GRATIS — risparmi {amount}",
         "addMoreFreePack": "Aggiungi altri {needed} — prossima confezione GRATIS"
