@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { after } from 'next/server';
 import bcrypt from 'bcryptjs';
 import { prisma } from '@/lib/prisma';
 import { sendWelcomeEmail } from '@/lib/email';
@@ -30,12 +31,14 @@ export async function POST(req: NextRequest) {
       data: { userId: user.id },
     });
 
-    // Send welcome email
-    try {
-      await sendWelcomeEmail({ customerEmail: email, customerName: name || email });
-    } catch (emailErr) {
-      console.error('[email welcome]', emailErr);
-    }
+    // Send welcome email in background — no delay for user
+    after(async () => {
+      try {
+        await sendWelcomeEmail({ customerEmail: email, customerName: name || email });
+      } catch (emailErr) {
+        console.error('[email welcome]', emailErr);
+      }
+    });
 
     return NextResponse.json({ id: user.id, email: user.email });
   } catch {

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { after } from 'next/server';
 import { auth } from '@/auth';
 import { prisma } from '@/lib/prisma';
 import { sendOrderConfirmation } from '@/lib/email';
@@ -43,23 +44,24 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    // Send confirmation email — awaited so Vercel doesn't cancel it
-    try {
-      await sendOrderConfirmation({
-        customerEmail: email,
-        customerName: `${firstName} ${lastName}`,
-        orderRef,
-        total,
-        items: items.map((i: { nameEn: string; quantity: number; price: number }) => ({
-          name: i.nameEn,
-          qty: i.quantity,
-          price: i.price,
-        })),
-      });
-    } catch (emailErr) {
-      console.error('[email confirmation]', emailErr);
-      // Don't fail the order if email fails
-    }
+    // Send email in background — response returns immediately, no delay for user
+    after(async () => {
+      try {
+        await sendOrderConfirmation({
+          customerEmail: email,
+          customerName: `${firstName} ${lastName}`,
+          orderRef,
+          total,
+          items: items.map((i: { nameEn: string; quantity: number; price: number }) => ({
+            name: i.nameEn,
+            qty: i.quantity,
+            price: i.price,
+          })),
+        });
+      } catch (emailErr) {
+        console.error('[email confirmation]', emailErr);
+      }
+    });
 
     return NextResponse.json({ ok: true, orderId: order.id });
   } catch (e) {

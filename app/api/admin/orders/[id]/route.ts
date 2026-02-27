@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { after } from 'next/server';
 import { prisma } from '@/lib/prisma';
 import { sendShippedNotification } from '@/lib/email';
 
@@ -21,18 +22,20 @@ export async function PATCH(
       data: { status },
     });
 
-    // Send "shipped" email notification
+    // Send email in background — no delay for admin
     if (status === 'SHIPPED' && order.email) {
-      try {
-        await sendShippedNotification({
-          customerEmail: order.email,
-          customerName: `${order.firstName} ${order.lastName}`,
-          orderRef: order.bankRef ?? id.slice(-8).toUpperCase(),
-          total: order.total,
-        });
-      } catch (emailErr) {
-        console.error('[email shipped]', emailErr);
-      }
+      after(async () => {
+        try {
+          await sendShippedNotification({
+            customerEmail: order.email!,
+            customerName: `${order.firstName} ${order.lastName}`,
+            orderRef: order.bankRef ?? id.slice(-8).toUpperCase(),
+            total: order.total,
+          });
+        } catch (emailErr) {
+          console.error('[email shipped]', emailErr);
+        }
+      });
     }
 
     return NextResponse.json({ ok: true, status: order.status });
