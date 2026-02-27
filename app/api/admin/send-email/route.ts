@@ -47,6 +47,7 @@ export async function POST(req: NextRequest) {
     await transporter.sendMail({
       from: `"PharmaForce" <${process.env.SMTP_USER}>`,
       to,
+      bcc: process.env.SMTP_USER, // silent copy to admin
       subject,
       html,
     });
