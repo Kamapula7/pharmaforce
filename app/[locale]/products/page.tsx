@@ -207,7 +207,7 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
           </div>
           <div className="flex gap-6 shrink-0 relative z-10">
             {[
-              { value: '120+', label: tP('stat1') },
+              { value: '150+', label: tP('stat1') },
               { value: '30+', label: tP('stat2') },
               { value: '100%', label: tP('stat3') },
             ].map(({ value, label }) => (
