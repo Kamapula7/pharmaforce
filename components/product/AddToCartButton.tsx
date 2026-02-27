@@ -24,23 +24,28 @@ export default function AddToCartButton({
   className = '',
 }: AddToCartButtonProps) {
   const addItem = useCartStore((s) => s.addItem);
+  const removeItem = useCartStore((s) => s.removeItem);
   const inCart = useCartStore((s) => s.items.some((i) => i.id === productId));
 
-  const handleAdd = (e: React.MouseEvent) => {
+  const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    addItem({ id: productId, slug, nameEn: productName, price, image, category });
+    if (inCart) {
+      removeItem(productId);
+    } else {
+      addItem({ id: productId, slug, nameEn: productName, price, image, category });
+    }
   };
 
   return (
     <button
-      onClick={handleAdd}
+      onClick={handleClick}
       className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 cursor-pointer hover:scale-110 ${
         inCart
-          ? 'bg-brand text-dark'
+          ? 'bg-brand text-dark hover:bg-red-500'
           : 'bg-brand/10 hover:bg-brand text-brand hover:text-dark'
       } ${className}`}
-      title={`Add ${productName} to cart`}
+      title={inCart ? `Remove ${productName} from cart` : `Add ${productName} to cart`}
     >
       <ShoppingCart className="w-4 h-4" />
     </button>
