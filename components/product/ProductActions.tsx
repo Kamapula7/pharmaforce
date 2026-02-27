@@ -91,14 +91,14 @@ export default function ProductActions({ product, locale, badge }: ProductAction
         <div className="flex items-center gap-2 bg-surface border border-border rounded-lg p-1">
           <button
             onClick={() => setQty(Math.max(1, qty - 1))}
-            className="w-8 h-8 flex items-center justify-center text-muted hover:text-white hover:bg-surface-2 rounded transition-colors"
+            className="w-8 h-8 flex items-center justify-center text-muted hover:text-white hover:bg-surface-2 rounded transition-colors cursor-pointer"
           >
             <Minus className="w-4 h-4" />
           </button>
           <span className="text-white font-semibold w-8 text-center">{qty}</span>
           <button
             onClick={() => setQty(qty + 1)}
-            className="w-8 h-8 flex items-center justify-center text-muted hover:text-white hover:bg-surface-2 rounded transition-colors"
+            className="w-8 h-8 flex items-center justify-center text-muted hover:text-white hover:bg-surface-2 rounded transition-colors cursor-pointer"
           >
             <Plus className="w-4 h-4" />
           </button>
@@ -117,7 +117,7 @@ export default function ProductActions({ product, locale, badge }: ProductAction
       <div className="flex gap-3">
         <button
           onClick={handleAdd}
-          className={`flex-1 flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-semibold transition-all duration-200 ${
+          className={`flex-1 flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-semibold transition-all duration-200 cursor-pointer ${
             added
               ? 'bg-success text-white'
               : 'bg-brand text-dark hover:bg-brand-dark active:scale-[0.98]'

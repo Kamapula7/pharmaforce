@@ -54,7 +54,7 @@ export default function StickyAddToCart({ productId, productName, price, slug, i
             </div>
             <button
               onClick={handleAdd}
-              className="flex items-center gap-2 bg-brand text-dark font-bold px-5 py-2.5 rounded-xl hover:bg-brand-dark transition-colors shrink-0 text-sm"
+              className="flex items-center gap-2 bg-brand text-dark font-bold px-5 py-2.5 rounded-xl hover:bg-brand-dark transition-colors shrink-0 text-sm cursor-pointer"
             >
               <ShoppingCart className="w-4 h-4" />
               Add to Cart
