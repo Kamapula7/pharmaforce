@@ -528,6 +528,118 @@ export const DESCRIPTIONS_BY_LOCALE: Record<string, DescMap> = {
   },
 };
 
+  es: {
+    Protein: {
+      desc: 'Suplemento proteico de primera calidad que aporta 24–26 g de proteína por porción. Procesado en frío para preservar las fracciones bioactivas y maximizar la biodisponibilidad. Ideal para el crecimiento muscular, la recuperación y el mantenimiento de la masa magra.',
+      composition: 'Concentrado/Aislado de Proteína de Suero de Leche, Cacao en Polvo (variantes de chocolate), Lecitina de Girasol, Aromas Naturales, Extracto de Stevia. Por porción de 30 g: Proteína 24 g, Carbohidratos 3 g, Grasas 2 g, Calorías 120 kcal.',
+      howToUse: 'Mezclar 1 medida (30 g) con 250–300 ml de agua fría o leche. Tomar 1–2 porciones al día — preferiblemente después del entrenamiento y por la mañana.',
+      servings: 30,
+    },
+    Creatine: {
+      desc: 'Creatina monohidrato micronizada con una pureza del 99,9 %. Uno de los suplementos más investigados en ciencias del deporte — demostrado para aumentar la fuerza, la potencia y la masa muscular magra.',
+      composition: 'Creatina Monohidrato 5000 mg por porción. Sin sabor, se disuelve fácilmente.',
+      howToUse: 'Mezclar 1 medida (5 g) con 300 ml de agua. Tomar diariamente — después del entrenamiento o con una comida. Fase de carga opcional: 20 g/día durante 5 días.',
+      servings: 60,
+    },
+    'Amino Acids': {
+      desc: 'Complejo avanzado de aminoácidos que proporciona aminoácidos esenciales y de cadena ramificada para apoyar la síntesis de proteínas musculares, reducir la fatiga y acelerar la recuperación entre sesiones.',
+      composition: 'L-Leucina 2500 mg, L-Isoleucina 1250 mg, L-Valina 1250 mg, L-Glutamina 1000 mg, Vitamina B6 2 mg. Por porción.',
+      howToUse: 'Mezclar 1 medida con 300 ml de agua. Tomar antes, durante o después del entrenamiento. Hasta 2 porciones al día.',
+      servings: 50,
+    },
+    'Pre-Workout': {
+      desc: 'Fórmula pre-entrenamiento de alto rendimiento que combina cafeína, beta-alanina y malato de citrulina para una energía explosiva, concentración intensa y bombeo mejorado.',
+      composition: 'Malato de Citrulina 6000 mg, Beta-Alanina 3200 mg, Creatina Monohidrato 3000 mg, Cafeína Anhidra 200 mg, L-Tirosina 1000 mg. Por porción de 10 g.',
+      howToUse: 'Mezclar 1 medida (10 g) con 300 ml de agua fría 20–30 min antes del entrenamiento. No superar 1 porción al día. Evitar tomarlo por la noche.',
+      servings: 30,
+    },
+    Vitamins: {
+      desc: 'Suplemento de micronutrientes de grado farmacéutico que proporciona un apoyo diario óptimo para la función inmunológica, el metabolismo energético, la salud ósea y el rendimiento deportivo.',
+      composition: 'Principio activo según la etiqueta del producto. Fabricado en instalaciones certificadas GMP. Sin colorantes artificiales ni rellenos innecesarios.',
+      howToUse: 'Tomar según las indicaciones de la etiqueta, preferiblemente con una comida para una absorción óptima.',
+      servings: 60,
+    },
+    'Fat Burners': {
+      desc: 'Fórmula avanzada de apoyo metabólico que combina L-carnitina, compuestos termogénicos e ingredientes que estimulan el metabolismo para ayudar al organismo a utilizar la grasa como combustible durante el entrenamiento.',
+      composition: 'Acetil-L-Carnitina o Tartrato de L-Carnitina 1000 mg, Extracto de Té Verde 300 mg, Cafeína Anhidra 150 mg. Por porción.',
+      howToUse: 'Tomar por la mañana en ayunas o 30 min antes del entrenamiento. No tomar en las 6 horas previas al sueño.',
+      servings: 30,
+    },
+    Gainer: {
+      desc: 'Mass gainer hipercalórico que proporciona una mezcla de proteínas de digestión rápida y lenta con carbohidratos complejos. Diseñado para apoyar el crecimiento muscular en personas con dificultad para ganar peso.',
+      composition: 'Matriz de Proteína de Suero 50 g, Maltodextrina 150 g, Aceites MCT 5 g. Por porción de 210 g: Proteína 50 g, Carbohidratos 180 g, Grasas 6 g, Calorías 980 kcal.',
+      howToUse: 'Mezclar 2–3 medidas (210 g) con 500 ml de leche o agua. Tomar después del entrenamiento y entre comidas.',
+      servings: 14,
+    },
+    Energy: {
+      desc: 'Suplemento energético de acción rápida que proporciona carbohidratos disponibles y electrolitos para potenciar el rendimiento durante el entrenamiento y acelerar la reposición de glucógeno.',
+      composition: 'Maltodextrina, Dextrosa, Electrolitos (Sodio, Potasio, Magnesio), Vitaminas C y E. Por porción.',
+      howToUse: 'Mezclar según las instrucciones con 400–500 ml de agua. Consumir durante o inmediatamente después del ejercicio.',
+      servings: 20,
+    },
+    'Protein Bars': {
+      desc: 'Barrita proteica de alto contenido en proteínas con un perfil de macronutrientes óptimo. Perfecta para la nutrición sobre la marcha entre comidas o después del entrenamiento.',
+      composition: 'Crujiente de Proteína de Suero, Cobertura de Chocolate con Leche, Relleno de Cacahuete o Caramelo. Por barrita: Proteína 20 g, Carbohidratos 22 g, Grasas 8 g, Calorías 240 kcal.',
+      howToUse: 'Comer 1–2 barritas al día como tentempié o después del entrenamiento. No requiere preparación.',
+      servings: 1,
+    },
+    AAS: {
+      desc: 'Esteroide anabolizante androgénico de grado farmacéutico, fabricado en instalaciones GMP certificadas. El compuesto, éster, concentración y tamaño del envase son específicos de cada producto — ver la descripción del producto.',
+      composition: 'Principio activo según la descripción del producto. Solución oleosa inyectable estéril o comprimido/cápsula. Inyectables: alcohol bencílico, benzoato de bencilo, aceite vehículo. Orales: celulosa microcristalina, estearato de magnesio. Sin sustancias no declaradas.',
+      howToUse: 'Inyectables: inyección intramuscular exclusivamente con técnica estéril — aguja nueva por inyección, desinfectar el tapón del vial y el lugar de inyección. Orales: tomar con un vaso lleno de agua, preferiblemente con comida. Planificar la PCT antes de iniciar el ciclo. Las dosis son específicas del producto — ver la descripción.',
+      servings: 1,
+    },
+    Peptides: {
+      desc: 'Preparación peptídica o de hormona del crecimiento de grado farmacéutico, con pureza verificada. Los viales liofilizados se mantienen estables a 2–8 °C; los bolígrafos precargados están listos para usar.',
+      composition: 'Principio activo según la descripción del producto. Viales liofilizados: polvo liofilizado estéril + ampolla de disolvente (agua bacteriostática o agua para inyectables). Bolígrafos precargados: solución acuosa lista para usar. Sin aditivos no declarados.',
+      howToUse: 'Viales liofilizados: reconstituir con el disolvente suministrado o agua bacteriostática — inyectar el disolvente lentamente por la pared del vial, no agitar, girar suavemente. Administrar por vía subcutánea o intramuscular. Bolígrafos de insulina: inyección subcutánea, rotar los puntos de inyección. Conservar a 2–8 °C; no congelar. Las dosis son específicas del producto — ver la descripción.',
+      servings: 1,
+    },
+    Modulators: {
+      desc: 'Modulador hormonal farmacéutico — SARM, inhibidor de la aromatasa, SERM o modulador metabólico. Diseñado para una gestión hormonal precisa durante y después de los ciclos anabolizantes, o como apoyo autónomo al rendimiento.',
+      composition: 'Principio activo según la descripción del producto. Cápsula o comprimido oral: principio activo farmacéutico con celulosa microcristalina, estearato de magnesio, cápsula de gelatina. Fabricado en instalaciones certificadas GMP. Sin sustancias no declaradas.',
+      howToUse: 'Tomar por vía oral con agua, preferiblemente con comida. SARMs: según el protocolo del ciclo, seguido de una PCT adecuada. Inhibidores de aromatasa: normalmente en días alternos durante el ciclo — ajustar la dosis según análisis de sangre. SERMs (PCT): iniciar 2–3 días después de la última inyección (ésteres cortos) o 2 semanas después (ésteres largos). Las dosis son específicas del producto — ver la descripción.',
+      servings: 1,
+    },
+    'Womens Health': {
+      desc: 'Preparación farmacéutica para la salud femenina y los objetivos de rendimiento. Cada producto está orientado a objetivos hormonales, estéticos o fisiológicos específicos, fabricado según los más altos estándares farmacéuticos.',
+      composition: 'Principio activo según la descripción del producto. Comprimido oral o solución inyectable según la indicación. Formulación farmacéutica certificada GMP. Sin sustancias no declaradas.',
+      howToUse: 'Tomar o administrar según las indicaciones de la descripción del producto. Recomendado para mujeres mayores de 18 años. Comenzar con la dosis eficaz más baja. No superar la dosis indicada. Consultar a un especialista sanitario cualificado antes de iniciar cualquier preparación hormonal.',
+      servings: 1,
+    },
+    'Anti-Aging': {
+      desc: 'Preparación antienvejecimiento farmacéutica dirigida a la calidad de la piel, la regeneración celular, el equilibrio hormonal y las vías de longevidad. Principios activos clínicamente estudiados a concentraciones terapéuticas.',
+      composition: 'Principio activo según la descripción del producto. Formulado como solución peptídica inyectable, cápsula oral o preparación tópica según el producto. Fabricado en instalaciones certificadas. Sin rellenos ni aditivos no declarados.',
+      howToUse: 'Administrar según las instrucciones del producto. Péptidos inyectables: reconstituir con agua bacteriostática; administrar por vía subcutánea, preferiblemente antes de dormir. Preparaciones orales: tomar con agua con o sin comida según la indicación. Los resultados suelen ser visibles tras 4–8 semanas de uso continuado.',
+      servings: 1,
+    },
+    'Sexual Health': {
+      desc: 'Preparación farmacéutica para la salud y la función sexual. Formulaciones de marca y genéricas fabricadas según estrictos estándares farmacéuticos — potencia y pureza constantes garantizadas.',
+      composition: 'Principio activo según la descripción del producto (p. ej. Sildenafilo, Tadalafilo, Vardenafilo). Comprimido recubierto con película oral. Excipientes farmacéuticos estándar: celulosa microcristalina, fosfato de calcio, croscarmelosa sódica, estearato de magnesio, hipromelosa.',
+      howToUse: 'Tomar por vía oral con agua 30–60 minutos antes de la actividad prevista. No tomar más de una dosis en 24 horas. Evitar el zumo de pomelo. Contraindicado con nitratos. Consultar a un médico si padece enfermedades cardiovasculares. La dosis exacta es específica del producto — ver la descripción.',
+      servings: 1,
+    },
+    Joints: {
+      desc: 'Suplemento farmacéutico para la salud articular que proporciona soporte específico para la integridad del cartílago, la producción de líquido sinovial y la recuperación del tejido conectivo.',
+      composition: 'Sulfato de Glucosamina 1500 mg, Sulfato de Condroitina 1200 mg, MSM 500 mg, Colágeno Tipo II 40 mg, Vitamina C 80 mg. Por dosis diaria.',
+      howToUse: 'Tomar 1–2 cápsulas/comprimidos al día con una comida y abundante agua. Beneficio completo tras 4–6 semanas. Para mejores resultados, usar de forma continuada a largo plazo.',
+      servings: 60,
+    },
+    Sleep: {
+      desc: 'Fórmula avanzada de sueño y recuperación que combina melatonina farmacéutica con compuestos que favorecen la relajación. Favorece un adormecimiento más rápido, fases de sueño más profundas y una mejor recuperación muscular nocturna.',
+      composition: 'Melatonina 3 mg, Bisglicinato de Magnesio 200 mg, L-Teanina 200 mg, Extracto de Raíz de Valeriana 300 mg, Ashwagandha KSM-66® 150 mg. Por porción.',
+      howToUse: 'Tomar 1–2 cápsulas 30 minutos antes de dormir. No superar la dosis indicada. No usar durante el día.',
+      servings: 30,
+    },
+    Antidepressants: {
+      desc: 'Antidepresivo de grado farmacéutico producido en instalaciones certificadas GMP. El principio activo, la dosis y el tamaño del envase son específicos de cada producto — ver la descripción individual del producto.',
+      composition: 'Principio activo según la descripción del producto (p. ej. Escitalopram, Fluoxetina, Sertralina, Venlafaxina). Comprimido o cápsula oral recubierta. Excipientes farmacéuticos estándar. Sin sustancias no declaradas.',
+      howToUse: 'Tomar por vía oral con agua, con o sin comida según la indicación del producto. Seguir el protocolo de dosificación prescrito — no interrumpir el tratamiento sin consultar a un médico. La dosis de inicio, la dosis de mantenimiento y la pauta son específicas del producto — ver la descripción.',
+      servings: 1,
+    },
+  },
+};
+
 export function getProductDescriptions(locale: string): DescMap {
   return DESCRIPTIONS_BY_LOCALE[locale] ?? DESCRIPTIONS_BY_LOCALE.en;
 }
