@@ -21,12 +21,12 @@ export default function ProductGallery({ mainImage, gallery, name, badge, oldPri
   return (
     <div className="space-y-4">
       {/* Main image */}
-      <div className={`relative aspect-square rounded-2xl overflow-hidden border border-border ${images[active].includes('-bg') ? '' : 'bg-[#f5f5f5]'}`}>
+      <div className={`relative aspect-square rounded-2xl overflow-hidden border border-border ${images[active].includes('-bg') ? '' : 'bg-surface-2'}`}>
         <Image
           src={images[active]}
           alt={name}
           fill
-          className={`transition-opacity duration-200 ${images[active].includes('-bg') ? 'object-cover' : 'object-contain p-4'}`}
+          className={`transition-opacity duration-200 ${images[active].includes('-bg') ? 'object-cover' : 'object-contain'}`}
           sizes="(max-width: 1024px) 100vw, 50vw"
           priority
         />
@@ -50,15 +50,15 @@ export default function ProductGallery({ mainImage, gallery, name, badge, oldPri
           <button
             key={i}
             onClick={() => setActive(i)}
-            className={`relative aspect-square rounded-xl overflow-hidden border transition-all cursor-pointer ${
+            className={`relative aspect-square rounded-xl overflow-hidden border transition-all cursor-pointer ${src.includes('-bg') ? '' : 'bg-surface-2'} ${
               active === i ? 'border-brand ring-2 ring-brand/40' : 'border-border hover:border-brand/50'
-            } ${src.includes('-bg') ? '' : 'bg-[#f5f5f5]'}`}
+            }`}
           >
             <Image
               src={src}
               alt={`${name} photo ${i + 1}`}
               fill
-              className={src.includes('-bg') ? 'object-cover' : 'object-contain p-1'}
+              className={src.includes('-bg') ? 'object-cover' : 'object-contain'}
               sizes="10vw"
             />
           </button>
