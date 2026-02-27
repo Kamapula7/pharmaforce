@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { PRODUCTS } from '@/lib/products';
 import { formatPrice } from '@/lib/utils';
 import { Package, Euro, Pill, Users, BarChart2, ArrowUpRight, ExternalLink } from 'lucide-react';
