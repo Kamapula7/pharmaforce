@@ -127,7 +127,7 @@ export default function Header({ locale }: HeaderProps) {
             >
               <button
                 onClick={() => setAccountOpen(!accountOpen)}
-                className={`p-2 transition-colors rounded-lg hover:bg-surface-2 flex items-center gap-1 ${session ? 'text-brand' : 'text-muted hover:text-white'}`}
+                className={`p-2 transition-colors rounded-lg hover:bg-surface-2 flex items-center gap-1 cursor-pointer ${session ? 'text-brand' : 'text-muted hover:text-white'}`}
                 aria-label={t('account')}
               >
                 <User className="w-5 h-5" />
