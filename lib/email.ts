@@ -8,12 +8,12 @@ const BANK_DETAILS = {
 async function createTransporter() {
   const nodemailer = (await import('nodemailer')).default;
   return nodemailer.createTransport({
-    host: process.env.SMTP_HOST ?? 'smtp.inbox.eu',
-    port: Number(process.env.SMTP_PORT ?? 587),
+    host: (process.env.SMTP_HOST ?? 'mail.inbox.eu').trim(),
+    port: Number((process.env.SMTP_PORT ?? '587').trim()),
     secure: false,
     auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASSWORD,
+      user: process.env.SMTP_USER?.trim(),
+      pass: process.env.SMTP_PASSWORD?.trim(),
     },
   });
 }
