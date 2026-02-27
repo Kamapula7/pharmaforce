@@ -1,5 +1,3 @@
-import nodemailer from 'nodemailer';
-
 const BANK_DETAILS = {
   accountHolder: 'Antonietta Ferrara',
   iban: 'DE90 2022 0800 0058 7073 15',
@@ -7,7 +5,8 @@ const BANK_DETAILS = {
   bank: 'Banking Circle - German Branch',
 };
 
-function createTransporter() {
+async function createTransporter() {
+  const nodemailer = (await import('nodemailer')).default;
   return nodemailer.createTransport({
     host: process.env.SMTP_HOST ?? 'smtp.inbox.eu',
     port: Number(process.env.SMTP_PORT ?? 587),
@@ -63,7 +62,7 @@ export async function sendOrderConfirmation({
   total: number;
   items: OrderItem[];
 }) {
-  const transporter = createTransporter();
+  const transporter = await createTransporter();
 
   const html = baseLayout(`
     <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:16px;padding:32px;text-align:center;margin-bottom:24px;">
@@ -132,7 +131,7 @@ export async function sendShippedNotification({
   orderRef: string;
   total: number;
 }) {
-  const transporter = createTransporter();
+  const transporter = await createTransporter();
 
   const html = baseLayout(`
     <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:16px;padding:32px;text-align:center;margin-bottom:24px;">
