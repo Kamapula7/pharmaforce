@@ -140,7 +140,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         </span>
         <span className="flex items-center gap-1.5">
           <Clock className="w-3.5 h-3.5" />
-          {post.readTime} {t('minRead')}
+          {post.readTime} {t('readSuffix')}
         </span>
         <span className="flex items-center gap-1.5">
           <Tag className="w-3.5 h-3.5" />

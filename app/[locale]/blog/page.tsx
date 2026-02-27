@@ -82,7 +82,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
               </span>
               <span className="text-white/60 text-xs font-semibold tracking-widest uppercase">{featured.category}</span>
               <span className="text-white/50 text-xs flex items-center gap-1 ml-auto">
-                <Clock className="w-3 h-3" /> {featured.readTime} read
+                <Clock className="w-3 h-3" /> {featured.readTime} {t('readSuffix')}
               </span>
             </div>
             <h2 className="text-white text-2xl md:text-3xl font-black leading-tight mb-3 max-w-2xl group-hover:text-brand transition-colors">
@@ -137,7 +137,7 @@ export default async function BlogPage({ params }: BlogPageProps) {
                     <span className="text-white/70">{post.author}</span> · {post.date}
                   </span>
                   <span className="text-xs text-muted flex items-center gap-1">
-                    <Clock className="w-3 h-3" /> {post.readTime}
+                    <Clock className="w-3 h-3" /> {post.readTime} {t('readSuffix')}
                   </span>
                 </div>
               </div>

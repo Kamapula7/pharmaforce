@@ -3,6 +3,16 @@ import type { BlogPost } from './blog-content';
 type TranslatedPost = Pick<BlogPost, 'title' | 'excerpt' | 'sections'>;
 type LangMap = Record<string, TranslatedPost>;
 
+const BLOG_LABEL_TRANSLATIONS: Record<string, Record<string, string>> = {
+  es: {
+    PROTEIN: 'PROTEÍNA', PERFORMANCE: 'RENDIMIENTO', VITAMINS: 'VITAMINAS', HEALTH: 'SALUD',
+    TIPS: 'CONSEJOS', 'PRE-WORKOUT': 'PRE-ENTRENAMIENTO', AAS: 'EAA', PCT: 'PCT', SCIENCE: 'CIENCIA',
+    PEPTIDES: 'PÉPTIDOS', MODULATORS: 'MODULADORES', RECOVERY: 'RECUPERACIÓN', SLEEP: 'SUEÑO',
+    'GLP-1': 'GLP-1', 'HAIR GROWTH': 'CRECIMIENTO CAPILAR', 'SEXUAL HEALTH': 'SALUD SEXUAL',
+    ANTIDEPRESSANTS: 'ANTIDEPRESIVOS', PRODUCT: 'PRODUCTO', RESEARCH: 'INVESTIGACIÓN', GUIDE: 'GUÍA',
+  },
+};
+
 export const BLOG_TRANSLATIONS: Record<string, LangMap> = {
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -938,11 +948,276 @@ export const BLOG_TRANSLATIONS: Record<string, LangMap> = {
       ],
     },
   },
+
+  // ═══════════════════════════════════════════════════════════════════════════
+  // SPANISH (ES)
+  // ═══════════════════════════════════════════════════════════════════════════
+  es: {
+    'best-protein-supplements-2026': {
+      title: 'Mejores suplementos de proteína para 2026: Guía completa',
+      excerpt: '¿Aislado de suero, caseína o proteína vegetal? Analizamos más de 40 productos y revelamos cuáles ofrecen la mayor biodisponibilidad, menor contenido de lactosa y mejor relación calidad-precio para atletas europeos.',
+      sections: [
+        { heading: 'Por qué la calidad de la proteína importa más que la cantidad', body: 'La mayoría de los atletas se centran en un objetivo diario en gramos — 1,6–2,2 g por kg de peso corporal — pero ignoran la calidad de la fuente. El valor biológico (VB) y el score DIAAS son métricas mucho más relevantes. El concentrado de suero alcanza VB 104, el aislado VB 159, mientras que la proteína de soja se sitúa en VB 74.' },
+        { heading: 'Concentrado vs aislado de suero', body: 'El concentrado (WPC) contiene 70–80% de proteína, 5–8% de lactosa y 5–7% de grasa. El aislado (WPI) se microfiltra adicionalmente: 90–95% de proteína, menos del 1% de lactosa, casi cero grasa. Para intolerantes a la lactosa o atletas en definición, el aislado es la elección clara. Momento óptimo: 30–45 minutos después del entrenamiento.' },
+        { heading: 'Caseína: La proteína lenta para la recuperación', body: 'La caseína micelar se digiere en 5–7 horas, creando una liberación sostenida de aminoácidos — ideal antes de dormir. Un estudio de 2012 mostró que 40 g de caseína 30 minutos antes de dormir aumentan la síntesis proteica muscular nocturna un 22%. Uno de los suplementos con mejor relación coste-beneficio.' },
+        { heading: 'Proteínas vegetales: Guisante, arroz y mezclas', body: 'La proteína de guisante (DIAAS ~0,82) es la mejor opción vegetal única, rica en arginina y BCAA. La proteína de arroz sola es deficiente en lisina; combinada con guisante 70:30 crea un perfil aminoacídico completo comparable al suero. Para veganos: al menos 25 g por porción.' },
+        { heading: 'Recomendaciones prácticas', body: 'Objetivo: 0,4 g de proteína por kg por comida en 4–5 comidas. Post-entrenamiento: 25–40 g de aislado de suero. Antes de dormir: 30–40 g de caseína. No superar 60 g por batido. Conservar la polvo abierta en lugar fresco y seco, consumir en 2 meses.' },
+      ],
+    },
+    'creatine-vs-beta-alanine': {
+      title: 'Creatina vs Beta-Alanina: ¿Cuál elegir?',
+      excerpt: 'La creatina potencia la fuerza explosiva; la beta-alanina combate la fatiga muscular. Pero combinarlas podría ser el verdadero acelerador de rendimiento — aquí está la ciencia.',
+      sections: [
+        { heading: 'Cómo funciona la creatina', body: 'El fosfocreatina es el principal combustible para la regeneración de ATP durante esfuerzos máximos de 1–10 segundos. Saturando los músculos con creatina (fase de carga: 20 g/día 5 días, luego 3–5 g/día mantenimiento) se prolonga la ventana de fosfocreatina ~10–15%. Resultado: 1–2 repeticiones extra en ejercicios compuestos pesados.' },
+        { heading: 'Cómo funciona la beta-alanina', body: 'La beta-alanina es el precursor limitante de la carnosina — un dipéptido que amortigua iones de hidrógeno (H+) en el tejido muscular. Más carnosina = mayor capacidad tampón = más repeticiones antes del fallo. Dosis efectiva: 3,2–6,4 g/día.' },
+        { heading: 'Cuándo usar creatina vs beta-alanina', body: 'La creatina domina en deportes de fuerza: powerlifting, sprint, halterofilia. La beta-alanina destaca en el rango 1–4 minutos: 400–1500 m, CrossFit, culturismo de altas repeticiones. Si tu deporte combina esfuerzos explosivos breves e intervalos intensos prolongados — fútbol, rugby, MMA — el stack de ambas tiene sentido.' },
+        { heading: 'El stack: por qué la combinación funciona', body: 'Creatina y beta-alanina actúan sobre mecanismos de fatiga completamente distintos, siendo plenamente complementarias. Un ensayo controlado de 10 semanas demostró que el grupo creatina + beta-alanina ganó significativamente más masa muscular y perdió más grasa que cada suplemento por separado.' },
+      ],
+    },
+    'vitamin-d3-athletes-guide': {
+      title: 'Por qué todo atleta necesita vitamina D3',
+      excerpt: 'Más del 60% de los europeos tienen deficiencia de vitamina D. Un D3 bajo reduce directamente la testosterona, la velocidad de recuperación y las defensas inmunitarias. Cómo dosificarla correctamente todo el año.',
+      sections: [
+        { heading: 'Deficiencia de vitamina D en atletas europeos', body: 'Un estudio en British Journal of Sports Medicine encontró que el 57% de los atletas profesionales en el norte y centro de Europa tenían niveles séricos de 25(OH)D inferiores a 30 ng/ml. En invierno (octubre–marzo), la radiación UVB es insuficiente por encima del paralelo 50° para la síntesis cutánea de vitamina D.' },
+        { heading: 'Efectos de la vitamina D3 en el rendimiento atlético', body: 'Los receptores de vitamina D (VDR) se encuentran en tejido muscular, huesos y testículos. La deficiencia por debajo de 20 ng/ml se asocia a: síntesis proteica muscular reducida, caída del 10–15% en la producción de testosterona, respuesta inmunitaria más lenta.' },
+        { heading: 'Protocolo de dosificación correcto', body: 'Si no has suplementado: empieza con 4.000–5.000 UI/día durante 8 semanas, luego 2.000–3.000 UI/día para mantenimiento. Rango objetivo: 40–60 ng/ml. Combina con vitamina K2 (MK-7, 100–200 mcg/día) para dirigir el calcio a los huesos.' },
+      ],
+    },
+    'pre-workout-timing-guide': {
+      title: 'Momento del pre-entrenamiento: Cuándo y cuánto tomar',
+      excerpt: 'Tomar tu pre-entrenamiento 20 minutos demasiado pronto (o tarde) puede reducir su efecto a la mitad. Explicamos la ventana óptima de cafeína, la carga de beta-alanina y cómo evitar el bajón.',
+      sections: [
+        { heading: 'La ventana farmacocinética de la cafeína', body: 'La cafeína alcanza la concentración plasmática máxima 30–60 minutos después de la ingestión. Ingesta óptima: 30–45 minutos antes del entrenamiento. Dosis: 3–6 mg/kg de peso corporal. Para un atleta de 80 kg: 240–480 mg.' },
+        { heading: 'Potenciadores de óxido nítrico: Citrulina y arginina', body: 'La L-Citrulina (no arginina) es el precursor NO superior — evita el metabolismo hepático de primer paso. Dosis: 6–8 g de malato de citrulina, 45–60 minutos antes del entrenamiento. Espera aumentos notables de bombeo y vascularidad.' },
+        { heading: 'Evitar el bajón', body: 'Los bajones energéticos post-entrenamiento son causados por el rebote de adenosina y las caídas de azúcar en sangre. Contramedidas: (1) no superar 400 mg totales de cafeína, (2) comer una comida mixta carbohidratos-proteínas en 60 minutos post-entrenamiento, (3) mantenerse bien hidratado.' },
+      ],
+    },
+    'omega3-recovery-science': {
+      title: 'Omega-3 y recuperación muscular: El stack olvidado',
+      excerpt: 'El aceite de pescado es más que un suplemento cardíaco. Los estudios muestran que 3 g/día de EPA+DHA reducen el DOMS hasta un 35% y bajan la inflamación sistémica — haciéndolo esencial para la recuperación.',
+      sections: [
+        { heading: 'EPA y DHA: Los ácidos grasos clave', body: 'No todos los omega-3 son iguales. El ALA (del lino) debe convertirse en EPA y DHA — con una eficiencia de conversión de solo 5–15%. Solo EPA y DHA son biológicamente activos en la regulación de la inflamación y la síntesis proteica muscular. Objetivo: al menos 2–3 g de EPA+DHA al día.' },
+        { heading: 'Omega-3 y síntesis proteica muscular', body: 'Los ácidos grasos omega-3 activan la vía mTORC1 y aumentan la sensibilidad a la insulina en la célula muscular. Un estudio de la Universidad de Washington encontró que 4 g/día de aceite de pescado durante 8 semanas aumentó la síntesis proteica muscular un 35%.' },
+        { heading: 'Protocolo práctico', body: 'Dosis: 2–3 g de EPA+DHA al día. Tomar con la comida más rica en grasas del día para máxima absorción. Preferir aceite de pescado destilado con bajo contenido en metales pesados.' },
+      ],
+    },
+    'magnesium-sleep-gains': {
+      title: 'Glicinato de magnesio: El suplemento que mejora tu sueño',
+      excerpt: 'Más del 70% de la hormona del crecimiento se libera durante el sueño profundo. El glicinato de magnesio mejora la calidad del sueño, reduce el cortisol y cuesta menos de 0,30 €/día.',
+      sections: [
+        { heading: 'Por qué el magnesio es esencial para los atletas', body: 'El magnesio participa en más de 300 reacciones enzimáticas, incluida la síntesis de ATP, la biosíntesis de proteínas y la función muscular. Los atletas pierden magnesio por el sudor a un ritmo de 36–58 mg por hora de entrenamiento intenso.' },
+        { heading: 'Glicinato de magnesio vs otras formas', body: 'El glicinato de magnesio (magnesio unido a glicina) tiene la máxima biodisponibilidad y no causa problemas digestivos — a diferencia del óxido de magnesio (absorción ~4%) o el citrato de magnesio (puede causar diarrea). La glicina tiene propiedades ansiolíticas y favorecedoras del sueño.' },
+        { heading: 'Protocolo de dosificación', body: 'Dosis: 300–400 mg de magnesio elemental como glicinato al día, 30–60 minutos antes de dormir. Efectos: calidad del sueño mejorada en 2–3 semanas, reducción de calambres musculares nocturnos, niveles de cortisol matutino más bajos.' },
+      ],
+    },
+    'testosterone-cycle-beginners-guide': {
+      title: 'Ciclo de testosterona para principiantes: Dosificación, duración y seguridad',
+      excerpt: '¿Testosterona Enantato o Propionato? ¿10 semanas o 16? Explicamos los protocolos más seguros para el primer ciclo, el momento de los análisis de sangre y qué esperar en ganancias y efectos secundarios.',
+      sections: [
+        { heading: 'Por qué la testosterona es la base de todo ciclo', body: 'La testosterona es la hormona anabólica endógena. Un ciclo de testosterona exógena simplemente eleva los niveles por encima del rango fisiológico. Para el primer ciclo: solo testosterona (sin combinar) para evaluar las respuestas de forma aislada. Primer ciclo típico: Testosterona Enantato 300–400 mg/semana durante 10–12 semanas.' },
+        { heading: 'Control de estrógenos y PCT', body: 'La testosterona aromatiza a estradiol (E2). A dosis superiores a 400 mg/semana el E2 aumentará. Inhibidor de aromatasa recomendado: Anastrozol 0,5 mg en días alternos. PCT estándar: Nolvadex 40/40/20/20 mg/día durante 4 semanas.' },
+        { heading: 'Dosificación y resultados', body: 'Dosis principiante: 300–400 mg/semana, dos inyecciones semanales, ciclo de 10–12 semanas. Resultados típicos: 6–10 kg de ganancia total, con 4–7 kg mantenidos como músculo magro.' },
+      ],
+    },
+    'pct-guide-nolvadex-clomid': {
+      title: 'Terapia post-ciclo: Nolvadex vs Clomid — ¿Cuál funciona mejor?',
+      excerpt: 'Saltarse la PCT después de un ciclo AAS es uno de los errores más comunes. Comparamos los protocolos de Tamoxifeno y Clomifeno, el momento tras los distintos ésteres y cómo restaurar la producción natural de testosterona.',
+      sections: [
+        { heading: 'Nolvadex vs Clomid: Diferencias clave', body: 'El Nolvadex (Tamoxifeno) bloquea los receptores de estrógeno en la hipófisis, aumentando la secreción de LH y FSH. El Clomid (Clomifeno) actúa tanto en el hipotálamo como en la hipófisis — estimulando más directamente la liberación de gonadotropinas. El Clomid produce un aumento de LH más fuerte pero tiene más efectos secundarios.' },
+        { heading: 'Protocolos recomendados', body: 'Nolvadex: 40 mg/día durante 2 semanas, luego 20 mg/día durante 2 semanas. Clomid: 50 mg/día durante 2–4 semanas. Para ciclos muy supresores: combinación Clomid 50 mg + Nolvadex 20 mg diarios durante 4 semanas.' },
+        { heading: 'Momento de la PCT por éster', body: 'Testosterona Propionato: PCT 3–4 días después. Testosterona Enantato: PCT 14 días después. Sustanon 250 / Nandrolona Decanoato: PCT 21 días después de la última inyección.' },
+      ],
+    },
+    'sarms-vs-steroids-comparison': {
+      title: 'SARMs vs esteroides: Comparación honesta para atletas',
+      excerpt: 'Ostarina, RAD-140 y LGD-4033 prometen ganancias similares a los esteroides sin toxicidad hepática. ¿Pero cómo se comparan realmente? Analizamos datos de eficacia, riesgo de supresión y qué compuestos se adaptan a qué objetivos.',
+      sections: [
+        { heading: 'Qué son los SARMs', body: 'Los Moduladores Selectivos del Receptor de Andrógenos (SARMs) se unen selectivamente a los receptores androgénicos en tejido muscular y óseo, con mínima actividad en otros tejidos. Esta es la ventaja teórica frente a los anabolizantes: beneficios anabólicos sin efectos secundarios androgénicos.' },
+        { heading: 'SARMs vs testosterona: Comparación realista', body: 'Los SARMs no proporcionan resultados equivalentes a los esteroides sin efectos secundarios equivalentes. A efectos anabólicos comparables, la profundidad de la supresión es similar. La ventaja principal: ninguna aromatización a estrógeno, ninguna conversión a DHT, ninguna inyección.' },
+        { heading: 'Los principales SARMs y sus usos', body: 'Ostarina (MK-2866): el más suave, 10–25 mg/día. LGD-4033: más potente, ganancias significativas en fuerza y masa, supresión notable. RAD-140: el SARM más potente, efectos anabólicos significativos, fuerte supresión que requiere PCT.' },
+      ],
+    },
+    'hgh-peptides-guide-ghrp-cjc': {
+      title: 'Péptidos HGH: GHRP-6, Ipamorelina, CJC-1295 — Panorámica completa',
+      excerpt: 'Los secretagogos de la hormona del crecimiento estimulan tu propia hipófisis — sin supresión, sin GH sintético. Comparación de GHRP-6, GHRP-2, Ipamorelina y stacks CJC-1295, ventanas de dosificación y resultados esperados.',
+      sections: [
+        { heading: 'Cómo funcionan los péptidos GH', body: 'Los péptidos GH estimulan la hipófisis para liberar hormona del crecimiento endógena. A diferencia del HGH recombinante, no suprimen el eje GH natural. Existen dos clases: GHRP (secretagogos directos de GH) y análogos GHRH como CJC-1295.' },
+        { heading: 'Ipamorelina + CJC-1295: El stack de péptidos GH', body: 'La Ipamorelina es el GHRP más selectivo — estimula los picos de GH sin aumento significativo de cortisol o prolactina. CJC-1295 con DAC prolonga la duración de los picos de GH. En combinación: Ipamorelina 200 mcg + CJC-1295 100 mcg inyectados por vía subcutánea antes de dormir, 5 días por semana.' },
+        { heading: 'Resultados esperados', body: 'Tras 3–6 meses: mejora de la calidad del sueño, pérdida de grasa acelerada, recuperación muscular mejorada, mejora de la textura de la piel. Sin apagado del eje GH natural a diferencia del HGH exógeno.' },
+      ],
+    },
+    'anastrozole-vs-exemestane-ai-guide': {
+      title: 'Anastrozol vs Exemestano: ¿Qué inhibidor de aromatasa elegir?',
+      excerpt: 'El control de estrógenos durante el ciclo es crucial. El Anastrozol (Arimidex) inhibe la aromatasa de forma reversible; el Exemestano (Aromasin) la desactiva permanentemente. Cuándo usar cada uno y cómo evitar que tu estradiol se desplome.',
+      sections: [
+        { heading: 'Anastrozol: IA no esteroideo reversible', body: 'El Anastrozol inhibe reversiblemente la aromatasa, inhibiendo la síntesis de estrógenos ~97%. Dosis en ciclo: 0,5 mg en días alternos. Desventaja: puede reducir la eficacia del Tamoxifeno a nivel hipofisario.' },
+        { heading: 'Exemestano: Inhibidor suicida esteroideo', body: 'El Exemestano se une permanentemente y desactiva la aromatasa. Tiene actividad androgénica intrínseca moderada y preserva mejor el HDL que el Anastrozol. Preferido durante la PCT y en ciclos largos. Dosis: 12,5–25 mg en días alternos.' },
+        { heading: 'Reconocer y corregir niveles bajos de estrógenos', body: 'Signos de supresión excesiva: articulaciones doloridas, pérdida repentina de libido, letargia extrema, aplanamiento emocional. Si aparecen: interrumpir la IA inmediatamente, dejar que el E2 se recupere 5–7 días, luego reintroducir a dosis inferior.' },
+      ],
+    },
+    'cardarine-gw501516-fat-loss-guide': {
+      title: 'Cardarina (GW-501516): El modulador de pérdida de grasa explicado',
+      excerpt: 'La Cardarina no es un SARM — es un agonista PPARδ que orienta tu metabolismo hacia la oxidación de grasas, aumenta la resistencia y preserva el músculo en déficit. Lo que la investigación muestra realmente.',
+      sections: [
+        { heading: 'Mecanismo de pérdida de grasa', body: 'La activación PPARδ aumenta la beta-oxidación de ácidos grasos en el músculo esquelético y el hígado. En estudios clínicos para síndrome metabólico, redujo significativamente el LDL y la grasa visceral aumentando el HDL. Combinado con su efecto en la resistencia, la Cardarina crea un potente entorno de pérdida de grasa.' },
+        { heading: 'Protocolo práctico', body: 'Dosis: 10–20 mg/día, 30–45 minutos antes del cardio. Duración del ciclo: 8–12 semanas seguidas de una pausa equivalente. Sin supresión hormonal, sin toxicidad hepática, sin PCT requerida.' },
+        { heading: 'La controversia del cáncer', body: 'GSK interrumpió los estudios en humanos en 2007 tras estudios en roedores a dosis muy elevadas durante periodos prolongados que mostraron crecimiento acelerado de tumores preexistentes. Contexto importante: las ratas fueron dosificadas con 3 mg/kg durante 2 años (equivalente a 240 mg/día para un humano de 80 kg — 12–24× las dosis típicas de rendimiento).' },
+      ],
+    },
+    'igf-1-lr3-muscle-growth': {
+      title: 'IGF-1 LR3: Cómo el factor de crecimiento similar a la insulina construye músculo',
+      excerpt: 'El IGF-1 LR3 actúa aguas abajo del HGH para estimular la proliferación de células satélite y la hiperplasia — fibras musculares nuevas reales, no solo hipertrofia.',
+      sections: [
+        { heading: 'Hiperplasia vs hipertrofia', body: 'El entrenamiento estándar causa hipertrofia — las fibras musculares existentes se agrandan. El IGF-1 es uno de los pocos compuestos capaces de estimular la hiperplasia — la creación de nuevas fibras musculares — activando y proliferando las células satélite. Las nuevas fibras son permanentes.' },
+        { heading: 'Protocolo de dosificación', body: 'Dosis IGF-1 LR3: 40–100 mcg/día. Inyección: subcutánea o intramuscular después del entrenamiento en el grupo muscular entrenado. Duración del ciclo: 4–6 semanas seguidas de una pausa equivalente. Reconstituir con agua bacteriostática; conservar refrigerado.' },
+        { heading: 'Sinergias y stacking', body: 'El IGF-1 LR3 es más efectivo combinado con péptidos HGH (stack GHRP/CJC) y esteroides anabolizantes. Los péptidos GH elevan el IGF-1 endógeno; el IGF-1 LR3 exógeno satura directamente los receptores IGF-1 periféricos.' },
+      ],
+    },
+    'dianabol-cycle-guide': {
+      title: 'Ciclo Dianabol (Metandienona): Ganancias, riesgos y protección hepática',
+      excerpt: 'El Dianabol es el esteroide oral de acción más rápida — espera 5–8 kg en 4 semanas. Pero la alquilación en C17 significa seria hepatotoxicidad. Duraciones de ciclo seguras, dosificación de TUDCA y cómo mantener los análisis limpios.',
+      sections: [
+        { heading: 'Protección hepática: Protocolo obligatorio', body: 'TUDCA (ácido tauroursodeoxicólico): 500 mg/día durante el ciclo y 2 semanas después — el hepatoprotector más basado en evidencia. NAC (N-Acetil Cisteína): 600–1.200 mg/día. Evitar completamente el alcohol durante el ciclo. Duración máxima del ciclo: 4–6 semanas.' },
+        { heading: 'Dianabol como kickstart vs uso standalone', body: 'El uso más común del Dianabol es como "kickstart" para las primeras 4 semanas de un ciclo inyectable más largo (ej. testosterona enantato). Los inyectables tardan 3–4 semanas en alcanzar niveles sanguíneos pico; el Dianabol cubre esta brecha con ganancias inmediatas de fuerza y masa.' },
+        { heading: 'Dosificación y gestión de estrógenos', body: 'Dosis estándar: 30–50 mg/día. Principiantes: empezar a 20–30 mg/día. La IA es esencial desde el día 1 de un ciclo Dianabol — no desde la semana 2. Dosis superiores a 50 mg/día aumentan dramáticamente los efectos secundarios sin beneficios proporcionales.' },
+      ],
+    },
+    'meldonium-mildronate-endurance': {
+      title: 'Meldonio (Mildronate): El fármaco de resistencia que suspendió a Sharapova',
+      excerpt: 'El Meldonio reduce la oxidación de ácidos grasos en las células cardíacas, obligando al corazón a usar combustible de carbohidratos más eficiente. Usado legalmente en Europa del Este como cardioprotector — la ciencia y la aplicación deportiva.',
+      sections: [
+        { heading: 'Aplicación deportiva y estado legal', body: 'Para atletas de resistencia, el cambio glucosa vs grasa mejora el rendimiento a altas intensidades. Prohibido por la WADA (S4: Moduladores hormonales y metabólicos) en competición. Estado legal variable en Europa: registrado como fármaco en Letonia, Lituania, Rusia. Ventana de detección WADA: hasta 3 meses tras la cesación.' },
+        { heading: 'Dosificación', body: 'Dosis clínica típica: 500–1.000 mg/día en dosis fraccionadas, para ciclos de 4–6 semanas, 2× al año. Hidrosoluble, puede tomarse por vía oral. Sin hepatotoxicidad significativa ni alteraciones endocrinas a dosis estándar.' },
+        { heading: 'Mecanismo de acción', body: 'El Meldonio es un inhibidor TMAO que interfiere con el transporte de carnitina y reduce la oxidación de ácidos grasos en las células del músculo cardíaco. Esto obliga a las células a usar glucosa por la vía más eficiente y reduce los metabolitos tóxicos de ácidos grasos en condiciones de estrés.' },
+      ],
+    },
+    'buy-testosterone-enanthate-europe-guide': {
+      title: 'Cómo comprar Testosterona Enantato online en Europa (2026)',
+      excerpt: 'El Testosterona Enantato sigue siendo el éster de testosterona inyectable más utilizado en Europa. Esta guía cubre dosificación, estructura del ciclo, aprovisionamiento seguro y qué buscar al pedir online con entrega EU.',
+      sections: [
+        { heading: 'Por qué el Testosterona Enantato es la elección más popular en Europa', body: 'El Testosterona Enantato (Test E) ha sido la piedra angular de los ciclos anabólicos durante más de 60 años. Su cadena éster larga ofrece una vida media de ~10,5 días, requiriendo solo 2 inyecciones semanales para mantener niveles sanguíneos estables.' },
+        { heading: 'Dosificación y duración del ciclo', body: 'Dosis principiante: 300–400 mg/semana (inyectada dos veces por semana). Intermedios: 400–600 mg/semana. Primer ciclo estándar: 10–12 semanas. Resultados típicos: 6–10 kg de ganancia total de masa, con 4–7 kg mantenidos como músculo magro tras la PCT.' },
+        { heading: 'Aromatización y gestión de estrógenos', body: 'La testosterona aromatiza a estradiol (E2) vía la enzima aromatasa. A dosis más altas (400 mg+/semana), el E2 aumentará. Uso recomendado de IA: Anastrozol 0,5 mg en días alternos o Exemestano 12,5 mg en días alternos.' },
+        { heading: 'PCT tras Testosterona Enantato', body: 'La PCT comienza 2 semanas después de la última inyección. PCT estándar: Nolvadex 40 mg/día durante 2 semanas, luego 20 mg/día durante 2 semanas. La mayoría recupera la producción natural de testosterona en 8–16 semanas tras completar la PCT.' },
+        { heading: 'Comprar Testosterona Enantato en Europa', body: 'PharmaForce tiene en stock Testosterona Enantato de fabricantes verificados incluyendo BayerPro Schering y Balkan Pharmaceuticals, enviado desde la UE para entrega en 3–10 días a todos los países europeos. Embalaje discreto neutro.' },
+      ],
+    },
+    'sustanon-250-cycle-guide-europe': {
+      title: 'Sustanon 250: Guía completa del ciclo para atletas europeos (2026)',
+      excerpt: 'El Sustanon 250 combina cuatro ésteres de testosterona para liberación inmediata y prolongada. Esta guía cubre dosificación, frecuencia de inyección, PCT y cómo pedir Sustanon 250 con entrega europea.',
+      sections: [
+        { heading: 'Qué es el Sustanon 250', body: 'El Sustanon 250 es una mezcla de cuatro ésteres de testosterona en una sola ampolla: Propionato, Fenilpropionato, Isocaproato y Decanoato. Esta mezcla fue diseñada originalmente por Organon (Países Bajos) para una inyección semanal única en terapia de reemplazo de testosterona.' },
+        { heading: 'Dosificación y frecuencia de inyección', body: 'A pesar del diseño para inyecciones semanales, los usuarios de rendimiento suelen inyectar cada 3–4 días. Dosis estándar: 250–500 mg/semana para un ciclo de 10–14 semanas.' },
+        { heading: 'Comprar Sustanon 250 con entrega europea', body: 'PharmaForce tiene en stock Sustanon 250 en formato de ampolla original de BayerPro Schering, enviado desde almacén UE. Entrega en 3–7 días a Alemania, Polonia, Francia, Países Bajos, Austria, Italia y 25+ países UE.' },
+        { heading: 'Momento de la PCT tras Sustanon 250', body: 'Debido al éster decanoato (t½ ~15 días), iniciar la PCT 3 semanas después de la última inyección. Protocolo PCT: Nolvadex 40/40/20/20 mg/día durante 4 semanas.' },
+      ],
+    },
+    'buy-peptides-europe-bpc157-tb500': {
+      title: 'Comprar péptidos en Europa: BPC-157, TB-500 e Ipamorelina Guía completa',
+      excerpt: 'Los péptidos de investigación como BPC-157 y TB-500 han ganado gran popularidad en países europeos para recuperación de lesiones y rendimiento. Esta guía cubre mecanismos, dosificación, reconstitución y compra de péptidos online en Europa.',
+      sections: [
+        { heading: 'Qué son los péptidos de investigación', body: 'Los péptidos son cadenas cortas de aminoácidos que actúan como moléculas de señalización en el cuerpo. A diferencia de los esteroides anabolizantes, la mayoría de los péptidos de investigación no suprimen la producción hormonal natural ni causan toxicidad hepática.' },
+        { heading: 'BPC-157: El péptido curativo', body: 'BPC-157 (Body Protection Compound 157) es un péptido de 15 aminoácidos derivado de una proteína encontrada en el jugo gástrico humano. En numerosos estudios en roedores ha demostrado una notable aceleración de la curación en múltiples tipos de tejido. Dosis: 200–500 mcg/día, inyectado por vía subcutánea cerca del sitio de la lesión.' },
+        { heading: 'Cómo comprar péptidos online en Europa', body: 'PharmaForce tiene en stock BPC-157, TB-500, Ipamorelina, CJC-1295 desde almacenes UE. Entrega a Alemania, Francia, Países Bajos, Polonia, Italia, España y 25+ países europeos. Plazo típico: 3–8 días hábiles, embalaje discreto.' },
+        { heading: 'TB-500: Reparación tisular sistémica', body: 'TB-500 (Timosina Beta-4) promueve la migración celular, diferenciación y angiogénesis a nivel sistémico. Ideal para daño muscular difuso o múltiples sitios de lesión. Dosis: 2–2,5 mg dos veces por semana durante 4–6 semanas (fase de carga), luego 2–2,5 mg una vez por semana para mantenimiento.' },
+      ],
+    },
+    'nandrolone-decanoate-deca-guide-europe': {
+      title: 'Nandrolona Decanoato (Deca-Durabolin): Guía del ciclo para atletas europeos',
+      excerpt: 'El Nandrolona Decanoato (Deca-Durabolin) es uno de los esteroides anabolizantes más antiguos y utilizados en Europa. Esta guía cubre dosificación, beneficios articulares, efectos secundarios, requisitos de PCT y cómo comprar Deca con entrega EU.',
+      sections: [
+        { heading: 'Farmacología y beneficios articulares', body: 'El Nandrolona Decanoato tiene una relación anabólica/androgénica de ~125:37, haciéndolo altamente anabólico con actividad androgénica relativamente baja. Es único entre los esteroides anabolizantes comunes por sus pronunciadas propiedades de protección y lubricación articular.' },
+        { heading: 'Dosificación y estructura del ciclo', body: 'Dosis estándar: 200–400 mg/semana para principiantes. La Nandrolona casi siempre se combina con testosterona (dosis TRT mínima: 200 mg/semana) porque suprime fuertemente la producción natural de testosterona. Ciclo típico: Testosterona Enantato 400 mg/semana + Nandrolona Decanoato 300 mg/semana durante 14 semanas.' },
+        { heading: 'Comprar Nandrolona Decanoato en Europa', body: 'PharmaForce tiene en stock Nandrolona Decanoato 250 mg/ml de Balkan Pharmaceuticals, enviado desde almacén UE. Entrega a Alemania, Francia, Países Bajos, Polonia, Italia, Austria y 25+ países UE en 3–7 días hábiles.' },
+        { heading: 'Gestión de la prolactina', body: 'La Nandrolona es un compuesto 19-nor que puede elevar los niveles de prolactina. La Cabergolina (Dostinex) a 0,25–0,5 mg dos veces por semana es la herramienta estándar de gestión de prolactina.' },
+      ],
+    },
+    'boldenone-equipoise-lean-gains-europe': {
+      title: 'Boldenona Undecilenato (Equipoise): Guía del ciclo para ganancias magras en Europa',
+      excerpt: 'El Boldenona Undecilenato (Equipoise, EQ) ofrece ganancias musculares magras y constantes con vascularidad mejorada y mínima retención de agua. Dosificación, efectos secundarios y dónde comprar Boldenona en Europa.',
+      sections: [
+        { heading: 'Qué es el Boldenona Undecilenato', body: 'El Boldenona Undecilenato (nombre comercial Equipoise) fue desarrollado originalmente como esteroide anabólico veterinario para caballos. Estructuralmente es una forma modificada de testosterona con un doble enlace añadido en C1–C2, que reduce significativamente su tasa de aromatización (~50% menos que la testosterona).' },
+        { heading: 'Dosificación y duración del ciclo', body: 'Dosis estándar: 300–500 mg/semana. Duración del ciclo: mínimo 12–16 semanas. Inyectar dos veces por semana. Protocolo clásico de masa magra: Testosterona Enantato 300 mg/semana + Boldenona 400 mg/semana durante 16 semanas.' },
+        { heading: 'Comprar Boldenona en Europa', body: 'PharmaForce tiene en stock Boldenona Undecilenato 250 mg/ml (cajas de 10 × 1ml) de Alpha Pharma desde almacenes UE. Entrega a Alemania, Francia, Países Bajos, Polonia, España, Italia, Austria y 25+ países UE en 3–8 días hábiles.' },
+      ],
+    },
+    'post-cycle-therapy-complete-guide-2026': {
+      title: 'Terapia post-ciclo (PCT): Guía completa para atletas europeos (2026)',
+      excerpt: 'La PCT es la fase más importante de cualquier ciclo de esteroides anabolizantes. Saltarse o hacer mal la PCT conduce a supresión prolongada de testosterona, pérdida muscular y riesgos para la salud. Esta guía cubre Nolvadex, Clomid, momento del HCG y dónde encontrar compuestos PCT en Europa.',
+      sections: [
+        { heading: 'Qué le ocurre a tu cuerpo durante un ciclo AAS', body: 'Durante un ciclo de esteroides anabolizantes, la testosterona exógena (u otros andrógenos) señala al eje hipotalámico-hipofisario-gonadal (HPG) para detener la producción endógena de testosterona. Tras el fin del ciclo, el eje HPG debe reiniciar esta cadena — un proceso que tarda semanas o meses.' },
+        { heading: 'Nolvadex (Tamoxifeno): La base estándar de la PCT', body: 'El citrato de Tamoxifeno (Nolvadex) es un SERM que bloquea los receptores de estrógeno en el hipotálamo y la hipófisis. Cuando el estrógeno no puede señalar supresión en estos sitios, la hipófisis aumenta la secreción de LH y FSH, lo que estimula a los testículos a reiniciar la producción de testosterona. Protocolo estándar: 40 mg/día durante 2 semanas, luego 20 mg/día durante 2 semanas.' },
+        { heading: 'Clomid (Clomifeno): Cuándo y cómo usarlo', body: 'El citrato de Clomifeno (Clomid) también es un SERM pero actúa tanto en el hipotálamo como en la hipófisis. Produce un aumento de LH más fuerte que el Nolvadex pero tiene más efectos secundarios. Dosis PCT estándar: 50 mg/día durante 2–4 semanas.' },
+        { heading: 'HCG: El secreto para una recuperación más rápida', body: 'La Gonadotropina Coriónica Humana (hCG) imita la LH — estimula directamente las células de Leydig en los testículos para producir testosterona. Usando HCG en las últimas 3–4 semanas del ciclo (500 UI en días alternos), mantienes la sensibilidad testicular antes de que comience la PCT.' },
+        { heading: 'Dónde comprar Nolvadex, Clomid y HCG en Europa', body: 'PharmaForce tiene en stock Nolvadex (Tamoxifeno 20 mg comprimidos), Clomid (Clomifeno 50 mg comprimidos) y HCG de fabricantes farmacéuticos autorizados, enviado desde la UE. Entrega a Alemania, Francia, Países Bajos, Polonia, Italia, Austria, España y 25+ países europeos en 3–8 días hábiles.' },
+      ],
+    },
+    'buy-antidepressants-online-europe': {
+      title: 'Cómo comprar antidepresivos online en Europa: Guía completa 2026',
+      excerpt: 'Los ISRS, IRSN y tricíclicos están entre los medicamentos más prescritos en Europa. Esta guía explica cómo comprar Escitalopram, Fluoxetina, Venlafaxina y otros antidepresivos online de forma segura en la UE.',
+      sections: [
+        { heading: 'Los antidepresivos más prescritos en Europa', body: 'Los antidepresivos son la tercera clase de fármacos más prescrita en la UE, con más de 90 millones de prescripciones anuales. Los ISRS representan la mayor parte: Escitalopram (Lexapro, Cipralex) es el ISRS más prescrito en Alemania, Francia y Polonia.' },
+        { heading: 'ISRS vs IRSN: ¿Cuál es adecuado para ti?', body: 'Los ISRS (Fluoxetina, Escitalopram, Citalopram, Paroxetina, Sertralina) aumentan principalmente la disponibilidad de serotonina. Los IRSN (Venlafaxina, Duloxetina) actúan sobre serotonina y norepinefrina — haciéndolos particularmente efectivos para depresión combinada con dolor, fatiga o dificultades de concentración.' },
+        { heading: 'Dónde comprar antidepresivos online en Europa', body: 'PharmaForce tiene en stock 14 productos antidepresivos de grado farmacéutico de fabricantes verificados de la UE. Incluye Lexapro 10 mg, Cipralex 20 mg, Prozac 20 mg, Efexor-XR 75/150 mg, Cymbalta 30 mg y más. Entrega a Alemania, Francia, Polonia, Italia, Países Bajos, Bélgica, Austria, España y 25+ países europeos en 3–8 días hábiles.' },
+      ],
+    },
+    'buy-escitalopram-lexapro-europe': {
+      title: 'Escitalopram (Lexapro / Cipralex): Usos, dosificación y dónde comprar en Europa',
+      excerpt: 'El Escitalopram es el ISRS más prescrito en Europa. Esta guía cubre el mecanismo de acción, dosificación, efectos secundarios y cómo obtener Lexapro o Cipralex de marca online en la UE.',
+      sections: [
+        { heading: 'Qué es el Escitalopram', body: 'El Escitalopram es el enantiómero S del citalopram y el ISRS más selectivo disponible. Tiene menos interacciones farmacológicas y efectos secundarios que los ISRS más antiguos manteniendo una fuerte eficacia.' },
+        { heading: 'Protocolo de dosificación', body: 'Dosis estándar para depresión: 10 mg una vez al día, aumentada a 20 mg tras 2–4 semanas si se tolera. Ansiedad: empezar a 5 mg la primera semana para minimizar la activación ansiosa inicial, luego 10 mg.' },
+        { heading: 'Dónde comprar Lexapro o Cipralex online en Europa', body: 'PharmaForce tiene en stock Lexapro 10 mg (28 comprimidos) y Cipralex 20 mg (28 comprimidos) — productos farmacéuticos originales de Lundbeck. Entrega disponible a todos los países de la UE. Entrega estándar 3–8 días hábiles. Embalaje discreto.' },
+      ],
+    },
+    'buy-semaglutide-wegovy-europe-2026': {
+      title: 'Dónde comprar Semaglutida (Wegovy / Ozempic) en Europa: Guía 2026',
+      excerpt: 'La Semaglutida es el medicamento para pérdida de peso más buscado en Europa. Esta guía cubre dosificación, efectos secundarios, cómo difiere Wegovy de Ozempic y cómo obtenerla online en la UE.',
+      sections: [
+        { heading: 'Qué es la Semaglutida y cómo funciona', body: 'La Semaglutida es un agonista del receptor GLP-1 — imita la hormona péptido similar al glucagón-1 que se libera tras comer. Ralentiza el vaciado gástrico, reduce el apetito vía señalización hipotalámica y aumenta la secreción de insulina de forma dependiente de glucosa.' },
+        { heading: 'Wegovy vs Ozempic: ¿Cuál es la diferencia?', body: 'Ambos contienen semaglutida. Ozempic (0,5–2 mg semanales) está autorizado para el control de diabetes tipo 2; Wegovy (0,25–2,4 mg semanales) está específicamente autorizado para el control crónico del peso. El protocolo de dosificación de Wegovy es más gradual.' },
+        { heading: 'Dónde comprar Semaglutida en Europa', body: 'PharmaForce tiene en stock inyectables GLP-1 para pérdida de peso para entrega en la UE incluyendo Ozempic, Wegovy, Mounjaro (tirzepatida) y Saxenda (liraglutida). Entrega a Alemania, Francia, Polonia, Países Bajos, Bélgica, Austria, Suiza, Italia, España y 25+ países europeos en 3–8 días hábiles.' },
+      ],
+    },
+    'finasteride-vs-minoxidil-hair-loss-europe': {
+      title: 'Finasterida vs Minoxidil: Guía completa del tratamiento de la caída del cabello para Europa (2026)',
+      excerpt: 'La alopecia androgenética afecta al 85% de los hombres y al 50% de las mujeres a los 50 años. Finasterida y minoxidil son los únicos tratamientos farmacológicos basados en evidencia. Esta guía los compara y explica cómo usar ambos para máxima efectividad.',
+      sections: [
+        { heading: 'Entendiendo la caída del cabello: AGA y mecanismos', body: 'La alopecia androgenética (AGA) — calvicie de patrón — es causada por la unión del DHT a los receptores androgénicos en los folículos pilosos del cuero cabelludo. La enzima 5-alfa reductasa convierte la testosterona en DHT. La Finasterida bloquea esta enzima. El Minoxidil actúa por una vía diferente.' },
+        { heading: 'Finasterida: Eficacia y dosificación', body: 'Finasterida 1 mg/día (Propecia) reduce el DHT del cuero cabelludo un 60–70% en 2 semanas. Los ensayos clínicos muestran que el 83% de los hombres mantuvieron el recuento capilar tras 2 años, con un 48% experimentando rebrote visible.' },
+        { heading: 'Dónde comprar Finasterida y Minoxidil en Europa', body: 'PharmaForce tiene en stock Finasterida 1 mg (Propecia/Proscar), Minoxidil 5% solución tópica, comprimidos orales de Minoxidil y kits completos de crecimiento capilar para entrega en más de 30 países europeos. Entrega en 3–8 días hábiles. Embalaje discreto.' },
+      ],
+    },
+    'buy-sildenafil-tadalafil-online-europe': {
+      title: 'Sildenafilo vs Tadalafilo: Guía de medicamentos para DE y dónde comprar en Europa',
+      excerpt: 'La disfunción eréctil afecta a más de 150 millones de hombres en Europa. Sildenafilo (Viagra) y Tadalafilo (Cialis) son los tratamientos más efectivos. Esta guía compara ambos y cubre dosificación, inicio de acción y cómo obtenerlos en la UE.',
+      sections: [
+        { heading: 'Cómo funcionan los inhibidores de PDE5', body: 'Sildenafilo, tadalafilo, vardenafilo y avanafilo actúan inhibiendo la fosfodiesterasa tipo 5 (PDE5), la enzima que descompone el cGMP en las células de músculo liso del cuerpo cavernoso. El cGMP elevado causa relajación del músculo liso, mayor flujo sanguíneo y erección.' },
+        { heading: 'Sildenafilo (Viagra): Rápida acción, corta duración', body: 'Inicio: 30–60 minutos. Duración: 4–6 horas. Dosis estándar: 25 mg, 50 mg (más común), 100 mg. Tomar en ayunas — los alimentos grasos retrasan la absorción más de 60 minutos.' },
+        { heading: 'Tadalafilo (Cialis): La "píldora del fin de semana"', body: 'Inicio: 30 minutos a 2 horas. Duración: hasta 36 horas. Dosis estándar: 10 mg (según necesidad), 20 mg (según necesidad), 2,5–5 mg (diario). El tadalafilo en dosis baja diaria (5 mg) normaliza la función eréctil de forma continua.' },
+        { heading: 'Dónde comprar medicamentos para DE online en Europa', body: 'PharmaForce tiene en stock comprimidos de sildenafilo y tadalafilo de marca y genéricos para entrega en Europa. Incluye Viagra (sildenafilo 50/100 mg), Cialis (tadalafilo 20 mg) y equivalentes genéricos a precios significativamente más bajos. Entrega en 3–8 días hábiles. Embalaje discreto.' },
+      ],
+    },
+    'retatrutide-tirzepatide-weight-loss-europe-2026': {
+      title: 'Pérdida de peso de nueva generación: Tirzepatida y Retatrutida vs Semaglutida en 2026',
+      excerpt: 'La Tirzepatida (Mounjaro) y la emergente Retatrutida muestran resultados de pérdida de peso sin precedentes — hasta un 24% de reducción del peso corporal. Esta guía compara todos los fármacos de la clase GLP-1 y lo que los pacientes europeos deben saber.',
+      sections: [
+        { heading: 'La revolución GLP-1: De Ozempic a agonistas triples', body: 'El panorama de la farmacología para pérdida de peso ha cambiado dramáticamente desde 2021. Primero llegó la semaglutida — logrando 15–17% de pérdida de peso. Luego la tirzepatida — un agonista dual GLP-1/GIP — alcanzó 20–22% en los ensayos SURMOUNT. Ahora la retatrutida — un agonista triple GLP-1/GIP/glucagón — ha mostrado 24,2% de reducción de peso a las 48 semanas en ensayos de Fase 2.' },
+        { heading: 'Tirzepatida (Mounjaro): Agonista dual', body: 'La Tirzepatida activa tanto los receptores GLP-1 como GIP. La activación de GIP parece mejorar la eficacia del GLP-1 mediante efectos sinérgicos en saciedad, metabolismo y tejido graso. Resultados SURMOUNT-1: 22,5% de reducción de peso a las 72 semanas con 15 mg/semana.' },
+        { heading: 'Dónde comprar medicamentos GLP-1 en Europa', body: 'PharmaForce tiene en stock Ozempic (semaglutida 0,5–2 mg), Wegovy (semaglutida 0,25–2,4 mg), Mounjaro (tirzepatida 2,5–15 mg) y Saxenda (liraglutida) para entrega en más de 30 países de la UE. Entrega en 3–8 días hábiles. Embalaje discreto.' },
+      ],
+    },
+  },
 };
 
 export function getBlogPostForLocale(post: BlogPost, locale: string): BlogPost {
   if (locale === 'en') return post;
   const translation = BLOG_TRANSLATIONS[locale]?.[post.slug];
-  if (!translation) return post;
-  return { ...post, ...translation };
+  const labels = BLOG_LABEL_TRANSLATIONS[locale];
+  const result = translation ? { ...post, ...translation } : { ...post };
+  if (labels) {
+    result.category = labels[post.category] ?? result.category;
+    result.tag = labels[post.tag] ?? result.tag;
+  }
+  return result;
 }

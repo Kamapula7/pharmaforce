@@ -526,7 +526,6 @@ export const DESCRIPTIONS_BY_LOCALE: Record<string, DescMap> = {
       servings: 30,
     },
   },
-};
 
   es: {
     Protein: {
