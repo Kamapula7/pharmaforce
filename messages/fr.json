@@ -196,6 +196,7 @@
         "accountHolderIs": "Titulaire du compte : {name}",
         "madePay": "J'ai effectué le paiement ✓",
         "shipsWithin": "La commande est expédiée dans 1–2 jours ouvrables après confirmation du paiement",
+        "confirmPaymentNote": "Appuyez sur ce bouton uniquement après avoir effectué le virement bancaire. Ne l'appuyez pas si vous n'avez pas encore effectué le paiement.",
         "freeShipApplied": "✓ Livraison gratuite sur votre commande !",
         "addMoreFreeShip": "Ajoutez {amount} de plus pour la livraison gratuite",
         "required": "Requis",

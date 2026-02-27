@@ -210,6 +210,7 @@
         "accountHolderIs": "Account holder: {name}",
         "madePay": "I've Made the Payment ✓",
         "shipsWithin": "Order ships within 1–2 business days after payment verification",
+        "confirmPaymentNote": "Press this button only after you have completed the bank transfer. Do not press it if you have not yet made the payment.",
         "freeShipApplied": "✓ Free shipping on your order!",
         "addMoreFreeShip": "Add {amount} more for free shipping",
         "required": "Required",

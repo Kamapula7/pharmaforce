@@ -196,6 +196,7 @@
         "accountHolderIs": "Właściciel konta: {name}",
         "madePay": "Dokonałem płatności ✓",
         "shipsWithin": "Zamówienie wysyłamy w ciągu 1–2 dni roboczych po potwierdzeniu płatności",
+        "confirmPaymentNote": "Naciśnij ten przycisk tylko po wykonaniu przelewu bankowego. Nie naciskaj, jeśli nie dokonałeś jeszcze płatności.",
         "freeShipApplied": "✓ Darmowa dostawa dla Twojego zamówienia!",
         "addMoreFreeShip": "Dodaj jeszcze {amount} — darmowa dostawa",
         "required": "Wymagane",

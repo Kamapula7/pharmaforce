@@ -196,6 +196,7 @@
         "accountHolderIs": "Kontoinhaber: {name}",
         "madePay": "Ich habe die Zahlung getätigt ✓",
         "shipsWithin": "Bestellung wird innerhalb von 1–2 Werktagen nach Zahlungseingang versandt",
+        "confirmPaymentNote": "Klicken Sie diese Schaltfläche nur, nachdem Sie die Banküberweisung abgeschlossen haben. Klicken Sie nicht, wenn Sie noch keine Zahlung getätigt haben.",
         "freeShipApplied": "✓ Kostenloser Versand für Ihre Bestellung!",
         "addMoreFreeShip": "Noch {amount} kaufen für kostenlosen Versand",
         "required": "Pflichtfeld",

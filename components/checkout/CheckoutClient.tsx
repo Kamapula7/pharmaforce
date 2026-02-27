@@ -315,9 +315,10 @@ export default function CheckoutClient({ locale }: { locale: string }) {
                   </p>
                 )}
 
-                <button type="button"
+                {/* Final button — save order + confirm */}
+                <button
+                  type="button"
                   onClick={async () => {
-                    // Save order to DB before moving forward
                     try {
                       const res = await fetch('/api/orders', {
                         method: 'POST',
@@ -336,72 +337,29 @@ export default function CheckoutClient({ locale }: { locale: string }) {
                       });
                       if (!res.ok) throw new Error('save failed');
                       setOrderSaveErr(false);
-                      completeStep(3, 4);
+                      addOrder({
+                        ref: orderRef,
+                        date: new Date().toISOString(),
+                        total,
+                        status: 'pending',
+                        customerName: `${firstName} ${lastName}`,
+                        customerEmail: email,
+                        items: items.map(i => ({ name: i.nameEn, qty: i.quantity, price: i.price, image: i.image })),
+                      });
+                      clearCart();
+                      setConfirmed(true);
                     } catch {
                       setOrderSaveErr(true);
                     }
-                  }}
-                  className="w-full bg-brand text-dark font-bold py-3 rounded-xl hover:bg-brand-dark transition-colors flex items-center justify-center gap-2">
-                  {t('seenDetails')} <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            )}
-          </div>
-
-          {/* ── STEP 4: Confirm ── */}
-          <div id="step-4" className="bg-surface border border-border rounded-2xl overflow-hidden">
-            {stepHeader(4, <CheckCircle className="w-4 h-4" />, t('confirmPayment'))}
-
-            {openStep === 4 && (
-              <div className="px-5 pb-5 border-t border-border pt-5 space-y-5">
-                <div className="bg-surface-2 rounded-xl p-4 space-y-2 text-sm text-muted">
-                  <p className="text-white font-semibold mb-3">{t('transferChecklist')}</p>
-                  {[
-                    t('sentExactly', { amount: formatPrice(total) }),
-                    t('toIban', { iban: BANK_DETAILS.iban }),
-                    t('accountHolderIs', { name: BANK_DETAILS.accountHolder }),
-                  ].map((item) => (
-                    <div key={item} className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-success mt-0.5 shrink-0" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <button
-                  type="button"
-                  onClick={async () => {
-                    // Save to local order history (fallback)
-                    addOrder({
-                      ref: orderRef,
-                      date: new Date().toISOString(),
-                      total,
-                      status: 'pending',
-                      customerName: `${firstName} ${lastName}`,
-                      customerEmail: email,
-                      items: items.map(i => ({ name: i.nameEn, qty: i.quantity, price: i.price, image: i.image })),
-                    });
-                    clearCart();
-                    setConfirmed(true);
-                    // Send confirmation email
-                    try {
-                      await fetch('/api/send-confirmation', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                          customerEmail: email,
-                          customerName: `${firstName} ${lastName}`,
-                          orderRef,
-                          total,
-                          items: items.map(i => ({ name: i.nameEn, qty: i.quantity, price: i.price })),
-                        }),
-                      });
-                    } catch { /* silent — order is still confirmed */ }
                   }}
                   className="w-full flex items-center justify-center gap-2 bg-success text-white font-bold py-4 rounded-2xl hover:bg-success/90 active:scale-[0.98] transition-all text-lg">
                   <CheckCircle className="w-6 h-6" />
                   {t('madePay')}
                 </button>
+
+                <p className="text-center text-muted text-xs leading-relaxed px-2">
+                  ⚠️ {t('confirmPaymentNote')}
+                </p>
 
                 <div className="flex items-center justify-center gap-2 text-muted text-xs">
                   <Clock className="w-3.5 h-3.5" />

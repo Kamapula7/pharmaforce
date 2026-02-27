@@ -196,6 +196,7 @@
         "accountHolderIs": "Intestatario: {name}",
         "madePay": "Ho effettuato il pagamento ✓",
         "shipsWithin": "L'ordine viene spedito entro 1-2 giorni lavorativi dalla conferma del pagamento",
+        "confirmPaymentNote": "Premi questo pulsante solo dopo aver completato il bonifico bancario. Non premere se non hai ancora effettuato il pagamento.",
         "freeShipApplied": "✓ Spedizione gratuita per il tuo ordine!",
         "addMoreFreeShip": "Aggiungi ancora {amount} per la spedizione gratuita",
         "required": "Obbligatorio",
