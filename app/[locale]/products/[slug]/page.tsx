@@ -12,6 +12,9 @@ import { PRODUCTS } from '@/lib/products';
 import { getTranslations } from 'next-intl/server';
 import { getProductDescriptions } from '@/lib/product-page-translations';
 import { getReviewsForCategory } from '@/lib/reviews';
+import Breadcrumbs from '@/components/ui/Breadcrumbs';
+import RecentlyViewed from '@/components/product/RecentlyViewed';
+import ProductViewTracker from '@/components/product/ProductViewTracker';
 
 interface ProductPageProps {
   params: Promise<{ locale: string; slug: string }>;
@@ -80,6 +83,17 @@ export default async function ProductPage({ params }: ProductPageProps) {
     ? product.image
     : `https://pharmaforce-store.com${product.image}`;
 
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `https://pharmaforce-store.com/${locale}` },
+      { '@type': 'ListItem', position: 2, name: 'Products', item: `https://pharmaforce-store.com/${locale}/products` },
+      { '@type': 'ListItem', position: 3, name: product.category, item: `https://pharmaforce-store.com/${locale}/products?category=${product.category.toLowerCase().replace(/\s+/g, '-')}` },
+      { '@type': 'ListItem', position: 4, name: product.name, item: `https://pharmaforce-store.com/${locale}/products/${product.slug}` },
+    ],
+  };
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -109,10 +123,16 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+
+      {/* Breadcrumbs */}
+      <Breadcrumbs items={[
+        { label: 'Home', href: `/${locale}` },
+        { label: 'Products', href: `/${locale}/products` },
+        { label: product.category, href: `/${locale}/products?category=${product.category.toLowerCase().replace(/\s+/g, '-')}` },
+        { label: product.name },
+      ]} />
 
       {/* Back button */}
       <div className="mb-6">
@@ -265,6 +285,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
       </div>
 
       {/* Customers also bought */}
+      <ProductViewTracker slug={product.slug} />
+      <RecentlyViewed currentSlug={product.slug} locale={locale} label="Recently Viewed" />
+
       {related.length > 0 && (
         <div className="mt-16">
           <h2 className="text-white font-bold text-xl mb-6">{t('customersAlsoBought')}</h2>

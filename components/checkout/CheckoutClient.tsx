@@ -457,6 +457,21 @@ export default function CheckoutClient({ locale }: { locale: string }) {
                 {t('addMoreFreeShip', { amount: formatPrice(150 - totalPrice()) })}
               </p>
             )}
+
+            {/* Trust badges */}
+            <div className="mt-5 pt-4 border-t border-border space-y-2">
+              {[
+                { icon: '🔒', text: 'Secure bank transfer payment' },
+                { icon: '📦', text: 'Discreet packaging — no labels' },
+                { icon: '🚚', text: 'EU shipping · 3–8 business days' },
+                { icon: '✅', text: 'Lab-certified pharmaceutical grade' },
+              ].map(({ icon, text }) => (
+                <div key={text} className="flex items-center gap-2 text-xs text-muted">
+                  <span className="text-base">{icon}</span>
+                  <span>{text}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

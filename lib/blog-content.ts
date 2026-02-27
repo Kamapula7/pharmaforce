@@ -768,4 +768,214 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
   },
+
+  {
+    slug: 'buy-antidepressants-online-europe',
+    title: 'How to Buy Antidepressants Online in Europe: Complete Guide 2026',
+    excerpt: 'SSRIs, SNRIs and TCAs are among the most prescribed medications in Europe. This guide explains how to buy Escitalopram, Fluoxetine, Venlafaxine, and other antidepressants online safely in the EU.',
+    date: 'Feb 24, 2026',
+    readTime: '9 min',
+    category: 'ANTIDEPRESSANTS',
+    tag: 'GUIDE',
+    author: 'Dr. Elena Kowalska',
+    authorRole: 'Clinical Pharmacologist',
+    photo: 'https://images.unsplash.com/photo-1585435557343-3b092031a831?w=900&q=80',
+    sections: [
+      {
+        heading: 'The Most Commonly Prescribed Antidepressants in Europe',
+        body: 'Antidepressants are the third most prescribed drug class in the EU, with over 90 million prescriptions issued annually. SSRIs (Selective Serotonin Reuptake Inhibitors) account for the largest share: Escitalopram (Lexapro, Cipralex) is the most prescribed SSRI in Germany, France, and Poland. Fluoxetine (Prozac) dominates the US market but remains widely used in Europe. Venlafaxine (Efexor-XR) is the leading SNRI across the EU. Mirtazapine (Remeron) is preferred for patients with sleep disturbances and low appetite. Bupropion (Wellbutrin XL) is increasingly popular for its weight-neutral and pro-cognitive effects.',
+      },
+      {
+        heading: 'SSRIs vs SNRIs: Which Is Right for You?',
+        body: 'SSRIs (Fluoxetine, Escitalopram, Citalopram, Paroxetine, Sertraline) primarily increase serotonin availability. They are first-line for major depressive disorder, generalised anxiety disorder, panic disorder, and OCD. SNRIs (Venlafaxine, Duloxetine) target both serotonin and norepinephrine — making them particularly effective for depression combined with pain, fatigue, or concentration difficulties. Duloxetine (Cymbalta) is also FDA/EMA approved for fibromyalgia and diabetic peripheral neuropathy. The choice depends on individual symptom profile, tolerance, and co-existing conditions.',
+      },
+      {
+        heading: 'Dosing Basics: What You Need to Know',
+        body: 'Escitalopram: 10–20 mg/day. Start at 10 mg for 2 weeks, titrate to 20 mg if needed. Full effect appears after 4–6 weeks. Fluoxetine: 20–60 mg/day. Longest half-life (1–6 days) — missed doses matter less. Venlafaxine XR: 75–225 mg/day. Blood pressure monitoring recommended at higher doses. Duloxetine: 30–120 mg/day. Take with food to reduce nausea. Mirtazapine: 15–45 mg at bedtime. Paradoxically, 15 mg causes more sedation than 30 mg due to histamine receptor saturation. All antidepressants require 4–8 weeks for full efficacy. Do not discontinue abruptly — taper gradually under medical supervision.',
+      },
+      {
+        heading: 'Where to Buy Antidepressants Online in Europe',
+        body: 'PharmaForce stocks 14 pharmaceutical-grade antidepressant products sourced from verified EU manufacturers including Lundbeck, Eli Lilly, Viatris, GSK, Angelini, Organon and Actavis. All products are original branded medications — not generics or compounded preparations. Available items include Lexapro 10 mg, Cipralex 20 mg, Prozac 20 mg, Efexor-XR 75/150 mg, Cymbalta 30 mg, Cipram 20 mg, Seroxat 20 mg, Wellbutrin XL 300 mg, Trittico 50/100 mg, Remeron 30 mg, Mirtazapine 15 mg, and Amitriptyline 25 mg. Delivery to Germany, France, Poland, Italy, Netherlands, Belgium, Austria, Spain and 25+ European countries in 3–8 business days. Discreet plain packaging with no product names on the outside.',
+      },
+      {
+        heading: 'Safety and Discontinuation',
+        body: 'Antidepressant discontinuation syndrome is real: SSRIs and SNRIs cause flu-like symptoms, dizziness ("brain zaps"), irritability, and rebound anxiety if stopped abruptly. Taper by 25% every 2 weeks or more gradually for Paroxetine and Venlafaxine. Fluoxetine\'s long half-life makes discontinuation easier — many clinicians switch to Fluoxetine before discontinuing other SSRIs. Never combine antidepressants with MAOIs — the risk of serotonin syndrome is severe and potentially fatal. Consult a healthcare professional before starting, changing or discontinuing any antidepressant.',
+      },
+    ],
+  },
+
+  {
+    slug: 'buy-escitalopram-lexapro-europe',
+    title: 'Escitalopram (Lexapro / Cipralex): Uses, Dosage and Where to Buy in Europe',
+    excerpt: 'Escitalopram is the most prescribed SSRI in Europe. This guide covers mechanism of action, dosing, side effects, and how to source branded Lexapro or Cipralex online in the EU.',
+    date: 'Feb 24, 2026',
+    readTime: '7 min',
+    category: 'ANTIDEPRESSANTS',
+    tag: 'PRODUCT',
+    author: 'Dr. Elena Kowalska',
+    authorRole: 'Clinical Pharmacologist',
+    photo: 'https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?w=900&q=80',
+    sections: [
+      {
+        heading: 'What Is Escitalopram?',
+        body: 'Escitalopram is the S-enantiomer of citalopram and the most selective SSRI available. It has fewer drug interactions and side effects than older SSRIs while maintaining strong efficacy. Approved by the EMA for major depressive disorder, generalised anxiety disorder, social anxiety disorder, panic disorder, and OCD. Sold under the brand names Lexapro (Lundbeck/Forest) and Cipralex (Lundbeck) in Europe. Available in 5 mg, 10 mg and 20 mg film-coated tablets.',
+      },
+      {
+        heading: 'Dosing Protocol',
+        body: 'Standard dose for depression: 10 mg once daily, increased to 20 mg after 2–4 weeks if tolerated. Anxiety: start at 5 mg for the first week to minimise initial anxiety activation, then 10 mg. Elderly patients: 10 mg maximum. Treatment duration: minimum 6 months for first episode; 1–2 years or indefinite for recurrent depression. Onset of therapeutic effect: 2–4 weeks for anxiety; 4–6 weeks for depression. Discontinuation: taper by 5 mg every 2 weeks.',
+      },
+      {
+        heading: 'Side Effects and Tolerability',
+        body: 'The most common side effects (>10%): nausea (usually resolves within 2 weeks), headache, insomnia or somnolence, dry mouth, increased sweating. Sexual dysfunction (delayed ejaculation, reduced libido) affects 20–30% of patients. Weight: neutral in short-term; mild weight gain possible with long-term use. Compared to paroxetine, escitalopram has significantly fewer discontinuation symptoms and drug interactions. QTc prolongation: avoid in patients with cardiac arrhythmias or on other QT-prolonging drugs.',
+      },
+      {
+        heading: 'Lexapro vs Cipralex: Is There a Difference?',
+        body: 'Lexapro and Cipralex are both branded escitalopram manufactured by Lundbeck. The active ingredient, dose, and bioavailability are identical. Cipralex is the name used in most European markets (Germany, France, Italy, Spain, Poland); Lexapro is used in the US, Ireland, and some other markets. Both are available from PharmaForce as 10 mg and 20 mg tablets in 28-tablet packs.',
+      },
+      {
+        heading: 'Where to Buy Lexapro or Cipralex Online in Europe',
+        body: 'PharmaForce stocks branded Lexapro 10 mg (28 tablets, €59.99) and Cipralex 20 mg (28 tablets, €64.99) — original Lundbeck pharmaceutical products. Delivery available to all EU countries including Germany, France, Poland, Netherlands, Belgium, Austria, Italy, Spain, Czech Republic, Hungary and more. Standard delivery 3–8 business days. Discreet plain packaging. Orders dispatched from EU warehouse — no customs delays or import duties for EU residents.',
+      },
+    ],
+  },
+
+  {
+    slug: 'buy-semaglutide-wegovy-europe-2026',
+    title: 'Where to Buy Semaglutide (Wegovy / Ozempic) in Europe: 2026 Guide',
+    excerpt: 'Semaglutide is the most searched weight loss medication in Europe. This guide covers dosing, side effects, how Wegovy differs from Ozempic, and how to source it online in the EU.',
+    date: 'Feb 23, 2026',
+    readTime: '10 min',
+    category: 'GLP-1',
+    tag: 'GUIDE',
+    author: 'Dr. Anna Fischer',
+    authorRole: 'Endocrinologist, MD',
+    photo: 'https://images.unsplash.com/photo-1631549916768-4119b4123a21?w=900&q=80',
+    sections: [
+      {
+        heading: 'What Is Semaglutide and How Does It Work?',
+        body: 'Semaglutide is a GLP-1 receptor agonist — it mimics the glucagon-like peptide-1 hormone that is released after eating. It slows gastric emptying, reduces appetite via hypothalamic signalling, and increases insulin secretion in a glucose-dependent manner. The result is consistent, sustained weight loss of 15–17% of body weight over 68 weeks in clinical trials (STEP trials), compared to 2.4% with placebo. For context: no previous weight-loss drug had ever achieved consistent double-digit percentage weight loss.',
+      },
+      {
+        heading: 'Wegovy vs Ozempic: What Is the Difference?',
+        body: 'Both contain semaglutide. The key differences: Ozempic (0.5–2 mg weekly) is licensed for Type 2 diabetes management; Wegovy (0.25–2.4 mg weekly) is specifically licensed for chronic weight management. The dosing protocol for Wegovy is more gradual — starting at 0.25 mg/week for 4 weeks, escalating every 4 weeks to a maintenance dose of 2.4 mg/week. This slower titration significantly reduces nausea and GI side effects. Ozempic at 2 mg weekly produces comparable weight loss but is technically off-label for non-diabetic obesity.',
+      },
+      {
+        heading: 'Expected Weight Loss and Timeline',
+        body: 'Weeks 1–4: minimal weight change while body adapts. Weeks 4–16: 2–4 kg loss as appetite suppression strengthens. Months 4–12: most significant weight loss period — 1–2 kg/month. Month 12–18: plateau at 15–17% total body weight loss for most patients. To put this in concrete terms: a 100 kg patient typically reaches 83–85 kg by month 12–16. These results require consistent weekly injections and caloric deficit. Exercise accelerates results and preserves lean mass.',
+      },
+      {
+        heading: 'Side Effects: What to Expect',
+        body: 'Most common (>10%): nausea, vomiting, diarrhoea, constipation. Nausea typically peaks at dose escalation and resolves within 2–4 weeks. To minimise: eat smaller meals, avoid fatty or spicy foods, take injection on an empty stomach or before bed. Serious but rare: pancreatitis (discontinue if severe abdominal pain), gallbladder disease, increased heart rate. Contraindicated in: personal or family history of medullary thyroid carcinoma, MEN-2 syndrome, known hypersensitivity.',
+      },
+      {
+        heading: 'Where to Buy Semaglutide in Europe',
+        body: 'PharmaForce stocks GLP-1 weight loss injectables for EU delivery including Ozempic, Wegovy, Mounjaro (tirzepatide) and Saxenda (liraglutide). All products are original pharmaceutical grade from verified EU suppliers. Available for delivery to Germany, France, Poland, Netherlands, Belgium, Austria, Switzerland, Italy, Spain and 25+ European countries. Standard delivery 3–8 business days. No customs fees or import duties for EU residents. Discreet packaging.',
+      },
+    ],
+  },
+
+  {
+    slug: 'finasteride-vs-minoxidil-hair-loss-europe',
+    title: 'Finasteride vs Minoxidil: The Complete Hair Loss Treatment Guide for Europe (2026)',
+    excerpt: 'Male and female pattern hair loss affects 85% of men and 50% of women by age 50. Finasteride and minoxidil are the only evidence-based pharmacological treatments. This guide compares them and explains how to use both for maximum effectiveness.',
+    date: 'Feb 23, 2026',
+    readTime: '8 min',
+    category: 'HAIR GROWTH',
+    tag: 'GUIDE',
+    author: 'Dr. Sophie Laurent',
+    authorRole: 'Dermatologist, MD',
+    photo: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=900&q=80',
+    sections: [
+      {
+        heading: 'Understanding Hair Loss: AGA and Mechanisms',
+        body: 'Androgenetic alopecia (AGA) — pattern baldness — is caused by DHT (dihydrotestosterone) binding to androgen receptors in hair follicles on the scalp. This progressively miniaturises follicles, shortening the hair growth cycle until the follicle stops producing visible hair. The enzyme 5-alpha reductase converts testosterone to DHT. Finasteride blocks this enzyme. Minoxidil works through a different pathway: it is a potassium channel opener that increases blood flow to follicles and prolongs the anagen (growth) phase.',
+      },
+      {
+        heading: 'Finasteride: Efficacy and Dosing',
+        body: 'Finasteride 1 mg/day (Propecia) reduces scalp DHT by 60–70% within 2 weeks. Clinical trials show 83% of men maintained hair count after 2 years, with 48% experiencing visible regrowth. It is highly effective for vertex (crown) and mid-scalp thinning; less effective for the hairline. Onset: visible results at 6–12 months; maximum benefit at 2 years. Must be used continuously — hair loss resumes within 6–12 months of stopping. Women of childbearing potential must not use finasteride due to risk of foetal feminisation. Post-menopausal women may use 2.5–5 mg finasteride with good evidence for efficacy.',
+      },
+      {
+        heading: 'Minoxidil: Topical vs Oral',
+        body: 'Topical minoxidil 2% (women) and 5% (men) applied once or twice daily is the standard first-line treatment and available OTC across Europe. Rogaine/Regaine is the branded version. Oral minoxidil 0.25–5 mg daily has recently gained popularity as a more convenient alternative with superior efficacy — a 2022 meta-analysis showed oral outperforming topical for hair density. Side effects of oral minoxidil include hypertrichosis (unwanted body hair), fluid retention, and rarely hypotension. Start at the lowest dose (0.25–0.5 mg) and titrate slowly.',
+      },
+      {
+        heading: 'Combination Therapy: The Gold Standard',
+        body: 'Finasteride + minoxidil combination is significantly more effective than either alone. A 2021 RCT in the Journal of the American Academy of Dermatology showed 94% of patients using combination therapy maintained or improved hair density at 12 months vs 80% with finasteride alone. The combination addresses both mechanisms: DHT suppression (finasteride) and follicle stimulation (minoxidil). Most European dermatologists now recommend starting both simultaneously for the most significant results.',
+      },
+      {
+        heading: 'Where to Buy Finasteride and Minoxidil in Europe',
+        body: 'PharmaForce stocks Finasteride 1 mg (Propecia/Proscar), Minoxidil 5% topical solution, Minoxidil oral tablets, and comprehensive hair growth kits for delivery across 30+ European countries. Products are pharmaceutical grade from verified manufacturers. Delivery to Germany, France, Poland, Netherlands, Belgium, Austria, Switzerland, Czech Republic, Hungary, Romania and all major EU markets. 3–8 business day delivery. Discreet packaging. Free shipping on orders over €150.',
+      },
+    ],
+  },
+
+  {
+    slug: 'buy-sildenafil-tadalafil-online-europe',
+    title: 'Sildenafil vs Tadalafil: ED Medication Guide and Where to Buy in Europe',
+    excerpt: 'Erectile dysfunction affects over 150 million men in Europe. Sildenafil (Viagra) and Tadalafil (Cialis) are the most effective treatments. This guide compares both and covers dosing, onset, and how to source them in the EU.',
+    date: 'Feb 22, 2026',
+    readTime: '8 min',
+    category: 'SEXUAL HEALTH',
+    tag: 'GUIDE',
+    author: 'Dr. Marco Rossi',
+    authorRole: 'Urologist, MD',
+    photo: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=900&q=80',
+    sections: [
+      {
+        heading: 'How PDE5 Inhibitors Work',
+        body: 'Sildenafil, tadalafil, vardenafil, and avanafil all work by inhibiting phosphodiesterase type 5 (PDE5), the enzyme that breaks down cGMP in smooth muscle cells of the corpus cavernosum. Elevated cGMP causes relaxation of smooth muscle, increased blood flow, and erection. Critically: PDE5 inhibitors do not cause erections independently — sexual stimulation is required. They simply facilitate the physiological response to arousal by prolonging the nitric oxide/cGMP signal.',
+      },
+      {
+        heading: 'Sildenafil (Viagra): Fast Acting, Short Duration',
+        body: 'Onset: 30–60 minutes. Duration: 4–6 hours. Standard doses: 25 mg, 50 mg (most common), 100 mg. Take on an empty stomach — fatty foods delay absorption by 60+ minutes and reduce peak concentration by 29%. Efficacy: 70–80% of men achieve satisfactory erections. Side effects: flushing (11%), headache (16%), nasal congestion (4%), visual disturbances (3% — blue-tinge, blurred vision). Contraindicated with nitrates (severe hypotension risk). Generic sildenafil is now widely available in Europe at a fraction of brand Viagra cost.',
+      },
+      {
+        heading: 'Tadalafil (Cialis): The "Weekend Pill"',
+        body: 'Onset: 30 minutes to 2 hours. Duration: up to 36 hours. Standard doses: 10 mg (as-needed), 20 mg (as-needed), 2.5–5 mg (daily). Daily low-dose tadalafil (5 mg) normalises erectile function continuously and is particularly effective for men who have sex more than twice weekly. Less affected by food. Side effects similar to sildenafil but with less flushing and visual effects; more back pain and muscle aches (1–10%). Also approved for benign prostatic hyperplasia (BPH) at 5 mg daily — unique among PDE5 inhibitors.',
+      },
+      {
+        heading: 'Which Should You Choose?',
+        body: 'Choose sildenafil if: spontaneity is less important, cost is a primary concern, you prefer a shorter window of effect. Choose tadalafil if: you want a longer window of opportunity, you have sex more than 2× weekly (consider daily dosing), food timing is difficult to control. Note: a significant proportion of men who do not respond to one PDE5 inhibitor respond to another — switching is always worth trying before considering other interventions.',
+      },
+      {
+        heading: 'Where to Buy ED Medications Online in Europe',
+        body: 'PharmaForce stocks branded and generic sildenafil and tadalafil tablets for delivery across Europe. Products include Viagra (sildenafil 50/100 mg), Cialis (tadalafil 20 mg), and generic equivalents at significantly lower prices. Delivery available to Germany, France, Poland, Netherlands, Belgium, Austria, Switzerland, Spain, Italy, Czech Republic and 25+ EU countries. Discreet packaging — no product names or logos on the outside of parcels. 3–8 business day delivery. Free shipping on orders over €150.',
+      },
+    ],
+  },
+
+  {
+    slug: 'retatrutide-tirzepatide-weight-loss-europe-2026',
+    title: 'Next-Generation Weight Loss: Tirzepatide and Retatrutide vs Semaglutide in 2026',
+    excerpt: 'Tirzepatide (Mounjaro) and the emerging retatrutide are showing unprecedented weight loss results — up to 24% body weight reduction. This guide compares all GLP-1 class drugs and what European patients need to know.',
+    date: 'Feb 21, 2026',
+    readTime: '9 min',
+    category: 'GLP-1',
+    tag: 'RESEARCH',
+    author: 'Dr. Anna Fischer',
+    authorRole: 'Endocrinologist, MD',
+    photo: 'https://images.unsplash.com/photo-1576671081837-49000212a370?w=900&q=80',
+    sections: [
+      {
+        heading: 'The GLP-1 Revolution: From Ozempic to Triple Agonists',
+        body: 'The weight-loss pharmacology landscape has transformed dramatically since 2021. First came semaglutide — delivering 15–17% weight loss. Then tirzepatide — a dual GLP-1/GIP agonist — achieved 20–22% in the SURMOUNT trials. Now retatrutide — a triple GLP-1/GIP/glucagon agonist — has shown 24.2% weight reduction at 48 weeks in Phase 2 trials. For context: bariatric surgery achieves 25–30%. We are approaching surgical-level weight loss in an injectable medication.',
+      },
+      {
+        heading: 'Tirzepatide (Mounjaro): Dual Agonist',
+        body: 'Tirzepatide activates both GLP-1 and GIP (glucose-dependent insulinotropic polypeptide) receptors. GIP activation appears to enhance GLP-1 efficacy through synergistic effects on satiety, metabolism, and fat tissue. SURMOUNT-1 results: 22.5% weight reduction at 72 weeks on 15 mg/week. Doses: 2.5 mg escalating to 5, 7.5, 10, 12.5, and 15 mg. Available in the EU as Mounjaro (EMA-approved for T2D, increasingly used off-label for obesity). Side effect profile similar to semaglutide but with higher rate of nausea at dose escalation.',
+      },
+      {
+        heading: 'Semaglutide 2.4 mg (Wegovy): The Current Standard',
+        body: 'Wegovy at 2.4 mg weekly remains the gold standard for GLP-1 monotherapy in Europe, with the most robust clinical evidence and longest track record. STEP-1 trial: 14.9% weight loss at 68 weeks. SELECT cardiovascular outcomes trial showed 20% reduction in major cardiovascular events — making it the first weight-loss drug with proven CV benefit. For patients who cannot access tirzepatide, Wegovy at 2.4 mg remains the best-evidenced option.',
+      },
+      {
+        heading: 'Practical: Semaglutide or Tirzepatide?',
+        body: 'Expected weight loss: Semaglutide ~15%, Tirzepatide ~22%. Tolerability: similar GI side effects; tirzepatide may have higher nausea in early weeks. Cost: Mounjaro typically 20–30% more expensive. Availability: Ozempic shortages have been widespread since 2023; Mounjaro supply is now more stable in Europe. Clinical decision: if weight loss of >20% is the goal and cost is not prohibitive, tirzepatide offers meaningfully superior outcomes. For patients with T2D, both are EMA-approved.',
+      },
+      {
+        heading: 'Where to Buy GLP-1 Medications in Europe',
+        body: 'PharmaForce stocks Ozempic (semaglutide 0.5–2 mg), Wegovy (semaglutide 0.25–2.4 mg), Mounjaro (tirzepatide 2.5–15 mg), and Saxenda (liraglutide) for delivery across 30+ EU countries. All products are original branded pharmaceuticals from verified EU suppliers. Delivery to Germany, France, Poland, Netherlands, Belgium, Austria, Switzerland, Italy, Spain and all major EU markets in 3–8 business days. Discreet plain packaging. Free shipping on orders over €150.',
+      },
+    ],
+  },
 ];
