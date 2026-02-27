@@ -37,6 +37,10 @@ body {
   box-sizing: border-box;
 }
 
+button, [role="button"], a {
+  cursor: pointer;
+}
+
 ::selection {
   background: #F97316;
   color: #0F0F0F;
