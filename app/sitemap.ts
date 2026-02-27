@@ -3,7 +3,7 @@ import { PRODUCTS } from '@/lib/products';
 import { BLOG_POSTS } from '@/lib/blog-content';
 
 const BASE = 'https://pharmaforce-store.com';
-const LOCALES = ['en', 'de', 'pl', 'fr', 'it'];
+const LOCALES = ['en', 'de', 'pl', 'fr', 'it', 'es'];
 
 type SitemapEntry = MetadataRoute.Sitemap[number];
 

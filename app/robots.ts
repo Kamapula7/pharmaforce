@@ -13,6 +13,7 @@ export default function robots(): MetadataRoute.Robots {
           '/fr/cart', '/fr/checkout', '/fr/account', '/fr/order-confirmation',
           '/it/cart', '/it/checkout', '/it/account', '/it/order-confirmation',
           '/pl/cart', '/pl/checkout', '/pl/account', '/pl/order-confirmation',
+          '/es/cart', '/es/checkout', '/es/account', '/es/order-confirmation',
         ],
       },
     ],

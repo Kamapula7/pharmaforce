@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: ShippingPageProps): Promise<M
         'fr': 'https://pharmaforce-store.com/fr/shipping',
         'it': 'https://pharmaforce-store.com/it/shipping',
         'pl': 'https://pharmaforce-store.com/pl/shipping',
+        'es': 'https://pharmaforce-store.com/es/shipping',
       },
     },
   };

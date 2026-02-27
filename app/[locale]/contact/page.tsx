@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: ContactPageProps): Promise<Me
         'fr': 'https://pharmaforce-store.com/fr/contact',
         'it': 'https://pharmaforce-store.com/it/contact',
         'pl': 'https://pharmaforce-store.com/pl/contact',
+        'es': 'https://pharmaforce-store.com/es/contact',
       },
     },
   };

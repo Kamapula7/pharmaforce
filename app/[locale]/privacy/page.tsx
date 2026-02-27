@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: PrivacyPageProps): Promise<Me
         'fr': 'https://pharmaforce-store.com/fr/privacy',
         'it': 'https://pharmaforce-store.com/it/privacy',
         'pl': 'https://pharmaforce-store.com/pl/privacy',
+        'es': 'https://pharmaforce-store.com/es/privacy',
       },
     },
   };

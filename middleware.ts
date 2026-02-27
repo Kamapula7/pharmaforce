@@ -16,6 +16,7 @@ function detectLocale(req: NextRequest): string {
     pl: 'pl',
     fr: 'fr', be: 'fr',
     it: 'it',
+    es: 'es', mx: 'es',
     en: 'en',
   };
 

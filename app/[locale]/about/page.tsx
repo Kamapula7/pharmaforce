@@ -19,6 +19,7 @@ export async function generateMetadata({ params }: AboutPageProps): Promise<Meta
         'fr': 'https://pharmaforce-store.com/fr/about',
         'it': 'https://pharmaforce-store.com/it/about',
         'pl': 'https://pharmaforce-store.com/pl/about',
+        'es': 'https://pharmaforce-store.com/es/about',
       },
     },
   };

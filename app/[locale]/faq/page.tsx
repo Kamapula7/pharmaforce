@@ -18,6 +18,7 @@ export async function generateMetadata({ params }: FaqPageProps): Promise<Metada
         'fr': 'https://pharmaforce-store.com/fr/faq',
         'it': 'https://pharmaforce-store.com/it/faq',
         'pl': 'https://pharmaforce-store.com/pl/faq',
+        'es': 'https://pharmaforce-store.com/es/faq',
       },
     },
   };

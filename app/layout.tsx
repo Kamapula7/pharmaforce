@@ -33,6 +33,7 @@ export const metadata: Metadata = {
       'pl':    'https://pharmaforce-store.com/pl',
       'fr':    'https://pharmaforce-store.com/fr',
       'it':    'https://pharmaforce-store.com/it',
+      'es':    'https://pharmaforce-store.com/es',
       'x-default': 'https://pharmaforce-store.com/en',
     },
   },

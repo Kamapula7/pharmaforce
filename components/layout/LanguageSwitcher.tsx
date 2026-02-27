@@ -10,6 +10,7 @@ const LOCALES = [
   { code: 'pl', label: 'PL', flag: '🇵🇱' },
   { code: 'fr', label: 'FR', flag: '🇫🇷' },
   { code: 'it', label: 'IT', flag: '🇮🇹' },
+  { code: 'es', label: 'ES', flag: '🇪🇸' },
 ];
 
 interface LanguageSwitcherProps {

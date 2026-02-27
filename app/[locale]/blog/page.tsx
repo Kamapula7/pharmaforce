@@ -23,6 +23,7 @@ export async function generateMetadata({ params }: BlogPageProps): Promise<Metad
         'fr': 'https://pharmaforce-store.com/fr/blog',
         'pl': 'https://pharmaforce-store.com/pl/blog',
         'it': 'https://pharmaforce-store.com/it/blog',
+        'es': 'https://pharmaforce-store.com/es/blog',
       },
     },
     openGraph: {

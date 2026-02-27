@@ -29,6 +29,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
         'fr': `https://pharmaforce-store.com/fr/blog/${slug}`,
         'pl': `https://pharmaforce-store.com/pl/blog/${slug}`,
         'it': `https://pharmaforce-store.com/it/blog/${slug}`,
+        'es': `https://pharmaforce-store.com/es/blog/${slug}`,
         'x-default': `https://pharmaforce-store.com/en/blog/${slug}`,
       },
     },

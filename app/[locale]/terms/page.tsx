@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: TermsPageProps): Promise<Meta
         'fr': 'https://pharmaforce-store.com/fr/terms',
         'it': 'https://pharmaforce-store.com/it/terms',
         'pl': 'https://pharmaforce-store.com/pl/terms',
+        'es': 'https://pharmaforce-store.com/es/terms',
       },
     },
   };
