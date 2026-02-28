@@ -44,9 +44,6 @@ export default function AccountClient({ locale }: { locale: string }) {
     searchParams.get('tab') === 'register' ? 'register' : 'login'
   );
 
-  useEffect(() => {
-    if (searchParams.get('tab') === 'register') setTab('register');
-  }, [searchParams]);
   const [showPass, setShowPass] = useState(false);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -69,10 +66,17 @@ export default function AccountClient({ locale }: { locale: string }) {
     }
   };
 
+  const sessionLoaded = !!session;
   useEffect(() => {
-    if (session) loadOrders();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [session]);
+    if (!sessionLoaded) return;
+    const ctrl = new AbortController();
+    let cancelled = false;
+    fetch('/api/account/orders', { signal: ctrl.signal })
+      .then(r => r.ok ? r.json() : [])
+      .then(data => { if (!cancelled) setOrders(data); })
+      .catch(() => { if (!cancelled) setOrders([]); });
+    return () => { cancelled = true; ctrl.abort(); };
+  }, [sessionLoaded]);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -238,7 +242,7 @@ export default function AccountClient({ locale }: { locale: string }) {
                         </div>
                         {order.status === 'AWAITING_PAYMENT' && (
                           <div className="bg-orange-500/10 border border-orange-500/20 rounded-lg p-3 text-xs text-orange-300">
-                            Waiting for payment confirmation. We'll update your order once the transfer is received.
+                            Waiting for payment confirmation. We&apos;ll update your order once the transfer is received.
                           </div>
                         )}
                         {order.status === 'PAID' && (

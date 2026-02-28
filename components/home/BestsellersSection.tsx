@@ -60,7 +60,6 @@ const MOCK_PRODUCTS = [
 
 export default function BestsellersSection({ locale }: BestsellersSectionProps) {
   const t = useTranslations('home.bestsellers');
-  const tProd = useTranslations('products');
 
   return (
     <section className="py-20">

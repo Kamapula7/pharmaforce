@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useSyncExternalStore } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Heart, ShoppingCart, Trash2 } from 'lucide-react';
@@ -9,16 +9,19 @@ import { useCartStore } from '@/store/cartStore';
 import { PRODUCTS } from '@/lib/products';
 import { formatPrice } from '@/lib/utils';
 
+const subscribe = (cb: () => void) => {
+  const unsub = useWishlistStore.persist.onFinishHydration(cb);
+  useWishlistStore.persist.rehydrate();
+  return unsub;
+};
+const getSnapshot = () => useWishlistStore.persist.hasHydrated();
+const getServerSnapshot = () => false;
+
 export default function WishlistClient({ locale }: { locale: string }) {
   const ids = useWishlistStore((s) => s.ids);
   const toggle = useWishlistStore((s) => s.toggle);
   const addItem = useCartStore((s) => s.addItem);
-  const [hydrated, setHydrated] = useState(false);
-
-  useEffect(() => {
-    useWishlistStore.persist.rehydrate();
-    setHydrated(true);
-  }, []);
+  const hydrated = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
   const products = PRODUCTS.filter((p) => ids.includes(p.id));
 
@@ -65,7 +68,7 @@ export default function WishlistClient({ locale }: { locale: string }) {
                 className={`relative aspect-square overflow-hidden block ${product.image.includes('-bg') ? '' : 'bg-white'}`}
               >
                 <Image
-                  src={product.image}
+                  src={`${product.image}?v=2`}
                   alt={product.name}
                   fill
                   className={`group-hover:scale-105 transition-transform duration-500 ${product.image.includes('-bg') ? 'object-cover' : 'object-contain p-4'}`}

@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic';
 import { PRODUCTS } from '@/lib/products';
 import { formatPrice } from '@/lib/utils';
 import { Package, Euro, Pill, Users, BarChart2, ArrowUpRight, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 import type { Order, OrderItem } from '@/app/generated/prisma/client';
 
 type OrderWithItems = Order & { items: OrderItem[] };
@@ -212,9 +213,9 @@ export default async function AdminDashboard() {
       <div className="bg-[#111118] border border-white/8 rounded-xl overflow-hidden">
         <div className="px-4 py-3 border-b border-white/8 flex items-center justify-between">
           <h2 className="text-white font-semibold text-sm">Recent Orders</h2>
-          <a href="/pf-secure-9k2/orders" className="text-brand text-xs hover:underline flex items-center gap-1">
+          <Link href="/pf-secure-9k2/orders" className="text-brand text-xs hover:underline flex items-center gap-1">
             View all <ArrowUpRight className="w-3 h-3" />
-          </a>
+          </Link>
         </div>
 
         {orders.length === 0 ? (

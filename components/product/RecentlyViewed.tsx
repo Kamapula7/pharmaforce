@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { formatPrice } from '@/lib/utils';
@@ -17,19 +17,20 @@ export function trackProductView(slug: string) {
   } catch { /* silent */ }
 }
 
+function getStoredSlugs(currentSlug: string): string[] {
+  if (typeof window === 'undefined') return [];
+  try {
+    const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]') as string[];
+    return stored.filter(s => s !== currentSlug).slice(0, 4);
+  } catch { return []; }
+}
+
 export default function RecentlyViewed({ currentSlug, locale, label = 'Recently Viewed' }: {
   currentSlug: string;
   locale: string;
   label?: string;
 }) {
-  const [slugs, setSlugs] = useState<string[]>([]);
-
-  useEffect(() => {
-    try {
-      const stored = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '[]') as string[];
-      setSlugs(stored.filter(s => s !== currentSlug).slice(0, 4));
-    } catch { /* silent */ }
-  }, [currentSlug]);
+  const slugs = useMemo(() => getStoredSlugs(currentSlug), [currentSlug]);
 
   const products = slugs.map(s => PRODUCTS.find(p => p.slug === s)).filter(Boolean);
   if (products.length === 0) return null;
@@ -49,7 +50,7 @@ export default function RecentlyViewed({ currentSlug, locale, label = 'Recently 
             >
               <div className={`relative aspect-square ${isBg ? '' : 'bg-white'}`}>
                 <Image
-                  src={p.image}
+                  src={`${p.image}?v=2`}
                   alt={p.name}
                   fill
                   sizes="(max-width: 640px) 50vw, 25vw"

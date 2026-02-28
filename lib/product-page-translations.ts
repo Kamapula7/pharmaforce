@@ -105,6 +105,12 @@ export const DESCRIPTIONS_BY_LOCALE: Record<string, DescMap> = {
       howToUse: 'Take 1–2 capsules 30 minutes before bed. Do not exceed stated dose. Not suitable for daytime use. Avoid driving after taking.',
       servings: 30,
     },
+    Antidepressants: {
+      desc: 'Pharmaceutical-grade antidepressant manufactured in GMP-certified facilities. Active substance, dosage and pack size are product-specific — see the individual product description above.',
+      composition: 'Active substance as per product description (e.g. Escitalopram, Fluoxetine, Sertraline, Venlafaxine, Bupropion, Duloxetine). Film-coated tablet or capsule. Standard pharmaceutical excipients. Free of undeclared substances.',
+      howToUse: 'Take orally with water, with or without food as indicated. Follow the prescribed dosing schedule — do not discontinue without medical advice. Starting dose, maintenance dose and titration are product-specific — see the product description.',
+      servings: 1,
+    },
   },
 
   de: {
@@ -209,6 +215,12 @@ export const DESCRIPTIONS_BY_LOCALE: Record<string, DescMap> = {
       composition: 'Melatonin 3 mg, Magnesiumbisglycinat 200 mg, L-Theanin 200 mg, Baldrianwurzelextrakt 300 mg, Ashwagandha KSM-66® 150 mg. Pro Portion.',
       howToUse: '1–2 Kapseln 30 Minuten vor dem Schlafengehen einnehmen. Angegebene Dosis nicht überschreiten. Nicht tagsüber verwenden.',
       servings: 30,
+    },
+    Antidepressants: {
+      desc: 'Pharmazeutisches Antidepressivum, hergestellt in GMP-zertifizierten Einrichtungen. Wirkstoff, Dosierung und Packungsgröße sind produktspezifisch — siehe die individuelle Produktbeschreibung oben.',
+      composition: 'Wirkstoff gemäß Produktbeschreibung (z. B. Escitalopram, Fluoxetin, Sertralin, Venlafaxin, Bupropion, Duloxetin). Filmtablette oder Kapsel. Standardmäßige pharmazeutische Hilfsstoffe. Frei von nicht deklarierten Substanzen.',
+      howToUse: 'Oral mit Wasser einnehmen, mit oder ohne Mahlzeit wie angegeben. Die verschriebene Dosierung einhalten — nicht ohne ärztlichen Rat absetzen. Anfangsdosis, Erhaltungsdosis und Titration sind produktspezifisch — siehe Produktbeschreibung.',
+      servings: 1,
     },
   },
 
@@ -315,6 +327,12 @@ export const DESCRIPTIONS_BY_LOCALE: Record<string, DescMap> = {
       howToUse: 'Prendre 1–2 gélules 30 minutes avant le coucher. Ne pas dépasser la dose indiquée. Ne pas utiliser pendant la journée.',
       servings: 30,
     },
+    Antidepressants: {
+      desc: 'Antidépresseur de qualité pharmaceutique fabriqué dans des installations certifiées GMP. Le principe actif, le dosage et la taille de l\'emballage sont spécifiques à chaque produit — voir la description individuelle du produit ci-dessus.',
+      composition: 'Principe actif selon la description du produit (p. ex. Escitalopram, Fluoxétine, Sertraline, Venlafaxine, Bupropion, Duloxétine). Comprimé pelliculé ou gélule. Excipients pharmaceutiques standards. Sans substances non déclarées.',
+      howToUse: 'Prendre par voie orale avec de l\'eau, avec ou sans nourriture selon l\'indication. Suivre le schéma posologique prescrit — ne pas interrompre sans avis médical. La dose initiale, la dose d\'entretien et la titration sont spécifiques au produit — voir la description du produit.',
+      servings: 1,
+    },
   },
 
   pl: {
@@ -420,6 +438,12 @@ export const DESCRIPTIONS_BY_LOCALE: Record<string, DescMap> = {
       howToUse: 'Przyjmować 1–2 kapsułki 30 minut przed snem. Nie przekraczać podanej dawki. Nie stosować w ciągu dnia.',
       servings: 30,
     },
+    Antidepressants: {
+      desc: 'Lek przeciwdepresyjny jakości farmaceutycznej wyprodukowany w certyfikowanych zakładach GMP. Substancja czynna, dawkowanie i wielkość opakowania są specyficzne dla danego produktu — patrz indywidualny opis produktu powyżej.',
+      composition: 'Substancja czynna zgodna z opisem produktu (np. Escitalopram, Fluoksetyna, Sertralina, Wenlafaksyna, Bupropion, Duloksetyna). Tabletka powlekana lub kapsułka. Standardowe pomocnicze substancje farmaceutyczne. Wolne od niezadeklarowanych substancji.',
+      howToUse: 'Przyjmować doustnie z wodą, z posiłkiem lub bez, zgodnie ze wskazaniem. Przestrzegać zaleconego schematu dawkowania — nie przerywać leczenia bez konsultacji lekarskiej. Dawka początkowa, dawka podtrzymująca i titracja są specyficzne dla produktu — patrz opis produktu.',
+      servings: 1,
+    },
   },
 
   it: {
@@ -524,6 +548,12 @@ export const DESCRIPTIONS_BY_LOCALE: Record<string, DescMap> = {
       composition: 'Melatonina 3 mg, Bisglicinato di Magnesio 200 mg, L-Teanina 200 mg, Estratto di Radice di Valeriana 300 mg, Ashwagandha KSM-66® 150 mg. Per porzione.',
       howToUse: 'Assumere 1–2 capsule 30 minuti prima di dormire. Non superare la dose indicata. Non usare durante il giorno.',
       servings: 30,
+    },
+    Antidepressants: {
+      desc: 'Antidepressivo di qualità farmaceutica prodotto in stabilimenti certificati GMP. La sostanza attiva, il dosaggio e la dimensione della confezione sono specifici per ciascun prodotto — vedere la descrizione individuale del prodotto sopra.',
+      composition: 'Principio attivo secondo la descrizione del prodotto (es. Escitalopram, Fluoxetina, Sertralina, Venlafaxina, Bupropione, Duloxetina). Compressa rivestita con film o capsula. Eccipienti farmaceutici standard. Privo di sostanze non dichiarate.',
+      howToUse: 'Assumere per via orale con acqua, con o senza cibo secondo l\'indicazione. Seguire lo schema posologico prescritto — non interrompere senza parere medico. La dose iniziale, la dose di mantenimento e la titolazione sono specifiche del prodotto — vedere la descrizione del prodotto.',
+      servings: 1,
     },
   },
 

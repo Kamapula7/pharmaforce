@@ -3,7 +3,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Search, X } from 'lucide-react';
 import { PRODUCTS } from '@/lib/products';
 import { formatPrice } from '@/lib/utils';

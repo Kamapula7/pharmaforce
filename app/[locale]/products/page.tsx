@@ -229,9 +229,6 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
   const subCount = (s: string, cat: string) =>
     PRODUCTS.filter(p => p.category.toLowerCase().replace(/\s+/g, '-') === cat && p.subcategory?.toLowerCase() === s).length;
 
-  const brandCount = (b: string) =>
-    PRODUCTS.filter(p => p.brand === b).length;
-
   return (
     <div>
 
@@ -497,7 +494,7 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
                 {/* Image */}
                 <Link href={`/${locale}/products/${product.slug}`} className={`relative aspect-square overflow-hidden block ${product.image.includes('-bg') ? '' : 'bg-white'}`}>
                   <Image
-                    src={product.image}
+                    src={`${product.image}?v=2`}
                     alt={product.name}
                     fill
                     className={`group-hover:scale-105 transition-transform duration-500 ${product.image.includes('-bg') ? 'object-cover' : 'object-contain p-4'}`}

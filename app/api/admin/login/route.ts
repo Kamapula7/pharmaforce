@@ -3,10 +3,6 @@ import { rateLimit } from '@/lib/rate-limit';
 
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
-if (!ADMIN_PASSWORD) {
-  console.error('ADMIN_PASSWORD environment variable is not set');
-}
-
 export async function POST(req: NextRequest) {
   const ip = req.headers.get('x-forwarded-for')?.split(',')[0] ?? 'unknown';
   const rl = rateLimit(`admin-login:${ip}`, { limit: 5, windowMs: 300_000 });

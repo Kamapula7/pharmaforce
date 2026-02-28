@@ -17,50 +17,6 @@ export interface Product {
   description?: string;
 }
 
-// Product photos — Unsplash (reliable, no hotlink protection)
-const U = 'https://images.unsplash.com/photo-';
-const VIAL = [
-  U + '1584308666744-24d5c474f2ae?w=500&q=90&fit=crop',
-  U + '1559757175-0eb30cd8c063?w=500&q=90&fit=crop',
-  U + '1631549916768-4119b2e5f926?w=500&q=90&fit=crop',
-  U + '1617972436741-4b46ec6e4a53?w=500&q=90&fit=crop',
-  U + '1576091160550-2173dba999ef?w=500&q=90&fit=crop',
-];
-const IMG = {
-  // Protein tubs & powder
-  on_whey_choc:      '/products/on-whey.png',
-  on_whey_vanilla:   '/products/on-whey.png',
-  on_whey_straw:     '/products/on-whey.png',
-  on_isolate:        U + '1579722821273-0f6c1d44362b?w=500&q=90&fit=crop',
-  on_casein:         U + '1512069772995-ec65ed45afd6?w=500&q=90&fit=crop',
-  on_creatine:       U + '1617972436741-4b46ec6e4a53?w=500&q=90&fit=crop',
-  on_preworkout:     U + '1546483875-ad9014c88eba?w=500&q=90&fit=crop',
-  on_amino:          U + '1627467959547-2af8f75b6003?w=500&q=90&fit=crop',
-  // BSN
-  bsn_syntha:        U + '1563289591-0a3b54fbef24?w=500&q=90&fit=crop',
-  bsn_noxplode:      U + '1571019613454-1cb2f99b2d8b?w=500&q=90&fit=crop',
-  bsn_aminox:        U + '1534438327276-14e5300c3a48?w=500&q=90&fit=crop',
-  bsn_truemass:      U + '1593095948071-474c5cc2989d?w=500&q=90&fit=crop',
-  bsn_bar:           U + '1490645935967-10de6ba17061?w=500&q=90&fit=crop',
-  // Now Foods vitamins
-  now_d3:            U + '1584308666744-24d5c474f2ae?w=500&q=90&fit=crop',
-  now_omega3:        U + '1550572017-edd951b55104?w=500&q=90&fit=crop',
-  now_magnesium:     U + '1631549916768-4119b2e5f926?w=500&q=90&fit=crop',
-  now_vitc:          U + '1584308666744-24d5c474f2ae?w=500&q=90&fit=crop',
-  now_caps:          U + '1559757175-0eb30cd8c063?w=500&q=90&fit=crop',
-  now_carnitine:     U + '1560343819-a63a5c04a4a5?w=500&q=90&fit=crop',
-  now_kre:           U + '1617972436741-4b46ec6e4a53?w=500&q=90&fit=crop',
-  // Balkan
-  balkan_creatine:   U + '1517836357463-d25dfeac3438?w=500&q=90&fit=crop',
-  balkan_whey:       U + '1556909114-f6e7ad7d3136?w=500&q=90&fit=crop',
-  balkan_preworkout: U + '1546483875-ad9014c88eba?w=500&q=90&fit=crop',
-  balkan_carnitine:  U + '1559757175-0eb30cd8c063?w=500&q=90&fit=crop',
-  // Enervit
-  enervit_drink:     U + '1550572017-edd951b55104?w=500&q=90&fit=crop',
-  enervit_gel:       U + '1627467959547-2af8f75b6003?w=500&q=90&fit=crop',
-  enervit_bar:       U + '1506459954879-8db95d17ebc0?w=500&q=90&fit=crop',
-};
-
 export const PRODUCTS: Product[] = [
 
   // ─── WHEY PROTEIN ─────────────────────────────────────────────────────────
