@@ -23,7 +23,7 @@ export default function ProductGallery({ mainImage, gallery, name, badge, oldPri
       {/* Main image */}
       <div className={`relative aspect-square rounded-2xl overflow-hidden border border-border ${images[active].includes('-bg') ? '' : 'bg-white'}`}>
         <Image
-          src={`${images[active]}?v=2`}
+          src={images[active]}
           alt={name}
           fill
           className={`transition-opacity duration-200 ${images[active].includes('-bg') ? 'object-cover' : 'object-contain p-4'}`}
@@ -55,7 +55,7 @@ export default function ProductGallery({ mainImage, gallery, name, badge, oldPri
             }`}
           >
             <Image
-              src={`${src}?v=2`}
+              src={src}
               alt={`${name} photo ${i + 1}`}
               fill
               className={src.includes('-bg') ? 'object-cover' : 'object-contain p-1'}

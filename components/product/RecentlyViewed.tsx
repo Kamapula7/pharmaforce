@@ -50,7 +50,7 @@ export default function RecentlyViewed({ currentSlug, locale, label = 'Recently 
             >
               <div className={`relative aspect-square ${isBg ? '' : 'bg-white'}`}>
                 <Image
-                  src={`${p.image}?v=2`}
+                  src={p.image}
                   alt={p.name}
                   fill
                   sizes="(max-width: 640px) 50vw, 25vw"

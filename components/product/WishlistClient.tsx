@@ -68,7 +68,7 @@ export default function WishlistClient({ locale }: { locale: string }) {
                 className={`relative aspect-square overflow-hidden block ${product.image.includes('-bg') ? '' : 'bg-white'}`}
               >
                 <Image
-                  src={`${product.image}?v=2`}
+                  src={product.image}
                   alt={product.name}
                   fill
                   className={`group-hover:scale-105 transition-transform duration-500 ${product.image.includes('-bg') ? 'object-cover' : 'object-contain p-4'}`}
