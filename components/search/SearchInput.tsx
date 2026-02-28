@@ -130,14 +130,18 @@ export default function SearchInput({ locale, initialQuery = '', placeholder = '
           ))}
 
           {/* View all results */}
-          <Link
-            href={`/${locale}/search?q=${encodeURIComponent(query.trim())}`}
-            onMouseDown={() => { setShowSuggestions(false); onClose?.(); }}
-            className="flex items-center justify-center gap-2 px-4 py-3 text-brand text-sm font-semibold hover:bg-brand/10 transition-colors border-t border-white/10"
+          <button
+            type="button"
+            onMouseDown={() => {
+              setShowSuggestions(false);
+              onClose?.();
+              router.push(`/${locale}/search?q=${encodeURIComponent(query.trim())}`);
+            }}
+            className="w-full flex items-center justify-center gap-2 px-4 py-3 text-brand text-sm font-semibold hover:bg-brand/10 transition-colors border-t border-white/10"
           >
             <Search className="w-4 h-4" />
             View all results for &ldquo;{query}&rdquo;
-          </Link>
+          </button>
         </div>
       )}
     </div>

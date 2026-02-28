@@ -11,6 +11,7 @@ import {
   User, MapPin, Landmark, ArrowLeft, ArrowRight,
 } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import { gtagBeginCheckout, gtagPurchase } from '@/lib/gtag';
 
 const BANK_DETAILS = {
   accountHolder: 'Antonietta Ferrara',
@@ -93,6 +94,12 @@ export default function CheckoutClient({ locale }: { locale: string }) {
     if (!lastName.trim())  e.lastName  = t('required');
     if (!email.trim() || !/\S+@\S+\.\S+/.test(email)) e.email = t('validEmail');
     setErr1(e);
+    if (Object.keys(e).length === 0) {
+      gtagBeginCheckout(
+        items.map(i => ({ id: i.id, name: i.nameEn, price: i.price, quantity: i.quantity })),
+        total,
+      );
+    }
     return Object.keys(e).length === 0;
   };
 
@@ -346,6 +353,7 @@ export default function CheckoutClient({ locale }: { locale: string }) {
                         customerEmail: email,
                         items: items.map(i => ({ name: i.nameEn, qty: i.quantity, price: i.price, image: i.image })),
                       });
+                      gtagPurchase(orderRef, total, items.map(i => ({ id: i.id, name: i.nameEn, price: i.price, quantity: i.quantity })));
                       clearCart();
                       setConfirmed(true);
                     } catch {

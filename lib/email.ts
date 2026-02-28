@@ -168,6 +168,73 @@ export async function sendShippedNotification({
   });
 }
 
+export async function sendAbandonedCartEmail({
+  customerEmail,
+  customerName,
+  items,
+  total,
+  locale = 'en',
+}: {
+  customerEmail: string;
+  customerName: string;
+  items: OrderItem[];
+  total: number;
+  locale?: string;
+}) {
+  const transporter = await createTransporter();
+  const firstName = customerName?.split(' ')[0] || 'Athlete';
+
+  const html = baseLayout(`
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:16px;padding:32px;text-align:center;margin-bottom:24px;">
+      <div style="font-size:48px;margin-bottom:16px;">🛒</div>
+      <h1 style="color:#fff;font-size:24px;font-weight:900;margin:0 0 8px;">You Left Something Behind!</h1>
+      <p style="color:#999;font-size:15px;margin:0;">Hi ${firstName}, you have items waiting in your cart.</p>
+    </div>
+
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;overflow:hidden;margin-bottom:24px;">
+      <div style="padding:16px 24px;border-bottom:1px solid #2a2a2a;">
+        <h2 style="color:#fff;font-size:16px;font-weight:700;margin:0;">Your Cart</h2>
+      </div>
+      <table style="width:100%;border-collapse:collapse;">
+        <thead><tr style="background:#222;">
+          <th style="padding:8px 12px;text-align:left;color:#666;font-size:11px;text-transform:uppercase;">Product</th>
+          <th style="padding:8px 12px;text-align:center;color:#666;font-size:11px;text-transform:uppercase;">Qty</th>
+          <th style="padding:8px 12px;text-align:right;color:#666;font-size:11px;text-transform:uppercase;">Price</th>
+        </tr></thead>
+        <tbody>${itemsTable(items)}</tbody>
+        <tfoot><tr>
+          <td colspan="2" style="padding:12px;color:#999;font-size:14px;text-align:right;font-weight:700;">Total:</td>
+          <td style="padding:12px;color:#F97316;font-size:18px;font-weight:900;text-align:right;">€${total.toFixed(2)}</td>
+        </tr></tfoot>
+      </table>
+    </div>
+
+    <div style="text-align:center;margin-bottom:24px;">
+      <a href="https://pharmaforce-store.com/${locale}/cart"
+        style="display:inline-block;background:#F97316;color:#111;font-weight:900;font-size:16px;text-decoration:none;padding:16px 40px;border-radius:14px;">
+        Complete Your Order →
+      </a>
+    </div>
+
+    <div style="background:#1f1300;border:1px solid #F97316;border-radius:14px;padding:16px 20px;text-align:center;margin-bottom:24px;">
+      <p style="color:#F97316;font-weight:800;font-size:14px;margin:0 0 4px;">🚚 Free Shipping on Orders Over €150</p>
+      <p style="color:#ccc;font-size:13px;margin:0;">Your items are reserved but stock is limited.</p>
+    </div>
+
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:18px 24px;text-align:center;">
+      <p style="color:#999;font-size:13px;margin:0 0 6px;">Need help? We respond within a few hours.</p>
+      <a href="mailto:pharmaforce@inbox.eu" style="color:#F97316;font-weight:700;font-size:14px;text-decoration:none;">pharmaforce@inbox.eu</a>
+    </div>
+  `);
+
+  await transporter.sendMail({
+    from: `"PharmaForce" <${process.env.SMTP_USER}>`,
+    to: customerEmail,
+    subject: `🛒 You left items in your cart — PharmaForce`,
+    html,
+  });
+}
+
 export async function sendWelcomeEmail({
   customerEmail,
   customerName,

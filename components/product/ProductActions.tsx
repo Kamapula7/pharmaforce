@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { ShoppingCart, Check, Minus, Plus, Gift } from 'lucide-react';
 import { useCartStore } from '@/store/cartStore';
 import { formatPrice } from '@/lib/utils';
+import { gtagAddToCart } from '@/lib/gtag';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import WishlistButton from './WishlistButton';
@@ -40,6 +41,7 @@ export default function ProductActions({ product, locale, badge }: ProductAction
       badge,
       quantity: qty,
     });
+    gtagAddToCart({ id: product.id, name: product.nameEn, price: product.price, category: product.category, quantity: qty });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   };

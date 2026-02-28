@@ -8,6 +8,7 @@ import Footer from '@/components/layout/Footer';
 import CrispChat from '@/components/layout/CrispChat';
 import FloatingChatButton from '@/components/layout/FloatingChatButton';
 import PageTracker from '@/components/layout/PageTracker';
+import AbandonedCartTracker from '@/components/cart/AbandonedCartTracker';
 
 const BASE = 'https://pharmaforce-store.com';
 
@@ -57,6 +58,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
             <Footer locale={locale} />
           </div>
           <PageTracker />
+          <AbandonedCartTracker locale={locale} />
           <CrispChat />
           <FloatingChatButton />
         </NextIntlClientProvider>

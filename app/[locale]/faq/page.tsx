@@ -21,6 +21,14 @@ export async function generateMetadata({ params }: FaqPageProps): Promise<Metada
         'es': 'https://pharmaforce-store.com/es/faq',
       },
     },
+    openGraph: {
+      title: 'FAQ — Frequently Asked Questions | PharmaForce',
+      description: 'Answers to the most common questions about ordering, shipping, payment and products at PharmaForce.',
+      url: `https://pharmaforce-store.com/${locale}/faq`,
+      siteName: 'PharmaForce',
+      images: [{ url: 'https://pharmaforce-store.com/hero-athletes.png', width: 1200, height: 630, alt: 'PharmaForce FAQ' }],
+      type: 'website',
+    },
   };
 }
 

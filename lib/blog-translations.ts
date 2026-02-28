@@ -248,6 +248,72 @@ export const BLOG_TRANSLATIONS: Record<string, LangMap> = {
         { heading: 'Clomid (Clomiphen): Wann verwenden', body: 'Clomiphencitrat wirkt sowohl am Hypothalamus als auch an der Hypophyse und produziert einen stärkeren LH-Schub als Nolvadex, hat aber mehr Nebenwirkungen: visuelle Störungen, Stimmungsschwankungen. Standard-PCT-Dosis: 50 mg/Tag für 2–4 Wochen. Bei stark unterdrückter Erholung: Clomid 50 mg + Nolvadex 20 mg täglich kombinieren.' },
       ],
     },
+
+    'buy-antidepressants-online-europe': {
+      title: 'Antidepressiva online in Europa kaufen: Vollständiger Leitfaden 2026',
+      excerpt: 'SSRIs und SNRIs sind die am häufigsten verschriebenen Antidepressiva in Europa. Erfahre, wie du Escitalopram, Sertralin und Venlafaxin sicher online bestellst — Wirkmechanismen, Dosierung und Lieferung in die EU.',
+      sections: [
+        { heading: 'SSRI vs. SNRI: Welche Klasse ist die richtige?', body: 'SSRIs (selektive Serotonin-Wiederaufnahmehemmer) wie Escitalopram und Sertralin wirken ausschließlich auf Serotonin und haben das günstigste Nebenwirkungsprofil. SNRIs wie Venlafaxin und Duloxetin hemmen zusätzlich die Noradrenalin-Wiederaufnahme und eignen sich bei komorbider Angststörung oder chronischen Schmerzen. Die Wahl hängt vom individuellen Symptomprofil ab.' },
+        { heading: 'Dosierung und Einstellungsphase', body: 'Antidepressiva werden stets einschleichend dosiert: Escitalopram beginnt bei 5 mg/Tag für 1 Woche, dann 10 mg/Tag. Sertralin startet bei 25–50 mg/Tag. Die volle Wirkung tritt erst nach 4–6 Wochen ein. Absetzen niemals abrupt — immer ausschleichen über mehrere Wochen, um Absetzsymptome zu vermeiden.' },
+        { heading: 'Antidepressiva online in der EU bestellen', body: 'PharmaForce liefert zugelassene Antidepressiva von europäischen Pharmaherstellern. Versand aus der EU in diskreter Verpackung innerhalb von 3–8 Werktagen nach Deutschland, Österreich, Frankreich, Niederlande und 25+ weitere EU-Länder.' },
+        { heading: 'Nebenwirkungen und Sicherheitshinweise', body: 'Häufige Nebenwirkungen in den ersten 1–2 Wochen: Übelkeit, Kopfschmerzen, leichte Unruhe. Diese klingen in der Regel ab. Sexuelle Dysfunktion betrifft 20–40 % der SSRI-Nutzer. Bei Suizidgedanken sofort ärztliche Hilfe suchen. Antidepressiva niemals mit MAO-Hemmern oder Tramadol kombinieren.' },
+      ],
+    },
+
+    'buy-escitalopram-lexapro-europe': {
+      title: 'Escitalopram (Lexapro) online in Europa kaufen',
+      excerpt: 'Escitalopram gilt als der selektivste SSRI mit dem besten Verträglichkeitsprofil. Hier erfährst du alles über Wirkung, Dosierung und wie du Escitalopram sicher online in der EU bestellst.',
+      sections: [
+        { heading: 'Was ist Escitalopram?', body: 'Escitalopram (Handelsname Cipralex / Lexapro) ist das S-Enantiomer von Citalopram und der selektivste verfügbare SSRI. Es wird zur Behandlung von Depressionen und generalisierten Angststörungen eingesetzt. Klinische Studien zeigen eine Ansprechrate von 60–70 % bei mittelschwerer bis schwerer Depression.' },
+        { heading: 'Dosierung und Anwendung', body: 'Startdosis: 5 mg/Tag für die erste Woche, dann Steigerung auf 10 mg/Tag. Maximaldosis: 20 mg/Tag. Die Einnahme erfolgt einmal täglich, unabhängig von den Mahlzeiten. Die volle therapeutische Wirkung tritt nach 4–6 Wochen ein. Beim Absetzen über mindestens 4 Wochen ausschleichen.' },
+        { heading: 'Nebenwirkungen und Wechselwirkungen', body: 'Häufigste Nebenwirkungen: Übelkeit (erste Woche), Schlafstörungen, sexuelle Dysfunktion. Escitalopram hat ein QT-Verlängerungsrisiko bei Dosen über 20 mg — daher die Maximaldosis nicht überschreiten. Nicht mit MAO-Hemmern, Triptanen oder Johanniskraut kombinieren.' },
+        { heading: 'Escitalopram in der EU online bestellen', body: 'PharmaForce führt Escitalopram 10 mg und 20 mg Tabletten von zugelassenen Herstellern. EU-Versand in diskreter Verpackung mit Sendungsverfolgung. Lieferzeit: 3–8 Werktage in alle EU-Länder.' },
+      ],
+    },
+
+    'buy-semaglutide-wegovy-europe-2026': {
+      title: 'Semaglutid (Wegovy/Ozempic) online in Europa kaufen – 2026',
+      excerpt: 'Semaglutid ist der wirksamste zugelassene GLP-1-Agonist zur Gewichtsreduktion. In klinischen Studien verloren Patienten durchschnittlich 15 % ihres Körpergewichts. Hier erfährst du, wie du Semaglutid sicher in der EU bestellst.',
+      sections: [
+        { heading: 'Wie Semaglutid wirkt', body: 'Semaglutid ist ein GLP-1-Rezeptoragonist, der das Sättigungsgefühl im Hypothalamus verstärkt, die Magenentleerung verlangsamt und die Insulinsekretion verbessert. Die STEP-Studien zeigten einen durchschnittlichen Gewichtsverlust von 14,9 % über 68 Wochen — deutlich mehr als alle zuvor verfügbaren Medikamente.' },
+        { heading: 'Dosierung und Titration', body: 'Semaglutid wird einmal wöchentlich subkutan injiziert. Titration: 0,25 mg/Woche für 4 Wochen → 0,5 mg → 1,0 mg → 1,7 mg → Zieldosis 2,4 mg. Jede Dosisstufe wird mindestens 4 Wochen beibehalten. Die langsame Steigerung minimiert gastrointestinale Nebenwirkungen.' },
+        { heading: 'Nebenwirkungen und Kontraindikationen', body: 'Häufigste Nebenwirkungen: Übelkeit (44 %), Durchfall, Verstopfung — meist vorübergehend. Kontraindikationen: persönliche oder familiäre Vorgeschichte von medullärem Schilddrüsenkarzinom, MEN-2-Syndrom. Nicht empfohlen bei schwerer Gastroparese oder Pankreatitis-Vorgeschichte.' },
+        { heading: 'Semaglutid in der EU bestellen', body: 'PharmaForce bietet Semaglutid-Injektionspens (0,25 mg bis 2,4 mg) von lizenzierten Herstellern. Kühlversand innerhalb der EU. Diskrete Verpackung, Lieferung in 3–8 Werktagen nach Deutschland, Frankreich, Niederlande, Italien, Spanien und 25+ weitere EU-Länder.' },
+      ],
+    },
+
+    'buy-sildenafil-tadalafil-online-europe': {
+      title: 'Sildenafil & Tadalafil online in Europa kaufen',
+      excerpt: 'Sildenafil (Viagra) und Tadalafil (Cialis) sind die weltweit am häufigsten verwendeten PDE-5-Hemmer bei erektiler Dysfunktion. Erfahre die Unterschiede in Wirkdauer, Dosierung und wie du sie sicher in der EU bestellst.',
+      sections: [
+        { heading: 'Sildenafil vs. Tadalafil: Die Unterschiede', body: 'Sildenafil wirkt 4–6 Stunden mit Spitzeneffekt nach 30–60 Minuten — ideal für geplante Anlässe. Tadalafil wirkt bis zu 36 Stunden und ermöglicht mehr Spontanität. Tadalafil 5 mg täglich ist auch zur Dauerbehandlung zugelassen und verbessert zusätzlich die Prostata-Symptomatik (BPH).' },
+        { heading: 'Dosierung und Einnahme', body: 'Sildenafil: Startdosis 50 mg, 30–60 Minuten vor dem Geschlechtsverkehr. Maximaldosis 100 mg/Tag. Tadalafil: 10–20 mg bei Bedarf oder 5 mg täglich. Beide Wirkstoffe nicht mit nitrathaltigen Medikamenten oder Alpha-Blockern kombinieren. Fettreiche Mahlzeiten verzögern die Sildenafil-Absorption, beeinflussen Tadalafil jedoch nicht.' },
+        { heading: 'Nebenwirkungen und Sicherheit', body: 'Häufige Nebenwirkungen: Kopfschmerzen, Gesichtsrötung, verstopfte Nase. Sildenafil kann vorübergehende Blaufärbung des Sehens verursachen. Bei Erektionen über 4 Stunden (Priapismus) sofort ärztliche Hilfe aufsuchen. PDE-5-Hemmer sind bei stabiler kardiovaskulärer Gesundheit sicher.' },
+        { heading: 'Sildenafil & Tadalafil in der EU bestellen', body: 'PharmaForce liefert Sildenafil (25/50/100 mg) und Tadalafil (5/10/20 mg) von zugelassenen europäischen Herstellern. Diskrete Verpackung, EU-Versand mit Sendungsverfolgung in 3–8 Werktagen.' },
+      ],
+    },
+
+    'finasteride-vs-minoxidil-hair-loss-europe': {
+      title: 'Finasterid vs. Minoxidil bei Haarausfall: Was wirkt besser?',
+      excerpt: 'Finasterid blockiert DHT systemisch, Minoxidil fördert die Durchblutung der Kopfhaut. Beide stoppen Haarausfall — aber über völlig verschiedene Mechanismen. Hier ist der evidenzbasierte Vergleich.',
+      sections: [
+        { heading: 'Finasterid: Der DHT-Blocker', body: 'Finasterid hemmt die 5-Alpha-Reduktase Typ II und senkt den DHT-Spiegel im Serum um ca. 70 %. DHT ist der Hauptverursacher der androgenetischen Alopezie. In klinischen Studien stoppte Finasterid 1 mg/Tag den Haarausfall bei 83 % der Männer und führte bei 66 % zu sichtbarem Neuwachstum nach 2 Jahren.' },
+        { heading: 'Minoxidil: Der topische Wachstumsförderer', body: 'Minoxidil (5 % Lösung oder Schaum) erweitert die Blutgefäße der Kopfhaut und verlängert die Anagenphase des Haarzyklus. Es wirkt unabhängig vom DHT-Mechanismus. Wirkungseintritt nach 3–4 Monaten konsequenter Anwendung, zweimal täglich. Effektiv bei Scheitel- und Tonsurbereich, weniger bei Geheimratsecken.' },
+        { heading: 'Kombination: Der Goldstandard', body: 'Die Kombination von Finasterid + Minoxidil ist nachweislich wirksamer als jede Monotherapie. Finasterid stoppt die Ursache (DHT), Minoxidil stimuliert das Wachstum. Studien zeigen bis zu 94 % Stabilisierung und deutlich höhere Haardichte bei Kombinationstherapie über 12 Monate.' },
+        { heading: 'Finasterid & Minoxidil in der EU kaufen', body: 'PharmaForce führt Finasterid 1 mg Tabletten und Minoxidil 5 % Lösung von zugelassenen Herstellern. Versand aus der EU in diskreter Verpackung. Lieferung in 3–8 Werktagen nach Deutschland, Österreich, Frankreich und alle EU-Länder.' },
+      ],
+    },
+
+    'retatrutide-tirzepatide-weight-loss-europe-2026': {
+      title: 'Next-Gen Gewichtsverlust: Tirzepatid & Retatrutid vs. Semaglutid 2026',
+      excerpt: 'Tirzepatid und Retatrutid übertreffen Semaglutid in klinischen Studien mit bis zu 24 % Gewichtsverlust. Erfahre, wie die neuen GLP-1-Agonisten wirken und wie du sie in Europa beziehst.',
+      sections: [
+        { heading: 'Tirzepatid: Der duale GIP/GLP-1-Agonist', body: 'Tirzepatid (Mounjaro/Zepbound) aktiviert gleichzeitig GIP- und GLP-1-Rezeptoren — ein dualer Mechanismus, der Semaglutids alleinige GLP-1-Wirkung übertrifft. Die SURMOUNT-1-Studie zeigte 22,5 % Gewichtsverlust bei der höchsten Dosis (15 mg/Woche) über 72 Wochen — signifikant mehr als Semaglutid 2,4 mg.' },
+        { heading: 'Retatrutid: Der dreifache Agonist', body: 'Retatrutid ist der erste dreifache GIP/GLP-1/Glukagon-Rezeptoragonist. Phase-2-Daten zeigten bis zu 24,2 % Gewichtsverlust nach 48 Wochen. Die zusätzliche Glukagonaktivierung steigert den Energieverbrauch und fördert die Fettoxidation direkt — ein Mechanismus, den weder Semaglutid noch Tirzepatid bieten.' },
+        { heading: 'Semaglutid vs. Tirzepatid vs. Retatrutid: Vergleich', body: 'Semaglutid: ~15 % Gewichtsverlust, zugelassen, umfangreiche Langzeitdaten. Tirzepatid: ~22 % Gewichtsverlust, zugelassen seit 2024/2025, wachsende Datenbasis. Retatrutid: ~24 % Gewichtsverlust, in Phase 3 (voraussichtliche Zulassung 2026–2027). Alle werden wöchentlich subkutan injiziert.' },
+        { heading: 'GLP-1-Medikamente in Europa kaufen', body: 'PharmaForce bietet Semaglutid und Tirzepatid von lizenzierten Herstellern mit EU-Kühlversand. Diskrete Verpackung, Lieferung in 3–8 Werktagen. Retatrutid ist nach Verfügbarkeit als Forschungspeptid erhältlich.' },
+      ],
+    },
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -483,6 +549,72 @@ export const BLOG_TRANSLATIONS: Record<string, LangMap> = {
         { heading: 'Mécanisme d\'action', body: 'Le Méldonium est un inhibiteur TMAO qui interfère avec le transport de carnitine et réduit l\'oxydation des acides gras dans les cellules du muscle cardiaque. Cela force les cellules à utiliser du glucose via la voie plus efficace et réduit les métabolites toxiques des acides gras dans les conditions de stress.' },
       ],
     },
+
+    'buy-antidepressants-online-europe': {
+      title: 'Comment acheter des antidépresseurs en ligne en Europe : Guide complet 2026',
+      excerpt: 'Les ISRS et les IRSN sont les antidépresseurs les plus prescrits en Europe. Découvrez comment commander de l\'escitalopram, de la sertraline et de la venlafaxine en ligne en toute sécurité — mécanismes d\'action, dosages et livraison dans l\'UE.',
+      sections: [
+        { heading: 'ISRS vs IRSN : Quelle classe choisir ?', body: 'Les ISRS (inhibiteurs sélectifs de la recapture de la sérotonine) comme l\'escitalopram et la sertraline agissent uniquement sur la sérotonine et présentent le profil d\'effets secondaires le plus favorable. Les IRSN comme la venlafaxine et la duloxétine inhibent également la recapture de la noradrénaline et conviennent mieux en cas d\'anxiété comorbide ou de douleurs chroniques.' },
+        { heading: 'Posologie et phase d\'ajustement', body: 'Les antidépresseurs sont toujours introduits progressivement : l\'escitalopram commence à 5 mg/jour pendant 1 semaine, puis 10 mg/jour. La sertraline débute à 25–50 mg/jour. L\'effet complet n\'apparaît qu\'après 4 à 6 semaines. Ne jamais arrêter brutalement — toujours réduire progressivement sur plusieurs semaines.' },
+        { heading: 'Commander des antidépresseurs dans l\'UE', body: 'PharmaForce livre des antidépresseurs homologués de fabricants pharmaceutiques européens. Expédition depuis l\'UE en emballage discret sous 3 à 8 jours ouvrables vers la France, l\'Allemagne, les Pays-Bas, la Belgique et plus de 25 pays de l\'UE.' },
+        { heading: 'Effets secondaires et précautions', body: 'Effets secondaires fréquents les 1–2 premières semaines : nausées, maux de tête, légère agitation. Ceux-ci s\'atténuent généralement. La dysfonction sexuelle touche 20 à 40 % des utilisateurs d\'ISRS. En cas d\'idées suicidaires, consulter immédiatement un médecin. Ne jamais combiner les antidépresseurs avec des IMAO ou du tramadol.' },
+      ],
+    },
+
+    'buy-escitalopram-lexapro-europe': {
+      title: 'Acheter de l\'escitalopram (Lexapro) en ligne en Europe',
+      excerpt: 'L\'escitalopram est considéré comme l\'ISRS le plus sélectif avec le meilleur profil de tolérance. Découvrez tout sur son action, son dosage et comment le commander en toute sécurité dans l\'UE.',
+      sections: [
+        { heading: 'Qu\'est-ce que l\'escitalopram ?', body: 'L\'escitalopram (nom commercial Cipralex / Lexapro) est l\'énantiomère S du citalopram et l\'ISRS le plus sélectif disponible. Il est utilisé pour le traitement de la dépression et du trouble anxieux généralisé. Les études cliniques montrent un taux de réponse de 60 à 70 % dans la dépression modérée à sévère.' },
+        { heading: 'Posologie et utilisation', body: 'Dose initiale : 5 mg/jour la première semaine, puis augmentation à 10 mg/jour. Dose maximale : 20 mg/jour. La prise se fait une fois par jour, indépendamment des repas. L\'effet thérapeutique complet apparaît après 4 à 6 semaines. Lors de l\'arrêt, réduire progressivement sur au moins 4 semaines.' },
+        { heading: 'Effets secondaires et interactions', body: 'Effets secondaires les plus fréquents : nausées (première semaine), troubles du sommeil, dysfonction sexuelle. L\'escitalopram présente un risque d\'allongement du QT à des doses supérieures à 20 mg — ne pas dépasser la dose maximale. Ne pas combiner avec des IMAO, des triptans ou du millepertuis.' },
+        { heading: 'Commander de l\'escitalopram dans l\'UE', body: 'PharmaForce propose des comprimés d\'escitalopram 10 mg et 20 mg de fabricants homologués. Expédition dans l\'UE en emballage discret avec suivi. Délai de livraison : 3 à 8 jours ouvrables dans tous les pays de l\'UE.' },
+      ],
+    },
+
+    'buy-semaglutide-wegovy-europe-2026': {
+      title: 'Acheter du sémaglutide (Wegovy/Ozempic) en ligne en Europe – 2026',
+      excerpt: 'Le sémaglutide est l\'agoniste GLP-1 le plus efficace approuvé pour la perte de poids. Dans les études cliniques, les patients ont perdu en moyenne 15 % de leur poids corporel. Découvrez comment commander du sémaglutide en toute sécurité dans l\'UE.',
+      sections: [
+        { heading: 'Comment fonctionne le sémaglutide', body: 'Le sémaglutide est un agoniste des récepteurs GLP-1 qui renforce la satiété au niveau de l\'hypothalamus, ralentit la vidange gastrique et améliore la sécrétion d\'insuline. Les études STEP ont montré une perte de poids moyenne de 14,9 % sur 68 semaines — bien plus que tous les médicaments précédemment disponibles.' },
+        { heading: 'Dosage et titration', body: 'Le sémaglutide est injecté par voie sous-cutanée une fois par semaine. Titration : 0,25 mg/semaine pendant 4 semaines → 0,5 mg → 1,0 mg → 1,7 mg → dose cible de 2,4 mg. Chaque palier de dose est maintenu pendant au moins 4 semaines. L\'augmentation progressive minimise les effets secondaires gastro-intestinaux.' },
+        { heading: 'Effets secondaires et contre-indications', body: 'Effets secondaires les plus fréquents : nausées (44 %), diarrhée, constipation — généralement transitoires. Contre-indications : antécédents personnels ou familiaux de carcinome médullaire de la thyroïde, syndrome MEN-2. Non recommandé en cas de gastroparésie sévère ou d\'antécédents de pancréatite.' },
+        { heading: 'Commander du sémaglutide dans l\'UE', body: 'PharmaForce propose des stylos injecteurs de sémaglutide (0,25 mg à 2,4 mg) de fabricants agréés. Expédition réfrigérée au sein de l\'UE. Emballage discret, livraison en 3 à 8 jours ouvrables en France, Allemagne, Pays-Bas, Italie, Espagne et plus de 25 pays de l\'UE.' },
+      ],
+    },
+
+    'buy-sildenafil-tadalafil-online-europe': {
+      title: 'Acheter du sildénafil et du tadalafil en ligne en Europe',
+      excerpt: 'Le sildénafil (Viagra) et le tadalafil (Cialis) sont les inhibiteurs de PDE-5 les plus utilisés au monde pour la dysfonction érectile. Découvrez les différences de durée d\'action, de dosage et comment les commander en toute sécurité dans l\'UE.',
+      sections: [
+        { heading: 'Sildénafil vs tadalafil : Les différences', body: 'Le sildénafil agit pendant 4 à 6 heures avec un effet maximal après 30 à 60 minutes — idéal pour les occasions planifiées. Le tadalafil agit jusqu\'à 36 heures et permet plus de spontanéité. Le tadalafil 5 mg en prise quotidienne est également approuvé pour le traitement continu et améliore en outre les symptômes prostatiques (HBP).' },
+        { heading: 'Posologie et prise', body: 'Sildénafil : dose initiale 50 mg, 30 à 60 minutes avant le rapport. Dose maximale 100 mg/jour. Tadalafil : 10–20 mg à la demande ou 5 mg par jour. Ne pas combiner ces deux molécules avec des médicaments à base de nitrates ou des alpha-bloquants. Les repas riches en graisses retardent l\'absorption du sildénafil mais n\'affectent pas le tadalafil.' },
+        { heading: 'Effets secondaires et sécurité', body: 'Effets secondaires fréquents : maux de tête, bouffées vasomotrices, nez bouché. Le sildénafil peut provoquer une vision bleutée temporaire. En cas d\'érection de plus de 4 heures (priapisme), consulter immédiatement un médecin. Les inhibiteurs de PDE-5 sont sûrs en cas de santé cardiovasculaire stable.' },
+        { heading: 'Commander du sildénafil et du tadalafil dans l\'UE', body: 'PharmaForce livre du sildénafil (25/50/100 mg) et du tadalafil (5/10/20 mg) de fabricants européens homologués. Emballage discret, expédition dans l\'UE avec suivi en 3 à 8 jours ouvrables.' },
+      ],
+    },
+
+    'finasteride-vs-minoxidil-hair-loss-europe': {
+      title: 'Finastéride vs minoxidil pour la chute de cheveux : Que choisir ?',
+      excerpt: 'Le finastéride bloque la DHT de manière systémique, le minoxidil améliore la circulation du cuir chevelu. Les deux stoppent la chute — mais par des mécanismes totalement différents. Voici la comparaison basée sur les preuves.',
+      sections: [
+        { heading: 'Finastéride : Le bloqueur de DHT', body: 'Le finastéride inhibe la 5-alpha réductase de type II et réduit le taux de DHT sérique d\'environ 70 %. La DHT est le principal responsable de l\'alopécie androgénétique. Dans les études cliniques, le finastéride 1 mg/jour a stoppé la chute chez 83 % des hommes et a entraîné une repousse visible chez 66 % après 2 ans.' },
+        { heading: 'Minoxidil : Le stimulateur topique', body: 'Le minoxidil (solution ou mousse à 5 %) dilate les vaisseaux sanguins du cuir chevelu et prolonge la phase anagène du cycle capillaire. Il agit indépendamment du mécanisme DHT. Les effets apparaissent après 3 à 4 mois d\'application régulière, deux fois par jour. Efficace au niveau du vertex et de la tonsure, moins au niveau des golfes.' },
+        { heading: 'La combinaison : Le traitement de référence', body: 'La combinaison finastéride + minoxidil est démontrée plus efficace que chaque monothérapie. Le finastéride stoppe la cause (DHT), le minoxidil stimule la croissance. Les études montrent jusqu\'à 94 % de stabilisation et une densité capillaire nettement supérieure avec la thérapie combinée sur 12 mois.' },
+        { heading: 'Acheter du finastéride et du minoxidil dans l\'UE', body: 'PharmaForce propose des comprimés de finastéride 1 mg et une solution de minoxidil à 5 % de fabricants homologués. Expédition depuis l\'UE en emballage discret. Livraison en 3 à 8 jours ouvrables en France, Belgique, Allemagne et tous les pays de l\'UE.' },
+      ],
+    },
+
+    'retatrutide-tirzepatide-weight-loss-europe-2026': {
+      title: 'Perte de poids nouvelle génération : Tirzépatide & Rétatrutide vs Sémaglutide en 2026',
+      excerpt: 'Le tirzépatide et le rétatrutide surpassent le sémaglutide dans les études cliniques avec jusqu\'à 24 % de perte de poids. Découvrez comment fonctionnent les nouveaux agonistes GLP-1 et comment les obtenir en Europe.',
+      sections: [
+        { heading: 'Tirzépatide : Le double agoniste GIP/GLP-1', body: 'Le tirzépatide (Mounjaro/Zepbound) active simultanément les récepteurs GIP et GLP-1 — un double mécanisme qui surpasse l\'action GLP-1 seule du sémaglutide. L\'étude SURMOUNT-1 a montré 22,5 % de perte de poids à la dose maximale (15 mg/semaine) sur 72 semaines — significativement plus que le sémaglutide 2,4 mg.' },
+        { heading: 'Rétatrutide : Le triple agoniste', body: 'Le rétatrutide est le premier triple agoniste des récepteurs GIP/GLP-1/glucagon. Les données de phase 2 ont montré jusqu\'à 24,2 % de perte de poids après 48 semaines. L\'activation supplémentaire du glucagon augmente la dépense énergétique et favorise directement l\'oxydation des graisses — un mécanisme que ni le sémaglutide ni le tirzépatide ne proposent.' },
+        { heading: 'Sémaglutide vs tirzépatide vs rétatrutide : Comparaison', body: 'Sémaglutide : ~15 % de perte de poids, approuvé, données à long terme étendues. Tirzépatide : ~22 % de perte de poids, approuvé depuis 2024/2025, base de données croissante. Rétatrutide : ~24 % de perte de poids, en phase 3 (approbation prévue 2026–2027). Tous sont injectés par voie sous-cutanée une fois par semaine.' },
+        { heading: 'Acheter des médicaments GLP-1 en Europe', body: 'PharmaForce propose du sémaglutide et du tirzépatide de fabricants agréés avec expédition réfrigérée dans l\'UE. Emballage discret, livraison en 3 à 8 jours ouvrables. Le rétatrutide est disponible selon les stocks en tant que peptide de recherche.' },
+      ],
+    },
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -715,6 +847,71 @@ export const BLOG_TRANSLATIONS: Record<string, LangMap> = {
         { heading: 'Unikanie krachu', body: 'Krachy energetyczne po treningu są spowodowane odbiciem adenozyny i spadkami cukru we krwi. Środki zaradcze: (1) nie przekraczać 400 mg kofeiny łącznie, (2) zjeść mieszany posiłek węglowodanowo-białkowy w ciągu 60 minut po treningu, (3) pozostać dobrze nawodnionym.' },
       ],
     },
+
+    'buy-antidepressants-online-europe': {
+      title: 'Jak kupić antydepresanty online w Europie: Kompletny przewodnik 2026',
+      excerpt: 'SSRI, SNRI, dawkowanie i bezpieczeństwo — wszystko, co musisz wiedzieć o zakupie antydepresantów online w Europie w 2026 roku.',
+      sections: [
+        { heading: 'Rodzaje antydepresantów dostępnych online', body: 'Selektywne inhibitory wychwytu zwrotnego serotoniny (SSRI) i inhibitory wychwytu zwrotnego serotoniny i noradrenaliny (SNRI) to dwie najczęściej przepisywane klasy. SSRI, takie jak escitalopram i sertralina, są zwykle lekami pierwszego wyboru ze względu na łagodniejszy profil działań niepożądanych.' },
+        { heading: 'Dawkowanie i rozpoczęcie terapii', body: 'Większość SSRI rozpoczyna się od niskiej dawki (np. 5–10 mg escitalopramu) i stopniowo zwiększa się w ciągu 2–4 tygodni. Pełny efekt terapeutyczny pojawia się zazwyczaj po 4–6 tygodniach regularnego stosowania. Nie należy nagle przerywać leczenia bez konsultacji lekarskiej.' },
+        { heading: 'Bezpieczeństwo zakupów online w Europie', body: 'Europejskie apteki internetowe powinny posiadać logo Common EU Logo weryfikujące ich legalność. Przed zakupem sprawdź, czy apteka wymaga recepty i oferuje konsultację z farmaceutą. Unikaj stron sprzedających leki bez recepty — to nielegalne i niebezpieczne.' },
+        { heading: 'Aspekty prawne w różnych krajach UE', body: 'Przepisy dotyczące sprzedaży leków na receptę online różnią się między krajami UE. W Polsce e-recepta umożliwia zakup antydepresantów w licencjonowanych aptekach internetowych. W Niemczech i Francji obowiązują podobne regulacje wymagające ważnej recepty.' },
+      ],
+    },
+
+    'buy-escitalopram-lexapro-europe': {
+      title: 'Kup Escitalopram (Lexapro) online w Europie',
+      excerpt: 'Escitalopram to jeden z najczęściej przepisywanych SSRI w Europie. Dowiedz się o dawkowaniu, działaniach niepożądanych i legalnym zakupie online.',
+      sections: [
+        { heading: 'Czym jest escitalopram i jak działa', body: 'Escitalopram (Lexapro/Cipralex) jest selektywnym inhibitorem wychwytu zwrotnego serotoniny (SSRI). Zwiększa poziom serotoniny w mózgu, co pomaga w leczeniu depresji i zaburzeń lękowych. Jest uważany za jeden z najlepiej tolerowanych SSRI.' },
+        { heading: 'Dawkowanie i wskazania', body: 'Standardowa dawka początkowa to 5–10 mg/dzień, z możliwością zwiększenia do 20 mg/dzień. Escitalopram jest wskazany w leczeniu dużej depresji (MDD) i uogólnionego zaburzenia lękowego (GAD). Efekty terapeutyczne pojawiają się zwykle po 2–4 tygodniach.' },
+        { heading: 'Działania niepożądane i interakcje', body: 'Najczęstsze działania niepożądane to nudności, bóle głowy, bezsenność lub senność oraz zaburzenia seksualne. Większość z nich jest łagodna i ustępuje po kilku tygodniach. Nie należy łączyć escitalopramu z inhibitorami MAO ani z innymi lekami serotoninergicznymi.' },
+        { heading: 'Jak legalnie kupić online w Europie', body: 'Escitalopram wymaga recepty we wszystkich krajach UE. Legalne apteki internetowe weryfikują receptę przed wysyłką. Sprawdź obecność europejskiego logo weryfikacyjnego na stronie apteki i upewnij się, że produkt pochodzi od licencjonowanego producenta.' },
+      ],
+    },
+
+    'buy-semaglutide-wegovy-europe-2026': {
+      title: 'Kup Semaglutyd (Wegovy/Ozempic) online w Europie 2026',
+      excerpt: 'Semaglutyd rewolucjonizuje leczenie otyłości w Europie. Poznaj mechanizm działania GLP-1, dawkowanie i opcje zakupu online w 2026 roku.',
+      sections: [
+        { heading: 'Jak działa semaglutyd (GLP-1)', body: 'Semaglutyd jest agonistą receptora GLP-1, który naśladuje naturalny hormon jelitowy. Zmniejsza apetyt, spowalnia opróżnianie żołądka i poprawia kontrolę glikemii. W badaniach klinicznych pacjenci tracili średnio 15–17% masy ciała w ciągu 68 tygodni.' },
+        { heading: 'Wegovy vs Ozempic — różnice', body: 'Ozempic (0,25–1 mg) jest zatwierdzony do leczenia cukrzycy typu 2, natomiast Wegovy (do 2,4 mg) jest przeznaczony specjalnie do leczenia otyłości. Oba zawierają semaglutyd, ale różnią się dawkowaniem i wskazaniami. W 2026 roku dostępność Wegovy w Europie znacząco się poprawiła.' },
+        { heading: 'Protokół dawkowania i eskalacja', body: 'Dawkowanie rozpoczyna się od 0,25 mg/tydzień i zwiększa się co 4 tygodnie: 0,5 mg → 1 mg → 1,7 mg → 2,4 mg. Powolna eskalacja minimalizuje działania niepożądane ze strony układu pokarmowego. Lek podaje się podskórnie raz w tygodniu.' },
+        { heading: 'Zakup online i dostępność w Europie', body: 'Semaglutyd wymaga recepty w UE. Licencjonowane telemedyczne platformy mogą przeprowadzić konsultację online i wystawić e-receptę. Sprawdź, czy apteka posiada odpowiednie certyfikaty i wysyła produkt w łańcuchu chłodniczym.' },
+      ],
+    },
+
+    'buy-sildenafil-tadalafil-online-europe': {
+      title: 'Kup Sildenafil i Tadalafil online w Europie',
+      excerpt: 'Sildenafil (Viagra) i tadalafil (Cialis) to najskuteczniejsze leki na zaburzenia erekcji. Porównanie, dawkowanie i legalny zakup online w Europie.',
+      sections: [
+        { heading: 'Sildenafil vs Tadalafil — porównanie', body: 'Sildenafil działa przez 4–6 godzin i przyjmuje się go 30–60 minut przed stosunkiem. Tadalafil działa do 36 godzin, co daje większą spontaniczność. Oba są inhibitorami PDE5 o zbliżonej skuteczności (~80% przypadków). Wybór zależy od stylu życia i preferencji.' },
+        { heading: 'Dawkowanie i stosowanie', body: 'Sildenafil: dawka początkowa 50 mg, zakres 25–100 mg, nie częściej niż raz na dobę. Tadalafil: 10–20 mg na żądanie lub 2,5–5 mg w codziennym dawkowaniu. Leki należy przyjmować na pusty żołądek (szczególnie sildenafil) i unikać jednoczesnego spożywania alkoholu.' },
+        { heading: 'Działania niepożądane i przeciwwskazania', body: 'Najczęstsze działania niepożądane to bóle głowy, zaczerwienienie twarzy, niestrawność i przekrwienie błony śluzowej nosa. Bezwzględnie przeciwwskazane jest łączenie z nitratami (nitrogliceryna) ze względu na ryzyko groźnego spadku ciśnienia. Przed rozpoczęciem stosowania skonsultuj się z lekarzem.' },
+      ],
+    },
+
+    'finasteride-vs-minoxidil-hair-loss-europe': {
+      title: 'Finasteryd vs Minoksydyl na wypadanie włosów',
+      excerpt: 'Porównanie dwóch najskuteczniejszych metod leczenia łysienia androgenowego. Mechanizm działania, skuteczność i skutki uboczne finasterydu i minoksydylu.',
+      sections: [
+        { heading: 'Jak działa finasteryd', body: 'Finasteryd (1 mg/dzień) jest inhibitorem 5-alfa-reduktazy typu II, który blokuje konwersję testosteronu do DHT — głównego hormonu odpowiedzialnego za łysienie androgenowe. Redukuje poziom DHT w skórze głowy o ~70%. W badaniach klinicznych 83% mężczyzn zatrzymało wypadanie, a 66% odnotowało odrost.' },
+        { heading: 'Jak działa minoksydyl', body: 'Minoksydyl (roztwór 5% lub pianka) jest stosowany miejscowo na skórę głowy 1–2 razy dziennie. Działa jako wazodilatator, poprawiając ukrwienie mieszków włosowych i przedłużając fazę anagenu. Efekty widoczne po 3–6 miesiącach. Nie wpływa na poziom hormonów.' },
+        { heading: 'Który wybrać — lub oba?', body: 'Finasteryd atakuje przyczynę (DHT), minoksydyl stymuluje wzrost. Połączenie obu daje najlepsze rezultaty — badania wykazują synergię. Finasteryd jest lekiem na receptę, minoksydyl dostępny bez recepty. Dla mężczyzn poniżej 40. roku życia z wczesnym łysieniem — połączenie jest złotym standardem.' },
+        { heading: 'Dostępność w Europie i zakup online', body: 'Finasteryd 1 mg wymaga recepty w większości krajów UE. Minoksydyl 5% jest dostępny bez recepty w aptekach stacjonarnych i internetowych. Licencjonowane platformy telemedyczne mogą wystawić e-receptę na finasteryd po konsultacji online.' },
+      ],
+    },
+
+    'retatrutide-tirzepatide-weight-loss-europe-2026': {
+      title: 'Nowa generacja odchudzania: Tirzepatyd i Retatrutyd vs Semaglutyd w 2026',
+      excerpt: 'Tirzepatyd i retatrutyd to nowe leki GLP-1 o jeszcze wyższej skuteczności niż semaglutyd. Porównanie mechanizmów, wyników badań i dostępności w Europie.',
+      sections: [
+        { heading: 'Tirzepatyd (Mounjaro/Zepbound) — podwójny agonista', body: 'Tirzepatyd działa na receptory GLP-1 i GIP jednocześnie, co daje silniejszy efekt niż sam semaglutyd. W badaniu SURMOUNT-1 pacjenci tracili średnio 22,5% masy ciała w 72 tygodnie. EMA zatwierdziła tirzepatyd do leczenia otyłości w Europie w 2024 roku.' },
+        { heading: 'Retatrutyd — potrójny agonista nowej generacji', body: 'Retatrutyd aktywuje trzy receptory: GLP-1, GIP i glukagon. W badaniach fazy II pacjenci tracili do 24% masy ciała w 48 tygodni — najwyższy wynik wśród wszystkich leków na otyłość. Oczekiwane zatwierdzenie w Europie: 2026–2027.' },
+        { heading: 'Porównanie: Semaglutyd vs Tirzepatyd vs Retatrutyd', body: 'Semaglutyd: ~15–17% utraty masy, pojedynczy agonista GLP-1. Tirzepatyd: ~22% utraty masy, podwójny agonista GLP-1/GIP. Retatrutyd: ~24% utraty masy, potrójny agonista GLP-1/GIP/glukagon. Każda kolejna generacja oferuje lepsze wyniki, ale profil bezpieczeństwa wymaga dalszych badań.' },
+        { heading: 'Dostępność i ceny w Europie 2026', body: 'Tirzepatyd jest dostępny na receptę w większości krajów UE od 2024. Retatrutyd jest w fazie III badań klinicznych i może uzyskać zatwierdzenie EMA w 2026–2027. Ceny wahają się od 200 do 500 EUR miesięcznie w zależności od kraju i dawki.' },
+      ],
+    },
   },
 
   // ═══════════════════════════════════════════════════════════════════════════
@@ -945,6 +1142,71 @@ export const BLOG_TRANSLATIONS: Record<string, LangMap> = {
         { heading: 'La finestra di farmacocinetica della caffeina', body: 'La caffeina raggiunge la concentrazione plasmatica di picco 30–60 minuti dopo l\'assunzione. Assunzione ottimale: 30–45 minuti prima dell\'allenamento. Dose: 3–6 mg/kg di peso corporeo. Per un atleta di 80 kg: 240–480 mg. La maggior parte dei pre-workout commerciali contiene 150–300 mg.' },
         { heading: 'Booster di ossido nitrico: Citrullina e Arginina', body: 'La L-Citrullina (non arginina) è il precursore NO superiore — bypassa il metabolismo epatico di primo passaggio. Dose: 6–8 g di malato di citrullina, 45–60 minuti prima dell\'allenamento. Aspettati aumenti notevoli di pump e vascolarità.' },
         { heading: 'Evitare il crash', body: 'I crash energetici post-allenamento sono causati dal rimbalzo dell\'adenosina e dai cali di zucchero nel sangue. Contromisure: (1) non superare 400 mg totali di caffeina, (2) mangiare un pasto misto carboidrati-proteine entro 60 minuti post-allenamento, (3) rimanere ben idratati.' },
+      ],
+    },
+
+    'buy-antidepressants-online-europe': {
+      title: 'Come acquistare antidepressivi online in Europa: Guida completa 2026',
+      excerpt: 'SSRI, SNRI, dosaggio e sicurezza — tutto quello che devi sapere sull\'acquisto di antidepressivi online in Europa nel 2026.',
+      sections: [
+        { heading: 'Tipi di antidepressivi disponibili online', body: 'Gli inibitori selettivi della ricaptazione della serotonina (SSRI) e gli inibitori della ricaptazione della serotonina-noradrenalina (SNRI) sono le due classi più comunemente prescritte. Gli SSRI come escitalopram e sertralina sono generalmente farmaci di prima scelta grazie al profilo di effetti collaterali più favorevole.' },
+        { heading: 'Dosaggio e inizio della terapia', body: 'La maggior parte degli SSRI inizia con una dose bassa (es. 5–10 mg di escitalopram) e viene gradualmente aumentata nell\'arco di 2–4 settimane. L\'effetto terapeutico completo si manifesta solitamente dopo 4–6 settimane di assunzione regolare. Non interrompere mai bruscamente il trattamento senza consulto medico.' },
+        { heading: 'Sicurezza degli acquisti online in Europa', body: 'Le farmacie online europee devono esporre il Common EU Logo che ne certifica la legalità. Prima dell\'acquisto verifica che la farmacia richieda una prescrizione e offra consulenza farmaceutica. Evita i siti che vendono farmaci senza ricetta — è illegale e pericoloso.' },
+        { heading: 'Aspetti legali nei diversi paesi UE', body: 'Le normative sulla vendita online di farmaci con prescrizione variano tra i paesi UE. In Italia la ricetta elettronica consente l\'acquisto presso farmacie online autorizzate. In Germania e Francia vigono regolamenti simili che richiedono una prescrizione valida.' },
+      ],
+    },
+
+    'buy-escitalopram-lexapro-europe': {
+      title: 'Acquistare Escitalopram (Lexapro) online in Europa',
+      excerpt: 'L\'escitalopram è uno degli SSRI più prescritti in Europa. Scopri dosaggio, effetti collaterali e come acquistarlo legalmente online.',
+      sections: [
+        { heading: 'Cos\'è l\'escitalopram e come funziona', body: 'L\'escitalopram (Lexapro/Cipralex) è un inibitore selettivo della ricaptazione della serotonina (SSRI). Aumenta i livelli di serotonina nel cervello, aiutando nel trattamento della depressione e dei disturbi d\'ansia. È considerato uno degli SSRI meglio tollerati.' },
+        { heading: 'Dosaggio e indicazioni', body: 'La dose iniziale standard è 5–10 mg/giorno, con possibilità di aumento fino a 20 mg/giorno. L\'escitalopram è indicato per il disturbo depressivo maggiore (MDD) e il disturbo d\'ansia generalizzato (GAD). Gli effetti terapeutici compaiono solitamente dopo 2–4 settimane.' },
+        { heading: 'Effetti collaterali e interazioni', body: 'Gli effetti collaterali più comuni includono nausea, mal di testa, insonnia o sonnolenza e disfunzioni sessuali. La maggior parte è lieve e si risolve entro poche settimane. Non associare l\'escitalopram a inibitori MAO né ad altri farmaci serotoninergici.' },
+        { heading: 'Come acquistare legalmente online in Europa', body: 'L\'escitalopram richiede prescrizione in tutti i paesi UE. Le farmacie online autorizzate verificano la ricetta prima della spedizione. Controlla la presenza del logo europeo di verifica sul sito della farmacia e assicurati che il prodotto provenga da un produttore autorizzato.' },
+      ],
+    },
+
+    'buy-semaglutide-wegovy-europe-2026': {
+      title: 'Acquistare Semaglutide (Wegovy/Ozempic) online in Europa 2026',
+      excerpt: 'Il semaglutide sta rivoluzionando il trattamento dell\'obesità in Europa. Scopri il meccanismo d\'azione del GLP-1, il dosaggio e le opzioni di acquisto online nel 2026.',
+      sections: [
+        { heading: 'Come funziona il semaglutide (GLP-1)', body: 'Il semaglutide è un agonista del recettore GLP-1 che imita un ormone intestinale naturale. Riduce l\'appetito, rallenta lo svuotamento gastrico e migliora il controllo glicemico. Negli studi clinici i pazienti hanno perso in media il 15–17% del peso corporeo in 68 settimane.' },
+        { heading: 'Wegovy vs Ozempic — le differenze', body: 'Ozempic (0,25–1 mg) è approvato per il trattamento del diabete di tipo 2, mentre Wegovy (fino a 2,4 mg) è specificamente destinato al trattamento dell\'obesità. Entrambi contengono semaglutide ma differiscono nel dosaggio e nelle indicazioni. Nel 2026 la disponibilità di Wegovy in Europa è notevolmente migliorata.' },
+        { heading: 'Protocollo di dosaggio e titolazione', body: 'Il dosaggio inizia con 0,25 mg/settimana e viene aumentato ogni 4 settimane: 0,5 mg → 1 mg → 1,7 mg → 2,4 mg. La titolazione lenta minimizza gli effetti collaterali gastrointestinali. Il farmaco viene somministrato per via sottocutanea una volta alla settimana.' },
+        { heading: 'Acquisto online e disponibilità in Europa', body: 'Il semaglutide richiede prescrizione nell\'UE. Piattaforme di telemedicina autorizzate possono effettuare una consultazione online e rilasciare una ricetta elettronica. Verifica che la farmacia possieda le certificazioni appropriate e spedisca il prodotto nella catena del freddo.' },
+      ],
+    },
+
+    'buy-sildenafil-tadalafil-online-europe': {
+      title: 'Acquistare Sildenafil e Tadalafil online in Europa',
+      excerpt: 'Sildenafil (Viagra) e tadalafil (Cialis) sono i farmaci più efficaci per la disfunzione erettile. Confronto, dosaggio e acquisto legale online in Europa.',
+      sections: [
+        { heading: 'Sildenafil vs Tadalafil — confronto', body: 'Il sildenafil agisce per 4–6 ore e va assunto 30–60 minuti prima del rapporto. Il tadalafil dura fino a 36 ore, offrendo maggiore spontaneità. Entrambi sono inibitori della PDE5 con efficacia simile (~80% dei casi). La scelta dipende dallo stile di vita e dalle preferenze personali.' },
+        { heading: 'Dosaggio e modalità d\'uso', body: 'Sildenafil: dose iniziale 50 mg, range 25–100 mg, non più di una volta al giorno. Tadalafil: 10–20 mg al bisogno oppure 2,5–5 mg in dosaggio giornaliero. I farmaci vanno assunti a stomaco vuoto (soprattutto il sildenafil) ed è consigliabile evitare il consumo concomitante di alcol.' },
+        { heading: 'Effetti collaterali e controindicazioni', body: 'Gli effetti collaterali più comuni includono cefalea, vampate di calore, dispepsia e congestione nasale. È assolutamente controindicata l\'associazione con nitrati (nitroglicerina) per il rischio di grave ipotensione. Consultare il medico prima di iniziare il trattamento.' },
+      ],
+    },
+
+    'finasteride-vs-minoxidil-hair-loss-europe': {
+      title: 'Finasteride vs Minoxidil per la caduta dei capelli',
+      excerpt: 'Confronto tra i due trattamenti più efficaci per l\'alopecia androgenetica. Meccanismo d\'azione, efficacia ed effetti collaterali di finasteride e minoxidil.',
+      sections: [
+        { heading: 'Come funziona la finasteride', body: 'La finasteride (1 mg/giorno) è un inibitore della 5-alfa-reduttasi di tipo II che blocca la conversione del testosterone in DHT — il principale ormone responsabile dell\'alopecia androgenetica. Riduce il DHT nel cuoio capelluto di circa il 70%. Negli studi clinici l\'83% degli uomini ha arrestato la caduta e il 66% ha osservato ricrescita.' },
+        { heading: 'Come funziona il minoxidil', body: 'Il minoxidil (soluzione al 5% o schiuma) viene applicato localmente sul cuoio capelluto 1–2 volte al giorno. Agisce come vasodilatatore, migliorando l\'irrorazione dei follicoli piliferi e prolungando la fase anagen. I risultati sono visibili dopo 3–6 mesi. Non influenza i livelli ormonali.' },
+        { heading: 'Quale scegliere — o entrambi?', body: 'La finasteride agisce sulla causa (DHT), il minoxidil stimola la crescita. La combinazione di entrambi dà i risultati migliori — gli studi dimostrano sinergia. La finasteride richiede prescrizione, il minoxidil è disponibile senza ricetta. Per gli uomini sotto i 40 anni con alopecia iniziale, la combinazione è il gold standard.' },
+        { heading: 'Disponibilità in Europa e acquisto online', body: 'La finasteride 1 mg richiede prescrizione nella maggior parte dei paesi UE. Il minoxidil 5% è disponibile senza ricetta nelle farmacie fisiche e online. Le piattaforme di telemedicina autorizzate possono rilasciare una ricetta elettronica per la finasteride dopo una consultazione online.' },
+      ],
+    },
+
+    'retatrutide-tirzepatide-weight-loss-europe-2026': {
+      title: 'Nuova generazione dimagrante: Tirzepatide e Retatrutide vs Semaglutide nel 2026',
+      excerpt: 'Tirzepatide e retatrutide sono i nuovi farmaci GLP-1 con efficacia ancora superiore al semaglutide. Confronto dei meccanismi, risultati degli studi e disponibilità in Europa.',
+      sections: [
+        { heading: 'Tirzepatide (Mounjaro/Zepbound) — doppio agonista', body: 'Il tirzepatide agisce contemporaneamente sui recettori GLP-1 e GIP, ottenendo un effetto più potente del solo semaglutide. Nello studio SURMOUNT-1 i pazienti hanno perso in media il 22,5% del peso corporeo in 72 settimane. L\'EMA ha approvato il tirzepatide per il trattamento dell\'obesità in Europa nel 2024.' },
+        { heading: 'Retatrutide — triplo agonista di nuova generazione', body: 'Il retatrutide attiva tre recettori: GLP-1, GIP e glucagone. Negli studi di fase II i pazienti hanno perso fino al 24% del peso corporeo in 48 settimane — il risultato più alto tra tutti i farmaci anti-obesità. Approvazione prevista in Europa: 2026–2027.' },
+        { heading: 'Confronto: Semaglutide vs Tirzepatide vs Retatrutide', body: 'Semaglutide: ~15–17% di perdita di peso, singolo agonista GLP-1. Tirzepatide: ~22% di perdita di peso, doppio agonista GLP-1/GIP. Retatrutide: ~24% di perdita di peso, triplo agonista GLP-1/GIP/glucagone. Ogni generazione successiva offre risultati migliori, ma il profilo di sicurezza richiede ulteriori studi.' },
+        { heading: 'Disponibilità e prezzi in Europa 2026', body: 'Il tirzepatide è disponibile su prescrizione nella maggior parte dei paesi UE dal 2024. Il retatrutide è in fase III di studi clinici e potrebbe ottenere l\'approvazione EMA nel 2026–2027. I prezzi variano da 200 a 500 EUR al mese a seconda del paese e del dosaggio.' },
       ],
     },
   },

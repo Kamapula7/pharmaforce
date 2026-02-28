@@ -1,8 +1,8 @@
 'use client';
 
 import { ShoppingCart } from 'lucide-react';
-import { useState } from 'react';
 import { useCartStore } from '@/store/cartStore';
+import { gtagAddToCart, gtagRemoveFromCart } from '@/lib/gtag';
 
 interface AddToCartButtonProps {
   productId: string;
@@ -32,8 +32,10 @@ export default function AddToCartButton({
     e.stopPropagation();
     if (inCart) {
       removeItem(productId);
+      gtagRemoveFromCart({ id: productId, name: productName, price });
     } else {
       addItem({ id: productId, slug, nameEn: productName, price, image, category });
+      gtagAddToCart({ id: productId, name: productName, price, category });
     }
   };
 

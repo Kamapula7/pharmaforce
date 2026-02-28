@@ -47,7 +47,7 @@ export default function RecentlyViewed({ currentSlug, locale, label = 'Recently 
               href={`/${locale}/products/${p.slug}`}
               className="group bg-surface border border-border rounded-xl overflow-hidden hover:border-brand/40 transition-colors"
             >
-              <div className={`relative aspect-square ${isBg ? '' : 'bg-[#f5f5f5]'}`}>
+              <div className={`relative aspect-square ${isBg ? '' : 'bg-white'}`}>
                 <Image
                   src={p.image}
                   alt={p.name}

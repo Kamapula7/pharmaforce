@@ -88,10 +88,10 @@
         "sortLabel": "Sortuj",
         "sortPopular": "Popularne",
         "sortTopRated": "Najlepiej oceniane",
-        "sortPriceAsc": "Cena: rosnД…co",
-        "sortPriceDesc": "Cena: malejД…co",
+        "sortPriceAsc": "Cena: rosnąco",
+        "sortPriceDesc": "Cena: malejąco",
         "categoriesBtn": "Kategorie",
-        "productsCount": "produktГіw"
+        "productsCount": "produktów"
     },
     "product": {
         "description": "Opis",
@@ -273,7 +273,7 @@
         "hormone-therapy": "Terapia Hormonalna",
         "anti-hirsutism": "Anty-hirsutyzm",
         "skin-health": "Zdrowie Skóry",
-        "hair-growth": "Wzrost wЕ‚osГіw",
+        "hair-growth": "Wzrost włosów",
         "ed-medications": "Leki na ED",
         "hormonal-support": "Wsparcie hormonalne",
         "sh-peptides": "Peptydy",

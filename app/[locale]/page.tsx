@@ -51,6 +51,14 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
         'x-default': 'https://pharmaforce-store.com/en',
       },
     },
+    openGraph: {
+      title: m.title,
+      description: m.description,
+      url: `https://pharmaforce-store.com/${locale}`,
+      siteName: 'PharmaForce',
+      images: [{ url: 'https://pharmaforce-store.com/hero-athletes.png', width: 1200, height: 630, alt: 'PharmaForce — Pharmaceutical Grade Supplements' }],
+      type: 'website',
+    },
   };
 }
 

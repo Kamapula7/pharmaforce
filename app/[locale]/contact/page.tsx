@@ -21,6 +21,14 @@ export async function generateMetadata({ params }: ContactPageProps): Promise<Me
         'es': 'https://pharmaforce-store.com/es/contact',
       },
     },
+    openGraph: {
+      title: 'Contact PharmaForce — Customer Support Europe',
+      description: 'Get in touch with PharmaForce. Questions about orders, products or shipping? Our support team responds within a few hours.',
+      url: `https://pharmaforce-store.com/${locale}/contact`,
+      siteName: 'PharmaForce',
+      images: [{ url: 'https://pharmaforce-store.com/hero-athletes.png', width: 1200, height: 630, alt: 'Contact PharmaForce' }],
+      type: 'website',
+    },
   };
 }
 

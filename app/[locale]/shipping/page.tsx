@@ -21,6 +21,14 @@ export async function generateMetadata({ params }: ShippingPageProps): Promise<M
         'es': 'https://pharmaforce-store.com/es/shipping',
       },
     },
+    openGraph: {
+      title: 'Shipping & Delivery — EU Shipping Information | PharmaForce',
+      description: 'PharmaForce ships to 30+ European countries. Discreet packaging, flat rate €34.99 or free on orders over €150.',
+      url: `https://pharmaforce-store.com/${locale}/shipping`,
+      siteName: 'PharmaForce',
+      images: [{ url: 'https://pharmaforce-store.com/hero-athletes.png', width: 1200, height: 630, alt: 'PharmaForce Shipping' }],
+      type: 'website',
+    },
   };
 }
 

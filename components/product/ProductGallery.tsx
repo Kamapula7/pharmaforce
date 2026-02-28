@@ -21,7 +21,7 @@ export default function ProductGallery({ mainImage, gallery, name, badge, oldPri
   return (
     <div className="space-y-4">
       {/* Main image */}
-      <div className={`relative aspect-square rounded-2xl overflow-hidden border border-border ${images[active].includes('-bg') ? '' : 'bg-[#f5f5f5]'}`}>
+      <div className={`relative aspect-square rounded-2xl overflow-hidden border border-border ${images[active].includes('-bg') ? '' : 'bg-white'}`}>
         <Image
           src={images[active]}
           alt={name}
@@ -50,7 +50,7 @@ export default function ProductGallery({ mainImage, gallery, name, badge, oldPri
           <button
             key={i}
             onClick={() => setActive(i)}
-            className={`relative aspect-square rounded-xl overflow-hidden border transition-all cursor-pointer ${src.includes('-bg') ? '' : 'bg-[#f5f5f5]'} ${
+            className={`relative aspect-square rounded-xl overflow-hidden border transition-all cursor-pointer ${src.includes('-bg') ? '' : 'bg-white'} ${
               active === i ? 'border-brand ring-2 ring-brand/40' : 'border-border hover:border-brand/50'
             }`}
           >

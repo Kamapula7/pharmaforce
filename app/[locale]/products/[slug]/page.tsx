@@ -9,6 +9,7 @@ import ReviewsSection from '@/components/product/ReviewsSection';
 import Link from 'next/link';
 import Image from 'next/image';
 import { PRODUCTS } from '@/lib/products';
+import { BLOG_POSTS } from '@/lib/blog-content';
 import { getTranslations } from 'next-intl/server';
 import { getProductDescriptions } from '@/lib/product-page-translations';
 import { getReviewsForCategory } from '@/lib/reviews';
@@ -120,6 +121,17 @@ export default async function ProductPage({ params }: ProductPageProps) {
       bestRating: '5',
       worstRating: '1',
     },
+    review: reviews.slice(0, 5).map((r) => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: r.name },
+      datePublished: r.date,
+      reviewBody: r.comment,
+      reviewRating: {
+        '@type': 'Rating',
+        ratingValue: String(r.rating),
+        bestRating: '5',
+      },
+    })),
   };
 
   return (
@@ -286,7 +298,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       </div>
 
       {/* Customers also bought */}
-      <ProductViewTracker slug={product.slug} />
+      <ProductViewTracker slug={product.slug} id={product.id} name={product.name} brand={product.brand} category={product.category} price={product.price} />
       <RecentlyViewed currentSlug={product.slug} locale={locale} label="Recently Viewed" />
 
       {related.length > 0 && (
@@ -299,7 +311,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
                 href={`/${locale}/products/${p.slug}`}
                 className="group bg-surface border border-border rounded-xl overflow-hidden hover:border-brand/40 hover:shadow-lg hover:shadow-brand/5 transition-all duration-300"
               >
-                <div className={`relative aspect-square overflow-hidden block ${p.image.includes('-bg') ? '' : 'bg-[#f5f5f5]'}`}>
+                <div className={`relative aspect-square overflow-hidden block ${p.image.includes('-bg') ? '' : 'bg-white'}`}>
                   <Image
                     src={p.image}
                     alt={p.name}
@@ -320,6 +332,39 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </div>
         </div>
       )}
+
+      {(() => {
+        const blogCatMap: Record<string, string[]> = {
+          'Protein': ['PROTEIN'],
+          'Creatine': ['PERFORMANCE'],
+          'Amino Acids': ['RECOVERY', 'PERFORMANCE'],
+          'AAS': ['AAS', 'PCT'],
+          'Peptides': ['PEPTIDES'],
+          'Modulators': ['SARMS', 'MODULATORS', 'PCT'],
+          'Womens Health': ['GLP-1', 'HAIR GROWTH'],
+          'Sexual Health': ['SEXUAL HEALTH'],
+          'Anti-Aging': ['PEPTIDES', 'RECOVERY'],
+          'Antidepressants': ['ANTIDEPRESSANTS'],
+        };
+        const blogCats = blogCatMap[product.category] ?? [];
+        const relatedPosts = BLOG_POSTS.filter(p => blogCats.includes(p.category)).slice(0, 3);
+        if (relatedPosts.length === 0) return null;
+        return (
+          <div className="mt-16">
+            <h2 className="text-white font-bold text-xl mb-6">Related Articles</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {relatedPosts.map((post) => (
+                <Link key={post.slug} href={`/${locale}/blog/${post.slug}`} className="group bg-surface border border-border rounded-xl p-5 hover:border-brand/40 transition-all duration-300">
+                  <span className="text-[10px] font-bold uppercase tracking-widest text-brand">{post.category}</span>
+                  <h3 className="text-white text-sm font-semibold mt-1 mb-2 line-clamp-2 group-hover:text-brand transition-colors">{post.title}</h3>
+                  <p className="text-muted text-xs line-clamp-2">{post.excerpt}</p>
+                  <p className="text-muted text-[10px] mt-3">{post.date} · {post.readTime}</p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        );
+      })()}
     </div>
   );
 }

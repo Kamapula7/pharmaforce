@@ -62,7 +62,7 @@ export default function WishlistClient({ locale }: { locale: string }) {
             >
               <Link
                 href={`/${locale}/products/${product.slug}`}
-                className={`relative aspect-square overflow-hidden block ${product.image.includes('-bg') ? '' : 'bg-[#f5f5f5]'}`}
+                className={`relative aspect-square overflow-hidden block ${product.image.includes('-bg') ? '' : 'bg-white'}`}
               >
                 <Image
                   src={product.image}

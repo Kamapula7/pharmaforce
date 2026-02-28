@@ -22,6 +22,14 @@ export async function generateMetadata({ params }: AboutPageProps): Promise<Meta
         'es': 'https://pharmaforce-store.com/es/about',
       },
     },
+    openGraph: {
+      title: 'About PharmaForce — Pharmaceutical-Grade Sports Products Europe',
+      description: 'PharmaForce is a trusted European supplier of pharmaceutical-grade sports pharmacology, supplements and performance products.',
+      url: `https://pharmaforce-store.com/${locale}/about`,
+      siteName: 'PharmaForce',
+      images: [{ url: 'https://pharmaforce-store.com/hero-athletes.png', width: 1200, height: 630, alt: 'About PharmaForce' }],
+      type: 'website',
+    },
   };
 }
 
