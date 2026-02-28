@@ -1,11 +1,22 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { rateLimit } from '@/lib/rate-limit';
 
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? 'pharma2025';
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
+
+if (!ADMIN_PASSWORD) {
+  console.error('ADMIN_PASSWORD environment variable is not set');
+}
 
 export async function POST(req: NextRequest) {
+  const ip = req.headers.get('x-forwarded-for')?.split(',')[0] ?? 'unknown';
+  const rl = rateLimit(`admin-login:${ip}`, { limit: 5, windowMs: 300_000 });
+  if (!rl.success) {
+    return NextResponse.json({ error: 'Too many attempts' }, { status: 429 });
+  }
+
   const { password } = await req.json();
 
-  if (password !== ADMIN_PASSWORD) {
+  if (!ADMIN_PASSWORD || password !== ADMIN_PASSWORD) {
     return NextResponse.json({ error: 'Invalid password' }, { status: 401 });
   }
 

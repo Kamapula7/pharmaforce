@@ -1,7 +1,7 @@
 'use client';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { Zap, Instagram, Facebook, Mail } from 'lucide-react';
+import { Zap, Mail } from 'lucide-react';
 
 interface FooterProps {
   locale: string;
@@ -34,20 +34,6 @@ export default function Footer({ locale }: FooterProps) {
               <Mail className="w-3.5 h-3.5" />
               pharmaforce@inbox.eu
             </a>
-            <div className="flex items-center gap-3">
-              <a
-                href="#"
-                className="w-8 h-8 bg-surface-2 rounded-lg flex items-center justify-center text-muted hover:text-brand hover:bg-brand/10 transition-colors"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                className="w-8 h-8 bg-surface-2 rounded-lg flex items-center justify-center text-muted hover:text-brand hover:bg-brand/10 transition-colors"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-            </div>
           </div>
 
           {/* Shop */}
@@ -58,7 +44,7 @@ export default function Footer({ locale }: FooterProps) {
                 <li key={key}>
                   <Link
                     href={`/${locale}/products?category=${key}`}
-                    className="text-muted hover:text-white transition-colors text-sm"
+                    className="text-muted hover:text-white transition-colors text-sm break-words"
                   >
                     {tCat(key)}
                   </Link>
@@ -72,17 +58,17 @@ export default function Footer({ locale }: FooterProps) {
             <h3 className="text-white font-semibold mb-4">{t('company')}</h3>
             <ul className="space-y-2">
               <li>
-                <Link href={`/${locale}/about`} className="text-muted hover:text-white transition-colors text-sm">
+                <Link href={`/${locale}/about`} className="text-muted hover:text-white transition-colors text-sm break-words">
                   {t('about')}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/blog`} className="text-muted hover:text-white transition-colors text-sm">
+                <Link href={`/${locale}/blog`} className="text-muted hover:text-white transition-colors text-sm break-words">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/contact`} className="text-muted hover:text-white transition-colors text-sm">
+                <Link href={`/${locale}/contact`} className="text-muted hover:text-white transition-colors text-sm break-words">
                   {t('contact')}
                 </Link>
               </li>
@@ -94,22 +80,22 @@ export default function Footer({ locale }: FooterProps) {
             <h3 className="text-white font-semibold mb-4">{t('legal')}</h3>
             <ul className="space-y-2">
               <li>
-                <Link href={`/${locale}/shipping`} className="text-muted hover:text-white transition-colors text-sm">
+                <Link href={`/${locale}/shipping`} className="text-muted hover:text-white transition-colors text-sm break-words">
                   {t('shippingInfo')}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/faq`} className="text-muted hover:text-white transition-colors text-sm">
+                <Link href={`/${locale}/faq`} className="text-muted hover:text-white transition-colors text-sm break-words">
                   {t('faq')}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/privacy`} className="text-muted hover:text-white transition-colors text-sm">
+                <Link href={`/${locale}/privacy`} className="text-muted hover:text-white transition-colors text-sm break-words">
                   {t('privacy')}
                 </Link>
               </li>
               <li>
-                <Link href={`/${locale}/terms`} className="text-muted hover:text-white transition-colors text-sm">
+                <Link href={`/${locale}/terms`} className="text-muted hover:text-white transition-colors text-sm break-words">
                   {t('terms')}
                 </Link>
               </li>

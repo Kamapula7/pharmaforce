@@ -60,6 +60,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const post = getBlogPostForLocale(rawPost, locale);
   const t = await getTranslations({ locale, namespace: 'blog' });
 
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: `https://pharmaforce-store.com/${locale}` },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `https://pharmaforce-store.com/${locale}/blog` },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://pharmaforce-store.com/${locale}/blog/${slug}` },
+    ],
+  };
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -92,10 +102,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
       {/* Back */}
@@ -162,6 +170,33 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </section>
         ))}
       </div>
+
+      {/* Related articles */}
+      {(() => {
+        const related = BLOG_POSTS
+          .filter(p => p.slug !== slug && (p.category === rawPost.category || p.tag === rawPost.tag))
+          .slice(0, 3)
+          .map(p => getBlogPostForLocale(p, locale));
+        if (related.length === 0) return null;
+        return (
+          <div className="mt-14 pt-8 border-t border-border">
+            <h3 className="text-white font-bold text-lg mb-5">{t('relatedArticles') ?? 'Related Articles'}</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              {related.map(r => (
+                <Link key={r.slug} href={`/${locale}/blog/${r.slug}`} className="group bg-surface border border-border rounded-xl overflow-hidden hover:border-brand/40 transition-all">
+                  <div className="relative h-32 overflow-hidden">
+                    <Image src={r.photo} alt={r.title} fill className="object-cover group-hover:scale-105 transition-transform duration-500" sizes="33vw" />
+                  </div>
+                  <div className="p-3">
+                    <p className="text-white text-xs font-medium leading-snug line-clamp-2 group-hover:text-brand transition-colors">{r.title}</p>
+                    <p className="text-muted text-[11px] mt-1">{r.readTime} {t('readSuffix')}</p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        );
+      })()}
 
       {/* Footer */}
       <div className="mt-14 pt-8 border-t border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">

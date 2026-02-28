@@ -8,6 +8,7 @@ import { PRODUCTS, CATEGORIES_NAV } from '@/lib/products';
 import { getTranslations } from 'next-intl/server';
 import SidebarCategories from '@/components/products/SidebarCategories';
 import ProductsToolbar from '@/components/products/ProductsToolbar';
+import WishlistButton from '@/components/product/WishlistButton';
 
 interface ProductsPageProps {
   params: Promise<{ locale: string }>;
@@ -18,40 +19,83 @@ export async function generateMetadata({ params, searchParams }: ProductsPagePro
   const { locale } = await params;
   const { category } = await searchParams;
 
-  const CAT_META: Record<string, { title: string; description: string }> = {
+  const CAT_META: Record<string, Record<string, { title: string; description: string }>> = {
     aas: {
-      title: 'Buy Anabolic Steroids Online Europe — AAS Shop | PharmaForce',
-      description: 'Pharmaceutical-grade injectable and oral anabolic steroids. Testosterone, Trenbolone, Dianabol, Anavar, Deca-Durabolin. Discreet EU delivery. Verified quality.',
+      en: { title: 'Buy Anabolic Steroids Online Europe — AAS Shop | PharmaForce', description: 'Pharmaceutical-grade injectable and oral anabolic steroids. Testosterone, Trenbolone, Dianabol, Anavar, Deca-Durabolin. Discreet EU delivery.' },
+      de: { title: 'Anabole Steroide online kaufen Europa — AAS Shop | PharmaForce', description: 'Pharmazeutische injizierbare und orale anabole Steroide. Testosteron, Trenbolon, Dianabol, Anavar, Deca-Durabolin. Diskreter EU-Versand.' },
+      fr: { title: 'Acheter des stéroïdes anabolisants en ligne Europe — AAS | PharmaForce', description: 'Stéroïdes anabolisants injectables et oraux de qualité pharmaceutique. Testostérone, Trenbolone, Dianabol, Anavar. Livraison discrète UE.' },
+      es: { title: 'Comprar esteroides anabólicos online Europa — AAS | PharmaForce', description: 'Esteroides anabólicos inyectables y orales de grado farmacéutico. Testosterona, Trembolona, Dianabol, Anavar. Envío discreto en la UE.' },
+      pl: { title: 'Kup sterydy anaboliczne online Europa — AAS | PharmaForce', description: 'Farmaceutyczne sterydy anaboliczne iniekcyjne i doustne. Testosteron, Trenbolon, Dianabol, Anavar. Dyskretna dostawa w UE.' },
+      it: { title: 'Comprare steroidi anabolizzanti online Europa — AAS | PharmaForce', description: 'Steroidi anabolizzanti iniettabili e orali di qualità farmaceutica. Testosterone, Trenbolone, Dianabol, Anavar. Spedizione discreta UE.' },
     },
     peptides: {
-      title: 'Buy Peptides & HGH Online Europe — Somatropin, IGF-1, GHRPs | PharmaForce',
-      description: 'Pharmaceutical-grade growth hormone, peptides and secretagogues. Somatropin HGH, Ipamorelin, CJC-1295, GHRP-6, Ibutamoren MK-677. Fast EU shipping.',
+      en: { title: 'Buy Peptides & HGH Online Europe — Somatropin, IGF-1 | PharmaForce', description: 'Pharmaceutical-grade growth hormone, peptides and secretagogues. Somatropin HGH, Ipamorelin, CJC-1295, GHRP-6. Fast EU shipping.' },
+      de: { title: 'Peptide & HGH online kaufen Europa — Somatropin, IGF-1 | PharmaForce', description: 'Pharmazeutisches Wachstumshormon, Peptide und Sekretagoga. Somatropin HGH, Ipamorelin, CJC-1295, GHRP-6. Schneller EU-Versand.' },
+      fr: { title: 'Acheter peptides & HGH en ligne Europe — Somatropine | PharmaForce', description: 'Hormone de croissance, peptides et sécrétagogues de qualité pharmaceutique. Somatropine, Ipamorelin, CJC-1295. Livraison rapide UE.' },
+      es: { title: 'Comprar péptidos y HGH online Europa — Somatropina | PharmaForce', description: 'Hormona de crecimiento, péptidos y secretagogos de grado farmacéutico. Somatropina, Ipamorelina, CJC-1295. Envío rápido en la UE.' },
+      pl: { title: 'Kup peptydy i HGH online Europa — Somatropina | PharmaForce', description: 'Farmaceutyczny hormon wzrostu, peptydy i sekretogogi. Somatropina HGH, Ipamorelin, CJC-1295. Szybka dostawa w UE.' },
+      it: { title: 'Comprare peptidi e HGH online Europa — Somatropina | PharmaForce', description: 'Ormone della crescita, peptidi e secretagoghi di qualità farmaceutica. Somatropina, Ipamorelin, CJC-1295. Spedizione rapida UE.' },
     },
     modulators: {
-      title: 'Buy SARMs, PCT & AI Online Europe — Ostarine, Nolvadex, Arimidex | PharmaForce',
-      description: 'SARMs, aromatase inhibitors and PCT medications. Ostarine, RAD-140, Ligandrol, Anastrozole, Tamoxifen, Clomid. Pharmaceutical grade, EU delivery.',
+      en: { title: 'Buy SARMs, PCT & AI Online Europe — Ostarine, Nolvadex | PharmaForce', description: 'SARMs, aromatase inhibitors and PCT medications. Ostarine, RAD-140, Ligandrol, Anastrozole, Tamoxifen, Clomid. Pharmaceutical grade, EU delivery.' },
+      de: { title: 'SARMs, PCT & AI online kaufen Europa — Ostarine, Nolvadex | PharmaForce', description: 'SARMs, Aromatasehemmer und PCT-Medikamente. Ostarine, RAD-140, Ligandrol, Anastrozol, Tamoxifen, Clomid. EU-Lieferung.' },
+      fr: { title: 'Acheter SARMs, PCT & AI en ligne Europe — Ostarine | PharmaForce', description: 'SARMs, inhibiteurs de l\'aromatase et PCT. Ostarine, RAD-140, Ligandrol, Anastrozole, Tamoxifène. Livraison UE.' },
+      es: { title: 'Comprar SARMs, PCT y AI online Europa — Ostarine | PharmaForce', description: 'SARMs, inhibidores de aromatasa y medicamentos PCT. Ostarine, RAD-140, Ligandrol, Anastrozol, Tamoxifeno. Envío UE.' },
+      pl: { title: 'Kup SARMs, PCT i AI online Europa — Ostarine | PharmaForce', description: 'SARMs, inhibitory aromatazy i leki PCT. Ostarine, RAD-140, Ligandrol, Anastrozol, Tamoksyfen. Dostawa w UE.' },
+      it: { title: 'Comprare SARMs, PCT e AI online Europa — Ostarine | PharmaForce', description: 'SARMs, inibitori dell\'aromatasi e farmaci PCT. Ostarine, RAD-140, Ligandrol, Anastrozolo, Tamoxifene. Spedizione UE.' },
     },
     'womens-health': {
-      title: 'Buy Women\'s Health Medications Online — GLP-1, Hair Growth, HRT | PharmaForce',
-      description: 'Wegovy, Mounjaro, Saxenda weight loss injections. Hair growth (Rogaine, Propecia). Hormone therapy (Premarin, Climara). Discreet EU delivery.',
+      en: { title: 'Buy Women\'s Health Medications Online — GLP-1, Hair Growth | PharmaForce', description: 'Wegovy, Mounjaro, Saxenda weight loss injections. Hair growth, hormone therapy. Discreet EU delivery.' },
+      de: { title: 'Frauengesundheit online kaufen — GLP-1, Haarwuchs | PharmaForce', description: 'Wegovy, Mounjaro, Saxenda Abnehmspritzen. Haarwuchsmittel, Hormontherapie. Diskreter EU-Versand.' },
+      fr: { title: 'Santé féminine en ligne — GLP-1, Croissance capillaire | PharmaForce', description: 'Wegovy, Mounjaro, Saxenda injections pour perte de poids. Croissance capillaire, thérapie hormonale. Livraison UE.' },
+      es: { title: 'Salud femenina online — GLP-1, Crecimiento capilar | PharmaForce', description: 'Wegovy, Mounjaro, Saxenda inyecciones para pérdida de peso. Crecimiento capilar, terapia hormonal. Envío discreto UE.' },
+      pl: { title: 'Zdrowie kobiet online — GLP-1, Wzrost włosów | PharmaForce', description: 'Wegovy, Mounjaro, Saxenda zastrzyki na odchudzanie. Wzrost włosów, terapia hormonalna. Dyskretna dostawa UE.' },
+      it: { title: 'Salute femminile online — GLP-1, Crescita capelli | PharmaForce', description: 'Wegovy, Mounjaro, Saxenda iniezioni per perdita di peso. Crescita capelli, terapia ormonale. Spedizione discreta UE.' },
     },
     protein: {
-      title: 'Buy Protein Supplements Europe — Whey, Isolate, Casein | PharmaForce',
-      description: 'Premium whey protein, isolate and casein from Optimum Nutrition, BSN, Balkan. Best prices with fast delivery across Europe.',
+      en: { title: 'Buy Protein Supplements Europe — Whey, Isolate, Casein | PharmaForce', description: 'Premium whey protein, isolate and casein from Optimum Nutrition, BSN, Balkan. Best prices with fast EU delivery.' },
+      de: { title: 'Proteinpulver kaufen Europa — Whey, Isolat, Casein | PharmaForce', description: 'Premium Whey Protein, Isolat und Casein von Optimum Nutrition, BSN, Balkan. Beste Preise, schneller EU-Versand.' },
+      fr: { title: 'Acheter protéines en Europe — Whey, Isolat, Caséine | PharmaForce', description: 'Protéine whey, isolat et caséine premium d\'Optimum Nutrition, BSN, Balkan. Meilleurs prix, livraison rapide UE.' },
+      es: { title: 'Comprar proteínas en Europa — Whey, Aislado, Caseína | PharmaForce', description: 'Proteína whey, aislado y caseína premium de Optimum Nutrition, BSN, Balkan. Mejores precios, envío rápido UE.' },
+      pl: { title: 'Kup białko w Europie — Whey, Izolat, Kazeina | PharmaForce', description: 'Premium białko serwatkowe, izolat i kazeina od Optimum Nutrition, BSN, Balkan. Najlepsze ceny, szybka dostawa w UE.' },
+      it: { title: 'Comprare proteine in Europa — Whey, Isolato, Caseina | PharmaForce', description: 'Proteine whey, isolato e caseina premium da Optimum Nutrition, BSN, Balkan. Migliori prezzi, spedizione rapida UE.' },
     },
     antidepressants: {
-      title: 'Buy Antidepressants Online Europe | PharmaForce',
-      description: 'Pharmaceutical-grade antidepressants. Discreet EU delivery. Verified quality.',
+      en: { title: 'Buy Antidepressants Online Europe | PharmaForce', description: 'Pharmaceutical-grade antidepressants. Discreet EU delivery. Verified quality.' },
+      de: { title: 'Antidepressiva online kaufen Europa | PharmaForce', description: 'Pharmazeutische Antidepressiva. Diskreter EU-Versand. Geprüfte Qualität.' },
+      fr: { title: 'Acheter antidépresseurs en ligne Europe | PharmaForce', description: 'Antidépresseurs de qualité pharmaceutique. Livraison discrète UE.' },
+      es: { title: 'Comprar antidepresivos online Europa | PharmaForce', description: 'Antidepresivos de grado farmacéutico. Envío discreto en la UE.' },
+      pl: { title: 'Kup antydepresanty online Europa | PharmaForce', description: 'Farmaceutyczne antydepresanty. Dyskretna dostawa w UE.' },
+      it: { title: 'Comprare antidepressivi online Europa | PharmaForce', description: 'Antidepressivi di qualità farmaceutica. Spedizione discreta UE.' },
     },
   };
 
-  const meta = category ? (CAT_META[category] ?? null) : null;
+  const DEFAULT_META: Record<string, { title: string; description: string }> = {
+    en: { title: 'Buy Sports Supplements & Pharmaceuticals Online Europe | PharmaForce', description: 'Browse 100+ pharmaceutical-grade products: steroids, peptides, SARMs, GLP-1, women\'s health. Fast discreet EU delivery.' },
+    de: { title: 'Sportnahrung & Pharmazeutika online kaufen Europa | PharmaForce', description: '100+ pharmazeutische Produkte: Steroide, Peptide, SARMs, GLP-1, Frauengesundheit. Schneller diskreter EU-Versand.' },
+    fr: { title: 'Suppléments sportifs & pharmaceutiques en ligne Europe | PharmaForce', description: '100+ produits pharmaceutiques : stéroïdes, peptides, SARMs, GLP-1, santé féminine. Livraison discrète UE.' },
+    es: { title: 'Comprar suplementos deportivos y farmacéuticos online Europa | PharmaForce', description: '100+ productos de grado farmacéutico: esteroides, péptidos, SARMs, GLP-1, salud femenina. Envío discreto en la UE.' },
+    pl: { title: 'Suplementy sportowe i farmaceutyki online Europa | PharmaForce', description: '100+ produktów farmaceutycznych: sterydy, peptydy, SARMs, GLP-1, zdrowie kobiet. Szybka dyskretna dostawa w UE.' },
+    it: { title: 'Integratori sportivi e farmaceutici online Europa | PharmaForce', description: '100+ prodotti farmaceutici: steroidi, peptidi, SARMs, GLP-1, salute femminile. Spedizione discreta UE.' },
+  };
+
+  const catMeta = category ? CAT_META[category]?.[locale] ?? CAT_META[category]?.en ?? null : null;
+  const fallback = DEFAULT_META[locale] ?? DEFAULT_META.en;
 
   return {
-    title: meta?.title ?? 'Buy Sports Supplements & Pharmaceuticals Online Europe | PharmaForce',
-    description: meta?.description ?? 'Browse 100+ pharmaceutical-grade products: steroids, peptides, SARMs, GLP-1 weight loss injections, women\'s health. Fast discreet EU delivery.',
+    title: catMeta?.title ?? fallback.title,
+    description: catMeta?.description ?? fallback.description,
     alternates: {
       canonical: `https://pharmaforce-store.com/${locale}/products${category ? `?category=${category}` : ''}`,
+      languages: {
+        ...Object.fromEntries(
+          ['en', 'de', 'pl', 'fr', 'it', 'es'].map((l) => [
+            l,
+            `https://pharmaforce-store.com/${l}/products${category ? `?category=${category}` : ''}`,
+          ])
+        ),
+        'x-default': `https://pharmaforce-store.com/en/products${category ? `?category=${category}` : ''}`,
+      },
     },
   };
 }
@@ -438,6 +482,10 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
                       </span>
                     </div>
                   )}
+
+                  <div className="absolute top-2 right-2 z-10">
+                    <WishlistButton productId={product.id} />
+                  </div>
                 </Link>
 
                 {/* Info */}

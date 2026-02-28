@@ -12,9 +12,10 @@ export default function FloatingChatButton() {
 
   const openChat = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const api = (window as any).Tawk_API;
-    if (api?.maximize) api.maximize();
-    else if (api?.toggle) api.toggle();
+    const crisp = (window as any).$crisp;
+    if (crisp?.[0]?.push) {
+      crisp.push(['do', 'chat:open']);
+    }
   };
 
   if (!visible) return null;

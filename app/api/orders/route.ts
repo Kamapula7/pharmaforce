@@ -3,10 +3,17 @@ import { after } from 'next/server';
 import { auth } from '@/auth';
 import { prisma } from '@/lib/prisma';
 import { sendOrderConfirmation } from '@/lib/email';
+import { rateLimit } from '@/lib/rate-limit';
 
 export const maxDuration = 30;
 
 export async function POST(req: NextRequest) {
+  const ip = req.headers.get('x-forwarded-for')?.split(',')[0] ?? 'unknown';
+  const rl = rateLimit(`order:${ip}`, { limit: 10, windowMs: 60_000 });
+  if (!rl.success) {
+    return NextResponse.json({ error: 'Too many requests' }, { status: 429 });
+  }
+
   try {
     const session = await auth();
     const body = await req.json();

@@ -4,10 +4,11 @@ import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useState, useRef, useEffect } from 'react';
 import { useRouter, usePathname } from 'next/navigation';
-import { ShoppingCart, User, Menu, X, Zap, ChevronLeft, Search, Package, LogOut, LogIn, UserPlus } from 'lucide-react';
+import { ShoppingCart, User, Menu, X, Zap, ChevronLeft, Search, Package, LogOut, LogIn, UserPlus, Heart } from 'lucide-react';
 import { useSession, signOut } from 'next-auth/react';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useCartStore } from '@/store/cartStore';
+import { useWishlistStore } from '@/store/wishlistStore';
 import SearchInput from '@/components/search/SearchInput';
 
 interface HeaderProps {
@@ -34,6 +35,7 @@ export default function Header({ locale }: HeaderProps) {
     return () => document.removeEventListener('mousedown', handler);
   }, []);
   const cartCount = useCartStore((s) => s.totalItems());
+  const wishlistCount = useWishlistStore((s) => s.ids.length);
   const router = useRouter();
   const pathname = usePathname();
 
@@ -50,7 +52,7 @@ export default function Header({ locale }: HeaderProps) {
   return (
     <header className="sticky top-0 z-50">
       {/* Promo announcement bar */}
-      <div className="bg-brand text-dark text-xs font-bold text-center py-2 px-4 flex items-center justify-center gap-2">
+      <div className="bg-brand text-dark text-xs font-bold text-center py-2 px-4 flex flex-wrap items-center justify-center gap-2">
         <span>🎁</span>
         <span>{tPromo('banner')}</span>
         <span className="hidden sm:inline">·</span>
@@ -99,7 +101,7 @@ export default function Header({ locale }: HeaderProps) {
           {/* Actions */}
           <div className="flex items-center gap-2">
             {/* Search */}
-            <div className={`flex items-center transition-all duration-300 overflow-hidden ${searchOpen ? 'w-36 sm:w-64 md:w-80' : 'w-8'}`}>
+            <div className={`flex items-center transition-all duration-300 ${searchOpen ? 'w-36 sm:w-64 md:w-80 overflow-visible' : 'w-8 overflow-hidden'}`}>
               {searchOpen ? (
                 <div className="w-full relative">
                   <SearchInput
@@ -190,6 +192,19 @@ export default function Header({ locale }: HeaderProps) {
                 </div>
               )}
             </div>
+
+            <Link
+              href={`/${locale}/wishlist`}
+              className={`relative p-2 transition-colors rounded-lg hover:bg-surface-2 ${searchOpen ? 'hidden sm:block' : ''} ${wishlistCount > 0 ? 'text-red-500' : 'text-muted hover:text-white'}`}
+              aria-label="Wishlist"
+            >
+              <Heart className={`w-5 h-5 ${wishlistCount > 0 ? 'fill-current' : ''}`} />
+              {wishlistCount > 0 && (
+                <span className="absolute -top-0.5 -right-0.5 w-4 h-4 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                  {wishlistCount > 9 ? '9+' : wishlistCount}
+                </span>
+              )}
+            </Link>
 
             <Link
               href={`/${locale}/cart`}

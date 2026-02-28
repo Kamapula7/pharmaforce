@@ -57,10 +57,10 @@
     "products": {
         "title": "Todos los Productos",
         "subtitle": "Suplementos de grado farmacéutico, AAS, péptidos y moduladores del rendimiento — entrega discreta directamente a tu puerta en toda Europa.",
-        "badge": "Sin receta · Todo disponible para pedido",
+        "badge": "Sin receta · Todo disponible para pedir",
         "stat1": "Productos",
         "stat2": "Países de la UE",
-        "stat3": "Analizado en Lab",
+        "stat3": "Analizado en laboratorio",
         "filters": {
             "category": "Categoría",
             "price": "Precio",
@@ -305,6 +305,7 @@
         "backToBlog": "Volver al blog",
         "writtenBy": "Escrito por",
         "allArticles": "Todos los artículos",
+        "relatedArticles": "Artículos relacionados",
         "by": "Por"
     },
     "search": {

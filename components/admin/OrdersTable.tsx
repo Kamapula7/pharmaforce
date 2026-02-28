@@ -47,7 +47,6 @@ export default function OrdersTable({ initialOrders }: { initialOrders: Order[] 
   const [expanded, setExpanded] = useState<string | null>(null);
   const [loading, setLoading] = useState<string | null>(null);
   const [emailOrder, setEmailOrder] = useState<Order | null>(null);
-
   const updateStatus = async (orderId: string, newStatus: string) => {
     setLoading(orderId + newStatus);
     try {

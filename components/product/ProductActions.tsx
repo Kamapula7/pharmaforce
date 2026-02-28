@@ -6,6 +6,7 @@ import { useCartStore } from '@/store/cartStore';
 import { formatPrice } from '@/lib/utils';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import WishlistButton from './WishlistButton';
 
 interface ProductActionsProps {
   product: { id: string; slug: string; nameEn: string; price: number; image?: string; category?: string };
@@ -144,6 +145,8 @@ export default function ProductActions({ product, locale, badge }: ProductAction
             {t('viewCart')}
           </Link>
         )}
+
+        <WishlistButton productId={product.id} size="md" className="p-3 rounded-xl border border-border hover:border-red-400/50 hover:bg-red-500/5" />
       </div>
     </div>
   );

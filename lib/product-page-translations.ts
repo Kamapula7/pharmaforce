@@ -530,7 +530,7 @@ export const DESCRIPTIONS_BY_LOCALE: Record<string, DescMap> = {
   es: {
     Protein: {
       desc: 'Suplemento proteico de primera calidad que aporta 24–26 g de proteína por porción. Procesado en frío para preservar las fracciones bioactivas y maximizar la biodisponibilidad. Ideal para el crecimiento muscular, la recuperación y el mantenimiento de la masa magra.',
-      composition: 'Concentrado/Aislado de Proteína de Suero de Leche, Cacao en Polvo (variantes de chocolate), Lecitina de Girasol, Aromas Naturales, Extracto de Stevia. Por porción de 30 g: Proteína 24 g, Carbohidratos 3 g, Grasas 2 g, Calorías 120 kcal.',
+      composition: 'Concentrado/aislado de proteína de suero de leche, cacao en polvo (variantes chocolate), lecitina de girasol, aromas naturales, extracto de stevia. Por porción de 30 g: Proteína 24 g, Carbohidratos 3 g, Grasas 2 g, Calorías 120 kcal.',
       howToUse: 'Mezclar 1 medida (30 g) con 250–300 ml de agua fría o leche. Tomar 1–2 porciones al día — preferiblemente después del entrenamiento y por la mañana.',
       servings: 30,
     },
@@ -560,7 +560,7 @@ export const DESCRIPTIONS_BY_LOCALE: Record<string, DescMap> = {
     },
     'Fat Burners': {
       desc: 'Fórmula avanzada de apoyo metabólico que combina L-carnitina, compuestos termogénicos e ingredientes que estimulan el metabolismo para ayudar al organismo a utilizar la grasa como combustible durante el entrenamiento.',
-      composition: 'Acetil-L-Carnitina o Tartrato de L-Carnitina 1000 mg, Extracto de Té Verde 300 mg, Cafeína Anhidra 150 mg. Por porción.',
+      composition: 'Acetil-L-carnitina o tartrato de L-carnitina 1000 mg, extracto de té verde 300 mg, cafeína anhidra 150 mg. Por porción.',
       howToUse: 'Tomar por la mañana en ayunas o 30 min antes del entrenamiento. No tomar en las 6 horas previas al sueño.',
       servings: 30,
     },
@@ -626,7 +626,7 @@ export const DESCRIPTIONS_BY_LOCALE: Record<string, DescMap> = {
     },
     Sleep: {
       desc: 'Fórmula avanzada de sueño y recuperación que combina melatonina farmacéutica con compuestos que favorecen la relajación. Favorece un adormecimiento más rápido, fases de sueño más profundas y una mejor recuperación muscular nocturna.',
-      composition: 'Melatonina 3 mg, Bisglicinato de Magnesio 200 mg, L-Teanina 200 mg, Extracto de Raíz de Valeriana 300 mg, Ashwagandha KSM-66® 150 mg. Por porción.',
+      composition: 'Melatonina 3 mg, Bisglicinato de Magnesio 200 mg, L-Teanina 200 mg, extracto de raíz de valeriana 300 mg, Ashwagandha KSM-66® 150 mg. Por porción.',
       howToUse: 'Tomar 1–2 cápsulas 30 minutos antes de dormir. No superar la dosis indicada. No usar durante el día.',
       servings: 30,
     },

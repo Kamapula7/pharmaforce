@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Star, Search } from 'lucide-react';
@@ -10,6 +11,17 @@ import { getTranslations } from 'next-intl/server';
 interface SearchPageProps {
   params: Promise<{ locale: string }>;
   searchParams: Promise<{ q?: string }>;
+}
+
+export async function generateMetadata({ params }: SearchPageProps): Promise<Metadata> {
+  const { locale } = await params;
+  return {
+    title: 'Search | PharmaForce',
+    robots: { index: false, follow: false },
+    alternates: {
+      canonical: `https://pharmaforce-store.com/${locale}/search`,
+    },
+  };
 }
 
 export default async function SearchPage({ params, searchParams }: SearchPageProps) {

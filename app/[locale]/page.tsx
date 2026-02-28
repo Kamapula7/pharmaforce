@@ -27,6 +27,10 @@ const META: Record<string, { title: string; description: string }> = {
     title: 'PharmaForce — Sii migliore di ieri',
     description: 'Integratori di qualità farmaceutica, AAS, peptidi e modulatori delle prestazioni — consegna discreta in tutta Europa.',
   },
+  es: {
+    title: 'PharmaForce — Sé mejor que ayer',
+    description: 'Suplementos de grado farmacéutico, AAS, péptidos y moduladores del rendimiento — envío discreto a toda Europa.',
+  },
 };
 
 export async function generateMetadata({ params }: HomePageProps): Promise<Metadata> {
@@ -43,6 +47,7 @@ export async function generateMetadata({ params }: HomePageProps): Promise<Metad
         pl: 'https://pharmaforce-store.com/pl',
         fr: 'https://pharmaforce-store.com/fr',
         it: 'https://pharmaforce-store.com/it',
+        es: 'https://pharmaforce-store.com/es',
         'x-default': 'https://pharmaforce-store.com/en',
       },
     },

@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import TawkChat from '@/components/layout/TawkChat';
+import CrispChat from '@/components/layout/CrispChat';
 import FloatingChatButton from '@/components/layout/FloatingChatButton';
 import PageTracker from '@/components/layout/PageTracker';
 
@@ -31,6 +31,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
         'fr':       `${BASE}/fr`,
         'pl':       `${BASE}/pl`,
         'it':       `${BASE}/it`,
+        'es':       `${BASE}/es`,
         'x-default': `${BASE}/en`,
       },
     },
@@ -56,7 +57,7 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
             <Footer locale={locale} />
           </div>
           <PageTracker />
-          <TawkChat />
+          <CrispChat />
           <FloatingChatButton />
         </NextIntlClientProvider>
       </body>
