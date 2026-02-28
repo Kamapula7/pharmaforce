@@ -68,6 +68,38 @@ export async function generateMetadata({ params, searchParams }: ProductsPagePro
       pl: { title: 'Kup antydepresanty online Europa | PharmaForce', description: 'Farmaceutyczne antydepresanty. Dyskretna dostawa w UE.' },
       it: { title: 'Comprare antidepressivi online Europa | PharmaForce', description: 'Antidepressivi di qualità farmaceutica. Spedizione discreta UE.' },
     },
+    creatine: {
+      en: { title: 'Buy Creatine Supplements Online Europe — Monohydrate, Kre-Alkalyn | PharmaForce', description: 'Micronized creatine monohydrate and Kre-Alkalyn from Optimum Nutrition, BSN, Balkan. Best prices with fast EU delivery.' },
+      de: { title: 'Kreatin online kaufen Europa — Monohydrat, Kre-Alkalyn | PharmaForce', description: 'Mikronisiertes Kreatin-Monohydrat und Kre-Alkalyn von Optimum Nutrition, BSN, Balkan. Beste Preise, schneller EU-Versand.' },
+      fr: { title: 'Acheter créatine en Europe — Monohydrate, Kre-Alkalyn | PharmaForce', description: 'Créatine monohydrate micronisée et Kre-Alkalyn d\'Optimum Nutrition, BSN, Balkan. Meilleurs prix, livraison rapide UE.' },
+      es: { title: 'Comprar creatina en Europa — Monohidrato, Kre-Alkalyn | PharmaForce', description: 'Creatina monohidrato micronizada y Kre-Alkalyn de Optimum Nutrition, BSN, Balkan. Mejores precios, envío rápido UE.' },
+      pl: { title: 'Kup kreatynę w Europie — Monohydrat, Kre-Alkalyn | PharmaForce', description: 'Mikronizowany monohydrat kreatyny i Kre-Alkalyn od Optimum Nutrition, BSN, Balkan. Najlepsze ceny, szybka dostawa UE.' },
+      it: { title: 'Comprare creatina in Europa — Monoidrato, Kre-Alkalyn | PharmaForce', description: 'Creatina monoidrato micronizzata e Kre-Alkalyn da Optimum Nutrition, BSN, Balkan. Migliori prezzi, spedizione rapida UE.' },
+    },
+    'amino-acids': {
+      en: { title: 'Buy Amino Acids & BCAA Online Europe — EAA, Glutamine | PharmaForce', description: 'Essential amino acids, BCAA, glutamine and electrolyte supplements. Optimum Nutrition, Balkan, Now Sports. Fast EU delivery.' },
+      de: { title: 'Aminosäuren & BCAA online kaufen Europa — EAA, Glutamin | PharmaForce', description: 'Essentielle Aminosäuren, BCAA, Glutamin und Elektrolyte. Optimum Nutrition, Balkan, Now Sports. Schneller EU-Versand.' },
+      fr: { title: 'Acheter acides aminés & BCAA en Europe — EAA, Glutamine | PharmaForce', description: 'Acides aminés essentiels, BCAA, glutamine et électrolytes. Optimum Nutrition, Balkan, Now Sports. Livraison rapide UE.' },
+      es: { title: 'Comprar aminoácidos y BCAA en Europa — EAA, Glutamina | PharmaForce', description: 'Aminoácidos esenciales, BCAA, glutamina y electrolitos. Optimum Nutrition, Balkan, Now Sports. Envío rápido UE.' },
+      pl: { title: 'Kup aminokwasy i BCAA w Europie — EAA, Glutamina | PharmaForce', description: 'Niezbędne aminokwasy, BCAA, glutamina i elektrolity. Optimum Nutrition, Balkan, Now Sports. Szybka dostawa UE.' },
+      it: { title: 'Comprare aminoacidi e BCAA in Europa — EAA, Glutammina | PharmaForce', description: 'Aminoacidi essenziali, BCAA, glutammina ed elettroliti. Optimum Nutrition, Balkan, Now Sports. Spedizione rapida UE.' },
+    },
+    'sexual-health': {
+      en: { title: 'Buy ED Medications & Sexual Health Online Europe — Cialis, Viagra | PharmaForce', description: 'Cialis, Viagra, Levitra, Kamagra and hormonal support. Original brands and trusted generics. Discreet EU delivery.' },
+      de: { title: 'Potenzmittel & Sexuelle Gesundheit online kaufen — Cialis, Viagra | PharmaForce', description: 'Cialis, Viagra, Levitra, Kamagra und hormonelle Unterstützung. Originale Marken, diskreter EU-Versand.' },
+      fr: { title: 'Acheter médicaments ED & santé sexuelle — Cialis, Viagra | PharmaForce', description: 'Cialis, Viagra, Levitra, Kamagra et support hormonal. Marques originales, livraison discrète UE.' },
+      es: { title: 'Comprar medicamentos para DE y salud sexual — Cialis, Viagra | PharmaForce', description: 'Cialis, Viagra, Levitra, Kamagra y soporte hormonal. Marcas originales, envío discreto UE.' },
+      pl: { title: 'Kup leki na ED i zdrowie seksualne — Cialis, Viagra | PharmaForce', description: 'Cialis, Viagra, Levitra, Kamagra i wsparcie hormonalne. Oryginalne marki, dyskretna dostawa UE.' },
+      it: { title: 'Comprare farmaci per DE e salute sessuale — Cialis, Viagra | PharmaForce', description: 'Cialis, Viagra, Levitra, Kamagra e supporto ormonale. Marchi originali, spedizione discreta UE.' },
+    },
+    'anti-aging': {
+      en: { title: 'Buy Anti-Aging Supplements & Peptides Online Europe — NMN, Rapamycin | PharmaForce', description: 'NMN, rapamycin, tretinoin, epithalon and longevity peptides. Pharmaceutical-grade anti-aging products with EU delivery.' },
+      de: { title: 'Anti-Aging Supplements & Peptide online kaufen — NMN, Rapamycin | PharmaForce', description: 'NMN, Rapamycin, Tretinoin, Epithalon und Langlebigkeitspeptide. Pharmazeutische Anti-Aging-Produkte mit EU-Versand.' },
+      fr: { title: 'Acheter anti-âge & peptides en Europe — NMN, Rapamycine | PharmaForce', description: 'NMN, rapamycine, trétinoïne, épithalon et peptides de longévité. Produits anti-âge pharmaceutiques, livraison UE.' },
+      es: { title: 'Comprar anti-envejecimiento y péptidos en Europa — NMN, Rapamicina | PharmaForce', description: 'NMN, rapamicina, tretinoína, epitalón y péptidos de longevidad. Productos anti-envejecimiento farmacéuticos, envío UE.' },
+      pl: { title: 'Kup suplementy anti-aging i peptydy — NMN, Rapamycyna | PharmaForce', description: 'NMN, rapamycyna, tretynoina, epitalon i peptydy długowieczności. Farmaceutyczne produkty anti-aging, dostawa UE.' },
+      it: { title: 'Comprare anti-aging e peptidi in Europa — NMN, Rapamicina | PharmaForce', description: 'NMN, rapamicina, tretinoina, epitalon e peptidi di longevità. Prodotti anti-aging farmaceutici, spedizione UE.' },
+    },
   };
 
   const DEFAULT_META: Record<string, { title: string; description: string }> = {
@@ -96,6 +128,14 @@ export async function generateMetadata({ params, searchParams }: ProductsPagePro
         ),
         'x-default': `https://pharmaforce-store.com/en/products${category ? `?category=${category}` : ''}`,
       },
+    },
+    openGraph: {
+      title: catMeta?.title ?? fallback.title,
+      description: catMeta?.description ?? fallback.description,
+      url: `https://pharmaforce-store.com/${locale}/products${category ? `?category=${category}` : ''}`,
+      siteName: 'PharmaForce',
+      images: [{ url: 'https://pharmaforce-store.com/hero-athletes.png', width: 1200, height: 630, alt: 'PharmaForce Products' }],
+      type: 'website',
     },
   };
 }
@@ -452,10 +492,10 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
             {sorted.map((product) => (
               <div
                 key={product.id}
-                className="group bg-surface border border-border rounded-xl overflow-hidden hover:border-brand/40 hover:shadow-lg hover:shadow-brand/5 transition-all duration-300 flex flex-col"
+                className="group bg-surface rounded-xl overflow-hidden hover:shadow-lg hover:shadow-brand/5 transition-all duration-300 flex flex-col"
               >
                 {/* Image */}
-                <Link href={`/${locale}/products/${product.slug}`} className={`relative aspect-square overflow-hidden block ${product.image.includes('-bg') ? '' : 'bg-[#f5f5f5]'}`}>
+                <Link href={`/${locale}/products/${product.slug}`} className={`relative aspect-square overflow-hidden block ${product.image.includes('-bg') ? '' : 'bg-white'}`}>
                   <Image
                     src={product.image}
                     alt={product.name}
