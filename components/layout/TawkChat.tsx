@@ -11,19 +11,15 @@ export default function TawkChat() {
     w.Tawk_API = w.Tawk_API || {};
     w.Tawk_LoadStart = new Date();
 
-    w.Tawk_API.onLoad = () => {
+    w.Tawk_API.autoStart = false;
+    w.Tawk_API.onBeforeLoad = () => {
       w.Tawk_API?.hideWidget?.();
     };
-
-    // Suppress badge/unread count and blinking
-    w.Tawk_API.onChatMessageSystem = () => false;
-    w.Tawk_API.onUnreadCountChanged = () => {
-      w.Tawk_API?.setAttributes?.({ 'hide-badge': true }, () => {});
+    w.Tawk_API.onLoad = () => {
+      w.Tawk_API?.hideWidget?.();
+      // Move widget up on mobile so it doesn't cover bottom buttons
+      w.Tawk_API?.setAttributes?.({ 'custom-style': 'bottom: 80px !important' }, () => {});
     };
-    Object.defineProperty(w.Tawk_API, 'unreadCount', {
-      get: () => 0,
-      configurable: true,
-    });
 
     const s = document.createElement('script');
     s.id = 'tawk-script';
@@ -32,6 +28,18 @@ export default function TawkChat() {
     s.charset = 'UTF-8';
     s.setAttribute('crossorigin', '*');
     document.head.appendChild(s);
+
+    // Inject CSS to move tawk widget up on mobile
+    const style = document.createElement('style');
+    style.id = 'tawk-position-fix';
+    style.textContent = `
+      @media (max-width: 768px) {
+        #tawk-bubble-container, .tawk-min-container, iframe[title*="chat"], iframe[src*="tawk"] {
+          bottom: 80px !important;
+        }
+      }
+    `;
+    document.head.appendChild(style);
   }, []);
 
   return null;
