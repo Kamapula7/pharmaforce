@@ -44,3 +44,18 @@ export async function PATCH(
     return NextResponse.json({ ok: false }, { status: 500 });
   }
 }
+
+export async function DELETE(
+  _req: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  try {
+    const { id } = await params;
+    await prisma.orderItem.deleteMany({ where: { orderId: id } });
+    await prisma.order.delete({ where: { id } });
+    return NextResponse.json({ ok: true });
+  } catch (e) {
+    console.error('[admin/orders delete]', e instanceof Error ? e.message : String(e));
+    return NextResponse.json({ ok: false }, { status: 500 });
+  }
+}

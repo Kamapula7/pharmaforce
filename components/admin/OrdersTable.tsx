@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { formatPrice } from '@/lib/utils';
-import { ChevronDown, Check, Loader2, Mail } from 'lucide-react';
+import { ChevronDown, Check, Loader2, Mail, Trash2 } from 'lucide-react';
 import SendEmailModal from './SendEmailModal';
 
 const STATUS_COLORS: Record<string, string> = {
@@ -46,7 +46,22 @@ export default function OrdersTable({ initialOrders }: { initialOrders: Order[] 
   const [orders, setOrders] = useState<Order[]>(initialOrders);
   const [expanded, setExpanded] = useState<string | null>(null);
   const [loading, setLoading] = useState<string | null>(null);
+  const [deleting, setDeleting] = useState<string | null>(null);
   const [emailOrder, setEmailOrder] = useState<Order | null>(null);
+
+  const deleteOrder = async (orderId: string) => {
+    if (!confirm('Delete this order?')) return;
+    setDeleting(orderId);
+    try {
+      const res = await fetch(`/api/admin/orders/${orderId}`, { method: 'DELETE' });
+      if (res.ok) {
+        setOrders(prev => prev.filter(o => o.id !== orderId));
+        if (expanded === orderId) setExpanded(null);
+      }
+    } finally {
+      setDeleting(null);
+    }
+  };
   const updateStatus = async (orderId: string, newStatus: string) => {
     setLoading(orderId + newStatus);
     try {
@@ -100,7 +115,20 @@ export default function OrdersTable({ initialOrders }: { initialOrders: Order[] 
                   {order.status.replace('_', ' ')}
                 </span>
               </div>
-              <ChevronDown className={`w-4 h-4 text-muted transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+              <div className="flex items-center gap-2">
+                <button
+                  onClick={e => { e.stopPropagation(); deleteOrder(order.id); }}
+                  disabled={deleting === order.id}
+                  className="p-1.5 rounded-lg text-muted hover:text-red-400 hover:bg-red-500/10 transition-colors disabled:opacity-40"
+                  title="Delete order"
+                >
+                  {deleting === order.id
+                    ? <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                    : <Trash2 className="w-3.5 h-3.5" />
+                  }
+                </button>
+                <ChevronDown className={`w-4 h-4 text-muted transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+              </div>
             </div>
 
             {/* Expanded details */}
