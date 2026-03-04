@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ShoppingCart, Check, Minus, Plus, Gift, Trash2 } from 'lucide-react';
 import { useCartStore } from '@/store/cartStore';
 import { formatPrice } from '@/lib/utils';
@@ -18,11 +18,14 @@ interface ProductActionsProps {
 export default function ProductActions({ product, locale, badge }: ProductActionsProps) {
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const addItem = useCartStore((s) => s.addItem);
   const removeItem = useCartStore((s) => s.removeItem);
   const cartItem = useCartStore((s) => s.items.find((i) => i.id === product.id));
-  const inCart = cartItem?.quantity ?? 0;
+  const inCart = mounted ? (cartItem?.quantity ?? 0) : 0;
   const t = useTranslations('product');
+
+  useEffect(() => { setMounted(true); }, []);
 
   const isPromo = badge === 'BUY 2 GET 3rd FREE';
   const totalQty = inCart + qty;

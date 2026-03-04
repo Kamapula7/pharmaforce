@@ -18,10 +18,14 @@ interface Props {
 export default function StickyAddToCart({ productId, productName, price, slug, image, category, inStock }: Props) {
   const [visible, setVisible] = useState(false);
   const [flash, setFlash] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const sentinelRef = useRef<HTMLDivElement>(null);
   const addItem = useCartStore((s) => s.addItem);
   const removeItem = useCartStore((s) => s.removeItem);
-  const inCart = useCartStore((s) => s.items.some((i) => i.id === productId));
+  const inCartRaw = useCartStore((s) => s.items.some((i) => i.id === productId));
+  const inCart = mounted && inCartRaw;
+
+  useEffect(() => { setMounted(true); }, []);
 
   useEffect(() => {
     const sentinel = sentinelRef.current;

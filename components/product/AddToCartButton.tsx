@@ -1,7 +1,7 @@
 'use client';
 
 import { ShoppingCart, Check } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useCartStore } from '@/store/cartStore';
 import { gtagAddToCart, gtagRemoveFromCart } from '@/lib/gtag';
 
@@ -26,8 +26,13 @@ export default function AddToCartButton({
 }: AddToCartButtonProps) {
   const addItem = useCartStore((s) => s.addItem);
   const removeItem = useCartStore((s) => s.removeItem);
-  const inCart = useCartStore((s) => s.items.some((i) => i.id === productId));
+  const inCartRaw = useCartStore((s) => s.items.some((i) => i.id === productId));
   const [flash, setFlash] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => { setMounted(true); }, []);
+
+  const inCart = mounted && inCartRaw;
 
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
