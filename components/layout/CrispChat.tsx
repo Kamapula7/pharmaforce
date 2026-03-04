@@ -11,46 +11,15 @@ export default function CrispChat() {
     w.$crisp = [];
     w.CRISP_WEBSITE_ID = id;
 
-    // Move Crisp button above sticky Add to Cart bar on mobile
-    w.$crisp.push(['safe', true]);
-    w.$crisp.push(['config', 'position:reverse', [false]]);
+    // On mobile, tell Crisp to offset its button above the sticky Add to Cart bar
+    if (window.innerWidth < 640) {
+      w.$crisp.push(['config', 'container:index', [1]]);
+    }
 
     const s = document.createElement('script');
     s.src = 'https://client.crisp.chat/l.js';
     s.async = true;
-
-    s.onload = () => {
-      // On mobile screens, shift the button up so it doesn't overlap Add to Cart
-      const isMobile = window.innerWidth < 640;
-      if (isMobile) {
-        w.$crisp.push(['config', 'container:index', [1]]);
-        // Inject CSS into the Crisp iframe once it loads
-        const tryInject = () => {
-          const iframe = document.querySelector<HTMLIFrameElement>('iframe[title*="risp"], iframe[src*="crisp"]');
-          if (iframe?.contentDocument) {
-            const style = iframe.contentDocument.createElement('style');
-            style.textContent = '.cc-tlyw { bottom: 90px !important; }';
-            iframe.contentDocument.head.appendChild(style);
-          } else {
-            setTimeout(tryInject, 1000);
-          }
-        };
-        setTimeout(tryInject, 2000);
-      }
-    };
-
     document.head.appendChild(s);
-
-    // Also inject global CSS targeting Crisp wrapper
-    const style = document.createElement('style');
-    style.textContent = `
-      @media (max-width: 639px) {
-        .crisp-client .cc-tlyw { bottom: 90px !important; }
-        .crisp-client .cc-kxkl { bottom: 90px !important; }
-        #crisp-chatbox > div { bottom: 90px !important; }
-      }
-    `;
-    document.head.appendChild(style);
   }, []);
 
   return null;
