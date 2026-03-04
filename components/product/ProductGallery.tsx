@@ -10,23 +10,26 @@ interface ProductGalleryProps {
   badge?: string;
   oldPrice?: number;
   price?: number;
+  /** Товар на полном белом фоне (упаковка, таблетки и т.п.) */
+  whiteBg?: boolean;
 }
 
 export default function ProductGallery({ mainImage, gallery, name, badge, oldPrice, price }: ProductGalleryProps) {
   const images = gallery && gallery.length > 0 ? gallery : [mainImage, mainImage, mainImage, mainImage];
   const [active, setActive] = useState(0);
+  const hasBg = images[active].includes('-bg');
 
   const discount = oldPrice && price ? Math.round((1 - price / oldPrice) * 100) : null;
 
   return (
     <div className="space-y-4">
       {/* Main image */}
-      <div className={`relative aspect-square rounded-2xl overflow-hidden border border-border ${images[active].includes('-bg') ? '' : 'bg-white'}`}>
+      <div className={`relative aspect-square rounded-2xl overflow-hidden border border-border ${hasBg ? '' : 'bg-white'}`}>
         <Image
           src={images[active]}
           alt={name}
           fill
-          className={`transition-opacity duration-200 ${images[active].includes('-bg') ? 'object-cover' : 'object-contain p-4'}`}
+          className={`transition-opacity duration-200 ${hasBg ? 'object-cover' : 'object-contain p-6'}`}
           sizes="(max-width: 1024px) 100vw, 50vw"
           priority
         />
@@ -50,7 +53,7 @@ export default function ProductGallery({ mainImage, gallery, name, badge, oldPri
           <button
             key={i}
             onClick={() => setActive(i)}
-            className={`relative aspect-square rounded-xl overflow-hidden border transition-all cursor-pointer ${src.includes('-bg') ? '' : 'bg-white'} ${
+            className={`relative aspect-square rounded-xl overflow-hidden border transition-all cursor-pointer ${!src.includes('-bg') ? 'bg-white' : ''} ${
               active === i ? 'border-brand ring-2 ring-brand/40' : 'border-border hover:border-brand/50'
             }`}
           >
