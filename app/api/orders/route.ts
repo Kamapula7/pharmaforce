@@ -16,17 +16,7 @@ export async function POST(req: NextRequest) {
 
   try {
     const session = await auth();
-    const userId = session?.user?.id ?? null;
-
-    // Verify userId exists in DB before using it (session id might not match DB)
-    let validUserId: string | null = null;
-    if (userId) {
-      try {
-        const { prisma: p } = await import('@/lib/prisma');
-        const user = await p.user.findUnique({ where: { id: userId }, select: { id: true } });
-        validUserId = user?.id ?? null;
-      } catch { validUserId = null; }
-    }
+    void session; // session used only for future features
     let body: unknown;
     try {
       body = await req.json();
@@ -83,7 +73,7 @@ export async function POST(req: NextRequest) {
 
     const order = await prisma.order.create({
       data: {
-        userId: validUserId,
+        userId: null,
         email,
         firstName,
         lastName,
