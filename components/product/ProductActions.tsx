@@ -1,10 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import { ShoppingCart, Check, Minus, Plus, Gift } from 'lucide-react';
+import { ShoppingCart, Check, Minus, Plus, Gift, Trash2 } from 'lucide-react';
 import { useCartStore } from '@/store/cartStore';
 import { formatPrice } from '@/lib/utils';
-import { gtagAddToCart } from '@/lib/gtag';
+import { gtagAddToCart, gtagRemoveFromCart } from '@/lib/gtag';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 import WishlistButton from './WishlistButton';
@@ -19,6 +19,7 @@ export default function ProductActions({ product, locale, badge }: ProductAction
   const [qty, setQty] = useState(1);
   const [added, setAdded] = useState(false);
   const addItem = useCartStore((s) => s.addItem);
+  const removeItem = useCartStore((s) => s.removeItem);
   const cartItem = useCartStore((s) => s.items.find((i) => i.id === product.id));
   const inCart = cartItem?.quantity ?? 0;
   const t = useTranslations('product');
@@ -44,6 +45,11 @@ export default function ProductActions({ product, locale, badge }: ProductAction
     gtagAddToCart({ id: product.id, name: product.nameEn, price: product.price, category: product.category, quantity: qty });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
+  };
+
+  const handleRemove = () => {
+    removeItem(product.id);
+    gtagRemoveFromCart({ id: product.id, name: product.nameEn, price: product.price });
   };
 
   const getPromoMessage = () => {
@@ -88,7 +94,8 @@ export default function ProductActions({ product, locale, badge }: ProductAction
         </p>
       )}
 
-      {/* Quantity */}
+      {/* Quantity — only when adding (not in cart) */}
+      {inCart === 0 && (
       <div className="flex items-center gap-4">
         <span className="text-muted text-sm">{t('quantity')}:</span>
         <div className="flex items-center gap-2 bg-surface border border-border rounded-lg p-1">
@@ -115,27 +122,26 @@ export default function ProductActions({ product, locale, badge }: ProductAction
           </span>
         </div>
       </div>
+      )}
 
-      {/* Buttons */}
+      {/* Main button: toggle add/remove */}
       <div className="flex gap-3">
         <button
-          onClick={handleAdd}
+          onClick={inCart > 0 ? handleRemove : handleAdd}
           className={`flex-1 flex items-center justify-center gap-2 py-3 px-6 rounded-xl font-semibold transition-all duration-200 cursor-pointer ${
             added
               ? 'bg-success text-white'
+              : inCart > 0
+              ? 'bg-red-500/20 text-red-400 border border-red-500/40 hover:bg-red-500/30'
               : 'bg-brand text-dark hover:bg-brand-dark active:scale-[0.98]'
           }`}
         >
           {added ? (
-            <>
-              <Check className="w-5 h-5" />
-              {t('addedToCart')}
-            </>
+            <><Check className="w-5 h-5" />{t('addedToCart')}</>
+          ) : inCart > 0 ? (
+            <><Trash2 className="w-5 h-5" />{t('removeFromCart')}</>
           ) : (
-            <>
-              <ShoppingCart className="w-5 h-5" />
-              {t('addToCart')}
-            </>
+            <><ShoppingCart className="w-5 h-5" />{t('addToCart')}</>
           )}
         </button>
 
