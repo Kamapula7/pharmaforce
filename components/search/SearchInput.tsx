@@ -101,9 +101,9 @@ export default function SearchInput({ locale, initialQuery = '', placeholder = '
         </button>
       </form>
 
-      {/* Suggestions dropdown */}
+      {/* Suggestions dropdown — приоритет названиям */}
       {showSuggestions && suggestions.length > 0 && (
-        <div className="absolute top-full left-0 right-0 z-50 mt-1 bg-[#111118] border border-white/10 rounded-xl shadow-2xl overflow-hidden">
+        <div className="absolute top-full left-0 z-50 mt-1 bg-[#111118] border border-white/10 rounded-xl shadow-2xl overflow-hidden w-[min(100%,calc(100vw-24px))] sm:w-full min-w-[280px] max-w-[500px]">
           {suggestions.map((product) => (
             <button
               key={product.id}
@@ -111,20 +111,20 @@ export default function SearchInput({ locale, initialQuery = '', placeholder = '
               onMouseDown={() => handleSelect(product.slug)}
               className="w-full flex items-center gap-3 px-4 py-3 hover:bg-white/5 transition-colors text-left border-b border-white/5 last:border-0"
             >
-              <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0 relative">
+              <div className="w-9 h-9 rounded overflow-hidden shrink-0 relative flex-shrink-0">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
                   className="object-cover"
-                  sizes="40px"
+                  sizes="36px"
                 />
               </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-white text-sm font-medium truncate">{product.name}</p>
-                <p className="text-muted text-xs truncate">{product.brand} · {product.category}</p>
+              <div className="flex-1 min-w-0 text-left">
+                <p className="text-white text-sm font-semibold line-clamp-2 leading-snug">{product.name}</p>
+                <p className="text-muted text-xs mt-0.5 truncate">{product.brand} · {product.category}</p>
               </div>
-              <p className="text-brand font-semibold text-sm shrink-0">{formatPrice(product.price)}</p>
+              <p className="text-brand font-semibold text-sm shrink-0 ml-1">{formatPrice(product.price)}</p>
             </button>
           ))}
 

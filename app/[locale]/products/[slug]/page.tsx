@@ -168,6 +168,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           badge={product.badge}
           oldPrice={product.oldPrice}
           price={product.price}
+          whiteBg={product.category === 'Antidepressants'}
         />
 
         {/* ── Info ── */}

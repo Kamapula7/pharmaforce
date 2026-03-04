@@ -6,7 +6,9 @@ import { routing } from '@/i18n/routing';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import CrispChat from '@/components/layout/CrispChat';
+import TawkChat from '@/components/layout/TawkChat';
 import FloatingChatButton from '@/components/layout/FloatingChatButton';
+import LangSetter from '@/components/layout/LangSetter';
 import PageTracker from '@/components/layout/PageTracker';
 import AbandonedCartTracker from '@/components/cart/AbandonedCartTracker';
 
@@ -49,20 +51,18 @@ export default async function LocaleLayout({ children, params }: LocaleLayoutPro
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
-      <body>
-        <NextIntlClientProvider messages={messages}>
-          <div className="min-h-screen flex flex-col bg-dark overflow-x-hidden">
-            <Header locale={locale}  />
-            <main className="flex-1">{children}</main>
-            <Footer locale={locale} />
-          </div>
-          <PageTracker />
-          <AbandonedCartTracker locale={locale} />
-          <CrispChat />
-          <FloatingChatButton />
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider messages={messages}>
+      <LangSetter locale={locale} />
+      <div className="min-h-screen flex flex-col bg-dark overflow-x-hidden">
+        <Header locale={locale} />
+        <main className="flex-1">{children}</main>
+        <Footer locale={locale} />
+      </div>
+      <PageTracker />
+      <AbandonedCartTracker locale={locale} />
+      <CrispChat />
+      <TawkChat />
+      <FloatingChatButton />
+    </NextIntlClientProvider>
   );
 }

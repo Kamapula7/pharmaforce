@@ -41,12 +41,12 @@ export default function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
-  // Redirect bare root to locale detected from Accept-Language
+  // Redirect bare root to locale detected from Accept-Language (permanent for SEO)
   if (pathname === '/') {
     const locale = detectLocale(req);
     const url = req.nextUrl.clone();
     url.pathname = `/${locale}`;
-    return NextResponse.redirect(url, { status: 302 });
+    return NextResponse.redirect(url, { status: 308 });
   }
 
   return intlMiddleware(req);

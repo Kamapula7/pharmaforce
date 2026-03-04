@@ -189,6 +189,7 @@ export default async function AdminDashboard() {
           <div className="space-y-2">
             {[
               { href: '/pf-secure-9k2/orders',   Icon: Package,      label: 'All Orders',    desc: 'View and manage orders' },
+              { href: '/pf-secure-9k2/funnel',   Icon: BarChart2,    label: 'Funnel',        desc: 'See drop-off by checkout stage' },
               { href: '/pf-secure-9k2/products', Icon: Pill,         label: 'Products',      desc: 'Edit product catalog' },
               { href: '/pf-secure-9k2/users',    Icon: Users,        label: 'Customers',     desc: 'View registered users' },
               { href: '/',                        Icon: ExternalLink, label: 'View Store',    desc: 'Open live website' },

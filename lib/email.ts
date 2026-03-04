@@ -235,6 +235,43 @@ export async function sendAbandonedCartEmail({
   });
 }
 
+const CONTACT_EMAIL = 'pharmaforce@inbox.eu';
+
+export async function sendContactFormEmail({
+  fromEmail,
+  fromName,
+  subject,
+  message,
+}: {
+  fromEmail: string;
+  fromName: string;
+  subject: string;
+  message: string;
+}) {
+  const transporter = await createTransporter();
+  const html = baseLayout(`
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:16px;padding:32px;margin-bottom:24px;">
+      <h1 style="color:#fff;font-size:20px;font-weight:900;margin:0 0 20px;">📬 New Contact Form Message</h1>
+      <table style="width:100%;font-size:14px;color:#ccc;">
+        <tr><td style="padding:8px 0;color:#888;width:120px;">From:</td><td style="color:#fff;font-weight:600;">${fromName} &lt;${fromEmail}&gt;</td></tr>
+        <tr><td style="padding:8px 0;color:#888;">Subject:</td><td style="color:#F97316;font-weight:600;">${subject}</td></tr>
+      </table>
+      <div style="margin-top:20px;padding-top:20px;border-top:1px solid #2a2a2a;">
+        <p style="color:#888;font-size:12px;text-transform:uppercase;letter-spacing:1px;margin:0 0 8px;">Message</p>
+        <div style="color:#ddd;font-size:15px;line-height:1.6;white-space:pre-wrap;">${message.replace(/</g, '&lt;').replace(/>/g, '&gt;')}</div>
+      </div>
+    </div>
+  `);
+
+  await transporter.sendMail({
+    from: `"PharmaForce Contact" <${process.env.SMTP_USER}>`,
+    to: CONTACT_EMAIL,
+    replyTo: fromEmail,
+    subject: `[Contact] ${subject} — from ${fromName}`,
+    html,
+  });
+}
+
 export async function sendWelcomeEmail({
   customerEmail,
   customerName,

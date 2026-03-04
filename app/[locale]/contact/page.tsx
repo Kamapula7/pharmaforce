@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import { Mail, MessageSquare, Clock, Send } from 'lucide-react';
+import { getTranslations } from 'next-intl/server';
+import ContactForm from '@/components/contact/ContactForm';
+import LiveChatCard from '@/components/contact/LiveChatCard';
 
 interface ContactPageProps {
   params: Promise<{ locale: string }>;
@@ -7,9 +10,10 @@ interface ContactPageProps {
 
 export async function generateMetadata({ params }: ContactPageProps): Promise<Metadata> {
   const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'contact' });
   return {
-    title: 'Contact PharmaForce — Customer Support Europe',
-    description: 'Get in touch with PharmaForce. Questions about orders, products or shipping? Our support team responds within a few hours.',
+    title: `Contact PharmaForce — ${t('title')}`,
+    description: t('subtitle'),
     alternates: {
       canonical: `https://pharmaforce-store.com/${locale}/contact`,
       languages: {
@@ -22,8 +26,8 @@ export async function generateMetadata({ params }: ContactPageProps): Promise<Me
       },
     },
     openGraph: {
-      title: 'Contact PharmaForce — Customer Support Europe',
-      description: 'Get in touch with PharmaForce. Questions about orders, products or shipping? Our support team responds within a few hours.',
+      title: `Contact PharmaForce — ${t('title')}`,
+      description: t('subtitle'),
       url: `https://pharmaforce-store.com/${locale}/contact`,
       siteName: 'PharmaForce',
       images: [{ url: 'https://pharmaforce-store.com/hero-athletes.png', width: 1200, height: 630, alt: 'Contact PharmaForce' }],
@@ -33,17 +37,18 @@ export async function generateMetadata({ params }: ContactPageProps): Promise<Me
 }
 
 export default async function ContactPage({ params }: ContactPageProps) {
-  await params;
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: 'contact' });
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
 
       {/* Header */}
       <div className="text-center mb-14">
-        <p className="text-brand text-xs font-bold uppercase tracking-widest mb-3">Get in Touch</p>
-        <h1 className="text-4xl sm:text-5xl font-black text-white mb-4">Contact Us</h1>
+        <p className="text-brand text-xs font-bold uppercase tracking-widest mb-3">{t('badge')}</p>
+        <h1 className="text-4xl sm:text-5xl font-black text-white mb-4">{t('title')}</h1>
         <p className="text-muted text-lg max-w-xl mx-auto leading-relaxed">
-          Have questions about products, orders, or shipping? We typically respond within a few hours.
+          {t('subtitle')}
         </p>
       </div>
 
@@ -53,71 +58,10 @@ export default async function ContactPage({ params }: ContactPageProps) {
         <div className="bg-surface border border-border rounded-2xl p-8">
           <h2 className="text-white font-bold text-xl mb-6 flex items-center gap-2">
             <Send className="w-5 h-5 text-brand" />
-            Send a Message
+            {t('sendMessage')}
           </h2>
 
-          <form className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="block text-xs text-muted font-semibold uppercase tracking-wider mb-1.5">First Name</label>
-                <input
-                  type="text"
-                  placeholder="John"
-                  className="w-full bg-dark border border-border rounded-lg px-3 py-2.5 text-white text-sm placeholder:text-muted/50 focus:outline-none focus:border-brand/60 transition-colors"
-                />
-              </div>
-              <div>
-                <label className="block text-xs text-muted font-semibold uppercase tracking-wider mb-1.5">Last Name</label>
-                <input
-                  type="text"
-                  placeholder="Doe"
-                  className="w-full bg-dark border border-border rounded-lg px-3 py-2.5 text-white text-sm placeholder:text-muted/50 focus:outline-none focus:border-brand/60 transition-colors"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-xs text-muted font-semibold uppercase tracking-wider mb-1.5">Email</label>
-              <input
-                type="email"
-                placeholder="you@example.com"
-                className="w-full bg-dark border border-border rounded-lg px-3 py-2.5 text-white text-sm placeholder:text-muted/50 focus:outline-none focus:border-brand/60 transition-colors"
-              />
-            </div>
-
-            <div>
-              <label className="block text-xs text-muted font-semibold uppercase tracking-wider mb-1.5">Subject</label>
-              <select className="w-full bg-dark border border-border rounded-lg px-3 py-2.5 text-white text-sm focus:outline-none focus:border-brand/60 transition-colors">
-                <option value="">Select a topic...</option>
-                <option>Order question</option>
-                <option>Product inquiry</option>
-                <option>Shipping & delivery</option>
-                <option>Payment issue</option>
-                <option>Returns & refunds</option>
-                <option>Other</option>
-              </select>
-            </div>
-
-            <div>
-              <label className="block text-xs text-muted font-semibold uppercase tracking-wider mb-1.5">Message</label>
-              <textarea
-                rows={5}
-                placeholder="Write your message here..."
-                className="w-full bg-dark border border-border rounded-lg px-3 py-2.5 text-white text-sm placeholder:text-muted/50 focus:outline-none focus:border-brand/60 transition-colors resize-none"
-              />
-            </div>
-
-            <a
-              href="mailto:pharmaforce@inbox.eu"
-              className="w-full inline-flex items-center justify-center gap-2 bg-brand hover:bg-brand/90 text-dark font-bold py-3 px-6 rounded-xl transition-colors cursor-pointer text-sm"
-            >
-              <Send className="w-4 h-4" />
-              Send via Email
-            </a>
-            <p className="text-xs text-muted text-center">
-              Clicking will open your email client with this address pre-filled.
-            </p>
-          </form>
+          <ContactForm />
         </div>
 
         {/* Info cards */}
@@ -130,8 +74,8 @@ export default async function ContactPage({ params }: ContactPageProps) {
                 <Mail className="w-6 h-6 text-brand" />
               </div>
               <div>
-                <h3 className="text-white font-semibold mb-1">Email Support</h3>
-                <p className="text-muted text-sm mb-2">For orders, products, and general inquiries</p>
+                <h3 className="text-white font-semibold mb-1">{t('emailSupport')}</h3>
+                <p className="text-muted text-sm mb-2">{t('emailSupportDesc')}</p>
                 <a
                   href="mailto:pharmaforce@inbox.eu"
                   className="text-brand font-semibold hover:underline text-sm"
@@ -142,22 +86,24 @@ export default async function ContactPage({ params }: ContactPageProps) {
             </div>
           </div>
 
-          {/* Live chat */}
-          <div className="bg-surface border border-border rounded-2xl p-6 hover:border-brand/40 transition-colors group">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-brand/20 transition-colors">
-                <MessageSquare className="w-6 h-6 text-brand" />
-              </div>
-              <div>
-                <h3 className="text-white font-semibold mb-1">Live Chat</h3>
-                <p className="text-muted text-sm mb-2">Get instant answers from our team</p>
-                <p className="text-xs text-muted flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-success inline-block animate-pulse" />
-                  Online now — click the chat icon
-                </p>
+          {/* Live chat — click to open Crisp */}
+          <LiveChatCard>
+            <div className="bg-surface border border-border rounded-2xl p-6 hover:border-brand/40 transition-colors group">
+              <div className="flex items-start gap-4">
+                <div className="w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-brand/20 transition-colors">
+                  <MessageSquare className="w-6 h-6 text-brand" />
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold mb-1">{t('liveChat')}</h3>
+                  <p className="text-muted text-sm mb-2">{t('liveChatDesc')}</p>
+                  <p className="text-xs text-muted flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-success inline-block animate-pulse" />
+                    {t('liveChatOnline')}
+                  </p>
+                </div>
               </div>
             </div>
-          </div>
+          </LiveChatCard>
 
           {/* Response time */}
           <div className="bg-surface border border-border rounded-2xl p-6">
@@ -166,11 +112,11 @@ export default async function ContactPage({ params }: ContactPageProps) {
                 <Clock className="w-6 h-6 text-brand" />
               </div>
               <div>
-                <h3 className="text-white font-semibold mb-1">Response Time</h3>
+                <h3 className="text-white font-semibold mb-1">{t('responseTime')}</h3>
                 <ul className="space-y-1 text-sm text-muted">
-                  <li>📧 Email — within <span className="text-white">2–6 hours</span></li>
-                  <li>💬 Live chat — <span className="text-white">immediate</span></li>
-                  <li>🕐 Working hours: <span className="text-white">Mon–Fri 9:00–20:00 CET</span></li>
+                  <li>📧 {t('emailResponse')} <span className="text-white">2–6 {t('hours')}</span></li>
+                  <li>💬 {t('liveChatResponse')}</li>
+                  <li>🕐 {t('workingHours')}</li>
                 </ul>
               </div>
             </div>
@@ -179,9 +125,9 @@ export default async function ContactPage({ params }: ContactPageProps) {
           {/* FAQ hint */}
           <div className="bg-brand/5 border border-brand/20 rounded-2xl p-5">
             <p className="text-sm text-white/80 leading-relaxed">
-              <span className="text-brand font-bold">Before writing</span> — check our{' '}
-              <span className="text-brand font-semibold">Blog</span> for dosage guides, cycle protocols,
-              and product comparisons. Most common questions are answered there.
+              <span className="text-brand font-bold">{t('beforeWriting')}</span>{' '}
+              <span className="text-brand font-semibold">{t('blog')}</span>
+              {t('beforeWritingSuffix')}
             </p>
           </div>
 
