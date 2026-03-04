@@ -24,7 +24,7 @@ export default function FloatingChatButton() {
     <button
       onClick={openChat}
       aria-label="Open support chat"
-      className="fixed bottom-6 right-6 z-50 group cursor-pointer"
+      className="fixed bottom-24 right-4 sm:bottom-6 sm:right-6 z-50 group cursor-pointer"
     >
       {/* Main button */}
       <span className="relative flex items-center justify-center w-14 h-14 rounded-full bg-green-500 shadow-lg shadow-green-500/40 group-hover:scale-110 group-hover:shadow-green-500/60 transition-all duration-300">

@@ -17,8 +17,6 @@ export default function TawkChat() {
     };
     w.Tawk_API.onLoad = () => {
       w.Tawk_API?.hideWidget?.();
-      // Move widget up on mobile so it doesn't cover bottom buttons
-      w.Tawk_API?.setAttributes?.({ 'custom-style': 'bottom: 80px !important' }, () => {});
     };
 
     const s = document.createElement('script');
@@ -29,18 +27,27 @@ export default function TawkChat() {
     s.setAttribute('crossorigin', '*');
     document.head.appendChild(s);
 
-    // Inject CSS to move tawk widget up on mobile
-    const style = document.createElement('style');
-    style.id = 'tawk-position-fix';
-    style.textContent = `
-      @media (max-width: 768px) {
-        #tawk-bubble-container, .tawk-min-container, iframe[title*="chat"], iframe[src*="tawk"] {
-          bottom: 80px !important;
+    // Force move tawk iframe above mobile bottom bar
+    const moveTawk = () => {
+      const iframes = document.querySelectorAll('iframe[src*="tawk"], iframe[title*="chat"], iframe[title*="Chat"]');
+      iframes.forEach((el) => {
+        const iframe = el as HTMLElement;
+        const parent = iframe.parentElement;
+        if (parent) {
+          parent.style.setProperty('bottom', '80px', 'important');
+          parent.style.setProperty('z-index', '999', 'important');
         }
-      }
-    `;
-    document.head.appendChild(style);
+      });
+      // Also target tawk containers by id pattern
+      document.querySelectorAll('[id^="tawk-"]').forEach((el) => {
+        (el as HTMLElement).style.setProperty('bottom', '80px', 'important');
+      });
+    };
+
+    const interval = setInterval(moveTawk, 1000);
+    setTimeout(() => clearInterval(interval), 15000);
   }, []);
 
   return null;
 }
+
