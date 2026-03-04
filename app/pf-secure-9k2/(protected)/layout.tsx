@@ -24,6 +24,7 @@ export default async function AdminLayout({ children }: { children: React.ReactN
         <nav className="w-48 shrink-0 border-r border-white/10 min-h-[calc(100vh-49px)] p-3 space-y-1">
           {[
             { href: '/pf-secure-9k2', label: '📊 Dashboard' },
+            { href: '/pf-secure-9k2/funnel', label: '📉 Funnel' },
             { href: '/pf-secure-9k2/orders', label: '📦 Orders' },
             { href: '/pf-secure-9k2/products', label: '💊 Products' },
             { href: '/pf-secure-9k2/users', label: '👤 Users' },
