@@ -59,3 +59,12 @@ button, [role="button"], a {
 ::-webkit-scrollbar-thumb:hover {
   background: #F97316;
 }
+
+/* Move Crisp chat button above sticky Add to Cart bar on mobile */
+@media (max-width: 639px) {
+  #crisp-chatbox [data-id="chatbox"],
+  .crisp-client .cc-tlyw,
+  .crisp-client [data-id="crisp-chatbox"] {
+    bottom: 90px !important;
+  }
+}
