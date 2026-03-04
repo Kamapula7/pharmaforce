@@ -1,29 +1,20 @@
 'use client';
 
-import Script from 'next/script';
-
-const CRISP_ID = process.env.NEXT_PUBLIC_CRISP_WEBSITE_ID;
+import { useEffect } from 'react';
 
 export default function CrispChat() {
-  if (!CRISP_ID) return null;
+  useEffect(() => {
+    const id = process.env.NEXT_PUBLIC_CRISP_ID;
+    if (!id || typeof window === 'undefined') return;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const w = window as any;
+    w.$crisp = [];
+    w.CRISP_WEBSITE_ID = id;
+    const s = document.createElement('script');
+    s.src = 'https://client.crisp.chat/l.js';
+    s.async = true;
+    document.head.appendChild(s);
+  }, []);
 
-  return (
-    <Script
-      id="crisp-chat"
-      strategy="afterInteractive"
-      dangerouslySetInnerHTML={{
-        __html: `
-          window.$crisp = window.$crisp || [];
-          window.CRISP_WEBSITE_ID = "${CRISP_ID}";
-          (function() {
-            var d = document;
-            var s = d.createElement("script");
-            s.src = "https://client.crisp.chat/l.js";
-            s.async = 1;
-            d.getElementsByTagName("head")[0].appendChild(s);
-          })();
-        `,
-      }}
-    />
-  );
+  return null;
 }

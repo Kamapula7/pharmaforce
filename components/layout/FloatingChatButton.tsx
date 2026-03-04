@@ -12,9 +12,13 @@ export default function FloatingChatButton() {
 
   const openChat = () => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const crisp = (window as any).$crisp;
-    if (crisp?.[0]?.push) {
-      crisp.push(['do', 'chat:open']);
+    const w = window as any;
+    if (w.$crisp?.push) {
+      w.$crisp.push(['do', 'chat:open']);
+    } else if (w.Tawk_API?.toggle) {
+      w.Tawk_API.toggle();
+    } else {
+      window.location.href = 'mailto:pharmaforce@inbox.eu';
     }
   };
 
