@@ -294,6 +294,23 @@ export default function CheckoutClient({ locale }: { locale: string }) {
 
             {openStep === 3 && (
               <div className="px-5 pb-5 border-t border-border pt-5 space-y-4">
+                {/* How it works */}
+                <div className="bg-brand/5 border border-brand/20 rounded-xl p-4 space-y-3">
+                  <p className="text-white text-sm font-semibold">How it works — 3 simple steps:</p>
+                  <div className="space-y-2">
+                    {[
+                      { n: '1', text: 'Make the bank transfer to the details below' },
+                      { n: '2', text: 'We confirm your payment within 24h by email' },
+                      { n: '3', text: 'Your order ships in discreet packaging within 1–2 days' },
+                    ].map(({ n, text }) => (
+                      <div key={n} className="flex items-start gap-3">
+                        <span className="w-5 h-5 rounded-full bg-brand text-dark text-xs font-bold flex items-center justify-center shrink-0 mt-0.5">{n}</span>
+                        <span className="text-muted text-sm">{text}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
                 <p className="text-muted text-sm">
                   {t('transferExactly', { amount: formatPrice(total) })}
                 </p>
@@ -468,6 +485,23 @@ export default function CheckoutClient({ locale }: { locale: string }) {
                   <span>{text}</span>
                 </div>
               ))}
+            </div>
+
+            {/* Social proof */}
+            <div className="mt-4 pt-4 border-t border-border">
+              <div className="flex items-center gap-2 mb-2">
+                <div className="flex -space-x-1.5">
+                  {['M','A','L','C','D'].map((l) => (
+                    <div key={l} className="w-6 h-6 rounded-full bg-brand/20 border border-brand/30 flex items-center justify-center text-[9px] font-bold text-brand">{l}</div>
+                  ))}
+                </div>
+                <span className="text-xs text-muted">2,400+ happy customers</span>
+              </div>
+              <div className="flex gap-0.5 mb-1">
+                {[1,2,3,4,5].map(i => <span key={i} className="text-yellow-400 text-xs">★</span>)}
+                <span className="text-muted text-xs ml-1">4.9 / 5</span>
+              </div>
+              <p className="text-[11px] text-muted italic">"Fast delivery, discreet packaging. Exactly as described." — Marcus W. 🇩🇪</p>
             </div>
           </div>
         </div>
