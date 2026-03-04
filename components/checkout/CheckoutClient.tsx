@@ -56,6 +56,7 @@ export default function CheckoutClient({ locale }: { locale: string }) {
   const [err1, setErr1] = useState<Record<string,string>>({});
   const [err2, setErr2] = useState<Record<string,string>>({});
   const [orderSaveErr, setOrderSaveErr] = useState(false);
+  const [orderSaveErrMsg, setOrderSaveErrMsg] = useState('');
 
   const bulkDiscount = totalPrice() >= 200 ? totalPrice() * 0.15 : 0;
   const afterDiscount = totalPrice() - bulkDiscount;
@@ -317,33 +318,59 @@ export default function CheckoutClient({ locale }: { locale: string }) {
                 </div>
 
                 {orderSaveErr && (
-                  <p className="text-red-400 text-sm text-center bg-red-500/10 border border-red-500/20 rounded-xl p-3">
-                    ⚠️ Could not save your order. Please try again or contact support.
-                  </p>
+                  <div className="space-y-2">
+                    <p className="text-red-400 text-sm text-center bg-red-500/10 border border-red-500/20 rounded-xl p-3">
+                      ⚠️ {orderSaveErrMsg || 'Could not save your order. Please try again or contact support.'}
+                    </p>
+                    <p className="text-muted text-xs text-center">Tap the green button again to retry. If it keeps failing, email pharmaforce@inbox.eu with your order details.</p>
+                  </div>
                 )}
 
                 {/* Final button — save order + confirm */}
                 <button
                   type="button"
                   onClick={async () => {
+                    if (items.length === 0) {
+                      setOrderSaveErrMsg('Your cart is empty. Please go back and add products.');
+                      setOrderSaveErr(true);
+                      return;
+                    }
+                    setOrderSaveErr(false);
+                    setOrderSaveErrMsg('');
                     try {
+                      const payload = {
+                        firstName,
+                        lastName,
+                        email,
+                        phone,
+                        country,
+                        city,
+                        address,
+                        zip,
+                        notes,
+                        total: Number(total),
+                        orderRef,
+                        items: items.map((i) => ({
+                          productId: String(i.id),
+                          nameEn: String(i.nameEn ?? ''),
+                          quantity: Number(i.quantity) || 1,
+                          price: Number(i.price) || 0,
+                        })),
+                      };
                       const res = await fetch('/api/orders', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                          firstName, lastName, email, phone,
-                          country, city, address, zip, notes,
-                          total, orderRef,
-                          items: items.map(i => ({
-                            productId: i.id,
-                            nameEn: i.nameEn,
-                            quantity: i.quantity,
-                            price: i.price,
-                          })),
-                        }),
+                        credentials: 'same-origin',
+                        body: JSON.stringify(payload),
                       });
-                      if (!res.ok) throw new Error('save failed');
-                      setOrderSaveErr(false);
+                      const data = await res.json().catch(() => ({}));
+                      if (!res.ok) {
+                        const msg = typeof data?.error === 'string' ? data.error : 'Could not save your order. Please try again or contact support.';
+                        const debug = typeof data?._debug === 'string' ? ` | ${data._debug}` : '';
+                        setOrderSaveErrMsg(msg + debug);
+                        setOrderSaveErr(true);
+                        return;
+                      }
                       addOrder({
                         ref: orderRef,
                         date: new Date().toISOString(),
@@ -356,7 +383,11 @@ export default function CheckoutClient({ locale }: { locale: string }) {
                       gtagPurchase(orderRef, total, items.map(i => ({ id: i.id, name: i.nameEn, price: i.price, quantity: i.quantity })));
                       clearCart();
                       setConfirmed(true);
-                    } catch {
+                    } catch (err) {
+                      const msg = err instanceof Error && /fetch|network/i.test(err.message)
+                        ? 'Network error. Check your connection and tap the button again.'
+                        : (err instanceof Error ? err.message : 'Could not save your order. Please try again or contact support.');
+                      setOrderSaveErrMsg(msg);
                       setOrderSaveErr(true);
                     }
                   }}

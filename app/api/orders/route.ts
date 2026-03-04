@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
         quantity: Math.max(1, Math.floor(Number(i.quantity) || 1)),
         price: Number(i.price) || 0,
       };
-    }).filter((i) => i.productId && i.nameEn);
+    }).filter((i) => i.nameEn);
 
     if (items.length === 0) {
       return NextResponse.json({ error: 'Valid items required' }, { status: 400 });
@@ -128,7 +128,7 @@ export async function POST(req: NextRequest) {
       ? 'Connection issue. Please try again in a moment.'
       : `Could not save order.${hint} Please try again or contact support.`;
     return NextResponse.json(
-      { ok: false, error: userMsg, code: prismaCode || (isRetryable ? 'RETRY' : 'ERROR') },
+      { ok: false, error: userMsg, code: prismaCode || (isRetryable ? 'RETRY' : 'ERROR'), _debug: msg.slice(0, 300) },
       { status: 500 }
     );
   }
