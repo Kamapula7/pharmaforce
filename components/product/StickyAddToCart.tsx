@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { ShoppingCart } from 'lucide-react';
+import { ShoppingCart, Check, Trash2 } from 'lucide-react';
 import { formatPrice } from '@/lib/utils';
 import { useCartStore } from '@/store/cartStore';
 
@@ -17,8 +17,11 @@ interface Props {
 
 export default function StickyAddToCart({ productId, productName, price, slug, image, category, inStock }: Props) {
   const [visible, setVisible] = useState(false);
+  const [flash, setFlash] = useState(false);
   const sentinelRef = useRef<HTMLDivElement>(null);
   const addItem = useCartStore((s) => s.addItem);
+  const removeItem = useCartStore((s) => s.removeItem);
+  const inCart = useCartStore((s) => s.items.some((i) => i.id === productId));
 
   useEffect(() => {
     const sentinel = sentinelRef.current;
@@ -31,16 +34,21 @@ export default function StickyAddToCart({ productId, productName, price, slug, i
     return () => observer.disconnect();
   }, []);
 
-  const handleAdd = () => {
-    addItem({ id: productId, nameEn: productName, price, slug, image, category });
+  const handleClick = () => {
+    const currently = useCartStore.getState().items.some((i) => i.id === productId);
+    if (currently) {
+      removeItem(productId);
+    } else {
+      addItem({ id: productId, nameEn: productName, price, slug, image, category });
+      setFlash(true);
+      setTimeout(() => setFlash(false), 1200);
+    }
   };
 
   return (
     <>
-      {/* Sentinel — invisible element placed after the main Add to Cart button */}
       <div ref={sentinelRef} className="h-px" />
 
-      {/* Sticky bar — mobile only */}
       {inStock && (
         <div
           className={`fixed bottom-0 left-0 right-0 z-40 md:hidden transition-transform duration-300 ${
@@ -53,11 +61,22 @@ export default function StickyAddToCart({ productId, productName, price, slug, i
               <p className="text-muted text-xs mt-0.5 truncate">{productName}</p>
             </div>
             <button
-              onClick={handleAdd}
-              className="flex items-center gap-2 bg-brand text-dark font-bold px-5 py-2.5 rounded-xl hover:bg-brand-dark transition-colors shrink-0 text-sm cursor-pointer"
+              onClick={handleClick}
+              className={`flex items-center gap-2 font-bold px-5 py-2.5 rounded-xl transition-all duration-200 shrink-0 text-sm cursor-pointer active:scale-95 ${
+                flash
+                  ? 'bg-green-500 text-white'
+                  : inCart
+                  ? 'bg-red-500/20 text-red-400 border border-red-500/40'
+                  : 'bg-brand text-dark hover:bg-brand-dark'
+              }`}
             >
-              <ShoppingCart className="w-4 h-4" />
-              Add to Cart
+              {flash ? (
+                <><Check className="w-4 h-4" /> Added!</>
+              ) : inCart ? (
+                <><Trash2 className="w-4 h-4" /> Remove</>
+              ) : (
+                <><ShoppingCart className="w-4 h-4" /> Add to Cart</>
+              )}
             </button>
           </div>
         </div>
