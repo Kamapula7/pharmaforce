@@ -23,17 +23,25 @@ export default function Header({ locale }: HeaderProps) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
   const accountRef = useRef<HTMLDivElement>(null);
+  const searchRef = useRef<HTMLDivElement>(null);
   const { data: session } = useSession();
 
   useEffect(() => {
-    const handler = (e: MouseEvent) => {
+    const handler = (e: MouseEvent | TouchEvent) => {
       if (accountRef.current && !accountRef.current.contains(e.target as Node)) {
         setAccountOpen(false);
       }
+      if (searchOpen && searchRef.current && !searchRef.current.contains(e.target as Node)) {
+        setSearchOpen(false);
+      }
     };
     document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
-  }, []);
+    document.addEventListener('touchstart', handler);
+    return () => {
+      document.removeEventListener('mousedown', handler);
+      document.removeEventListener('touchstart', handler);
+    };
+  }, [searchOpen]);
   const cartCount = useCartStore((s) => s.totalItems());
   const wishlistCount = useWishlistStore((s) => s.ids.length);
   const router = useRouter();
@@ -104,7 +112,7 @@ export default function Header({ locale }: HeaderProps) {
           {/* Actions */}
           <div className="flex items-center gap-0.5 sm:gap-2 overflow-visible shrink-0 pr-1 sm:pr-0">
             {/* Search — всегда видна */}
-            <div className={`flex items-center shrink-0 transition-all duration-300 ${searchOpen ? 'flex-1 min-w-[140px] w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px]' : 'w-9 sm:w-10'}`}>
+            <div ref={searchRef} className={`flex items-center shrink-0 transition-all duration-300 ${searchOpen ? 'flex-1 min-w-[140px] w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px]' : 'w-9 sm:w-10'}`}>
               {searchOpen ? (
                 <div className="w-full relative">
                   <SearchInput
