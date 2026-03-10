@@ -23,6 +23,7 @@ export default function Header({ locale }: HeaderProps) {
   const [searchOpen, setSearchOpen] = useState(false);
   const [accountOpen, setAccountOpen] = useState(false);
   const accountRef = useRef<HTMLDivElement>(null);
+  const searchContainerRef = useRef<HTMLDivElement>(null);
   const { data: session } = useSession();
 
   useEffect(() => {
@@ -34,6 +35,17 @@ export default function Header({ locale }: HeaderProps) {
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
   }, []);
+
+  useEffect(() => {
+    if (!searchOpen) return;
+    const close = (e: Event) => {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(e.target as Node)) {
+        setSearchOpen(false);
+      }
+    };
+    document.addEventListener('pointerdown', close, true);
+    return () => document.removeEventListener('pointerdown', close, true);
+  }, [searchOpen]);
   const cartCount = useCartStore((s) => s.totalItems());
   const wishlistCount = useWishlistStore((s) => s.ids.length);
   const router = useRouter();
@@ -102,16 +114,9 @@ export default function Header({ locale }: HeaderProps) {
           </nav>
 
           {/* Actions */}
-          {searchOpen && (
-            <div
-              className="fixed inset-0 z-40"
-              onClick={() => setSearchOpen(false)}
-              onTouchStart={() => setSearchOpen(false)}
-            />
-          )}
-          <div className="flex items-center gap-0.5 sm:gap-2 overflow-visible shrink-0 pr-1 sm:pr-0 relative z-50">
+          <div className="flex items-center gap-0.5 sm:gap-2 overflow-visible shrink-0 pr-1 sm:pr-0">
             {/* Search — всегда видна */}
-            <div className={`flex items-center shrink-0 transition-all duration-300 ${searchOpen ? 'flex-1 min-w-[140px] w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px]' : 'w-9 sm:w-10'}`}>
+            <div ref={searchContainerRef} className={`flex items-center shrink-0 transition-all duration-300 ${searchOpen ? 'flex-1 min-w-[140px] w-full max-w-[280px] sm:max-w-[320px] md:max-w-[400px]' : 'w-9 sm:w-10'}`}>
               {searchOpen ? (
                 <div className="w-full relative">
                   <SearchInput
