@@ -40,14 +40,19 @@ export default function SearchInput({ locale, initialQuery = '', placeholder = '
   }, [autoFocus]);
 
   useEffect(() => {
-    const handler = (e: MouseEvent) => {
+    const handler = (e: MouseEvent | TouchEvent) => {
       if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
         setShowSuggestions(false);
+        onClose?.();
       }
     };
     document.addEventListener('mousedown', handler);
-    return () => document.removeEventListener('mousedown', handler);
-  }, []);
+    document.addEventListener('touchstart', handler);
+    return () => {
+      document.removeEventListener('mousedown', handler);
+      document.removeEventListener('touchstart', handler);
+    };
+  }, [onClose]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -80,6 +85,12 @@ export default function SearchInput({ locale, initialQuery = '', placeholder = '
             setShowSuggestions(true);
           }}
           onFocus={() => setShowSuggestions(true)}
+          onBlur={(e) => {
+            if (containerRef.current && !containerRef.current.contains(e.relatedTarget as Node)) {
+              setShowSuggestions(false);
+              onClose?.();
+            }
+          }}
           placeholder={placeholder}
           className="flex-1 bg-transparent text-white text-sm px-3 py-3.5 outline-none placeholder:text-muted/50"
           autoComplete="off"
