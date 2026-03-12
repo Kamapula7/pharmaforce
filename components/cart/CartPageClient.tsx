@@ -3,16 +3,24 @@
 import { useState } from 'react';
 import { useCartStore } from '@/store/cartStore';
 import { formatPrice } from '@/lib/utils';
+import { PRODUCTS } from '@/lib/products';
 import Link from 'next/link';
 import { Minus, Plus, Trash2, ShoppingBag, ArrowLeft, ArrowRight, X, Banknote, Gift } from 'lucide-react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
+const badgeMap = new Map(PRODUCTS.map((p) => [p.id, p.badge]));
+
 export default function CartPageClient({ locale }: { locale: string }) {
-  const { items, updateQuantity, removeItem, totalPrice, totalItems } = useCartStore();
+  const { items: rawItems, updateQuantity, removeItem, totalPrice, totalItems } = useCartStore();
   const [paymentModal, setPaymentModal] = useState(false);
   const tP = useTranslations('payment');
   const t = useTranslations('cart');
+
+  const items = rawItems.map((item) => ({
+    ...item,
+    badge: item.badge || badgeMap.get(item.id),
+  }));
 
   const getPromoDiscount = (item: typeof items[0]) => {
     if (item.badge !== 'BUY 2 GET 3rd FREE') return 0;

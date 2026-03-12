@@ -5,6 +5,7 @@ import { useCartStore } from '@/store/cartStore';
 import { useOrdersStore } from '@/store/ordersStore';
 import { useSession } from 'next-auth/react';
 import { formatPrice } from '@/lib/utils';
+import { PRODUCTS } from '@/lib/products';
 import Link from 'next/link';
 import {
   ChevronDown, Check, Copy, CheckCircle, Clock,
@@ -32,11 +33,17 @@ const EU_COUNTRIES = [
 type Step = 1 | 2 | 3 | 4;
 
 export default function CheckoutClient({ locale }: { locale: string }) {
-  const { items, totalPrice, clearCart } = useCartStore();
+  const { items: rawItems, totalPrice, clearCart } = useCartStore();
   const { addOrder } = useOrdersStore();
-  useSession(); // ensures session cookie is sent with fetch requests
+  useSession();
   const t = useTranslations('checkout');
   const tCart = useTranslations('cart');
+
+  const badgeMap = new Map(PRODUCTS.map((p) => [p.id, p.badge]));
+  const items = rawItems.map((item) => ({
+    ...item,
+    badge: item.badge || badgeMap.get(item.id),
+  }));
 
   const [openStep, setOpenStep] = useState<Step>(1);
   const [doneSteps, setDoneSteps] = useState<Set<Step>>(new Set());
