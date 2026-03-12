@@ -119,6 +119,7 @@ export default async function SearchPage({ params, searchParams }: SearchPagePro
                           slug={product.slug}
                           image={product.image}
                           category={product.category}
+                          badge={product.badge}
                         />
                       )}
                     </div>

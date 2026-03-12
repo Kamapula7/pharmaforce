@@ -12,6 +12,7 @@ interface AddToCartButtonProps {
   slug: string;
   image?: string;
   category?: string;
+  badge?: string;
   className?: string;
 }
 
@@ -22,6 +23,7 @@ export default function AddToCartButton({
   slug,
   image,
   category,
+  badge,
   className = '',
 }: AddToCartButtonProps) {
   const addItem = useCartStore((s) => s.addItem);
@@ -43,7 +45,7 @@ export default function AddToCartButton({
       removeItem(productId);
       gtagRemoveFromCart({ id: productId, name: productName, price });
     } else {
-      addItem({ id: productId, slug, nameEn: productName, price, image, category });
+      addItem({ id: productId, slug, nameEn: productName, price, image, category, badge });
       gtagAddToCart({ id: productId, name: productName, price, category });
       setFlash(true);
       setTimeout(() => setFlash(false), 1000);

@@ -563,6 +563,7 @@ export default async function ProductsPage({ params, searchParams }: ProductsPag
                         slug={product.slug}
                         image={product.image}
                         category={product.category}
+                        badge={product.badge}
                       />
                     )}
                   </div>

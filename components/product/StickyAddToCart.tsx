@@ -12,10 +12,11 @@ interface Props {
   slug: string;
   image?: string;
   category?: string;
+  badge?: string;
   inStock: boolean;
 }
 
-export default function StickyAddToCart({ productId, productName, price, slug, image, category, inStock }: Props) {
+export default function StickyAddToCart({ productId, productName, price, slug, image, category, badge, inStock }: Props) {
   const [visible, setVisible] = useState(false);
   const [flash, setFlash] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -43,7 +44,7 @@ export default function StickyAddToCart({ productId, productName, price, slug, i
     if (currently) {
       removeItem(productId);
     } else {
-      addItem({ id: productId, nameEn: productName, price, slug, image, category });
+      addItem({ id: productId, nameEn: productName, price, slug, image, category, badge });
       setFlash(true);
       setTimeout(() => setFlash(false), 1200);
     }

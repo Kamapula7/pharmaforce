@@ -96,6 +96,7 @@ export default function WishlistClient({ locale }: { locale: string }) {
                           price: product.price,
                           image: product.image,
                           category: product.category,
+                          badge: product.badge,
                         })
                       }
                       className="flex-1 flex items-center justify-center gap-1.5 py-2 bg-brand text-dark text-xs font-bold rounded-lg hover:bg-brand-dark transition-colors cursor-pointer"

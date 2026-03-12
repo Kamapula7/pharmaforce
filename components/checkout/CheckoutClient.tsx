@@ -58,10 +58,22 @@ export default function CheckoutClient({ locale }: { locale: string }) {
   const [orderSaveErr, setOrderSaveErr] = useState(false);
   const [orderSaveErrMsg, setOrderSaveErrMsg] = useState('');
 
-  const bulkDiscount = totalPrice() >= 200 ? totalPrice() * 0.15 : 0;
-  const afterDiscount = totalPrice() - bulkDiscount;
-  const shipping  = afterDiscount >= 150 ? 0 : 34.99;
-  const total     = afterDiscount + shipping;
+  const SHIPPING_COST = 34.99;
+  const FREE_SHIPPING_THRESHOLD = 150;
+  const BULK_DISCOUNT_THRESHOLD = 200;
+  const BULK_DISCOUNT_RATE = 0.15;
+
+  const getPromoDiscount = (item: typeof items[0]) => {
+    if (item.badge !== 'BUY 2 GET 3rd FREE') return 0;
+    return Math.floor(item.quantity / 3) * item.price;
+  };
+
+  const totalDiscount = items.reduce((sum, item) => sum + getPromoDiscount(item), 0);
+  const afterPromo = totalPrice() - totalDiscount;
+  const bulkDiscount = afterPromo >= BULK_DISCOUNT_THRESHOLD ? afterPromo * BULK_DISCOUNT_RATE : 0;
+  const discountedTotal = afterPromo - bulkDiscount;
+  const shipping  = discountedTotal >= FREE_SHIPPING_THRESHOLD ? 0 : SHIPPING_COST;
+  const total     = discountedTotal + shipping;
   const orderRef  = `PF-${Date.now().toString().slice(-8)}`;
 
   const copy = (text: string, key: string) => {
@@ -431,18 +443,31 @@ export default function CheckoutClient({ locale }: { locale: string }) {
           <div className="bg-surface border border-border rounded-2xl p-6 sticky top-24">
             <h2 className="text-white font-bold mb-5">{t('orderSummary')}</h2>
             <div className="space-y-2.5 mb-5">
-              {items.map((item) => (
-                <div key={item.id} className="flex justify-between text-sm gap-2">
-                  <span className="text-muted truncate">{item.nameEn} × {item.quantity}</span>
-                  <span className="text-white shrink-0">{formatPrice(item.price * item.quantity)}</span>
-                </div>
-              ))}
+              {items.map((item) => {
+                const promoOff = getPromoDiscount(item);
+                const lineTotal = item.price * item.quantity - promoOff;
+                return (
+                  <div key={item.id} className="flex justify-between text-sm gap-2">
+                    <span className="text-muted truncate">{item.nameEn} × {item.quantity}</span>
+                    <span className="text-white shrink-0 flex items-center gap-1.5">
+                      {promoOff > 0 && <span className="text-muted line-through text-xs">{formatPrice(item.price * item.quantity)}</span>}
+                      {formatPrice(lineTotal)}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
             <div className="border-t border-border pt-4 space-y-2">
               <div className="flex justify-between text-sm">
                 <span className="text-muted">{tCart('subtotal')}</span>
                 <span className="text-white">{formatPrice(totalPrice())}</span>
               </div>
+              {totalDiscount > 0 && (
+                <div className="flex justify-between text-sm">
+                  <span className="text-green-400">2+1 {t('bulkDiscountLabel')}</span>
+                  <span className="text-green-400 font-semibold">−{formatPrice(totalDiscount)}</span>
+                </div>
+              )}
               {bulkDiscount > 0 && (
                 <div className="flex justify-between text-sm">
                   <span className="text-brand">{t('bulkDiscountLabel')}</span>
@@ -468,7 +493,7 @@ export default function CheckoutClient({ locale }: { locale: string }) {
             )}
             {shipping > 0 && (
               <p className="text-xs text-muted bg-surface-2 rounded-lg p-2 mt-3 text-center">
-                {t('addMoreFreeShip', { amount: formatPrice(150 - totalPrice()) })}
+                {t('addMoreFreeShip', { amount: formatPrice(FREE_SHIPPING_THRESHOLD - discountedTotal) })}
               </p>
             )}
 

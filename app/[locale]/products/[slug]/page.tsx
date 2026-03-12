@@ -269,6 +269,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             slug={product.slug}
             image={product.image}
             category={product.category}
+            badge={product.badge}
             inStock={product.inStock}
           />
           <div className="bg-surface border border-border rounded-2xl p-5 sticky top-24">
