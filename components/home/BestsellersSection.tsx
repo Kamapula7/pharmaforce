@@ -124,7 +124,7 @@ export default function BestsellersSection({ locale }: BestsellersSectionProps) 
                       price={product.price}
                       slug={product.slug}
                       category={product.category}
-                      badge={product.badge}
+                      badge={product.badge ?? undefined}
                     />
                   </div>
                 </div>
