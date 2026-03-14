@@ -40,7 +40,7 @@ export default function Footer({ locale }: FooterProps) {
           <div>
             <h3 className="text-white font-semibold mb-4">{t('shop')}</h3>
             <ul className="space-y-2">
-              {(['protein', 'creatine', 'amino-acids', 'aas', 'peptides', 'modulators', 'antidepressants'] as const).map((key) => (
+              {(['protein', 'creatine', 'amino-acids', 'aas', 'peptides', 'modulators', 'womens-health', 'sexual-health', 'antidepressants'] as const).map((key) => (
                 <li key={key}>
                   <Link
                     href={`/${locale}/products?category=${key}`}
@@ -114,7 +114,7 @@ export default function Footer({ locale }: FooterProps) {
           <p className="text-muted text-sm">
             © {year} PharmaForce. {t('allRights')}
           </p>
-          <p className="text-muted text-xs">Powered by Next.js</p>
+          <p className="text-muted text-xs">pharmaforce-store.com</p>
         </div>
       </div>
     </footer>

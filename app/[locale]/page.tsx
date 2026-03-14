@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import HeroSection from '@/components/home/HeroSection';
 import FeaturesSection from '@/components/home/FeaturesSection';
+import CategoryGrid from '@/components/home/CategoryGrid';
+import BestsellersSection from '@/components/home/BestsellersSection';
 
 interface HomePageProps {
   params: Promise<{ locale: string }>;
@@ -68,6 +70,8 @@ export default async function HomePage({ params }: HomePageProps) {
   return (
     <>
       <HeroSection locale={locale} />
+      <CategoryGrid locale={locale} />
+      <BestsellersSection locale={locale} />
       <FeaturesSection />
     </>
   );

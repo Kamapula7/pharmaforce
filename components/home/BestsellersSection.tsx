@@ -1,65 +1,22 @@
-'use client';
-
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Star } from 'lucide-react';
 import { formatPrice } from '@/lib/utils';
-import Badge from '@/components/ui/Badge';
+import { PRODUCTS } from '@/lib/products';
 import AddToCartButton from '@/components/product/AddToCartButton';
 
 interface BestsellersSectionProps {
   locale: string;
 }
 
-const MOCK_PRODUCTS = [
-  {
-    id: '1',
-    slug: 'whey-protein-gold',
-    nameEn: 'Whey Protein Gold',
-    price: 49.99,
-    category: 'protein',
-    rating: 4.8,
-    reviews: 124,
-    badge: 'Best Seller',
-    image: null,
-  },
-  {
-    id: '2',
-    slug: 'bcaa-complex-8-1-1',
-    nameEn: 'BCAA Complex 8:1:1',
-    price: 34.99,
-    category: 'aminoacids',
-    rating: 4.7,
-    reviews: 89,
-    badge: null,
-    image: null,
-  },
-  {
-    id: '3',
-    slug: 'omega-3-ultra-pure',
-    nameEn: 'Omega-3 Ultra Pure',
-    price: 24.99,
-    category: 'vitamins',
-    rating: 4.9,
-    reviews: 203,
-    badge: 'Top Rated',
-    image: null,
-  },
-  {
-    id: '4',
-    slug: 'pre-workout-explosion',
-    nameEn: 'Pre-Workout Explosion',
-    price: 44.99,
-    category: 'preworkout',
-    rating: 4.6,
-    reviews: 67,
-    badge: 'New',
-    image: null,
-  },
-];
-
 export default function BestsellersSection({ locale }: BestsellersSectionProps) {
   const t = useTranslations('home.bestsellers');
+
+  const bestsellers = PRODUCTS
+    .filter((p) => p.inStock)
+    .sort((a, b) => b.reviews - a.reviews)
+    .slice(0, 8);
 
   return (
     <section className="py-20">
@@ -78,58 +35,66 @@ export default function BestsellersSection({ locale }: BestsellersSectionProps) 
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {MOCK_PRODUCTS.map((product) => (
-            <Link key={product.id} href={`/${locale}/products/${product.slug}`} className="group">
-              <div className="bg-surface border border-border rounded-xl overflow-hidden hover:border-brand/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand/5">
-                {/* Image */}
-                <div className="relative aspect-square bg-surface-2 flex items-center justify-center">
-                  {product.badge && (
-                    <div className="absolute top-3 left-3">
-                      <Badge variant={product.badge === 'New' ? 'success' : 'brand'} className="text-xs">
-                        {product.badge}
-                      </Badge>
-                    </div>
-                  )}
-                  <div className="w-24 h-24 rounded-2xl bg-brand/10 flex items-center justify-center">
-                    <span className="text-4xl">💊</span>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          {bestsellers.map((product) => (
+            <div key={product.id} className="group bg-surface border border-border rounded-xl overflow-hidden hover:border-brand/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand/5 flex flex-col">
+              <Link href={`/${locale}/products/${product.slug}`} className={`relative aspect-square overflow-hidden block ${product.image.includes('-bg') ? '' : 'bg-white'}`}>
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className={`group-hover:scale-105 transition-transform duration-500 ${product.image.includes('-bg') ? 'object-cover' : 'object-contain p-4'}`}
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                />
+                {product.badge && (
+                  <div className={`absolute top-2 left-2 text-[10px] font-black px-2 py-0.5 rounded ${
+                    product.badge === 'BESTSELLER' ? 'bg-brand text-dark' :
+                    product.badge === 'TOP RATED' ? 'bg-success text-white' : 'bg-brand text-dark'
+                  }`}>
+                    {product.badge}
                   </div>
+                )}
+              </Link>
+
+              <div className="p-4 flex flex-col flex-1">
+                <p className="text-xs text-brand font-medium mb-1 truncate">{product.brand}</p>
+                <Link href={`/${locale}/products/${product.slug}`}>
+                  <h3 className="text-white font-semibold text-sm mb-2 group-hover:text-brand transition-colors line-clamp-2 min-h-[2.5rem]">
+                    {product.name}
+                  </h3>
+                </Link>
+
+                <div className="flex items-center gap-1.5 mb-3">
+                  <div className="flex">
+                    {[1, 2, 3, 4, 5].map((i) => (
+                      <Star
+                        key={i}
+                        className={`w-3 h-3 ${i <= Math.round(product.rating) ? 'fill-brand text-brand' : 'fill-border text-border'}`}
+                      />
+                    ))}
+                  </div>
+                  <span className="text-xs text-muted">({product.reviews})</span>
                 </div>
 
-                {/* Info */}
-                <div className="p-4">
-                  <p className="text-xs text-brand font-medium uppercase tracking-wide mb-1">{product.category}</p>
-                  <h3 className="text-white font-semibold text-sm mb-2 group-hover:text-brand transition-colors">
-                    {product.nameEn}
-                  </h3>
-
-                  {/* Rating */}
-                  <div className="flex items-center gap-1.5 mb-3">
-                    <div className="flex">
-                      {[1, 2, 3, 4, 5].map((i) => (
-                        <Star
-                          key={i}
-                          className={`w-3 h-3 ${i <= Math.round(product.rating) ? 'fill-brand text-brand' : 'text-border'}`}
-                        />
-                      ))}
-                    </div>
-                    <span className="text-xs text-muted">({product.reviews})</span>
-                  </div>
-
-                    <div className="flex items-center justify-between">
+                <div className="mt-auto flex items-center justify-between">
+                  <div>
                     <span className="text-white font-bold text-lg">{formatPrice(product.price)}</span>
-                    <AddToCartButton
-                      productId={product.id}
-                      productName={product.nameEn}
-                      price={product.price}
-                      slug={product.slug}
-                      category={product.category}
-                      badge={product.badge ?? undefined}
-                    />
+                    {product.oldPrice && (
+                      <span className="text-muted text-xs line-through ml-1.5">{formatPrice(product.oldPrice)}</span>
+                    )}
                   </div>
+                  <AddToCartButton
+                    productId={product.id}
+                    productName={product.name}
+                    price={product.price}
+                    slug={product.slug}
+                    image={product.image}
+                    category={product.category}
+                    badge={product.badge}
+                  />
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
 

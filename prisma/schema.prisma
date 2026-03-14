@@ -88,6 +88,10 @@ model Order {
   total       Float
   currency    String      @default("EUR")
   bankRef     String?
+  paidAt      DateTime?
+  autoEmail24h  Boolean   @default(false)
+  autoEmail72h  Boolean   @default(false)
+  autoEmail14d  Boolean   @default(false)
   items       OrderItem[]
   createdAt   DateTime    @default(now())
   updatedAt   DateTime    @updatedAt

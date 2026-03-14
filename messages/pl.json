@@ -91,7 +91,11 @@
         "sortPriceAsc": "Cena: rosnąco",
         "sortPriceDesc": "Cena: malejąco",
         "categoriesBtn": "Kategorie",
-        "productsCount": "produktów"
+        "productsCount": "produktów",
+        "searchPlaceholder": "Szukaj po nazwie lub marce...",
+        "showMore": "Pokaż więcej",
+        "showing": "Wyświetlono",
+        "of": "z"
     },
     "product": {
         "description": "Opis",

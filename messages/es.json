@@ -91,7 +91,11 @@
         "sortPriceAsc": "Precio: Menor a Mayor",
         "sortPriceDesc": "Precio: Mayor a Menor",
         "categoriesBtn": "Categorías",
-        "productsCount": "productos"
+        "productsCount": "productos",
+        "searchPlaceholder": "Buscar por nombre o marca...",
+        "showMore": "Mostrar más",
+        "showing": "Mostrando",
+        "of": "de"
     },
     "about": {
         "title": "Sobre PharmaForce",

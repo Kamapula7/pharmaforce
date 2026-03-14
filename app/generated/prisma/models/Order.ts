@@ -50,6 +50,10 @@ export type OrderMinAggregateOutputType = {
   total: number | null
   currency: string | null
   bankRef: string | null
+  paidAt: Date | null
+  autoEmail24h: boolean | null
+  autoEmail72h: boolean | null
+  autoEmail14d: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
 }
@@ -70,6 +74,10 @@ export type OrderMaxAggregateOutputType = {
   total: number | null
   currency: string | null
   bankRef: string | null
+  paidAt: Date | null
+  autoEmail24h: boolean | null
+  autoEmail72h: boolean | null
+  autoEmail14d: boolean | null
   createdAt: Date | null
   updatedAt: Date | null
 }
@@ -90,6 +98,10 @@ export type OrderCountAggregateOutputType = {
   total: number
   currency: number
   bankRef: number
+  paidAt: number
+  autoEmail24h: number
+  autoEmail72h: number
+  autoEmail14d: number
   createdAt: number
   updatedAt: number
   _all: number
@@ -120,6 +132,10 @@ export type OrderMinAggregateInputType = {
   total?: true
   currency?: true
   bankRef?: true
+  paidAt?: true
+  autoEmail24h?: true
+  autoEmail72h?: true
+  autoEmail14d?: true
   createdAt?: true
   updatedAt?: true
 }
@@ -140,6 +156,10 @@ export type OrderMaxAggregateInputType = {
   total?: true
   currency?: true
   bankRef?: true
+  paidAt?: true
+  autoEmail24h?: true
+  autoEmail72h?: true
+  autoEmail14d?: true
   createdAt?: true
   updatedAt?: true
 }
@@ -160,6 +180,10 @@ export type OrderCountAggregateInputType = {
   total?: true
   currency?: true
   bankRef?: true
+  paidAt?: true
+  autoEmail24h?: true
+  autoEmail72h?: true
+  autoEmail14d?: true
   createdAt?: true
   updatedAt?: true
   _all?: true
@@ -267,6 +291,10 @@ export type OrderGroupByOutputType = {
   total: number
   currency: string
   bankRef: string | null
+  paidAt: Date | null
+  autoEmail24h: boolean
+  autoEmail72h: boolean
+  autoEmail14d: boolean
   createdAt: Date
   updatedAt: Date
   _count: OrderCountAggregateOutputType | null
@@ -310,6 +338,10 @@ export type OrderWhereInput = {
   total?: Prisma.FloatFilter<"Order"> | number
   currency?: Prisma.StringFilter<"Order"> | string
   bankRef?: Prisma.StringNullableFilter<"Order"> | string | null
+  paidAt?: Prisma.DateTimeNullableFilter<"Order"> | Date | string | null
+  autoEmail24h?: Prisma.BoolFilter<"Order"> | boolean
+  autoEmail72h?: Prisma.BoolFilter<"Order"> | boolean
+  autoEmail14d?: Prisma.BoolFilter<"Order"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Order"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Order"> | Date | string
   user?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
@@ -332,6 +364,10 @@ export type OrderOrderByWithRelationInput = {
   total?: Prisma.SortOrder
   currency?: Prisma.SortOrder
   bankRef?: Prisma.SortOrderInput | Prisma.SortOrder
+  paidAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  autoEmail24h?: Prisma.SortOrder
+  autoEmail72h?: Prisma.SortOrder
+  autoEmail14d?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   user?: Prisma.UserOrderByWithRelationInput
@@ -357,6 +393,10 @@ export type OrderWhereUniqueInput = Prisma.AtLeast<{
   total?: Prisma.FloatFilter<"Order"> | number
   currency?: Prisma.StringFilter<"Order"> | string
   bankRef?: Prisma.StringNullableFilter<"Order"> | string | null
+  paidAt?: Prisma.DateTimeNullableFilter<"Order"> | Date | string | null
+  autoEmail24h?: Prisma.BoolFilter<"Order"> | boolean
+  autoEmail72h?: Prisma.BoolFilter<"Order"> | boolean
+  autoEmail14d?: Prisma.BoolFilter<"Order"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Order"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Order"> | Date | string
   user?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
@@ -379,6 +419,10 @@ export type OrderOrderByWithAggregationInput = {
   total?: Prisma.SortOrder
   currency?: Prisma.SortOrder
   bankRef?: Prisma.SortOrderInput | Prisma.SortOrder
+  paidAt?: Prisma.SortOrderInput | Prisma.SortOrder
+  autoEmail24h?: Prisma.SortOrder
+  autoEmail72h?: Prisma.SortOrder
+  autoEmail14d?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.OrderCountOrderByAggregateInput
@@ -407,6 +451,10 @@ export type OrderScalarWhereWithAggregatesInput = {
   total?: Prisma.FloatWithAggregatesFilter<"Order"> | number
   currency?: Prisma.StringWithAggregatesFilter<"Order"> | string
   bankRef?: Prisma.StringNullableWithAggregatesFilter<"Order"> | string | null
+  paidAt?: Prisma.DateTimeNullableWithAggregatesFilter<"Order"> | Date | string | null
+  autoEmail24h?: Prisma.BoolWithAggregatesFilter<"Order"> | boolean
+  autoEmail72h?: Prisma.BoolWithAggregatesFilter<"Order"> | boolean
+  autoEmail14d?: Prisma.BoolWithAggregatesFilter<"Order"> | boolean
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Order"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Order"> | Date | string
 }
@@ -426,6 +474,10 @@ export type OrderCreateInput = {
   total: number
   currency?: string
   bankRef?: string | null
+  paidAt?: Date | string | null
+  autoEmail24h?: boolean
+  autoEmail72h?: boolean
+  autoEmail14d?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   user?: Prisma.UserCreateNestedOneWithoutOrdersInput
@@ -448,6 +500,10 @@ export type OrderUncheckedCreateInput = {
   total: number
   currency?: string
   bankRef?: string | null
+  paidAt?: Date | string | null
+  autoEmail24h?: boolean
+  autoEmail72h?: boolean
+  autoEmail14d?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   items?: Prisma.OrderItemUncheckedCreateNestedManyWithoutOrderInput
@@ -468,6 +524,10 @@ export type OrderUpdateInput = {
   total?: Prisma.FloatFieldUpdateOperationsInput | number
   currency?: Prisma.StringFieldUpdateOperationsInput | string
   bankRef?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  paidAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  autoEmail24h?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  autoEmail72h?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  autoEmail14d?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneWithoutOrdersNestedInput
@@ -490,6 +550,10 @@ export type OrderUncheckedUpdateInput = {
   total?: Prisma.FloatFieldUpdateOperationsInput | number
   currency?: Prisma.StringFieldUpdateOperationsInput | string
   bankRef?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  paidAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  autoEmail24h?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  autoEmail72h?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  autoEmail14d?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   items?: Prisma.OrderItemUncheckedUpdateManyWithoutOrderNestedInput
@@ -511,6 +575,10 @@ export type OrderCreateManyInput = {
   total: number
   currency?: string
   bankRef?: string | null
+  paidAt?: Date | string | null
+  autoEmail24h?: boolean
+  autoEmail72h?: boolean
+  autoEmail14d?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -530,6 +598,10 @@ export type OrderUpdateManyMutationInput = {
   total?: Prisma.FloatFieldUpdateOperationsInput | number
   currency?: Prisma.StringFieldUpdateOperationsInput | string
   bankRef?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  paidAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  autoEmail24h?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  autoEmail72h?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  autoEmail14d?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -550,6 +622,10 @@ export type OrderUncheckedUpdateManyInput = {
   total?: Prisma.FloatFieldUpdateOperationsInput | number
   currency?: Prisma.StringFieldUpdateOperationsInput | string
   bankRef?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  paidAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  autoEmail24h?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  autoEmail72h?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  autoEmail14d?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -580,6 +656,10 @@ export type OrderCountOrderByAggregateInput = {
   total?: Prisma.SortOrder
   currency?: Prisma.SortOrder
   bankRef?: Prisma.SortOrder
+  paidAt?: Prisma.SortOrder
+  autoEmail24h?: Prisma.SortOrder
+  autoEmail72h?: Prisma.SortOrder
+  autoEmail14d?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -604,6 +684,10 @@ export type OrderMaxOrderByAggregateInput = {
   total?: Prisma.SortOrder
   currency?: Prisma.SortOrder
   bankRef?: Prisma.SortOrder
+  paidAt?: Prisma.SortOrder
+  autoEmail24h?: Prisma.SortOrder
+  autoEmail72h?: Prisma.SortOrder
+  autoEmail14d?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -624,6 +708,10 @@ export type OrderMinOrderByAggregateInput = {
   total?: Prisma.SortOrder
   currency?: Prisma.SortOrder
   bankRef?: Prisma.SortOrder
+  paidAt?: Prisma.SortOrder
+  autoEmail24h?: Prisma.SortOrder
+  autoEmail72h?: Prisma.SortOrder
+  autoEmail14d?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -683,6 +771,10 @@ export type EnumOrderStatusFieldUpdateOperationsInput = {
   set?: $Enums.OrderStatus
 }
 
+export type NullableDateTimeFieldUpdateOperationsInput = {
+  set?: Date | string | null
+}
+
 export type OrderCreateNestedOneWithoutItemsInput = {
   create?: Prisma.XOR<Prisma.OrderCreateWithoutItemsInput, Prisma.OrderUncheckedCreateWithoutItemsInput>
   connectOrCreate?: Prisma.OrderCreateOrConnectWithoutItemsInput
@@ -712,6 +804,10 @@ export type OrderCreateWithoutUserInput = {
   total: number
   currency?: string
   bankRef?: string | null
+  paidAt?: Date | string | null
+  autoEmail24h?: boolean
+  autoEmail72h?: boolean
+  autoEmail14d?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   items?: Prisma.OrderItemCreateNestedManyWithoutOrderInput
@@ -732,6 +828,10 @@ export type OrderUncheckedCreateWithoutUserInput = {
   total: number
   currency?: string
   bankRef?: string | null
+  paidAt?: Date | string | null
+  autoEmail24h?: boolean
+  autoEmail72h?: boolean
+  autoEmail14d?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   items?: Prisma.OrderItemUncheckedCreateNestedManyWithoutOrderInput
@@ -782,6 +882,10 @@ export type OrderScalarWhereInput = {
   total?: Prisma.FloatFilter<"Order"> | number
   currency?: Prisma.StringFilter<"Order"> | string
   bankRef?: Prisma.StringNullableFilter<"Order"> | string | null
+  paidAt?: Prisma.DateTimeNullableFilter<"Order"> | Date | string | null
+  autoEmail24h?: Prisma.BoolFilter<"Order"> | boolean
+  autoEmail72h?: Prisma.BoolFilter<"Order"> | boolean
+  autoEmail14d?: Prisma.BoolFilter<"Order"> | boolean
   createdAt?: Prisma.DateTimeFilter<"Order"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Order"> | Date | string
 }
@@ -801,6 +905,10 @@ export type OrderCreateWithoutItemsInput = {
   total: number
   currency?: string
   bankRef?: string | null
+  paidAt?: Date | string | null
+  autoEmail24h?: boolean
+  autoEmail72h?: boolean
+  autoEmail14d?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
   user?: Prisma.UserCreateNestedOneWithoutOrdersInput
@@ -822,6 +930,10 @@ export type OrderUncheckedCreateWithoutItemsInput = {
   total: number
   currency?: string
   bankRef?: string | null
+  paidAt?: Date | string | null
+  autoEmail24h?: boolean
+  autoEmail72h?: boolean
+  autoEmail14d?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -857,6 +969,10 @@ export type OrderUpdateWithoutItemsInput = {
   total?: Prisma.FloatFieldUpdateOperationsInput | number
   currency?: Prisma.StringFieldUpdateOperationsInput | string
   bankRef?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  paidAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  autoEmail24h?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  autoEmail72h?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  autoEmail14d?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   user?: Prisma.UserUpdateOneWithoutOrdersNestedInput
@@ -878,6 +994,10 @@ export type OrderUncheckedUpdateWithoutItemsInput = {
   total?: Prisma.FloatFieldUpdateOperationsInput | number
   currency?: Prisma.StringFieldUpdateOperationsInput | string
   bankRef?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  paidAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  autoEmail24h?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  autoEmail72h?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  autoEmail14d?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -897,6 +1017,10 @@ export type OrderCreateManyUserInput = {
   total: number
   currency?: string
   bankRef?: string | null
+  paidAt?: Date | string | null
+  autoEmail24h?: boolean
+  autoEmail72h?: boolean
+  autoEmail14d?: boolean
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -916,6 +1040,10 @@ export type OrderUpdateWithoutUserInput = {
   total?: Prisma.FloatFieldUpdateOperationsInput | number
   currency?: Prisma.StringFieldUpdateOperationsInput | string
   bankRef?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  paidAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  autoEmail24h?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  autoEmail72h?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  autoEmail14d?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   items?: Prisma.OrderItemUpdateManyWithoutOrderNestedInput
@@ -936,6 +1064,10 @@ export type OrderUncheckedUpdateWithoutUserInput = {
   total?: Prisma.FloatFieldUpdateOperationsInput | number
   currency?: Prisma.StringFieldUpdateOperationsInput | string
   bankRef?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  paidAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  autoEmail24h?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  autoEmail72h?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  autoEmail14d?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   items?: Prisma.OrderItemUncheckedUpdateManyWithoutOrderNestedInput
@@ -956,6 +1088,10 @@ export type OrderUncheckedUpdateManyWithoutUserInput = {
   total?: Prisma.FloatFieldUpdateOperationsInput | number
   currency?: Prisma.StringFieldUpdateOperationsInput | string
   bankRef?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  paidAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  autoEmail24h?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  autoEmail72h?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  autoEmail14d?: Prisma.BoolFieldUpdateOperationsInput | boolean
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -1007,6 +1143,10 @@ export type OrderSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   total?: boolean
   currency?: boolean
   bankRef?: boolean
+  paidAt?: boolean
+  autoEmail24h?: boolean
+  autoEmail72h?: boolean
+  autoEmail14d?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   user?: boolean | Prisma.Order$userArgs<ExtArgs>
@@ -1030,6 +1170,10 @@ export type OrderSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   total?: boolean
   currency?: boolean
   bankRef?: boolean
+  paidAt?: boolean
+  autoEmail24h?: boolean
+  autoEmail72h?: boolean
+  autoEmail14d?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   user?: boolean | Prisma.Order$userArgs<ExtArgs>
@@ -1051,6 +1195,10 @@ export type OrderSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   total?: boolean
   currency?: boolean
   bankRef?: boolean
+  paidAt?: boolean
+  autoEmail24h?: boolean
+  autoEmail72h?: boolean
+  autoEmail14d?: boolean
   createdAt?: boolean
   updatedAt?: boolean
   user?: boolean | Prisma.Order$userArgs<ExtArgs>
@@ -1072,11 +1220,15 @@ export type OrderSelectScalar = {
   total?: boolean
   currency?: boolean
   bankRef?: boolean
+  paidAt?: boolean
+  autoEmail24h?: boolean
+  autoEmail72h?: boolean
+  autoEmail14d?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type OrderOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "status" | "userId" | "email" | "firstName" | "lastName" | "phone" | "country" | "city" | "address" | "zip" | "notes" | "total" | "currency" | "bankRef" | "createdAt" | "updatedAt", ExtArgs["result"]["order"]>
+export type OrderOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "status" | "userId" | "email" | "firstName" | "lastName" | "phone" | "country" | "city" | "address" | "zip" | "notes" | "total" | "currency" | "bankRef" | "paidAt" | "autoEmail24h" | "autoEmail72h" | "autoEmail14d" | "createdAt" | "updatedAt", ExtArgs["result"]["order"]>
 export type OrderInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   user?: boolean | Prisma.Order$userArgs<ExtArgs>
   items?: boolean | Prisma.Order$itemsArgs<ExtArgs>
@@ -1111,6 +1263,10 @@ export type $OrderPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     total: number
     currency: string
     bankRef: string | null
+    paidAt: Date | null
+    autoEmail24h: boolean
+    autoEmail72h: boolean
+    autoEmail14d: boolean
     createdAt: Date
     updatedAt: Date
   }, ExtArgs["result"]["order"]>
@@ -1553,6 +1709,10 @@ export interface OrderFieldRefs {
   readonly total: Prisma.FieldRef<"Order", 'Float'>
   readonly currency: Prisma.FieldRef<"Order", 'String'>
   readonly bankRef: Prisma.FieldRef<"Order", 'String'>
+  readonly paidAt: Prisma.FieldRef<"Order", 'DateTime'>
+  readonly autoEmail24h: Prisma.FieldRef<"Order", 'Boolean'>
+  readonly autoEmail72h: Prisma.FieldRef<"Order", 'Boolean'>
+  readonly autoEmail14d: Prisma.FieldRef<"Order", 'Boolean'>
   readonly createdAt: Prisma.FieldRef<"Order", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Order", 'DateTime'>
 }

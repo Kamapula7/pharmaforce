@@ -91,7 +91,11 @@
         "sortPriceAsc": "Price: Low to High",
         "sortPriceDesc": "Price: High to Low",
         "categoriesBtn": "Categories",
-        "productsCount": "products"
+        "productsCount": "products",
+        "searchPlaceholder": "Search by name or brand...",
+        "showMore": "Show More",
+        "showing": "Showing",
+        "of": "of"
     },
     "about": {
         "title": "About PharmaForce",

@@ -354,3 +354,127 @@ export async function sendWelcomeEmail({
     html,
   });
 }
+
+interface AutoEmailParams {
+  customerEmail: string;
+  customerName: string;
+  orderRef: string;
+  total: number;
+}
+
+export async function sendPaymentReceivedEmail({ customerEmail, customerName, orderRef, total }: AutoEmailParams) {
+  const transporter = await createTransporter();
+  const firstName = customerName?.split(' ')[0] || 'Customer';
+
+  const html = baseLayout(`
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:16px;padding:32px;text-align:center;margin-bottom:24px;">
+      <div style="font-size:48px;margin-bottom:16px;">💰</div>
+      <h1 style="color:#fff;font-size:24px;font-weight:900;margin:0 0 8px;">Payment Received!</h1>
+      <p style="color:#999;font-size:15px;margin:0;">Hi ${firstName}, we've confirmed your payment.</p>
+    </div>
+
+    <div style="background:#F97316;border-radius:12px;padding:16px 24px;text-align:center;margin-bottom:24px;">
+      <p style="color:#111;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin:0 0 4px;">Order Reference</p>
+      <p style="color:#111;font-size:28px;font-weight:900;font-family:monospace;margin:0;">${orderRef}</p>
+    </div>
+
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-left:4px solid #22c55e;border-radius:12px;padding:20px 24px;margin-bottom:24px;">
+      <p style="color:#22c55e;font-weight:700;font-size:14px;margin:0 0 12px;">✅ What happens next?</p>
+      <p style="color:#ccc;font-size:14px;line-height:1.8;margin:0;">
+        Your payment of <strong style="color:#fff;">€${total.toFixed(2)}</strong> has been received and verified.<br/>
+        Our team is now preparing your order. It will be <strong style="color:#fff;">packed and shipped within 2 business days</strong>.<br/><br/>
+        You'll receive a shipping notification once your parcel is dispatched.
+      </p>
+    </div>
+
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:20px 24px;text-align:center;">
+      <p style="color:#999;font-size:13px;margin:0 0 8px;">Questions? We respond within a few hours.</p>
+      <a href="mailto:pharmaforce@inbox.eu" style="color:#F97316;font-weight:700;font-size:14px;text-decoration:none;">pharmaforce@inbox.eu</a>
+    </div>
+  `);
+
+  await transporter.sendMail({
+    from: `"PharmaForce" <${process.env.SMTP_USER}>`,
+    to: customerEmail,
+    subject: `💰 Payment Received — ${orderRef} | PharmaForce`,
+    html,
+  });
+}
+
+export async function sendAutoShippedEmail({ customerEmail, customerName, orderRef, total }: AutoEmailParams) {
+  const transporter = await createTransporter();
+  const firstName = customerName?.split(' ')[0] || 'Customer';
+
+  const html = baseLayout(`
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:16px;padding:32px;text-align:center;margin-bottom:24px;">
+      <div style="font-size:48px;margin-bottom:16px;">📦</div>
+      <h1 style="color:#fff;font-size:24px;font-weight:900;margin:0 0 8px;">Your Order Has Been Shipped!</h1>
+      <p style="color:#999;font-size:15px;margin:0;">Hi ${firstName}, your parcel is on its way.</p>
+    </div>
+
+    <div style="background:#F97316;border-radius:12px;padding:16px 24px;text-align:center;margin-bottom:24px;">
+      <p style="color:#111;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin:0 0 4px;">Order Reference</p>
+      <p style="color:#111;font-size:28px;font-weight:900;font-family:monospace;margin:0;">${orderRef}</p>
+    </div>
+
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-left:4px solid #3b82f6;border-radius:12px;padding:20px 24px;margin-bottom:24px;">
+      <p style="color:#3b82f6;font-weight:700;font-size:14px;margin:0 0 12px;">🚚 Shipping Details</p>
+      <p style="color:#ccc;font-size:14px;line-height:1.8;margin:0;">
+        Your order of <strong style="color:#fff;">€${total.toFixed(2)}</strong> has been packed and dispatched from our EU warehouse.<br/><br/>
+        Estimated delivery: <strong style="color:#fff;">9–14 business days</strong> depending on your location.<br/><br/>
+        All parcels are shipped in <strong style="color:#fff;">plain, discreet packaging</strong> with no product names on the outside.
+      </p>
+    </div>
+
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:20px 24px;text-align:center;">
+      <p style="color:#999;font-size:13px;margin:0 0 8px;">Questions about your shipment?</p>
+      <a href="mailto:pharmaforce@inbox.eu" style="color:#F97316;font-weight:700;font-size:14px;text-decoration:none;">pharmaforce@inbox.eu</a>
+    </div>
+  `);
+
+  await transporter.sendMail({
+    from: `"PharmaForce" <${process.env.SMTP_USER}>`,
+    to: customerEmail,
+    subject: `📦 Your Order ${orderRef} Has Been Shipped | PharmaForce`,
+    html,
+  });
+}
+
+export async function sendDeliveryDelayedEmail({ customerEmail, customerName, orderRef, total }: AutoEmailParams) {
+  const transporter = await createTransporter();
+  const firstName = customerName?.split(' ')[0] || 'Customer';
+
+  const html = baseLayout(`
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:16px;padding:32px;text-align:center;margin-bottom:24px;">
+      <div style="font-size:48px;margin-bottom:16px;">⏳</div>
+      <h1 style="color:#fff;font-size:24px;font-weight:900;margin:0 0 8px;">Delivery Update</h1>
+      <p style="color:#999;font-size:15px;margin:0;">Hi ${firstName}, an update on your order.</p>
+    </div>
+
+    <div style="background:#F97316;border-radius:12px;padding:16px 24px;text-align:center;margin-bottom:24px;">
+      <p style="color:#111;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:2px;margin:0 0 4px;">Order Reference</p>
+      <p style="color:#111;font-size:28px;font-weight:900;font-family:monospace;margin:0;">${orderRef}</p>
+    </div>
+
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-left:4px solid #eab308;border-radius:12px;padding:20px 24px;margin-bottom:24px;">
+      <p style="color:#eab308;font-weight:700;font-size:14px;margin:0 0 12px;">⚠️ Your delivery is taking longer than expected</p>
+      <p style="color:#ccc;font-size:14px;line-height:1.8;margin:0;">
+        We noticed your order <strong style="color:#fff;">${orderRef}</strong> (€${total.toFixed(2)}) hasn't been marked as delivered yet.<br/><br/>
+        International shipments can sometimes experience delays due to customs processing or local postal services.<br/><br/>
+        Our team is looking into this. If you haven't received your parcel, please reply to this email and we'll investigate immediately.
+      </p>
+    </div>
+
+    <div style="background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:20px 24px;text-align:center;">
+      <p style="color:#999;font-size:13px;margin:0 0 8px;">We're here to help — reach out anytime.</p>
+      <a href="mailto:pharmaforce@inbox.eu" style="color:#F97316;font-weight:700;font-size:14px;text-decoration:none;">pharmaforce@inbox.eu</a>
+    </div>
+  `);
+
+  await transporter.sendMail({
+    from: `"PharmaForce" <${process.env.SMTP_USER}>`,
+    to: customerEmail,
+    subject: `⏳ Delivery Update — ${orderRef} | PharmaForce`,
+    html,
+  });
+}

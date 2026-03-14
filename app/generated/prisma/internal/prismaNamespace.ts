@@ -1115,6 +1115,10 @@ export const OrderScalarFieldEnum = {
   total: 'total',
   currency: 'currency',
   bankRef: 'bankRef',
+  paidAt: 'paidAt',
+  autoEmail24h: 'autoEmail24h',
+  autoEmail72h: 'autoEmail72h',
+  autoEmail14d: 'autoEmail14d',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const

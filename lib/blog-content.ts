@@ -565,7 +565,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         heading: 'What to Look for When Buying Testosterone Enanthate Online in Europe',
-        body: 'When sourcing Testosterone Enanthate online in Europe, key quality indicators are: pharmaceutical-grade manufacturing (GMP certification), correct concentration labelling (200–250 mg/ml is standard), sterile vials or ampoules with batch numbers and expiry dates, EU-based warehousing for discreet local delivery. At PharmaForce, Testosterone Enanthate is stocked from verified manufacturers including BayerPro Schering and Balkan Pharmaceuticals, shipped from within the EU for fast 3–10 day delivery across all European countries with no customs exposure.',
+        body: 'When sourcing Testosterone Enanthate online in Europe, key quality indicators are: pharmaceutical-grade manufacturing (GMP certification), correct concentration labelling (200–250 mg/ml is standard), sterile vials or ampoules with batch numbers and expiry dates, EU-based warehousing for discreet local delivery. At PharmaForce, Testosterone Enanthate is stocked from verified manufacturers including Bayer Schering and Balkan Pharmaceuticals, shipped from within the EU for fast 3–10 day delivery across all European countries with no customs exposure.',
       },
       {
         heading: 'Storage and Handling',
@@ -608,7 +608,7 @@ export const BLOG_POSTS: BlogPost[] = [
       },
       {
         heading: 'Buying Sustanon 250 Online with European Delivery',
-        body: 'Pharmaceutical-grade Sustanon 250 in Europe is most commonly produced by Organon (Netherlands), Aspen (formally Schering), and various Eastern European manufacturers. Key quality indicators: ampoules (1 ml) or multi-dose vials from licensed facilities, correct 250 mg/ml concentration, clear oil with no particulate matter. PharmaForce stocks Sustanon 250 in original ampoule format from BayerPro Schering with EU-based warehouse dispatch, enabling 3–7 day delivery across Germany, Poland, France, Netherlands, Austria, Italy and 25+ other EU countries — fully discreet plain packaging.',
+        body: 'Pharmaceutical-grade Sustanon 250 in Europe is most commonly produced by Organon (Netherlands), Aspen (formally Schering), and various Eastern European manufacturers. Key quality indicators: ampoules (1 ml) or multi-dose vials from licensed facilities, correct 250 mg/ml concentration, clear oil with no particulate matter. PharmaForce stocks Sustanon 250 in original ampoule format from Bayer Schering with EU-based warehouse dispatch, enabling 3–7 day delivery across Germany, Poland, France, Netherlands, Austria, Italy and 25+ other EU countries — fully discreet plain packaging.',
       },
     ],
   },

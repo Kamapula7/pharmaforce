@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "orders" ADD COLUMN     "autoEmail14d" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "autoEmail24h" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "autoEmail72h" BOOLEAN NOT NULL DEFAULT false,
+ADD COLUMN     "paidAt" TIMESTAMP(3);

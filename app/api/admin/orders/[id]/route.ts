@@ -17,9 +17,12 @@ export async function PATCH(
       return NextResponse.json({ error: 'Invalid status' }, { status: 400 });
     }
 
+    const data: Record<string, unknown> = { status };
+    if (status === 'PAID') data.paidAt = new Date();
+
     const order = await prisma.order.update({
       where: { id },
-      data: { status },
+      data,
     });
 
     // Send email in background — no delay for admin
